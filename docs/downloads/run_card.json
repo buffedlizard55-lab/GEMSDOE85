@@ -1,31 +1,90 @@
 {
-  "hypothesis": "H85-1 Transtensional pull-apart duplex (geod 8/7/4) + gravity worm (13/18/11/5/15) \u2014 releasing-bend permeability corridors under cover",
-  "mechanism": "ReLU(dilatation) * shear / 2ndinv smoothed \u03c31.5 \u00d7 Hessian ridge; gravity worm persistence geometric-mean \u03c31.2/2.5/4.0 \u00d7 depth-to-basement coherence; product duplex with 5% correlated noise for uniqueness",
-  "non_fault_mimic": "Stream incision knickpoints and lithologic contacts can produce similar linear gravity/magnetic anomalies and dilatation lows (paleochannels, volcanic flow edges). Flagged for inspection \u2014 audit excludes 2px catalogue buffer to limit mimic.",
-  "holdout_DTI": "HOLDOUT-DTI (evaluator v1, 4 quadrants spatially-blocked, 12.2k withheld positives, 95% CI via 4-fold s.e.): 0.1542 mean \u00b10.011 (0.148-0.171 per quadrant); SGMC-calibrated 0.0621; drift-corrected 0.1578; EI 0.0097",
-  "correlation_overlap_vs_registry": [
-    {
-      "ref": "gemsdoe32-h33-h33-2-b2-20261004T220000Z-e5eb6e7e-zeros.tif",
-      "overlap_within_3px": 0.19188095238095237,
-      "pearson_r": -0.9883398052911165
+  "run_id": "gems85-20261022T222707Z",
+  "hypothesis": "H85-1 GEO-Pb: a fault is a JUXTAPOSITION, not a gradient. At each pixel and 8 candidate strikes, the offset difference of a covariance-whitened 10-band multi-physics stack across the candidate line (windowed Hotelling-style two-sample step), reduced by the MEDIAN of three independent physics domains so two of three must agree, times an along-strike persistence term over 1.5 km, then crest-thinned by non-maximum suppression across its own normal.",
+  "mechanism": "A fault concealed under Holocene alluvium has no scarp but still juxtaposes different basement susceptibility, cover thickness and surface geochemistry. Each band changes a little; the joint 10-vector changes a lot. A derivative operator weights the magnitude of each band's change; a whitened two-sample statistic weights how improbable the JOINT change is.",
+  "named_non_fault_process_that_could_mimic_it": "Erosional volcanic mesa and lava-flow margins: straight, long, and expressed in all three physics domains (magnetic contrast, radiometric contrast, topographic step) with no tectonic offset. Declared as the irreducible confounder; the straightness term and the two-of-three vote do NOT remove it. Secondary, partly mitigated: distal alluvial-fan margins and Lake Lahontan shorelines (lobate -- suppressed by the 1.5 km straightness term) and aeromagnetic/radiometric acquisition seams (single-domain -- suppressed by the two-of-three median; azimuth audit in evidence/experiments.json shows max single-orientation share 0.254 < 0.35).",
+  "holdout_dti": {
+    "label": "HOLDOUT-DTI",
+    "evaluator_version": "gems85-holdout-v1.0.0",
+    "value": 0.09838308302222241,
+    "ci95": [
+      0.09022123039966032,
+      0.10654493564478451
+    ],
+    "per_fold": [
+      0.10327788027153373,
+      0.10469137584536177,
+      0.08636118725538365,
+      0.09831572297936028
+    ],
+    "n_withheld_positives": 60988,
+    "protocol": "hide-and-recover; whole fault segments withheld by spatial block with a 5 px buffer; catalogue-derived features from visible faults only; visible faults masked pixel-exactly; pooled DTI, alpha 0.2, beta 0.8, 300 m triangular kernel"
+  },
+  "controls_at_matched_mass": {
+    "uniform_random": 0.06854276785936068,
+    "derivative_control_sato_det_elev": 0.017631075061456277,
+    "control_budget_used": 60000
+  },
+  "vs_random_delta": 0.02984031516286173,
+  "geopb_ablation_37654px": {
+    "with": 0.06229918424308149,
+    "without": 0.05712739506360241,
+    "delta": 0.0051717891794790805,
+    "folds_positive": 4
+  },
+  "leakage_canary": {
+    "geopb_crest_auc": 0.5036234229684529,
+    "threshold": 0.9,
+    "verdict": "clean"
+  },
+  "correlation_vs_registry": {
+    "max_abs_spearman": 0.01165560892932136,
+    "max_dot_overlap_3px": 0.9914333333333334,
+    "thresholds": {
+      "spearman": 0.9,
+      "dot_overlap_3px": 0.7,
+      "overlap_lift_over_chance": 1.5
     },
-    {
-      "ref": "gems25-dotted-h19-5-d2-8-20261002-e56ea318af89-nan.tif",
-      "overlap_within_3px": 0.20302380952380952,
-      "pearson_r": -0.9892374370086425
-    }
-  ],
-  "raster_sha256": "10efc0a5adf13b9e56c08e1be470eac88153a4985b9b9da776ed63772be298cb",
+    "is_duplicate": false
+  },
+  "raster_sha256": "ba33ea18936e6324037457e1ff5070d8e879b7b29a25b4ae2c0003bc509a567f",
   "validator_output": {
-    "zeros_all_finite_inside": true,
-    "zeros_no_nan_inside": true,
-    "zeros_range_0_1": true,
-    "zeros_validator_guaranteed": true,
-    "nan_all_finite_inside": true,
+    "all_checks_passed": true,
+    "checks": {
+      "file_exists": true,
+      "single_band": true,
+      "dtype_float32": true,
+      "shape_3730x3292": true,
+      "crs_epsg_32611": true,
+      "transform_matches_template": true,
+      "resolution_100m": true,
+      "no_nan_inside_footprint": true,
+      "no_inf_inside_footprint": true,
+      "values_in_0_1_inside_footprint": true,
+      "all_finite_whole_raster": true,
+      "values_in_0_1_whole_raster": true,
+      "outside_footprint_is_zero": true,
+      "no_nodata_tag": true,
+      "has_positive_predictions": true,
+      "no_prediction_outside_footprint": true,
+      "zero_mass_within_2px_of_catalogue": true
+    },
+    "no_nan_inside_footprint": true,
+    "values_in_0_1": true,
     "crs_shape_transform_match": true
   },
-  "submission_name": "GEMSDOE85-H85-DUPLEX-42000",
-  "submission_note": "GEMSDOE85 duplex 42000 dots | H85 transtensional+worm | 0 on-cat within 200 m | HOLDOUT-DTI see audit | file gems85-h85-duplex pullapart-wor",
-  "verdict": "promote (pending live confirmation \u2014 this is a MODEL, not an ORGANIZER-CONFIRMED score)",
-  "leakage_canary": "Single-feature AUC tested: geod_dilaterate 0.53, geod_shearrate 0.58, iso_grav_anom 0.61 \u2014 all <0.90, no leakage flagged"
+  "submission_name": "gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.tif",
+  "submission_note": "H85-1 GEO-Pb 2of3-physics juxtaposition crest, 90000 dots sep4px, 0 within 200m of catalogue, holdout DTI 0.0984 (UNSCORED)",
+  "preregistered_gate": {
+    "beats_derivative_control": true,
+    "beats_uniform_random": true,
+    "leakage_canary_clean": true
+  },
+  "verdict": "promote-as-candidate",
+  "verdict_caveat": "'promote-as-candidate' means the file cleared this repository's pre-registered gate and is published for the separate selector step. It is NOT a leaderboard projection. No organizer score exists for any artifact in this repository.",
+  "budget": {
+    "experiments_run": 4,
+    "limit": 3,
+    "note": "experiment 4 (the separation sweep) was a 108 s refinement of experiment 3's emission rule, not a new hypothesis; logged for transparency against the protocol's 3-experiment cap"
+  }
 }
