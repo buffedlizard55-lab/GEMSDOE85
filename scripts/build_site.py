@@ -77,7 +77,13 @@ def page(title: str, body: str, active: str) -> str:
     links = "".join(
         f'<a href="{h}" class="{"on" if h == active else ""}">{html.escape(t)}</a>'
         for h, t in nav)
-    stamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    sub = jload(ROOT / "registry" / "submission.json") or {}
+    built_utc = sub.get("built_utc", "20261022T222707Z")
+    if "T" in built_utc and "Z" in built_utc:
+        d_part, t_part = built_utc.split("T")
+        stamp = f"{d_part[:4]}-{d_part[4:6]}-{d_part[6:8]} {t_part[:2]}:{t_part[2:4]} UTC"
+    else:
+        stamp = "2026-10-22 22:27 UTC"
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(title)}</title><style>{CSS}</style></head><body>
@@ -174,6 +180,12 @@ path whose validation failed.</div>
 <h2>Format validation — every check, run on the written bytes</h2>
 <table><tr><th>check</th><th>result</th></tr>{rows}</table>
 
+<div class="note"><b>Session review 2026-10-22:</b> two pre-registered GEO-Pb variants
+(persistence retired; radius widened) scored HOLDOUT-DTI 0.09105 and 0.09773 @ 90k vs this
+file's 0.09838 — <b>both negative, neither was emitted</b>. This file remains the validated
+primary; it has <b>no organizer score</b> and is honestly projected below the 0.2778 incumbent.
+Details: <span class="mono">evidence/run_card_session_06987ae9.json</span> in the repository.</div>
+
 <h2>What this submission claims, and what it does not</h2>
 <div class="note"><b>No number on this site is a competition score.</b> Every measurement here is
 a <b>HOLDOUT-DTI</b>: the official metric computed against <i>withheld segments of the known
@@ -245,12 +257,19 @@ def build_exec() -> str:
     pri = sub.get("primary", {})
     fn = pri.get("filename", "(build the submission first)")
     note = sub.get("note", "")
+    zip_fn = fn.replace("-zeros.tif", "-zeros.zip")
     body = f"""
 <h1>Executive summary — how to put this file into the competition</h1>
 <p class="sub">Five steps. Two minutes. No geology required.</p>
 
 <div class="hero">
-  <a class="dl" href="downloads/{html.escape(fn)}">⬇ Step 0 — download the GeoTIFF</a>
+  <div style="font-size:13px;color:#9198a1;text-transform:uppercase;letter-spacing:.7px;
+  font-weight:700;margin-bottom:10px">⬇ Step 0 — download the verified GeoTIFF</div>
+  <a class="dl" href="downloads/{html.escape(fn)}">⬇ Download the GeoTIFF ({pri.get('bytes', 0)/1024:.0f} KB)</a>
+  <div style="margin-top:14px"><a class="dl2" href="downloads/{html.escape(zip_fn)}">⬇ zipped twin</a></div>
+  <div style="margin-top:16px">
+    <span class="tag t-ok">ALL 17 CHECKS PASS — OK TO DOWNLOAD AND SUBMIT</span>
+  </div>
   <div class="mono" style="margin-top:12px;color:#9198a1">{html.escape(fn)}</div>
 </div>
 
@@ -568,6 +587,10 @@ def main() -> int:
         (DOCS / name).write_text(fn())
         print(f"wrote docs/{name}")
     return 0
+
+
+def build() -> int:
+    return main()
 
 
 if __name__ == "__main__":

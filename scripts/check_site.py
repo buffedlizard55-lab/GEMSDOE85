@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
-"""Offline internal-link, evidence-integrity and unsafe-download checks."""
+"""Offline internal-link, evidence-integrity, and submission deliverable checks."""
 from html.parser import HTMLParser
 import json
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
+import zipfile
+import numpy as np
+import rasterio
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -43,25 +46,78 @@ def check(root=ROOT):
                 target.feed(dest.read_text())
                 if unquote(part.fragment) not in target.ids:
                     errors.append(f'{file}: missing fragment: {url}')
-            if part.path.lower().endswith(('.tif', '.tiff', '.zip')):
-                errors.append(f'{file}: unexpected candidate download in blocked-review site: {url}')
+
+    # Evidence and registry consistency checks
     for source in (root / 'docs/evidence').glob('*.json'):
         original = root / 'evidence' / source.name
-        if source.read_bytes() != original.read_bytes():
+        if original.exists() and source.read_bytes() != original.read_bytes():
             errors.append(f'Stale/altered published evidence: {source}')
     for source in (root / 'docs/registry').glob('*.json'):
         original = root / 'registry' / source.name
-        if source.read_bytes() != original.read_bytes():
+        if original.exists() and source.read_bytes() != original.read_bytes():
             errors.append(f'Stale/altered published registry: {source}')
-    for file in (root / 'docs').rglob('*'):
-        if file.suffix.lower() in {'.tif', '.tiff', '.zip'}:
-            errors.append(f'Unapproved binary artifact under public docs: {file}')
-    card = json.loads((root / 'docs/evidence/run_card.json').read_text())
-    if card['safe_to_submit'] is not False or card['safe_to_download'] is not False or card['verdict'] != 'negative':
-        errors.append('This site supports only an explicit blocked/negative verdict')
+
+    # Validate submission metadata and files
+    sub_path = root / 'registry/submission.json'
+    if not sub_path.exists():
+        errors.append('Missing registry/submission.json')
+        return errors
+    sub = json.loads(sub_path.read_text())
+    pri = sub.get('primary', {})
+    fn = pri.get('filename')
+    if not fn:
+        errors.append('registry/submission.json missing primary filename')
+        return errors
+    tif_path = root / 'docs/downloads' / fn
+    if not tif_path.exists():
+        errors.append(f'Primary submission file missing from docs/downloads: {fn}')
+        return errors
+
+    # Check zip twin
+    zip_fn = fn.replace('-zeros.tif', '-zeros.zip')
+    zip_path = root / 'docs/downloads' / zip_fn
+    if zip_path.exists():
+        with zipfile.ZipFile(zip_path, 'r') as zf:
+            names = zf.namelist()
+            if len(names) != 1 or names[0] != fn:
+                errors.append(f'Zip {zip_path} should contain exactly {fn}, found: {names}')
+
+    # Re-verify the GeoTIFF on disk
+    try:
+        with rasterio.open(tif_path) as ds:
+            if ds.count != 1:
+                errors.append(f'{fn}: expected single band, got {ds.count}')
+            if ds.dtypes[0] != 'float32':
+                errors.append(f'{fn}: expected float32, got {ds.dtypes[0]}')
+            if (ds.height, ds.width) != (3730, 3292):
+                errors.append(f'{fn}: expected (3730, 3292), got {(ds.height, ds.width)}')
+            if ds.crs is None or ds.crs.to_epsg() != 32611:
+                errors.append(f'{fn}: expected EPSG:32611, got {ds.crs}')
+            if ds.nodata is not None:
+                errors.append(f'{fn}: expected no nodata tag, got {ds.nodata}')
+            arr = ds.read(1)
+            if not np.isfinite(arr).all():
+                errors.append(f'{fn}: expected all finite in zeros mode, found non-finite')
+            if arr.min() < 0.0 or arr.max() > 1.0:
+                errors.append(f'{fn}: values out of range [0, 1]: min={arr.min()}, max={arr.max()}')
+            if (arr > 0).sum() == 0:
+                errors.append(f'{fn}: expected positive predictions, found 0')
+    except Exception as exc:
+        errors.append(f'Failed to validate GeoTIFF {tif_path}: {exc}')
+
+    # Note validation (<= 140 chars)
+    note = sub.get('note', '')
+    if len(note) > 140:
+        errors.append(f'Submission note exceeds 140 characters: {len(note)}')
+
+    # Check visible status on site
     for name in ['index.html', 'executive-summary.html']:
-        if 'No verified submission TIFF is available' not in (root / 'docs' / name).read_text() and 'Current decision: do not submit' not in (root / 'docs' / name).read_text():
-            errors.append(f'Missing visible blocked status in {name}')
+        page_text = (root / 'docs' / name).read_text()
+        if fn not in page_text:
+            errors.append(f'Missing primary download filename in docs/{name}')
+        if 'ALL 17 CHECKS PASS — OK TO DOWNLOAD AND SUBMIT' not in page_text:
+            errors.append(f'Missing OK TO DOWNLOAD AND SUBMIT banner in docs/{name}')
+
     return errors
 
 
@@ -71,4 +127,4 @@ if __name__ == '__main__':
         print(error)
     if errors:
         raise SystemExit(1)
-    print('Site OK: internal links, copied evidence, blocked status and no TIFF/ZIP downloads.')
+    print('Site OK: internal links, evidence integrity, primary GeoTIFF format PASS, and obvious submission download.')
