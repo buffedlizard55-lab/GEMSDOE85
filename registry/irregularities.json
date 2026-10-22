@@ -1,0 +1,35 @@
+{
+  "label": "IRREGULARITY-REGISTER",
+  "items": [
+    {
+      "id": "IR-85-01",
+      "severity": "high",
+      "finding": "The user brief calls h33-h33-2-b2 a 0.2778 highest result, but the inspected GEMSDOE32 evidence describes its artifact as UNSCORED and labels 0.2747 as a projection.",
+      "resolution": "No 0.2778 value is used as a measured score. It is treated as user/owner-reported and the difference is flagged for portal-receipt review."
+    },
+    {
+      "id": "IR-85-02",
+      "severity": "high",
+      "finding": "The submission portal error says predicted values must be in [0,1]. NaN-outside or sentinel-valued files can fail that gate even when the footprint values look valid.",
+      "resolution": "The shipped H85 artifact is a single-band float32 zeros-outside file. The validator rereads every cell, checks finite values and [0,1], and checks CRS/shape/transform."
+    },
+    {
+      "id": "IR-85-03",
+      "severity": "medium",
+      "finding": "The official data tab requires DrivenData access, which is not available to this agent. The feature stack is an owner-supplied GitHub bridge, not organizer-authenticated bytes.",
+      "resolution": "Every data receipt records hashes and provenance. A future unrestricted runner can replace the mirror after checking the same geometry and hash gates."
+    },
+    {
+      "id": "IR-85-04",
+      "severity": "medium",
+      "finding": "A catalogue holdout uses known faults as truth and therefore cannot establish organizer-private new-fault performance.",
+      "resolution": "All results are labelled HOLDOUT-DTI, not organizer scores. A separate live selector and submission receipt are required."
+    },
+    {
+      "id": "IR-85-05",
+      "severity": "low",
+      "finding": "Registry uniqueness is limited to aligned rasters made available to the audit command; private organizer files are not observable.",
+      "resolution": "The audit records roots, hashes, count, rank correlation, and three-pixel overlap and refuses promotion when thresholds are crossed."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "label": "DATA-PROVENANCE-RECEIPT",
+  "status": "owner-supplied mirror, hash-pinned, not organizer-authenticated",
+  "grid": {
+    "shape": [3730, 3292],
+    "crs": "EPSG:32611",
+    "resolution_m": 100,
+    "transform": [100.0, 0.0, 243350.0, 0.0, -100.0, 4508550.0]
+  },
+  "core_files": {
+    "sample_submission.tif": {"sha256": "2176d08e485aa2cd2860ce8df539db4faf4d76163b38a4dd8c30a40454d35cbc", "bytes": 1599597},
+    "labels.tif": {"sha256": "7ba308ccdc4418b31a178f4f1ef21aaa6e152e4028f2f6f64b01f7eb25ae4093", "bytes": 425830},
+    "existing_faults.tif": {"sha256": "7ba308ccdc4418b31a178f4f1ef21aaa6e152e4028f2f6f64b01f7eb25ae4093", "bytes": 425830}
+  },
+  "feature_stack": {
+    "local_name": "training_features.tif",
+    "bands": 19,
+    "bytes": 418912844,
+    "sha256": "4371c82e3b8339b807bdffcf4ef59a225520fe2988d521be208ae33743123bc5",
+    "restore_script": "scripts/restore_feature_stack.sh",
+    "provenance": "public GitHub bridge mirrored from an owner-supplied competition-data placement; not organizer-authenticated"
+  },
+  "official_source": "https://www.drivendata.org/competitions/306/competition-doe-gems/data/",
+  "mirror_source_manifest": "https://github.com/buffedlizard55-lab/GEMSDOE/blob/main/data/bridge/manifest.json"
+}

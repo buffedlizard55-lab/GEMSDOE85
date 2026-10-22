@@ -1,0 +1,45 @@
+{
+  "label": "VALIDATOR-RECEIPT",
+  "path": "/home/user/GEMSDOE85/docs/downloads/gems85-h85-scalescarp-persistence-20261022T220819Z-unique-selector-DO-NOT-SUBMIT-zeros.tif",
+  "zip_path": "/home/user/GEMSDOE85/docs/downloads/gems85-h85-scalescarp-persistence-20261022T220819Z-unique-selector-DO-NOT-SUBMIT-zeros.zip",
+  "sha256": "6c29a406f2671ae64fc6614699f54e8eb5a7b39c65abdd7cd49d865741c33f7c",
+  "zip_sha256": "c734b26f04a43f764893384a6aa4c130e35c623bc841fd275635e88aff3c4e64",
+  "bytes": 89584,
+  "zip_bytes": 40840,
+  "shape": [
+    3730,
+    3292
+  ],
+  "crs": "EPSG:32611",
+  "transform": [
+    100.0,
+    0.0,
+    243350.0,
+    0.0,
+    -100.0,
+    4508550.0
+  ],
+  "dtype": "float32",
+  "nodata": null,
+  "footprint_pixels": 5167373,
+  "positive_pixels": 25111,
+  "unit_pixels": 25111,
+  "catalogue_overlap_pixels": 0,
+  "nan_inside_footprint": 0,
+  "min_value": 0.0,
+  "max_value": 1.0,
+  "checks": {
+    "single_band": true,
+    "dtype_float32": true,
+    "shape_match": true,
+    "crs_match": true,
+    "transform_match": true,
+    "no_nan_inside_footprint": true,
+    "values_in_0_1_inside": true,
+    "all_pixels_finite": true,
+    "all_pixels_in_0_1": true,
+    "outside_footprint_zero": true,
+    "zero_catalogue_pixels": true
+  },
+  "passed": true
+}

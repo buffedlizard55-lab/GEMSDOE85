@@ -1,0 +1,35 @@
+{
+  "label": "LEAKAGE-CANARY",
+  "threshold_auc": 0.9,
+  "max_effective_auc": 0.6422880098836892,
+  "flagged_features": [],
+  "passed": true,
+  "features": [
+    {
+      "feature": "sigma_3_px",
+      "auc": 0.6422880098836892,
+      "effective_auc": 0.6422880098836892,
+      "leakage": false
+    },
+    {
+      "feature": "sigma_2_px",
+      "auc": 0.635714493938732,
+      "effective_auc": 0.635714493938732,
+      "leakage": false
+    },
+    {
+      "feature": "sigma_1_px",
+      "auc": 0.6172370572817124,
+      "effective_auc": 0.6172370572817124,
+      "leakage": false
+    },
+    {
+      "feature": "sigma_0.5_px",
+      "auc": 0.6001042138098619,
+      "effective_auc": 0.6001042138098619,
+      "leakage": false
+    }
+  ],
+  "withheld_positive_count_tested": 18313,
+  "background_count_tested": 200000
+}

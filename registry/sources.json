@@ -1,0 +1,21 @@
+{
+  "label": "SOURCE-REGISTER",
+  "generated_utc": "2026-10-22T00:00:00Z",
+  "entries": [
+    {"id":"competition-overview","url":"https://www.drivendata.org/competitions/306/competition-doe-gems/","publisher":"DrivenData","role":"competition overview","status":"provided_by_user_not_fetched_in_current_egress"},
+    {"id":"competition-problem","url":"https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/","publisher":"DrivenData","role":"problem, metric, submission format","status":"provided_by_user_not_fetched_in_current_egress"},
+    {"id":"competition-about","url":"https://www.drivendata.org/competitions/306/competition-doe-gems/page/968/","publisher":"DrivenData","role":"about page","status":"provided_by_user_not_fetched_in_current_egress"},
+    {"id":"competition-data","url":"https://www.drivendata.org/competitions/306/competition-doe-gems/data/","publisher":"DrivenData","role":"official data tab","status":"requires_login_or_enrollment; not_fetched"},
+    {"id":"leaderboard","url":"https://www.drivendata.org/competitions/306/competition-doe-gems/leaderboard/","publisher":"DrivenData","role":"public leaderboard","status":"provided_by_user_not_fetched_in_current_egress"},
+    {"id":"reference-solution","url":"https://github.com/drivendataorg/gems-prize-reference-solution","publisher":"DrivenData","role":"official reference repository","status":"fetched_from_github"},
+    {"id":"geodawn","url":"https://www.usgs.gov/data/geodawn-airborne-magnetic-and-radiometric-surveys-northwestern-great-basin-nevada-and","publisher":"USGS","role":"magnetic and radiometric survey source","status":"provided_by_user_not_fetched_in_current_egress"},
+    {"id":"ingenious","url":"https://gbcge.org/current-projects/ingenious/","publisher":"Great Basin Center for Geothermal Energy","role":"INGENIOUS project context","status":"provided_by_user_not_fetched_in_current_egress"},
+    {"id":"gdr-1391","url":"https://gdr.openei.org/submissions/1391","publisher":"DOE Geothermal Data Repository","role":"well/spring and geothermal data source","status":"provided_by_user_not_fetched_in_current_egress"},
+    {"id":"epsg-32611","url":"https://epsg.io/32611","publisher":"EPSG.io","role":"CRS manual review","status":"provided_by_user_not_fetched_in_current_egress; local_metadata_checked"},
+    {"id":"rules-pdf","url":"https://docs.nlr.gov/docs/fy26osti/96647.pdf","publisher":"DOE/NLR","role":"submission rules PDF","status":"provided_by_user_not_fetched_in_current_egress"},
+    {"id":"mirror-manifest","url":"https://github.com/buffedlizard55-lab/GEMSDOE/blob/main/data/bridge/manifest.json","publisher":"GitHub owner mirror","role":"hash-pinned data bridge","status":"fetched_from_github; not_organizer_authenticated"},
+    {"id":"asf","url":"https://search.asf.alaska.edu/","publisher":"NASA ASF DAAC","role":"future InSAR data source","status":"future_source_not_obtainable_under_current_egress"},
+    {"id":"comcat","url":"https://earthquake.usgs.gov/fdsnws/event/1/","publisher":"USGS","role":"future earthquake source","status":"future_source_not_obtainable_under_current_egress"}
+  ],
+  "policy": "No source that was not fetched is described as independently verified. Manual-review links are retained exactly so a future unrestricted runner can verify them."
+}

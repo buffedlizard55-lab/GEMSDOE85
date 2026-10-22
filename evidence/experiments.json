@@ -1,0 +1,95 @@
+{
+  "experiments": [
+    {
+      "experiment": "E1-single-scale",
+      "sigmas_px": [
+        1.0
+      ],
+      "budget": 50000,
+      "method_id": "H85-scale-space-detrended-slope-persistence",
+      "result": {
+        "label": "HOLDOUT-DTI",
+        "evaluator_version": "GEMSDOE85-evaluate_holdout.py-v1 (alpha=0.2 beta=0.8 R=300m triangular)",
+        "withheld_positive_count": 18313,
+        "n_components_total": 3199,
+        "n_components_held": 957,
+        "hold_frac_pixels": 0.30027218469207057,
+        "buffer_px": 3,
+        "score": 0.10114254849499342,
+        "ci95": null,
+        "TP_w": 2523.8543942440765,
+        "FP_w": 48991.33962049878,
+        "FN_w": 15789.145605755923,
+        "n_pred_after_visible_mask": 50000,
+        "spatial_quadrant_dti": {
+          "NW": 0.08953929848605842,
+          "NE": 0.10960740508386195,
+          "SW": 0.0901299005019552,
+          "SE": 0.11573879637722716
+        }
+      }
+    },
+    {
+      "experiment": "E2-two-scale-envelope",
+      "sigmas_px": [
+        1.0,
+        2.0
+      ],
+      "budget": 50000,
+      "method_id": "H85-scale-space-detrended-slope-persistence",
+      "result": {
+        "label": "HOLDOUT-DTI",
+        "evaluator_version": "GEMSDOE85-evaluate_holdout.py-v1 (alpha=0.2 beta=0.8 R=300m triangular)",
+        "withheld_positive_count": 18313,
+        "n_components_total": 3199,
+        "n_components_held": 957,
+        "hold_frac_pixels": 0.30027218469207057,
+        "buffer_px": 3,
+        "score": 0.10386727765492391,
+        "ci95": null,
+        "TP_w": 2590.734398433879,
+        "FP_w": 48870.96066157441,
+        "FN_w": 15722.265601566121,
+        "n_pred_after_visible_mask": 50000,
+        "spatial_quadrant_dti": {
+          "NW": 0.09581626225529098,
+          "NE": 0.1225487101713656,
+          "SW": 0.08930920996194207,
+          "SE": 0.11170993470444576
+        }
+      }
+    },
+    {
+      "experiment": "E3-four-scale-persistence-envelope",
+      "sigmas_px": [
+        0.5,
+        1.0,
+        2.0,
+        3.0
+      ],
+      "budget": 60000,
+      "method_id": "H85-scale-space-detrended-slope-persistence",
+      "result": {
+        "label": "HOLDOUT-DTI",
+        "evaluator_version": "GEMSDOE85-evaluate_holdout.py-v1 (alpha=0.2 beta=0.8 R=300m triangular)",
+        "withheld_positive_count": 18313,
+        "n_components_total": 3199,
+        "n_components_held": 957,
+        "hold_frac_pixels": 0.30027218469207057,
+        "buffer_px": 3,
+        "score": 0.10787329506690323,
+        "ci95": null,
+        "TP_w": 2909.087601166705,
+        "FP_w": 58677.085246083545,
+        "FN_w": 15403.912398833294,
+        "n_pred_after_visible_mask": 60000,
+        "spatial_quadrant_dti": {
+          "NW": 0.0997161598228702,
+          "NE": 0.1174293006153037,
+          "SW": 0.09690089464905234,
+          "SE": 0.11877664372611219
+        }
+      }
+    }
+  ]
+}

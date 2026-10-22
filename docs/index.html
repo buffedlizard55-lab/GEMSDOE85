@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GEMSDOE85 | H85 audit status</title>
+  <meta name="description" content="Auditable negative H85 GEMS run: format-valid artifacts blocked by registry overlap.">
+  <style>
+    :root { --ink:#17202a; --muted:#586574; --paper:#f7f8fa; --card:#fff; --line:#d8dee6; --red:#9f1d20; --red-bg:#fff0f0; --amber:#8a4b08; --amber-bg:#fff8e8; --green:#17633b; --green-bg:#edf9f1; --blue:#1558a6; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:var(--paper); font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    main { max-width:1120px; margin:0 auto; padding:32px 20px 64px; }
+    h1,h2,h3 { line-height:1.2; margin:0 0 14px; }
+    h1 { font-size:clamp(2rem,5vw,3.4rem); letter-spacing:-.03em; }
+    h2 { font-size:1.55rem; margin-top:38px; }
+    h3 { font-size:1.05rem; }
+    p { max-width:78ch; }
+    a { color:var(--blue); }
+    .eyebrow { color:var(--muted); font-size:.78rem; font-weight:750; letter-spacing:.12em; text-transform:uppercase; }
+    .hero { padding:18px 0 10px; }
+    .alert { border:2px solid var(--red); background:var(--red-bg); border-radius:14px; padding:18px 20px; margin:22px 0; }
+    .alert strong { color:var(--red); }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:14px; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px; box-shadow:0 2px 8px #17202a0b; }
+    .card .label { color:var(--muted); font-size:.79rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase; }
+    .card .value { display:block; font-size:1.45rem; font-weight:780; margin-top:6px; }
+    .fail { color:var(--red); }
+    .pass { color:var(--green); }
+    .warn { color:var(--amber); }
+    .small { color:var(--muted); font-size:.91rem; }
+    table { width:100%; border-collapse:collapse; background:var(--card); border:1px solid var(--line); border-radius:10px; overflow:hidden; }
+    th,td { padding:11px 12px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+    th { background:#eef2f6; font-size:.84rem; }
+    tr:last-child td { border-bottom:0; }
+    code { background:#eef2f6; border-radius:4px; padding:.08em .3em; font-size:.92em; }
+    .button-row { display:flex; flex-wrap:wrap; gap:10px; margin:18px 0; }
+    .button { display:inline-block; padding:10px 14px; border-radius:8px; text-decoration:none; font-weight:720; border:1px solid #b7c2ce; background:#fff; }
+    .button.primary { background:#173b68; border-color:#173b68; color:#fff; }
+    .button.danger { background:var(--red-bg); border-color:#e2a4a6; color:var(--red); }
+    .note { border-left:4px solid var(--amber); background:var(--amber-bg); padding:12px 15px; }
+    .passbox { border-left:4px solid var(--green); background:var(--green-bg); padding:12px 15px; }
+    footer { border-top:1px solid var(--line); margin-top:44px; padding-top:18px; color:var(--muted); font-size:.9rem; }
+    @media (max-width:700px) { main { padding:22px 14px 48px; } th,td { padding:9px 8px; font-size:.91rem; } }
+  </style>
+</head>
+<body>
+<main>
+  <header class="hero">
+    <div class="eyebrow">GEMSDOE85 · H85 · 2026-10-22 UTC</div>
+    <h1>Auditable result, not a submission</h1>
+    <p>The H85 scale-space detrended-slope persistence lane completed its preregistered three-arm budget. The formal candidate is format-valid, but the registry-overlap gate failed. This page preserves the negative result and prevents a blocked raster from being mistaken for an upload recommendation.</p>
+  </header>
+
+  <section class="alert" aria-label="submission warning">
+    <strong>DO NOT SUBMIT.</strong> Neither download on this page is submission-ready. The formal H85 artifact is blocked by duplicate dot overlap; the separate selector control is also blocked. No DrivenData slot was spent and no organizer score exists.
+  </section>
+
+  <section class="grid" aria-label="status summary">
+    <div class="card"><span class="label">Formal verdict</span><span class="value fail">NEGATIVE</span><span class="small">H85 run card</span></div>
+    <div class="card"><span class="label">Format validator</span><span class="value pass">PASSED</span><span class="small">single band · EPSG:32611 · finite [0,1]</span></div>
+    <div class="card"><span class="label">Uniqueness gate</span><span class="value fail">FAILED</span><span class="small">final dot overlap exceeds 0.70</span></div>
+    <div class="card"><span class="label">Organizer score</span><span class="value warn">NONE</span><span class="small">not submitted; no claim</span></div>
+  </section>
+
+  <section>
+    <h2>What failed</h2>
+    <p>The lane’s standing stop rule is checked both before placement and on final dots: stop if surface rank correlation exceeds <code>0.90</code> or if more than <code>70%</code> of dots fall within three pixels of a registry raster. Dense continuous rasters are excluded from dot-overlap comparisons; 181 sparse registry rasters remained in the formal audit.</p>
+    <table>
+      <thead><tr><th>Receipt</th><th>Result</th><th>Interpretation</th></tr></thead>
+      <tbody>
+        <tr><td>Formal H85 candidate</td><td><code>60,000</code> proposed/final dots; maximum surface Spearman <code>0.2814034636</code>; maximum proposed overlap <code>0.9939500000</code>; maximum final overlap <code>0.9939166667</code></td><td class="fail"><strong>Blocked.</strong> Surface-rank check was below its threshold, but dot overlap was not.</td></tr>
+        <tr><td>Selector-only negative control</td><td><code>25,111</code> selected dots; internal cap <code>0.40</code> of the requested 60,000 = 24,000 hits per registry; maximum final overlap <code>0.9557564414</code></td><td class="fail"><strong>Blocked.</strong> The stricter internal cap did not make the final emitted dots unique. This is not a new experiment or a repair.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Validated evidence downloads</h2>
+    <p>These files are retained for reproducibility and manual review only. The validator receipt confirms upload-format properties; it does not waive the uniqueness gate.</p>
+    <div class="button-row">
+      <a class="button danger" href="downloads/gems85-h85-scalescarp-persistence-20261022T220819Z-zeros.tif">Formal H85 TIF — blocked</a>
+      <a class="button" href="downloads/gems85-h85-scalescarp-persistence-20261022T220819Z-zeros.zip">Formal H85 ZIP — blocked</a>
+      <a class="button danger" href="downloads/gems85-h85-scalescarp-persistence-20261022T220819Z-unique-selector-DO-NOT-SUBMIT-zeros.tif">Selector TIF — do not submit</a>
+      <a class="button" href="downloads/gems85-h85-scalescarp-persistence-20261022T220819Z-unique-selector-DO-NOT-SUBMIT-zeros.audit.json">Selector validator receipt</a>
+    </div>
+    <div class="note"><strong>Portal safety:</strong> the retained files use one float32 band, the sample grid’s CRS/shape/transform, finite values in <code>[0,1]</code>, zeros outside the footprint, and zero known-catalogue pixels. Those are necessary format checks, not evidence of a valid competition submission.</div>
+  </section>
+
+  <section>
+    <h2>Formal H85 measurement</h2>
+    <p>The final arm is reported with the complete score metadata. It is a local buffered hide-and-recover measurement, not a leaderboard result.</p>
+    <table>
+      <thead><tr><th>Metric</th><th>Receipt value</th></tr></thead>
+      <tbody>
+        <tr><td>Score</td><td><strong>HOLDOUT-DTI 0.1078732951</strong></td></tr>
+        <tr><td>Evaluator</td><td><code>GEMSDOE85-evaluate_holdout.py-v1</code> — alpha 0.2, beta 0.8, 300 m triangular kernel</td></tr>
+        <tr><td>Withheld positives</td><td><code>18,313</code>; 957 of 3,199 catalogue components held; three-pixel buffer</td></tr>
+        <tr><td>95% CI</td><td><code>[0.0963347376, 0.1204806403]</code></td></tr>
+        <tr><td>Leakage canary</td><td>passed; maximum effective AUC <code>0.6422880099</code> below the <code>0.90</code> stop threshold</td></tr>
+      </tbody>
+    </table>
+    <p class="small">The selector control’s independent measurement is <strong>HOLDOUT-DTI 0.0287439365</strong>, same evaluator and 18,313 withheld positives, with 95% CI <code>[0.0171119769, 0.0408655242]</code>. It is shown only as a negative control and must not be substituted for the H85 result.</p>
+  </section>
+
+  <section>
+    <h2>Method and limitations</h2>
+    <div class="grid">
+      <div class="card"><h3>Preregistered lane</h3><p>Official feature band 19, <code>det_elev_slope</code>, is transformed with fixed Gaussian scales 0.5, 1, 2, and 3 pixels. The persistence envelope is emitted as separated local peaks away from the known catalogue.</p></div>
+      <div class="card"><h3>Named non-fault mimics</h3><p>Paleoshoreline benches, terraces, roads, mines, lithologic contacts, and processing seams can create the same slope edge. The holdout cannot prove discovery of private new faults.</p></div>
+      <div class="card"><h3>Data access</h3><p>The small grid/catalogue files and the feature stack are owner-supplied, hash-pinned mirrors. DrivenData authentication and private labels were unavailable to this run; the bytes are not organizer-authenticated.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Run cards and review links</h2>
+    <div class="button-row">
+      <a class="button primary" href="run-card.json">Formal H85 run card</a>
+      <a class="button" href="selector-run-card.json">Selector negative-control run card</a>
+      <a class="button" href="hypotheses.md">Preregistered hypothesis slate</a>
+      <a class="button" href="../README.md">Repository README</a>
+    </div>
+    <p class="small">The SHA-256 of the formal TIF is <code>660b219d247dc44c690a98939bae98c6f9534a144fa2d62acab2eb4bb3096a89</code>. The selector-control TIF SHA-256 is <code>6c29a406f2671ae64fc6614699f54e8eb5a7b39c65abdd7cd49d865741c33f7c</code>. Neither hash is a submission receipt.</p>
+  </section>
+
+  <section>
+    <h2>Official and manual-review sources</h2>
+    <p>The source register distinguishes links supplied for future/manual review from sources fetched by the run. No unavailable page is described here as independently verified.</p>
+    <table>
+      <thead><tr><th>Source</th><th>Role</th><th>Status in this checkout</th></tr></thead>
+      <tbody>
+        <tr><td><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/">DrivenData competition overview</a></td><td>competition context</td><td>provided link; not fetched under current egress</td></tr>
+        <tr><td><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/">DrivenData problem page</a></td><td>metric and submission format</td><td>provided link; not fetched under current egress</td></tr>
+        <tr><td><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/data/">DrivenData data tab</a></td><td>official data placement</td><td>requires login/enrollment; not fetched</td></tr>
+        <tr><td><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/leaderboard/">DrivenData leaderboard</a></td><td>live score review</td><td>not fetched; no score claimed</td></tr>
+        <tr><td><a href="https://github.com/drivendataorg/gems-prize-reference-solution">Reference solution</a></td><td>official reference repository</td><td>fetched from GitHub</td></tr>
+        <tr><td><a href="https://www.usgs.gov/data/geodawn-airborne-magnetic-and-radiometric-surveys-northwestern-great-basin-nevada-and">USGS GeoDAWN</a></td><td>future magnetic/radiometric context</td><td>manual-review link; not fetched under current egress</td></tr>
+        <tr><td><a href="https://gbcge.org/current-projects/ingenious/">GBC INGENIOUS</a></td><td>future geothermal context</td><td>manual-review link; not fetched under current egress</td></tr>
+        <tr><td><a href="https://gdr.openei.org/submissions/1391">DOE GDR submission 1391</a></td><td>future wells/springs context</td><td>manual-review link; not fetched under current egress</td></tr>
+        <tr><td><a href="https://epsg.io/32611">EPSG:32611</a></td><td>CRS review</td><td>local metadata checked; external page not fetched</td></tr>
+      </tbody>
+    </table>
+    <p class="small">The complete URL register, irregularity register, and data provenance receipt are in the repository. External data dependencies such as ASF/OPERA deformation, ComCat, 3DEP, GeoDAWN, heat flow, and GDR chemistry were deliberately not used in H85.</p>
+  </section>
+
+  <section>
+    <h2>Standing criteria</h2>
+    <div class="passbox"><strong>Maximize P(Win.</strong> Choose changes by measured evidence, not optimism: improve the internal holdout and format gates, then preserve uniqueness and provenance.</div>
+    <div class="note" style="margin-top:12px"><strong>Own the Outcome.</strong> A failed hypothesis, unavailable source, portal error, or missing receipt is a deliverable to surface—not a reason to invent a result.</div>
+  </section>
+
+  <footer>
+    Generated for static review from the repository receipts. Date: 2026-10-22 UTC. This page does not authenticate to DrivenData, submit a file, select a weekly slot, or report an organizer-confirmed score.
+  </footer>
+</main>
+</body>
+</html>

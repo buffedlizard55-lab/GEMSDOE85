@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GEMSDOE85 | Executive review guide</title>
+  <style>
+    :root { --ink:#17202a; --muted:#5b6876; --line:#d7dee7; --paper:#f6f8fa; --card:#fff; --red:#9f1d20; --redbg:#fff0f0; --blue:#1558a6; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    main { max-width:940px; margin:auto; padding:30px 20px 60px; }
+    h1,h2,h3 { line-height:1.2; }
+    h1 { font-size:clamp(2rem,5vw,3.1rem); letter-spacing:-.03em; margin:.2em 0 .35em; }
+    h2 { margin-top:34px; }
+    a { color:var(--blue); }
+    .kicker { color:var(--muted); text-transform:uppercase; letter-spacing:.12em; font-size:.78rem; font-weight:750; }
+    .warning { background:var(--redbg); border:2px solid var(--red); border-radius:12px; padding:16px 18px; }
+    .warning strong { color:var(--red); }
+    .box { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:16px 18px; margin:14px 0; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:12px; }
+    code { background:#edf1f5; border-radius:4px; padding:.1em .3em; }
+    table { width:100%; border-collapse:collapse; background:#fff; border:1px solid var(--line); }
+    th,td { border-bottom:1px solid var(--line); padding:10px 11px; text-align:left; vertical-align:top; }
+    th { background:#edf1f5; font-size:.84rem; }
+    tr:last-child td { border-bottom:0; }
+    .bad { color:var(--red); font-weight:750; }
+    .muted { color:var(--muted); }
+    .button { display:inline-block; margin:4px 7px 4px 0; padding:9px 12px; border:1px solid #b7c2ce; border-radius:7px; text-decoration:none; background:#fff; font-weight:700; }
+    footer { color:var(--muted); border-top:1px solid var(--line); margin-top:42px; padding-top:15px; }
+  </style>
+</head>
+<body>
+<main>
+  <div class="kicker">GEMSDOE85 · executive review guide · 2026-10-22 UTC</div>
+  <h1>H85 is a documented negative run</h1>
+  <div class="warning"><strong>Do not submit the artifacts.</strong> The formal H85 candidate passes the GeoTIFF format checks but fails the registry-overlap uniqueness gate. A separate registry-conditioned selector was run only as a negative control and also fails. There is no organizer-confirmed score.</div>
+
+  <h2>Decision in one minute</h2>
+  <div class="grid">
+    <div class="box"><strong>Hypothesis</strong><br>Scale-persistent edges in official band 19, <code>det_elev_slope</code>, can recover catalogue-missing fault scarps.</div>
+    <div class="box"><strong>Budget</strong><br>All three preregistered arms completed; no further geological arm, broad search, or weekly slot selection is authorized.</div>
+    <div class="box"><strong>Decision</strong><br><span class="bad">NEGATIVE / BLOCKED</span><br>Do not reinterpret format validity as uniqueness or competition readiness.</div>
+  </div>
+
+  <h2>Evidence summary</h2>
+  <table>
+    <thead><tr><th>Item</th><th>Receipt</th><th>Decision</th></tr></thead>
+    <tbody>
+      <tr><td>Formal final arm</td><td><strong>HOLDOUT-DTI 0.1078732951</strong>; evaluator <code>GEMSDOE85-evaluate_holdout.py-v1</code>, alpha 0.2/beta 0.8, 300 m triangular kernel; 18,313 withheld positives; 95% CI <code>[0.0963347376, 0.1204806403]</code></td><td>Local engineering result only.</td></tr>
+      <tr><td>Leakage canary</td><td>maximum effective AUC <code>0.6422880099</code>; threshold <code>0.90</code>; passed</td><td>Does not rescue uniqueness.</td></tr>
+      <tr><td>Formal uniqueness</td><td>181 sparse registries after dense-raster exclusion; maximum surface Spearman <code>0.2814034636</code>; maximum proposed/final dot overlap <code>0.9939500000</code>/<code>0.9939166667</code></td><td class="bad">Fail: stop and do not promote.</td></tr>
+      <tr><td>Selector control</td><td><strong>HOLDOUT-DTI 0.0287439365</strong>; same evaluator and 18,313 withheld positives; 95% CI <code>[0.0171120, 0.0408655]</code>; 25,111 dots; final overlap <code>0.9557564414</code></td><td class="bad">Fail; DO-NOT-SUBMIT diagnostic only.</td></tr>
+      <tr><td>Organizer score</td><td>none</td><td>No file was submitted and no live value is claimed.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Artifact identity and note</h2>
+  <p>The following names are preserved for audit identity, not recommended upload names. The short notes are each under 140 characters and are deliberately marked as blocked.</p>
+  <table>
+    <thead><tr><th>Artifact</th><th>Unique name</th><th>Short note</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Formal candidate</td>
+        <td><code>gems85-h85-scalescarp-persistence-20261022T220819Z</code></td>
+        <td><code>H85 scale-space det_elev_slope persistence; 60000 binary dots; HOLDOUT-DTI 0.1079 [0.0963,0.1205]</code><br><span class="bad">Blocked by registry overlap; do not use this note for a submission.</span></td>
+      </tr>
+      <tr>
+        <td>Selector control</td>
+        <td><code>gems85-h85-scalescarp-persistence-20261022T220819Z-unique-selector-DO-NOT-SUBMIT</code></td>
+        <td><code>DO NOT SUBMIT: selector control; cap=0.40 of 60,000; 25,111 dots; final overlap=0.9558 &gt; 0.70; HOLDOUT-DTI 0.0287 [0.0171,0.0409]</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>What format validation did—and did not—prove</h2>
+  <p>The writer and independent reread validator check the competition’s mechanical requirements: exactly one band, float32 values, finite values in <code>[0,1]</code>, the sample CRS/shape/geotransform, zeros outside the finite footprint, and no positive known-catalogue pixels. The formal TIF SHA-256 is <code>660b219d247dc44c690a98939bae98c6f9534a144fa2d62acab2eb4bb3096a89</code>.</p>
+  <p>Those checks do not prove method novelty, private-label performance, or acceptance by DrivenData. The final uniqueness audit is a separate hard gate, and it failed.</p>
+
+  <h2>Method, mimics, and limits</h2>
+  <ul>
+    <li><strong>Method:</strong> fixed Gaussian gradient-magnitude scales 0.5, 1, 2, and 3 pixels on official band 19; take the scale-persistence maximum and emit separated peaks away from the known catalogue.</li>
+    <li><strong>Non-fault mimics:</strong> paleoshoreline benches, terraces, roads, mines, lithologic contacts, and processing seams can produce the same edge.</li>
+    <li><strong>Holdout limitation:</strong> known catalogue faults are used as local truth; this cannot establish discovery of organizer-private faults.</li>
+    <li><strong>Data limitation:</strong> the feature stack and small grid/catalogue files are hash-pinned owner mirrors, not organizer-authenticated bytes. DrivenData authentication/data access was unavailable in this run.</li>
+    <li><strong>External dependencies:</strong> NASA ASF/OPERA deformation, USGS ComCat/3DEP, GeoDAWN, heat flow, and GDR chemistry were documented as possible future inputs but were not used.</li>
+  </ul>
+
+  <h2>Manual-review checklist</h2>
+  <ol>
+    <li>Read the formal run card and uniqueness receipt before opening a raster.</li>
+    <li>Confirm that the negative verdict is preserved; do not select a weekly competition slot.</li>
+    <li>If a future unrestricted run is authorized, authenticate the official data-tab download, rerun the same validator and uniqueness gate, and obtain a portal receipt before calling any result <code>ORGANIZER-CONFIRMED</code>.</li>
+    <li>Do not use the selector as a geological repair or as an extra experiment.</li>
+  </ol>
+  <p>
+    <a class="button" href="index.html">Status landing page</a>
+    <a class="button" href="run-card.json">Formal run card</a>
+    <a class="button" href="selector-run-card.json">Selector run card</a>
+    <a class="button" href="hypotheses.md">Hypothesis slate</a>
+    <a class="button" href="../README.md">README and full project prompt</a>
+  </p>
+
+  <h2>Source register</h2>
+  <p>Manual-review links are retained in <code>registry/sources.json</code>. DrivenData overview, problem, data, and leaderboard pages require explicit access review here; the page does not present them as fetched or as current live receipts. The GitHub reference solution is the only listed external reference marked fetched in the register.</p>
+  <p><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/">Competition overview</a> · <a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/">Problem and metric</a> · <a href="https://www.drivendata.org/competitions/306/competition-doe-gems/data/">Official data tab</a> · <a href="https://www.drivendata.org/competitions/306/competition-doe-gems/leaderboard/">Leaderboard</a> · <a href="https://github.com/drivendataorg/gems-prize-reference-solution">Reference solution</a> · <a href="https://www.usgs.gov/data/geodawn-airborne-magnetic-and-radiometric-surveys-northwestern-great-basin-nevada-and">USGS GeoDAWN</a> · <a href="https://gbcge.org/current-projects/ingenious/">INGENIOUS</a> · <a href="https://gdr.openei.org/submissions/1391">GDR 1391</a> · <a href="https://epsg.io/32611">EPSG:32611</a></p>
+
+  <footer><strong>Maximize P(Win.</strong> Use measured evidence. <strong>Own the Outcome.</strong> Surface failed hypotheses, access limits, and missing receipts instead of inventing success. This guide does not submit, authenticate, or claim an organizer score.</footer>
+</main>
+</body>
+</html>

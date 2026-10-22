@@ -1,0 +1,45 @@
+{
+  "label": "VALIDATOR-RECEIPT",
+  "path": "/home/user/GEMSDOE85/docs/downloads/gems85-h85-scalescarp-persistence-20261022T220819Z-zeros.tif",
+  "sha256": "660b219d247dc44c690a98939bae98c6f9534a144fa2d62acab2eb4bb3096a89",
+  "bytes": 196830,
+  "shape": [
+    3730,
+    3292
+  ],
+  "crs": "EPSG:32611",
+  "transform": [
+    100.0,
+    0.0,
+    243350.0,
+    0.0,
+    -100.0,
+    4508550.0
+  ],
+  "dtype": "float32",
+  "count": 1,
+  "nodata": null,
+  "footprint_pixels": 5167373,
+  "positive_pixels": 60000,
+  "unit_pixels": 60000,
+  "nan_inside_footprint": 0,
+  "nan_total": 0,
+  "min_value": 0.0,
+  "max_value": 1.0,
+  "catalogue_overlap_positive_pixels": 0,
+  "checks": {
+    "single_band": true,
+    "dtype_float32": true,
+    "shape_match": true,
+    "crs_match": true,
+    "transform_match": true,
+    "no_nan_inside_footprint": true,
+    "values_in_0_1_inside": true,
+    "all_pixels_finite": true,
+    "values_in_0_1_entire_raster": true,
+    "outside_footprint_zero": true,
+    "zero_catalogue_pixels": true
+  },
+  "notes": [],
+  "passed": true
+}

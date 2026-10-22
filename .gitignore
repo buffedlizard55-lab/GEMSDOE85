@@ -1,0 +1,35 @@
+# Python and local environments
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+build/
+dist/
+
+# The 419 MB competition feature stack is restored locally and is never committed.
+data/training_features.tif
+data/gems-geodawn-numerical-features.tif
+data/bridge/
+data/cache/
+.cache/
+work/
+
+# Local registry mirrors and generated scratch files
+registry/rasters/
+registry/local/
+*.log
+
+# Keep only the public deliverable and audit receipts in docs/downloads.
+docs/downloads/*
+!docs/downloads/README.md
+!docs/downloads/*.tif
+!docs/downloads/*.zip
+!docs/downloads/*.json
+
+# OS/editor
+.DS_Store
+.idea/
+.vscode/

@@ -1,0 +1,14 @@
+{
+  "label": "PREREGISTRATION",
+  "method_id": "H85-scale-space-detrended-slope-persistence",
+  "hypothesis": "The maximum of four normalized Gaussian slope-edge scales will recover more withheld catalogue pixels than a single 100 m scale at a fixed sparse emission budget.",
+  "candidate_order": ["E1-single-scale", "E2-two-scale-envelope", "E3-four-scale-persistence-envelope"],
+  "fixed_sigmas_px": [0.5, 1.0, 2.0, 3.0],
+  "fixed_band": 19,
+  "fixed_budget_dots": {"E1-single-scale": 50000, "E2-two-scale-envelope": 50000, "E3-four-scale-persistence-envelope": 60000},
+  "holdout": {"hold_fraction": 0.30, "buffer_px": 3, "seed": 20261021, "alpha": 0.2, "beta": 0.8, "kernel_radius_m": 300},
+  "canary_auc_limit": 0.90,
+  "uniqueness_limits": {"surface_rank_correlation": 0.90, "dot_overlap_within_3px": 0.70},
+  "stop_rule": "Run no more than three arms. Write no artifact if E3 does not beat E1 or if canary, validator, or uniqueness fails.",
+  "created_utc": "2026-10-22T22:08:19Z"
+}
