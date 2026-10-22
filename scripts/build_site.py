@@ -11,10 +11,10 @@ ROOT = Path(__file__).resolve().parents[1]
 def build(root=ROOT):
     docs = root / 'docs'
     card = json.loads((root / 'evidence/run_card.json').read_text())
-    if card.get('verdict') != 'negative' or card.get('safe_to_submit') is not False:
+    if card.get('verdict') != 'negative' or card.get('safe_to_submit') is not False or card.get('safe_to_download') is not False:
         raise ValueError('No authorized promotion implementation: refusing publication')
     if list(docs.rglob('*.tif')) or list(docs.rglob('*.zip')):
-        raise ValueError('Unapproved public binary; quarantine before publishing')
+        raise ValueError('Unapproved public binary; Quarantine before publishing')
     for folder in ['evidence', 'registry']:
         (docs / folder).mkdir(exist_ok=True)
         # Publish only already-public records; no credentials or input arrays.
@@ -67,7 +67,7 @@ Their format validity does not establish uniqueness, holdout improvement, or per
     status = '<h2>Why release is blocked</h2><ul>' + ''.join('<li>'+html.escape(x)+'</li>' for x in card['blockers']) + '</ul>'
     status += '<p>REGISTRY-MEASUREMENT: ' + ('the pinned witness was re-fetched, SHA-256 verified, and remeasured with the unmodified shared saturation function; every allowed cell is covered by its literal overlap halo.' if sat and sat['universal_overlap_blocker'] else 'witness not locally verified; no uniqueness clearance.') + '</p>'
     status += '<p>No geological experiment or submission slot used this session. Historical holdout runs use different evaluators and cannot be ranked against each other.</p>'
-    targets = set(docs.glob('*.html')) | {docs / name for name in bodies}
+    targets = set(docs.glob('*.html')) | {docs / name for name in bodies} | {docs / 'index.html'}
     targets |= set((docs / 'duplex-lane').glob('*.html'))
     for target in sorted(targets):
         # Nested legacy URLs remain usable, but never retain their old submit banners.

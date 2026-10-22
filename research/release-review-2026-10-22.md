@@ -42,3 +42,9 @@ H33's sparse binary off-catalogue geometry plausibly saves redundant prediction 
 - `python scripts/release_audit.py`: expected exit **2**, explicit negative run card; no raster written.
 - Deterministic publication regression test: pass. Reference integrity pins checked before witness measurement.
 - GitHub Pages settings API reports source `main` at repository root. The root landing page now visibly says do not submit and redirects to the canonical `docs/index.html`; no settings change is required. Live deployment after merge is a separate service event, not locally verified here.
+
+## Parallel merge reconciliation
+
+PR #10 initially conflicted because PRs #8/#9 merged overlapping fail-closed safety work while this session ran. Merged `origin/main` into the fixed session branch; retained incoming safety/audit histories and publication regression tests. Used the already-merged `submissions/quarantine/` location after byte-equality checks rather than retaining duplicate binaries. The canonical publication guard now also refuses `safe_to_download: true`; legacy paths cannot bypass it. Unified the educational-witness directory with the incoming `restore_learning.py` (`data/learning`). Retained incoming root-status checks and fixed the downloader's cached status to match its combined contract. No new method, experiment, slot or raster was introduced by reconciliation.
+
+Combined post-merge verification: **91 passed**, no skips; internal links/publication safety pass. Shared bytes remain unmodified. This adds incoming tests rather than dropping either session's safety checks.

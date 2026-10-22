@@ -59,6 +59,8 @@ def check(root=ROOT):
     card = json.loads((root / 'docs/evidence/run_card.json').read_text())
     if card['safe_to_submit'] is not False or card['safe_to_download'] is not False or card['verdict'] != 'negative':
         errors.append('This site supports only an explicit blocked/negative verdict')
+    if 'Current decision: do not submit' not in (root / 'index.html').read_text():
+        errors.append('Root redirect must visibly retain blocked decision')
     for name in ['index.html', 'executive-summary.html']:
         if 'No verified submission TIFF is available' not in (root / 'docs' / name).read_text() and 'Current decision: do not submit' not in (root / 'docs' / name).read_text():
             errors.append(f'Missing visible blocked status in {name}')

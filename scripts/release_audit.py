@@ -31,7 +31,7 @@ def audit(root=ROOT):
         path = root / 'data' / entry['dest']
         if path.stat().st_size != entry['bytes'] or sha(path) != entry['sha256']:
             raise ValueError('Reference integrity mismatch: ' + identity)
-    witness = root / 'data/raw/learning/registry-saturation-witness.tif'
+    witness = root / 'data/learning/registry-saturation-witness.tif'
     manifest = json.loads((root / 'registry/learning_manifest.json').read_text())
     expected = next(x for x in manifest['files'] if x['id'] == witness.name)
     saturation = None
