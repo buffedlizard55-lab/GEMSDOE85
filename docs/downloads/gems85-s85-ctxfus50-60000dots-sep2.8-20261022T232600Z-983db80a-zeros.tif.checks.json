@@ -1,0 +1,36 @@
+{
+  "path": "/home/user/GEMSDOE85/docs/downloads/gems85-s85-ctxfus50-60000dots-sep2.8-20261022T232600Z-983db80a-zeros.tif",
+  "sha256": "a6e229f8339e7fbf0a16681868636562b386d1f4babc9721636d3685371a543f",
+  "bytes": 323757,
+  "mode": "zeros",
+  "passed": true,
+  "checks": {
+    "file_exists": true,
+    "single_band": true,
+    "dtype_float32": true,
+    "shape_3730x3292": true,
+    "crs_epsg_32611": true,
+    "transform_matches_template": true,
+    "resolution_100m": true,
+    "no_nan_inside_footprint": true,
+    "no_inf_inside_footprint": true,
+    "values_in_0_1_inside_footprint": true,
+    "all_finite_whole_raster": true,
+    "values_in_0_1_whole_raster": true,
+    "outside_footprint_is_zero": true,
+    "no_nodata_tag": true,
+    "has_positive_predictions": true,
+    "no_prediction_outside_footprint": true,
+    "zero_mass_within_2px_of_catalogue": true
+  },
+  "stats": {
+    "emitting_pixels": 60000,
+    "prediction_mass": 60000.0,
+    "min_inside": 0.0,
+    "max_inside": 1.0,
+    "unique_values_inside": 2,
+    "footprint_pixels": 5167373,
+    "on_catalogue_pixels": 0,
+    "nodata_tag": null
+  }
+}

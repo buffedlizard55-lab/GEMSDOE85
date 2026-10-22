@@ -59,6 +59,37 @@ footer{color:var(--mut);font-size:13px;border-top:1px solid var(--line);margin-t
 <p class="sub">The hypothesis, the instrument, the controls, the ablation, and the results that
 did not work. Negative results are published, not hidden.</p>
 
+
+<h2>0. Current primary — S85-CTXFUS (session 2026-10-22, arena/22847afd)</h2>
+<div class="card">
+<p><b>Hypothesis (pre-registered in <code>research/session-22847afd-hypotheses.md</code> before
+measuring):</b> a fault is a <i>line in context</i>, not a pixel. The shipped field rank-fuses
+(50/50) two mechanisms that fail differently: (a) a <b>contextual supervised detector</b> —
+HistGradientBoosting on the 24 catalogue-free channels below plus six line-context channels
+(1.5&nbsp;km along-strike line support, multi-scale context means, five-field corroboration
+count), trained per fold on the visible catalogue only; and (b) the <b>GEO-Pb crest</b> of
+section 1. Emission is the measured gate configuration: 37,654 binary dots, 4&nbsp;px minimum
+separation, zero mass within 2&nbsp;px of the catalogue. Named mimic: erosional volcanic
+mesa/flow margins.</p>
+<p><b>Result (HOLDOUT-DTI, evaluator gems85-holdout-v1.0.0, 60,988 withheld positives):</b>
+the fusion is the only arm that beat the previous holdout best (GEO-Pb crest 0.07475 @ 37,654)
+— at both separations and both budgets, 3/4 folds positive, with overlapping 95% CIs. The three
+pre-registered RELAY arms (fault-network tip/relay completion geometry, alone and as a gate)
+were <b>clear negatives</b>; a relay channel inside the classifier was a train/test-reversal
+bug (training mean 0.090 on positives vs 0.006 on withheld positives) and was removed in the
+logged E2b/E3b ablation. Leakage canaries: RELAY 0.457,
+max context channel 0.582
+— all far below the 0.90 flag.</p>
+<table><tr><th>arm (all HOLDOUT-DTI @ 37,654 dots)</th><th class="n">pooled DTI</th></tr><tr><td class="mono">E3b_fusion_e2b_crest5050__sep40</td><td class="n">0.08082</td></tr><tr><td class="mono">E2b_ctxhgb_norelay__sep40</td><td class="n">0.07599</td></tr><tr><td class="mono">E1_crest_reference_remeasure__sep40</td><td class="n">0.07475</td></tr><tr><td class="mono">E3b_fusion_e2b_crest5050</td><td class="n">0.07411</td></tr><tr><td class="mono">E1_crest_reference_remeasure</td><td class="n">0.06953</td></tr><tr><td class="mono">E2b_ctxhgb_norelay</td><td class="n">0.06460</td></tr><tr><td class="mono">E3_fusion_poisson28</td><td class="n">0.05523</td></tr><tr><td class="mono">E2_ctxhgb</td><td class="n">0.04022</td></tr><tr><td class="mono">E1_gated_crest</td><td class="n">0.03708</td></tr><tr><td class="mono">E3_fusion_blurred_poisson28</td><td class="n">0.02775</td></tr><tr><td class="mono">E1_relay_alone</td><td class="n">0.02524</td></tr>
+<tr><td class="mono">crest reference (sep 2.8 / sep 4.0)</td><td class="n">0.06953 / 0.07475</td></tr>
+</table>
+<p style="margin-bottom:0">Full evidence: <code>evidence/session_22847afd_experiments.json</code>,
+<code>evidence/session_22847afd_e2b.json</code>, run card on the front page. Why the family best
+(0.2778) works and what beating it requires:
+<code>docs/research/why-02778-session-22847afd.md</code> in the repository.</p>
+</div>
+
+
 <h2>1. The lane — GEO-Pb, a juxtaposition detector</h2>
 <div class="card">
 <p>Every fault detector in the 60 sibling GEMSDOE repositories is a <b>derivative</b> operator —

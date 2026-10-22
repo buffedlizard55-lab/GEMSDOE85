@@ -67,7 +67,7 @@ no human inspected it, and it cannot reach this page unless all
   font-weight:700;margin-bottom:10px">⬇ Submission file — ready to upload</div>
   <a class="dl" href="downloads/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.tif">⬇ Download the GeoTIFF
   (428 KB)</a>
-  <div style="margin-top:14px"><a class="dl2" href="downloads/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-nan.tif">⬇ NaN-outside twin (alternate format) · 465 KB</a><a class="dl2" href="downloads/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.zip">⬇ zipped primary · 360 KB</a><a class="dl2" href="downloads/gems85-geopb-crest-60000dots-sep4-20261022T222707Z-cbb4e82c-zeros.tif">⬇ alt-60k (60,000 dots) · 355 KB</a><a class="dl2" href="downloads/gems85-geopb-crest-37654dots-sep4-20261022T222707Z-60029d07-zeros.tif">⬇ alt-38k (37,654 dots) · 294 KB</a></div>
+  <div style="margin-top:14px"><a class="dl2" href="downloads/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-nan.tif">⬇ NaN-outside twin (alternate format) · 465 KB</a><a class="dl2" href="downloads/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.zip">⬇ zipped primary · 360 KB</a><a class="dl2" href="downloads/gems85-geopb-crest-60000dots-sep4-20261022T222707Z-cbb4e82c-zeros.tif">⬇ alt-60k (60,000 dots) · 355 KB</a><a class="dl2" href="downloads/gems85-geopb-crest-37654dots-sep4-20261022T222707Z-60029d07-zeros.tif">⬇ alt-38k (37,654 dots) · 294 KB</a><a class="dl2" href="downloads/gems85-s85-ctxfus50-37654dots-sep4-20261022T232600Z-4f38c2b3-zeros.tif">⬇ S85-CTXFUS50 primary (37,654 dots) · 268 KB</a><a class="dl2" href="downloads/gems85-s85-ctxfus50-37654dots-sep4-20261022T232600Z-4f38c2b3-nan.tif">⬇ S85-CTXFUS50 NaN-outside twin · 310 KB</a><a class="dl2" href="downloads/gems85-s85-ctxfus50-37654dots-sep4-20261022T232600Z-4f38c2b3-zeros.zip">⬇ S85-CTXFUS50 zipped primary · 180 KB</a><a class="dl2" href="downloads/gems85-s85-ctxfus50-60000dots-sep2.8-20261022T232600Z-983db80a-zeros.tif">⬇ S85-CTXFUS50 alt-60k (sep 2.8px) · 316 KB</a><a class="dl2" href="downloads/gems85-s85-ctxfus50-37654dots-sep2.8-20261022T232600Z-cd1bee11-zeros.tif">⬇ S85-CTXFUS50 alt-37.6k (sep 2.8px) · 270 KB</a></div>
   <div style="margin-top:16px">
     <span class="tag t-ok">
     ALL 17 CHECKS PASS — OK TO DOWNLOAD AND SUBMIT</span>
@@ -97,6 +97,18 @@ footprint can trip that check. This file is <b>all-finite</b>: zeros outside the
 nodata tag, every value a real number in [0, 1]. <code>src/gems85/submission.py::validate</code>
 re-opens the written file and asserts it, and <code>write_submission()</code> refuses to return a
 path whose validation failed.</div>
+
+<h2>What the file looks like (diagnostic preview, not a gate)</h2>
+<div class="card">
+<img src="downloads/preview_ctxfus50_vs_h33_catalogue.png" alt="Preview map: candidate dots vs catalogue and the h33 artifact"
+     style="max-width:520px;width:100%;border:1px solid #30363d;border-radius:8px">
+<p class="sub" style="margin-bottom:0">400&nbsp;m max-pooled preview. <b style="color:#3cc8ff">Cyan</b> = this
+candidate's dots · <b style="color:#f0aa28">amber</b> = h33 (0.2778 OWNER-REPORT) dots ·
+<b style="color:#78ff8c">green</b> = both within the same 400&nbsp;m cell · grey = USGS/INGENIOUS catalogue
+(candidate has zero dots within 200&nbsp;m of it). Measured at full resolution: 37.9&nbsp;% of candidate
+dots lie within 3&nbsp;px of an h33 dot (gate &le;&nbsp;70&nbsp;%). No human inspected this image as an
+approval step — approval is the automated validation below.</p>
+</div>
 
 <h2>Format validation — every check, run on the written bytes</h2>
 <table><tr><th>check</th><th>result</th></tr><tr><td>file exists</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>single band</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>dtype float32</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>shape 3730x3292</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>crs epsg 32611</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>transform matches template</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>resolution 100m</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>no nan inside footprint</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>no inf inside footprint</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>values in 0 1 inside footprint</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>all finite whole raster</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>values in 0 1 whole raster</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>outside footprint is zero</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>no nodata tag</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>has positive predictions</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>no prediction outside footprint</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>zero mass within 2px of catalogue</td><td><span class="tag t-ok">PASS</span></td></tr></table>
@@ -248,11 +260,27 @@ leakage canary, the ablation and the negative results.<br>
 submission form.<br>
 <a href="data.html">Data &amp; sources →</a> every input file, its SHA-256 and its official link.</p>
 
-<h2>The other lane in this repository</h2>
-<p>GEMSDOE85 was worked by two independent lanes in parallel. This page is the <strong>GEO-Pb
-juxtaposition</strong> lane (H85-1). The <strong>transtensional pull-apart + gravity worm
-duplex</strong> lane (H85-duplex) reached <code>main</code> first and its artifacts are kept
-alongside these ones, untouched:</p>
+<h2>Session update 2026-10-22 — the primary above supersedes the GEO-Pb 90,000-dot file</h2>
+<div class="note"><b>What changed and why.</b> The previous primary (GEO-Pb crest, 90,000 dots)
+was emitted at the budget that maximised the *catalogue holdout*, whose marginal credit bar
+(&asymp;0.02/dot at DTI&asymp;0.1) is far below the *live* bar (0.0588/dot at the family best
+0.2778). The family's own live cascade (121k&rarr;0.1922, 44k&rarr;0.2600, 37,654&rarr;0.2778)
+shows the live operating point is &asymp;38k dots. The new primary is a different field
+(<b>S85-CTXFUS</b>: 30-channel contextual supervised detector rank-fused 50/50 with the GEO-Pb
+crest) emitted at that operating point, and it is the first field in this repo to beat the
+holdout best at matched budget (HOLDOUT-DTI 0.08082 vs 0.07475 @ 37,654, 3/4 folds, CIs
+overlap — see the run card). Three pre-registered alternatives tested in the same session
+(RELAY network-completion geometry, RELAY-gated crest, blurred-field emission) were
+<b>negative</b> and are published as such on the method page. The old files remain downloadable
+below, labelled superseded; none of them, and not the new file either, has an organizer score.</div>
+
+<h2>The other lanes in this repository</h2>
+<p>GEMSDOE85 was worked by independent lanes in parallel. The current primary is the
+<strong>S85-CTXFUS session</strong> candidate above. The <strong>GEO-Pb juxtaposition</strong>
+lane (H85-1) supplied the crest field that is one half of the fusion; its standalone files are
+the “previous GEO-Pb” alternates in the download list. The <strong>transtensional pull-apart +
+gravity worm duplex</strong> lane (H85-duplex) reached <code>main</code> first and its artifacts
+are kept alongside these ones, untouched:</p>
 <ul>
 <li><a href="duplex-lane/index.html">Duplex lane — front page</a> ·
     <a href="duplex-lane/executive-summary.html">its executive summary</a></li>
