@@ -43,6 +43,7 @@ def build(root=ROOT):
         prefix = '../' * (len(Path(name).parts) - 1)
         content = body.get(name, '<p>This historical lane portal is superseded. Return to the current status; its exports are not approved.</p>')
         path.write_text('<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GEMSDOE85 — submission gate</title><style>body{max-width:960px;margin:40px auto;padding:0 22px;font:17px/1.65 system-ui;color:#172535;background:#f5f7fa}a{color:#1259a7}.blocked{background:#fff1da;border-left:6px solid #ae4e00;padding:20px;margin:24px 0}li{margin:10px 0}nav{padding:12px 0}h1{line-height:1.2}</style>' + nav.format(prefix=prefix) + banner + content + '<footer>GEMSDOE85 · automated fail-closed research status · 2026-10-22</footer></html>')
+    (root / 'index.html').write_text('<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0; url=docs/index.html"><title>GEMSDOE85 — blocked submission</title><h1>Current decision: do not submit</h1><p>No verified submission TIFF is available. <a href="docs/index.html">Open status and research</a>.</p></html>')
     (docs / '.nojekyll').touch()
     return card
 
