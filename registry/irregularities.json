@@ -70,6 +70,27 @@
       "status": "fixed-on-branch",
       "finding": "Live Pages site serves repo root (source main:/, API update returned 403), whose index.html stated 'No verified submission TIFF is available' while docs/ published a 17/17-PASS validated TIF; also docs/downloads/run_card.json contained the duplex lane's card, not the primary GEO-Pb file's card.",
       "action_taken": "Root index.html rewritten to state the PASS verdict + sha256 and redirect to docs/index.html; docs/downloads/run_card.json replaced with evidence/run_card.json (GEO-Pb primary; duplex card preserved at evidence/run_card_duplex.json). Pages source could not be switched to /docs from this token (403) \u2014 root redirect is the workaround; owner may optionally set Settings>Pages to /docs."
+    },
+    {
+      "id": "IR-85-10",
+      "severity": "high",
+      "status": "open",
+      "finding": "evidence/duplicate_check.json reports is_duplicate=false while its own thresholds are exceeded: raw dot_overlap_3px=0.9914>0.7 (13gems lattice) and max overlap_lift=1.519>1.5 (gems49). Chance-corrected exemption not authorised by AGENTS.md.",
+      "action_taken": "Session bf7be90f: site verdict downgraded to BLOCKED/negative; no slot recommendation. Fix duplicate checker logic upstream; do not re-promote on lift alone."
+    },
+    {
+      "id": "IR-85-11",
+      "severity": "high",
+      "status": "fixed-on-branch",
+      "finding": "Merged site/README claimed 'OK TO DOWNLOAD AND SUBMIT / promote-as-candidate' while registry/lane.json=unassigned and evidence/saturation_certificate.json (overlap 1.0, universal blocker) was binding per AGENTS.md 3,7.",
+      "action_taken": "Banner, README status and root index corrected to BLOCKED (format PASS only); NaN-outside twin removed from download offers - it carries 7,111,787 NaNs and risks the reported [0,1] rejection."
+    },
+    {
+      "id": "IR-85-12",
+      "severity": "medium",
+      "status": "open",
+      "finding": "scripts/check_site.py (blocked-only session) forbids ANY .tif/.zip link or binary under docs/ and requires docs/evidence/run_card.json verdict=negative, so it can never pass on the merged GEO-Pb site that the user requires to offer a download. It is stale relative to the merged design.",
+      "action_taken": "Not deleted and not gamed: reported here; site instead carries visible BLOCKED banner + 'Current decision: do not submit'. Owner should update check_site.py to forbid only unlabelled/promoted downloads."
     }
   ]
 }
