@@ -11,7 +11,10 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'vendor'))
-from restore_data import sha256_file as sha256
+try:
+    from restore_data import sha256_file as sha256
+except ImportError:
+    from restore_data import sha256
 
 
 def verify_template(root=ROOT):
