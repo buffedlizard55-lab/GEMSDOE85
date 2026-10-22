@@ -1,0 +1,27 @@
+{
+  "date_utc": "2026-10-22",
+  "passes": [
+    {
+      "pass": 1,
+      "result": "Conflicting approval identified; artifacts archived and public status blocked."
+    },
+    {
+      "pass": 2,
+      "result": "Resolved test-path shadowing; restored shared tests; fixed downloader/preflight integration; reverified witness and seven historical TIFFs."
+    },
+    {
+      "pass": 3,
+      "result": "86 tests pass; internal links and fail-closed status pass; shared vendor bytes unchanged; no new geological experiment or slot used."
+    }
+  ],
+  "test_count": 86,
+  "experiments_run": 0,
+  "submission_slots_used": 0,
+  "requirements_unmet": [
+    "Unique-cleared new candidate",
+    "Current holdout improvement",
+    "Full verbatim prompt transcription",
+    "Organizer receipt verification"
+  ],
+  "review": "research/safety-review-2026-10-22.md"
+}

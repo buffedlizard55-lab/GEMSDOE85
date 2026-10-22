@@ -43,11 +43,19 @@ def gh_raw(repo: str, ref: str, path: str, out_fh) -> None:
     )
 
 
-def restore(entry: dict, force: bool = False) -> dict:
-    dest = DATA / entry["dest"]
+def restore(entry: dict, directory: Path | None = None, *, force: bool = False) -> dict:
+    base = DATA if directory is None else Path(directory)
+    relative = Path(entry["dest"])
+    # Explicit-directory callers restore one filename; manifest groups may use safe subdirs.
+    if (relative.is_absolute() or '..' in relative.parts or not relative.name
+            or (directory is not None and len(relative.parts) != 1)):
+        raise ValueError('dest must be a single local filename (or safe grouped manifest path)')
+    dest = base / relative
+    if not dest.resolve().is_relative_to(base.resolve()):
+        raise ValueError('dest must be a single local filename inside the target directory')
     if dest.exists() and not force:
         got = sha256_file(dest)
-        if got == entry["sha256"]:
+        if got == entry["sha256"] and dest.stat().st_size == entry["bytes"]:
             return {"id": entry["id"], "status": "cached", "sha256": got,
                     "bytes": dest.stat().st_size}
     dest.parent.mkdir(parents=True, exist_ok=True)
@@ -59,8 +67,8 @@ def restore(entry: dict, force: bool = False) -> dict:
                     raise ValueError(f"{entry['id']}: manifest has neither 'path' nor 'parts'")
                 gh_raw(entry["repo"], entry["ref"], p, out)
         got = sha256_file(tmp)
-        if got != entry["sha256"]:
-            raise ValueError(f"{entry['id']}: sha256 mismatch\n  expected {entry['sha256']}\n  got      {got}")
+        if got != entry["sha256"] or tmp.stat().st_size != entry["bytes"]:
+            raise ValueError(f"{entry['id']}: Size/hash mismatch\n  expected {entry['sha256']}\n  got      {got}")
         tmp.replace(dest)
     finally:
         if tmp.exists():

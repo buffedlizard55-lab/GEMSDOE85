@@ -1,3 +1,5 @@
+> **2026-10-22 safety review:** this shortlist predates merged GEO-Pb, duplex and supervised implementations. Statements below about an empty seed are historical. Method-level novelty must be re-audited; no current lane is assigned and no new experiment is authorized. See [current review](safety-review-2026-10-22.md).
+
 # Research shortlist — proposed, not assigned or tested
 
 Prepared before any geological implementation. **No hypothesis has a HOLDOUT-DTI result.** These are falsifiable proposals, not discovered faults or claimed new global methods. The seed repo implements none; metadata-only review of sibling repos cannot prove that another lane has never tried them. Their cross-lane novelty is **unverified**. Implementation is blocked by the missing lane/cache and the literal uniqueness-saturation certificate, so this is not an invitation to start another lane.
