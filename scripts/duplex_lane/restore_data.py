@@ -18,6 +18,9 @@ def sha256(path):
     return h.hexdigest()
 
 
+sha256_file = sha256
+
+
 def restore(entry, directory):
     directory = Path(directory)
     directory.mkdir(parents=True, exist_ok=True)
@@ -26,7 +29,7 @@ def restore(entry, directory):
         raise ValueError('Manifest destination must be a single local filename')
     dest = directory / relative
     if dest.is_file() and sha256(dest) == entry['sha256']:
-        return dict(id=entry['id'], path=str(dest.relative_to(ROOT)), sha256=entry['sha256'], bytes=dest.stat().st_size, status='present')
+        return dict(id=entry['id'], path=str(dest.relative_to(ROOT)), sha256=entry['sha256'], bytes=dest.stat().st_size, status='cached')
     # Staging is on the same filesystem. A failed fetch never publishes corrupt data.
     with tempfile.TemporaryDirectory(dir=directory) as tmp:
         assembled = Path(tmp) / 'assembled'

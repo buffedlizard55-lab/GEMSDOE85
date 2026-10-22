@@ -180,6 +180,6 @@
     "experiments_run": "3 pre-registered (E1,E2,E3) + E2b/E3b bugfix ablation of E2 (relay-channel train/test reversal), logged transparently",
     "submission_slots_used": 0
   },
-  "verdict": "promote",
+  "verdict": "promote-as-candidate",
   "verdict_caveat": "'promote' = cleared this repo's pre-registered gate (research/session-22847afd-hypotheses.md) and is published for the separate selector step. It is NOT a leaderboard projection; no organizer score exists for this file."
 }

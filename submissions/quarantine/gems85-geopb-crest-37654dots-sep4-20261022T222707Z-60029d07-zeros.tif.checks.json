@@ -1,0 +1,36 @@
+{
+  "path": "/home/user/GEMSDOE85/docs/downloads/gems85-geopb-crest-37654dots-sep4-20261022T222707Z-60029d07-zeros.tif",
+  "sha256": "a211e7c6e2cdb6665537b19d4902824d12bd1951185f6c66c1df86a843a5281e",
+  "bytes": 301369,
+  "mode": "zeros",
+  "passed": true,
+  "checks": {
+    "file_exists": true,
+    "single_band": true,
+    "dtype_float32": true,
+    "shape_3730x3292": true,
+    "crs_epsg_32611": true,
+    "transform_matches_template": true,
+    "resolution_100m": true,
+    "no_nan_inside_footprint": true,
+    "no_inf_inside_footprint": true,
+    "values_in_0_1_inside_footprint": true,
+    "all_finite_whole_raster": true,
+    "values_in_0_1_whole_raster": true,
+    "outside_footprint_is_zero": true,
+    "no_nodata_tag": true,
+    "has_positive_predictions": true,
+    "no_prediction_outside_footprint": true,
+    "zero_mass_within_2px_of_catalogue": true
+  },
+  "stats": {
+    "emitting_pixels": 37654,
+    "prediction_mass": 37654.0,
+    "min_inside": 0.0,
+    "max_inside": 1.0,
+    "unique_values_inside": 2,
+    "footprint_pixels": 5167373,
+    "on_catalogue_pixels": 0,
+    "nodata_tag": null
+  }
+}

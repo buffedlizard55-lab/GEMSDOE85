@@ -98,8 +98,26 @@ nodata tag, every value a real number in [0, 1]. <code>src/gems85/submission.py:
 re-opens the written file and asserts it, and <code>write_submission()</code> refuses to return a
 path whose validation failed.</div>
 
+<h2>What the file looks like (diagnostic preview, not a gate)</h2>
+<div class="card">
+<img src="downloads/preview_ctxfus50_vs_h33_catalogue.png" alt="Preview map: candidate dots vs catalogue and the h33 artifact"
+     style="max-width:520px;width:100%;border:1px solid #30363d;border-radius:8px">
+<p class="sub" style="margin-bottom:0">400&nbsp;m max-pooled preview. <b style="color:#3cc8ff">Cyan</b> = this
+candidate's dots · <b style="color:#f0aa28">amber</b> = h33 (0.2778 OWNER-REPORT) dots ·
+<b style="color:#78ff8c">green</b> = both within the same 400&nbsp;m cell · grey = USGS/INGENIOUS catalogue
+(candidate has zero dots within 200&nbsp;m of it). Measured at full resolution: 37.9&nbsp;% of candidate
+dots lie within 3&nbsp;px of an h33 dot (gate &le;&nbsp;70&nbsp;%). No human inspected this image as an
+approval step — approval is the automated validation below.</p>
+</div>
+
 <h2>Format validation — every check, run on the written bytes</h2>
 <table><tr><th>check</th><th>result</th></tr><tr><td>file exists</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>single band</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>dtype float32</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>shape 3730x3292</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>crs epsg 32611</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>transform matches template</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>resolution 100m</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>no nan inside footprint</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>no inf inside footprint</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>values in 0 1 inside footprint</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>all finite whole raster</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>values in 0 1 whole raster</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>outside footprint is zero</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>no nodata tag</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>has positive predictions</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>no prediction outside footprint</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>zero mass within 2px of catalogue</td><td><span class="tag t-ok">PASS</span></td></tr></table>
+
+<div class="note"><b>Session review 2026-10-22:</b> two pre-registered GEO-Pb variants
+(persistence retired; radius widened) scored HOLDOUT-DTI 0.09105 and 0.09773 @ 90k vs this
+file's 0.09838 — <b>both negative, neither was emitted</b>. This file remains the validated
+primary; it has <b>no organizer score</b> and is honestly projected below the 0.2778 incumbent.
+Details: <span class="mono">evidence/run_card_session_06987ae9.json</span> in the repository.</div>
 
 <h2>What this submission claims, and what it does not</h2>
 <div class="note"><b>No number on this site is a competition score.</b> Every measurement here is
@@ -123,7 +141,7 @@ re-verified against a DrivenData receipt here.</div>
     <div class="v">0.02589</div>
     <div class="l" style="text-transform:none">matched emitted mass</div></div>
   <div class="kpi"><div class="l">Verdict</div>
-    <div class="v" style="font-size:21px">promote</div>
+    <div class="v" style="font-size:21px">promote-as-candidate</div>
     <div class="l" style="text-transform:none">pre-registered gate</div></div>
 </div>
 <pre><code>{
@@ -295,7 +313,7 @@ lanes <em>do</em> now share one metric implementation, and
 <code>tests/test_metric.py</code> asserts the fast O(29N) path equals a literal brute-force
 transcription of the official definition — so at least the ruler is common.</p>
 
-<footer>Built 2026-10-22 23:36 UTC by <code>scripts/build_site.py</code> from <code>registry/</code> and
+<footer>Built 2026-10-22 23:26 UTC by <code>scripts/build_site.py</code> from <code>registry/</code> and
 <code>evidence/</code>. Every number on this site is generated from a measurement file; none is
 typed by hand. Repository:
 <a href="https://github.com/buffedlizard55-lab/GEMSDOE85">buffedlizard55-lab/GEMSDOE85</a>.

@@ -216,7 +216,7 @@ def main() -> int:
                                       "ablation of E2 (relay-channel train/test reversal), "
                                       "logged transparently",
                    "submission_slots_used": 0},
-        "verdict": "promote" if all(gate.values()) else "negative",
+        "verdict": "promote-as-candidate" if all(gate.values()) else "negative",
         "verdict_caveat": ("'promote' = cleared this repo's pre-registered gate "
                            "(research/session-22847afd-hypotheses.md) and is published "
                            "for the separate selector step. It is NOT a leaderboard "
@@ -249,7 +249,7 @@ def main() -> int:
         json.dumps(card, indent=2, default=float) + "\n")
     print(json.dumps({"gate": gate, "verdict": card["verdict"],
                       "sha256": pri["sha256"], "note_chars": len(NOTE)}, indent=2))
-    return 0 if card["verdict"] == "promote" else 1
+    return 0 if card["verdict"] == "promote-as-candidate" else 1
 
 
 if __name__ == "__main__":
