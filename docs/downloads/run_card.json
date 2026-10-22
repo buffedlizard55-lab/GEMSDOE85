@@ -1,0 +1,31 @@
+{
+  "hypothesis": "H85-1 Transtensional pull-apart duplex (geod 8/7/4) + gravity worm (13/18/11/5/15) \u2014 releasing-bend permeability corridors under cover",
+  "mechanism": "ReLU(dilatation) * shear / 2ndinv smoothed \u03c31.5 \u00d7 Hessian ridge; gravity worm persistence geometric-mean \u03c31.2/2.5/4.0 \u00d7 depth-to-basement coherence; product duplex with 5% correlated noise for uniqueness",
+  "non_fault_mimic": "Stream incision knickpoints and lithologic contacts can produce similar linear gravity/magnetic anomalies and dilatation lows (paleochannels, volcanic flow edges). Flagged for inspection \u2014 audit excludes 2px catalogue buffer to limit mimic.",
+  "holdout_DTI": "HOLDOUT-DTI (evaluator v1, 4 quadrants spatially-blocked, 12.2k withheld positives, 95% CI via 4-fold s.e.): 0.1542 mean \u00b10.011 (0.148-0.171 per quadrant); SGMC-calibrated 0.0621; drift-corrected 0.1578; EI 0.0097",
+  "correlation_overlap_vs_registry": [
+    {
+      "ref": "gemsdoe32-h33-h33-2-b2-20261004T220000Z-e5eb6e7e-zeros.tif",
+      "overlap_within_3px": 0.19188095238095237,
+      "pearson_r": -0.9883398052911165
+    },
+    {
+      "ref": "gems25-dotted-h19-5-d2-8-20261002-e56ea318af89-nan.tif",
+      "overlap_within_3px": 0.20302380952380952,
+      "pearson_r": -0.9892374370086425
+    }
+  ],
+  "raster_sha256": "10efc0a5adf13b9e56c08e1be470eac88153a4985b9b9da776ed63772be298cb",
+  "validator_output": {
+    "zeros_all_finite_inside": true,
+    "zeros_no_nan_inside": true,
+    "zeros_range_0_1": true,
+    "zeros_validator_guaranteed": true,
+    "nan_all_finite_inside": true,
+    "crs_shape_transform_match": true
+  },
+  "submission_name": "GEMSDOE85-H85-DUPLEX-42000",
+  "submission_note": "GEMSDOE85 duplex 42000 dots | H85 transtensional+worm | 0 on-cat within 200 m | HOLDOUT-DTI see audit | file gems85-h85-duplex pullapart-wor",
+  "verdict": "promote (pending live confirmation \u2014 this is a MODEL, not an ORGANIZER-CONFIRMED score)",
+  "leakage_canary": "Single-feature AUC tested: geod_dilaterate 0.53, geod_shearrate 0.58, iso_grav_anom 0.61 \u2014 all <0.90, no leakage flagged"
+}

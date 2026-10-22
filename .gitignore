@@ -1,0 +1,7 @@
+.cache/
+data/training_features.tif
+data/external/
+__pycache__/
+*.pyc
+.cache/
+.mypy_cache/
