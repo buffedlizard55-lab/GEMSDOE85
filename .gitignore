@@ -1,0 +1,6 @@
+data/
+data_mirror
+.cache/
+__pycache__/
+*.npy
+.venv/
