@@ -109,7 +109,7 @@ def main() -> None:
             "E2_orientation_consensus": "h85b-orient-consensus-maxcov",
             "E3_strain_gated": "h85c-straingate-maxcov"}[method]
     zeros_name = f"gems85-{slug}-{budget}-{ts}-{digest8}-zeros.tif"
-    out_dir = ROOT / "docs" / "downloads"
+    out_dir = ROOT / "submissions"
     audit = SW.write_pair(mask, labels, data / "sample_submission.tif", out_dir, zeros_name)
     receipt = dict(method=method, budget=budget, support_n=support_n,
                    emitted=int(mask.sum()), zeros_name=zeros_name,

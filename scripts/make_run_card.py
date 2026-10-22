@@ -65,5 +65,5 @@ card = {
                       "0.1023 [0.085, 0.122] at any swept budget (20k-55k); uniqueness ambiguous under "
                       "the strict protocol reading. Do not spend a submission slot.",
 }
-(E / "run_card.json").write_text(json.dumps(card, indent=2))
+(E / "run_card_h85.json").write_text(json.dumps(card, indent=2))
 print(json.dumps(card, indent=2))

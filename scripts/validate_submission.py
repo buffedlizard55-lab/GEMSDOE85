@@ -1,27 +1,54 @@
 #!/usr/bin/env python3
-"""Standalone validator: python scripts/validate_submission.py <data_dir> <tif>
-Re-reads the file from disk and prints the full receipt JSON (no human inspection).
-Exit code 0 iff every check passes."""
+"""Check a TIFF with the shared validators. Format PASS never means submit-ready."""
+from __future__ import annotations
+import argparse
 import json
-import sys
+import math
 from pathlib import Path
-
-import numpy as np
-import rasterio
+import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "src"))
-from gems85 import submission_writer as SW  # noqa: E402
+sys.path.insert(0, str(ROOT / 'vendor'))
+from gems57.gates import format_report, sha256
+from gems57.grid import load_grid, SHA256_SAMPLE_SUBMISSION, SHA256_EXISTING_FAULTS
+from gems57.validate import validate
 
 
-def main() -> None:
-    data, tif = Path(sys.argv[1]), Path(sys.argv[2])
-    with rasterio.open(data / "labels.tif") as s:
-        labels = s.read(1) >= 1
-    receipt = SW.validate(tif, data / "sample_submission.tif", labels)
-    print(json.dumps(receipt, indent=2))
-    sys.exit(0 if receipt["all_checks_passed"] else 1)
+def check(path):
+    sample = ROOT / 'data/raw/sample_submission.tif'
+    cat = ROOT / 'data/raw/existing_faults.tif'
+    if sha256(sample) != SHA256_SAMPLE_SUBMISSION or sha256(cat) != SHA256_EXISTING_FAULTS:
+        raise ValueError('Reference grid/catalogue integrity mismatch')
+    grid = load_grid(ROOT / 'data/raw')
+    template = format_report(path, sample, footprint=grid.footprint)
+    local = validate(path, grid.footprint)
+    return dict(format_ok=bool(template['ok'] and local['all_checks_passed']), template=template,
+        local=local, safe_to_submit=False, organizer_accepted=False,
+        reason='Format-only diagnostic. Does not establish geological performance, uniqueness, slot approval, or organizer acceptance.')
 
 
-if __name__ == "__main__":
-    main()
+def json_safe_metadata(value):
+    """Represent invalid numeric metadata explicitly; never alter raster pixels."""
+    if isinstance(value, float) and not math.isfinite(value):
+        return str(value)
+    if isinstance(value, dict):
+        return {key: json_safe_metadata(item) for key, item in value.items()}
+    if isinstance(value, (list, tuple)):
+        return [json_safe_metadata(item) for item in value]
+    return value
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('tif', type=Path)
+    args = parser.parse_args()
+    try:
+        report = check(args.tif)
+    except (OSError, ValueError) as exc:
+        report = dict(format_ok=False, safe_to_submit=False, error=str(exc))
+    print(json.dumps(json_safe_metadata(report), indent=2, allow_nan=False))
+    return 0 if report['format_ok'] else 2
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())

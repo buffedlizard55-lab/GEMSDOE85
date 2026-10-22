@@ -1,82 +1,13 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8">
-<title>GEMSDOE85 — Lane H85 submission (verdict: NEGATIVE)</title><style>body{font-family:system-ui,Arial,sans-serif;max-width:960px;margin:2rem auto;padding:0 1rem;line-height:1.55;color:#14202b}
-.banner{border-radius:12px;padding:1.2rem 1.4rem;font-size:1.35rem;font-weight:800;margin:1rem 0}
-.banner.ok{background:#0a7d33;color:#fff}.banner.no{background:#b00020;color:#fff}
-.banner span{font-size:1rem;font-weight:500}
-.dl{display:inline-block;background:#1453a3;color:#fff;padding:.8rem 1.2rem;border-radius:10px;text-decoration:none;font-weight:700;margin:.3rem .3rem .3rem 0}
-code{background:#eef2f6;padding:.15rem .35rem;border-radius:5px;word-break:break-all}
-table{border-collapse:collapse;width:100%}td,th{border:1px solid #ccd;padding:.45rem .6rem;text-align:left}
-.copy{background:#f6f8fa;border:1px solid #dfe3e8;border-radius:8px;padding:.7rem 1rem}</style></head><body>
-<h1>GEMSDOE85 · DOE GEMS Prize · Lane H85</h1>
-<p><b>Core values:</b> Maximize P(Win) · Own the Outcome. Every number below is labelled
-HOLDOUT-DTI (local instrument) or ORGANIZER-CONFIRMED (submission-page receipt). A projection is never a score.</p>
-
-<div class="banner no">🔴 DO NOT SUBMIT — VERDICT: NEGATIVE<br><span>Holdout did not beat the valid control and uniqueness is ambiguous under the strict protocol reading. The file below is downloadable for INSPECTION / AUDIT ONLY. Do not spend a weekly submission slot on it.</span></div>
-
-<h2>⬇ Submission file (inspection)</h2>
-<p>
-<a class="dl" href="downloads/gems85-h85a-foldproper-hgb-maxcov-37654-20261022T221031Z-bf96e456-zeros.tif">Download .tif (191404 bytes)</a>
-<a class="dl" href="downloads/gems85-h85a-foldproper-hgb-maxcov-37654-20261022T221031Z-bf96e456-zeros.tif.zip">Download .zip (single GeoTIFF inside)</a>
-<a class="dl" href="downloads/gems85-h85a-foldproper-hgb-maxcov-37654-20261022T221031Z-bf96e456-audit.json">Validator audit JSON</a>
-<a class="dl" href="executive-summary.html">Executive summary — how to submit</a>
-</p>
-<div class="copy"><b>Unique submission name:</b> <code>gems85-h85a-foldproper-hgb-maxcov-37654-20261022T221031Z-bf96e456-zeros.tif</code><br>
-<b>Note to paste (≤140 chars, 93/140):</b> <code>H85-A fold-proper HGB maxcov 37654; HOLDOUT-DTI 0.0984 vs ctrl 0.1023; NEGATIVE-do-not-submit</code><br>
-<b>sha256:</b> <code>ccc8a7a4e53c406de00c5ba40612f5d3df2b0f4afc869dd1b997d5b836a0209b</code><br>
-single band · float32 · EPSG:32611 · 100 m · 3730×3292 · 37654 positive pixels ·
-every grid cell finite · every value in [0, 1] · 0 NaN anywhere · no nodata tag ·
-0 px on catalogue · min distance to catalogue 2.24 px</div>
-
-<h2>Why this verdict (machine-checked, no human inspection)</h2>
-<table><tr><th>candidate / control</th><th>label</th><th>DTI</th><th>95% CI</th><th>withheld positives</th></tr>
-<tr><td>E1_supervised_hgb</td><td>HOLDOUT-DTI</td><td>0.0984</td><td>[0.0791, 0.1183]</td><td>24440</td></tr>
-<tr><td>E2_orientation_consensus</td><td>HOLDOUT-DTI</td><td>0.0366</td><td>[0.0288, 0.0442]</td><td>24440</td></tr>
-<tr><td>E3_strain_gated</td><td>HOLDOUT-DTI</td><td>0.0317</td><td>[0.0223, 0.0399]</td><td>24440</td></tr>
-<tr><td>CTRL_d28_0.2600 (registry control)</td><td>HOLDOUT-DTI</td><td>0.1023</td><td>[0.0845, 0.1222]</td><td>24440</td></tr>
-<tr><td>CTRL_h33_0.2778 (registry control)</td><td>HOLDOUT-DTI</td><td>0.0046</td><td>[0.0040, 0.0054]</td><td>24440</td></tr>
-</table>
-<p>Evaluator: <code>gems85-pooled-hide-v1</code> — hide-and-recover: whole fault segments withheld with a
-1.5 km buffer, catalogue-based features derived only from visible faults, visible faults masked
-pixel-exactly, pooled DTI (α=0.2, β=0.8, 300 m triangular kernel). The 0.2778 winner raster is an
-invalid bar on this instrument (it was pruned against the full catalogue — IR-85-08); the valid bar
-is the d2.8 control. E1 does not beat it at any swept budget (20k–55k dots). Leakage canary: no
-feature alone exceeds AUC 0.90. Uniqueness: max |Spearman| vs registry surfaces
-0.224 ≤ 0.90;
-dot-overlap ≤ 0.70 against every comparable dotted submission, but &gt; 0.70 against three saturated
-registry rasters under the strict reading (IR-85-07) — logged, promotion stopped.</p>
-
-<h2>Validator receipt (re-read from the written bytes)</h2>
-<ul><li>✅ single_band</li><li>✅ dtype_float32</li><li>✅ shape_3730x3292</li><li>✅ crs_matches_sample_epsg32611</li><li>✅ transform_matches_sample</li><li>✅ footprint_px_matches_sample</li><li>✅ no_nan_inside_footprint</li><li>✅ values_in_0_1_inside_footprint</li><li>✅ binary_values_only</li><li>✅ nodata_is_none</li><li>✅ all_finite_whole_grid</li><li>✅ whole_grid_in_0_1</li><li>✅ zero_on_catalogue</li><li>✅ zero_within_2px_of_catalogue</li></ul>
-<p><b>all_checks_passed: True</b> — CRS/shape/transform match the sample submission;
-no NaN inside the footprint; values in [0,1]. This is the check that prevents the portal error
-<code>Predicted values must be in range [0, 1]</code>.</p>
-
-<h2>Answer to the brief's question</h2>
-<p><b>Why did h33-2-b2 get 0.2778 (ORGANIZER-CONFIRMED)?</b> The metric makes every emitted pixel cost
-0.2 denominator mass; a dot helps iff its kernel credit exceeds 0.2·DTI. The winner is a binary,
-~2.8 px-Poisson-thinned, catalogue-halo-pruned subset of a strong multi-physics ridge field — thinning
-deletes dots whose 300 m coverage a neighbour already supplies. <b>Can a unique file beat it?</b>
-Only with a better-ranked surface at the same emission discipline. Lane H85's fold-proper supervised
-surface is genuinely unique (overlap 0.40 vs the winner's dots) but its HOLDOUT-DTI does not beat the
-valid control, so — honestly — <b>no promotable file was found this session</b>; the negative result
-is the deliverable, and the next lever (sub-km seismicity, sandbox-blocked; spring-chain H85-D) is
-documented in the hypotheses page.</p>
-
-<h2>Research & registries</h2>
-<ul>
-<li><a href="https://github.com/buffedlizard55-lab/GEMSDOE85/blob/arena/5873bc3c-gemsdoe85/docs/research/hypotheses.md">Five hypotheses, ranked (layers, signatures, mimics)</a></li>
-<li><a href="https://github.com/buffedlizard55-lab/GEMSDOE85/blob/arena/5873bc3c-gemsdoe85/docs/research/why-02778-and-how-to-beat-it.md">Why 0.2778 won — full derivation</a></li>
-<li><a href="https://github.com/buffedlizard55-lab/GEMSDOE85/blob/arena/5873bc3c-gemsdoe85/registry/irregularities.json">Irregularities IR-85-01…09 (flagged for review)</a></li>
-<li><a href="https://github.com/buffedlizard55-lab/GEMSDOE85/blob/arena/5873bc3c-gemsdoe85/evidence/run_card.json">Run card (JSON)</a></li>
-</ul>
-
-<h2>Official sources</h2>
-<ul>
-<li>Competition / metric: <a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/">DrivenData problem description</a></li>
-<li>Leaderboard: <a href="https://www.drivendata.org/competitions/306/competition-doe-gems/leaderboard/">DrivenData leaderboard</a></li>
-<li>Reference solution: <a href="https://github.com/drivendataorg/gems-prize-reference-solution">drivendataorg/gems-prize-reference-solution</a></li>
-<li>Rules PDF: <a href="https://docs.nlr.gov/docs/fy26osti/96647.pdf">NLR FY26 OSTI 96647</a></li>
-<li>USGS GeoDAWN: <a href="https://www.usgs.gov/data/geodawn-airborne-magnetic-and-radiometric-surveys-northwestern-great-basin-nevada-and">USGS data release</a></li>
-<li>INGENIOUS: <a href="https://gbcge.org/current-projects/ingenious/">gbcge.org</a> · EPSG:32611: <a href="https://epsg.io/32611">epsg.io/32611</a> · Tversky: <a href="https://en.wikipedia.org/wiki/Tversky_index">Wikipedia</a> · GDR 1391: <a href="https://gdr.openei.org/submissions/1391">gdr.openei.org</a></li>
-</ul>
-</body></html>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Evidence-first GEMS fault-discovery review. No verified submission is available; see automated preflight and scientific blockers.">
+<title>Submission status · GEMSDOE85</title><link rel="stylesheet" href="style.css"></head>
+<body><a class="skip" href="#main">Skip to content</a><header><div class="brand"><a href="index.html">GEMS<span>DOE85</span></a><small>FAULT DISCOVERY / RESEARCH LOG</small></div><nav aria-label="Main navigation"><a href="index.html" aria-current="page">Overview</a><a href="executive-summary.html">How to submit</a><a href="hypotheses.html">Research</a><a href="why-h33.html">H33 analysis</a><a href="sources.html">Sources</a><a href="review.html">Review</a></nav></header>
+<main id="main"><section class="hero"><p class="eyebrow">GEOLOGIC ENHANCED MAPPING SYSTEM · DOE GEMS PRIZE</p><h1>Better fault evidence.<br>Not another renamed raster.</h1><p class="lead">An auditable research system for finding missing faults in the GeoDAWN region. We publish what the evidence supports—and stop when the gates fail.</p></section>
+<section class="submission" aria-labelledby="submission-status"><div><span class="badge">BLOCKED · NEGATIVE PREFLIGHT</span><h2 id="submission-status">No verified submission TIFF is available.</h2><p><strong>Do not download an old submission or the sample and submit it as this run.</strong> No new candidate has passed scientific, uniqueness or slot-selection gates. No weekly slot was used.</p><p>This is a prerequisite/policy failure, not a failed geological hypothesis. No model experiment was run.</p><div class="actions"><a class="button" href="executive-summary.html">Submission status &amp; next steps</a><a class="button secondary" href="evidence/run_card.json" download>Download negative run card</a></div></div><div class="artifact"><span>SUBMISSION ARTIFACT</span><strong>Not generated</strong><dl><dt>Safe to submit</dt><dd>NO</dd><dt>Unique-cleared</dt><dd>NO</dd><dt>Candidate HOLDOUT-DTI</dt><dd>Not measured</dd><dt>Candidate SHA-256</dt><dd>Not available</dd></dl></div></section>
+<p class="timestamp">Automated preflight: 2026-10-22T21:58:40.753850+00:00. Source-page research: 2026-10-22. This is a dated snapshot, not a live organizer feed.</p>
+<section><p class="eyebrow">THE DECISIVE FINDING</p><h2>The literal overlap gate is saturated.</h2><div class="grid"><div class="panel"><h3>A prior covers the entire footprint</h3><p>The shared template verified a registry surface with positive support throughout the study area. Every nonempty candidate would be within its three-pixel halo, so it cannot pass the literal overlap rule.</p><p><a href="evidence/saturation_certificate.json">Read the measured certificate →</a></p></div><div class="panel"><h3>No silent exemptions</h3><p>We did not exclude dense priors, alter the dot definition, add noise, or copy H33. The missing explicit lane and transformed feature cache also block experiments.</p><p><a href="review.html">Review all irregularities →</a></p></div></div></section>
+<section><h2>What is verified today</h2><div class="grid thirds"><div class="panel"><span class="tag">INPUT INTEGRITY</span><h3>Core mirrors restored</h3><p>Features, labels, mapped faults and the sample grid were hash-verified. Owner mirrors are not authenticated organizer downloads.</p><a href="evidence/input_audit.json">Input audit</a></div><div class="panel"><span class="tag">RESEARCH, NOT A SCORE</span><h3>Four falsifiable ideas</h3><p>Ranked by qualitative promise and cost, each with named layers, physical signatures and a non-fault mimic. None is assigned or tested.</p><a href="hypotheses.html">Research shortlist</a></div><div class="panel"><span class="tag">SHARED TOOLS</span><h3>No private metric fork</h3><p>The evaluator, literal uniqueness code and fail-closed TIFF writer are pinned and unmodified. Contract tests are not geological validation.</p><a href="registry/template_pin.json">Source pins</a> · <a href="evidence/review_passes.json">Three-pass verification</a></div></div></section>
+<section><h2>Why study H33?</h2><p>Its sparse-dot structure and near-catalogue pruning can reduce redundant prediction mass under a maximum-cover metric. That is a plausible mechanism, not proof of the cause of its owner-reported result or a promise of a higher score.</p><a href="why-h33.html">Read the mathematical and byte-level analysis →</a></section>
+<section><h2>Remaining gates</h2><ul class="blockers"><li>No explicit single-method lane assignment supplied.</li><li>The template cached feature-stack bytes and hash manifest are unavailable locally.</li><li>Literal registry overlap rule blocks every nonempty candidate: a prior is positive throughout the allowed domain.</li><li>Full registry raster bytes have not been compared at either the pre-placement surface or final-dot stage.</li><li>No lane-specific feature canaries, whole-segment holdout run, paired baseline improvement or conditional 95% CI exists.</li><li>No trained lane model, candidate raster or automatic selector is implemented in this empty-seed repository.</li><li>Account-specific weekly remaining quota and submission-page receipts are unavailable; no slot selection authorized.</li></ul></section>
+<section class="panel"><h2>Registry scope, stated honestly</h2><p>Public Git-tree metadata for 88 repository names includes 2,060 possible-prior TIFF paths, including archived copies. These are inventory counts, not distinct submissions or performance scores. The raster bytes were not all compared.</p><p>Metadata snapshot: 2026-10-22T21:42:34.011725+00:00. Scheduled/manual refresh uploads an Actions artifact; it cannot silently promote a candidate or update this verdict.</p><a href="registry/public_inventory.json">Download metadata inventory</a> · <a href="sources.html">Claim-level official sources</a></section></main><footer><strong>Evidence before emission.</strong><span>Maximize P(Win) · Own the Outcome</span><p>Fault predictions are not proof of a geothermal resource. Local validation is not organizer acceptance.</p><a href="https://github.com/buffedlizard55-lab/GEMSDOE85">Repository &amp; reproducibility</a> · <a href="evidence/run_card.json">Machine-readable run card</a></footer></body></html>

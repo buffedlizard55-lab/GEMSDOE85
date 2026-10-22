@@ -1,121 +1,90 @@
 {
-  "hypothesis": "H85-A: a fold-proper supervised detector (HistGradientBoosting on the 35-channel template stack + 20 external channels, no catalogue-derived feature) ranks unmapped fault traces well enough that metric-exact max-coverage emission at 37,654 dots beats the H19-5 dotted-ridge family on hide-and-recover holdout.",
-  "mechanism": "Detector learns the multi-physics appearance of mapped faults per spatial fold; lazy-greedy max-coverage emission places binary dots only where expected marginal kernel credit is highest, confined to >2px from the catalogue.",
-  "named_non_fault_mimic": "Young alluvial/cultural lineaments (roads, canals, field boundaries) with fault-like multi-physics line expression.",
+  "schema_version": 1,
+  "reviewed_utc": "2026-10-22T21:58:40.753850+00:00",
+  "hypothesis": null,
+  "mechanism": null,
+  "non_fault_mimic": null,
+  "experiment_status": "NOT RUN: prerequisites and literal uniqueness gate blocked",
   "holdout": {
-    "label": "HOLDOUT-DTI",
-    "evaluator": "gems85-pooled-hide-v1",
-    "candidate_E1": 0.09836644419609976,
-    "candidate_E1_ci95": [
-      0.07908310354145492,
-      0.11829354283892304
-    ],
-    "control_d28": 0.10230495593167505,
-    "control_d28_ci95": [
-      0.08452043678926073,
-      0.12224614200086349
-    ],
-    "control_h33_invalid_bar_note": "CTRL_h33 HOLDOUT-DTI 0.0046 is an artifact (pruned vs full catalogue); see IR-85-08.",
-    "n_withheld_positives": 24440,
-    "experiments": {
-      "E1_supervised_hgb": {
-        "dti": 0.09836644419609976,
-        "ci95": [
-          0.07908310354145492,
-          0.11829354283892304
-        ]
+    "evidence_class": "HOLDOUT-DTI",
+    "evaluator_version": "gems57-pooled-hide-v2",
+    "dti": null,
+    "ci95": null,
+    "withheld_positive_pixels": null,
+    "status": "not run"
+  },
+  "registry": {
+    "correlation": null,
+    "overlap": null,
+    "phase_surface": "not run",
+    "phase_final_dots": "not run",
+    "uniqueness_cleared": false,
+    "saturation_certificate": {
+      "evidence_class": "REGISTRY-MEASUREMENT",
+      "witness_file": "data/raw/learning/registry-saturation-witness.tif",
+      "witness_sha256": "ab0a0a62eecf066a82713b09dd49f0f638a91fa3dd81f54cc34ae89afa3872be",
+      "positive_pixels": 5167373,
+      "allowed_pixels": 5106385,
+      "uncovered_allowed_pixels": 0,
+      "covered_allowed_fraction": 1.0,
+      "universal_overlap_blocker": true,
+      "overlap_limit": 0.7,
+      "support_definition": "finite prediction > 0 (inherited literal support rule)",
+      "implication": "Every nonempty candidate dot set in the allowed domain has forward overlap 1.0 with this prior; therefore it cannot pass the 0.70 gate."
+    }
+  },
+  "raster_sha256": null,
+  "validator": {
+    "status": "not run: no candidate",
+    "no_nan_inside_footprint": null,
+    "values_in_0_1": null,
+    "crs_match": null,
+    "shape_match": null,
+    "transform_match": null
+  },
+  "submission": {
+    "name": null,
+    "note": "No candidate: missing lane/cache and literal registry saturation. No weekly slot used."
+  },
+  "gates": {
+    "core_manifest_valid": true,
+    "core_mirror_integrity": [
+      {
+        "id": "training_features",
+        "ok": true
       },
-      "E2_orientation_consensus": {
-        "dti": 0.03661919908780273,
-        "ci95": [
-          0.028791344845300045,
-          0.04418560106113763
-        ]
+      {
+        "id": "labels",
+        "ok": true
       },
-      "E3_strain_gated": {
-        "dti": 0.031702508962376065,
-        "ci95": [
-          0.022257003088955247,
-          0.03989449774243403
-        ]
+      {
+        "id": "existing_faults",
+        "ok": true
+      },
+      {
+        "id": "sample_submission",
+        "ok": true
       }
-    },
-    "leakage_canary": "no feature AUC > 0.90 (max single channel 0.600; E1 field AUC 0.673)"
-  },
-  "organizer_confirmed_reference_scores": {
-    "h33-h33-2-b2-20261004T220000Z-e5eb6e7e-zeros": 0.2778,
-    "dotted-h19-5-d2-8": 0.26,
-    "leaderboard_high_unattributed": 0.4413,
-    "note": "Copied from submission-page receipts in the brief; no hash crosswalk available (IR-85-04). Not local measurements."
-  },
-  "correlation_overlap_vs_registry": {
-    "max_abs_spearman_surface_vs_any_registry_raster": 0.22439439634773453,
-    "worst_overlap_within_3px_comparable_budgets": {
-      "file": "/tmp/g32/docs/downloads/gemsdoe32-h32d-submodular-multipysics-46090-20261004T183200Z-4de30601-nan.tif",
-      "name": "gemsdoe32-h32d-submodular-multipysics-46090-20261004T183200Z-4de30601-nan.tif",
-      "spearman_rho_surface_vs_raster": 0.07865636777157753,
-      "dot_overlap_within_3px": 0.4966271843628831,
-      "registry_dots": 46090,
-      "candidate_dots": 37654,
-      "drift": false
-    },
-    "strict_reading_drift_rasters": [
-      "13gems_20261001_r13-lattice-s5_v2_nan-outside.tif",
-      "8GEMSDOE_Hedge-v2_submission.tif",
-      "gems10-h25-ctx-ridge-20260927T232947704150Z-6452ae1d00.tif",
-      "gems10-h28-dotted-ridge-20260928T020256236880Z-6452ae1d00.tif"
     ],
-    "verdict": "PASS vs comparable dotted submissions; FAIL under strict any-raster reading (IR-85-07)"
+    "core_inputs_available": true,
+    "template_unmodified": true,
+    "cached_stack_available": false
   },
-  "raster_sha256": "ccc8a7a4e53c406de00c5ba40612f5d3df2b0f4afc869dd1b997d5b836a0209b",
-  "validator_output": {
-    "mode": "zeros",
-    "file": "docs/downloads/gems85-h85a-foldproper-hgb-maxcov-37654-20261022T221031Z-bf96e456-zeros.tif",
-    "filename": "gems85-h85a-foldproper-hgb-maxcov-37654-20261022T221031Z-bf96e456-zeros.tif",
-    "bytes": 191404,
-    "sha256": "ccc8a7a4e53c406de00c5ba40612f5d3df2b0f4afc869dd1b997d5b836a0209b",
-    "crs": "EPSG:32611",
-    "transform": [
-      100.0,
-      0.0,
-      243350.0,
-      0.0,
-      -100.0,
-      4508550.0
-    ],
-    "shape": [
-      3730,
-      3292
-    ],
-    "dtype": "float32",
-    "nodata": null,
-    "positive_px": 37654,
-    "min": 0.0,
-    "max": 1.0,
-    "on_catalogue_px": 0,
-    "within_2px_catalogue_px": 0,
-    "min_dist_to_catalogue_px": 2.23606797749979,
-    "checks": {
-      "single_band": true,
-      "dtype_float32": true,
-      "shape_3730x3292": true,
-      "crs_matches_sample_epsg32611": true,
-      "transform_matches_sample": true,
-      "footprint_px_matches_sample": true,
-      "no_nan_inside_footprint": true,
-      "values_in_0_1_inside_footprint": true,
-      "binary_values_only": true,
-      "nodata_is_none": true,
-      "all_finite_whole_grid": true,
-      "whole_grid_in_0_1": true,
-      "zero_on_catalogue": true,
-      "zero_within_2px_of_catalogue": true
-    },
-    "all_checks_passed": true
-  },
-  "submission_name": "gems85-h85a-foldproper-hgb-maxcov-37654-20261022T221031Z-bf96e456-zeros.tif",
-  "submission_note_max_140_chars": "H85-A fold-proper HGB maxcov 37654; HOLDOUT-DTI 0.0984 vs ctrl 0.1023; NEGATIVE-do-not-submit",
-  "submission_note_chars": 93,
+  "blockers": [
+    "No explicit single-method lane assignment supplied.",
+    "The template cached feature-stack bytes and hash manifest are unavailable locally.",
+    "Literal registry overlap rule blocks every nonempty candidate: a prior is positive throughout the allowed domain.",
+    "Full registry raster bytes have not been compared at either the pre-placement surface or final-dot stage.",
+    "No lane-specific feature canaries, whole-segment holdout run, paired baseline improvement or conditional 95% CI exists.",
+    "No trained lane model, candidate raster or automatic selector is implemented in this empty-seed repository.",
+    "Account-specific weekly remaining quota and submission-page receipts are unavailable; no slot selection authorized."
+  ],
   "verdict": "negative",
-  "verdict_reason": "E1 pooled HOLDOUT-DTI 0.0984 [0.079, 0.118] does not beat the valid control 0.1023 [0.085, 0.122] at any swept budget (20k-55k); uniqueness ambiguous under the strict protocol reading. Do not spend a submission slot."
+  "safe_to_download": false,
+  "safe_to_submit": false,
+  "promoted": false,
+  "selector_implemented": false,
+  "submission_slots_used": 0,
+  "experiments_run": 0,
+  "note": "Negative preflight deliverable; not a geological negative result or a competition submission."
 }
