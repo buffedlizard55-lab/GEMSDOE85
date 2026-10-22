@@ -1,4 +1,6 @@
-<<<<<<< HEAD
+> Historical archive: inherited conflict-marker lines below are quoted text, not unresolved changes in this merge.
+
+> <<<<<<< HEAD
 # GEMSDOE85 — DOE GEMS Prize (DrivenData #306): Lane H85
 
 **Read this first, every session.** This repository exists to generate ONE unique,
@@ -159,7 +161,7 @@ organizer-authenticated — IR-85-03). `data/` is gitignored.
 - EPSG:32611: https://epsg.io/32611
 - Tversky index: https://en.wikipedia.org/wiki/Tversky_index
 - GDR submission 1391 (wellsprings): https://gdr.openei.org/submissions/1391
-=======
+> =======
 # GEMSDOE85 — evidence-first fault discovery
 
 ## Submission status: BLOCKED — no new TIFF is ready to submit
@@ -1014,4 +1016,4 @@ Go ahead and create a pull request and then merge the pull request onto the main
 ```
 
 </details>
->>>>>>> origin/main
+> >>>>>>> origin/main

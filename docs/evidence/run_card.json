@@ -1,24 +1,21 @@
 {
   "schema_version": 1,
-  "reviewed_utc": "2026-10-22T22:56:48.440188+00:00",
   "hypothesis": null,
   "mechanism": null,
   "non_fault_mimic": null,
-  "experiment_status": "NOT RUN: prerequisites and literal uniqueness gate blocked",
+  "experiment_status": "NOT RUN \u2014 duplicate-stop preflight; no lane assigned",
   "holdout": {
-    "evidence_class": "HOLDOUT-DTI",
-    "evaluator_version": "gems57-pooled-hide-v2",
+    "label": "HOLDOUT-DTI",
+    "evaluator_version": null,
     "dti": null,
     "ci95": null,
     "withheld_positive_pixels": null,
-    "status": "not run"
+    "status": "not run this session"
   },
   "registry": {
+    "uniqueness_cleared": false,
     "correlation": null,
     "overlap": null,
-    "phase_surface": "not run",
-    "phase_final_dots": "not run",
-    "uniqueness_cleared": false,
     "saturation_certificate": {
       "evidence_class": "REGISTRY-MEASUREMENT",
       "witness_file": "data/learning/registry-saturation-witness.tif",
@@ -31,61 +28,261 @@
       "overlap_limit": 0.7,
       "support_definition": "finite prediction > 0 (inherited literal support rule)",
       "implication": "Every nonempty candidate dot set in the allowed domain has forward overlap 1.0 with this prior; therefore it cannot pass the 0.70 gate."
-    }
+    },
+    "phase_surface": "stopped before placement",
+    "phase_final_dots": "no new dots"
   },
   "raster_sha256": null,
   "validator": {
-    "status": "not run: no candidate",
-    "no_nan_inside_footprint": null,
-    "values_in_0_1": null,
-    "crs_match": null,
-    "shape_match": null,
-    "transform_match": null
+    "status": "no new raster; historical format diagnostics only"
   },
-  "submission": {
-    "name": null,
-    "note": "No candidate: missing lane/cache and literal registry saturation. No weekly slot used."
-  },
-  "gates": {
-    "core_manifest_valid": true,
-    "core_mirror_integrity": [
-      {
-        "id": "training_features",
-        "ok": false
+  "historical_artifacts": [
+    {
+      "file": "submissions/gems85-h85a-foldproper-hgb-maxcov-37654-20261022T221031Z-bf96e456-nan.tif",
+      "sha256": "3404308cb068e6230a63831a3cba50af93b266ed2b8c639d4d1b9b109f4648ec",
+      "checks": {
+        "single_band": true,
+        "dtype_float32": true,
+        "crs_shape_transform_match": true,
+        "all_finite_whole_grid": false,
+        "values_in_0_1_whole_grid": false,
+        "no_nan_inside_footprint": true,
+        "values_in_0_1_inside_footprint": true
       },
-      {
-        "id": "labels",
-        "ok": true
+      "format_ok_conservative": false,
+      "positive_pixels": 37654,
+      "safe_to_submit": false
+    },
+    {
+      "file": "submissions/gems85-h85a-foldproper-hgb-maxcov-37654-20261022T221031Z-bf96e456-zeros.tif",
+      "sha256": "ccc8a7a4e53c406de00c5ba40612f5d3df2b0f4afc869dd1b997d5b836a0209b",
+      "checks": {
+        "single_band": true,
+        "dtype_float32": true,
+        "crs_shape_transform_match": true,
+        "all_finite_whole_grid": true,
+        "values_in_0_1_whole_grid": true,
+        "no_nan_inside_footprint": true,
+        "values_in_0_1_inside_footprint": true
       },
-      {
-        "id": "existing_faults",
-        "ok": true
+      "format_ok_conservative": true,
+      "positive_pixels": 37654,
+      "safe_to_submit": false
+    },
+    {
+      "file": "submissions/quarantine/gems85-geopb-crest-37654dots-sep4-20261022T222707Z-60029d07-nan.tif",
+      "sha256": "1a860abfb84ab6875fdc6e8f7c7a220f9329712490256467ed866b3f9f744783",
+      "checks": {
+        "single_band": true,
+        "dtype_float32": true,
+        "crs_shape_transform_match": true,
+        "all_finite_whole_grid": false,
+        "values_in_0_1_whole_grid": false,
+        "no_nan_inside_footprint": true,
+        "values_in_0_1_inside_footprint": true
       },
-      {
-        "id": "sample_submission",
-        "ok": true
-      }
-    ],
-    "core_inputs_available": false,
-    "template_unmodified": true,
-    "cached_stack_available": false
+      "format_ok_conservative": false,
+      "positive_pixels": 37654,
+      "safe_to_submit": false
+    },
+    {
+      "file": "submissions/quarantine/gems85-geopb-crest-37654dots-sep4-20261022T222707Z-60029d07-zeros.tif",
+      "sha256": "a211e7c6e2cdb6665537b19d4902824d12bd1951185f6c66c1df86a843a5281e",
+      "checks": {
+        "single_band": true,
+        "dtype_float32": true,
+        "crs_shape_transform_match": true,
+        "all_finite_whole_grid": true,
+        "values_in_0_1_whole_grid": true,
+        "no_nan_inside_footprint": true,
+        "values_in_0_1_inside_footprint": true
+      },
+      "format_ok_conservative": true,
+      "positive_pixels": 37654,
+      "safe_to_submit": false
+    },
+    {
+      "file": "submissions/quarantine/gems85-geopb-crest-60000dots-sep4-20261022T222707Z-cbb4e82c-nan.tif",
+      "sha256": "f971f8c58ceb82db97d61e71300bc4c31468f549925810a597c0809f02f435ca",
+      "checks": {
+        "single_band": true,
+        "dtype_float32": true,
+        "crs_shape_transform_match": true,
+        "all_finite_whole_grid": false,
+        "values_in_0_1_whole_grid": false,
+        "no_nan_inside_footprint": true,
+        "values_in_0_1_inside_footprint": true
+      },
+      "format_ok_conservative": false,
+      "positive_pixels": 60000,
+      "safe_to_submit": false
+    },
+    {
+      "file": "submissions/quarantine/gems85-geopb-crest-60000dots-sep4-20261022T222707Z-cbb4e82c-zeros.tif",
+      "sha256": "2bdae85a89b2ce6f953fcbcda06a49c036776e0939a3bc1a62a0b1305d28aecc",
+      "checks": {
+        "single_band": true,
+        "dtype_float32": true,
+        "crs_shape_transform_match": true,
+        "all_finite_whole_grid": true,
+        "values_in_0_1_whole_grid": true,
+        "no_nan_inside_footprint": true,
+        "values_in_0_1_inside_footprint": true
+      },
+      "format_ok_conservative": true,
+      "positive_pixels": 60000,
+      "safe_to_submit": false
+    },
+    {
+      "file": "submissions/quarantine/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-nan.tif",
+      "sha256": "085c45c57d6532c7fdd9a00715c0f4f03465f8e665aa0cc2de3f71e25a33818c",
+      "checks": {
+        "single_band": true,
+        "dtype_float32": true,
+        "crs_shape_transform_match": true,
+        "all_finite_whole_grid": false,
+        "values_in_0_1_whole_grid": false,
+        "no_nan_inside_footprint": true,
+        "values_in_0_1_inside_footprint": true
+      },
+      "format_ok_conservative": false,
+      "positive_pixels": 90000,
+      "safe_to_submit": false
+    },
+    {
+      "file": "submissions/quarantine/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.tif",
+      "sha256": "ba33ea18936e6324037457e1ff5070d8e879b7b29a25b4ae2c0003bc509a567f",
+      "checks": {
+        "single_band": true,
+        "dtype_float32": true,
+        "crs_shape_transform_match": true,
+        "all_finite_whole_grid": true,
+        "values_in_0_1_whole_grid": true,
+        "no_nan_inside_footprint": true,
+        "values_in_0_1_inside_footprint": true
+      },
+      "format_ok_conservative": true,
+      "positive_pixels": 90000,
+      "safe_to_submit": false
+    },
+    {
+      "file": "submissions/quarantine/gems85-h85-duplex-pullapart-worm-20261022T220544Z-2f8b57d9-nan.tif",
+      "sha256": "ce8fb8c0f0b2fad1513bff4e34fa15a3e4c7bb8d373efa8f3cff6ceebcb99040",
+      "checks": {
+        "single_band": true,
+        "dtype_float32": true,
+        "crs_shape_transform_match": true,
+        "all_finite_whole_grid": false,
+        "values_in_0_1_whole_grid": false,
+        "no_nan_inside_footprint": true,
+        "values_in_0_1_inside_footprint": true
+      },
+      "format_ok_conservative": false,
+      "positive_pixels": 42000,
+      "safe_to_submit": false
+    },
+    {
+      "file": "submissions/quarantine/gems85-h85-duplex-pullapart-worm-20261022T220544Z-2f8b57d9-zeros.tif",
+      "sha256": "10efc0a5adf13b9e56c08e1be470eac88153a4985b9b9da776ed63772be298cb",
+      "checks": {
+        "single_band": true,
+        "dtype_float32": true,
+        "crs_shape_transform_match": true,
+        "all_finite_whole_grid": true,
+        "values_in_0_1_whole_grid": true,
+        "no_nan_inside_footprint": true,
+        "values_in_0_1_inside_footprint": true
+      },
+      "format_ok_conservative": true,
+      "positive_pixels": 42000,
+      "safe_to_submit": false
+    },
+    {
+      "file": "submissions/quarantine/gems85-h85-ti-pure-20261022T221047Z-f53a0c81-nan.tif",
+      "sha256": "bf83e0a3b00592c1b355b9e54402a83d4f61af75da1c6223f5301f8b4fa22379",
+      "checks": {
+        "single_band": true,
+        "dtype_float32": true,
+        "crs_shape_transform_match": true,
+        "all_finite_whole_grid": false,
+        "values_in_0_1_whole_grid": false,
+        "no_nan_inside_footprint": true,
+        "values_in_0_1_inside_footprint": true
+      },
+      "format_ok_conservative": false,
+      "positive_pixels": 38000,
+      "safe_to_submit": false
+    },
+    {
+      "file": "submissions/quarantine/gems85-h85-ti-pure-20261022T221047Z-f53a0c81-zeros.tif",
+      "sha256": "e695ba4e00200837fce14dd08b60111c30d54f7b9bc91f9d372b383f2f665f0e",
+      "checks": {
+        "single_band": true,
+        "dtype_float32": true,
+        "crs_shape_transform_match": true,
+        "all_finite_whole_grid": true,
+        "values_in_0_1_whole_grid": true,
+        "no_nan_inside_footprint": true,
+        "values_in_0_1_inside_footprint": true
+      },
+      "format_ok_conservative": true,
+      "positive_pixels": 38000,
+      "safe_to_submit": false
+    },
+    {
+      "file": "submissions/quarantine/gems85-h85-worm-pure-20261022T221114Z-e3091ec2-nan.tif",
+      "sha256": "b3d3f846de50c6fd2521757efe9362f25a03b61b3fd90fff6718f9e91479d37f",
+      "checks": {
+        "single_band": true,
+        "dtype_float32": true,
+        "crs_shape_transform_match": true,
+        "all_finite_whole_grid": false,
+        "values_in_0_1_whole_grid": false,
+        "no_nan_inside_footprint": true,
+        "values_in_0_1_inside_footprint": true
+      },
+      "format_ok_conservative": false,
+      "positive_pixels": 46000,
+      "safe_to_submit": false
+    },
+    {
+      "file": "submissions/quarantine/gems85-h85-worm-pure-20261022T221114Z-e3091ec2-zeros.tif",
+      "sha256": "5544436d93354b92a6e6c1a8222b3cda9a1c3624ce53009227cb66e252d005d2",
+      "checks": {
+        "single_band": true,
+        "dtype_float32": true,
+        "crs_shape_transform_match": true,
+        "all_finite_whole_grid": true,
+        "values_in_0_1_whole_grid": true,
+        "no_nan_inside_footprint": true,
+        "values_in_0_1_inside_footprint": true
+      },
+      "format_ok_conservative": true,
+      "positive_pixels": 46000,
+      "safe_to_submit": false
+    }
+  ],
+  "template_unmodified": true,
+  "lane": {
+    "status": "unassigned",
+    "method_paragraph": null,
+    "reason": "The prompt references a single method paragraph but supplies no explicit lane assignment. No method selected on the user's behalf."
   },
   "blockers": [
-    "No explicit single-method lane assignment supplied.",
-    "One or more core data mirrors are missing or fail their hash/size pins.",
-    "The template cached feature-stack bytes and hash manifest are unavailable locally.",
-    "Literal registry overlap rule blocks every nonempty candidate: a prior is positive throughout the allowed domain.",
-    "Full registry raster bytes have not been compared at either the pre-placement surface or final-dot stage.",
-    "Historical lane results exist but no current candidate has passed the strict protocol and a paired current-best improvement gate.",
-    "Historical model scripts and quarantined rasters exist; no current lane candidate or automatic slot selector is approved.",
-    "Account-specific weekly remaining quota and submission-page receipts are unavailable; no slot selection authorized."
+    "Literal any-raster overlap gate: saturated prior blocks every nonempty allowed candidate.",
+    "No explicit assigned single-method paragraph.",
+    "Pinned transformed cache unavailable; no comparable current-best shared holdout receipt.",
+    "No authenticated organizer score receipts or account-specific remaining quota."
   ],
-  "verdict": "negative",
+  "submission": {
+    "name": null,
+    "note": "Blocked: literal duplicate gate and missing lane/cache. Historical TIFFs quarantined; no slot used."
+  },
   "safe_to_download": false,
   "safe_to_submit": false,
+  "verdict": "negative",
   "promoted": false,
-  "selector_implemented": false,
-  "submission_slots_used": 0,
   "experiments_run": 0,
-  "note": "Negative preflight deliverable; not a geological negative result or a competition submission."
+  "submission_slots_used": 0,
+  "reason": "Negative protocol preflight, not a geological negative. No new unique TIFF was generated."
 }

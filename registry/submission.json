@@ -1,5 +1,6 @@
 {
   "status": "blocked",
   "primary": null,
-  "note": "No approved candidate: literal overlap gate fails; no weekly slot used."
+  "safe_to_submit": false,
+  "note": "Blocked: literal duplicate-stop gate. Historical artifacts quarantined; do not submit."
 }

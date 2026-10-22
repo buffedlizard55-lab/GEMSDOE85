@@ -19,6 +19,7 @@ import json
 import shutil
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -43,37 +44,37 @@ def gh_raw(repo: str, ref: str, path: str, out_fh) -> None:
     )
 
 
-def restore(entry: dict, directory: Path | None = None, *, force: bool = False) -> dict:
-    base = DATA if directory is None else Path(directory)
-    relative = Path(entry["dest"])
-    # Explicit-directory callers restore one filename; manifest groups may use safe subdirs.
-    if (relative.is_absolute() or '..' in relative.parts or not relative.name
-            or (directory is not None and len(relative.parts) != 1)):
-        raise ValueError('dest must be a single local filename (or safe grouped manifest path)')
-    dest = base / relative
-    if not dest.resolve().is_relative_to(base.resolve()):
-        raise ValueError('dest must be a single local filename inside the target directory')
-    if dest.exists() and not force:
-        got = sha256_file(dest)
-        if got == entry["sha256"] and dest.stat().st_size == entry["bytes"]:
-            return {"id": entry["id"], "status": "cached", "sha256": got,
-                    "bytes": dest.stat().st_size}
-    dest.parent.mkdir(parents=True, exist_ok=True)
-    tmp = dest.with_suffix(dest.suffix + ".partial")
-    try:
-        with tmp.open("wb") as out:
-            for p in entry.get("parts", [entry.get("path")]):
-                if p is None:
-                    raise ValueError(f"{entry['id']}: manifest has neither 'path' nor 'parts'")
-                gh_raw(entry["repo"], entry["ref"], p, out)
-        got = sha256_file(tmp)
-        if got != entry["sha256"] or tmp.stat().st_size != entry["bytes"]:
-            raise ValueError(f"{entry['id']}: Size/hash mismatch\n  expected {entry['sha256']}\n  got      {got}")
-        tmp.replace(dest)
-    finally:
-        if tmp.exists():
-            tmp.unlink()
-    return {"id": entry["id"], "status": "restored", "sha256": got, "bytes": dest.stat().st_size}
+sha256 = sha256_file
+
+def restore(entry, directory=None, force=False):
+    directory = DATA if directory is None else directory
+    directory = Path(directory)
+    directory.mkdir(parents=True, exist_ok=True)
+    relative = Path(entry['dest'])
+    if relative.is_absolute() or '..' in relative.parts or relative.name != str(relative):
+        raise ValueError('Manifest destination must be a single local filename')
+    dest = directory / relative
+    if not force and dest.is_file() and dest.stat().st_size == entry['bytes'] and sha256(dest) == entry['sha256']:
+        return dict(id=entry['id'], path=str(dest.relative_to(ROOT)), sha256=entry['sha256'], bytes=dest.stat().st_size, status='cached')
+    # Staging is on the same filesystem. A failed fetch never publishes corrupt data.
+    with tempfile.TemporaryDirectory(dir=directory) as tmp:
+        assembled = Path(tmp) / 'assembled'
+        with assembled.open('wb') as output:
+            for part in entry.get('parts', [entry.get('path')]):
+                if not part:
+                    raise ValueError('manifest entry lacks a path')
+                fragment = Path(tmp) / 'fragment'
+                with fragment.open('wb') as stream:
+                    subprocess.run(['gh', 'api', f"repos/{entry['repo']}/contents/{part}?ref={entry['ref']}",
+                                    '-H', 'Accept: application/vnd.github.raw'], stdout=stream, check=True, timeout=300)
+                with fragment.open('rb') as stream:
+                    for chunk in iter(lambda: stream.read(1 << 20), b''):
+                        output.write(chunk)
+                fragment.unlink()
+        if assembled.stat().st_size != entry['bytes'] or sha256(assembled) != entry['sha256']:
+            raise ValueError(f"Size/hash mismatch for {entry['id']}; not restored")
+        assembled.replace(dest)
+    return dict(id=entry['id'], path=str(dest.relative_to(ROOT)), sha256=entry['sha256'], bytes=dest.stat().st_size, status='restored')
 
 
 def main() -> int:
