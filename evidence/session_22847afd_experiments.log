@@ -1,0 +1,35 @@
+[   1.5s] folds withheld=[15748, 17553, 13967, 13720]
+
+E1: RELAY field per fold (visible only) ...
+  [   2.5s] fold0 tips={'n_segments_total': 2374, 'n_tips_used': 3348}
+  [   3.6s] fold1 tips={'n_segments_total': 2247, 'n_tips_used': 3226}
+  [   4.5s] fold2 tips={'n_segments_total': 2462, 'n_tips_used': 3542}
+  [   5.4s] fold3 tips={'n_segments_total': 2516, 'n_tips_used': 3536}
+CANARY AUC: {'relay': 0.45650260513338686, 'relay_gated_crest': 0.47922558173329177, 'geopb_crest_static': 0.5036234229684529}  (flag if > 0.90)
+  E1_relay_alone             n= 37654 sep=2.8  DTI=0.02524 CI95[0.02027,0.03021] folds=[0.0244, 0.0323, 0.0219, 0.0213]
+  E1_relay_alone             n= 60000 sep=2.8  DTI=0.03444 CI95[0.02828,0.04061] folds=[0.0359, 0.0423, 0.0292, 0.0292]
+  E1_gated_crest             n= 37654 sep=2.8  DTI=0.03708 CI95[0.03195,0.04222] folds=[0.0386, 0.0433, 0.0316, 0.0337]
+  E1_gated_crest             n= 60000 sep=2.8  DTI=0.04864 CI95[0.04241,0.05487] folds=[0.0491, 0.057, 0.0447, 0.0427]
+  E1_crest_reference_remeasure n= 37654 sep=2.8  DTI=0.06953 CI95[0.06560,0.07345] folds=[0.0728, 0.0681, 0.0645, 0.0727]
+  E1_crest_reference_remeasure n= 60000 sep=2.8  DTI=0.08513 CI95[0.07934,0.09091] folds=[0.0888, 0.0857, 0.0765, 0.0892]
+
+E2: context channels + per-fold HGB ...
+  channels (30+relay): ['geopb_r3_L15', 'geopb_r6_L25', 'geopb_crest', 'sato_det_elev', 'grad_rtp_s2', 'grad_rtp_s5', 'grad_grav_s2', 'grad_cond_s2', 'grad_depth_s2', 'tilt_tc', 'tmi_hg', 'tmi_vg', 'det_elev_slope', 'relief5', 'depth_to_base', 'cond_surf', 'lidar_ex_max', 'lidar_step_max', 'lidar_downface', 'lidar_coh100', 'rad_K', 'rad_Th', 'rad_TC', 'rad_ThK', 'ctx_linemax', 'ctx_crest_s3', 'ctx_crest_s9', 'ctx_step_s3', 'ctx_grtp_s9', 'ctx_corrob']
+  ctx canaries done [  90.9s]
+  [ 162.8s] fold0 withheld-AUC 0.5571
+  [ 234.3s] fold1 withheld-AUC 0.5657
+  [ 308.6s] fold2 withheld-AUC 0.5403
+  [ 380.8s] fold3 withheld-AUC 0.5464
+  E2_ctxhgb                  n= 37654 sep=2.8  DTI=0.04022 CI95[0.03470,0.04574] folds=[0.0399, 0.0479, 0.0354, 0.0365]
+  E2_ctxhgb                  n= 60000 sep=2.8  DTI=0.05735 CI95[0.05149,0.06320] folds=[0.0577, 0.0652, 0.0515, 0.054]
+
+E3: fusion 0.5/0.25/0.25 + emission variants ...
+  E3_fusion_poisson28        n= 37654 sep=2.8  DTI=0.05523 CI95[0.04802,0.06244] folds=[0.0539, 0.0654, 0.0516, 0.0485]
+  E3_fusion_poisson28        n= 60000 sep=2.8  DTI=0.07393 CI95[0.06481,0.08306] folds=[0.0737, 0.0865, 0.0682, 0.0656]
+  E3_fusion_blurred_poisson28 n= 37654 sep=2.8  DTI=0.02775 CI95[0.02150,0.03400] folds=[0.0265, 0.0362, 0.0261, 0.0209]
+  E3_fusion_blurred_poisson28 n= 60000 sep=2.8  DTI=0.03896 CI95[0.03153,0.04640] folds=[0.0399, 0.0484, 0.0359, 0.0304]
+
+best @37,654 sep2.8: E1_crest_reference_remeasure = 0.06953; re-measuring at sep4 ...
+  E1_crest_reference_remeasure__sep40 n= 37654 sep=4.0  DTI=0.07475 CI95[0.07025,0.07925] folds=[0.0771, 0.075, 0.0682, 0.0785]
+
+-> evidence/session_22847afd_experiments.json (493s)

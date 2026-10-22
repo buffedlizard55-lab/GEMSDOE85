@@ -177,6 +177,18 @@ nodata tag, every value a real number in [0, 1]. <code>src/gems85/submission.py:
 re-opens the written file and asserts it, and <code>write_submission()</code> refuses to return a
 path whose validation failed.</div>
 
+<h2>What the file looks like (diagnostic preview, not a gate)</h2>
+<div class="card">
+<img src="downloads/preview_ctxfus50_vs_h33_catalogue.png" alt="Preview map: candidate dots vs catalogue and the h33 artifact"
+     style="max-width:520px;width:100%;border:1px solid #30363d;border-radius:8px">
+<p class="sub" style="margin-bottom:0">400&nbsp;m max-pooled preview. <b style="color:#3cc8ff">Cyan</b> = this
+candidate's dots · <b style="color:#f0aa28">amber</b> = h33 (0.2778 OWNER-REPORT) dots ·
+<b style="color:#78ff8c">green</b> = both within the same 400&nbsp;m cell · grey = USGS/INGENIOUS catalogue
+(candidate has zero dots within 200&nbsp;m of it). Measured at full resolution: 37.9&nbsp;% of candidate
+dots lie within 3&nbsp;px of an h33 dot (gate &le;&nbsp;70&nbsp;%). No human inspected this image as an
+approval step — approval is the automated validation below.</p>
+</div>
+
 <h2>Format validation — every check, run on the written bytes</h2>
 <table><tr><th>check</th><th>result</th></tr>{rows}</table>
 
@@ -203,11 +215,27 @@ leakage canary, the ablation and the negative results.<br>
 submission form.<br>
 <a href="data.html">Data &amp; sources →</a> every input file, its SHA-256 and its official link.</p>
 
-<h2>The other lane in this repository</h2>
-<p>GEMSDOE85 was worked by two independent lanes in parallel. This page is the <strong>GEO-Pb
-juxtaposition</strong> lane (H85-1). The <strong>transtensional pull-apart + gravity worm
-duplex</strong> lane (H85-duplex) reached <code>main</code> first and its artifacts are kept
-alongside these ones, untouched:</p>
+<h2>Session update 2026-10-22 — the primary above supersedes the GEO-Pb 90,000-dot file</h2>
+<div class="note"><b>What changed and why.</b> The previous primary (GEO-Pb crest, 90,000 dots)
+was emitted at the budget that maximised the *catalogue holdout*, whose marginal credit bar
+(&asymp;0.02/dot at DTI&asymp;0.1) is far below the *live* bar (0.0588/dot at the family best
+0.2778). The family's own live cascade (121k&rarr;0.1922, 44k&rarr;0.2600, 37,654&rarr;0.2778)
+shows the live operating point is &asymp;38k dots. The new primary is a different field
+(<b>S85-CTXFUS</b>: 30-channel contextual supervised detector rank-fused 50/50 with the GEO-Pb
+crest) emitted at that operating point, and it is the first field in this repo to beat the
+holdout best at matched budget (HOLDOUT-DTI 0.08082 vs 0.07475 @ 37,654, 3/4 folds, CIs
+overlap — see the run card). Three pre-registered alternatives tested in the same session
+(RELAY network-completion geometry, RELAY-gated crest, blurred-field emission) were
+<b>negative</b> and are published as such on the method page. The old files remain downloadable
+below, labelled superseded; none of them, and not the new file either, has an organizer score.</div>
+
+<h2>The other lanes in this repository</h2>
+<p>GEMSDOE85 was worked by independent lanes in parallel. The current primary is the
+<strong>S85-CTXFUS session</strong> candidate above. The <strong>GEO-Pb juxtaposition</strong>
+lane (H85-1) supplied the crest field that is one half of the fusion; its standalone files are
+the “previous GEO-Pb” alternates in the download list. The <strong>transtensional pull-apart +
+gravity worm duplex</strong> lane (H85-duplex) reached <code>main</code> first and its artifacts
+are kept alongside these ones, untouched:</p>
 <ul>
 <li><a href="duplex-lane/index.html">Duplex lane — front page</a> ·
     <a href="duplex-lane/executive-summary.html">its executive summary</a></li>
@@ -347,6 +375,54 @@ bytes before the file is published.</td></tr>
     return page("How to submit — GEMSDOE85", body, "executive-summary.html")
 
 
+def _session_section() -> str:
+    e2b = jload(ROOT / "evidence" / "session_22847afd_e2b.json") or {}
+    exp85 = jload(ROOT / "evidence" / "session_22847afd_experiments.json") or {}
+    if not e2b:
+        return ""
+    arms = {}
+    for k, v in (exp85.get("arms") or {}).items():
+        if "37654" in v:
+            arms[k] = v["37654"]["pooled_holdout_dti"]
+    for k, v in (e2b.get("arms") or {}).items():
+        if "37654" in v:
+            arms[k] = v["37654"]["pooled_holdout_dti"]
+    rows = "".join(
+        f'<tr><td class="mono">{html.escape(k)}</td><td class="n">{fmt(v, 5)}</td></tr>'
+        for k, v in sorted(arms.items(), key=lambda kv: -kv[1]))
+    can = exp85.get("canary_auc") or {}
+    return f"""
+<h2>0. Current primary — S85-CTXFUS (session 2026-10-22, arena/22847afd)</h2>
+<div class="card">
+<p><b>Hypothesis (pre-registered in <code>research/session-22847afd-hypotheses.md</code> before
+measuring):</b> a fault is a <i>line in context</i>, not a pixel. The shipped field rank-fuses
+(50/50) two mechanisms that fail differently: (a) a <b>contextual supervised detector</b> —
+HistGradientBoosting on the 24 catalogue-free channels below plus six line-context channels
+(1.5&nbsp;km along-strike line support, multi-scale context means, five-field corroboration
+count), trained per fold on the visible catalogue only; and (b) the <b>GEO-Pb crest</b> of
+section 1. Emission is the measured gate configuration: 37,654 binary dots, 4&nbsp;px minimum
+separation, zero mass within 2&nbsp;px of the catalogue. Named mimic: erosional volcanic
+mesa/flow margins.</p>
+<p><b>Result (HOLDOUT-DTI, evaluator gems85-holdout-v1.0.0, 60,988 withheld positives):</b>
+the fusion is the only arm that beat the previous holdout best (GEO-Pb crest 0.07475 @ 37,654)
+— at both separations and both budgets, 3/4 folds positive, with overlapping 95% CIs. The three
+pre-registered RELAY arms (fault-network tip/relay completion geometry, alone and as a gate)
+were <b>clear negatives</b>; a relay channel inside the classifier was a train/test-reversal
+bug (training mean 0.090 on positives vs 0.006 on withheld positives) and was removed in the
+logged E2b/E3b ablation. Leakage canaries: RELAY {fmt(can.get('relay'), 3)},
+max context channel {fmt(max([v for k, v in can.items() if k.startswith('ctx_')] or [0]), 3)}
+— all far below the 0.90 flag.</p>
+<table><tr><th>arm (all HOLDOUT-DTI @ 37,654 dots)</th><th class="n">pooled DTI</th></tr>{rows}
+<tr><td class="mono">crest reference (sep 2.8 / sep 4.0)</td><td class="n">0.06953 / 0.07475</td></tr>
+</table>
+<p style="margin-bottom:0">Full evidence: <code>evidence/session_22847afd_experiments.json</code>,
+<code>evidence/session_22847afd_e2b.json</code>, run card on the front page. Why the family best
+(0.2778) works and what beating it requires:
+<code>docs/research/why-02778-session-22847afd.md</code> in the repository.</p>
+</div>
+"""
+
+
 def build_method() -> str:
     exp = jload(ROOT / "evidence" / "experiments.json") or {}
     abl = jload(ROOT / "evidence" / "supervised_ablation.json") or {}
@@ -397,6 +473,8 @@ def build_method() -> str:
 <h1>Method &amp; evidence</h1>
 <p class="sub">The hypothesis, the instrument, the controls, the ablation, and the results that
 did not work. Negative results are published, not hidden.</p>
+
+{_session_section()}
 
 <h2>1. The lane — GEO-Pb, a juxtaposition detector</h2>
 <div class="card">
