@@ -852,3 +852,29 @@ Go ahead and create a pull request and then merge the pull request onto the main
 ```
 
 </details>
+
+
+---
+
+## Parallel session merged 2026-10-22: Lane H85 (fold-proper detector) — verdict NEGATIVE
+
+A second parallel session (branch `arena/5873bc3c-gemsdoe85`) declared its own lane
+(**IR-85-01**: it agreed no lane paragraph was supplied; main's `registry/lane.json`
+independently records `unassigned`) and *did* run the permitted 3 experiments:
+
+| candidate / control | HOLDOUT-DTI (`gems85-pooled-hide-v1`, n=24,440) | 95% CI |
+|---|---:|---:|
+| E1 fold-proper HGB detector @37,654 dots | 0.0984 | [0.079, 0.118] |
+| E2 orientation consensus | 0.0366 | [0.029, 0.044] |
+| E3 strain-gated lineament | 0.0317 | [0.022, 0.040] |
+| d2.8 control (valid bar) | **0.1023** | [0.085, 0.122] |
+
+E1 did not beat the valid control at any budget (20k–55k), so its unique,
+validator-clean 37,654-dot TIFF in `submissions/` is **NOT promoted — do not
+submit it** (main's BLOCKED verdict above and this NEGATIVE verdict agree that no
+slot may be spent). Uniqueness note: under the binary-dot (>0.5) definition the
+candidate passes vs every comparable dotted submission (overlap ≤ 0.50) but fails
+main's literal >0 support reading (saturation witness) — both readings are recorded
+in `evidence/uniqueness.json` and IR-85-07; no threshold was altered. Details:
+[Lane H85 page](docs/lane-h85.html) · [session README](docs/research/lane-h85-session.md) ·
+[run card](evidence/run_card_h85.json) · [hypotheses](docs/research/hypotheses.md).
