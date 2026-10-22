@@ -10,12 +10,12 @@ loop**, and publishes it on a GitHub Pages site with a one-click download at the
 | | |
 |---|---|
 | **Site** | `docs/index.html` (GitHub Pages: Settings → Pages → `main` / `/docs`) |
-| **Submission** | `docs/downloads/gems85-geopb-crest-90000dots-sep4-*-zeros.tif` |
-| **Status** | all 17 format checks **PASS** → OK to download and submit |
+| **Submission** | `docs/downloads/gems85-geopb-crest-90000dots-sep4-*-zeros.tif` — **download for audit only; ⛔ BLOCKED for slot submission (see §3c)** |
+| **Status** | all 17 format checks **PASS** ([0,1] error fixed) but **⛔ BLOCKED**: lane unassigned + literal uniqueness saturation → do NOT spend a slot |
 | **Holdout DTI** | **0.09838**, 95 % CI [0.09022, 0.10654], 4 spatially-blocked folds, 60,988 withheld positives |
 | **vs uniform random** | **+0.0298** at matched emitted mass (3.3× the CI half-width) |
 | **Duplicate check** | max \|Spearman ρ\| vs 17 registry rasters = **0.012**; chance-corrected dot-overlap lift = 1.00 → distinct |
-| **Verdict** | `promote-as-candidate` — cleared the pre-registered gate. **No organizer score exists.** |
+| **Verdict** | `negative` (session bf7be90f, §3c) — format-valid candidate only. **No organizer score exists.** |
 
 ```bash
 python -m venv .venv && .venv/bin/pip install numpy scipy rasterio pandas scikit-learn pytest
@@ -285,6 +285,24 @@ Neither was emitted as a submission — negative results are deliverables
 correct PASS banner). Answer to "can we beat 0.2778?": **not with these variants, and the
 honest projection for the shipped file remains ~0.17–0.23 live [MODEL]** — the route most
 likely to beat it is still §5 item 3 (fuse GEO-Pb with the h19-5 lineage field), untested here.
+
+## 3c. Session bf7be90f (2026-10-22) — independent re-audit, verdict downgraded to BLOCKED
+
+Re-measured the primary zeros TIF byte-for-byte (rasterio 1.4.4): sha256 `ba33ea18…a567f`,
+3730×3292, EPSG:32611, transform identical to `data/sample_submission.tif`, **0 NaN,
+values exactly {0,1}, 90,000 dots, 0 on catalogue** — the reported
+`Predicted values must be in range [0, 1]` rejection is fixed **by the zeros file only**
+(the `-nan` twin holds 7,111,787 NaNs and must never be uploaded; it is no longer offered).
+Three blockers nevertheless forbid spending a weekly slot, per `AGENTS.md`:
+(1) `registry/lane.json` is `unassigned` — the brief's method paragraph was never supplied;
+(2) the binding saturation certificate gives overlap **1.0** for any non-empty candidate and
+raw 3-px overlap is 0.991, while `duplicate_check.json` wrongly says `is_duplicate: false`
+(**IR-85-10/11**); (3) HOLDOUT-DTI 0.0984 projects [MODEL] to ~0.17–0.23 live, below 0.2778.
+**Answer: why 0.2778 won** — strong h19-5 parent field + binary emission + 2.8-px thinning +
+2-px catalogue-halo prune + zeros encoding (credit bar k > 0.2·DTI); **can we beat it?**
+Not on this evidence — only a surface raising credit-per-dot can, and no lane is assigned to
+build one. Full card: `evidence/run_card_session_bf7be90f.json`; review:
+`docs/research/session-bf7be90f-review.md`. Verdict: **negative**.
 
 ## 4. Repository map
 

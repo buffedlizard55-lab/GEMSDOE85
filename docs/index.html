@@ -55,7 +55,7 @@ footer{color:var(--mut);font-size:13px;border-top:1px solid var(--line);margin-t
 </style></head><body>
 <header><div class="wrap"><b>GEMSDOE85</b><nav><a href="index.html" class="on">Submission</a><a href="executive-summary.html" class="">How to submit</a><a href="method.html" class="">Method &amp; evidence</a><a href="data.html" class="">Data &amp; sources</a></nav></div></header>
 <div class="wrap">
-<h1>One file. Download it, upload it, done.</h1>
+<h1>⛔ BLOCKED — format-valid file, do NOT spend a submission slot yet.</h1>
 <p class="sub">An auditable, fully automated fault-discovery submission for the
 <a href="https://www.drivendata.org/competitions/306/competition-doe-gems/">DOE GEMS Prize
 Challenge (DrivenData #306)</a>. The file below was generated, validated and published by code —
@@ -67,11 +67,13 @@ no human inspected it, and it cannot reach this page unless all
   font-weight:700;margin-bottom:10px">⬇ Submission file — ready to upload</div>
   <a class="dl" href="downloads/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.tif">⬇ Download the GeoTIFF
   (428 KB)</a>
-  <div style="margin-top:14px"><a class="dl2" href="downloads/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-nan.tif">⬇ NaN-outside twin (alternate format) · 465 KB</a><a class="dl2" href="downloads/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.zip">⬇ zipped primary · 360 KB</a><a class="dl2" href="downloads/gems85-geopb-crest-60000dots-sep4-20261022T222707Z-cbb4e82c-zeros.tif">⬇ alt-60k (60,000 dots) · 355 KB</a><a class="dl2" href="downloads/gems85-geopb-crest-37654dots-sep4-20261022T222707Z-60029d07-zeros.tif">⬇ alt-38k (37,654 dots) · 294 KB</a></div>
+  <div style="margin-top:14px"><a class="dl2" href="downloads/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.zip">⬇ zipped primary · 360 KB</a><a class="dl2" href="downloads/gems85-geopb-crest-60000dots-sep4-20261022T222707Z-cbb4e82c-zeros.tif">⬇ alt-60k (60,000 dots) · 355 KB</a><a class="dl2" href="downloads/gems85-geopb-crest-37654dots-sep4-20261022T222707Z-60029d07-zeros.tif">⬇ alt-38k (37,654 dots) · 294 KB</a></div>
   <div style="margin-top:16px">
     <span class="tag t-ok">
-    ALL 17 CHECKS PASS — OK TO DOWNLOAD AND SUBMIT</span>
+    ALL 17 FORMAT CHECKS PASS - [0,1] UPLOAD ERROR FIXED</span>
+    <span class="tag t-bad">BLOCKED FOR SLOT SUBMISSION - SEE GATE BELOW</span>
   </div>
+  <div class="note"><strong>Current decision: do not submit.</strong> <b>Why blocked (automated, no human inspector):</b> (1) lane <code>unassigned</code> in <code>registry/lane.json</code> (IR-85-01); (2) literal uniqueness gate fails - raw 3px overlap 0.991 and binding saturation certificate overlap 1.0 (<code>evidence/saturation_certificate.json</code>); (3) HOLDOUT-DTI 0.0984 projects [MODEL] ~0.17-0.23 live, below 0.2778. Download for audit only; a separate selector must clear (1)-(2) before any upload.</div>
   <table style="margin-top:16px">
     <tr><th>file</th><td class="mono">gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.tif</td></tr>
     <tr><th>sha256</th><td class="mono">ba33ea18936e6324037457e1ff5070d8e879b7b29a25b4ae2c0003bc509a567f</td></tr>
@@ -84,7 +86,7 @@ no human inspected it, and it cannot reach this page unless all
 </div>
 
 <div class="card">
-  <h3 style="margin-top:0">Paste this into the “Note” box on the submission form</h3>
+  <h3 style="margin-top:0">DO NOT USE YET - reserved note if a selector clears the blockers</h3>
   <pre><code>H85-1 GEO-Pb 2of3-physics juxtaposition crest, 90000 dots sep4px, 0 within 200m of catalogue, holdout DTI 0.0984 (UNSCORED)</code></pre>
   <p class="sub" style="margin-bottom:0">123 characters (the form asks for a short
   comment; this one names the hypothesis, the budget and the holdout result).</p>
@@ -100,12 +102,6 @@ path whose validation failed.</div>
 
 <h2>Format validation — every check, run on the written bytes</h2>
 <table><tr><th>check</th><th>result</th></tr><tr><td>file exists</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>single band</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>dtype float32</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>shape 3730x3292</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>crs epsg 32611</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>transform matches template</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>resolution 100m</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>no nan inside footprint</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>no inf inside footprint</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>values in 0 1 inside footprint</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>all finite whole raster</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>values in 0 1 whole raster</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>outside footprint is zero</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>no nodata tag</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>has positive predictions</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>no prediction outside footprint</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>zero mass within 2px of catalogue</td><td><span class="tag t-ok">PASS</span></td></tr></table>
-
-<div class="note"><b>Session review 2026-10-22:</b> two pre-registered GEO-Pb variants
-(persistence retired; radius widened) scored HOLDOUT-DTI 0.09105 and 0.09773 @ 90k vs this
-file's 0.09838 — <b>both negative, neither was emitted</b>. This file remains the validated
-primary; it has <b>no organizer score</b> and is honestly projected below the 0.2778 incumbent.
-Details: <span class="mono">evidence/run_card_session_06987ae9.json</span> in the repository.</div>
 
 <h2>What this submission claims, and what it does not</h2>
 <div class="note"><b>No number on this site is a competition score.</b> Every measurement here is
@@ -252,7 +248,7 @@ lanes <em>do</em> now share one metric implementation, and
 <code>tests/test_metric.py</code> asserts the fast O(29N) path equals a literal brute-force
 transcription of the official definition — so at least the ruler is common.</p>
 
-<footer>Built 2026-10-22 22:40 UTC by <code>scripts/build_site.py</code> from <code>registry/</code> and
+<footer>Built 2026-10-22 22:59 UTC by <code>scripts/build_site.py</code> from <code>registry/</code> and
 <code>evidence/</code>. Every number on this site is generated from a measurement file; none is
 typed by hand. Repository:
 <a href="https://github.com/buffedlizard55-lab/GEMSDOE85">buffedlizard55-lab/GEMSDOE85</a>.

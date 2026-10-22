@@ -124,10 +124,10 @@ def build_index() -> str:
 
     alts = "".join(
         f'<a class="dl2" href="downloads/{html.escape(a["filename"])}">⬇ {html.escape(a["role"])}'
-        f' · {a["bytes"]/1024:.0f} KB</a>' for a in sub.get("alternates", []))
+        f' · {a["bytes"]/1024:.0f} KB</a>' for a in sub.get("alternates", []) if "-nan.tif" not in a["filename"])  # never offer NaN twin: 7.1M NaNs risk [0,1] rejection
 
     body = f"""
-<h1>One file. Download it, upload it, done.</h1>
+<h1>⛔ BLOCKED — format-valid file, do NOT spend a submission slot yet.</h1>
 <p class="sub">An auditable, fully automated fault-discovery submission for the
 <a href="https://www.drivendata.org/competitions/306/competition-doe-gems/">DOE GEMS Prize
 Challenge (DrivenData #306)</a>. The file below was generated, validated and published by code —
@@ -142,9 +142,11 @@ no human inspected it, and it cannot reach this page unless all
   <div style="margin-top:14px">{alts}</div>
   <div style="margin-top:16px">
     <span class="tag {'t-ok' if n_fail == 0 else 't-bad'}">
-    {'ALL ' + str(len(checks)) + ' CHECKS PASS — OK TO DOWNLOAD AND SUBMIT'
-     if n_fail == 0 else str(n_fail) + ' CHECK(S) FAILED — DO NOT SUBMIT'}</span>
+    {'ALL ' + str(len(checks)) + ' FORMAT CHECKS PASS - [0,1] UPLOAD ERROR FIXED'
+     if n_fail == 0 else str(n_fail) + ' CHECK(S) FAILED - DO NOT SUBMIT'}</span>
+    <span class="tag t-bad">BLOCKED FOR SLOT SUBMISSION - SEE GATE BELOW</span>
   </div>
+  <div class="note"><strong>Current decision: do not submit.</strong> <b>Why blocked (automated, no human inspector):</b> (1) lane <code>unassigned</code> in <code>registry/lane.json</code> (IR-85-01); (2) literal uniqueness gate fails - raw 3px overlap 0.991 and binding saturation certificate overlap 1.0 (<code>evidence/saturation_certificate.json</code>); (3) HOLDOUT-DTI 0.0984 projects [MODEL] ~0.17-0.23 live, below 0.2778. Download for audit only; a separate selector must clear (1)-(2) before any upload.</div>
   <table style="margin-top:16px">
     <tr><th>file</th><td class="mono">{html.escape(pri['filename'])}</td></tr>
     <tr><th>sha256</th><td class="mono">{html.escape(pri['sha256'])}</td></tr>
@@ -157,7 +159,7 @@ no human inspected it, and it cannot reach this page unless all
 </div>
 
 <div class="card">
-  <h3 style="margin-top:0">Paste this into the “Note” box on the submission form</h3>
+  <h3 style="margin-top:0">DO NOT USE YET - reserved note if a selector clears the blockers</h3>
   <pre><code>{html.escape(sub['note'])}</code></pre>
   <p class="sub" style="margin-bottom:0">{len(sub['note'])} characters (the form asks for a short
   comment; this one names the hypothesis, the budget and the holdout result).</p>
