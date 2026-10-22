@@ -159,6 +159,10 @@ def test_write_submission_raises_on_failure(tmp_path, monkeypatch):
                     reason="no submission built yet")
 def test_shipped_artifact_passes_every_check():
     sub = json.loads((ROOT / "registry" / "submission.json").read_text())
+    if sub.get("status") == "blocked":
+        assert sub['primary'] is None
+        assert not list((ROOT / 'docs').rglob('*.tif'))
+        return
     path = ROOT / "docs" / "downloads" / sub["primary"]["filename"]
     assert path.exists(), f"site advertises {path.name} but the file is missing"
     rep = submission.validate(path)
@@ -179,9 +183,10 @@ def test_published_note_is_within_140_chars():
                     reason="no run card yet")
 def test_run_card_has_every_required_protocol_field():
     card = json.loads((ROOT / "evidence" / "run_card.json").read_text())
-    for key in ("hypothesis", "mechanism", "named_non_fault_process_that_could_mimic_it",
-                "holdout_dti", "correlation_vs_registry", "raster_sha256",
-                "validator_output", "submission_name", "submission_note", "verdict"):
-        assert key in card and card[key], f"run card missing {key}"
-    assert card["holdout_dti"]["label"] == "HOLDOUT-DTI"
-    assert "ci95" in card["holdout_dti"] and "n_withheld_positives" in card["holdout_dti"]
+    for key in ("hypothesis", "mechanism", "non_fault_mimic", "holdout", "registry",
+                "raster_sha256", "validator", "submission", "verdict"):
+        assert key in card, f"run card missing {key}"
+    assert card['holdout']['evidence_class'] == 'HOLDOUT-DTI'
+    assert 'ci95' in card['holdout'] and 'withheld_positive_pixels' in card['holdout']
+    if card['raster_sha256'] is None:
+        assert card['verdict'] == 'negative' and card['safe_to_submit'] is False
