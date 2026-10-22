@@ -109,3 +109,14 @@ def emit(
     allowed = footprint & exclusion_mask(visible_catalogue, buffer_px=exclude_px)
     dots = poisson_thin(field, n=n, sep_px=sep_px, allowed=allowed)
     return dots.astype(np.float32)
+
+
+# --- duplex lane (arena/29a39923), preserved verbatim in emission_duplex.py -------------------
+# That lane's emitter has a different API (threshold_field / topk_mask / dot_thin / greedy_cover
+# / credit_bar_emit).  Re-exported here so `from gems85.emission import greedy_cover` keeps
+# working for its scripts while this lane's `emit()` stays canonical.
+from .emission_duplex import (  # noqa: E402,F401
+    threshold_field, topk_mask, dot_thin, dot_thin_matched, coverage_credit,
+    coverage_credit_residual, greedy_cover, credit_bar_emit, masked_along_support,
+    as_float, greedy_cover_fast,
+)

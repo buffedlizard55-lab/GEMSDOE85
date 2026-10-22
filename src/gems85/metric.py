@@ -121,3 +121,105 @@ def dti(
 
 def dti_value(pred, truth, **kw) -> float:
     return dti(pred, truth, **kw).dti
+
+
+# --- compatibility aliases for the duplex lane (arena/29a39923) -------------------------------
+# That lane names the kernel support RADIUS_PX and calls metric.kernel(d).  Same constants, same
+# triangular kernel; aliased rather than renamed so neither lane's code has to change and the two
+# can never silently diverge.
+RADIUS_PX = R_PIXELS
+
+
+def kernel(d):
+    """Official triangular kernel k(d) = (1 - d/R)+, in pixels. Alias for the duplex lane."""
+    import numpy as _np
+    return _np.clip(1.0 - _np.asarray(d, dtype=_np.float64) / R_PIXELS, 0.0, None)
+
+
+def dti_exact(pred, truth, alpha: float = ALPHA, beta: float = BETA) -> dict:
+    """Duplex-lane alias: the official DTI as a dict. Same computation as `dti()`."""
+    r = dti(np.asarray(pred, dtype=np.float64), np.asarray(truth, dtype=bool),
+            alpha=alpha, beta=beta)
+    return {"dti": r.dti, "tp_w": r.tp_w, "fp_w": r.fp_w, "fn_w": r.fn_w}
+
+
+def dti_binary(pred, truth, valid=None, known=None,
+               alpha: float = ALPHA, beta: float = BETA) -> dict:
+    """DTI for a boolean prediction, optionally restricted to a `valid` evaluation domain.
+
+    Binary predictions are provably metric-optimal (docs/research/metric-algebra.md Sec.3).
+    Returns a dict so the duplex lane's `evaluate_holdout` can read r["dti"], r["tp_w"], ...
+    """
+    p = np.asarray(pred, dtype=bool)
+    g = np.asarray(truth, dtype=bool)
+    if valid is not None:
+        v = np.asarray(valid, dtype=bool)
+        p = p & v
+        g = g & v
+    if known is not None:
+        # Mask VISIBLE faults pixel-exactly out of the prediction (holdout protocol).  Note this
+        # removes them from `pred` only -- it does NOT also drop them from the alpha charge the
+        # way GEMSDOE32's `active = valid & ~known` did, which silently made on-catalogue dots
+        # free.  See src/gems85/holdout.py.
+        p = p & ~np.asarray(known, dtype=bool)
+    r = dti(p.astype(np.float64), g, alpha=alpha, beta=beta)
+    return {"dti": r.dti, "tp_w": r.tp_w, "fp_w": r.fp_w, "fn_w": r.fn_w,
+            "tp": r.tp_w, "fp": r.fp_w, "fn": r.fn_w,   # duplex-lane key names
+            "n_pred": int(p.sum()), "n_truth": int(g.sum())}
+
+
+def dti_bruteforce(pred, truth, alpha: float = ALPHA, beta: float = BETA,
+                   r: float = R_PIXELS) -> dict:
+    """The metric written out literally from the problem description, O(N_pred x N_truth).
+
+    No dilation, no offset table -- a direct transcription used to cross-check the fast path.
+    Only for small grids; `test_metric.py` asserts the two agree.
+    """
+    p = np.asarray(pred, dtype=np.float64)
+    g = np.asarray(truth, dtype=bool)
+    gy, gx = np.nonzero(g)
+    py, px, pv = (*np.nonzero(p > 0), p[p > 0])
+    tp = fn = 0.0
+    for y, x in zip(gy, gx):
+        d = np.hypot(py - y, px - x)
+        k = np.clip(1.0 - d / r, 0.0, None)
+        best = float((pv * k).max()) if pv.size else 0.0
+        tp += best
+        fn += 1.0 - best
+    fp = 0.0
+    for y, x, v in zip(py, px, pv):
+        d = np.hypot(gy - y, gx - x)
+        k = np.clip(1.0 - d / r, 0.0, None)
+        fp += v * (1.0 - (float(k.max()) if gy.size else 0.0))
+    den = tp + alpha * fp + beta * fn
+    return {"dti": tp / den if den > 0 else 0.0, "tp_w": tp, "fp_w": fp, "fn_w": fn}
+
+
+def marginal_inclusion_threshold(s: float, alpha: float = ALPHA) -> float:
+    """First-order marginal bar: a pixel is worth adding only if it earns more than alpha*s.
+
+    Derivation in docs/research/metric-algebra.md Sec.4.  The refinement that also accounts for
+    the denominator moving as mass is added is `alpha*s*f/(1 - alpha*s)`, which is what this
+    lane's budget analysis uses; `alpha*s` is its leading term and the form the duplex lane
+    assumes.
+    """
+    return alpha * s
+
+
+# Offset table under the duplex lane's name: three parallel arrays (dy, dx, weight) over the
+# 29-pixel disc of radius R_PIXELS.  Same table `OFFSETS` holds as tuples.
+_OFF = (np.array([o[0] for o in OFFSETS], dtype=np.int64),
+        np.array([o[1] for o in OFFSETS], dtype=np.int64),
+        np.array([o[2] for o in OFFSETS], dtype=np.float64))
+
+
+def _shift(a: np.ndarray, dy: int, dx: int, fill=0.0) -> np.ndarray:
+    """Shift `a` by (dy, dx) with constant fill. Duplex-lane helper name."""
+    out = np.full_like(a, fill)
+    ys0, ys1 = max(0, dy), min(a.shape[0], a.shape[0] + dy)
+    xs0, xs1 = max(0, dx), min(a.shape[1], a.shape[1] + dx)
+    yd0, yd1 = max(0, -dy), min(a.shape[0], a.shape[0] - dy)
+    xd0, xd1 = max(0, -dx), min(a.shape[1], a.shape[1] - dx)
+    if ys1 > ys0 and xs1 > xs0:
+        out[ys0:ys1, xs0:xs1] = a[yd0:yd1, xd0:xd1]
+    return out

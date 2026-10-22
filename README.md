@@ -343,3 +343,49 @@ tests/           test_metric.py test_emission.py        (25 passing)
 
 Everything used is US-government public domain (USGS GeoDAWN, USGS 3DEP, USGS SGMC) or supplied
 by the competition.
+
+## 7. The other lane in this repository
+
+GEMSDOE85 was worked by **two independent lanes in parallel**. This README documents the
+**GEO-Pb juxtaposition** lane (H85-1). The **transtensional pull-apart + gravity worm duplex**
+lane (`arena/29a39923`) reached `main` first; its code, evidence and three submissions are
+preserved here untouched:
+
+| duplex-lane artifact | where it now lives |
+|---|---|
+| site | `docs/duplex-lane/index.html`, `docs/duplex-lane/executive-summary.html` |
+| submissions | `docs/downloads/gems85-h85-{duplex-pullapart-worm,ti-pure,worm-pure}-*` |
+| run card | `evidence/run_card_duplex.json` |
+| scripts | `scripts/duplex_lane/` |
+| modules | `src/gems85/{emission,submission}_duplex.py`, re-exported from the canonical modules |
+| hypotheses | appended to `docs/research/hypotheses.md` |
+
+**The two lanes' holdout numbers are not comparable.** Different evaluators, different fold
+geometry, different withheld-positive counts. The duplex lane reports 0.1542; this lane reports
+0.09838. Ranking them against each other would be precisely the apples-to-oranges error that
+IR-85-001 and the instrument calibration exist to prevent. Both sets of artifacts are published;
+**neither has an organizer score.**
+
+What the merge *did* establish, which is worth more than a ranking:
+
+- **One metric implementation now serves both lanes.** `src/gems85/metric.py` gained
+  `dti_exact`, `dti_binary`, `dti_bruteforce`, `marginal_inclusion_threshold`, `kernel`,
+  `RADIUS_PX`, `_OFF` and `_shift` as a compatibility layer, so the duplex lane's `emitter.py`
+  and `evaluate_holdout.py` run against the same ruler this lane used.
+- **`tests/test_metric.py` now asserts the fast O(29N) dilation path equals a literal
+  brute-force transcription** of the published definition, on both binary and soft predictions.
+- **The duplex lane's independent validator passes all five of this lane's GeoTIFFs**
+  (`All downloads PASS`) — a cross-lane confirmation of format correctness from code this lane
+  did not write.
+
+### Defects found during the merge (all pre-existing on `main`, all logged not silenced)
+
+| id | defect | resolution |
+|---|---|---|
+| **IR-85-003** | `tests/test_shared_contracts.py` imports a package `gems57` that does not exist in this repo — a template copied without renaming. It failed at **collection**, taking the whole suite down. | `pytest.importorskip` with a stated reason |
+| **IR-85-004** | `tests/test_project.py` asserts `safe_to_submit is False`, `raster_sha256 is None` and that `docs/` contains **no** `.tif` — the exact inverse of this project's requirement. It also imports a `build` entry point that never existed. | quarantined with a written reason, not deleted |
+| **IR-85-005** | `tests/test_gems85.py::test_writer_validator_roundtrip` placed its test mask at `[100:200, 100:200]`, which is **entirely outside the survey footprint** (0 of 10,000 cells valid). The writer correctly zeroed it; the test then asserted `0 == 1156`. **The writer was right and the test was wrong.** | mask moved to an interior block and intersected with the footprint |
+| **IR-85-002** | the parallel-run protocol's raw "70 % of dots within 3 px" duplicate rule is unconditionally true against a space-filling registry raster | chance-corrected lift added |
+
+`main`'s `src/gems85/metric.py` was an **empty file**, so every duplex-lane test that imported
+from it could never have passed. After the merge the full suite is **75 passed, 1 skipped**.

@@ -142,3 +142,7 @@ def write_submission(arr: np.ndarray, path: Path | str, *, mode: str = "zeros",
         raise RuntimeError(f"submission failed validation: {failed}")
     Path(str(p) + ".checks.json").write_text(json.dumps(rep.as_dict(), indent=2) + "\n")
     return rep
+
+
+# --- duplex lane (arena/29a39923), preserved verbatim in submission_duplex.py -----------------
+from .submission_duplex import audit_geotiff, write_submission_pair  # noqa: E402,F401

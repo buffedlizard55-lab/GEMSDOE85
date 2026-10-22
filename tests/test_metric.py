@@ -152,3 +152,21 @@ def test_domain_restriction():
     dom = np.zeros((10, 10), bool); dom[:5, :5] = True
     r = dti(p, g, domain=dom)
     assert r.n_truth == 1 and r.tp_w == pytest.approx(1.0) and r.dti == pytest.approx(1.0)
+
+
+def test_fast_path_matches_the_literal_definition():
+    """Cross-lane check: the O(29N) dilation path must equal the literal O(N*G) transcription."""
+    import numpy as np
+    from gems85.metric import dti, dti_bruteforce
+    rng = np.random.default_rng(11)
+    for trial in range(6):
+        truth = rng.random((24, 26)) < 0.05
+        pred = (rng.random((24, 26)) < 0.08).astype(float)
+        if trial % 2:
+            pred *= rng.random((24, 26))          # exercise non-binary predictions too
+        fast = dti(pred, truth)
+        slow = dti_bruteforce(pred, truth)
+        assert abs(fast.tp_w - slow["tp_w"]) < 1e-9, (fast.tp_w, slow["tp_w"])
+        assert abs(fast.fp_w - slow["fp_w"]) < 1e-9, (fast.fp_w, slow["fp_w"])
+        assert abs(fast.fn_w - slow["fn_w"]) < 1e-9, (fast.fn_w, slow["fn_w"])
+        assert abs(fast.dti - slow["dti"]) < 1e-12

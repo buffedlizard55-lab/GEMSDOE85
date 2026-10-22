@@ -224,7 +224,29 @@ leakage canary, the ablation and the negative results.<br>
 submission form.<br>
 <a href="data.html">Data &amp; sources →</a> every input file, its SHA-256 and its official link.</p>
 
-<footer>Built 2026-10-22 22:33 UTC by <code>scripts/build_site.py</code> from <code>registry/</code> and
+<h2>The other lane in this repository</h2>
+<p>GEMSDOE85 was worked by two independent lanes in parallel. This page is the <strong>GEO-Pb
+juxtaposition</strong> lane (H85-1). The <strong>transtensional pull-apart + gravity worm
+duplex</strong> lane (H85-duplex) reached <code>main</code> first and its artifacts are kept
+alongside these ones, untouched:</p>
+<ul>
+<li><a href="duplex-lane/index.html">Duplex lane — front page</a> ·
+    <a href="duplex-lane/executive-summary.html">its executive summary</a></li>
+<li>Its submissions, also in <code>docs/downloads/</code>:
+    <a href="downloads/gems85-h85-duplex-pullapart-worm-20261022T220544Z-2f8b57d9-zeros.tif">duplex (42,000 dots)</a> ·
+    <a href="downloads/gems85-h85-ti-pure-20261022T221047Z-f53a0c81-zeros.tif">TI-pure (38,000)</a> ·
+    <a href="downloads/gems85-h85-worm-pure-20261022T221114Z-e3091ec2-zeros.tif">worm-pure (46,000)</a></li>
+</ul>
+<p class="warn"><strong>The two lanes' holdout numbers are not comparable.</strong> They use
+different evaluators, different fold geometry and different withheld-positive counts, so the
+duplex lane's reported 0.1542 and this lane's 0.09838 cannot be ranked against each other. Doing
+so would be exactly the apples-to-oranges error this repository's instrument calibration was
+built to catch. Both lanes' artifacts are published; neither has an organizer score. The two
+lanes <em>do</em> now share one metric implementation, and
+<code>tests/test_metric.py</code> asserts the fast O(29N) path equals a literal brute-force
+transcription of the official definition — so at least the ruler is common.</p>
+
+<footer>Built 2026-10-22 22:40 UTC by <code>scripts/build_site.py</code> from <code>registry/</code> and
 <code>evidence/</code>. Every number on this site is generated from a measurement file; none is
 typed by hand. Repository:
 <a href="https://github.com/buffedlizard55-lab/GEMSDOE85">buffedlizard55-lab/GEMSDOE85</a>.

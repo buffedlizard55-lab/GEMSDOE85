@@ -6,3 +6,9 @@ __pycache__/
 *.pyc
 .venv/
 work/
+
+# --- from the duplex lane ---
+.cache/
+data/training_features.tif
+data/external/
+.mypy_cache/
