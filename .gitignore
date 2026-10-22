@@ -1,0 +1,8 @@
+# Large restored data — never committed; restored by scripts/restore_data.py from pinned mirrors
+data/
+!data/.gitkeep
+*.partial
+__pycache__/
+*.pyc
+.venv/
+work/

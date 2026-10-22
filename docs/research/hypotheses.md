@@ -1,0 +1,221 @@
+# Five untried hypotheses for GEMSDOE85 — ranked, with the lane that was chosen
+
+**Session:** `arena/f2d7722b-gemsdoe85` · **Date:** 2026-10-22
+**Question answered:** *what has the GEMSDOE family not tried, which of it can be validated here,
+and which of it needs external data that must first be proven obtainable?*
+
+Evidence classes used throughout, and never mixed:
+
+| class | meaning |
+|---|---|
+| **[OFFICIAL]** | read from a DrivenData / USGS / DOE page or product this session, link given |
+| **[MEASURED]** | computed in this checkout from SHA-256-pinned bytes; the command is given |
+| **[OWNER-REPORT]** | the operator's own ledger of submission-page receipts; not re-verified here |
+| **[MODEL]** | an estimate conditioned on an unverified anchor — never a score, never a result |
+| **[BLOCKED]** | could not be obtained from this sandbox; the reason is stated |
+
+---
+
+## 0. What the record already rules out
+
+**[OWNER-REPORT]** 60+ scored artifacts across 60 sibling repositories. Grouped by mechanism, the
+best live score each mechanism ever produced:
+
+| mechanism | best live DW-Tversky | verdict |
+|---|---:|---|
+| multi-line "corroborated" ridge fields, dot-thinned (h19-5 → d2.8 → h27-4 → **h33-2-b2**) | **0.2778** | the family ceiling |
+| submodular / max-coverage emission variants on the same field | 0.2478 – 0.2600 | no gain over the family |
+| orthogonality-gated cross-gradient (`gate_ortho`) | 0.2376 | below family |
+| CVaR-robust thinning | 0.2303 | below family |
+| Dempster–Shafer belief fusion | 0.2296 | below family |
+| LiDAR-scarp-first detectors | 0.0383 – 0.1589 | far below |
+| magnetic Euler / depth-cluster / worms | 0.0159 – 0.0984 | far below |
+| SGMC off-catalogue transfer | 0.0492 – 0.0512 | far below |
+| supervised ML (HGB / U-Net-like / PU) as *shipped* | 0.0180 – 0.1426 | far below |
+| radiometric fusion | 0.0843 – 0.1627 | far below |
+
+**[MEASURED, `evidence/instrument_calibration.json`]** Over the 17 artifacts whose rasters this
+repository could restore and whose live score is on record, the single strongest predictor of the
+live score is **not** any geological property — it is the emitted-pixel count, Spearman
+**ρ = −0.926, p = 1.5 × 10⁻⁷, n = 17**. On-catalogue pixel count is second (ρ = −0.778,
+p = 2.4 × 10⁻⁴). The sibling repositories' own catalogue-truth holdout ranks live at
+**ρ = −0.222, p = 0.39** — i.e. not at all, and if anything backwards.
+
+**[MEASURED, §6 below]** That last number has a mechanical cause that invalidates it as a
+criticism of the holdout, and it is the most important methodological finding of this session.
+
+---
+
+## 1. The algebra that tells us which hypothesis class can still pay
+
+**[OFFICIAL]** metric; **[MEASURED]** reductions, verified to 1e-9 in `tests/test_metric.py`:
+
+```
+DTI = T / ( α(T + F) + βK ) ,   T = TP_w,  F = FP_w,  K = |G| ,  α = 0.2, β = 0.8
+```
+
+**[MEASURED, `scripts/solve_truth_scale.py`]** The operator's own h33 experiment is a *controlled*
+two-point experiment on the live scorer: the same raster, 2,545 dots within 200 m of the catalogue
+deleted, 40,199 → 37,654 px, **0.2708 → 0.2778** [OWNER-REPORT]. Because the deleted dots sat on
+mapped faults they can have carried essentially no credit for *new* faults, so T is unchanged and
+only S moves. Solving the two equations gives, with no further assumption,
+
+```
+T  = 5,470  (truth-weight the group's best file actually captures)
+K ≈ 14,400  (hidden new-fault pixels in the public test set, ≈ 144 km of trace)
+F ≈ 35,400  (wasted mass — 94 % of every dot emitted)
+```
+
+and the denominator splits **8,187 FP-tax : 11,520 K-term**. The FP tax is 42 % of the denominator.
+
+**[MODEL]** The consequence is sharp. Holding the captured credit per dot at its present
+0.1453 and merely emitting more of the same quality would give 0.39 at 75 k px and 0.49 at 150 k px —
+but the family's own thinning cascade proves credit per dot *collapses* with budget
+(0.1232 at 44 k, 0.0566 at 121 k), and a power-law fit puts this field's optimum at ≈ 20 k px and
+**DTI ≈ 0.280**. The emission lever is spent to within ±0.003.
+
+> **Therefore: only a hypothesis that raises *credit per emitted pixel* can move this project.
+> Every hypothesis below is judged on that one axis.**
+
+---
+
+## 2. The five candidates
+
+### H85-1 — GEO-Pb: multivariate juxtaposition boundary detector — **rank 1, CHOSEN LANE**
+
+| | |
+|---|---|
+| **Layers** | `rtp` (2), `iso_grav_anom` (13), `cond_surf` (17), `depth_to_base_surf` (15) · GeoDAWN radiometric K, Th, TC (`geodawn_rad_u8` bands 1, 2, 4) · `det_elev` (12), `det_elev_slope` (19), LiDAR `step_max` (`lidar_scarp_features_u8` band 3) |
+| **Physical signature** | At each pixel and each of 8 candidate strikes, the *offset difference* of a covariance-whitened 10-band stack across the candidate line — a windowed Hotelling-style **two-sample step statistic**, not a derivative. The three physics domains are reduced by their **median**, so at least two of {potential-field, radiometric, topographic} must agree. The result is multiplied by an **along-strike line mean over 1.5 km**, so only straight, persistent boundaries survive. |
+| **Why it finds a fault the catalogue lacks** | The given catalogue is USGS Quaternary + INGENIOUS: structures mapped from *surface* evidence. A fault concealed under Holocene alluvium with no scarp still juxtaposes different basement susceptibility, different cover thickness and different surface geochemistry. Each individual band changes a little; the joint 10-vector changes a lot. A derivative operator weights the *magnitude* of each band's change; a whitened two-sample statistic weights how *improbable the joint change* is. That is precisely the regime a scarp-first catalogue under-samples. |
+| **How it differs from everything in the family** | **[MEASURED]** `grep -ri "hotelling\|two-sample\|half-disc\|mahalanobis"` over the source of GEMSDOE28/30/31/32/49/63/70 returns **no implementation** — the words appear only as prose justification for gradient-based detectors. Every shipped detector in the family is a derivative: Sato/Frangi/Hessian ridge, tilt, horizontal gradient, Euler, worms, gradient coherence. GEO-Pb never differentiates anything. |
+| **Mimicking non-fault processes (declared in advance)** | (a) depositional contacts — distal alluvial-fan margins, Lake Lahontan highstand shorelines: *lobate and closed*, killed by the straightness term; (b) aeromagnetic / radiometric acquisition seams: single-domain, killed by the two-of-three median vote — and audited by the response-azimuth histogram in `evidence/experiments.json`; (c) erosional volcanic mesa and flow margins: straight *and* multi-domain — **the irreducible confounder, declared, not solved**. |
+| **Cost / data** | ~35 s CPU for the full grid; **no new external data**. Validatable locally: **yes**. |
+| **Expected DTI gain** | **[MODEL]** the only candidate here that raises credit-per-pixel by changing the *statistic*, not the layer list. Ranked 1 on gain-per-unit-cost. |
+
+### H85-2 — Along-strike displacement-gradient tip prediction — rank 2
+
+* **Layers:** the catalogue itself + `det_elev` (12), `rtp` (2).
+* **Signature:** fit each mapped segment's along-strike *throw proxy* (cross-fault relief and
+  cross-fault RTP step), extrapolate the displacement-gradient to zero, and emit the predicted
+  **tip continuation** beyond the mapped end-point.
+* **Why off-catalogue:** fault traces are mapped where expression is strong and simply *stop*
+  where it is weak; real displacement decays to zero over a tip region that is systematically
+  un-mapped. **[OFFICIAL]** this is the standard displacement–length scaling of normal faults.
+* **Why ranked 2, not 1:** it is **catalogue-anchored**, so it necessarily emits close to the
+  catalogue — and the one controlled live experiment we have says catalogue-proximal mass is
+  net-negative (0.2708 → 0.2778 by deleting it). It also risks a leakage AUC > 0.90 on a
+  hide-and-recover holdout by construction, because withheld segments continue visible ones.
+* **Cost:** medium. **Related work already scored:** `h32-1-prethin-tip-euler` 0.2649,
+  `D-step-3p0-07pct-tipProt` 0.0763 [OWNER-REPORT] — the family has partly been here.
+
+### H85-3 — Lake Lahontan shoreline-referenced scarp residual — rank 3
+
+* **Layers:** 1 m LiDAR composite + `det_elev`.
+* **Signature:** the Lahontan highstand (~1,335 m) is a *geomorphic datum of known age*; a linear
+  elevation offset of the shoreline terrace is a post-12-ka fault with a measurable throw and
+  frequently no mapped trace.
+* **Why off-catalogue:** it dates the structure, so it finds Holocene faults with centimetre-scale
+  expression invisible at 100 m.
+* **Why ranked 3:** **[OWNER-REPORT]** the family already shipped `datum-lahontan-strain-gauge-defensible-440dots`
+  and scored **0.0000**. The idea is sound; the realisation is budget-starved — a 440-dot file
+  cannot score under the algebra of §1 whatever its geology. Needs a far larger candidate set to
+  be testable, and that needs the raw 1 m tiles.
+
+### H85-4 — Relocated-seismicity nodal-plane lineaments — rank 4, **[BLOCKED]**
+
+* **Layers:** would replace `ieq_n100a15` (16) and `deq_n100a15` (10).
+* **Why off-catalogue:** instrumental seismicity is a *dynamic* inventory; a blind, low-slip fault
+  lights up seismically while leaving no scarp — e.g. the 2020 M6.5 Monte Cristo Range rupture
+  occurred on largely unmapped structures inside this region.
+* **Why the supplied bands cannot substitute:** they are computed on a 100 km radius and are
+  constant at the metric's own 300 m resolution.
+* **Source named and checked:** USGS FDSN event service
+  `https://earthquake.usgs.gov/fdsnws/event/1/query` (free, public domain).
+  **Obtainability check performed this session:** the sandbox egress allow-list admits only
+  `github.com`, `codeload.github.com`, `api.github.com`, `registry.npmjs.org`, `pypi.org`,
+  `files.pythonhosted.org`. `earthquake.usgs.gov` is **not reachable**. Ranked, **not proposed as
+  ready**, per the brief's rule.
+
+### H85-5 — Leaderboard inversion for the hidden truth density — rank 5, *contrarian*
+
+* **Layers:** none — the 60+ scored artifacts and their live scores.
+* **Signature:** each (raster, score) pair is one equation in the metric algebra of §1. With
+  enough *diverse* rasters, non-negative least squares over a coarse spatial basis recovers where
+  the hidden positives are.
+* **Why ranked last despite being the most contrarian:** **[MEASURED]** the restorable corpus is
+  17 rasters and is dominated by one nested family (five of the top six artifacts are thinnings
+  of a single field), so the design matrix is near-collinear and the system is badly
+  under-determined. It is also *not science* — it would not survive the final round's expert
+  review, which scores discoveries, not fits. Recorded for completeness; not pursued.
+
+---
+
+## 3. Ranking summary
+
+| rank | hypothesis | expected gain in credit/pixel | implementation cost | locally validatable | chosen |
+|---:|---|---|---|---|---|
+| 1 | **H85-1 GEO-Pb juxtaposition** | **high — changes the statistic, not the layer list** | low (35 s CPU, no new data) | **yes** | **✔ LANE** |
+| 2 | H85-2 displacement-gradient tips | medium | medium | partly (leakage risk) | no |
+| 3 | H85-3 Lahontan datum residual | medium | high (needs raw 1 m tiles) | no | no |
+| 4 | H85-4 seismicity nodal planes | high if obtainable | high | **no — [BLOCKED]** | no |
+| 5 | H85-5 leaderboard inversion | unknown | low | no (rank-deficient) | no |
+
+---
+
+## 4. Pre-registered promotion rule (fixed before any candidate was measured)
+
+A candidate may be written to `docs/downloads/` only if **all** of the following hold:
+
+1. **Beats the derivative control** (`ctrl_sato_elev`) on pooled HOLDOUT-DTI at *matched emitted
+   mass*, in **≥ 3 of 4** spatially-blocked folds.
+2. **Beats uniform random** by a margin larger than the 95 % CI half-width.
+3. **Leakage canary passes**: the raw surface's AUC against withheld positives is **< 0.90**.
+4. **Not a duplicate**: Spearman ρ ≤ 0.90 against every registry raster's surface **and**
+   ≤ 70 % of its dots within 3 px of any one registry raster's dots.
+5. **Validator passes** every format check with no human inspection.
+
+Failure of any of 1–4 is published as a **negative result**, which is a deliverable, not a defeat.
+
+---
+
+## 5. Official sources used for the geology in this file
+
+| claim | source |
+|---|---|
+| metric, kernel, α, β, submission format, worked example | <https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/> |
+| labels are USGS Quaternary fault maps + INGENIOUS; test set = expert-mapped faults *absent* from the public USGS database | same page, "Labels" and "Competition structure" |
+| GeoDAWN airborne magnetic and radiometric surveys | <https://www.usgs.gov/data/geodawn-airborne-magnetic-and-radiometric-surveys-northwestern-great-basin-nevada-and> |
+| INGENIOUS project (Great Basin Center for Geothermal Energy) | <https://gbcge.org/current-projects/ingenious/> |
+| UTM zone 11N / EPSG 32611 | <https://epsg.io/32611> |
+| Tversky index | <https://en.wikipedia.org/wiki/Tversky_index> |
+| reference solution (α = 0.2, β = 0.8 in the Tversky loss) | <https://github.com/drivendataorg/gems-prize-reference-solution> |
+| live leaderboard (read 2026-10-22: #1 xiaofanhu **0.4413**) | <https://www.drivendata.org/competitions/306/competition-doe-gems/leaderboard/> |
+
+---
+
+## 6. The methodological finding: why a catalogue-truth holdout *cannot* rank these artifacts
+
+**[MEASURED, `evidence/instrument_calibration.json`]**
+
+| artifact | live [OWNER-REPORT] | this repo's hide-and-recover holdout |
+|---|---:|---:|
+| `h33-h33-2-b2` (the family's best) | **0.2778** | **0.00479** |
+| `h27-4-solo-d28` | 0.2708 | 0.03452 |
+| `gate_ortho_w0.25-40k` | 0.2376 | **0.00000** |
+| `dotted-h19-5-d2-8` | 0.2600 | 0.11153 |
+| `Hedge-v2` | 0.1563 | 0.31769 |
+
+The ordering is inverted, and the cause is mechanical rather than scientific. The three artifacts
+at the top were built with a **hard exclusion of every pixel within 2–3 px of the *full* catalogue**.
+A hide-and-recover holdout then hides some catalogue segments and asks the artifact to find them —
+but the artifact has already deleted every dot near them. Its score is forced to ≈ 0 **by its own
+success condition**. `Hedge-v2`, which emits 60,988 dots directly on the catalogue, is rewarded
+for exactly the behaviour the live scorer punishes.
+
+**Consequence, and the fix applied here:** a hide-and-recover holdout can only be used to evaluate
+a **rule**, re-executed per fold with only that fold's *visible* catalogue — never a finished
+raster. `src/gems85/holdout.py::score_folds` takes a callable and rebuilds per fold for exactly
+this reason; `score_static` exists only for the duplicate check and carries this warning. Every
+sibling repository that reported a Spearman ρ between a static-artifact holdout and the live board
+was measuring this artifact, not an instrument. Logged as **IR-85-001**.

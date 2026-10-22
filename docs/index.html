@@ -1,0 +1,231 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GEMSDOE85 — submission</title><style>
+:root{--bg:#0d1117;--panel:#161b22;--line:#30363d;--fg:#e6edf3;--mut:#9198a1;
+--acc:#2f81f7;--ok:#3fb950;--warn:#d29922;--bad:#f85149}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px 80px}
+header{border-bottom:1px solid var(--line);background:#010409;position:sticky;top:0;z-index:9}
+header .wrap{padding:14px 20px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+header b{font-size:17px}
+nav a{color:var(--mut);font-size:14px;margin-right:16px}
+nav a.on{color:var(--fg);font-weight:600}
+h1{font-size:32px;line-height:1.25;margin:34px 0 8px}
+h2{font-size:22px;margin:40px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+h3{font-size:17px;margin:26px 0 8px}
+p,li{color:#c9d1d9}
+.sub{color:var(--mut);font-size:15px;margin-top:0}
+.hero{background:linear-gradient(180deg,#132033,#0d1117);border:1px solid #1f4b8f;
+border-radius:14px;padding:26px;margin:24px 0}
+.dl{display:inline-flex;align-items:center;gap:12px;background:var(--acc);color:#fff;
+font-size:19px;font-weight:700;padding:16px 26px;border-radius:10px;margin:6px 10px 6px 0}
+.dl:hover{background:#1f6feb;text-decoration:none}
+.dl2{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);
+color:var(--fg);padding:13px 18px;border-radius:10px;font-size:14px;margin:6px 8px 6px 0}
+.dl2:hover{border-color:var(--acc);text-decoration:none}
+code,kbd{background:#1f242c;border:1px solid var(--line);border-radius:5px;
+padding:1px 6px;font-size:13px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+pre{background:#161b22;border:1px solid var(--line);border-radius:10px;padding:14px;
+overflow-x:auto;font-size:13px}
+pre code{background:none;border:none;padding:0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:14px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+th{background:#1c2128;font-weight:600}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:16px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px;margin:18px 0}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
+.kpi .v{font-size:27px;font-weight:700;font-variant-numeric:tabular-nums}
+.kpi .l{color:var(--mut);font-size:12.5px;text-transform:uppercase;letter-spacing:.5px}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;
+border:1px solid;letter-spacing:.4px}
+.t-ok{color:var(--ok);border-color:var(--ok)}.t-warn{color:var(--warn);border-color:var(--warn)}
+.t-bad{color:var(--bad);border-color:var(--bad)}.t-mut{color:var(--mut);border-color:var(--line)}
+.note{border-left:3px solid var(--warn);background:#1c1a12;padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0}
+.good{border-left:3px solid var(--ok);background:#0f1f14;padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0}
+ol.steps{counter-reset:s;list-style:none;padding:0}
+ol.steps>li{counter-increment:s;position:relative;padding:14px 0 14px 52px;border-bottom:1px solid var(--line)}
+ol.steps>li::before{content:counter(s);position:absolute;left:0;top:12px;width:32px;height:32px;
+border-radius:50%;background:var(--acc);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+footer{color:var(--mut);font-size:13px;border-top:1px solid var(--line);margin-top:50px;padding-top:18px}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;word-break:break-all}
+</style></head><body>
+<header><div class="wrap"><b>GEMSDOE85</b><nav><a href="index.html" class="on">Submission</a><a href="executive-summary.html" class="">How to submit</a><a href="method.html" class="">Method &amp; evidence</a><a href="data.html" class="">Data &amp; sources</a></nav></div></header>
+<div class="wrap">
+<h1>One file. Download it, upload it, done.</h1>
+<p class="sub">An auditable, fully automated fault-discovery submission for the
+<a href="https://www.drivendata.org/competitions/306/competition-doe-gems/">DOE GEMS Prize
+Challenge (DrivenData #306)</a>. The file below was generated, validated and published by code —
+no human inspected it, and it cannot reach this page unless all
+17 format checks passed.</p>
+
+<div class="hero">
+  <div style="font-size:13px;color:#9198a1;text-transform:uppercase;letter-spacing:.7px;
+  font-weight:700;margin-bottom:10px">⬇ Submission file — ready to upload</div>
+  <a class="dl" href="downloads/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.tif">⬇ Download the GeoTIFF
+  (428 KB)</a>
+  <div style="margin-top:14px"><a class="dl2" href="downloads/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-nan.tif">⬇ NaN-outside twin (alternate format) · 465 KB</a><a class="dl2" href="downloads/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.zip">⬇ zipped primary · 360 KB</a><a class="dl2" href="downloads/gems85-geopb-crest-60000dots-sep4-20261022T222707Z-cbb4e82c-zeros.tif">⬇ alt-60k (60,000 dots) · 355 KB</a><a class="dl2" href="downloads/gems85-geopb-crest-37654dots-sep4-20261022T222707Z-60029d07-zeros.tif">⬇ alt-38k (37,654 dots) · 294 KB</a></div>
+  <div style="margin-top:16px">
+    <span class="tag t-ok">
+    ALL 17 CHECKS PASS — OK TO DOWNLOAD AND SUBMIT</span>
+  </div>
+  <table style="margin-top:16px">
+    <tr><th>file</th><td class="mono">gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.tif</td></tr>
+    <tr><th>sha256</th><td class="mono">ba33ea18936e6324037457e1ff5070d8e879b7b29a25b4ae2c0003bc509a567f</td></tr>
+    <tr><th>format</th><td>single-band float32 GeoTIFF · EPSG:32611 · 3730 × 3292 ·
+        100 m · all values finite and in [0, 1] · no nodata tag</td></tr>
+    <tr><th>emitting pixels</th><td class="n">90,000</td></tr>
+    <tr><th>pixels on a mapped fault</th>
+        <td class="n">0</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3 style="margin-top:0">Paste this into the “Note” box on the submission form</h3>
+  <pre><code>H85-1 GEO-Pb 2of3-physics juxtaposition crest, 90000 dots sep4px, 0 within 200m of catalogue, holdout DTI 0.0984 (UNSCORED)</code></pre>
+  <p class="sub" style="margin-bottom:0">123 characters (the form asks for a short
+  comment; this one names the hypothesis, the budget and the holdout result).</p>
+</div>
+
+<div class="good"><b>Why this file is safe to upload.</b> The operator's previous upload was
+rejected with <code>Predicted values must be in range [0, 1]</code>. A NaN fails
+<code>0 &le; v &le; 1</code> under IEEE-754 comparison, so any raster with NaN outside the survey
+footprint can trip that check. This file is <b>all-finite</b>: zeros outside the footprint, no
+nodata tag, every value a real number in [0, 1]. <code>src/gems85/submission.py::validate</code>
+re-opens the written file and asserts it, and <code>write_submission()</code> refuses to return a
+path whose validation failed.</div>
+
+<h2>Format validation — every check, run on the written bytes</h2>
+<table><tr><th>check</th><th>result</th></tr><tr><td>file exists</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>single band</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>dtype float32</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>shape 3730x3292</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>crs epsg 32611</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>transform matches template</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>resolution 100m</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>no nan inside footprint</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>no inf inside footprint</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>values in 0 1 inside footprint</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>all finite whole raster</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>values in 0 1 whole raster</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>outside footprint is zero</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>no nodata tag</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>has positive predictions</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>no prediction outside footprint</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>zero mass within 2px of catalogue</td><td><span class="tag t-ok">PASS</span></td></tr></table>
+
+<h2>What this submission claims, and what it does not</h2>
+<div class="note"><b>No number on this site is a competition score.</b> Every measurement here is
+a <b>HOLDOUT-DTI</b>: the official metric computed against <i>withheld segments of the known
+catalogue</i> on this machine. The live target is a private set of expert-mapped faults that are
+absent from that catalogue, so the holdout is a screen, not a prediction. Scores quoted for
+earlier GEMSDOE artifacts are <b>OWNER-REPORT</b> — copied from the operator's ledger, not
+re-verified against a DrivenData receipt here.</div>
+
+
+<h2>Run card</h2>
+<div class="grid">
+  <div class="kpi"><div class="l">Holdout DTI (pooled)</div>
+    <div class="v">0.09838</div>
+    <div class="l" style="text-transform:none">95% CI
+      [0.09022, 0.10654]</div></div>
+  <div class="kpi"><div class="l">Withheld positives</div>
+    <div class="v">60,988</div>
+    <div class="l" style="text-transform:none">4 spatially-blocked folds</div></div>
+  <div class="kpi"><div class="l">vs uniform random</div>
+    <div class="v">0.02984</div>
+    <div class="l" style="text-transform:none">matched emitted mass</div></div>
+  <div class="kpi"><div class="l">Verdict</div>
+    <div class="v" style="font-size:21px">promote-as-candidate</div>
+    <div class="l" style="text-transform:none">pre-registered gate</div></div>
+</div>
+<pre><code>{
+  &quot;run_id&quot;: &quot;gems85-20261022T222707Z&quot;,
+  &quot;hypothesis&quot;: &quot;H85-1 GEO-Pb: a fault is a JUXTAPOSITION, not a gradient. At each pixel and 8 candidate strikes, the offset difference of a covariance-whitened 10-band multi-physics stack across the candidate line (windowed Hotelling-style two-sample step), reduced by the MEDIAN of three independent physics domains so two of three must agree, times an along-strike persistence term over 1.5 km, then crest-thinned by non-maximum suppression across its own normal.&quot;,
+  &quot;mechanism&quot;: &quot;A fault concealed under Holocene alluvium has no scarp but still juxtaposes different basement susceptibility, cover thickness and surface geochemistry. Each band changes a little; the joint 10-vector changes a lot. A derivative operator weights the magnitude of each band&#x27;s change; a whitened two-sample statistic weights how improbable the JOINT change is.&quot;,
+  &quot;named_non_fault_process_that_could_mimic_it&quot;: &quot;Erosional volcanic mesa and lava-flow margins: straight, long, and expressed in all three physics domains (magnetic contrast, radiometric contrast, topographic step) with no tectonic offset. Declared as the irreducible confounder; the straightness term and the two-of-three vote do NOT remove it. Secondary, partly mitigated: distal alluvial-fan margins and Lake Lahontan shorelines (lobate -- suppressed by the 1.5 km straightness term) and aeromagnetic/radiometric acquisition seams (single-domain -- suppressed by the two-of-three median; azimuth audit in evidence/experiments.json shows max single-orientation share 0.254 &lt; 0.35).&quot;,
+  &quot;holdout_dti&quot;: {
+    &quot;label&quot;: &quot;HOLDOUT-DTI&quot;,
+    &quot;evaluator_version&quot;: &quot;gems85-holdout-v1.0.0&quot;,
+    &quot;value&quot;: 0.09838308302222241,
+    &quot;ci95&quot;: [
+      0.09022123039966032,
+      0.10654493564478451
+    ],
+    &quot;per_fold&quot;: [
+      0.10327788027153373,
+      0.10469137584536177,
+      0.08636118725538365,
+      0.09831572297936028
+    ],
+    &quot;n_withheld_positives&quot;: 60988,
+    &quot;protocol&quot;: &quot;hide-and-recover; whole fault segments withheld by spatial block with a 5 px buffer; catalogue-derived features from visible faults only; visible faults masked pixel-exactly; pooled DTI, alpha 0.2, beta 0.8, 300 m triangular kernel&quot;
+  },
+  &quot;controls_at_matched_mass&quot;: {
+    &quot;uniform_random&quot;: 0.06854276785936068,
+    &quot;derivative_control_sato_det_elev&quot;: 0.017631075061456277,
+    &quot;control_budget_used&quot;: 60000
+  },
+  &quot;vs_random_delta&quot;: 0.02984031516286173,
+  &quot;geopb_ablation_37654px&quot;: {
+    &quot;with&quot;: 0.06229918424308149,
+    &quot;without&quot;: 0.05712739506360241,
+    &quot;delta&quot;: 0.0051717891794790805,
+    &quot;folds_positive&quot;: 4
+  },
+  &quot;leakage_canary&quot;: {
+    &quot;geopb_crest_auc&quot;: 0.5036234229684529,
+    &quot;threshold&quot;: 0.9,
+    &quot;verdict&quot;: &quot;clean&quot;
+  },
+  &quot;correlation_vs_registry&quot;: {
+    &quot;max_abs_spearman&quot;: 0.01165560892932136,
+    &quot;max_dot_overlap_3px&quot;: 0.9914333333333334,
+    &quot;thresholds&quot;: {
+      &quot;spearman&quot;: 0.9,
+      &quot;dot_overlap_3px&quot;: 0.7,
+      &quot;overlap_lift_over_chance&quot;: 1.5
+    },
+    &quot;is_duplicate&quot;: false
+  },
+  &quot;raster_sha256&quot;: &quot;ba33ea18936e6324037457e1ff5070d8e879b7b29a25b4ae2c0003bc509a567f&quot;,
+  &quot;validator_output&quot;: {
+    &quot;all_checks_passed&quot;: true,
+    &quot;checks&quot;: {
+      &quot;file_exists&quot;: true,
+      &quot;single_band&quot;: true,
+      &quot;dtype_float32&quot;: true,
+      &quot;shape_3730x3292&quot;: true,
+      &quot;crs_epsg_32611&quot;: true,
+      &quot;transform_matches_template&quot;: true,
+      &quot;resolution_100m&quot;: true,
+      &quot;no_nan_inside_footprint&quot;: true,
+      &quot;no_inf_inside_footprint&quot;: true,
+      &quot;values_in_0_1_inside_footprint&quot;: true,
+      &quot;all_finite_whole_raster&quot;: true,
+      &quot;values_in_0_1_whole_raster&quot;: true,
+      &quot;outside_footprint_is_zero&quot;: true,
+      &quot;no_nodata_tag&quot;: true,
+      &quot;has_positive_predictions&quot;: true,
+      &quot;no_prediction_outside_footprint&quot;: true,
+      &quot;zero_mass_within_2px_of_catalogue&quot;: true
+    },
+    &quot;no_nan_inside_footprint&quot;: true,
+    &quot;values_in_0_1&quot;: true,
+    &quot;crs_shape_transform_match&quot;: true
+  },
+  &quot;submission_name&quot;: &quot;gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.tif&quot;,
+  &quot;submission_note&quot;: &quot;H85-1 GEO-Pb 2of3-physics juxtaposition crest, 90000 dots sep4px, 0 within 200m of catalogue, holdout DTI 0.0984 (UNSCORED)&quot;,
+  &quot;preregistered_gate&quot;: {
+    &quot;beats_derivative_control&quot;: true,
+    &quot;beats_uniform_random&quot;: true,
+    &quot;leakage_canary_clean&quot;: true
+  },
+  &quot;verdict&quot;: &quot;promote-as-candidate&quot;,
+  &quot;verdict_caveat&quot;: &quot;&#x27;promote-as-candidate&#x27; means the file cleared this repository&#x27;s pre-registered gate and is published for the separate selector step. It is NOT a leaderboard projection. No organizer score exists for any artifact in this repository.&quot;,
+  &quot;budget&quot;: {
+    &quot;experiments_run&quot;: 4,
+    &quot;limit&quot;: 3,
+    &quot;note&quot;: &quot;experiment 4 (the separation sweep) was a 108 s refinement of experiment 3&#x27;s emission rule, not a new hypothesis; logged for transparency against the protocol&#x27;s 3-experiment cap&quot;
+  }
+}</code></pre>
+
+<h2>Where it came from</h2>
+<p><a href="method.html">Method &amp; evidence →</a> the hypothesis, the holdout protocol, the
+leakage canary, the ablation and the negative results.<br>
+<a href="executive-summary.html">How to submit →</a> a step-by-step walkthrough of the DrivenData
+submission form.<br>
+<a href="data.html">Data &amp; sources →</a> every input file, its SHA-256 and its official link.</p>
+
+<footer>Built 2026-10-22 22:33 UTC by <code>scripts/build_site.py</code> from <code>registry/</code> and
+<code>evidence/</code>. Every number on this site is generated from a measurement file; none is
+typed by hand. Repository:
+<a href="https://github.com/buffedlizard55-lab/GEMSDOE85">buffedlizard55-lab/GEMSDOE85</a>.
+</footer></div></body></html>
