@@ -245,6 +245,18 @@ def build_exec() -> str:
     pri = sub.get("primary", {})
     fn = pri.get("filename", "(build the submission first)")
     note = sub.get("note", "")
+    card = jload(ROOT / "evidence" / "run_card.json") or {}
+    vo = card.get("validator_output", {}) or {}
+    gate = card.get("preregistered_gate", {}) or {}
+    ok = bool(vo.get("all_checks_passed")) and bool(gate.get("leakage_canary_clean"))
+    ok_html = (
+        '<span class="tag {cls}">{label}</span> {msg}'.format(
+            cls="t-ok" if ok else "t-bad",
+            label="PASS" if ok else "FAIL",
+            msg="ALL 17 CHECKS PASS — OK TO DOWNLOAD AND SUBMIT"
+            if ok else "FAILED — DO NOT SUBMIT",
+        )
+    )
     body = f"""
 <h1>Executive summary — how to put this file into the competition</h1>
 <p class="sub">Five steps. Two minutes. No geology required.</p>
@@ -252,6 +264,7 @@ def build_exec() -> str:
 <div class="hero">
   <a class="dl" href="downloads/{html.escape(fn)}">⬇ Step 0 — download the GeoTIFF</a>
   <div class="mono" style="margin-top:12px;color:#9198a1">{html.escape(fn)}</div>
+  <div style="margin-top:8px">{ok_html}</div>
 </div>
 
 <ol class="steps">

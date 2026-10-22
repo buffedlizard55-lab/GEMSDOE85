@@ -1,0 +1,77 @@
+{
+  "experiment": 3,
+  "hypothesis_id": "H85-3 credit-bar-gated emission (emitter.py)",
+  "hypothesis": "emit a dot only while its field-based marginal kernel credit exceeds alpha*DTI/(1-alpha*DTI) (emitter.py lazy greedy), hard cap 60,000; drop uncredited mass to raise credit per dot.",
+  "mechanism": "exact marginal-gain theorem of metric.py; the alpha false-positive tax is only paid on dots whose expected kernel proximity pays for it.",
+  "named_non_fault_mimic": "same as H85-1: alluvial-fan margins / Lahontan shorelines, acquisition seams, volcanic mesa/flow margins (unchanged field).",
+  "layers": "same geopb_crest field as H85-1 (10-band whitened step statistic, 2-of-3 domains); no new layers.",
+  "difference_from_repo": "existing pipeline emits exactly n top dots; this experiment gates emission on the metric's own marginal bar. Packing lever only -- no new field, no new data.",
+  "leakage_canary": "not rerun: emission mask uses per-fold visible faults only; field unchanged from H85-1 (canary AUC 0.5036).",
+  "plain60": {
+    "pooled_dti": 0.08970713087363251,
+    "ci95": [
+      0.08278382006147397,
+      0.09663044168579105
+    ],
+    "per_fold": [
+      0.09431559483530476,
+      0.09114547869633031,
+      0.07920152202251127,
+      0.09371973735146019
+    ]
+  },
+  "results": [
+    {
+      "prior_dti": 0.06,
+      "pooled_dti": 0.08764859891758765,
+      "ci95": [
+        0.08224192899514621,
+        0.0930552688400291
+      ],
+      "per_fold": [
+        0.09133230141298851,
+        0.09089602788211541,
+        0.07946812420830726,
+        0.08826291975969863
+      ],
+      "mean_emitted": 60000.0,
+      "n_withheld_positives": 60988
+    },
+    {
+      "prior_dti": 0.09,
+      "pooled_dti": 0.08764859891758765,
+      "ci95": [
+        0.08224192899514621,
+        0.0930552688400291
+      ],
+      "per_fold": [
+        0.09133230141298851,
+        0.09089602788211541,
+        0.07946812420830726,
+        0.08826291975969863
+      ],
+      "mean_emitted": 60000.0,
+      "n_withheld_positives": 60988
+    },
+    {
+      "prior_dti": 0.12,
+      "pooled_dti": 0.08764859891758765,
+      "ci95": [
+        0.08224192899514621,
+        0.0930552688400291
+      ],
+      "per_fold": [
+        0.09133230141298851,
+        0.09089602788211541,
+        0.07946812420830726,
+        0.08826291975969863
+      ],
+      "mean_emitted": 60000.0,
+      "n_withheld_positives": 60988
+    }
+  ],
+  "matched_plain_control": null,
+  "n_withheld_positives": 60988,
+  "evaluator_version": "gems85-holdout-v1.0.0",
+  "runtime_s": 421.8808207511902
+}

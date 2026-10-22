@@ -214,8 +214,26 @@ re-verified against a DrivenData receipt here.</div>
     &quot;experiments_run&quot;: 4,
     &quot;limit&quot;: 3,
     &quot;note&quot;: &quot;experiment 4 (the separation sweep) was a 108 s refinement of experiment 3&#x27;s emission rule, not a new hypothesis; logged for transparency against the protocol&#x27;s 3-experiment cap&quot;
-  }
-}</code></pre>
+  },
+  &quot;negative_experiments_this_session&quot;: [
+    {
+      &quot;id&quot;: 1,
+      &quot;file&quot;: &quot;evidence/experiment_1_thermal.json&quot;,
+      &quot;hypothesis&quot;: &quot;H_TM thermal-spring x GEO-Pb conjunction: score = crest * (1 + lambda*exp(-d_thermal/tau)); re-rank the fixed dot budget toward verified hot/warm springs (GDR 1391).&quot;,
+      &quot;mechanism&quot;: &quot;springs mark deep circulation along permeable fault conduits; 619/1839 sites are &gt;3 km from any mapped fault.&quot;,
+      &quot;mimic&quot;: &quot;valley-floor/playa spring lines and road-aligned irrigation wells; mitigated by the GEO-Pb juxtaposition factor.&quot;,
+      &quot;result&quot;: &quot;best lambda=1.0 tau=5px: 0.09032 vs crest 0.08971 at 60k (CI overlap); 0.09917 vs 0.09838 at 90k. Leakage canary AUC 0.5093 (clean). Verdict: NEGATIVE.&quot;
+    },
+    {
+      &quot;id&quot;: 2,
+      &quot;file&quot;: &quot;evidence/experiment_2_orientation.json&quot;,
+      &quot;hypothesis&quot;: &quot;H85-2 GEO-Pb 16 strikes, persistence retired: double strike resolution, drop the null-result persistence term.&quot;,
+      &quot;result&quot;: &quot;0.07258/0.08662/0.09450 vs crest 0.07475/0.08971/0.09838 at 37.654k/60k/90k -- worse everywhere. Verdict: NEGATIVE.&quot;
+    },
+    {
+      &quot;id&quot;: 3,
+      &quot;file&quot;: &quot;evidence/experiment_3_emitter.json&quot;,
+      &quot;hypothesis&quot;: &quot;H85-3 credit-bar-gat</code></pre>
 
 <h2>Where it came from</h2>
 <p><a href="method.html">Method &amp; evidence →</a> the hypothesis, the holdout protocol, the
@@ -246,7 +264,7 @@ lanes <em>do</em> now share one metric implementation, and
 <code>tests/test_metric.py</code> asserts the fast O(29N) path equals a literal brute-force
 transcription of the official definition — so at least the ruler is common.</p>
 
-<footer>Built 2026-10-22 22:40 UTC by <code>scripts/build_site.py</code> from <code>registry/</code> and
+<footer>Built 2026-10-22 23:37 UTC by <code>scripts/build_site.py</code> from <code>registry/</code> and
 <code>evidence/</code>. Every number on this site is generated from a measurement file; none is
 typed by hand. Repository:
 <a href="https://github.com/buffedlizard55-lab/GEMSDOE85">buffedlizard55-lab/GEMSDOE85</a>.
