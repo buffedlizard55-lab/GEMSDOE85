@@ -62,7 +62,7 @@ def test_split_download_hash_and_atomic_replace(tmp_path, monkeypatch):
     assert result['status'] == 'restored'
     assert (directory / 'sample.tif').read_bytes() == b'firstsecond'
     assert len(list(directory.iterdir())) == 1
-    assert restore_data.restore(e, directory)['status'] == 'present'
+    assert restore_data.restore(e, directory)['status'] == 'cached'
 
 
 @pytest.mark.parametrize('path', ['../outside', '/tmp/outside', 'subdir/file.tif'])

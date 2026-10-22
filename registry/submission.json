@@ -34,7 +34,8 @@
       "footprint_pixels": 5167373,
       "on_catalogue_pixels": 0,
       "nodata_tag": null
-    }
+    },
+    "note": "H85-1 GEO-Pb 2of3-physics juxtaposition crest, 90000 dots sep4px, 0 within 200m of catalogue, holdout DTI 0.0984 (UNSCORED)"
   },
   "alternates": [
     {

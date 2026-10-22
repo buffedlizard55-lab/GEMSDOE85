@@ -1,0 +1,18 @@
+{
+  "session": "arena/bf7be90f-gemsdoe85",
+  "date": "2026-10-22",
+  "hypothesis": "H85-1 GEO-Pb (audited, NOT re-run): a concealed fault is a juxtaposition - covariance-whitened 10-band two-sample step across 8 strikes, median of 3 physics domains (2-of-3 must agree), crest-thinned. No new geological experiment was run this session; generating a new TIF would violate the unassigned-lane rule (registry/lane.json: method_paragraph=null).",
+  "mechanism": "Alluvium-covered faults lack scarps but juxtapose basement susceptibility / cover thickness / radiometric geochemistry; the joint 10-vector step exceeds any single-band derivative.",
+  "named_non_fault_process_that_could_mimic_it": "Erosional volcanic mesa / lava-flow margins (straight, multi-domain, irreducible); secondary: Lahontan shorelines, fan margins, acquisition seams.",
+  "holdout_dti": {"label": "HOLDOUT-DTI", "evaluator_version": "gems85-holdout-1", "value": 0.09838, "ci95": [0.09022, 0.10654], "n_withheld_positives": 60988, "status": "inherited from evidence/run_card.json; NOT recomputed this session"},
+  "organizer_scores": {"h33_h33_2_b2": {"value": 0.2778, "label": "OWNER-REPORT (brief ledger, no receipt re-verified here)"}, "leaderboard_high": {"value": 0.4413, "label": "OWNER-REPORT (brief, no file/hash crosswalk)"}},
+  "can_beat_02778": "No evidence it can. GEO-Pb holdout lift over uniform random is 1.3-1.4x vs incumbent live credit/dot ~5x random; honest transfer projection ~0.17-0.23 live [MODEL, not a score]. Beating 0.2778 requires raising credit-per-dot (bar k>0.2*DTI=0.0556/dot), not more dots: family fit T=468.4*n^0.2292 gives marginal 0.032/dot at 44k-60k, below bar.",
+  "correlation_overlap_vs_registry": {"max_abs_spearman": 0.0117, "raw_dot_overlap_3px_max": 0.9914, "overlap_vs_comparable_dotted_37k_46k": "0.21-0.25", "saturation_certificate_overlap": 1.0, "literal_gate_pass": false, "note": "evidence/duplicate_check.json sets is_duplicate=false despite max lift 1.519>1.5 and raw overlap 0.991>0.7 - logged IR-85-10. Under AGENTS.md literal rule: DUPLICATE-BLOCKED."},
+  "raster_sha256": "ba33ea18936e6324037457e1ff5070d8e879b7b29a25b4ae2c0003bc509a567f",
+  "validator_output_remeasured_2026_10_22": {"file": "docs/downloads/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.tif", "single_band_float32": true, "shape": "3730x3292", "crs": "EPSG:32611", "transform_matches_sample": true, "no_nan_inside_footprint": true, "nan_total_whole_raster": 0, "values_in_0_1": true, "nodata_tag": null, "emitting_pixels": 90000, "dots_on_catalogue": 0, "fixes_reported_error": "Predicted values must be in range [0, 1] - zeros encoding is all-finite; the -nan twin (7,111,787 NaNs) must NOT be uploaded"},
+  "submission_name": "gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.tif",
+  "submission_note": "H85-1 GEO-Pb juxtaposition crest 90k sep4px holdoutDTI 0.0984 BLOCKED-lane+uniqueness (UNSCORED)",
+  "submission_note_chars": 103,
+  "verdict": "negative",
+  "verdict_reason": "Format PASS != slot approval. Blockers: unassigned lane, literal uniqueness saturation, holdout projection below incumbent. Do not spend a weekly slot. Separate selector + protocol-owner ruling on dense-raster registry class required."
+}
