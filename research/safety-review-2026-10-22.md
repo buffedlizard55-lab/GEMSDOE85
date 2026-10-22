@@ -49,3 +49,7 @@ Added regression tests for unsupported promotion, stray binary publication, shar
 4. Only after all strict gates pass, implement a separate promotion selector and hash-bound download publication. Verify account rules/quota and preserve organizer receipts; do not upload from this pipeline automatically.
 
 These prerequisites are not claimed completed. A unique filename or newly written TIFF would not solve them.
+
+## Parallel merge reconciliation
+
+Before PR merge, upstream PR #7 landed two additional negative GEO-Pb scale variants and a root redirect correction. Merged `main@51cff12` into the assigned branch without dropping those evidence/scripts/irregularity entries. Its revised README is preserved as `research/archive/README-parallel-review-51cff12.md`; the current blocked status takes precedence over its unchanged format-only approval. The historical download run card was retained in quarantine, including upstream's updates. No upstream experiment is counted as a fresh run in this review.
