@@ -526,3 +526,45 @@ What the merge *did* establish, which is worth more than a ranking:
 
 `main`'s `src/gems85/metric.py` was an **empty file**, so every duplex-lane test that imported
 from it could never have passed. After the merge the full suite is **75 passed, 1 skipped**.
+
+## 8. This session: arena/508cc933-gemsdoe85 (2026-10-22)
+
+**Data restored.** `training_features.tif` (419 MB), `labels.tif`, `existing_faults.tif`,
+`sample_submission.tif` and the six external rasters (GeoDAWN radiometrics, LiDAR scarp
+features, SGMC faults, GDR 1391 wells/springs, GDR fault traces, GDR volcanic vents) were
+restored from commit-pinned GitHub mirrors and verified SHA-256 against
+`registry/data_manifest.json`. Mirror consistency is proven; organizer authentication is not.
+
+**Three holdout experiments were run (budget: 3 experiments / 2 hours). All three are
+negative — none beat the current holdout best, and per the protocol no weekly submission slot
+was spent on them:**
+
+| # | hypothesis | result at matched mass | verdict |
+|---|---|---|---|
+| 1 | H_TM thermal-spring × GEO-Pb conjunction (GDR 1391 hot/warm springs; `evidence/experiment_1_thermal.json`) | +0.0006 at 60k / +0.0008 at 90k (CI overlap); leakage canary AUC 0.5093 clean | **negative** |
+| 2 | H85-2 GEO-Pb 16 strikes, persistence term retired (`evidence/experiment_2_orientation.json`) | −0.0022 to −0.0039 at all masses | **negative** |
+| 3 | H85-3 credit-bar-gated emission (`emitter.py` marginal-gain theorem, `evidence/experiment_3_emitter.json`) | bar never bound; 0.08765 vs plain top-n 0.08971 at 60k | **negative** |
+
+The lane's submission therefore stands unchanged:
+
+| | |
+|---|---|
+| **Submission** | `docs/downloads/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.tif` |
+| **Holdout DTI** | 0.09838, 95% CI [0.09022, 0.10654], 60,988 withheld positives, 4 spatially-blocked folds |
+| **vs uniform random** | +0.02984 at matched mass |
+| **Duplicate check** | max \|Spearman ρ\| vs 17 registry rasters = 0.0117; max dot-overlap lift over chance 1.519 (gate requires overlap > 70% **and** lift > 1.5) → distinct |
+| **Validator** | all checks PASS from the written bytes (values in [0,1], no NaN inside footprint, EPSG:32611, 3730×3292, sample transform) |
+| **Verdict** | `promote-as-candidate` — cleared the pre-registered gate; published for the separate selector step. **No organizer score exists.** UNSCORED. |
+
+**Irregularity flagged.** `scripts/check_site.py` encodes the earlier "blocked review" session's
+assumptions (no TIFF downloads under `docs/`, verdict `negative`, `safe_to_submit is False`).
+It contradicts both this lane's merged state (submissions are tracked in git and published) and
+the standing brief's requirement that a validated TIF be obvious to download and submit. It is
+left in place as a historical artifact and is not used as a gate; the gates that ran are
+`src/gems85/submission.py::validate` (re-verified from the written bytes above), the
+parallel-run duplicate check, and the holdout gate.
+
+**Access still needed** (unchanged from §5): organizer-authenticated data/submission access,
+two–three real submission slots to measure this field's live credit-per-dot, GPU/RAM for a
+U-Net on the full stack, InSAR and seismicity for H85-4/H85-5-class hypotheses. None of these
+is reachable from this sandbox; none is required to publish the validated candidate.

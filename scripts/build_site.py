@@ -285,6 +285,14 @@ def build_exec() -> str:
     pri = sub.get("primary", {})
     fn = pri.get("filename", "(build the submission first)")
     note = sub.get("note", "")
+    card = jload(ROOT / "evidence" / "run_card.json") or {}
+    vo = card.get("validator_output", {}) or {}
+    gate = card.get("preregistered_gate", {}) or {}
+    ok = bool(vo.get("all_checks_passed")) and bool(gate.get("leakage_canary_clean"))
+    ok_cls = "t-ok" if ok else "t-bad"
+    ok_label = "PASS" if ok else "FAIL"
+    ok_msg = ("ALL 17 CHECKS PASS — OK TO DOWNLOAD AND SUBMIT" if ok
+              else "FAILED — DO NOT SUBMIT")
     zip_fn = fn.replace("-zeros.tif", "-zeros.zip")
     body = f"""
 <h1>Executive summary — how to put this file into the competition</h1>
@@ -296,7 +304,7 @@ def build_exec() -> str:
   <a class="dl" href="downloads/{html.escape(fn)}">⬇ Download the GeoTIFF ({pri.get('bytes', 0)/1024:.0f} KB)</a>
   <div style="margin-top:14px"><a class="dl2" href="downloads/{html.escape(zip_fn)}">⬇ zipped twin</a></div>
   <div style="margin-top:16px">
-    <span class="tag t-ok">ALL 17 CHECKS PASS — OK TO DOWNLOAD AND SUBMIT</span>
+    <span class="tag {ok_cls}">{ok_label}</span> {ok_msg}
   </div>
   <div class="mono" style="margin-top:12px;color:#9198a1">{html.escape(fn)}</div>
 </div>
