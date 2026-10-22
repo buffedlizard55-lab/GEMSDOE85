@@ -51,6 +51,10 @@ The project performs data integrity, saturation preflight, shared-code integrity
 
 The static Pages site is a truthful status/research portal, not an in-browser model generator. A future model must feed the shared `submission_writer.py` only after passing the independent gates, and publish only the validated bytes. Local format PASS is neither geological validation nor organizer acceptance. The public spec permits null/NaN outside bounds; the template's all-finite/zero-outside policy is a conservative export policy, not proof that DrivenData rejects NaN. The historic portal message alone does not identify its cause.
 
+## Parallel-session reconciliation
+
+While this branch was under review, a parallel session merged README-only research in PRs #1 and #2. The resulting README conflict was resolved by preserving that entire prior text in `research/previous-review-2026-10-22.md`, headed as a superseded historical snapshot. Its untested MT/thermal/geochemical shortlist is retained, not represented as our executed work or as an explicit lane assignment. The current status reflects the mirror restoration and saturation measurement from this session.
+
 ## Next session, in dependency order
 
 1. Obtain an explicit parallel-run method assignment and an authorized resolution of the saturated-prior overlap policy. Preserve the current literal result until then.

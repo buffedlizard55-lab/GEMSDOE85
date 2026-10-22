@@ -14,6 +14,8 @@
 - [Run card](evidence/run_card.json)
 - [Claim-level source register](registry/sources.json)
 
+A concurrent README-only review merged during this run. It is preserved, with superseded statuses clearly marked, in [the historical parallel review](research/previous-review-2026-10-22.md). Its research shortlist was not treated as a lane assignment.
+
 ### Start every session here
 
 Read this README, including the original request below; then `research/review.md`, `evidence/run_card.json`, and `registry/lane.json`. Follow `AGENTS.md`. **Maximize P(Win)** means evidence before scarce slots; **Own the Outcome** means reporting a blocker rather than inventing a ready artifact. The quoted brief contains owner-reported scores, repeated text and stale assumptions; it is preserved as a request, not endorsed as verified fact.

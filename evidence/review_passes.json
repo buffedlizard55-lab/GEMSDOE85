@@ -43,7 +43,8 @@
         "Home and executive-summary pages return HTTP 200 on the bound preview server.",
         "README retains the original request with whitespace normalization; AGENTS.md requires reading it at session start.",
         "CI builds/checks deterministic pages and tests without downloading training data; scheduled/manual metadata refresh does not spend slots or promote artifacts.",
-        "No claimed candidate AUC, DTI, CI, correlation or raster SHA-256 is invented; those fields remain null/not run."
+        "No claimed candidate AUC, DTI, CI, correlation or raster SHA-256 is invented; those fields remain null/not run.",
+        "Reconciled concurrent README-only main changes; preserved all earlier text in a marked historical archive rather than discarding its research or adopting its shortlist as a lane assignment."
       ],
       "not_verified": [
         "No headless-browser visual or screen-reader audit was available; HTML/CSS, internal links and HTTP delivery were checked.",
