@@ -1,7 +1,14 @@
+# Large restored data — never committed; restored by scripts/restore_data.py from pinned mirrors
+data/
+!data/.gitkeep
+*.partial
+__pycache__/
+*.pyc
+.venv/
+work/
+
+# --- from the duplex lane ---
 .cache/
 data/training_features.tif
 data/external/
-__pycache__/
-*.pyc
-.cache/
 .mypy_cache/

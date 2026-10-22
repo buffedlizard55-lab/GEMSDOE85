@@ -1,19 +1,10 @@
 #!/usr/bin/env python3
-"""GEMSDOE85 experiments: 3 candidate fields on the protocol holdout + controls.
+"""EXPERIMENT 1-3: validate the GEO-Pb lane on the spatially-blocked hide-and-recover holdout.
 
-E1 (H85-A, top candidate): fold-proper HistGradientBoosting detector on the
-    35-channel template stack + 20 external uint8 channels.  NO catalogue-derived
-    feature (no distance-to-catalogue).  Trained per fold on visible faults only.
-E2 (H85-B): label-free multi-physics orientation-consensus surface.
-E3 (H85-C): label-free strain-gated lineament surface.
-Controls: the ORGANIZER-CONFIRMED 0.2600 d2.8 raster and the 0.2778 h33-2-b2
-    raster, scored as-is on the same holdout (they are registry rasters, never
-    candidates).  Promotion bar = best control pooled HOLDOUT-DTI.
-
-Emission for every candidate: support = top-150k field pixels (pro-rated per
-fold), lazy-greedy max-coverage (template emitter), budget pro-rated from the
-37654-dot global operating point, allowed = footprint & EDT(visible) > 2 px.
+Everything here is a HOLDOUT-DTI measurement.  No number produced by this script is, or may be
+reported as, a leaderboard score.
 """
+
 from __future__ import annotations
 
 import json
@@ -22,194 +13,133 @@ import time
 from pathlib import Path
 
 import numpy as np
-import rasterio
-from scipy import ndimage
-from sklearn.ensemble import HistGradientBoostingClassifier
-from sklearn.metrics import roc_auc_score
+from scipy import ndimage as ndi
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
-from gems85 import evaluate_holdout as EH          # noqa: E402
-from gems85 import emitter, fields                 # noqa: E402
-from gems85.features import CHANNELS               # noqa: E402
 
-DATA = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / "data"
-CACHE = Path(sys.argv[2]) if len(sys.argv) > 2 else Path("/tmp/gems85_cache")
-GLOBAL_BUDGET = 37654
-SUPPORT_GLOBAL = 150000
-SEED = 85
+from gems85 import baselines, emission, geopb, grid, holdout  # noqa: E402
+
+CACHE = ROOT / "data" / "cache"
+OUT = ROOT / "evidence"
 
 
-def read_bool(p: Path) -> np.ndarray:
-    with rasterio.open(p) as s:
-        a = s.read(1)
-    return np.isfinite(a) & (a > 0)
-
-
-def main() -> None:
-    t0 = time.time()
+def cached(name: str, fn):
     CACHE.mkdir(parents=True, exist_ok=True)
-    stack_path = CACHE / "feature_stack.npy"
-    if not stack_path.exists():
-        from gems85 import features as F
-        receipt = F.build(DATA / "training_features.tif", stack_path, log=lambda m: print(m, flush=True))
-        (CACHE / "feature_receipt.json").write_text(json.dumps(receipt, indent=2))
-    stack = np.lib.format.open_memmap(stack_path, mode="r")
-    print(f"stack {stack.shape} ({time.time()-t0:.0f}s)", flush=True)
+    p = CACHE / f"{name}.npy"
+    if p.exists():
+        return np.load(p)
+    a = fn()
+    np.save(p, a)
+    return a
 
-    with rasterio.open(DATA / "sample_submission.tif") as s:
-        foot = np.isfinite(s.read(1))
-    labels = read_bool(DATA / "labels.tif") & foot
 
-    ext = []
-    ext_names = []
-    for rel, names in [("external/lidar_scarp_features_u8.tif",
-                        [f"lidar_{n}" for n in ["ex_max","ex_mean","step_max","lapneg_max","lappos_max","downface_max","upface_max","cross_max","relief","coh100","strike","valid"]]),
-                       ("external/geodawn_rad_u8.tif", ["rad_K", "rad_Th", "rad_U", "rad_TC"]),
-                       ("external/geodawn_extensions_u8.tif", ["ext_ThK", "ext_UK", "ext_UTh", "ext_TMIup150"])]:
-        with rasterio.open(DATA / rel) as s:
-            for i, nm in enumerate(names, start=1):
-                ext.append(s.read(i))
-                ext_names.append(nm)
-    ext_arr = np.stack(ext, axis=-1)  # uint8 HxWx20
-    print(f"ext {ext_arr.shape} ({time.time()-t0:.0f}s)", flush=True)
+def main() -> int:
+    t0 = time.time()
+    fp = grid.footprint()
+    cat = grid.catalogue()
+    folds = holdout.make_folds(cat, n_folds=4, block_px=200, buffer_px=5)
+    n_withheld = sum(f.n_withheld for f in folds)
+    print(f"folds: {[f.n_withheld for f in folds]}  total withheld positives = {n_withheld}")
 
-    def sample_X(ys, xs):
-        X35 = np.asarray(stack[ys, xs, :], dtype=np.float32)
-        Xe = ext_arr[ys, xs, :].astype(np.float32) / 255.0
-        return np.concatenate([X35, Xe], axis=1)
+    # ---------------------------------------------------------------- surfaces (catalogue-free)
+    print("building surfaces ...")
+    surfaces = {
+        "geopb_r3_L15":  lambda: geopb.geopb_surface(sigma=1.5, normals=tuple(geopb.NORMALS_R3),
+                                                     persistence_px=15.0, footprint=fp),
+        "geopb_r6_L25":  lambda: geopb.geopb_surface(sigma=2.5, normals=tuple(geopb.NORMALS_R6),
+                                                     persistence_px=25.0, footprint=fp),
+        "geopb_r3_L1":   lambda: geopb.geopb_surface(sigma=1.5, normals=tuple(geopb.NORMALS_R3),
+                                                     persistence_px=1.0, footprint=fp),
+        "ctrl_sato_elev": lambda: baselines.sato_ridge("det_elev", footprint=fp),
+        "ctrl_grad_rtp":  lambda: baselines.gradient_magnitude("rtp", 2.0, footprint=fp),
+        "ctrl_random":    lambda: baselines.uniform_random(fp, seed=20261022),
+    }
+    fields = {}
+    for k, fn in surfaces.items():
+        fields[k] = cached(k, fn)
+        print(f"  [{time.time()-t0:6.1f}s] {k}")
 
-    feature_names = list(CHANNELS) + ext_names
+    # fused: the two GEO-Pb scales combined by rank (declared in the preregistration)
+    def rank01(a):
+        v = a[fp]
+        r = np.empty(a.shape, np.float32)
+        order = np.argsort(v, kind="stable")
+        rk = np.empty(v.size, np.float32)
+        rk[order] = np.arange(v.size, dtype=np.float32) / max(1, v.size - 1)
+        r[:] = 0.0
+        r[fp] = rk
+        return r
 
-    holdout = EH.make_holdout(labels, foot)
-    n_withheld = int(sum(c.withheld.sum() for c in holdout.cells))
-    print(f"holdout cells={len(holdout.cells)} withheld_px_total={n_withheld} ({time.time()-t0:.0f}s)", flush=True)
+    fields["geopb_fused"] = cached(
+        "geopb_fused", lambda: (0.5 * rank01(fields["geopb_r3_L15"])
+                                + 0.5 * rank01(fields["geopb_r6_L25"])).astype(np.float32))
+    print(f"  [{time.time()-t0:6.1f}s] geopb_fused")
 
-    # union withheld per fold (segment-leakage guard for fold training)
-    union_withheld = {}
-    for fold in range(4):
-        u = np.zeros_like(labels)
-        for c in holdout.cells:
-            if c.fold == fold:
-                u |= c.withheld
-        union_withheld[fold] = u
-
-    rng = np.random.default_rng(SEED)
-    results = {}
-
-    # ---------- label-free fields (computed once, globally) ----------
-    print("building H85-B orientation consensus...", flush=True)
-    surf_b = fields.surface_orientation_consensus(stack, foot)
-    np.save(CACHE / "surf_h85b.npy", surf_b)
-    print(f"  done ({time.time()-t0:.0f}s)", flush=True)
-    print("building H85-C strain-gated...", flush=True)
-    surf_c = fields.surface_strain_gated(stack, foot)
-    np.save(CACHE / "surf_h85c.npy", surf_c)
-    print(f"  done ({time.time()-t0:.0f}s)", flush=True)
-
-    # ---------- per-fold supervised models + emissions ----------
-    fold_masks = {"E1_supervised_hgb": {}, "E2_orientation_consensus": {}, "E3_strain_gated": {}}
-    fold_field_e1 = {}
-    canary_rows = []   # (feature_name, values_pos, values_neg) accumulated later
-    canary_pos_X, canary_neg_X, canary_pos_field, canary_neg_field = [], [], {}, {}
-    dist_labels = ndimage.distance_transform_edt(~labels)
-
-    for fold in range(4):
-        cells = [c for c in holdout.cells if c.fold == fold]
-        train_mask = cells[0].train_mask
-        visible_train = labels & train_mask & ~union_withheld[fold]
-        pos_ys, pos_xs = np.nonzero(visible_train)
-        neg_pool = np.argwhere(train_mask & ~labels & (dist_labels > 1))
-        neg_idx = rng.choice(len(neg_pool), size=min(3 * len(pos_ys), len(neg_pool)), replace=False)
-        neg_ys, neg_xs = neg_pool[neg_idx, 0], neg_pool[neg_idx, 1]
-        ys = np.concatenate([pos_ys, neg_ys]); xs = np.concatenate([pos_xs, neg_xs])
-        y = np.concatenate([np.ones(len(pos_ys), np.int8), np.zeros(len(neg_ys), np.int8)])
-        X = sample_X(ys, xs)
-        clf = HistGradientBoostingClassifier(max_iter=250, learning_rate=0.08,
-                                             max_leaf_nodes=63, min_samples_leaf=40,
-                                             l2_regularization=1.0, random_state=SEED)
-        clf.fit(X, y)
-        print(f"fold{fold}: trained pos={len(pos_ys)} neg={len(neg_ys)} ({time.time()-t0:.0f}s)", flush=True)
-
-        # predict this fold's test quadrant in row blocks
-        test_mask = cells[0].test_domain
-        rows = np.flatnonzero(test_mask.any(axis=1))
-        field_e1 = np.zeros(labels.shape, np.float32)
-        for r0 in range(int(rows.min()), int(rows.max()) + 1, 128):
-            r1 = min(r0 + 128, labels.shape[0])
-            blk = test_mask[r0:r1]
-            by, bx = np.nonzero(blk)
-            if len(by) == 0:
-                continue
-            Xb = sample_X(by + r0, bx)
-            field_e1[by + r0, bx] = clf.predict_proba(Xb)[:, 1].astype(np.float32)
-        fold_field_e1[fold] = field_e1
-        np.save(CACHE / f"field_e1_fold{fold}.npy", field_e1)
-
-        # canary samples for this fold (from draw20 cell)
-        cell = cells[0]
-        py, px = np.nonzero(cell.withheld & cell.test_domain)
-        neg_candidates = np.argwhere(cell.test_domain & ~labels & (dist_labels > 3))
-        nidx = rng.choice(len(neg_candidates), size=min(len(py), len(neg_candidates)), replace=False)
-        ny, nx = neg_candidates[nidx, 0], neg_candidates[nidx, 1]
-        canary_pos_X.append(sample_X(py, px)); canary_neg_X.append(sample_X(ny, nx))
-        for nm, surf in [("E1_supervised_hgb", field_e1), ("E2_orientation_consensus", surf_b),
-                         ("E3_strain_gated", surf_c)]:
-            canary_pos_field.setdefault(nm, []).append(surf[py, px])
-            canary_neg_field.setdefault(nm, []).append(surf[ny, nx])
-
-        # emissions per experiment for this fold (scored against both draws)
-        visible_fold = labels & ~union_withheld[fold]
-        d_vis = ndimage.distance_transform_edt(~visible_fold)
-        for nm, surf in [("E1_supervised_hgb", field_e1), ("E2_orientation_consensus", surf_b),
-                         ("E3_strain_gated", surf_c)]:
-            allowed = cells[0].test_domain & foot & (d_vis > 2.0)
-            budget = int(round(GLOBAL_BUDGET * float(cells[0].test_domain.sum()) / float(foot.sum())))
-            support_n = int(round(SUPPORT_GLOBAL * float(cells[0].test_domain.sum()) / float(foot.sum())))
-            sup = fields.top_n_support(surf, allowed, support_n)
-            f2 = np.where(sup, surf, 0.0).astype(np.float32)
-            mask, log = emitter.emit(f2, budget=budget, prior_dti=0.0)
-            for c in cells:
-                fold_masks[nm][c.key] = mask
-            print(f"fold{fold} {nm}: emitted={int(mask.sum())} budget={budget} ({time.time()-t0:.0f}s)", flush=True)
-
-    for nm, fm in fold_masks.items():
-        results[nm] = EH.score_fold_masks(fm, holdout)
-        r = results[nm]
-        print(f"{nm}: HOLDOUT-DTI pooled={r['pooled_dti']:.6f} CI={r['ci95']} n={r['n_withheld_positives']}", flush=True)
-
-    # ---------- controls (registry rasters, scored as-is) ----------
-    controls = {}
-    for nm, p in [("CTRL_d28_0.2600", DATA / "scored/gems24-h25-1-dotted-h19-5-d2-8-20261002-e56ea318af89-nan.tif"),
-                  ("CTRL_h33_0.2778", Path("/tmp/g32/docs/downloads/gemsdoe32-h33-h33-2-b2-20261004T220000Z-e5eb6e7e-zeros.tif"))]:
-        if p.exists():
-            m = read_bool(p)
-            controls[nm] = EH.score_mask_pooled(m, holdout)
-            print(f"{nm}: HOLDOUT-DTI pooled={controls[nm]['pooled_dti']:.6f} CI={controls[nm]['ci95']}", flush=True)
-
-    # ---------- leakage canary: every feature alone ----------
-    Xp = np.concatenate(canary_pos_X); Xn = np.concatenate(canary_neg_X)
+    # ---------------------------------------------------------------- leakage canary
+    print("\nLEAKAGE CANARY (AUC of each raw surface vs withheld positives; >0.90 = suspect)")
     canary = {}
-    for j, nm in enumerate(feature_names):
-        v = np.concatenate([Xp[:, j], Xn[:, j]])
-        yy = np.concatenate([np.ones(len(Xp)), np.zeros(len(Xn))])
-        ok = np.isfinite(v)
-        auc = float(roc_auc_score(yy[ok], v[ok])) if ok.sum() > 10 else None
-        canary[nm] = dict(auc=auc, leakage_flag=bool(auc is not None and max(auc, 1 - auc) > 0.90))
-    for nm in canary_pos_field:
-        vp = np.concatenate(canary_pos_field[nm]); vn = np.concatenate(canary_neg_field[nm])
-        v = np.concatenate([vp, vn]); yy = np.concatenate([np.ones(len(vp)), np.zeros(len(vn))])
-        auc = float(roc_auc_score(yy, v))
-        canary[nm] = dict(auc=auc, leakage_flag=bool(max(auc, 1 - auc) > 0.90))
+    for k, f in fields.items():
+        auc = holdout.feature_auc(f, folds, fp)
+        canary[k] = auc
+        flag = "  <-- SUSPECT LEAKAGE" if auc > 0.90 else ""
+        print(f"  {k:16s} AUC = {auc:.4f}{flag}")
 
-    out = dict(evaluator=EH.EVALUATOR_VERSION, global_budget=GLOBAL_BUDGET,
-               support_global=SUPPORT_GLOBAL, n_withheld_positives=n_withheld,
-               experiments=results, controls=controls, canary=canary,
-               feature_names=feature_names, seconds=time.time() - t0)
-    (ROOT / "evidence" / "holdout_experiments.json").write_text(json.dumps(out, indent=2, default=float))
-    print(json.dumps({k: (v["pooled_dti"], v["ci95"]) for k, v in {**results, **controls}.items()}, indent=2))
-    print(f"DONE {time.time()-t0:.0f}s")
+    # ---------------------------------------------------------------- holdout DTI at matched mass
+    budgets = [20_000, 37_654, 60_000]
+    results = {}
+    print("\nHOLDOUT-DTI (pooled, 4 spatially-blocked folds, surfaces rebuilt per fold)")
+    for k, f in fields.items():
+        results[k] = {}
+        for n in budgets:
+            def surf(fold, f=f, n=n):
+                return emission.emit(f, footprint=fp, visible_catalogue=fold.visible,
+                                     n=n, sep_px=2.8, exclude_px=2)
+            r = holdout.score_folds(surf, folds, domain=fp)
+            results[k][n] = r.as_dict()
+            print(f"  [{time.time()-t0:6.1f}s] {k:16s} n={n:6d}  "
+                  f"pooled DTI = {r.pooled_dti:.5f}  CI95 [{r.ci95[0]:.5f},{r.ci95[1]:.5f}]  "
+                  f"per-fold {[round(x.dti,4) for x in r.folds]}")
+
+    # ---------------------------------------------------------------- confounder audit
+    print("\nCONFOUNDER AUDIT")
+    best, axis = geopb.geopb_surface(sigma=1.5, normals=tuple(geopb.NORMALS_R3),
+                                     persistence_px=15.0, footprint=fp, return_parts=True)
+    thr = np.percentile(best[fp], 99.0)
+    hot = fp & (best >= thr)
+    hist = np.bincount(axis[hot], minlength=8).astype(float)
+    hist /= hist.sum()
+    normals_deg = [round(float(np.degrees(np.arctan2(dx, dy))) % 180, 1)
+                   for dy, dx in geopb.NORMALS_R3]
+    print("  top-1% response azimuth histogram (normal azimuth deg : share)")
+    for a, s in zip(normals_deg, hist):
+        bar = "#" * int(round(s * 80))
+        print(f"    {a:6.1f} : {s:6.3f} {bar}")
+    seam_risk = float(hist.max())
+    print(f"  max single-orientation share = {seam_risk:.3f} "
+          f"({'OK (<0.35) -- no single azimuth dominates' if seam_risk < 0.35 else 'FLAG: possible acquisition-seam contamination'})")
+
+    summary = {
+        "evaluator_version": holdout.EVALUATOR_VERSION,
+        "n_withheld_positives": n_withheld,
+        "folds": [{"name": f.name, "n_withheld": f.n_withheld, "n_visible": f.n_visible}
+                  for f in folds],
+        "leakage_canary_auc": canary,
+        "holdout_dti": {k: {str(n): v["pooled_holdout_dti"] for n, v in d.items()}
+                        for k, d in results.items()},
+        "holdout_detail": {k: {str(n): v for n, v in d.items()} for k, d in results.items()},
+        "confounder_audit": {
+            "top1pct_normal_azimuth_deg": normals_deg,
+            "top1pct_share": hist.tolist(),
+            "max_single_orientation_share": seam_risk,
+            "verdict": "no single azimuth dominates" if seam_risk < 0.35 else "possible seam contamination",
+        },
+        "runtime_s": time.time() - t0,
+    }
+    (OUT / "experiments.json").write_text(json.dumps(summary, indent=2, default=float) + "\n")
+    print(f"\n-> evidence/experiments.json  ({time.time()-t0:.0f}s)")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

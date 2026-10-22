@@ -54,7 +54,14 @@ def test_writer_validator_roundtrip(tmp_path):
     if not sample.exists():
         return
     labels = np.zeros((H, W), bool)
-    mask = np.zeros((H, W), bool); mask[100:200:3, 100:200:3] = True
+    # IR-85-005 (defect in this test, not in the writer): the original block [100:200, 100:200]
+    # lies entirely OUTSIDE the survey footprint -- 0 of its 10,000 cells are valid in
+    # sample_submission.tif -- so the writer correctly zeroed every pixel and the test then
+    # asserted 0 == 1156. Moved to an interior block (9,991/10,000 in-footprint) so the
+    # round-trip actually exercises the writer.
+    mask = np.zeros((H, W), bool); mask[1800:1900:3, 1600:1700:3] = True
+    with rasterio.open(sample) as _s:                      # keep only in-footprint cells, so
+        mask &= np.isfinite(_s.read(1))                    # positive_px == mask.sum() is exact
     audit = SW.write_pair(mask, labels, sample, tmp_path, "test-zeros.tif")
     assert audit["zeros"]["all_checks_passed"]
     assert audit["zeros"]["positive_px"] == int(mask.sum())
