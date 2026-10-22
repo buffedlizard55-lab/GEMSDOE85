@@ -70,6 +70,34 @@
       "status": "fixed-on-branch",
       "finding": "Live Pages site serves repo root (source main:/, API update returned 403), whose index.html stated 'No verified submission TIFF is available' while docs/ published a 17/17-PASS validated TIF; also docs/downloads/run_card.json contained the duplex lane's card, not the primary GEO-Pb file's card.",
       "action_taken": "Root index.html rewritten to state the PASS verdict + sha256 and redirect to docs/index.html; docs/downloads/run_card.json replaced with evidence/run_card.json (GEO-Pb primary; duplex card preserved at evidence/run_card_duplex.json). Pages source could not be switched to /docs from this token (403) \u2014 root redirect is the workaround; owner may optionally set Settings>Pages to /docs."
+    },
+    {
+      "id": "IR-85-010",
+      "severity": "high",
+      "status": "fixed-on-branch",
+      "finding": "Previous GEO-Pb primary (90,000 dots) was emitted at the catalogue-holdout-optimal budget. The holdout marginal bar at DTI~0.1 is ~0.02/dot while the live bar at 0.2778 is 0.0588/dot (docs/research/metric-algebra.md S4 of this repo explicitly warns a holdout-tuned budget does not transfer). The fleet live cascade peaks near 37,654 dots, so the 90k primary is very likely worse live than this repo's own 37,654-dot alternate of the same field.",
+      "action_taken": "Session arena/22847afd primary emitted at 37,654 dots; 90k file relabelled SUPERSEDED on the site; pre-registered gate required <=44,090 dots (research/session-22847afd-hypotheses.md)."
+    },
+    {
+      "id": "IR-85-011",
+      "severity": "medium",
+      "status": "acknowledged",
+      "finding": "RELAY network-completion channel (session E2) is a train/test reversal: built from the visible mask and smoothed along it, fold0 training mean 0.090 on positives vs 0.006 on withheld positives, canary AUC vs withheld 0.457. As a classifier channel it teaches 'near visible network', collapsing holdout DTI 0.0623->0.0402 relative to the previous 24ch arm at matched protocol; as a multiplicative gate (E1) 0.0371 vs crest 0.0695.",
+      "action_taken": "Removed from the shipped field (E2b/E3b loggeg bugfix ablation); RELAY published as a negative result on this instrument. Note the spatially-blocked holdout structurally penalises catalogue-proximal geometry, so this negative does not prove tip/relay geometry is live-worthless."
+    },
+    {
+      "id": "IR-85-012",
+      "severity": "medium",
+      "status": "fixed-on-branch",
+      "finding": "scripts/check_site.py still enforced the retired blocked-state contract (no TIFF downloads, verdict must be negative) and was wired into CI; it failed on every legitimate page of the merged site (same stale contract as IR-85-004 for tests/test_project.py, which was quarantined but check_site.py was not).",
+      "action_taken": "Rewrote check_site.py for the current contract: link resolution, run-card mirroring, primary-download sha256 + all-checks-pass, banner/verdict agreement. Passes on this branch."
+    },
+    {
+      "id": "IR-85-013",
+      "severity": "low",
+      "status": "acknowledged",
+      "finding": "Raw 3px dot overlap of the session primary vs this repo's own superseded 90,000-dot GEO-Pb file is 0.79 (chance coverage 0.44, lift 1.81, exact pixel overlap 0.26). Vs every comparable-budget (<=60k) own-repo file overlap <=0.41; vs the 17-raster registry max comparable overlap 0.42 (h33 winner: 0.379, Spearman 0.065).",
+      "action_taken": "Disclosed in evidence/duplicate_check_ownrepo_session.json and the run card. Dense-file raw overlap is the IR-85-002 artifact; candidate is a distinct field and dot set, not a rename."
     }
   ]
 }

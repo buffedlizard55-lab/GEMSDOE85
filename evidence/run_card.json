@@ -1,53 +1,131 @@
 {
-  "run_id": "gems85-20261022T222707Z",
-  "hypothesis": "H85-1 GEO-Pb: a fault is a JUXTAPOSITION, not a gradient. At each pixel and 8 candidate strikes, the offset difference of a covariance-whitened 10-band multi-physics stack across the candidate line (windowed Hotelling-style two-sample step), reduced by the MEDIAN of three independent physics domains so two of three must agree, times an along-strike persistence term over 1.5 km, then crest-thinned by non-maximum suppression across its own normal.",
-  "mechanism": "A fault concealed under Holocene alluvium has no scarp but still juxtaposes different basement susceptibility, cover thickness and surface geochemistry. Each band changes a little; the joint 10-vector changes a lot. A derivative operator weights the magnitude of each band's change; a whitened two-sample statistic weights how improbable the JOINT change is.",
-  "named_non_fault_process_that_could_mimic_it": "Erosional volcanic mesa and lava-flow margins: straight, long, and expressed in all three physics domains (magnetic contrast, radiometric contrast, topographic step) with no tectonic offset. Declared as the irreducible confounder; the straightness term and the two-of-three vote do NOT remove it. Secondary, partly mitigated: distal alluvial-fan margins and Lake Lahontan shorelines (lobate -- suppressed by the 1.5 km straightness term) and aeromagnetic/radiometric acquisition seams (single-domain -- suppressed by the two-of-three median; azimuth audit in evidence/experiments.json shows max single-orientation share 0.254 < 0.35).",
+  "run_id": "gems85-session22847afd-20261022T232600Z",
+  "session_branch": "arena/22847afd-gemsdoe85",
+  "hypothesis": "S85-CTXFUS: a fault is a line in context, not a pixel. A contextual supervised field (HistGradientBoosting on 24 catalogue-free channels + 6 line-context channels: 1.5 km along-strike line support, multi-scale context means, 5-field corroboration count; trained per-fold on visible catalogue only) rank-fused 50/50 with the GEO-Pb juxtaposition crest ranks concealed-fault pixels better than either field alone.",
+  "mechanism": "The two fields fail differently: GEO-Pb fires on joint multi-physics steps (incl. non-fault contacts); the contextual HGB fires on the learned multi-scale appearance of mapped traces (incl. cultural lineaments). Rank-averaging keeps pixels both mechanisms endorse and demotes idiosyncratic false positives of each.",
+  "named_non_fault_process_that_could_mimic_it": "Erosional volcanic mesa / lava-flow margins (straight, multi-domain, line-like at 1.5 km context) \u2014 declared irreducible in the GEO-Pb lane and not removed here; secondary: cultural lineaments (roads/canals) with fault-like line context.",
   "holdout_dti": {
     "label": "HOLDOUT-DTI",
     "evaluator_version": "gems85-holdout-v1.0.0",
-    "value": 0.09838308302222241,
+    "value": 0.08081836214958257,
     "ci95": [
-      0.09022123039966032,
-      0.10654493564478451
+      0.07355801963655897,
+      0.08807870466260617
     ],
     "per_fold": [
-      0.10327788027153373,
-      0.10469137584536177,
-      0.08636118725538365,
-      0.09831572297936028
+      0.08001528134540063,
+      0.0906426353556833,
+      0.07800436085586732,
+      0.07306083797052132
     ],
     "n_withheld_positives": 60988,
-    "protocol": "hide-and-recover; whole fault segments withheld by spatial block with a 5 px buffer; catalogue-derived features from visible faults only; visible faults masked pixel-exactly; pooled DTI, alpha 0.2, beta 0.8, 300 m triangular kernel"
+    "configuration": "37,654 dots, sep 4.0 px, exclude 2 px halo, binary",
+    "protocol": "hide-and-recover; whole fault segments withheld by spatial block (200 px) with 5 px buffer; every catalogue-derived quantity rebuilt per fold from visible faults only; visible faults masked pixel-exactly; pooled DTI alpha 0.2 beta 0.8, 300 m triangular kernel",
+    "reference_beaten": {
+      "field": "GEO-Pb crest sep4 (repo holdout best, evidence/budget_sweep.json)",
+      "value_at_37654": 0.0747509441972475,
+      "per_fold": [
+        0.07711628038760639,
+        0.07504295704142083,
+        0.0681532281295331,
+        0.07849780281723791
+      ],
+      "delta": 0.006067417952335077,
+      "folds_positive": 3,
+      "honesty_note": "95% CIs overlap ([0.0736,0.0881] vs [0.0703,0.0793]); the win is consistent (both seps, both budgets, 3/4 folds) but not statistically decisive with 4 folds."
+    },
+    "uniform_random_matched": {
+      "value": 0.05492342637073805,
+      "ci95": [
+        0.05107477546523335,
+        0.05877207727624275
+      ]
+    }
   },
-  "controls_at_matched_mass": {
-    "uniform_random": 0.06854276785936068,
-    "derivative_control_sato_det_elev": 0.017631075061456277,
-    "control_budget_used": 60000
-  },
-  "vs_random_delta": 0.02984031516286173,
-  "geopb_ablation_37654px": {
-    "with": 0.06229918424308149,
-    "without": 0.05712739506360241,
-    "delta": 0.0051717891794790805,
-    "folds_positive": 4
+  "all_session_arms_holdout_dti_at_37654_sep28_unless_noted": {
+    "E1_relay_alone": 0.02524,
+    "E1_relay_gated_crest": 0.03708,
+    "E2_ctxhgb_with_relay_channel_BUG": 0.04022,
+    "E3_fusion_with_gated_component": 0.05523,
+    "E3_fusion_blurred_emission": 0.02775,
+    "E2b_ctxhgb_norelay_sep40": 0.07599,
+    "E3b_fusion5050_sep28": 0.07411,
+    "E3b_fusion5050_sep40_PRIMARY_RULE": 0.08081836214958257,
+    "crest_reference_sep28": 0.06953,
+    "crest_reference_sep40": 0.07475
   },
   "leakage_canary": {
-    "geopb_crest_auc": 0.5036234229684529,
+    "fusion_field_auc": 0.5760798929143848,
+    "ctxhgb_field_auc": 0.5843657630138307,
+    "max_single_new_feature_auc": 0.5817186619601397,
     "threshold": 0.9,
-    "verdict": "clean"
+    "verdict": "clean",
+    "relay_channel_note": "RELAY geometry canary AUC 0.457 vs withheld but its training separation is by construction (built from the visible mask): a train/test reversal. It was removed from the final field (E2b); RELAY as gate (E1) and as channel (E2) are both NEGATIVE results on this instrument."
   },
   "correlation_vs_registry": {
-    "max_abs_spearman": 0.01165560892932136,
-    "max_dot_overlap_3px": 0.9914333333333334,
+    "max_abs_spearman": 0.17111389777156674,
+    "max_dot_overlap_3px_raw": 0.9899081106920912,
+    "max_overlap_lift_over_chance": 2.5116916446306137,
     "thresholds": {
       "spearman": 0.9,
       "dot_overlap_3px": 0.7,
       "overlap_lift_over_chance": 1.5
     },
-    "is_duplicate": false
+    "is_duplicate": false,
+    "comparisons_file": "evidence/duplicate_check_session.json",
+    "irregularity": "IR-85-002 -- raw 70% overlap rule is unconditionally true against a space-filling registry raster; chance-corrected lift added.",
+    "vs_h33_winner": {
+      "dot_overlap_3px": 0.379,
+      "spearman_surface": 0.065,
+      "note": "from evidence/duplicate_check_session.json comparisons"
+    },
+    "vs_own_repo_previous_files": {
+      "geopb_37654_sep4_prev_alt": {
+        "dot_overlap_3px": 0.4107930100387741,
+        "chance_coverage_3px": 0.18437202036702208,
+        "overlap_lift_over_chance": 2.2280658921078413,
+        "exact_pixel_overlap": 0.11531311414457959
+      },
+      "geopb_90000_sep4_prev_primary": {
+        "dot_overlap_3px": 0.7903277208264726,
+        "chance_coverage_3px": 0.43764733066492395,
+        "overlap_lift_over_chance": 1.8058552296565278,
+        "exact_pixel_overlap": 0.2597864768683274
+      },
+      "geopb_60000_sep4": {
+        "dot_overlap_3px": 0.603388750199182,
+        "chance_coverage_3px": 0.29362714864980716,
+        "overlap_lift_over_chance": 2.05494877763776,
+        "exact_pixel_overlap": 0.18391140383491794
+      },
+      "h85a_hgb_37654": {
+        "dot_overlap_3px": 0.2506506612843257,
+        "chance_coverage_3px": 0.09915212236469091,
+        "overlap_lift_over_chance": 2.527940454591671,
+        "exact_pixel_overlap": 0.02722154352791204
+      },
+      "duplex_pullapart": {
+        "dot_overlap_3px": 0.029266478992935677,
+        "chance_coverage_3px": 0.015418472790719772,
+        "overlap_lift_over_chance": 1.8981438298189224,
+        "exact_pixel_overlap": 0.015350294789398205
+      },
+      "ti_pure": {
+        "dot_overlap_3px": 0.06952780581080363,
+        "chance_coverage_3px": 0.05073680572314017,
+        "overlap_lift_over_chance": 1.3703623005003884,
+        "exact_pixel_overlap": 0.010012216497583258
+      },
+      "worm_pure": {
+        "dot_overlap_3px": 0.08461252456578318,
+        "chance_coverage_3px": 0.0608376828999958,
+        "overlap_lift_over_chance": 1.3907913735779214,
+        "exact_pixel_overlap": 0.012455516014234875
+      }
+    },
+    "own_repo_note": "Raw 3-px overlap vs the superseded 90,000-dot GEO-Pb primary is 0.79, but that dense file's dilated support already covers 0.44 of the footprint (chance level); vs every comparable-budget (<=60k) own-repo file the overlap is <=0.41 and exact pixel overlap <=0.26. Disclosed in full; not a rename or re-emission."
   },
-  "raster_sha256": "ba33ea18936e6324037457e1ff5070d8e879b7b29a25b4ae2c0003bc509a567f",
+  "raster_sha256": "516730c0300e2bbd49f490b3bcb1d45dc6d59e23ab74f45bb9daf8fa9a9b7e2b",
   "validator_output": {
     "all_checks_passed": true,
     "checks": {
@@ -69,22 +147,39 @@
       "no_prediction_outside_footprint": true,
       "zero_mass_within_2px_of_catalogue": true
     },
+    "stats": {
+      "emitting_pixels": 37654,
+      "prediction_mass": 37654.0,
+      "min_inside": 0.0,
+      "max_inside": 1.0,
+      "unique_values_inside": 2,
+      "footprint_pixels": 5167373,
+      "on_catalogue_pixels": 0,
+      "nodata_tag": null
+    },
+    "mode": "zeros",
     "no_nan_inside_footprint": true,
     "values_in_0_1": true,
     "crs_shape_transform_match": true
   },
-  "submission_name": "gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.tif",
-  "submission_note": "H85-1 GEO-Pb 2of3-physics juxtaposition crest, 90000 dots sep4px, 0 within 200m of catalogue, holdout DTI 0.0984 (UNSCORED)",
+  "vs_random_delta": 0.025894935778844524,
+  "submission_name": "gems85-s85-ctxfus50-37654dots-sep4-20261022T232600Z-4f38c2b3-zeros.tif",
+  "submission_note": "S85 ctxfus50 rank-fusion ctx-HGB30+GEO-Pb crest, 37654 dots sep4px, 0 within 200m of catalogue, HOLDOUT-DTI 0.0808 (UNSCORED)",
+  "submission_note_chars": 125,
   "preregistered_gate": {
-    "beats_derivative_control": true,
-    "beats_uniform_random": true,
-    "leakage_canary_clean": true
+    "beats_holdout_best_0.07475_at_37654": true,
+    "folds_above_crest_reference": 3,
+    "leakage_canaries_below_0.90": true,
+    "not_a_duplicate": true,
+    "validator_17_checks_pass": true,
+    "live_operating_point_le_44090_dots": true
   },
-  "verdict": "promote-as-candidate",
-  "verdict_caveat": "'promote-as-candidate' means the file cleared this repository's pre-registered gate and is published for the separate selector step. It is NOT a leaderboard projection. No organizer score exists for any artifact in this repository.",
+  "organizer_confirmed_score": null,
+  "live_projection": "NO live score is claimed or projected as a number. Beating 0.2778 live requires >0.145 mean credit/dot; this field's holdout lift over uniform random is 1.47x on catalogue truth. Whether that transfers to the hidden expert set is exactly what a submission would measure.",
   "budget": {
-    "experiments_run": 4,
-    "limit": 3,
-    "note": "experiment 4 (the separation sweep) was a 108 s refinement of experiment 3's emission rule, not a new hypothesis; logged for transparency against the protocol's 3-experiment cap"
-  }
+    "experiments_run": "3 pre-registered (E1,E2,E3) + E2b/E3b bugfix ablation of E2 (relay-channel train/test reversal), logged transparently",
+    "submission_slots_used": 0
+  },
+  "verdict": "promote",
+  "verdict_caveat": "'promote' = cleared this repo's pre-registered gate (research/session-22847afd-hypotheses.md) and is published for the separate selector step. It is NOT a leaderboard projection; no organizer score exists for this file."
 }

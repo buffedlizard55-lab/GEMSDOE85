@@ -1,0 +1,12 @@
+E2b channels (30, NO relay): ['geopb_r3_L15', 'geopb_r6_L25', 'geopb_crest', 'sato_det_elev', 'grad_rtp_s2', 'grad_rtp_s5', 'grad_grav_s2', 'grad_cond_s2', 'grad_depth_s2', 'tilt_tc', 'tmi_hg', 'tmi_vg', 'det_elev_slope', 'relief5', 'depth_to_base', 'cond_surf', 'lidar_ex_max', 'lidar_step_max', 'lidar_downface', 'lidar_coh100', 'rad_K', 'rad_Th', 'rad_TC', 'rad_ThK', 'ctx_linemax', 'ctx_crest_s3', 'ctx_crest_s9', 'ctx_step_s3', 'ctx_grtp_s9', 'ctx_corrob']
+  [  71.3s] fold0 withheld-AUC 0.5840
+  [ 137.8s] fold1 withheld-AUC 0.5884
+  [ 204.0s] fold2 withheld-AUC 0.5858
+  [ 272.3s] fold3 withheld-AUC 0.5649
+  E2b_ctxhgb_norelay         n= 37654 sep=2.8  DTI=0.06460 CI95[0.06178,0.06742] folds=[0.0613, 0.0677, 0.0661, 0.0631]
+  E2b_ctxhgb_norelay         n= 60000 sep=2.8  DTI=0.08008 CI95[0.07240,0.08776] folds=[0.0781, 0.0895, 0.081, 0.0705]
+  E2b_ctxhgb_norelay__sep40  n= 37654 sep=4.0  DTI=0.07599 CI95[0.06912,0.08287] folds=[0.074, 0.0843, 0.077, 0.0674]
+  E3b_fusion_e2b_crest5050   n= 37654 sep=2.8  DTI=0.07411 CI95[0.06763,0.08059] folds=[0.0749, 0.0805, 0.0752, 0.0647]
+  E3b_fusion_e2b_crest5050   n= 60000 sep=2.8  DTI=0.09222 CI95[0.08390,0.10054] folds=[0.0914, 0.1026, 0.0918, 0.0818]
+  E3b_fusion_e2b_crest5050__sep40 n= 37654 sep=4.0  DTI=0.08082 CI95[0.07356,0.08808] folds=[0.08, 0.0906, 0.078, 0.0731]
+-> evidence/session_22847afd_e2b.json (362s)

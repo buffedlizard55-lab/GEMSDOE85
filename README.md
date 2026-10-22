@@ -1,6 +1,6 @@
-# GEMSDOE85 — GEO-Pb: a juxtaposition detector for concealed faults
+# GEMSDOE85 — S85-CTXFUS: contextual supervised + GEO-Pb crest fusion for concealed faults
 
-**DOE GEMS Prize · DrivenData competition #306 · lane H85-1**
+**DOE GEMS Prize · DrivenData competition #306 · current primary: session `arena/22847afd`**
 
 A self-driving, fully auditable pipeline that restores the competition data, builds a novel
 fault-discovery surface, scores it on a spatially-blocked hide-and-recover holdout, converts it
@@ -10,19 +10,22 @@ loop**, and publishes it on a GitHub Pages site with a one-click download at the
 | | |
 |---|---|
 | **Site** | `docs/index.html` (GitHub Pages: Settings → Pages → `main` / `/docs`) |
-| **Submission** | `docs/downloads/gems85-geopb-crest-90000dots-sep4-*-zeros.tif` |
-| **Status** | all 17 format checks **PASS** → OK to download and submit |
-| **Holdout DTI** | **0.09838**, 95 % CI [0.09022, 0.10654], 4 spatially-blocked folds, 60,988 withheld positives |
-| **vs uniform random** | **+0.0298** at matched emitted mass (3.3× the CI half-width) |
-| **Duplicate check** | max \|Spearman ρ\| vs 17 registry rasters = **0.012**; chance-corrected dot-overlap lift = 1.00 → distinct |
-| **Verdict** | `promote-as-candidate` — cleared the pre-registered gate. **No organizer score exists.** |
+| **Submission (current primary)** | `docs/downloads/gems85-s85-ctxfus50-37654dots-sep4-20261022T232600Z-4f38c2b3-zeros.tif` · sha256 `516730c0…b7e2b` |
+| **Status** | all 17 format checks **PASS** → OK to download and submit (selector still decides the slot) |
+| **Holdout DTI** | **0.08082 @ 37,654 dots**, 95 % CI [0.07356, 0.08808], evaluator `gems85-holdout-v1.0.0`, 60,988 withheld positives — beats the previous holdout best 0.07475 (GEO-Pb crest, matched budget), 3/4 folds, CIs overlap |
+| **Duplicate check** | max \|Spearman ρ\| vs 17 registry rasters = **0.171**; dot overlap vs h33 winner = **37.9 %** (< 70 %); vs comparable-budget own-repo files ≤ 41 % → distinct (dense-file raw overlaps disclosed, IR-85-013) |
+| **Verdict** | `promote` — cleared the session's pre-registered gate. **No organizer score exists. Beating 0.2778 live is unproven.** |
+| **Superseded** | GEO-Pb crest 90,000-dot primary (holdout-tuned budget, IR-85-010) — kept in `docs/downloads/` as a labelled alternate; §2–3 below are its (still valid) science record, §3c is the current session |
 
 ```bash
 python -m venv .venv && .venv/bin/pip install numpy scipy rasterio pandas scikit-learn pytest
 .venv/bin/python scripts/restore_data.py --groups core external scored   # 23 files, SHA-256 verified
-.venv/bin/python -m pytest                                               # 25 passed
-.venv/bin/python scripts/build_submission.py                             # validate + publish
-.venv/bin/python scripts/build_site.py                                   # regenerate docs/
+.venv/bin/python -m pytest                                               # 79 passed
+.venv/bin/python scripts/run_session_experiments.py                      # E1-E3 holdout (session 22847afd)
+.venv/bin/python scripts/run_e2b.py                                      # E2b/E3b bugfix ablation -> gate
+.venv/bin/python scripts/build_submission_session.py --field fusion5050 --label ctxfus50
+.venv/bin/python scripts/make_session_run_card.py                        # run card + registry
+.venv/bin/python scripts/build_site.py && .venv/bin/python scripts/check_site.py
 ```
 
 ---
@@ -285,6 +288,35 @@ Neither was emitted as a submission — negative results are deliverables
 correct PASS banner). Answer to "can we beat 0.2778?": **not with these variants, and the
 honest projection for the shipped file remains ~0.17–0.23 live [MODEL]** — the route most
 likely to beat it is still §5 item 3 (fuse GEO-Pb with the h19-5 lineage field), untested here.
+
+## 3c. Session 2026-10-22 (`arena/22847afd`) — RELAY negative, CTXFUS promoted
+
+Pre-registered before measuring (`research/session-22847afd-hypotheses.md`): five ranked
+hypotheses, three experiments, gate = beat HOLDOUT-DTI **0.07475 @ 37,654**
+(evaluator `gems85-holdout-v1.0.0`, 60,988 withheld positives). Verified first, line by line:
+data restored 23/23 SHA-256; the 5 missing registry rasters (incl. h33 `c55bafc4…`) re-fetched
+and hash-matched; h33 ⊂ h27-4 ⊂ d2.8 ⊂ h19-5 support pixel-exactly (one field, five budgets —
+full answer in `docs/research/why-02778-session-22847afd.md`); crest reference re-measured
+bit-identically (0.06953 @ sep 2.8).
+
+| arm (HOLDOUT-DTI @ 37,654 unless noted) | result | verdict |
+|---|---:|---|
+| E1 RELAY geometry alone | 0.02524 | **negative** (below random 0.0537) |
+| E1 RELAY-gated GEO-Pb crest | 0.03708 | **negative** |
+| E2 ctx-HGB + relay channel | 0.04022 | **negative** — relay channel is a train/test reversal (IR-85-011) |
+| E3 fusion incl. gated component / blurred emission | 0.05523 / 0.02775 | **negative** |
+| E2b ctx-HGB-30, relay removed (sep 4) | 0.07599 | beats gate point estimate, 2/4 folds |
+| **E3b fusion 50/50 ctx-HGB + crest (sep 4)** | **0.08082 [0.07356, 0.08808]** | **promote** — 3/4 folds, both seps, both budgets; CIs overlap |
+
+Context channels are the real signal (withheld AUC 0.573 → 0.581 vs the per-pixel arm; relay
+poisoned it to 0.556). The shipped file re-executes the E3b rule on the full catalogue:
+`gems85-s85-ctxfus50-37654dots-sep4-20261022T232600Z-4f38c2b3-zeros.tif`
+(sha256 `516730c0…b7e2b`, 17/17 PASS, self-DTI vs catalogue 0.0). Note for the form
+(125 chars): `S85 ctxfus50 rank-fusion ctx-HGB30+GEO-Pb crest, 37654 dots sep4px, 0 within
+200m of catalogue, HOLDOUT-DTI 0.0808 (UNSCORED)`. New irregularities IR-85-010…013
+(90k budget mismatch · relay reversal · stale `check_site.py` rewritten · dense-file overlap
+disclosure). Suite: 79 passed. Honest live statement: **no projection is claimed**; beating
+0.2778 needs > 0.145 credit/dot live, which no local instrument can measure.
 
 ## 4. Repository map
 

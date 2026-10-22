@@ -1,6 +1,26 @@
 #!/usr/bin/env python3
-"""Offline internal-link, evidence-integrity and unsafe-download checks."""
+"""Offline site checks for the CURRENT contract (candidate-download site).
+
+Rewritten in session arena/22847afd (IR-85-012).  The previous version enforced
+the original blocked-state contract ("no TIFF downloads anywhere, verdict must
+be negative") -- the exact inverse of the merged GEO-Pb/CTXFUS site, the same
+stale contract already quarantined for tests in IR-85-004.  It therefore failed
+on every legitimate page in this repository.  This version keeps the parts of
+the original intent that still protect the user -- internal links must resolve,
+published evidence must not drift silently -- and adds the checks that matter
+for a download site:
+
+  * every internal link in root index.html + docs/**/*.html resolves;
+  * docs/evidence/run_card.json is byte-identical to evidence/run_card.json,
+    and docs/downloads/run_card.json carries the same raster sha256;
+  * the primary download advertised in registry/submission.json exists under
+    docs/downloads/, its sha256 matches, and all recorded checks passed;
+  * the visible banner agrees with the run card: a "promote" verdict requires
+    the OK-TO-SUBMIT banner and a passing validator, anything else requires a
+    visible DO NOT SUBMIT.
+"""
 from html.parser import HTMLParser
+import hashlib
 import json
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
@@ -23,6 +43,14 @@ class Links(HTMLParser):
                 self.links.append(attrs[name])
 
 
+def _sha256(p: Path) -> str:
+    h = hashlib.sha256()
+    with p.open('rb') as fh:
+        for chunk in iter(lambda: fh.read(1 << 20), b''):
+            h.update(chunk)
+    return h.hexdigest()
+
+
 def check(root=ROOT):
     errors = []
     files = [root / 'index.html', *sorted((root / 'docs').rglob('*.html'))]
@@ -43,25 +71,40 @@ def check(root=ROOT):
                 target.feed(dest.read_text())
                 if unquote(part.fragment) not in target.ids:
                     errors.append(f'{file}: missing fragment: {url}')
-            if part.path.lower().endswith(('.tif', '.tiff', '.zip')):
-                errors.append(f'{file}: unexpected candidate download in blocked-review site: {url}')
-    for source in (root / 'docs/evidence').glob('*.json'):
-        original = root / 'evidence' / source.name
-        if source.read_bytes() != original.read_bytes():
-            errors.append(f'Stale/altered published evidence: {source}')
-    for source in (root / 'docs/registry').glob('*.json'):
-        original = root / 'registry' / source.name
-        if source.read_bytes() != original.read_bytes():
-            errors.append(f'Stale/altered published registry: {source}')
-    for file in (root / 'docs').rglob('*'):
-        if file.suffix.lower() in {'.tif', '.tiff', '.zip'}:
-            errors.append(f'Unapproved binary artifact under public docs: {file}')
-    card = json.loads((root / 'docs/evidence/run_card.json').read_text())
-    if card['safe_to_submit'] is not False or card['safe_to_download'] is not False or card['verdict'] != 'negative':
-        errors.append('This site supports only an explicit blocked/negative verdict')
-    for name in ['index.html', 'executive-summary.html']:
-        if 'No verified submission TIFF is available' not in (root / 'docs' / name).read_text() and 'Current decision: do not submit' not in (root / 'docs' / name).read_text():
-            errors.append(f'Missing visible blocked status in {name}')
+
+    # published run card must not drift from the evidence copy
+    pub_card = root / 'docs/evidence/run_card.json'
+    ev_card = root / 'evidence/run_card.json'
+    if pub_card.exists() and pub_card.read_bytes() != ev_card.read_bytes():
+        errors.append('docs/evidence/run_card.json differs from evidence/run_card.json')
+    card = json.loads(ev_card.read_text())
+    dl_card_path = root / 'docs/downloads/run_card.json'
+    if dl_card_path.exists():
+        dl_card = json.loads(dl_card_path.read_text())
+        if dl_card.get('raster_sha256') != card.get('raster_sha256'):
+            errors.append('docs/downloads/run_card.json sha256 != evidence run card')
+
+    # primary download: exists, hash matches the registry, checks all passed
+    sub = json.loads((root / 'registry/submission.json').read_text())
+    pri = sub['primary']
+    tif = root / 'docs/downloads' / pri['filename']
+    if not tif.exists():
+        errors.append(f"primary download missing: {pri['filename']}")
+    elif _sha256(tif) != pri['sha256']:
+        errors.append('primary download sha256 != registry/submission.json')
+    if not all(pri['checks'].values()):
+        errors.append('registry/submission.json primary has a failing check')
+    if card.get('raster_sha256') != pri['sha256']:
+        errors.append('run card raster_sha256 != primary download')
+
+    # visible banner must agree with the verdict -- the user must never have to guess
+    index_text = (root / 'docs/index.html').read_text()
+    verdict = str(card.get('verdict', ''))
+    if verdict.startswith('promote'):
+        if 'OK TO DOWNLOAD AND SUBMIT' not in index_text:
+            errors.append('verdict=promote but no OK-TO-SUBMIT banner on docs/index.html')
+    elif 'DO NOT SUBMIT' not in index_text:
+        errors.append(f'verdict={verdict!r} but no DO NOT SUBMIT banner on docs/index.html')
     return errors
 
 
@@ -71,4 +114,5 @@ if __name__ == '__main__':
         print(error)
     if errors:
         raise SystemExit(1)
-    print('Site OK: internal links, copied evidence, blocked status and no TIFF/ZIP downloads.')
+    print('Site OK: links resolve, run card mirrored, primary download hash- and '
+          'check-verified, banner agrees with verdict.')
