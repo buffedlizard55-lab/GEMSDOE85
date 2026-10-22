@@ -1,8 +1,7 @@
-.venv/
-__pycache__/
-.pytest_cache/
 .cache/
-data/raw/
-data/parts/
-artifacts/
-*.partial
+data/training_features.tif
+data/external/
+__pycache__/
+*.pyc
+.cache/
+.mypy_cache/
