@@ -1,0 +1,25 @@
+name: Public registry metadata refresh
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 8 * * *'
+permissions:
+  contents: read
+jobs:
+  metadata-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Snapshot public Git metadata (no submission or promotion)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/refresh_inventory.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: public-registry-metadata
+          path: registry/public_inventory.json
+          retention-days: 14

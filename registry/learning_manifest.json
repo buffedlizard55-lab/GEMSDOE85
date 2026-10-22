@@ -1,0 +1,23 @@
+{
+  "files": [
+    {
+      "id": "h33-b2.tif",
+      "repo": "buffedlizard55-lab/GEMSDOE32",
+      "ref": "780a5a534269c79adfe6d1d7d5aadead161332aa",
+      "path": "docs/downloads/gemsdoe32-h33-h33-2-b2-20261004T220000Z-e5eb6e7e-zeros.tif",
+      "dest": "h33-b2.tif",
+      "bytes": 219065,
+      "sha256": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9"
+    },
+    {
+      "id": "registry-saturation-witness.tif",
+      "repo": "buffedlizard55-lab/17GEMSDOE",
+      "ref": "6fc71d19d49dca4960d5434bd81b6dd06fcc030a",
+      "path": "docs/downloads/17GEMSDOE_E-proba-multiscale_20260930T044527Z.tif",
+      "dest": "registry-saturation-witness.tif",
+      "bytes": 25065181,
+      "sha256": "ab0a0a62eecf066a82713b09dd49f0f638a91fa3dd81f54cc34ae89afa3872be"
+    }
+  ],
+  "policy": "Educational prior artifacts only. Never publish as new predictions."
+}

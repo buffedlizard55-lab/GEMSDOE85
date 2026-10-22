@@ -1,0 +1,4 @@
+[tool.pytest.ini_options]
+pythonpath = ["vendor", "scripts"]
+testpaths = ["tests"]
+addopts = "-ra"
