@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "reviewed_utc": "2026-10-22T21:58:40.753850+00:00",
+  "reviewed_utc": "2026-10-22T22:56:48.440188+00:00",
   "hypothesis": null,
   "mechanism": null,
   "non_fault_mimic": null,
@@ -21,7 +21,7 @@
     "uniqueness_cleared": false,
     "saturation_certificate": {
       "evidence_class": "REGISTRY-MEASUREMENT",
-      "witness_file": "data/raw/learning/registry-saturation-witness.tif",
+      "witness_file": "data/learning/registry-saturation-witness.tif",
       "witness_sha256": "ab0a0a62eecf066a82713b09dd49f0f638a91fa3dd81f54cc34ae89afa3872be",
       "positive_pixels": 5167373,
       "allowed_pixels": 5106385,
@@ -51,7 +51,7 @@
     "core_mirror_integrity": [
       {
         "id": "training_features",
-        "ok": true
+        "ok": false
       },
       {
         "id": "labels",
@@ -66,17 +66,18 @@
         "ok": true
       }
     ],
-    "core_inputs_available": true,
+    "core_inputs_available": false,
     "template_unmodified": true,
     "cached_stack_available": false
   },
   "blockers": [
     "No explicit single-method lane assignment supplied.",
+    "One or more core data mirrors are missing or fail their hash/size pins.",
     "The template cached feature-stack bytes and hash manifest are unavailable locally.",
     "Literal registry overlap rule blocks every nonempty candidate: a prior is positive throughout the allowed domain.",
     "Full registry raster bytes have not been compared at either the pre-placement surface or final-dot stage.",
-    "No lane-specific feature canaries, whole-segment holdout run, paired baseline improvement or conditional 95% CI exists.",
-    "No trained lane model, candidate raster or automatic selector is implemented in this empty-seed repository.",
+    "Historical lane results exist but no current candidate has passed the strict protocol and a paired current-best improvement gate.",
+    "Historical model scripts and quarantined rasters exist; no current lane candidate or automatic slot selector is approved.",
     "Account-specific weekly remaining quota and submission-page receipts are unavailable; no slot selection authorized."
   ],
   "verdict": "negative",

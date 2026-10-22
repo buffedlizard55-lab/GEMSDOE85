@@ -106,6 +106,12 @@ def duplicate_check(dots: np.ndarray, field: np.ndarray, fp: np.ndarray) -> dict
 
 
 def main() -> int:
+    # Keep historical research code, but never execute it past failed current preflight.
+    from preflight import review
+    current = review()
+    if current['blockers']:
+        print('BLOCKED: no new raster or publication; see scripts/preflight.py', file=sys.stderr)
+        return 2
     t0 = time.time()
     fp = grid.footprint()
     cat = grid.catalogue()
