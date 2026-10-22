@@ -1,0 +1,7 @@
+numpy==2.2.6
+scipy==1.15.3
+rasterio==1.4.3
+pytest==8.3.5
+scikit-learn==1.6.1
+Markdown==3.8.2
+affine==2.4.0
