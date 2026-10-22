@@ -262,6 +262,30 @@ below the 0.2778 incumbent.** That projection is stated on the site, in the run 
 This lane therefore publishes a **validated candidate**, not a recommendation to spend a weekly
 slot — exactly the separation the protocol asks for.
 
+## 3b. Session review 2026-10-22 (`arena/06987ae9`) — two negatives, primary unchanged
+
+Re-verified line by line: data restored 23/23 SHA-256 (`scripts/restore_data.py --groups core
+external scored`); primary TIF re-validated on its written bytes (17/17 PASS, sha256
+`ba33ea18…a567f`); full suite 75 passed. Two pre-registered GEO-Pb variants were run under the
+same evaluator (`gems85-holdout-1`, 60,988 withheld positives) with the promotion bar "beat
+0.09838 @ 90 k":
+
+| experiment | HOLDOUT-DTI @ 90 k (95 % CI) | canary AUC | verdict |
+|---|---:|---:|---|
+| exp1 `geopb r6, L=1, crest` (`scripts/run_exp_r6crest.py`) | 0.09105 [0.08356, 0.09854] | 0.4992 | **negative** |
+| exp2 `geopb r3, L=1, crest` (`scripts/run_exp_r3crest.py`) | 0.09773 [0.08917, 0.10630] | 0.5030 | **negative** (persistence null confirmed at crest level) |
+
+Neither was emitted as a submission — negative results are deliverables
+(`evidence/exp_r6crest.json`, `evidence/exp_r3crest.json`,
+`evidence/run_card_session_06987ae9.json`). **IR-85-006** (logged in
+`registry/irregularities.json`): the live Pages site serves the repo root, whose old
+`index.html` falsely said "No verified submission TIFF is available", and
+`docs/downloads/run_card.json` held the *duplex* lane's card; both fixed on this branch
+(Pages-source switch to `/docs` returned API 403, so the root page now redirects with the
+correct PASS banner). Answer to "can we beat 0.2778?": **not with these variants, and the
+honest projection for the shipped file remains ~0.17–0.23 live [MODEL]** — the route most
+likely to beat it is still §5 item 3 (fuse GEO-Pb with the h19-5 lineage field), untested here.
+
 ## 4. Repository map
 
 ```

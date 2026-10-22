@@ -63,6 +63,13 @@
       "status": "acknowledged",
       "finding": "E1's supervised field has canary AUC 0.673 and no single feature exceeds AUC 0.90 (max single channel curv_s2 0.600) \u2014 no leakage flag; but the detector is trained on the same catalogue the holdout withholds from, fold-properly, so holdout measures catalogue-transfer, not hidden-fault discovery (inherited IR-32-PROXY-01 limitation).",
       "action_taken": "Stated on the site and in the run card; no live-score projection is made."
+    },
+    {
+      "id": "IR-85-006",
+      "severity": "high",
+      "status": "fixed-on-branch",
+      "finding": "Live Pages site serves repo root (source main:/, API update returned 403), whose index.html stated 'No verified submission TIFF is available' while docs/ published a 17/17-PASS validated TIF; also docs/downloads/run_card.json contained the duplex lane's card, not the primary GEO-Pb file's card.",
+      "action_taken": "Root index.html rewritten to state the PASS verdict + sha256 and redirect to docs/index.html; docs/downloads/run_card.json replaced with evidence/run_card.json (GEO-Pb primary; duplex card preserved at evidence/run_card_duplex.json). Pages source could not be switched to /docs from this token (403) \u2014 root redirect is the workaround; owner may optionally set Settings>Pages to /docs."
     }
   ]
 }

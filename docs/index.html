@@ -101,6 +101,12 @@ path whose validation failed.</div>
 <h2>Format validation — every check, run on the written bytes</h2>
 <table><tr><th>check</th><th>result</th></tr><tr><td>file exists</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>single band</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>dtype float32</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>shape 3730x3292</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>crs epsg 32611</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>transform matches template</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>resolution 100m</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>no nan inside footprint</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>no inf inside footprint</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>values in 0 1 inside footprint</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>all finite whole raster</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>values in 0 1 whole raster</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>outside footprint is zero</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>no nodata tag</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>has positive predictions</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>no prediction outside footprint</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>zero mass within 2px of catalogue</td><td><span class="tag t-ok">PASS</span></td></tr></table>
 
+<div class="note"><b>Session review 2026-10-22:</b> two pre-registered GEO-Pb variants
+(persistence retired; radius widened) scored HOLDOUT-DTI 0.09105 and 0.09773 @ 90k vs this
+file's 0.09838 — <b>both negative, neither was emitted</b>. This file remains the validated
+primary; it has <b>no organizer score</b> and is honestly projected below the 0.2778 incumbent.
+Details: <span class="mono">evidence/run_card_session_06987ae9.json</span> in the repository.</div>
+
 <h2>What this submission claims, and what it does not</h2>
 <div class="note"><b>No number on this site is a competition score.</b> Every measurement here is
 a <b>HOLDOUT-DTI</b>: the official metric computed against <i>withheld segments of the known
