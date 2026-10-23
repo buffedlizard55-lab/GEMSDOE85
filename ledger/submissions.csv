@@ -1,0 +1,4 @@
+id,parent,axis,value,n_dots,pct_changed,sha256,status,predicted_change,receipt_score,receipt_date,notes
+h33-2-b2-prune3-20261023-c493fdeb,"h33-h33-2-b2 (GEMSDOE32, 37,654 dots)",PRUNE,3.0-no-refill,35483,5.7657,c493fdeb4505deb888b9f09c2dc5b2dfe7a16bf58873186d418025d113db0e78,BUILT,-0.002,,,PRUNE closed at 2px: fold-clean proxy 0/5 folds at 3px. Slot 1 candidate (information).
+h33-2-b2-prune3r-20261023-b633c5e9,"h33-h33-2-b2 (GEMSDOE32, 37,654 dots)",PRUNE,3.0-refill-to-37654,35923,6.9342,b633c5e9af03dc7dd763f6c3db04a4e7c133df7254a23b9720f4311276644809,BUILT,-0.003,,,mass-control; refill saturated (440 of 2171). Do not spend a slot unless prune3 > 0.2840.
+h33-2-b2-prune4-20261023-37fe5e5e,"h33-h33-2-b2 (GEMSDOE32, 37,654 dots)",PRUNE,4.0-no-refill,33829,10.1583,37fe5e5e39c01a22bd7a902858ef8920e6d03410ca1459149b3def6a29f1b6e9,BUILT,-0.006,,,extrapolation probe past kernel R=300m; 0/5 folds in proxy. Control only.

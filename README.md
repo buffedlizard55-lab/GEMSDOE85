@@ -1,5 +1,25 @@
 # GEMSDOE85 — H85-GAPVENT: 57-Channel 10 m 3DEP + Fluvial χ + Blind Geothermal Vent Kernel Regressor
 
+<!-- CURRENT STATE (session arena/eb7e09d3-gemsdoe85, AXIS = PRUNE, 2026-10-23) — edit this block only -->
+
+## CURRENT STATE
+
+| Field | Value |
+|---|---|
+| **Parent (incumbent)** | `h33-h33-2-b2` (GEMSDOE32), 37,654 dots, sha256 `c55bafc4…` — **rebuilt pixel-exactly** from its pinned 44,090-dot parent at Euclidean catalogue distance > 2 px (`evidence/r0_rebuild.json`) |
+| **Best receipt** | **none yet** — 0.2778 is a CLAIM (owner-reported, no submission-page receipt in `ledger/`) |
+| **TOP_PUBLIC** | ____ (operator fills from the leaderboard, with the date) |
+| **Slots left this week** | __ / __ (operator fills; 3 scored submissions per rolling week) |
+| **Next 3 slots** | 1) `h33-2-b2-prune3-20261023-c493fdeb` (PRUNE 3 px, 35,483 dots, predicted −0.002) → 2) MASS probe: R0 minus 2,171 dots at d > 10 px → 3) CONCENTRATION, 2 km blocks. Details and the reason it deviates from the default plan: `SLOT_PLAN.md` |
+| **Upload instructions** | `docs/SUBMIT.md` (file, name, note, format receipt per variant) |
+
+**Session finding:** the PRUNE ladder that produced 0.24 → 0.2778 stops at 2 px. The fold-clean
+hide-and-recover instrument reproduces both scored steps in direction (5/5 folds) and then turns
+over at exactly 3 px (0/5 folds at 3, 4 and 5 px; `evidence/prune_holdout_proxy.json`). All three
+variants built this session are predicted **at or below** the incumbent; none is a slot priority.
+
+<!-- END CURRENT STATE -->
+
 **DOE GEMS Prize · DrivenData competition #306 · current primary: session `arena/7ded4c0a-gemsdoe85` (2026-10-23 UTC)**
 
 A self-driving, fully auditable pipeline that restores 28 SHA-256-pinned public datasets and 17 historical control rasters, pre-registers 5 ranked concealed-fault hypotheses, trains a 57-channel multi-physics continuous 300 m kernel-target regressor (`H85-GAPVENT`) with Positive-Unlabeled surveyed-corridor debiasing (`IR-85-023`), validates on a 4-fold spatially-blocked hide-and-recover holdout (`gems85-holdout-v1.0.0`, `60,988` withheld positives), verifies uniqueness against all 17 fleet registry rasters, validates the written GeoTIFF against 17 format checks + `vendor/gems57/gates.py` **with zero human intervention**, and publishes a GitHub Pages site (`docs/`) with one-click download at the very top.
