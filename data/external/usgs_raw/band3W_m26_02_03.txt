@@ -1,0 +1,121 @@
+926|2.3|nn|nn|nn|nn00278760|ml|3.5|nn|1 km N of Mogul, Nevada
+nn00278764|2008-04-26T06:42:27.492|39.5253|-119.9243|0.9|nn|nn|nn|nn00278764|ml|3|nn|1 km N of Mogul, Nevada
+nn00278767|2008-04-26T06:42:55.877|39.524|-119.9221|1.6|nn|nn|nn|nn00278767|ml|2.8|nn|1 km NNE of Mogul, Nevada
+nn00278766|2008-04-26T06:43:03.886|39.5092|-119.9256|3|nn|nn|nn|nn00278766|ml|2.9|nn|0 km S of Mogul, Nevada
+nn00278771|2008-04-26T06:43:31.342|39.5055|-119.9408|1.1|nn|nn|nn|nn00278771|ml|2.7|nn|1 km SW of Mogul, Nevada
+nn00242528|2008-04-26T06:43:50.828|39.5207|-119.923|1.3|nn|nn|nn|nn00242528|ml|3.4|nn|0 km NNE of Mogul, Nevada
+nn00242529|2008-04-26T06:45:07.758|39.5249|-119.9325|3.9|nn|nn|nn|nn00242529|ml|2.6|nn|1 km NNW of Mogul, Nevada
+nn00279276|2008-04-26T06:48:57.572|39.5042|-119.907|0.8|nn|nn|nn|nn00279276|ml|2.7|nn|1 km ESE of Mogul, Nevada
+nn00242539|2008-04-26T06:56:33.742|39.5158|-119.9228|3.8|nn|nn|nn|nn00242539|ml|2.9|nn|0 km NE of Mogul, Nevada
+nn00248430|2008-04-26T07:05:39.228|39.5272|-119.9285|1.2|nn|nn|nn|nn00248430|ml|2.7|nn|1 km N of Mogul, Nevada
+nn00279090|2008-04-26T07:09:58.733|39.5277|-119.9255|0.9|nn|nn|nn|nn00279090|ml|2.8|nn|1 km N of Mogul, Nevada
+nn00279138|2008-04-26T07:26:52.797|39.5233|-119.8954|0.7|nn|nn|nn|nn00279138|ml|2.6|nn|2 km ENE of Mogul, Nevada
+nn00242561|2008-04-26T07:29:20.041|39.5297|-119.9308|2.7|nn|nn|nn|nn00242561|mw|3.4|nn|1 km NNW of Mogul, Nevada
+nn00279151|2008-04-26T07:32:20.424|39.5283|-119.9158|2.5|nn|nn|nn|nn00279151|ml|3|nn|1 km NNE of Mogul, Nevada
+nn00242563|2008-04-26T07:32:27.028|39.5282|-119.9289|1|nn|nn|nn|nn00242563|ml|2.9|nn|1 km N of Mogul, Nevada
+nn00279614|2008-04-26T08:05:44.047|39.4986|-119.906|0|nn|nn|nn|nn00279614|ml|2.7|nn|2 km SE of Mogul, Nevada
+nn00279659|2008-04-26T08:12:37.356|39.5265|-119.9249|1.1|nn|nn|nn|nn00279659|ml|3.2|nn|1 km N of Mogul, Nevada
+nn00242585|2008-04-26T08:20:28.167|39.5208|-119.9275|2.7|nn|nn|nn|nn00242585|ml|2.9|nn|0 km N of Mogul, Nevada
+nn00242588|2008-04-26T08:35:22.442|39.5235|-119.9305|3|nn|nn|nn|nn00242588|ml|2.6|nn|1 km NNW of Mogul, Nevada
+nn00242605|2008-04-26T09:11:59.819|39.5247|-119.9285|1.2|nn|nn|nn|nn00242605|mw|3.3|nn|1 km N of Mogul, Nevada
+nn00271808|2008-04-26T10:08:32.539|39.5142|-119.9167|3.6|nn|nn|nn|nn00271808|ml|3.2|nn|0 km E of Mogul, Nevada
+nn00242631|2008-04-26T10:17:13.130|39.5278|-119.9263|2.3|nn|nn|nn|nn00242631|ml|2.7|nn|1 km N of Mogul, Nevada
+nn00242715|2008-04-26T14:35:29.148|39.5151|-119.9209|2.7|nn|nn|nn|nn00242715|ml|2.9|nn|0 km ENE of Mogul, Nevada
+nn00283061|2008-04-26T14:47:28.190|39.4827|-119.9251|0.3|nn|nn|nn|nn00283061|ml|2.9|nn|3 km S of Mogul, Nevada
+nn00242719|2008-04-26T14:47:37.268|39.5092|-119.92|2.2|nn|nn|nn|nn00242719|ml|3|nn|0 km SE of Mogul, Nevada
+nn00283280|2008-04-26T15:20:40.572|39.546|-119.9456|0.2|nn|nn|nn|nn00283280|mw|3.2|nn|3 km NNW of Mogul, Nevada
+nn00243001|2008-04-27T17:49:49.750|39.5193|-119.9218|2.8|nn|nn|nn|nn00243001|ml|3.4|nn|0 km NNE of Mogul, Nevada
+nn00243008|2008-04-27T18:31:10.687|39.5311|-119.937|0.2|nn|nn|nn|nn00243008|ml|3.2|nn|2 km NNW of Mogul, Nevada
+nn00243152|2008-04-28T11:33:18.257|39.5275|-119.9274|1.1|nn|nn|nn|nn00243152|ml|4|nn|1 km N of Mogul, Nevada
+nn00272995|2008-04-28T12:12:31.354|39.5275|-119.9384|0.1|nn|nn|nn|nn00272995|ml|2.8|nn|1 km NW of Mogul, Nevada
+nn00243275|2008-04-28T21:34:02.581|39.5192|-119.9238|3.8|nn|nn|nn|nn00243275|ml|2.9|nn|0 km NNE of Mogul, Nevada
+nn00243344|2008-04-29T05:51:05.388|39.5113|-119.9213|3.6|nn|nn|nn|nn00243344|ml|3|nn|Nevada
+nn00243347|2008-04-29T06:01:53.435|39.5154|-119.919|3.8|nn|nn|nn|nn00243347|ml|3|nn|0 km ENE of Mogul, Nevada
+nn00243352|2008-04-29T06:33:09.891|39.533|-119.939|0|nn|nn|nn|nn00243352|ml|2.9|nn|2 km NNW of Mogul, Nevada
+nn00243413|2008-04-29T16:14:59.935|39.5274|-119.9419|0|nn|nn|nn|nn00243413|ml|2.9|nn|2 km NW of Mogul, Nevada
+nn00243550|2008-04-30T21:54:04.941|39.507|-119.9125|2.4|nn|nn|nn|nn00243550|ml|3.3|nn|1 km ESE of Mogul, Nevada
+nn00243596|2008-05-01T07:26:50.377|39.5374|-119.9353|2.3|nn|nn|nn|nn00243596|ml|3.2|nn|2 km NNW of Mogul, Nevada
+nn00243684|2008-05-01T20:14:11.500|39.5332|-119.9392|3|nn|nn|nn|nn00243684|ml|2.8|nn|2 km NNW of Mogul, Nevada
+nn00243658|2008-05-01T20:14:14.808|39.5445|-119.9206|1.3|nn|nn|nn|nn00243658|ml|3.2|nn|3 km N of Mogul, Nevada
+nn00243788|2008-05-02T17:11:55.235|39.5274|-119.926|2.4|nn|nn|nn|nn00243788|ml|2.9|nn|Nevada
+nn00243901|2008-05-03T09:26:34.694|39.5344|-119.9395|1.3|nn|nn|nn|nn00243901|ml|2.8|nn|2 km NNW of Mogul, Nevada
+nn00244029|2008-05-04T09:22:25.152|39.5086|-119.9175|1.9|nn|nn|nn|nn00244029|ml|2.8|nn|0 km SE of Mogul, Nevada
+nn00244121|2008-05-05T11:09:54.172|39.549|-119.9421|4.1|nn|nn|nn|nn00244121|ml|2.8|nn|4 km NNW of Mogul, Nevada
+nn00244503|2008-05-08T02:47:39.572|39.5446|-119.9199|3.1|nn|nn|nn|nn00244503|ml|2.6|nn|3 km N of Mogul, Nevada
+nn00247350|2008-05-08T05:55:01.579|39.54|-119.9256|2.6|nn|nn|nn|nn00247350|mw|3.6|nn|2 km N of Mogul, Nevada
+nn00245339|2008-05-14T18:52:05.368|39.5081|-119.9115|2.3|nn|nn|nn|nn00245339|ml|2.7|nn|1 km ESE of Mogul, Nevada
+nn00245454|2008-05-15T13:44:47.933|39.5397|-119.9193|3.2|nn|nn|nn|nn00245454|ml|3.3|nn|2 km NNE of Mogul, Nevada
+nn00245800|2008-05-18T08:44:19.556|39.5503|-119.9184|3.1|nn|nn|nn|nn00245800|ml|2.8|nn|4 km N of Mogul, Nevada
+nn00246969|2008-05-28T10:54:13.449|39.5429|-119.9176|2.4|nn|nn|nn|nn00246969|ml|2.6|nn|3 km NNE of Mogul, Nevada
+nn00247598|2008-05-31T09:09:56.735|39.5475|-119.929|4.1|nn|nn|nn|nn00247598|ml|3|nn|3 km N of Mogul, Nevada
+nn00248665|2008-06-07T13:43:03.775|39.5469|-119.9208|1.1|nn|nn|nn|nn00248665|ml|2.7|nn|3 km N of Mogul, Nevada
+nn00249127|2008-06-08T10:13:58.652|39.5468|-119.9218|2.1|nn|nn|nn|nn00249127|ml|3.1|nn|3 km N of Mogul, Nevada
+nn00248740|2008-06-08T17:53:40.688|39.5487|-119.9192|2.3|nn|nn|nn|nn00248740|mw|3.7|nn|3 km N of Mogul, Nevada
+nn00248760|2008-06-08T17:55:19.421|39.5464|-119.9213|1.5|nn|nn|nn|nn00248760|mw|3.9|nn|3 km N of Mogul, Nevada
+nn00248821|2008-06-09T07:41:08.776|39.5434|-119.9174|3.7|nn|nn|nn|nn00248821|ml|2.8|nn|3 km NNE of Mogul, Nevada
+nn00249024|2008-06-10T00:18:35.021|39.5464|-119.9189|1.2|nn|nn|nn|nn00249024|ml|3|nn|3 km N of Mogul, Nevada
+nn00250198|2008-06-17T14:01:48.987|39.5271|-119.936|4.5|nn|nn|nn|nn00250198|ml|2.9|nn|1 km NNW of Mogul, Nevada
+nn00255746|2008-07-29T10:34:41.986|39.5519|-119.9533|4.9|nn|nn|nn|nn00255746|ml|3.2|nn|4 km NE of Verdi, Nevada
+nn00256173|2008-08-01T19:30:33.583|39.5835|-119.9831|2|nn|nn|nn|nn00256173|ml|2.6|nn|7 km NNE of Verdi, California
+nn00256508|2008-08-05T21:59:39.296|39.5611|-119.9573|6.6|nn|nn|nn|nn00256508|ml|2.7|nn|5 km NNE of Verdi, Nevada
+nn00265044|2008-11-13T07:42:08.361|39.5486|-119.9438|5.9|nn|nn|nn|nn00265044|ml|2.9|nn|4 km NNW of Mogul, Nevada
+nn00432465|2009-12-23T04:59:54.211|39.3133|-119.9949|7.8|nn|nn|nn|nn00432465|ml|3.5|nn|7 km NNW of Incline Village, Nevada
+nn00321469|2010-11-28T09:47:38.222|39.4291|-119.8648|13.1|nn|nn|nn|nn00321469|ml|2.9|nn|10 km SSE of Mogul, Nevada
+nn00322758|2010-12-18T17:46:08.869|39.6344|-119.992|6.7|nn|nn|nn|nn00322758|ml|2.9|nn|5 km SSW of Cold Springs, Nevada
+nc71504090|2011-01-01T23:57:24.240|38.8325|-119.7893333|-0.444|nc|nc|nc|nc71504090|ml|3.53|nc|2 km NNE of Mesa Vista, California
+nn00341413|2011-06-22T19:59:51.019|39.319|-119.9859|7.2|nn|nn|nn|nn00341413|ml|2.9|nn|7 km N of Incline Village, Nevada
+nn00341416|2011-06-22T20:00:15.734|39.3231|-119.9872|6.4|nn|nn|nn|nn00341416|ml|3.1|nn|8 km N of Incline Village, Nevada
+nn00343054|2011-07-14T07:52:53.611|39.3176|-119.9856|7.7|nn|nn|nn|nn00343054|ml|3|nn|7 km N of Incline Village, Nevada
+nn00366485|2012-01-27T20:34:32.390|39.3739|-119.9691|5.7|nn|nn|nn|nn00366485|ml|2.9|nn|5 km ESE of Floriston, California
+nn00380267|2012-06-23T03:51:57.296|39.3178|-119.9904|6.4|nn|nn|nn|nn00380267|ml|4.2|nn|7 km NNW of Incline Village, Nevada
+nn00380485|2012-06-26T19:05:51.399|39.3142|-119.9942|5.7|nn|nn|nn|nn00380485|ml|2.7|nn|7 km NNW of Incline Village, Nevada
+nn00380513|2012-06-26T21:21:58.501|39.3101|-119.9921|7|nn|nn|nn|nn00380513|ml|2.9|nn|6 km NNW of Incline Village, Nevada
+nn00382219|2012-07-09T20:40:21.096|39.3097|-119.9876|7.4|nn|nn|nn|nn00382219|ml|2.8|nn|6 km N of Incline Village, Nevada
+nn00414380|2013-06-05T12:59:34.439|39.1143|-119.7142|9.4|nn|nn|nn|nn00414380|ml|2.9|nn|6 km ENE of Indian Hills, Nevada
+nn00415325|2013-06-16T11:30:06.714|39.1109|-119.7201|9|nn|nn|nn|nn00415325|ml|2.8|nn|6 km ENE of Indian Hills, Nevada
+nn00415768|2013-06-20T15:06:21.644|39.1105|-119.7182|9.2|nn|nn|nn|nn00415768|ml|2.8|nn|6 km ENE of Indian Hills, Nevada
+nn00429763|2013-11-23T01:11:06.179|39.3475|-119.9935|5.6|nn|nn|nn|nn00429763|ml|2.7|nn|5 km SSE of Floriston, California
+nn00430713|2013-12-06T20:20:18.020|39.348|-119.9992|7.2|nn|nn|nn|nn00430713|ml|3|nn|5 km SSE of Floriston, California
+nc72241091|2014-06-21T00:13:48.130|39.3505|-120.0016667|-1.665|nc|nc|nc|nc72241091|md|2.86|nc|5 km SSE of Floriston, California
+nc72241101|2014-06-21T00:27:12.270|39.3488333|-120.001|-1.923|nc|nc|nc|nc72241101|md|2.78|nc|5 km SSE of Floriston, California
+nn00451213|2014-07-08T00:16:47.573|39.1975|-119.7261|9|nn|nn|nn|nn00451213|ml|3.2|nn|5 km NE of Carson City, Nevada
+nc72269026|2014-07-31T17:56:50.710|39.3621667|-120.0011667|2.085|nc|nc|nc|nc72269026|md|2.81|nc|4 km SSE of Floriston, California
+nn00459165|2014-09-11T20:02:20.663|39.6057|-119.7292|10.6|nn|nn|nn|nn00459165|ml|2.7|nn|4 km ENE of Sun Valley, Nevada
+nn00479246|2015-01-26T21:57:10.920|39.3925|-119.8115|7.1|nn|nn|nn|nn00479246|ml|2.7|nn|15 km S of Reno, Nevada
+nn00523675|2015-12-23T06:22:36.147|39.4312|-119.7867|9.2|nn|nn|nn|nn00523675|ml|3.2|nn|Nevada
+nn00523682|2015-12-23T06:36:30.079|39.4282|-119.7812|9.4|nn|nn|nn|nn00523682|ml|3|nn|11 km SSE of Reno, Nevada
+nn00526746|2015-12-23T06:45:49.315|39.4308|-119.7844|9.7|nn|nn|nn|nn00526746|ml|3|nn|11 km SSE of Reno, Nevada
+nn00523696|2015-12-23T06:46:07.342|39.4309|-119.7845|9.7|nn|nn|nn|nn00523696|ml|4.4|nn|11 km SSE of Reno, Nevada
+nn00523690|2015-12-23T06:58:15.469|39.432|-119.7824|9.5|nn|nn|nn|nn00523690|ml|2.8|nn|11 km SSE of Reno, Nevada
+nn00523705|2015-12-23T06:59:05.423|39.4284|-119.7856|8.1|nn|nn|nn|nn00523705|ml|2.9|nn|11 km SSE of Reno, Nevada
+nn00523693|2015-12-23T07:05:36.281|39.4362|-119.7835|9.6|nn|nn|nn|nn00523693|ml|3.1|nn|10 km SSE of Reno, Nevada
+nn00553959|2016-07-31T19:00:06.561|39.4347|-119.7375|6.7|nn|nn|nn|nn00553959|ml|3.1|nn|11 km S of Sparks, Nevada
+nn00617945|2018-01-12T10:06:39.189|39.3833|-119.7525|7.2|nn|nn|nn|nn00617945|ml|2.6|nn|12 km NW of Virginia City, Nevada
+nn00618549|2018-01-17T03:24:53.825|39.3829|-119.7531|7|nn|nn|nn|nn00618549|ml|2.8|nn|12 km NW of Virginia City, Nevada
+nn00629667|2018-04-08T11:36:16.322|39.3322|-119.9574|9.4|nn|nn|nn|nn00629667|ml|2.6|nn|8 km SE of Floriston, California
+nn00638386|2018-06-06T07:32:15.238|39.4044|-119.9753|7.5|nn|nn|nn|nn00638386|ml|3.1|nn|4 km ENE of Floriston, California
+nn00638434|2018-06-06T16:37:18.020|39.4002|-119.9753|6.7|nn|nn|nn|nn00638434|ml|3|nn|4 km E of Floriston, California
+nn00659830|2018-10-06T20:11:08.466|39.3127|-119.9163|8.8|nn|nn|nn|nn00659830|ml|2.7|nn|8 km NE of Incline Village, Nevada
+nn00668094|2018-12-04T15:14:25.886|39.1155|-119.7303|8.4|nn|nn|nn|nn00668094|ml|3.2|nn|5 km NE of Indian Hills, Nevada
+nn00670931|2018-12-20T13:24:02.129|39.1129|-119.729|8.1|nn|nn|nn|nn00670931|ml|3.6|nn|5 km ENE of Indian Hills, Nevada
+nn00670948|2018-12-20T13:30:45.530|39.1135|-119.7306|7.9|nn|nn|nn|nn00670948|ml|3.2|nn|5 km ENE of Indian Hills, Nevada
+nn00687042|2019-06-07T04:49:46.740|39.2579|-119.7235|10.9|nn|nn|nn|nn00687042|ml|3.7|nn|8 km SW of Virginia City, Nevada
+nn00712041|2019-12-01T02:11:06.477|39.111|-119.7343|8.7|nn|nn|nn|nn00712041|ml|2.8|nn|5 km ENE of Indian Hills, Nevada
+nn00714016|2019-12-26T08:13:47.250|39.3505|-119.993|9|nn|nn|nn|nn00714016|ml|2.7|nn|5 km SSE of Floriston, California
+nn00719663|2020-03-21T01:33:35.369|39.1112|-119.7361|8.4|nn|nn|nn|nn00719663|ml|4.5|nn|5 km NE of Indian Hills, Nevada
+nn00719846|2020-03-22T02:53:13.892|39.1163|-119.7431|8.1|nn|nn|nn|nn00719846|ml|3.2|nn|4 km NE of Indian Hills, Nevada
+nc73597286|2021-07-22T03:12:03.390|38.8086667|-119.7966667|6.28|nc|nc|nc|nc73597286|md|2.75|nc|2km NNE of Mesa Vista, CA
+nn00848972|2022-10-10T22:35:23.589|39.3511|-119.9712|7.2|nn|nn|nn|nn00848972|ml|2.8|nn|6 km SE of Floriston, California
+nn00849284|2022-10-14T21:38:56.637|39.353|-119.9641|7.3|nn|nn|nn|nn00849284|ml|2.8|nn|6 km SE of Floriston, California
+nn00860639|2023-06-02T00:23:05.353|39.6139|-119.9797|7.1|nn|nn|nn|nn00860639|mw|3.7|nn|Nevada
+nn00860645|2023-06-02T00:28:07.553|39.6214|-119.9712|6.4|nn|nn|nn|nn00860645|ml|3.1|nn|6 km S of Cold Springs, Nevada
+nn00860806|2023-06-04T00:20:54.829|39.6129|-119.9698|7.1|nn|nn|nn|nn00860806|ml|2.9|nn|7 km S of Cold Springs, Nevada
+nn00860991|2023-06-07T21:42:18.277|39.6143|-119.9636|5.7|nn|nn|nn|nn00860991|ml|2.6|nn|7 km S of Cold Springs, Nevada
+nn00861503|2023-06-21T14:18:25.249|39.6242|-119.9699|6.8|nn|nn|nn|nn00861503|ml|2.8|nn|6 km S of Cold Springs, Nevada
+nn00862754|2023-07-16T13:36:38.788|39.3942|-119.7142|6.4|nn|nn|nn|nn00862754|ml|2.8|nn|10 km NNW of Virginia City, Nevada
+nn00863066|2023-07-21T21:07:57.061|39.349|-119.9993|7.3|nn|nn|nn|nn00863066|ml|2.6|nn|5 km SSE of Floriston, California
+nn00872549|2024-01-29T00:03:00.095|39.4074|-119.6995|8.8|nn|nn|nn|nn00872549|mw|3.5|nn|11 km NNW of Virginia City, Nevada
+nn00873356|2024-02-13T15:26:58.780|39.396|-119.7161|6.7|nn|nn|nn|nn00873356|ml|2.6|nn|11 km NNW of Virginia City, Nevada
+nn00873424|2024-02-14T07:06:30.000|39.396|-119.7146|6.4|nn|nn|nn|nn00873424|ml|3|nn|11 km NNW of Virginia City, Nevada
+nn00874424|2024-03-09T06:27:25.425|39.4113|-119.6925|8.5|nn|nn|nn|nn00874424|ml|3.2|nn|11 km NNW of Virginia City, Nevada
+nn00924762|2026-09-23T05:33:37.383|39.6017|-119.7884|5.092|nn|nn|nn|nn00924762|ml|2.77|nn|1 km WNW of Sun Valley, Nevada

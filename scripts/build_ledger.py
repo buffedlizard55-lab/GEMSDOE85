@@ -1,96 +1,116 @@
 #!/usr/bin/env python3
-"""Build ledger/submissions.csv from pinned artefacts + this session's evidence.
+"""Write ledger/submissions.csv (one row per BUILT variant) and ledger/history.csv.
 
-There is no ``ledger/raw_paste.txt`` in this repository and no submission-page receipt
-anywhere in it, so every historical score is written as **CLAIM** (owner-reported).  Nothing
-here invents a receipt.  Columns are the brief's, plus ``evidence_class`` and ``source``.
+The historical rows are collapsed on exact sha256 (repeat submissions of the same bytes
+score identically) and every score is labelled with its evidence class.  Nothing here is a
+DrivenData receipt: the family record is OWNER-REPORT == CLAIM.
 
-Usage:  python scripts/build_ledger.py
+Run:  python scripts/build_ledger.py
 """
 from __future__ import annotations
 
 import csv
-import hashlib
 import json
 from pathlib import Path
 
-import numpy as np
-import rasterio
-
 ROOT = Path(__file__).resolve().parents[1]
-LEDGER = ROOT / "ledger" / "submissions.csv"
-FIELDS = ["id", "parent", "axis", "value", "n_dots", "pct_changed", "sha256", "status",
-          "predicted_change", "receipt_score", "receipt_date", "evidence_class", "source"]
+BUILD = ROOT / "evidence" / "axis_concentration_build.json"
+LEDGER = ROOT / "ledger"
+
+PREDICTED = {
+    10: ("-0.010 to -0.030 vs R0 0.2778 (CLAIM); concentration raises block-density CV "
+         "0.551->0.767, the family's clustered pattern (h19-5 field CV 0.787, 0.1922 CLAIM)"),
+    15: ("-0.015 to -0.040 vs R0 0.2778 (CLAIM); CV 0.551->0.786; holdout-PROXY truth credit "
+         "falls with dose (TPw 129.3->117.9, n=22,663 withheld positives)"),
+    20: ("-0.020 to -0.050 vs R0 0.2778 (CLAIM); CV 0.551->0.782; holdout-PROXY truth credit "
+         "falls with dose (TPw 129.3->112.9, n=22,663 withheld positives)"),
+}
 
 
-def sha8(p: Path) -> str:
-    return hashlib.sha256(p.read_bytes()).hexdigest()[:8]
-
-
-def n_positive(p: Path) -> int | None:
-    try:
-        with rasterio.open(p) as src:
-            return int((src.read(1) > 0).sum())
-    except Exception:  # noqa: BLE001
-        return None
-
-
-def find_restored(sha: str) -> Path | None:
-    """Locate a restored artefact by full sha256 (manifest destinations move between groups)."""
-    if not sha:
-        return None
-    for base in ("data/scored", "data/registry_rasters", "docs/downloads"):
-        d = ROOT / base
-        if not d.is_dir():
-            continue
-        for p in d.glob("*.tif"):
-            if hashlib.sha256(p.read_bytes()).hexdigest() == sha:
-                return p
-    return None
+def form_note(pct: int) -> str:
+    note = (f"parent h33-2-b2 0.2778 CLAIM; {pct}% of dots moved from lowest- to highest-prior "
+            f"0.8km blocks; pred live -0.01 to -0.03")
+    assert len(note) <= 140, (len(note), note)
+    return note
 
 
 def main() -> int:
-    rows: list[dict] = []
-    hist = json.loads((ROOT / "registry/scored_artifacts.json").read_text())
+    build = json.loads(BUILD.read_text())
+    LEDGER.mkdir(exist_ok=True)
 
-    # The climb, oldest first, as recorded by the owner (all CLAIM, no receipt in repo).
-    climb = [
-        ("gems19-h19-5", "h19-5 continuous field", 0.1922),
-        ("gems24-h25-1-d1-5", "h19-5 thinned to dots d1.5", 0.2477),
-        ("gems30-d28-poisson", "d28 poisson 300 m off-catalogue", 0.2600),
-        ("gems31-h27-4", "solo d28", 0.2708),
-        ("gemsdoe32-h33-h33-2-b2", "prune <=2 px of catalogue (PARENT R0)", 0.2778),
-    ]
-    for aid, label, score in climb:
-        art = next((a for a in hist["artifacts"]
-                    if a["owner_reported_live_dti"] == score and aid.split("-")[0] in a["file"]), None)
-        path = find_restored(art["sha256"]) if art else None
-        rows.append(dict(
-            id=aid, parent="", axis="n/a", value="ancestor", n_dots=n_positive(path) if path else "",
-            pct_changed="", sha256=art["sha256"] if art else "", status="SCORED-CLAIM",
-            predicted_change="", receipt_score=score, receipt_date="",
-            evidence_class="CLAIM (owner-reported; no receipt in repo)",
-            source=f"registry/scored_artifacts.json :: {label}"))
-
-    session = json.loads((ROOT / "evidence/session_snap.json").read_text())
-    for v in session["variants"]:
-        st, p = v["stats"], v["predicted"]
-        rows.append(dict(
-            id=v["id"], parent="h33-h33-2-b2", axis="SNAP",
-            value=f"d2 tau={v['tau']}" + (" (CONTROL: exclusion only)" if v["tau"] is None else ""),
-            n_dots=st["n_dots"], pct_changed=st["pct_moved"],
-            sha256=v["zeros"]["sha256"], status="BUILT",
-            predicted_change=f"{p['low']:+.3f} .. {p['high']:+.3f}",
-            receipt_score="", receipt_date="", evidence_class="MODEL (prediction; no live score)",
-            source="evidence/session_snap.json + " + v["zeros"]["path"]))
-
-    LEDGER.parent.mkdir(parents=True, exist_ok=True)
-    with LEDGER.open("w", newline="") as fh:
-        w = csv.DictWriter(fh, fieldnames=FIELDS)
+    rows = []
+    for v in build["variants"]:
+        pct = v["value_pct"]
+        rows.append({
+            "id": v["id"],
+            "parent": "h33-h33-2-b2-20261004T220000Z-e5eb6e7e-zeros.tif",
+            "parent_sha256": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
+            "axis": "CONCENTRATION",
+            "value": f"{pct}pct_of_dots_moved",
+            "n_dots": v["n_dots"],
+            "pct_dots_changed": round(v["pct_dots_changed"], 2),
+            "sha256": v["sha256_nan"],
+            "sha256_zeros_twin": v["sha256_zeros"],
+            "file": v["files"]["nan_outside_spec"],
+            "file_zeros_twin": v["files"]["zeros_outside_fallback"],
+            "status": "BUILT",
+            "predicted_change": PREDICTED[pct],
+            "form_note": form_note(pct),
+            "receipt_score": "",
+            "receipt_date": "",
+            "evidence_class": "MODEL (prediction; no receipt yet)",
+        })
+    with (LEDGER / "submissions.csv").open("w", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=list(rows[0]))
         w.writeheader()
-        for r in rows:
-            w.writerow(r)
-    print(f"wrote {LEDGER.relative_to(ROOT)} ({len(rows)} rows)")
+        w.writerows(rows)
+
+    # ---- family history (owner-reported == CLAIM unless a receipt exists)
+    artifacts = json.loads((ROOT / "registry" / "scored_artifacts.json").read_text())["artifacts"]
+    hist = []
+    for a in artifacts:
+        hist.append({
+            "site": "GEMSDOE-family",
+            "name": Path(a["file"]).name,
+            "score": a["owner_reported_live_dti"],
+            "encoding": "zeros-outside" if "zeros" in Path(a["file"]).name else "nan-outside",
+            "n_dots": "",
+            "sha8": a["sha256"][:8],
+            "sha256": a["sha256"],
+            "parent": "",
+            "receipt": "N",
+            "evidence_class": "CLAIM (owner-reported; no DrivenData receipt in this repo)",
+            "label": a["label"],
+        })
+    # the three files this session built
+    for v in build["variants"]:
+        hist.append({
+            "site": "GEMSDOE85 (this session)",
+            "name": Path(v["files"]["nan_outside_spec"]).name,
+            "score": "",
+            "encoding": "nan-outside",
+            "n_dots": v["n_dots"],
+            "sha8": v["sha256_nan"][:8],
+            "sha256": v["sha256_nan"],
+            "parent": "h33-2-b2",
+            "receipt": "N",
+            "evidence_class": "MODEL (built, unscored)",
+            "label": f"CONCENTRATION {v['value_pct']}%",
+        })
+    # collapse exact repeats on sha256
+    seen, collapsed = set(), []
+    for h in hist:
+        if h["sha256"] in seen:
+            continue
+        seen.add(h["sha256"])
+        collapsed.append(h)
+    with (LEDGER / "history.csv").open("w", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=list(collapsed[0]))
+        w.writeheader()
+        w.writerows(collapsed)
+
+    print(f"ledger/submissions.csv: {len(rows)} rows")
+    print(f"ledger/history.csv: {len(collapsed)} rows (collapsed on sha256)")
     return 0
 
 

@@ -1,0 +1,329 @@
+.540|37.5205|-118.4153333|8|ci|ci|ci|ci12315791|mh|4|ci|15km N of Dixon Lane-Meadow Creek, CA
+ci3321680|1972-03-09T17:28:44.190|37.521|-118.3775|6|ci|ci|ci|ci3321680|ml|3.04|ci|15km NNE of Dixon Lane-Meadow Creek, CA
+ci3321392|1972-05-13T02:54:11.880|37.4566667|-118.0938333|6|ci|ci|ci|ci3321392|ml|3.21|ci|28km ENE of Bishop, CA
+ci3321221|1972-06-18T02:51:21.910|37.6988333|-118.578|6|ci|ci|ci|ci3321221|ml|3.21|ci|36km E of Mammoth Lakes, CA
+ci3321222|1972-06-18T02:56:59.550|37.6305|-118.8971667|6|ci|ci|ci|ci3321222|ml|3.13|ci|7km E of Mammoth Lakes, CA
+ci3321224|1972-06-18T03:43:11.920|37.6233333|-118.9438333|6|ci|ci|ci|ci3321224|ml|3.13|ci|3km ESE of Mammoth Lakes, CA
+ci3321307|1972-07-01T13:34:52.710|38.4326667|-116.3341667|6|ci|ci|ci|ci3321307|mh|3.31|ci|88km ENE of Tonopah, NV
+ci3321065|1972-09-18T21:50:52.930|37.5293333|-117.9933333|6|ci|ci|ci|ci3321065|ml|3.21|ci|40km ENE of Bishop, CA
+ci3320326|1973-02-17T11:09:58.460|37.5805|-118.3375|6|ci|ci|ci|ci3320326|ml|3.91|ci|23km NNE of Dixon Lane-Meadow Creek, CA
+ci3319619|1973-06-05T09:11:02.870|37.5095|-118.196|6|ci|ci|ci|ci3319619|ml|3.04|ci|24km NE of Dixon Lane-Meadow Creek, CA
+usp00002cb|1973-06-24T11:37:32.800|37.754|-116.153|5|us|us|us|usp00002cb|mb|4.2|us|38 km WNW of Rachel, Nevada
+usp00002hv|1973-07-04T12:25:40.100|37.399|-118.561|5|us|us|us|usp00002hv|ml|3.2|brk|2 km SW of Mesa, California
+usp00003dd|1973-09-11T02:39:48.200|37.641|-118.889|11|us|us|us|usp00003dd|mb|4.2|us|7 km E of Mammoth Lakes, California
+usp00003j7|1973-09-25T02:52:13.300|39.24|-116.379|10|us|us|us|usp00003j7|ml|3.6|gs|47 km SW of Eureka, Nevada
+usp00003r9|1973-10-07T17:30:51.800|37.605|-118.955|5|b|us|us|usp00003r9|ml|3.9|brk|5 km SSE of Mammoth Lakes, California
+ci3319259|1973-10-17T15:31:52.550|37.6901667|-118.8868333|6|ci|ci|ci|ci3319259|ml|3.21|ci|10km NE of Mammoth Lakes, CA
+usp00003ux|1973-10-17T15:34:27.400|37.6|-118.98|2|b|us|us|usp00003ux|mb|4.2|us|5 km S of Mammoth Lakes, California
+usp00004c0|1973-11-29T20:59:41.000|39.533|-119.95|5|r|us|us|usp00004c0|ml|3|ren|2 km NW of Mogul, Nevada
+ci3319182|1974-01-30T07:12:33.400|37.4643333|-118.0088333|6|ci|ci|ci|ci3319182|ml|3.14|ci|36km ENE of Bishop, CA
+usp00005ns|1974-03-18T12:14:26.000|40.167|-116.7|5|r|us|us|usp00005ns|ml|4.3|ren|29 km SSW of Crescent Valley, Nevada
+usp00005nt|1974-03-18T12:54:57.000|40.2|-116.583|5|r|us|us|usp00005nt|ml|4.1|ren|23 km S of Crescent Valley, Nevada
+ci3319124|1974-04-15T11:29:41.990|38.2495|-118.4801667|6|ci|ci|ci|ci3319124|mh|3.07|ci|33km SSE of Hawthorne, NV
+nc1019994|1974-06-16T17:56:02.640|37.821|-118.406|-0.277|nc|nc|nc|nc1019994|ml|3.1|nc|6 km E of Benton, California
+nc1020166|1974-07-03T00:56:56.820|37.578|-118.5651667|2.676|nc|nc|nc|nc1020166|md|3.12|nc|9 km E of Sunny Slopes, California
+usp000070p|1974-07-06T06:10:41.800|38.765|-119.67|5|b|us|us|usp000070p|ml|3.7|brk|11 km SSW of Carter Springs, Nevada
+nc1020654|1974-08-21T19:38:02.890|38.0561667|-118.7203333|2.939|nc|nc|nc|nc1020654|md|3.34|nc|33 km NW of Benton, California
+usp00007ys|1974-09-07T23:12:06.400|38.025|-118.627|2|b|us|us|usp00007ys|ml|3.5|brk|26 km NNW of Benton, California
+nc1021604|1974-11-05T12:39:11.950|38.0913333|-118.7546667|7.633|nc|nc|nc|nc1021604|ml|3.4|nc|34 km E of Mono City, California
+ci3317454|1974-11-14T16:20:38.270|37.8818333|-118.1065|6|ci|ci|ci|ci3317454|ml|3.56|ci|61km NNE of Dixon Lane-Meadow Creek, CA
+nc1021779|1974-11-18T02:04:52.510|37.708|-118.6896667|2.923|nc|nc|nc|nc1021779|md|3.15|nc|15 km N of Sunny Slopes, California
+nc1021838|1974-11-21T12:55:17.190|37.606|-118.4203333|2.798|nc|nc|nc|nc1021838|ml|3|nc|22 km ENE of Swall Meadows, California
+nc1022700|1975-01-30T07:22:53.230|37.6121667|-118.6463333|2.622|nc|nc|nc|nc1022700|ml|3|nc|5 km NNE of Sunny Slopes, California
+usp0000ax5|1975-05-05T01:30:14.500|38.553|-119.707|2|b|us|us|usp0000ax5|ml|3.2|brk|16 km SSE of Markleeville, California
+usp0000ax6|1975-05-05T01:55:40.700|38.55|-119.715|2|b|us|us|usp0000ax6|ml|3.2|brk|17 km SSE of Markleeville, California
+usp0000axc|1975-05-05T06:29:55.100|38.64|-119.695|5|b|us|us|usp0000axc|ml|3.7|brk|9 km SE of Markleeville, California
+usp0000ay7|1975-05-07T09:35:44.500|38.637|-119.688|5|b|us|us|usp0000ay7|ml|3.6|brk|10 km SE of Markleeville, California
+usp0000bnk|1975-06-19T13:00:00.100|37.35|-116.32|0|a|us|us|usp0000bnk|mb|6.1|us|60 km WSW of Rachel, Nevada
+nc1024646|1975-07-04T04:13:54.830|38.0561667|-118.6668333|6.54|nc|nc|nc|nc1024646|ml|3.2|nc|31 km NNW of Benton, California
+usp0000bzg|1975-07-13T01:16:30.600|39.554|-117.677|5|us|us|us|usp0000bzg|ml|4|brk|52 km W of Austin, Nevada
+usp0000bzh|1975-07-13T01:36:54.000|39.555|-117.638|5|us|us|us|usp0000bzh|ml|4.2|brk|49 km W of Austin, Nevada
+nc1024953|1975-07-28T11:53:08.660|37.4856667|-118.3955|-0.32|nc|nc|nc|nc1024953|ml|3.2|nc|11 km N of Dixon Lane-Meadow Creek, California
+nc1025768|1975-08-17T00:24:27.500|37.6315|-118.7746667|4.008|nc|nc|nc|nc1025768|ml|4.2|nc|10 km NNW of Aspen Springs, California
+nc1025859|1975-08-21T12:36:18.350|37.6171667|-118.7845|2.72|nc|nc|nc|nc1025859|ml|3|nc|9 km NW of Aspen Springs, California
+nc1026829|1975-10-04T09:53:13.730|37.5021667|-118.8506667|2.19|nc|nc|nc|nc1026829|ml|3|nc|13 km WSW of Aspen Springs, California
+nc1026885|1975-10-07T20:58:13.150|37.6796667|-118.7838333|9.28|nc|nc|nc|nc1026885|ml|3|nc|15 km NNW of Aspen Springs, California
+nc1026886|1975-10-07T21:12:46.260|37.673|-118.7848333|10.11|nc|nc|nc|nc1026886|md|3.79|nc|14 km NNW of Aspen Springs, California
+usp0000d3q|1975-10-10T03:35:37.700|38.702|-119.85|5|us|us|us|usp0000d3q|ml|3.1|brk|6 km W of Markleeville, California
+ci3006268|1975-10-30T17:43:08.850|37.382|-116.297|6|ci|ci|ci|ci3006268|mh|3.15|ci|66km NE of Beatty, NV
+nc1027735|1975-11-29T08:17:03.260|37.6441667|-118.452|5.919|nc|nc|nc|nc1027735|ml|3.2|nc|19 km S of Benton, California
+nc1027892|1975-12-10T19:19:24.220|37.5326667|-118.4153333|2.829|nc|nc|nc|nc1027892|ml|3.5|nc|16 km N of Dixon Lane-Meadow Creek, California
+usp0000esy|1976-01-28T06:17:37.400|38.639|-118.929|4|us|us|us|usp0000esy|ml|3.2|brk|15 km W of Walker Lake, Nevada
+ci3002158|1976-02-23T14:44:32.690|37.37|-116.267|6|ci|ci|ci|ci3002158|ml|3.13|ci|67km NE of Beatty, NV
+ci3002286|1976-03-08T02:31:08.470|37.536|-116.231|6|ci|ci|ci|ci3002286|ml|3.23|ci|84km NNE of Beatty, NV
+nc1029039|1976-03-09T04:49:32.180|38.0803333|-118.747|5.177|nc|nc|nc|nc1029039|md|3.12|nc|35 km E of Mono City, California
+usp0000fhj|1976-03-20T06:23:04.900|37.354|-116.688|5|us|us|us|usp0000fhj|mb|4|us|49 km N of Beatty, Nevada
+usp0000fr4|1976-04-02T12:56:35.500|39.569|-117.668|5|us|us|us|usp0000fr4|ml|4.1|brk|52 km W of Austin, Nevada
+nc1029494|1976-04-23T03:07:03.370|37.5001667|-118.4538333|2.725|nc|nc|nc|nc1029494|ml|3.3|nc|11 km NE of Mesa, California
+usp0000h12|1976-06-24T00:24:45.100|39.454|-119.531|2|us|us|us|usp0000h12|ml|3.5|brk|16 km WNW of Stagecoach, Nevada
+usp0000h43|1976-06-29T13:10:48.800|39.447|-119.538|6|us|us|us|usp0000h43|ml|3.5|brk|16 km WNW of Stagecoach, Nevada
+usp0000h46|1976-06-29T17:12:11.800|39.435|-119.545|7|us|us|us|usp0000h46|ml|3|gs|16 km WNW of Stagecoach, Nevada
+nc1030381|1976-07-07T18:27:39.690|37.5635|-118.5601667|4.018|nc|nc|nc|nc1030381|ml|3.7|nc|9 km NE of Swall Meadows, California
+nc1030382|1976-07-07T18:58:20.140|37.5165|-118.5531667|2.048|nc|nc|nc|nc1030382|md|3.12|nc|7 km E of Swall Meadows, California
+usp0000hph|1976-08-02T08:14:07.400|38.381|-118.185|8|us|us|us|usp0000hph|mb|4.8|us|6 km W of Mina, Nevada
+usp0000hr6|1976-08-05T19:38:20.800|38.398|-118.135|8|us|us|us|usp0000hr6|ml|3.5|brk|2 km WNW of Mina, Nevada
+usp0000hu8|1976-08-14T07:58:32.400|39.446|-119.539|4|us|us|us|usp0000hu8|ml|3.1|brk|16 km WNW of Stagecoach, Nevada
+nc1031081|1976-08-20T15:28:17.330|38.0508333|-118.7808333|2.194|nc|nc|nc|nc1031081|md|3.26|nc|31 km ENE of Lee Vining, California
+usp0000j07|1976-08-22T10:14:06.500|38.91|-116.43|1|us|us|us|usp0000j07|mb|4.7|us|64 km ESE of Kingston, Nevada
+nc1031169|1976-08-23T23:31:33.750|37.4408333|-118.461|2.715|nc|nc|nc|nc1031169|md|3.07|nc|California-Nevada border region
+nc1031452|1976-09-10T05:59:04.280|37.4743333|-118.4756667|4.581|nc|nc|nc|nc1031452|md|3.13|nc|8 km NE of Mesa, California
+usp0000jmw|1976-09-26T22:44:37.200|39.37|-118.11|5|us|us|us|usp0000jmw|ml|3|gs|52 km E of Fallon Station, Nevada
+nc1031977|1976-10-20T06:53:44.080|37.6746667|-118.1355|10.987|nc|nc|nc|nc1031977|ml|3.1|nc|6 km W of Dyer, Nevada
+nc1031990|1976-10-20T23:14:57.420|37.6856667|-118.1276667|13.658|nc|nc|nc|nc1031990|ml|3.4|nc|5 km WNW of Dyer, Nevada
+nc1031993|1976-10-21T00:40:04.660|37.6358333|-118.5188333|2.094|nc|nc|nc|nc1031993|ml|3.2|nc|15 km ENE of Sunny Slopes, California
+nc1031994|1976-10-21T01:12:10.890|37.6658333|-118.1673333|10.118|nc|nc|nc|nc1031994|md|3.51|nc|8 km W of Dyer, Nevada
+nc1032017|1976-10-22T16:50:51.910|38.5671667|-119.623|24.258|nc|nc|nc|nc1032017|ml|3.4|nc|10 km W of Coleville, California
+nc1032217|1976-11-10T16:12:57.500|37.5891667|-118.6948333|4.729|nc|nc|nc|nc1032217|md|3.04|nc|2 km NW of Sunny Slopes, California
+nc1032352|1976-11-19T22:35:03.550|37.5518333|-118.5355|4.949|nc|nc|nc|nc1032352|md|3|nc|10 km ENE of Swall Meadows, California
+nc1032442|1976-11-26T00:09:48.130|37.4198333|-118.4118333|3.109|nc|nc|nc|nc1032442|ml|3|nc|3 km N of Dixon Lane-Meadow Creek, California
+usp0000khg|1976-11-28T01:23:20.100|37.556|-118.875|5|us|us|us|usp0000khg|ml|3.1|brk|13 km SE of Mammoth Lakes, California
+nc1032691|1976-12-08T15:45:07.690|37.4998333|-118.5701667|0.304|nc|nc|nc|nc1032691|md|3.13|nc|6 km E of Swall Meadows, California
+nc1033677|1977-02-01T18:47:58.510|39.0921667|-120.0068333|7.301|nc|nc|nc|nc1033677|ml|4|nc|5 km W of Glenbrook, Nevada
+usp0000mgu|1977-02-09T07:24:08.300|39.202|-118.039|5|us|us|us|usp0000mgu|ml|3.7|brk|38 km NNW of Gabbs, Nevada
+nc1034069|1977-02-22T06:24:05.740|38.4903333|-119.2806667|2.907|nc|nc|nc|nc1034069|ml|4.8|nc|17 km E of Walker, California
+nc1034340|1977-03-11T21:19:40.240|37.3953333|-119.9051667|14.931|nc|nc|nc|nc1034340|md|3.1|nc|7 km SSW of Bootjack, California
+nc1035208|1977-05-21T00:28:21.570|37.651|-118.6901667|8.51|nc|nc|nc|nc1035208|ml|3.4|nc|California-Nevada border region
+ci10080174|1977-06-10T10:11:07.820|37.6975|-119.3428333|6|ci|ci|ci|ci10080174|ml|3.01|ci|21km ESE of Yosemite Valley, CA
+usp0000q0v|1977-08-08T04:51:41.500|37.58|-117.71|2|b|us|us|usp0000q0v|ml|4|brk|20 km SSW of Silver Peak, Nevada
+nc1037196|1977-10-10T19:26:04.190|38.0543333|-118.7796667|8.96|nc|nc|nc|nc1037196|ml|4|nc|31 km ENE of Lee Vining, California
+usp0000s1g|1977-12-13T00:57:17.100|38.978|-116.584|5|us|us|us|usp0000s1g|ml|3|gs|49 km ESE of Kingston, Nevada
+usp0000sfr|1978-01-13T03:39:36.000|39.422|-117.57|5|us|us|us|usp0000sfr|ml|4.1|brk|43 km W of Austin, Nevada
+usp0000shm|1978-01-15T10:05:14.100|37.501|-119.099|2|b|us|us|usp0000shm|ml|3.2|brk|19 km SW of Mammoth Lakes, California
+usp0000shp|1978-01-15T12:29:01.500|37.501|-119|2|b|us|us|usp0000shp|ml|3.8|brk|16 km S of Mammoth Lakes, California
+usp0000skc|1978-01-18T06:37:02.700|37.63|-117.839|1|b|us|us|usp0000skc|ml|3.4|brk|20 km ESE of Dyer, Nevada
+usp0000ske|1978-01-18T08:53:32.300|37.63|-117.839|2|b|us|us|usp0000ske|ml|3.7|brk|20 km ESE of Dyer, Nevada
+usp0000smx|1978-01-21T17:22:22.900|39.17|-119.588|5|us|us|us|usp0000smx|ml|3|brk|7 km S of Dayton, Nevada
+usp0000spf|1978-01-24T22:45:25.800|39.069|-118.069|5|us|us|us|usp0000spf|ml|3|gs|25 km NNW of Gabbs, Nevada
+usp0000syv|1978-02-14T04:35:22.500|39.621|-117.13|5|us|us|us|usp0000syv|mb|4.4|us|15 km NNW of Austin, Nevada
+usp0000szj|1978-02-15T09:25:31.000|39.564|-118.438|10|us|us|us|usp0000szj|ml|3.7|brk|29 km NE of Fallon Station, Nevada
+nc1039064|1978-02-23T10:14:06.640|38.3275|-119.1091667|10.462|nc|nc|nc|nc1039064|ml|3.3|nc|13 km NE of Bridgeport, California
+usp0000t8d|1978-03-05T22:46:17.200|38.944|-117.99|5|us|us|us|usp0000t8d|mb|4|us|10 km NW of Gabbs, Nevada
+usp0000tdc|1978-03-15T03:09:14.200|38.359|-118.188|5|us|us|us|usp0000tdc|ml|3.2|gs|7 km WSW of Mina, Nevada
+ci10079466|1978-03-15T03:27:28.330|38.8256667|-118.025|6|ci|ci|ci|ci10079466|ml|3.1|ci|62km ENE of Hawthorne, NV
+usp0000tvr|1978-04-01T13:14:23.200|37.521|-118.74|5|us|us|us|usp0000tvr|ml|3|brk|4 km SSW of Aspen Springs, California
+usp0000u0b|1978-04-10T07:31:55.900|40.059|-116.416|5|us|us|us|usp0000u0b|ml|3|gs|41 km SSE of Crescent Valley, Nevada
+usp0000udv|1978-05-06T09:17:02.300|37.531|-118.632|5|us|us|us|usp0000udv|ml|3|brk|2 km NNE of Swall Meadows, California
+usp0000udx|1978-05-06T10:14:14.700|37.504|-118.589|5|us|us|us|usp0000udx|ml|3.6|brk|4 km E of Swall Meadows, California
+usp0000vf5|1978-07-06T22:21:22.000|39.107|-116.216|10|us|us|us|usp0000vf5|ml|3.8|gs|50 km SSW of Eureka, Nevada
+usp0000vhy|1978-07-12T14:54:45.100|38.515|-118.334|5|us|us|us|usp0000vhy|ml|3.3|brk|24 km NW of Mina, Nevada
+ci9678794|1978-07-12T14:54:50.230|38.476|-118.248|5.03|ci|ci|ci|ci9678794|mh|3.2|ci|33km E of Hawthorne, NV
+usp0000vux|1978-07-30T01:32:23.200|38.719|-119.389|5|us|us|us|usp0000vux|ml|3|brk|8 km SSW of Smith Valley, Nevada
+nc1041854|1978-08-25T01:35:49.290|38.0598333|-118.862|8.17|nc|nc|nc|nc1041854|ml|3.2|nc|24 km E of Mono City, California
+nc1041987|1978-08-31T00:06:56.240|38.078|-118.8076667|4.437|nc|nc|nc|nc1041987|ml|3.1|nc|29 km E of Mono City, California
+nc1042051|1978-09-03T11:25:53.640|38.7861667|-119.7891667|4.307|nc|nc|nc|nc1042051|ml|3.1|nc|2 km SSE of Mesa Vista, California
+usp0000wck|1978-09-04T04:52:31.600|38.814|-119.816|13|b|us|us|usp0000wck|mb|3.9|us|1 km WNW of Mesa Vista, California
+nc1042070|1978-09-04T04:59:56.530|38.8428333|-119.7786667|11.265|nc|nc|nc|nc1042070|ml|3.2|nc|4 km NNE of Mesa Vista, California
+nc1042082|1978-09-04T12:00:57.990|38.793|-119.7831667|2.447|nc|nc|nc|nc1042082|ml|3|nc|1 km SE of Mesa Vista, California
+nc1042087|1978-09-04T21:54:53.350|38.795|-119.7888333|4.607|nc|nc|nc|nc1042087|md|4.5|nc|1 km SSE of Mesa Vista, California
+nc1042090|1978-09-04T22:03:35.600|38.7995|-119.7996667|1.807|nc|nc|nc|nc1042090|ml|4.1|nc|0 km SSW of Mesa Vista, California
+nc1042091|1978-09-04T22:11:53.510|38.806|-119.7916667|2.377|nc|nc|nc|nc1042091|ml|3|nc|0 km ESE of Mesa Vista, California
+nc1042096|1978-09-04T22:37:26.170|38.7956667|-119.7946667|4.777|nc|nc|nc|nc1042096|ml|3.1|nc|1 km S of Mesa Vista, California
+usp0000wdn|1978-09-05T22:28:50.300|38.982|-118.161|5|us|us|us|usp0000wdn|ml|3.6|brk|24 km WNW of Gabbs, Nevada
+nc1042254|1978-09-11T11:00:30.500|38.7985|-119.7951667|3.007|nc|nc|nc|nc1042254|ml|3|nc|0 km S of Mesa Vista, California
+nc1042405|1978-09-20T09:53:29.580|37.8875|-118.4616667|3.447|nc|nc|nc|nc1042405|ml|3.7|nc|7 km N of Benton, California
+usp0000wp8|1978-09-22T19:38:13.000|38.95|-119.64|5|b|us|us|usp0000wp8|ml|3.2|brk|1 km ESE of Fish Springs, Nevada
+nc1042591|1978-10-04T16:42:47.750|37.5188333|-118.7038333|3.078|nc|nc|nc|nc1042591|md|5.18|nc|4 km SSE of Aspen Springs, California
+usp0000wud|1978-10-04T16:57:04.800|37.517|-118.633|9|p|us|us|usp0000wud|ml|3.1|pas|1 km NE of Swall Meadows, California
+usp0000wue|1978-10-04T16:59:04.600|37.534|-118.633|12|p|us|us|usp0000wue|ml|4.4|pas|3 km NNE of Swall Meadows, California
+usp0000wuf|1978-10-04T17:07:35.300|37.451|-118.667|9|p|us|us|usp0000wuf|ml|3.5|brk|6 km SSW of Swall Meadows, California
+usp0000wug|1978-10-04T17:18:50.600|37.501|-118.633|10|p|us|us|usp0000wug|ml|3|pas|1 km ESE of Swall Meadows, California
+nc1042592|1978-10-04T17:31:30.970|37.5586667|-118.6475|2.609|nc|nc|nc|nc1042592|ml|4.2|nc|2 km ESE of Sunny Slopes, California
+usp0000wuj|1978-10-04T17:33:04.600|37.533|-118.599|9|p|us|us|usp0000wuj|ml|3.8|pas|4 km NE of Swall Meadows, California
+nc1042593|1978-10-04T17:39:02.460|37.5528333|-118.6553333|15.629|nc|nc|nc|nc1042593|ml|5.1|nc|2 km SE of Sunny Slopes, California
+nc1042594|1978-10-04T17:43:46.480|37.57|-118.6583333|2.599|nc|nc|nc|nc1042594|ml|3.6|nc|1 km E of Sunny Slopes, California
+nc1042596|1978-10-04T17:46:46.490|37.5496667|-118.696|3.556|nc|nc|nc|nc1042596|ml|4.2|nc|1 km ESE of Aspen Springs, California
+usp0000wup|1978-10-04T17:49:28.500|37.55|-118.65|9|p|us|us|usp0000wup|ml|3.5|pas|3 km SE of Sunny Slopes, California
+usp0000wuq|1978-10-04T17:54:11.300|37.55|-118.567|10|p|us|us|usp0000wuq|ml|3.4|pas|8 km NE of Swall Meadows, California
+nc1042598|1978-10-04T18:01:52.670|37.5208333|-118.6635|2.549|nc|nc|nc|nc1042598|ml|3.9|nc|2 km NW of Swall Meadows, California
+usp0000wus|1978-10-04T18:03:42.400|37.55|-118.5|11|p|us|us|usp0000wus|ml|3.6|brk|13 km ENE of Swall Meadows, California
+nc1042600|1978-10-04T18:09:32.650|37.6541667|-118.6403333|2.825|nc|nc|nc|nc1042600|ml|3.3|nc|9 km NNE of Sunny Slopes, California
+usp0000wuv|1978-10-04T18:12:42.100|37.534|-118.633|9|p|us|us|usp0000wuv|ml|3.4|brk|3 km NNE of Swall Meadows, California
+usp0000wuw|1978-10-04T18:19:51.800|37.55|-118.599|9|p|us|us|usp0000wuw|ml|3.1|pas|6 km NE of Swall Meadows, California
+usp0000wux|1978-10-04T18:20:47.100|37.517|-118.617|9|p|us|us|usp0000wux|ml|3.2|pas|California-Nevada border region
+nc1042601|1978-10-04T18:22:42.010|37.572|-118.628|2.329|nc|nc|nc|nc1042601|ml|4.4|nc|4 km E of Sunny Slopes, California
+nc1042602|1978-10-04T18:44:43.540|37.6036667|-118.6371667|10.039|nc|nc|nc|nc1042602|ml|3.6|nc|5 km NE of Sunny Slopes, California
+usp0000wv1|1978-10-04T19:22:25.000|37.483|-118.783|9|p|us|us|usp0000wv1|ml|3.4|brk|10 km SW of Aspen Springs, California
+usp0000wv2|1978-10-04T19:47:41.900|37.567|-118.583|10|p|us|us|usp0000wv2|ml|3|pas|8 km E of Sunny Slopes, California
+nc1042603|1978-10-04T20:09:33.770|37.6368333|-118.6288333|2.485|nc|nc|nc|nc1042603|ml|3.4|nc|8 km NNE of Sunny Slopes, California
+usp0000wv5|1978-10-04T20:11:42.100|37.517|-118.633|9|p|us|us|usp0000wv5|ml|3.6|brk|1 km NE of Swall Meadows, California
+usp0000wv6|1978-10-04T20:48:37.600|37.534|-118.65|10|p|us|us|usp0000wv6|ml|3.2|pas|3 km NNW of Swall Meadows, California
+usp0000wv7|1978-10-04T23:06:28.400|37.517|-118.599|9|p|us|us|usp0000wv7|ml|3|pas|4 km ENE of Swall Meadows, California
+nc1042610|1978-10-05T01:17:46.840|37.5271667|-118.6561667|2.649|nc|nc|nc|nc1042610|ml|4.6|nc|2 km NNW of Swall Meadows, California
+usp0000wva|1978-10-05T01:41:57.300|37.467|-118.683|8|p|us|us|usp0000wva|ml|3.3|pas|5 km SW of Swall Meadows, California
+nc1042611|1978-10-05T01:45:04.840|37.515|-118.6616667|1.299|nc|nc|nc|nc1042611|ml|3.5|nc|1 km WNW of Swall Meadows, California
+nc1042612|1978-10-05T06:41:29.800|37.5253333|-118.6386667|2.619|nc|nc|nc|nc1042612|ml|4.4|nc|2 km N of Swall Meadows, California
+nc1042613|1978-10-05T10:46:16.640|37.523|-118.6815|-2.361|nc|nc|nc|nc1042613|ml|3.3|nc|3 km WNW of Swall Meadows, California
+usp0000wvj|1978-10-05T12:04:29.900|37.501|-118.633|9|p|us|us|usp0000wvj|ml|3|pas|1 km ESE of Swall Meadows, California
+nc1042618|1978-10-05T22:54:13.640|37.62|-118.643|2.619|nc|nc|nc|nc1042618|ml|3.6|nc|6 km NNE of Sunny Slopes, California
+nc1042621|1978-10-06T01:32:21.610|37.5681667|-118.6561667|12.419|nc|nc|nc|nc1042621|ml|3.5|nc|1 km E of Sunny Slopes, California
+nc1042669|1978-10-07T02:49:17.040|37.6048333|-118.615|2.379|nc|nc|nc|nc1042669|ml|3|nc|6 km NE of Sunny Slopes, California
+usp0000www|1978-10-07T13:47:50.600|37.517|-118.65|9|p|us|us|usp0000www|ml|3.1|pas|1 km NNW of Swall Meadows, California
+nc1042711|1978-10-08T13:29:19.200|37.5961667|-118.6536667|6.309|nc|nc|nc|nc1042711|ml|3.1|nc|3 km NNE of Sunny Slopes, California
+nc1042742|1978-10-10T02:08:07.420|37.5043333|-118.6755|13.629|nc|nc|nc|nc1042742|ml|3.3|nc|2 km W of Swall Meadows, California
+nc1042744|1978-10-10T04:28:52.040|38.7885|-119.7903333|4.047|nc|nc|nc|nc1042744|ml|3.1|nc|2 km SSE of Mesa Vista, California
+usp0000wy6|1978-10-10T06:13:53.800|39.431|-119.638|5|us|us|us|usp0000wy6|ml|3|brk|13 km N of Virginia City, Nevada
+nc1042760|1978-10-11T02:51:22.010|38.539|-119.5028333|11.312|nc|nc|nc|nc1042760|ml|3|nc|3 km S of Coleville, California
+nc1042831|1978-10-14T23:38:42.310|37.6393333|-118.6271667|2.805|nc|nc|nc|nc1042831|ml|3.2|nc|8 km NNE of Sunny Slopes, California
+nc1042929|1978-10-20T20:25:18.150|38.0616667|-119.1638333|21.128|nc|nc|nc|nc1042929|ma|3.79|nc|2 km NW of Mono City, California
+nc1042931|1978-10-20T21:25:13.920|38.0565|-118.8728333|6.387|nc|nc|nc|nc1042931|ml|3.8|nc|23 km E of Mono City, California
+nc1042986|1978-10-24T02:11:54.550|38.0578333|-118.8761667|6.167|nc|nc|nc|nc1042986|ml|3.6|nc|23 km E of Mono City, California
+nc1042993|1978-10-24T06:57:04.560|38.0636667|-118.8766667|6.347|nc|nc|nc|nc1042993|ml|3.3|nc|California-Nevada border region
+nc1043022|1978-10-26T19:00:41.240|37.5613333|-118.6741667|24.149|nc|nc|nc|nc1043022|ml|4|nc|0 km S of Sunny Slopes, California
+nc1043162|1978-11-03T04:24:53.870|37.6438333|-118.604|3.295|nc|nc|nc|nc1043162|ml|3.2|nc|10 km NE of Sunny Slopes, California
+nc1043229|1978-11-06T16:22:26.530|37.6546667|-118.6366667|2.735|nc|nc|nc|nc1043229|ml|3.4|nc|10 km NNE of Sunny Slopes, California
+nc1043322|1978-11-11T17:41:55.090|38.0685|-119.0758333|4.608|nc|nc|nc|nc1043322|ma|3.19|nc|6 km ENE of Mono City, California
+nc1043373|1978-11-14T14:51:48.060|38.1595|-119.8463333|4.284|nc|nc|nc|nc1043373|ml|3|nc|15 km ESE of Strawberry, California
+ci3314057|1978-11-21T23:47:22.570|38.5|-118.25|6|ci|ci|ci|ci3314057|mh|3.05|ci|33km E of Hawthorne, NV
+nc1043484|1978-11-24T04:06:42.470|37.6263333|-118.6483333|9.155|nc|nc|nc|nc1043484|md|3.23|nc|6 km NNE of Sunny Slopes, California
+nc1043494|1978-11-25T03:23:55.960|37.6073333|-118.6333333|8.489|nc|nc|nc|nc1043494|ml|3.5|nc|5 km NE of Sunny Slopes, California
+usp0000xmf|1978-11-25T03:24:55.300|37.5|-118.7|8|p|us|us|usp0000xmf|ml|3.5|brk|5 km W of Swall Meadows, California
+usp0000xmg|1978-11-25T04:06:41.400|37.533|-118.683|9|p|us|us|usp0000xmg|ml|3.5|pas|3 km SE of Aspen Springs, California
+nc1043728|1978-12-13T03:03:01.300|37.633|-118.6318333|2.845|nc|nc|nc|nc1043728|ml|3.2|nc|8 km NNE of Sunny Slopes, California
+ci3345100|1978-12-31T12:06:37.030|38.249|-117.5043333|6|ci|ci|ci|ci3345100|ml|3.06|ci|31km NW of Tonopah, NV
+nc1043949|1978-12-31T12:06:37.300|38.048|-118.8756667|4.777|nc|nc|nc|nc1043949|ml|3.2|nc|23 km E of Mono City, California
+usp0000yaa|1979-01-06T01:20:35.100|39.24|-116.378|5|us|us|us|usp0000yaa|ml|4.2|brk|47 km SW of Eureka, Nevada
+nc1044257|1979-01-19T18:10:41.120|37.5065|-118.6593333|10.141|nc|nc|nc|nc1044257|ml|4.1|nc|1 km W of Swall Meadows, California
+nc1044335|1979-01-24T21:14:26.740|37.5351667|-118.5918333|16.879|nc|nc|nc|nc1044335|ml|4.6|nc|5 km NE of Swall Meadows, California
+nc1044416|1979-01-31T10:33:11.630|37.6406667|-118.948|4.321|nc|nc|nc|nc1044416|ml|3.1|nc|2 km ESE of Mammoth Lakes, California
+nc1044450|1979-02-02T18:29:25.820|38.7931667|-119.798|2.217|nc|nc|nc|nc1044450|ml|3.4|nc|1 km S of Mesa Vista, California
+nc1044532|1979-02-05T02:13:58.960|37.5526667|-118.7956667|3.849|nc|nc|nc|nc1044532|ml|3.7|nc|7 km W of Aspen Springs, California
+ci3345917|1979-02-05T02:14:09.370|37.708|-118.0318333|6|ci|ci|ci|ci3345917|ml|3.78|ci|49km NE of Dixon Lane-Meadow Creek, CA
+nc1044534|1979-02-05T08:42:23.090|37.5673333|-118.7751667|11.199|nc|nc|nc|nc1044534|ml|3.3|nc|5 km WNW of Aspen Springs, California
+nc1044561|1979-02-07T01:56:52.700|37.5406667|-118.7936667|-2.371|nc|nc|nc|nc1044561|ml|3.3|nc|7 km WSW of Aspen Springs, California
+nc1044562|1979-02-07T04:20:16.310|37.6353333|-118.7473333|3.269|nc|nc|nc|nc1044562|ml|3.8|nc|9 km NNW of Aspen Springs, California
+nc1044565|1979-02-07T04:21:17.320|37.5446667|-118.9823333|12.711|nc|nc|nc|nc1044565|md|3.69|nc|11 km S of Mammoth Lakes, California
+nc1044645|1979-02-13T16:26:42.440|37.5721667|-118.8016667|3.111|nc|nc|nc|nc1044645|ml|3.1|nc|8 km WNW of Aspen Springs, California
+nc1044652|1979-02-14T00:33:10.490|38.0485|-118.8676667|8.305|nc|nc|nc|nc1044652|md|3.06|nc|24 km E of Mono City, California
+nc1044653|1979-02-14T00:43:12.440|38.0053333|-119.0085|15.419|nc|nc|nc|nc1044653|ma|3.27|nc|11 km ENE of Lee Vining, California
+nc1044928|1979-03-08T18:25:43.450|37.653|-119.4575|4.393|nc|nc|nc|nc1044928|ml|3.2|nc|14 km SE of Yosemite Valley, California
+nc1044978|1979-03-12T14:08:13.130|37.5418333|-118.6581667|-2.331|nc|nc|nc|nc1044978|ml|3.3|nc|3 km SSE of Sunny Slopes, CA
+usp0000zg1|1979-03-18T21:06:11.000|39.252|-116.365|5|us|us|us|usp0000zg1|ml|3.5|gs|45 km SW of Eureka, Nevada
+usp0000zg8|1979-03-19T00:00:51.100|39.204|-116.403|5|us|us|us|usp0000zg8|ml|3.6|gs|51 km SW of Eureka, Nevada
+nc1045115|1979-03-23T03:09:48.780|37.5841667|-118.7216667|-1.941|nc|nc|nc|nc1045115|md|3.06|nc|3 km NNW of Aspen Springs, California
+nc1045162|1979-03-26T06:29:01.740|37.5216667|-118.681|5.969|nc|nc|nc|nc1045162|ml|3.3|nc|3 km WNW of Swall Meadows, California
+nc1045167|1979-03-26T17:01:02.420|37.5593333|-118.7811667|2.279|nc|nc|nc|nc1045167|ml|3.4|nc|6 km W of Aspen Springs, California
+nc1045170|1979-03-26T21:36:38.460|37.6481667|-118.921|0.819|nc|nc|nc|nc1045170|ml|3.7|nc|4 km E of Mammoth Lakes, California
+nc1045231|1979-04-02T10:56:22.050|38.5066667|-119.3516667|24.235|nc|nc|nc|nc1045231|ml|3|nc|10 km E of Walker, California
+usp0000ztu|1979-04-03T12:08:30.700|40.64|-119.664|5|us|us|us|usp0000ztu|mb|4|us|26 km W of Gerlach, Nevada
+nc1045641|1979-05-02T13:18:51.250|38.5991667|-119.4916667|6.877|nc|nc|nc|nc1045641|ml|3|nc|3 km SE of Topaz, California
+nc1045943|1979-05-27T14:51:50.770|37.6223333|-118.8736667|8.821|nc|nc|nc|nc1045943|ml|3.4|nc|9 km ESE of Mammoth Lakes, California
+nc1045979|1979-05-29T20:50:19.490|37.5963333|-118.4595|2.945|nc|nc|nc|nc1045979|ml|3.4|nc|19 km ENE of Swall Meadows, California
+usp0001142|1979-06-06T01:49:56.400|38.491|-118.418|12|b|us|us|usp0001142|mb|4.3|us|18 km ESE of Hawthorne, Nevada
+ci3349567|1979-06-06T01:50:38.300|38.9513333|-118.0168333|6|ci|ci|ci|ci3349567|ml|3.58|ci|71km NE of Hawthorne, NV
+usp000115n|1979-06-08T05:44:03.600|38.511|-117.879|5|us|us|us|usp000115n|ml|4|gs|24 km ENE of Mina, Nevada
+nc1046206|1979-06-16T22:44:58.950|37.5845|-118.9308333|12.573|nc|nc|nc|nc1046206|ml|4.3|nc|7 km SSE of Mammoth Lakes, California
+nc1046208|1979-06-16T22:57:27.250|37.5808333|-118.9263333|9.053|nc|nc|nc|nc1046208|ml|3.7|nc|8 km SSE of Mammoth Lakes, California
+nc1046222|1979-06-17T18:06:38.030|37.3555|-120.0043333|21.505|nc|nc|nc|nc1046222|ml|3.1|nc|11 km SE of Catheys Valley, California
+nc1046305|1979-06-23T17:26:46.580|38.2595|-119.427|17.061|nc|nc|nc|nc1046305|md|3.34|nc|California-Nevada border region
+nc1046325|1979-06-26T14:27:55.460|37.5511667|-118.5825|2.629|nc|nc|nc|nc1046325|ml|3.7|nc|7 km NE of Swall Meadows, California
+usp00011jd|1979-06-26T14:28:56.000|37.549|-118.6|5|b|us|us|usp00011jd|ml|3.5|brk|6 km NE of Swall Meadows, California
+usp00011jf|1979-06-26T15:13:58.000|37.549|-118.6|5|b|us|us|usp00011jf|ml|3.3|brk|6 km NE of Swall Meadows, California
+nc1046358|1979-06-29T00:02:11.520|38.0725|-118.9138333|11.045|nc|nc|nc|nc1046358|ml|3.3|nc|20 km E of Mono City, California
+usp00011yb|1979-07-19T16:51:08.200|39.466|-119.802|5|us|us|us|usp00011yb|ml|3.3|brk|7 km S of Reno, Nevada
+ci10047694|1979-07-26T10:39:08.760|39.7355|-118.9061667|5|ci|ci|ci|ci10047694|ml|3.74|ci|31km NNW of Fallon, NV
+nc1046798|1979-07-27T23:23:07.590|37.6173333|-118.8921667|2.639|nc|nc|nc|nc1046798|ml|3.2|nc|7 km ESE of Mammoth Lakes, California
+nc1046799|1979-07-27T23:23:58.690|37.6946667|-118.8353333|2.559|nc|nc|nc|nc1046799|md|3.03|nc|13 km ENE of Mammoth Lakes, California
+nc1046812|1979-07-28T20:09:19.830|37.6161667|-118.8865|-2.351|nc|nc|nc|nc1046812|ml|3.1|nc|8 km ESE of Mammoth Lakes, California
+nc1046905|1979-08-03T04:30:42.370|37.638|-118.8973333|2.619|nc|nc|nc|nc1046905|ml|3.1|nc|6 km E of Mammoth Lakes, California
+nc1046906|1979-08-03T04:31:42.480|37.6301667|-118.898|9.291|nc|nc|nc|nc1046906|ma|3.07|nc|6 km ESE of Mammoth Lakes, California
+nc1046907|1979-08-03T04:32:53.020|37.6311667|-118.8965|2.619|nc|nc|nc|nc1046907|ml|3.3|nc|6 km ESE of Mammoth Lakes, California
+usp0001278|1979-08-03T04:33:53.200|37.629|-119|2|b|us|us|usp0001278|ml|3.7|pas|3 km SW of Mammoth Lakes, California
+nc1046908|1979-08-03T04:34:53.530|37.6296667|-118.9263333|8.671|nc|nc|nc|nc1046908|md|3.42|nc|4 km ESE of Mammoth Lakes, California
+usp00012ak|1979-08-09T14:39:05.600|37.482|-118.674|5|us|us|us|usp00012ak|ml|3|pas|3 km SW of Swall Meadows, California
+ci3350810|1979-08-11T18:22:35.430|38.1865|-118.0273333|6|ci|ci|ci|ci3350810|mh|3.25|ci|64km SE of Hawthorne, NV
+nc1047664|1979-09-07T09:43:47.830|37.6228333|-118.9075|3.319|nc|nc|nc|nc1047664|ml|4.1|nc|6 km ESE of Mammoth Lakes, California
+nc1047887|1979-09-18T13:47:54.670|37.5836667|-118.82|3.149|nc|nc|nc|nc1047887|md|3.04|nc|9 km WNW of Aspen Springs, California
+nc1047979|1979-09-24T13:05:04.100|37.6266667|-118.896|5.529|nc|nc|nc|nc1047979|ml|4.1|nc|7 km ESE of Mammoth Lakes, California
+nc1047982|1979-09-24T14:26:19.350|37.633|-118.9046667|4.879|nc|nc|nc|nc1047982|ml|3.6|nc|6 km ESE of Mammoth Lakes, California
+nc1047983|1979-09-24T15:01:20.210|37.6378333|-118.9043333|5.379|nc|nc|nc|nc1047983|ml|3|nc|6 km ESE of Mammoth Lakes, California
+nc1048012|1979-09-26T21:45:34.590|37.6276667|-118.8985|9.449|nc|nc|nc|nc1048012|ml|3.4|nc|6 km ESE of Mammoth Lakes, California
+nc1048083|1979-10-01T11:51:47.620|37.599|-118.8341667|3.199|nc|nc|nc|nc1048083|ml|3.2|nc|11 km WNW of Aspen Springs, California
+usp0001373|1979-10-01T11:52:19.600|37.6|-118.917|5|b|us|us|usp0001373|ml|3.4|pas|7 km SE of Mammoth Lakes, California
+nc1048084|1979-10-01T12:37:01.430|37.596|-118.8281667|1.109|nc|nc|nc|nc1048084|ml|3|nc|11 km WNW of Aspen Springs, California
+nc1048111|1979-10-03T08:54:24.020|37.6188333|-118.881|4.329|nc|nc|nc|nc1048111|ml|3|nc|8 km ESE of Mammoth Lakes, California
+nc1048112|1979-10-03T08:58:29.830|37.6108333|-118.877|2.889|nc|nc|nc|nc1048112|ml|3.1|nc|9 km ESE of Mammoth Lakes, California
+nc1048151|1979-10-05T04:51:35.140|37.6198333|-118.8785|6.669|nc|nc|nc|nc1048151|md|3.01|nc|8 km ESE of Mammoth Lakes, California
+nc1048177|1979-10-07T20:54:40.750|38.2481667|-119.3256667|3.053|nc|nc|nc|nc1048177|ml|5|nc|8 km W of Bridgeport, California
+nc1048178|1979-10-07T21:05:07.470|38.2425|-119.3271667|3.087|nc|nc|nc|nc1048178|ml|3|nc|8 km W of Bridgeport, California
+nc1048179|1979-10-07T21:09:59.270|38.2543333|-119.3321667|3.063|nc|nc|nc|nc1048179|ml|4|nc|8 km W of Bridgeport, California
+nc1048180|1979-10-07T21:20:52.270|38.2576667|-119.3331667|3.053|nc|nc|nc|nc1048180|ml|4.4|nc|California-Nevada border region
+nc1048181|1979-10-07T21:30:35.270|38.2548333|-119.3351667|3.053|nc|nc|nc|nc1048181|ml|3|nc|9 km W of Bridgeport, California
+nc1048183|1979-10-07T21:45:23.040|38.2288333|-119.3085|3.053|nc|nc|nc|nc1048183|ml|4.1|nc|7 km WSW of Bridgeport, California
+nc1048184|1979-10-07T22:49:03.950|38.2358333|-119.3181667|3.063|nc|nc|nc|nc1048184|ml|3.2|nc|7 km WSW of Bridgeport, California
+usp000139w|1979-10-07T23:31:44.800|38.211|-119.327|10|b|us|us|usp000139w|ml|3.8|brk|9 km WSW of Bridgeport, California
+nc1048185|1979-10-07T23:32:44.070|38.2235|-119.3103333|3.053|nc|nc|nc|nc1048185|ml|3.8|nc|7 km WSW of Bridgeport, California
+nc1048186|1979-10-07T23:44:08.230|38.2311667|-119.3041667|1.033|nc|nc|nc|nc1048186|ml|3.4|nc|California-Nevada border region
+nc1048187|1979-10-07T23:45:17.200|38.218|-119.3338333|4.814|nc|nc|nc|nc1048187|ml|3.5|nc|9 km WSW of Bridgeport, California
+nc1048188|1979-10-08T00:23:53.940|38.2548333|-119.3368333|6.823|nc|nc|nc|nc1048188|ml|3.7|nc|9 km W of Bridgeport, California
+ci3351937|1979-10-08T00:27:43.570|38.6853333|-118.7085|6|ci|ci|ci|ci3351937|ml|3.97|ci|19km NNW of Hawthorne, NV
+nc1048190|1979-10-08T00:47:44.220|38.2423333|-119.33|4.093|nc|nc|nc|nc1048190|ml|4|nc|8 km W of Bridgeport, California
+nc1048191|1979-10-08T01:29:46.430|38.2498333|-119.3328333|6.763|nc|nc|nc|nc1048191|ml|3|nc|8 km W of Bridgeport, California
+nc1048194|1979-10-08T02:01:52.960|38.2596667|-119.3316667|3.073|nc|nc|nc|nc1048194|ml|3.5|nc|8 km W of Bridgeport, California
+nc1048195|1979-10-08T02:02:30.400|38.2546667|-119.342|3.232|nc|nc|nc|nc1048195|ml|3.5|nc|9 km W of Bridgeport, California
+ci12263591|1979-10-08T02:03:32.860|38.5|-119.5|6|ci|ci|ci|ci12263591|ml|3.29|ci|34km SSW of Smith Valley, NV
+nc1048196|1979-10-08T03:34:23.810|38.2686667|-119.3373333|18.147|nc|nc|nc|nc1048196|ml|4.6|nc|9 km W of Bridgeport, California
+ci3351941|1979-10-08T03:43:03.260|38.5|-119|6|ci|ci|ci|ci3351941|mh|3.13|ci|33km W of Hawthorne, NV
+nc1048201|1979-10-08T09:28:55.590|38.2211667|-119.302|3.053|nc|nc|nc|nc1048201|ml|3.2|nc|7 km WSW of Bridgeport, California
+nc1048202|1979-10-08T09:38:35.650|38.2358333|-119.3131667|3.063|nc|nc|nc|nc1048202|ml|3.7|nc|California-Nevada border region
+ci3351948|1979-10-08T09:48:18.520|38.5455|-118.9956667|6|ci|ci|ci|ci3351948|mh|3.14|ci|32km W of Hawthorne, NV
+nc1048204|1979-10-08T12:14:01.220|38.2511667|-119.3303333|3.073|nc|nc|nc|nc1048204|ml|4.1|nc|9 km W of Bridgeport, CA
+nc1048224|1979-10-09T22:00:09.800|38.2328333|-119.3153333|14.113|nc|nc|nc|nc1048224|ml|4.2|nc|7 km WSW of Bridgeport, California
+nc1048241|1979-10-10T14:41:31.040|38.238|-119.3148333|3.063|nc|nc|nc|nc1048241|ml|3|nc|7 km WSW of Bridgeport, California
+nc1048247|1979-10-10T19:26:06.520|38.2603333|-119.3346667|15.557|nc|nc|nc|nc1048247|ml|3.1|nc|9 km W of Bridgeport, California
+ci12263699|1979-10-15T00:01:12.950|38.4213333|-117.616|6|ci|ci|ci|ci12263699|ml|3|ci|52km NW of Tonopah, NV
+nc1048414|1979-10-20T09:40:21.220|38.2576667|-119.3306667|14.597|nc|nc|nc|nc1048414|ml|3.3|nc|8 km W of Bridgeport, California
+nc1048672|1979-11-07T06:27:23.320|37.622|-118.867|4.839|nc|nc|nc|nc1048672|ml|3.8|nc|9 km ESE of Mammoth Lakes, California
+nc1048713|1979-11-09T09:00:52.110|37.6156667|-118.8678333|5.439|nc|nc|nc|nc1048713|ml|3.3|nc|9 km ESE of Mammoth Lakes, California
+nc1048716|1979-11-09T10:11:54.530|37.6315|-118.8546667|2.619|nc|nc|nc|nc1048716|md|3.74|nc|10 km E of Mammoth Lakes, California
+nc1048717|1979-11-09T10:12:54.520|37.6305|-118.8726667|8.299|nc|nc|nc|nc1048717|ml|4|nc|9 km ESE of Mammoth Lakes, California
+nc1048725|1979-11-09T17:45:58.200|37.658|-118.8205|2.679|nc|nc|nc|nc1048725|md|3.39|nc|13 km E of Mammoth Lakes, California
+nc1048726|1979-11-09T17:46:58.790|37.5943333|-118.9588333|10.209|nc|nc|nc|nc1048726|ml|4|nc|6 km S of Mammoth Lakes, California
+nc1048728|1979-11-09T17:54:13.280|37.6205|-118.886|-2.341|nc|nc|nc|nc1048728|ml|4.3|nc|8 km ESE of Mammoth Lakes, California
+nc1048731|1979-11-09T20:10:59.170|37.7005|-118.7856667|2.725|nc|nc|nc|nc1048731|ml|3.1|nc|17 km NNW of Aspen Springs, California
+nc1048732|1979-11-09T20:38:53.670|37.617|-118.8551667|2.639|nc|nc|nc|nc1048732|ml|3.3|nc|10 km ESE of Mammoth Lakes, California
+nc1048733|1979-11-09T21:04:48.200|37.625|-118.8653333|-0.331|nc|nc|nc|nc1048733|ml|3.6|nc|9 km ESE of Mammoth Lakes, California
+nc1048736|1979-11-09T22:26:53.460|37.6046667|-118.8616667|2.619|nc|nc|nc|nc1048736|ml|3.4|nc|10 km ESE of Mammoth Lakes, California
+nc1048738|1979-11-09T22:59:32.690|37.6413333|-118.8676667|2.619|nc|nc|nc|nc1048738|ml|3.6|nc|9 km E of Mammoth Lakes, California
+nc1048750|1979-11-10T09:45:08.140|37.6126667|-118.8598333|4.789|nc|nc|nc|nc1048750|ml|4|nc|10 km ESE of Mammoth Lakes, California
+nc1048767|1979-11-11T14:08:55.330|37.6123333|-119.0111667|16.321|nc|nc|nc|nc1048767|ma|3.16|nc|Central California
+nc1048787|1979-11-12T14:09:50.910|37.6236667|-118.8838333|7.129|nc|nc|nc|nc1048787|ml|3.2|nc|8 km ESE of Mammoth Lakes, California
+usp0001408|1979-11-13T22:14:47.100|37.643|-118.878|5|us|us|us|usp0001408|ml|3.2|pas|8 km E of Mammoth Lakes, California
+nc1048818|1979-11-14T01:05:43.740|37.6181667|-118.8991667|4.525|nc|nc|nc|nc1048818|ml|3.4|nc|7 km ESE of Mammoth Lakes, California
+nc1048838|1979-11-15T12:45:53.820|37.6198333|-118.8595|0.659|nc|nc|nc|nc1048838|ml|3|nc|10 km ESE of Mammoth Lakes, California
+nc1048848|1979-11-15T20:51:32.960|37.6048333|-118.8428333|9.189|nc|nc|nc|nc1048848|ml|3.3|nc|12 km ESE of Mammoth Lakes, California
+nc1048863|1979-11-16T21:48:24.880|37.5968333|-118.8398333|8.949|nc|nc|nc|nc1048863|ml|3.8|nc|12 km WNW of Aspen Springs, California
+nc1048864|1979-11-16T21:50:09.160|37.5926667|-118.845|8.619|nc|nc|nc|nc1048864|ml|3.2|nc|California-Nevada border region
+nc1048884|1979-11-17T18:46:39.750|37.598|-118.8211667|22.129|nc|nc|nc|nc1048884|ml|3.3|nc|10 km WNW of Aspen Springs, California
+nc1048886|1979-11-17T21:47:51.640|37.6111667|-118.8316667|20.879|nc|nc|nc|nc1048886|ml|3.1|nc|12 km WNW of Aspen Springs, California
+nc1048909|1979-11-19T04:55:51.290|37.6108333|-118.895|9.334|nc|nc|nc|nc1048909|ml|3.2|nc|7 km ESE of Mammoth Lakes, California
+nc1048914|1979-11-19T08:17:34.500|37.6166667|-118.8646667|7.909|nc|nc|nc|nc1048914|ml|3.2|nc|10 km ESE of Mammoth Lakes, California
+nc1048933|1979-11-20T17:23:58.330|37.612|-118.8501667|4.669|nc|nc|nc|nc1048933|ml|4.2|nc|11 km ESE of Mammoth Lakes, California
+nc1048942|1979-11-21T08:59:46.020|37.6263333|-118.8616667|2.529|nc|nc|nc|nc1048942|ml|3.1|nc|10 km ESE of Mammoth Lakes, California
+nc1048996|1979-11-24T04:29:29.490|37.6183333|-118.7983333|5.729|nc|nc|nc|nc1048996|ml|3.1|nc|10 km NW of Aspen Springs, California
+nc1049016|1979-11-25T06:46:59.640|37.6258333|-118.843|3.809|nc|nc|nc|nc1049016|md|3.03|nc|11 km ESE of Mammoth Lakes, California
+nc1049018|1979-11-25T08:43:35.660|38.2515|-119.331|13.287|nc|nc|nc|nc1049018|ml|3|nc|8 km W of Bridgeport, California
+nc1049043|1979-11-26T17:26:30.000|37.6081667|-118.8145|1.729|nc|nc|nc|nc1049043|ml|3.1|nc|10 km WNW of Aspen Springs, California
+usp000147k|1979-11-27T14:39:02.900|38.471|-119.008|10|us|us|us|usp000147k|ml|3.1|brk|29 km SW of Walker Lake, Nevada
+nc1049081|1979-11-29T08:23:30.060|37.5773333|-118.8073333|10.949|nc|nc|nc|nc1049081|ml|3.3|nc|8 km WNW of Aspen Springs, California
+nc1049090|1979-11-30T05:25:34.470|37.6215|-118.838|4.219|nc|nc|nc|nc1049090|ml|3.1|nc|12 km ESE of Mammoth Lakes, California
+nc1049193|1979-12-06T19:32:38.060|37.6016667|-118.841|5.499|nc|nc|nc|nc1049193|ml|4.2|nc|12 km WNW of Aspen Springs, California
+nc1049224|1979-12-08T13:19:19.240|37.6218333|-118.8443333|2.189|nc|nc|nc|nc1049224|ml|3|nc|11 km ESE of Mammoth Lakes, California
+nc1049225|1979-12-08T13:20:49.310|37.6208333|-118.8388333|-0.091|nc|nc|nc|nc1049225|ml|3|nc|12 km ESE of Mammoth Lakes, California
+nc1049234|1979-12-08T21:38:51.640|37.6005|-118.8816667|5.679|nc|nc|nc|nc1049234|ml|4.3|nc|9 km SE of Mammoth Lakes, California
+nc1049235|1979-12-09T02:08:16.050|37.607|-118.8336667|5.699|nc|nc|nc|nc1049235|ml|3.5|nc|12 km WNW of Aspen Springs, California
+usp00014dq|1979-12-09T08:32:02.800|37.644|-118.864|5|us|us|us|usp00014dq|ml|3.3|pas|9 km E of Mammoth Lakes, California
+nc1049335|1979-12-14T06:02:11.990|37.6125|-119.0258333|14.861|nc|nc|nc|nc1049335|ml|3.3|nc|6 km SW of Mammoth Lakes, California
+nc1049375|1979-12-16T06:29:14.550|37.5765|-118.8503333|9.959|nc|nc|nc|nc1049375|ml|3.6|nc|12 km WNW of Aspen Springs, California
+ci3354588|1979-12-16T06:29:26.550|37.7628333|-118.5561667|6|ci|ci|ci|ci3354588|ml|3.67|ci|40km ENE of Mammoth Lakes, CA
+nc1049379|1979-12-16T10:44:15.290|37.619|-118.8301667|4.299|nc|nc|nc|nc1049379|ml|3.4|nc|12 km NW of Aspen Springs, California
+nc1049438|1979-12-20T02:27:35.780|37.6043333|-118.9478333|5.869|nc|nc|nc|nc1049438|ml|3.5|nc|5 km SSE of Mammoth Lakes, California
+ci10067674|1979-12-20T02:27:37.030|37.7506667|-117.7431667|6|ci|ci|ci|ci10067674|mh|3|ci|57km SW of Tonopah, NV
+nc1049545|1979-12-26T08:08:04.580|37.5761667|-118.7886667|6.29|nc|nc|nc|nc1049545|ml|3.9|nc|7 km WNW of Aspen Springs, California
+nc1049581|1979-12-28T03:29:48.590|37.6445|-118.859|6.759|nc|nc|nc|nc1049581|md|3.23|nc|9 km E of Mammoth Lakes, California
+nc1049582|1979-12-28T04:00:59.530|37.61|-119.0085|25.251|nc|nc|nc|nc1049582|md|3.16|nc|5 km SW of Mammoth Lakes, California
+nc1049587|1979-12-28T04:40:37.800|37.6496667|-118.863|6.859|nc|nc|nc|nc1049587|ml|3.2|nc|9 km E of Mammoth Lakes, California
+nc1049589|1979-12-28T05:21:38.180|37.6111667|-118.9901667|22.011|nc|nc|nc|nc1049589|ma|3.1|nc|4 km SSW of Mammoth Lakes, California
+ci12336503|1979-12-29T15:05:10.870|38.8606667|-117.8553333|6|ci|ci|ci|ci12336503|mh|3.5|ci|76km ENE of Hawthorne, NV
+usp00014t3|1979-12-31T08:27:51.900|38.4|-118.4|5|b|us|us|usp00014t3|mb|4.2|us|23 km SE of Hawthorne, Nevada
+ci12336563|1979-12-31T08:38:07.680|38.453|-117.7085|6|ci|ci|ci|ci12336563|ml|3.21|ci|60km NW of Tonopah, NV
+nc1049648|1979-12-31T10:55:02.300|37.542|-118.9148333|6.831|nc|nc|nc|nc1049648|ma|3.09|nc|12 km SSE of Mammoth Lakes, California

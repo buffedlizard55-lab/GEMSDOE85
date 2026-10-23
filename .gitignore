@@ -1,37 +1,19 @@
-# Python / build / virtualenv artifacts
-__pycache__/
-*.py[cod]
-*$py.class
-*.egg-info/
-.venv/
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
-dist/
-build/
-.cache/
+# Large restored data — never committed; restored by scripts/restore_data.py from pinned mirrors
+data/
+!data/.gitkeep
 *.partial
-
-# Large restored raw rasters & intermediate session caches
-# (restored deterministically via scripts/restore_data.py;
-#  compact SHA-256 receipts, manifests, bridge templates, and external CSVs ARE tracked)
-data/training_features.tif
-data/lidar_scarp_features_u8.tif
-data/1m_DEM_links.csv
-data/regional_*.tif
-data/registry_rasters/
-data/scored/
-data/raw/
-data/dem10/
-data/cache/
-data/external/*.tif
-data/external/*.npz
-data/external/*.zip
-data/external/gdr_*.csv
-data/external/audit_sources/
+__pycache__/
+*.pyc
+.venv/
 work/
-work_session*/
-artifacts/*.mmap
-artifacts/*.npy
-artifacts/*.tif
-registry/restore_receipt.json
+
+# --- from the duplex lane ---
+.cache/
+data/training_features.tif
+data/external/*
+!data/external/
+!data/external/usgs_comcat_geodawn.csv
+!data/external/usgs_comcat_provenance.json
+!data/external/usgs_raw/
+!data/external/usgs_raw/**
+.mypy_cache/

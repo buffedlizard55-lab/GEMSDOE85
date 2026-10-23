@@ -1,5 +1,8 @@
 {
-  "status": "unassigned",
-  "method_paragraph": null,
-  "reason": "The prompt references a single method paragraph but supplies no explicit lane assignment. No method selected on the user's behalf."
+  "status": "assigned",
+  "lane_id": "H85-HJCD",
+  "title": "Hydrothermal-Juxtaposition & Fault-Valve Conduit Kernel-Target Discovery",
+  "method_paragraph": "Combine GEMSDOE85's covariance-whitened 16-orientation multi-domain Hotelling juxtaposition step detector (GEO-Pb-16 across potential fields, 1 m LiDAR scarps, and GeoDAWN gamma-ray spectrometry) with four official public DOE GDR 1391 & USGS 3DEP geothermal-vent and tectonic-geomorphology observables omitted by prior GEMSDOE85 lanes — UNR/GBCGE 2-meter shallow temperature probes (2,782 in-footprint stations with background-subtracted F2mDAB thermal plume anomalies), paleo-geothermal siliceous sinter / tufa / silicified-breccia deposits (281 in-footprint vents showing 2.73x empirical fault enrichment inside 300 m), spring/well silica and Na-K-Ca cation geothermometers, and 10 m USGS 3DEP cross-divide chi disequilibrium & Lake Lahontan shoreline morphometry — plus fold-proper crack-tip / en-echelon relay mechanics computed strictly from visible faults inside each spatial fold. Regress directly onto the exact 300 m triangular kernel target K_G(x) = max_{g in G}(1 - d(x, g)/300 m)_+ rather than pixel-binary labels, calibrate per-quadrant out-of-fold probabilities, and emit discrete predictions via a submodular 300 m Dinkelbach Tversky point process explicitly clearing every non-saturating prior raster in the 236-file fleet registry.",
+  "assigned_utc": "2026-10-22T23:15:00Z",
+  "session_branch": "arena/41c29ae2-gemsdoe85"
 }
