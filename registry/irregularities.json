@@ -112,6 +112,48 @@
       "status": "acknowledged",
       "finding": "Raw 3px dot overlap of the session primary vs this repo's own superseded 90,000-dot GEO-Pb file is 0.79 (chance coverage 0.44, lift 1.81, exact pixel overlap 0.26). Vs every comparable-budget (<=60k) own-repo file overlap <=0.41; vs the 17-raster registry max comparable overlap 0.42 (h33 winner: 0.379, Spearman 0.065).",
       "action_taken": "Disclosed in evidence/duplicate_check_ownrepo_session.json and the run card. Dense-file raw overlap is the IR-85-002 artifact; candidate is a distinct field and dot set, not a rename."
+    },
+    {
+      "id": "IR-85-018",
+      "severity": "high",
+      "status": "fixed-on-branch",
+      "finding": "Sibling prose cited a 38.7% non-LiDAR gap, whereas direct pixel measurement of lidar_scarp_features_u8.tif band 12 (valid > 0) inside our 5,167,373-pixel footprint is 75.37% valid (3,894,768 px) and 24.63% non-LiDAR gap (1,272,605 px). Prior featurestack.py imputed nodata=0 to the footprint median without passing band 12 (valid) or unused scarp bands (lapneg, upface, cross), conflating unmapped non-LiDAR quadrangles with flat basins.",
+      "action_taken": "Added explicit gv_lidar_valid indicator, unused 1 m LiDAR scarp bands (lapneg, upface, cross), and 100%-coverage USGS 3DEP 10 m seamless morphology + fluvial chi/ksn channels in src/gems85/gapvent.py. Non-LiDAR gap OOF ROC-AUC rose from 0.5933 to 0.6801."
+    },
+    {
+      "id": "IR-85-019",
+      "severity": "high",
+      "status": "fixed-on-branch",
+      "finding": "Parallel PR #13/#14 merge clobbered registry/submission.json and evidence/run_card.json back to the superseded 90,000-dot GEO-Pb candidate while root index.html and docs/index.html advertised the 37,654-dot S85-CTXFUS50 file.",
+      "action_taken": "Unified registry/submission.json, evidence/run_card.json, root index.html, and docs/ around the validated H85-GAPVENT 37,654-dot primary, and updated scripts/build_site.py to regenerate root index.html and sync docs/{evidence,registry}/*.json automatically."
+    },
+    {
+      "id": "IR-85-020",
+      "severity": "high",
+      "status": "fixed-on-branch",
+      "finding": "scripts/build_submission.py was reduced to a 10-line stub in PR #10 while scripts/build_submission_session.py still executed 'from build_submission import duplicate_check', raising ImportError on fresh rebuilds; scripts/restore_data.py also rejected slash paths in data_manifest.json.",
+      "action_taken": "Restored full duplicate_check() in scripts/build_submission.py (reporting both raw all-raster and <=65k comparable-budget 3-px dot overlaps) and added restore_grouped() in scripts/restore_data.py while keeping restore() strict for path-escape tests."
+    },
+    {
+      "id": "IR-85-021",
+      "severity": "medium",
+      "status": "fixed-on-branch",
+      "finding": "Prior E3_fusion_blurred_poisson28 (0.02775) convolved uniform [0,1] rank01 values with the 300 m DTI kernel, turning sharp 1-px crests into 600 m plateaus; prior run_emitter_experiment.py fed uncalibrated z > 1 values into emitter.emit.",
+      "action_taken": "Replaced post-hoc uniform-rank convolution with metric-direct continuous kernel regression y = max(0, 1 - d_vis/3) during training and tested properly [0,1]-calibrated sharpened probabilities in E2."
+    },
+    {
+      "id": "IR-85-022",
+      "severity": "medium",
+      "status": "fixed-on-branch",
+      "finding": "scripts/check_site.py requires byte-identity between evidence/*.json and docs/evidence/*.json and between registry/*.json and docs/registry/*.json, as well as clean git diff on docs/ and root index.html in CI, which scripts/build_site.py previously did not synchronize.",
+      "action_taken": "Updated scripts/build_site.py to synchronize published JSON artifacts and regenerate root index.html deterministically on every build."
+    },
+    {
+      "id": "IR-85-023",
+      "severity": "high",
+      "status": "fixed-on-branch",
+      "finding": "Positive-Unlabeled Regional Basin Memorization: sampling PU negatives uniformly across d_vis > 12 px while feeding raw long-wavelength basin-coordinate channels (zmean_m, depth_to_base, cond_surf, rad_K/Th/TC, long-range point proximity) teaches gradient-boosted trees to predict zero inside unmapped quadrangles and 20 km holdout blocks (driving fold0 AUC down to 0.5651).",
+      "action_taken": "Restricted PU negative sampling to surveyed corridors (4 <= d_vis <= 45 px, derived strictly from fold.visible) and restricted tree splits to 48 translation-invariant local physical channels. Pooled OOF ROC-AUC jumped from 0.5844 to 0.6842, and ROC-AUC inside deep unmapped basin interiors (d_vis > 45 px, 36,227 withheld fault pixels) reached 0.7184."
     }
   ]
 }

@@ -1,0 +1,223 @@
+{
+  "n_registry_rasters": 17,
+  "max_abs_spearman": 0.20151318182395303,
+  "max_dot_overlap_3px": 0.994476018484092,
+  "max_comparable_dot_overlap_3px": 0.6562914962553779,
+  "max_overlap_lift_over_chance": 3.5968579232808624,
+  "thresholds": {
+    "spearman": 0.9,
+    "comparable_dot_overlap_3px": 0.7,
+    "comparable_max_dots": 65000
+  },
+  "irregularity": "IR-85-002 / IR-85-07 -- space-filling priors (e.g. 206,895-dot r13-lattice-s5 and 5.17M-px continuous rasters) cover 99-100% of the footprint within 3 px by construction. Both raw all-raster overlap and comparable-budget (<=65k) raw overlap are reported.",
+  "is_duplicate": false,
+  "comparisons": [
+    {
+      "file": "gemsdoe32-h33-h33-2-b2-20261004T220000Z-e5eb6e7e-zeros.tif",
+      "owner_reported_live_dti": 0.2778,
+      "registry_positive_pixels": 37654,
+      "comparable_sparse_budget": true,
+      "spearman_surface": 0.08916670330734347,
+      "dot_overlap_3px": 0.5425983959207521,
+      "chance_coverage_3px": 0.15085344139081888,
+      "overlap_lift_over_chance": 3.5968579232808624,
+      "duplicate": false
+    },
+    {
+      "file": "gemsdoe31-h27-4-solo-d28-20261004-8acb75e1-nan.tif",
+      "owner_reported_live_dti": 0.2708,
+      "registry_positive_pixels": 40199,
+      "comparable_sparse_budget": true,
+      "spearman_surface": 0.09372357575345941,
+      "dot_overlap_3px": 0.548733202315823,
+      "chance_coverage_3px": 0.1600641176861047,
+      "overlap_lift_over_chance": 3.428208709411822,
+      "duplicate": false
+    },
+    {
+      "file": "gemsdoe30-d28-poisson300m-offcat-44090-20261003T233156Z-91eae1ca.tif",
+      "owner_reported_live_dti": 0.26,
+      "registry_positive_pixels": 44090,
+      "comparable_sparse_budget": true,
+      "spearman_surface": 0.10231419617035689,
+      "dot_overlap_3px": 0.549715833643172,
+      "chance_coverage_3px": 0.17191094972242182,
+      "overlap_lift_over_chance": 3.1976778357095785,
+      "duplicate": false
+    },
+    {
+      "file": "gems24-h25-1-dotted-h19-5-d2-8-20261002-e56ea318af89-nan.tif",
+      "owner_reported_live_dti": 0.26,
+      "registry_positive_pixels": 44090,
+      "comparable_sparse_budget": true,
+      "spearman_surface": 0.10231419617035689,
+      "dot_overlap_3px": 0.549715833643172,
+      "chance_coverage_3px": 0.17191094972242182,
+      "overlap_lift_over_chance": 3.1976778357095785,
+      "duplicate": false
+    },
+    {
+      "file": "gems24-h25-1-dotted-h19-5-d1-5-20261002-989f59505db1-nan.tif",
+      "owner_reported_live_dti": 0.2477,
+      "registry_positive_pixels": 60069,
+      "comparable_sparse_budget": true,
+      "spearman_surface": 0.11998422454270166,
+      "dot_overlap_3px": 0.5693419025867106,
+      "chance_coverage_3px": 0.18079283225731915,
+      "overlap_lift_over_chance": 3.1491397943054324,
+      "duplicate": false
+    },
+    {
+      "file": "gems19-h19-5-powerlaw-budget-multiline-corroborated-20260930-e27054cf-nan.tif",
+      "owner_reported_live_dti": 0.1922,
+      "registry_positive_pixels": 121131,
+      "comparable_sparse_budget": false,
+      "spearman_surface": 0.17907129538529748,
+      "dot_overlap_3px": 0.6041323630955543,
+      "chance_coverage_3px": 0.19609480484571173,
+      "overlap_lift_over_chance": 3.0808177889816526,
+      "duplicate": false
+    },
+    {
+      "file": "gems19-h19-4-multiline-corroborated-openness-thermal-pop-20260930-691e4dfa-nan.tif",
+      "owner_reported_live_dti": 0.1894,
+      "registry_positive_pixels": 123779,
+      "comparable_sparse_budget": false,
+      "spearman_surface": 0.17871488819370962,
+      "dot_overlap_3px": 0.6105327455250438,
+      "chance_coverage_3px": 0.20359048979046027,
+      "overlap_lift_over_chance": 2.998827431248961,
+      "duplicate": false
+    },
+    {
+      "file": "gems16-h16-1-topo-geophys-baseline-ridges-20260930-df20f65e-nan.tif",
+      "owner_reported_live_dti": 0.1855,
+      "registry_positive_pixels": 123939,
+      "comparable_sparse_budget": false,
+      "spearman_surface": 0.17744933741003374,
+      "dot_overlap_3px": 0.6112232432145324,
+      "chance_coverage_3px": 0.2086464437539152,
+      "overlap_lift_over_chance": 2.9294687808598843,
+      "duplicate": false
+    },
+    {
+      "file": "gems27-topo-gap-closure-t-v2-on-d1-5-20261002-5512495c6bd1-nan.tif",
+      "owner_reported_live_dti": 0.2449,
+      "registry_positive_pixels": 61328,
+      "comparable_sparse_budget": true,
+      "spearman_surface": 0.11980858609788544,
+      "dot_overlap_3px": 0.5756360546024327,
+      "chance_coverage_3px": 0.1852153889413441,
+      "overlap_lift_over_chance": 3.107927790950087,
+      "duplicate": false
+    },
+    {
+      "file": "gems49-gate_ortho_w0.25-40k-20261006T213721Z-zeros.tif",
+      "owner_reported_live_dti": 0.2376,
+      "registry_positive_pixels": 40000,
+      "comparable_sparse_budget": true,
+      "spearman_surface": 0.044357190676592384,
+      "dot_overlap_3px": 0.3575981303447177,
+      "chance_coverage_3px": 0.1532471141525878,
+      "overlap_lift_over_chance": 2.3334738296517488,
+      "duplicate": false
+    },
+    {
+      "file": "gemsdoe63-cvarlw-thin-s3p17-54864-20261011T220606Z-c58f60c4-zeros.tif",
+      "owner_reported_live_dti": 0.2303,
+      "registry_positive_pixels": 54864,
+      "comparable_sparse_budget": true,
+      "spearman_surface": 0.08434501557576526,
+      "dot_overlap_3px": 0.6562914962553779,
+      "chance_coverage_3px": 0.2506685698903485,
+      "overlap_lift_over_chance": 2.618164281794337,
+      "duplicate": false
+    },
+    {
+      "file": "gems10-h28-dotted-ridge-20260928T020256236880Z-6452ae1d00.tif",
+      "owner_reported_live_dti": 0.1839,
+      "registry_positive_pixels": 69281,
+      "comparable_sparse_budget": false,
+      "spearman_surface": 0.10501611740734972,
+      "dot_overlap_3px": 0.6016625059754608,
+      "chance_coverage_3px": 0.27203532626733157,
+      "overlap_lift_over_chance": 2.2117072596086347,
+      "duplicate": false
+    },
+    {
+      "file": "8GEMSDOE_Hedge-v2_submission.tif",
+      "owner_reported_live_dti": 0.1563,
+      "registry_positive_pixels": 227507,
+      "comparable_sparse_budget": false,
+      "spearman_surface": 0.20151318182395303,
+      "dot_overlap_3px": 0.55879853402029,
+      "chance_coverage_3px": 0.2835643952933144,
+      "overlap_lift_over_chance": 1.970623051749067,
+      "duplicate": false
+    },
+    {
+      "file": "gemsdoe-ens12-adopted-7f00890a.tif",
+      "owner_reported_live_dti": 0.1563,
+      "registry_positive_pixels": 172974,
+      "comparable_sparse_budget": false,
+      "spearman_surface": 0.1630440586025037,
+      "dot_overlap_3px": 0.55879853402029,
+      "chance_coverage_3px": 0.2429211129136604,
+      "overlap_lift_over_chance": 2.300329219300504,
+      "duplicate": false
+    },
+    {
+      "file": "gems10-h25-ctx-ridge-20260927T232947704150Z-6452ae1d00.tif",
+      "owner_reported_live_dti": 0.128,
+      "registry_positive_pixels": 174232,
+      "comparable_sparse_budget": false,
+      "spearman_surface": 0.18929775443098917,
+      "dot_overlap_3px": 0.6003877410102513,
+      "chance_coverage_3px": 0.263110481863802,
+      "overlap_lift_over_chance": 2.2818845405065975,
+      "duplicate": false
+    },
+    {
+      "file": "13gems_20261001_r13-lattice-s5_v2_nan-outside.tif",
+      "owner_reported_live_dti": 0.0904,
+      "registry_positive_pixels": 206895,
+      "comparable_sparse_budget": false,
+      "spearman_surface": -0.0023072892881432225,
+      "dot_overlap_3px": 0.994476018484092,
+      "chance_coverage_3px": 0.9987132726822701,
+      "overlap_lift_over_chance": 0.9957572865865716,
+      "duplicate": false
+    },
+    {
+      "file": "gemsdoe9-PLACEHOLDER-2314b599.tif",
+      "owner_reported_live_dti": 0.0107,
+      "registry_positive_pixels": 147684,
+      "comparable_sparse_budget": false,
+      "spearman_surface": 0.013067738395270503,
+      "dot_overlap_3px": 0.06657991182875657,
+      "chance_coverage_3px": 0.0628870801469141,
+      "overlap_lift_over_chance": 1.0587216272915745,
+      "duplicate": false
+    }
+  ],
+  "own_repo_historical_comparisons": [
+    {
+      "file": "gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.tif",
+      "positive_pixels": 90000,
+      "spearman_surface": 0.01916273266074897,
+      "dot_overlap_3px": 0.652918680618261
+    },
+    {
+      "file": "gems85-s85-ctxfus50-37654dots-sep4-20261022T232600Z-4f38c2b3-zeros.tif",
+      "positive_pixels": 37654,
+      "spearman_surface": 0.08385407275519906,
+      "dot_overlap_3px": 0.6274499389175121
+    },
+    {
+      "file": "gems85-h85-duplex-pullapart-worm-20261022T220544Z-2f8b57d9-zeros.tif",
+      "positive_pixels": 42000,
+      "spearman_surface": 0.015971831000059892,
+      "dot_overlap_3px": 0.03752589366335582
+    }
+  ]
+}

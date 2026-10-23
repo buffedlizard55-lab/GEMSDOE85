@@ -6,6 +6,7 @@ __pycache__/
 *.pyc
 .venv/
 work/
+work_session*/
 
 # --- from the duplex lane ---
 .cache/

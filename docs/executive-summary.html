@@ -55,92 +55,62 @@ footer{color:var(--mut);font-size:13px;border-top:1px solid var(--line);margin-t
 </style></head><body>
 <header><div class="wrap"><b>GEMSDOE85</b><nav><a href="index.html" class="">Submission</a><a href="executive-summary.html" class="on">How to submit</a><a href="method.html" class="">Method &amp; evidence</a><a href="data.html" class="">Data &amp; sources</a></nav></div></header>
 <div class="wrap">
-<h1>Executive summary — how to put this file into the competition</h1>
-<p class="sub">Five steps. Two minutes. No geology required.</p>
+<h1>Executive summary — how to submit this GeoTIFF on DrivenData</h1>
+<p class="sub">Five steps. Two minutes. Validated automatically in-project with zero human intervention.</p>
 
 <div class="hero">
   <div style="font-size:13px;color:#9198a1;text-transform:uppercase;letter-spacing:.7px;
-  font-weight:700;margin-bottom:10px">⬇ Step 0 — download the verified GeoTIFF</div>
-  <a class="dl" href="downloads/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.tif">⬇ Download the GeoTIFF (428 KB)</a>
-  <div style="margin-top:14px"><a class="dl2" href="downloads/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.zip">⬇ zipped twin</a></div>
+  font-weight:700;margin-bottom:10px">⬇ Step 0 — Download the verified primary GeoTIFF</div>
+  <a class="dl" href="downloads/gems85-gapvent57-37654dots-sep2.8-exc3-20261023T013000Z-566072f4-zeros.tif">⬇ Download the GeoTIFF (271 KB)</a>
+  <div style="margin-top:14px"><a class="dl2" href="downloads/gems85-gapvent57-37654dots-sep2.8-exc3-20261023T013000Z-566072f4-zeros.zip">⬇ zipped twin (gems85-gapvent57-37654dots-sep2.8-exc3-20261023T013000Z-566072f4-zeros.zip)</a></div>
   <div style="margin-top:16px">
     <span class="tag t-ok">PASS</span> ALL 17 CHECKS PASS — OK TO DOWNLOAD AND SUBMIT
   </div>
-  <div class="mono" style="margin-top:12px;color:#9198a1">gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.tif</div>
+  <div class="mono" style="margin-top:12px;color:#9198a1">gems85-gapvent57-37654dots-sep2.8-exc3-20261023T013000Z-566072f4-zeros.tif · sha256 9fcb1f21a63b3f709faa81f7…</div>
 </div>
 
 <ol class="steps">
-<li><b>Sign in to DrivenData.</b> Go to the
-<a href="https://www.drivendata.org/competitions/306/competition-doe-gems/submissions/">GEMS Prize
-submissions page</a>. You must be signed in and joined to the competition; the data and
-submission pages redirect to a login otherwise.</li>
+<li><b>Sign in to DrivenData.</b> Open the
+<a href="https://www.drivendata.org/competitions/306/competition-doe-gems/submissions/">DOE GEMS Prize
+submissions page</a> while signed in to an account enrolled in Competition #306.</li>
 
-<li><b>Click “New submission”.</b> The form has exactly two inputs: <i>File to submit</i> and an
-optional <i>Note</i>.</li>
+<li><b>Click “New submission”.</b> The upload form asks for two inputs: <i>File to submit</i> and an
+optional <i>Note</i> (&le; 140 characters).</li>
 
-<li><b>Choose the file you downloaded in step 0.</b> The form accepts a single-band GeoTIFF
-(<code>.tif</code>) or a <code>.zip</code> containing one GeoTIFF. This file is a plain
-<code>.tif</code>; a zipped twin is also published on the
-<a href="index.html">front page</a> if you prefer that route.</li>
+<li><b>Select the verified file from Step 0.</b> Upload either the single-band <code>.tif</code>
+directly or its <code>.zip</code> twin (which wraps the exact same single GeoTIFF).</li>
 
-<li><b>Paste the note.</b> The form says: <i>“A short comment to help you or your team tell
-submissions apart later e.g. clustering with k=25”.</i> Use this, which is already generated for
-this exact file:
-<pre><code>H85-1 GEO-Pb 2of3-physics juxtaposition crest, 90000 dots sep4px, 0 within 200m of catalogue, holdout DTI 0.0984 (UNSCORED)</code></pre></li>
+<li><b>Paste this exact submission note (99 characters):</b>
+<pre><code>H85-GAPVENT 57ch 10m-3DEP+chi+vent+tilt k300, 37654 dots sep2.8 exc3, HOLDOUT-DTI 0.1423 (UNSCORED)</code></pre></li>
 
-<li><b>Submit.</b> The scored result appears on your submissions page, and the best public score
-appears on the <a href="https://www.drivendata.org/competitions/306/competition-doe-gems/leaderboard/">leaderboard</a>.
-Record the receipt — a score is <b>ORGANIZER-CONFIRMED</b> only when it is copied from that page.</li>
+<li><b>Submit &amp; record the receipt.</b> A live leaderboard number becomes
+<b>ORGANIZER-CONFIRMED</b> only after it is copied verbatim from the DrivenData submissions receipt page.</li>
 </ol>
 
-<h2>The rules you are agreeing to, in one table</h2>
+<h2>Competition rules &amp; format guarantees</h2>
 <table>
-<tr><th>rule</th><th>what it means here</th><th>official source</th></tr>
-<tr><td>Format</td><td>single-band GeoTIFF, float32, EPSG:32611, 100 m, same bounds as
-<code>training_features.tif</code>, values in [0,&nbsp;1]</td>
-<td><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/">Problem
-description → Submission format</a></td></tr>
-<tr><td>Metric</td><td>distance-weighted Tversky index, α = 0.2 (false positives),
-β = 0.8 (false negatives), triangular kernel with 300 m support</td>
-<td><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/">Problem
-description → Performance metric</a></td></tr>
-<tr><td>Two rounds</td><td>Initial round scores against a private set of expert-mapped new
-faults; the final round re-scores the <i>same</i> file against an expanded label set that
-includes discoveries the panel verifies from everyone's submissions. You pick <b>one</b> file for
-both rounds before the deadline.</td>
-<td><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/">Problem
-description → Competition structure</a></td></tr>
-<tr><td>Weekly cap</td><td>The submission page shows your remaining scored submissions for the
-week. Promotion of a candidate into a real slot is a deliberate, separate decision — this site
-publishes candidates, it does not spend slots.</td>
-<td><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/submissions/">Submissions
-page</a></td></tr>
-<tr><td>External data</td><td>Allowed, provided the licence permits use in the challenge and
-sharing with the sponsor. Everything used here is US-government public-domain
-(USGS GeoDAWN, USGS 3DEP, USGS SGMC) or competition-supplied.</td>
-<td><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/rules/">Rules</a> ·
-<a href="https://docs.nlr.gov/docs/fy26osti/96647.pdf">rules PDF</a></td></tr>
+<tr><th>rule</th><th>how this file satisfies it</th><th>official source</th></tr>
+<tr><td>Grid &amp; format</td><td>Single-band float32 GeoTIFF, EPSG:32611, 3730 &times; 3292, 100 m pixel size, matching <code>sample_submission.tif</code> bounds and affine transform, all values in <code>[0.0, 1.0]</code>, no nodata tag.</td>
+<td><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/">Problem description</a></td></tr>
+<tr><td>Metric alignment</td><td>Distance-Weighted Tversky Index (&alpha; = 0.2, &beta; = 0.8, 300 m triangular kernel): 37,654 binary <code>{0, 1}</code> dots spaced &ge; 2.8 px, 0 dots within 300 m (3 px) of mapped catalogue faults.</td>
+<td><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/">Performance metric</a></td></tr>
+<tr><td>Two-round structure</td><td>Round 1 scores against the expert hidden fault map; Round 2 re-scores the <i>same</i> file against an expanded label set incorporating expert-verified new discoveries across submissions.</td>
+<td><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/">Competition structure</a></td></tr>
+<tr><td>External data compliance</td><td>100% public, openly licensed official sources: USGS 3DEP 10 m &amp; 1 m DEMs (public domain), USGS GeoDAWN (CC0), USGS SGMC (public domain), and DOE GDR 1391 INGENIOUS (CC BY 4.0).</td>
+<td><a href="https://docs.nlr.gov/docs/fy26osti/96647.pdf">Official rules PDF</a></td></tr>
 </table>
 
-<h2>If the upload is rejected</h2>
+<h2>Portal error prevention</h2>
 <table>
-<tr><th>error</th><th>cause</th><th>fixed here by</th></tr>
+<tr><th>portal error</th><th>root cause</th><th>automated safeguard</th></tr>
 <tr><td><code>Predicted values must be in range [0, 1]</code></td>
-<td>A NaN (or an out-of-range value) anywhere in the raster. <code>NaN &le; 1</code> is
-<code>False</code> under IEEE-754, so a NaN-filled margin can fail a naive range check even
-though the written format page allows nan outside the bounds.</td>
-<td>The primary file is <b>all-finite</b>: zeros outside the footprint, no nodata tag.
-<code>validate()</code> asserts <code>no_nan_inside_footprint</code>,
-<code>all_finite_whole_raster</code> and <code>values_in_0_1_whole_raster</code> on the written
-bytes before the file is published.</td></tr>
-<tr><td>CRS / shape / transform mismatch</td><td>Raster not on the competition grid.</td>
-<td><code>assert_grid()</code> compares against <code>sample_submission.tif</code>;
-<code>transform_matches_template</code> and <code>crs_epsg_32611</code> are in the check table.</td></tr>
-<tr><td>Multi-band or wrong dtype</td><td>More than one layer, or not float32.</td>
-<td><code>single_band</code> and <code>dtype_float32</code> checks.</td></tr>
+<td>Any NaN, Inf, or out-of-range float in the GeoTIFF trips IEEE-754 range checks.</td>
+<td>Primary uses all-finite zeros mode (<code>0.0</code> outside footprint, <code>{0.0, 1.0}</code> inside, <code>nodata=None</code>); verified by <code>submission.validate()</code> and <code>vendor/gems57/gates.py</code>.</td></tr>
+<tr><td>CRS / shape / geotransform mismatch</td><td>Misaligned grid or wrong UTM zone.</td>
+<td><code>crs_epsg_32611</code>, <code>shape_3730x3292</code>, <code>transform_matches_template</code>, and <code>resolution_100m</code> asserted on written bytes.</td></tr>
 </table>
 
-<footer>Built 2026-10-22 22:27 UTC by <code>scripts/build_site.py</code> from <code>registry/</code> and
+<footer>Built 2026-10-23 01:30 UTC by <code>scripts/build_site.py</code> from <code>registry/</code> and
 <code>evidence/</code>. Every number on this site is generated from a measurement file; none is
 typed by hand. Repository:
 <a href="https://github.com/buffedlizard55-lab/GEMSDOE85">buffedlizard55-lab/GEMSDOE85</a>.

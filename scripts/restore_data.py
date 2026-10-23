@@ -77,6 +77,20 @@ def restore(entry, directory=None, force=False):
     return dict(id=entry['id'], path=str(dest.relative_to(ROOT)), sha256=entry['sha256'], bytes=dest.stat().st_size, status='restored')
 
 
+def restore_grouped(entry, base_dir=None, force=False):
+    """Restore an entry from registry/data_manifest.json, allowing a single group subdirectory."""
+    base_dir = DATA if base_dir is None else Path(base_dir)
+    rel = Path(entry['dest'])
+    if rel.is_absolute() or '..' in rel.parts:
+        raise ValueError('Manifest destination must not escape target directory')
+    if len(rel.parts) == 1:
+        return restore(entry, directory=base_dir, force=force)
+    if len(rel.parts) == 2 and rel.parts[0] in ('external', 'scored', 'registry_rasters', 'learning'):
+        sub_entry = dict(entry, dest=rel.parts[1])
+        return restore(sub_entry, directory=base_dir / rel.parts[0], force=force)
+    raise ValueError('Manifest destination must be a single local filename or approved group/filename')
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--groups", nargs="*", default=["core"],
@@ -97,7 +111,7 @@ def main() -> int:
     receipts = []
     for entry in sel:
         try:
-            r = restore(entry, force=args.force)
+            r = restore_grouped(entry, force=args.force)
         except Exception as exc:  # noqa: BLE001 - we want the id attached to every failure
             r = {"id": entry["id"], "status": "FAILED", "error": str(exc)}
             print(f"[FAIL] {entry['id']}: {exc}", file=sys.stderr)
