@@ -1,18 +1,18 @@
 # GEMSDOE85 — Lane H85-HJCD: Hydrothermal-Juxtaposition & Fault-Valve Conduit Discovery
 
 <!-- CURRENT STATE — update this block only for session status. -->
-## CURRENT STATE (2026-10-23, after three build sessions: PRUNE, PRUNE-rungs, SNAP)
+## CURRENT STATE (2026-10-23, after PRUNE, PRUNE-rungs, SNAP & verification session `arena/28da814f-gemsdoe85`)
 
 | field | value |
 |---|---|
-| **parent** | R0 = `h33-h33-2-b2` (`e5eb6e7e`), 37,654 unit-mass dots; rebuilt **pixel-identical** from the pinned chain (121,131 → 44,090 → 40,199 → 37,654; `baeae321…` / `c55bafc4…`) |
+| **parent** | R0 = `h33-h33-2-b2` (`e5eb6e7e`), 37,654 unit-mass dots; rebuilt **pixel- and byte-identical** from the pinned chain (121,131 → 44,090 → 40,199 → 37,654; `write_pair(L.r0)` matches `baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd` and `c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9`; 23/23 `data_manifest.json` + 2/2 `learning_manifest.json` SHA-256 verified) |
 | **best receipt** | **none in this repository.** 0.2778 is a **CLAIM** (owner-reported); every other number is MODEL or PROXY |
 | **TOP_PUBLIC** | **UNFILLED** — the human reads it off the leaderboard *with a date*; no other target number is valid |
 | **slots left this week** | **UNKNOWN** — the human reads it off the account page (3/week is a ceiling, not a target) |
 | **next 3 slots** (only if the human confirms AXIS = PRUNE and quota permits) | 1. `h33-2-b2-prune3-…-fb308615` (+0.007 MODEL) · 2. `h33-2-b2-r3p61-…-f94be3ad` (+0.005, the decision slot) · 3. `h33-2-b2-r2p85-…-acce3907` (+0.005) — fallback: the `-zeros` twin of whichever is uploaded |
 | **reserve PRUNE rungs** | `prune4-…-2880b0e9` (+0.003), `prune5-…-7ebfc408` (−0.003), `r2p25-…-3908de12` (+0.003) — do not spend unless slot 2 lands above slot 1 or the account shows spare slots |
 | **SNAP contingency** | `snap-free-lidar2-…-ac3fc128`, then `snap-ridge-lidar2-…-6913d029`, then `snap-ridge-tmi2-…-de094d8e`; count and mass fixed at 37,654, ≤2 px moves. Ranked **below** PRUNE: predicted Δ is inside the ±0.01 no-evidence band |
-| **AXIS status** | not assigned by the human in any of the three sessions (asked each time; skipped). PRUNE was chosen from a measured dose–response, SNAP from an orthogonal-mechanism argument. Both are documented in `IRREGULARITIES.md` (IR-V2-08, IR-V2-14, IR-V3-02); confirm or overrule before spending a slot |
+| **AXIS status** | not assigned by the human in any session (asked each time; skipped). PRUNE was chosen from a measured dose–response, SNAP from an orthogonal-mechanism argument. Both are documented in `IRREGULARITIES.md` (IR-V2-08, IR-V2-14, IR-V3-02); confirm or overrule before spending a slot |
 | **every prediction** | MODEL. Hide-and-recover and SGMC are PROXY, never gates — and both are **biased** for catalogue-derived candidates (IR-V2-15, IR-V3-04) |
 | **human must supply** | AXIS confirmation, dated TOP_PUBLIC, weekly slots remaining, score receipts for every upload, deadline/timezone confirmation, redistribution decision (IR-V2-10) |
 

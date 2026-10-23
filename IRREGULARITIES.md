@@ -282,3 +282,14 @@ conclusion session 3 reached by a different route. **Both sessions therefore agr
 worth a slot while the PRUNE ladder is open**; the files are a contingency, not a plan (IR-V2-16,
 `SLOT_PLAN.md`). The word "impossible" in IR-V3-02 should be read as "impossible at fixed packing", and
 the feasibility table in `docs/mechanism_cards_rung.md` should be read with that qualifier.
+
+## IR-V2-19 — Lockfile `rasterio==1.4.3` vs `1.4.4` deflate stream check (`arena/28da814f`)
+
+Running `scripts/gemsdoe85_prune_session.py` under `rasterio==1.4.3` produced pixel-identical rasters
+whose compressed GeoTIFF tile streams differed (`1,082` B vs `1,178` B on empty NaN tiles), yielding
+different SHA-256 digests (`24952cda…`, `56a67442…`, `ed507edc…`) from the shipped `releases/` files
+(`fb308615…`, `2880b0e9…`, `7ebfc408…`) and failing to match the pinned R0 GeoTIFF hashes
+(`baeae321…`, `c55bafc4…`) when `L.r0` was written from scratch. **Decision:** ensured
+`requirements-lock.txt` pins `rasterio==1.4.4` and added a GeoTIFF re-encoding SHA-256 assertion in
+`scripts/gemsdoe85_prune_session.py` and `tests/test_r0_lineage.py` so rebuilding and writing `L.r0`
+from scratch is verified against both `baeae321…` and `c55bafc4…`.

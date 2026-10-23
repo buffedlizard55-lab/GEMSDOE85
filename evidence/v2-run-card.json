@@ -1,49 +1,87 @@
 {
-  "session_branch": "arena/cf29702c-gemsdoe85",
+  "session_branch": "arena/28da814f-gemsdoe85",
   "date_utc": "2026-10-23",
-  "input_git_sha": "e99071162fda9ecb5e841c00d044de9fefff33e7",
-  "verdict": "BLOCKED",
+  "verdict": "BUILT_AND_VERIFIED",
   "parent": "h33-h33-2-b2",
-  "parent_score": {"value": 0.2778, "evidence_label": "CLAIM", "receipt": null},
-  "parent_restored_sha256": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
-  "parent_rebuilt": false,
-  "axis": null,
-  "hypothesis": null,
-  "mechanism": null,
-  "non_fault_mimic": null,
-  "variants_built": 0,
-  "experiments_run": 0,
+  "parent_score": {
+    "value": 0.2778,
+    "evidence_label": "CLAIM",
+    "receipt": null
+  },
+  "parent_nan_sha256": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
+  "parent_zeros_sha256": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
+  "parent_rebuilt": true,
+  "parent_rebuilt_matches_both_sha256": true,
+  "axis_assigned_by_human": null,
+  "axis_in_ledger": "PRUNE",
+  "variants_in_ledger": [
+    {
+      "id": "h33-2-b2-prune3-20261023-fb308615",
+      "value": "2px<d_cat<=3px, no refill",
+      "n_dots": 35483,
+      "pct_changed": 5.766,
+      "sha256": "fb308615161ad8f62b063d90972a4c36e7c66e7c58beb3316c81497cfe65261e",
+      "zeros_sha256": "a438e92b79dfb7f9f1763c40ffb2d42dd60e45697dfc06fc49efae067d3c1a22",
+      "predicted_live_change": "+0.007 (+0.001 to +0.012) MODEL",
+      "all_gates_passed": true
+    },
+    {
+      "id": "h33-2-b2-prune4-20261023-2880b0e9",
+      "value": "2px<d_cat<=4px, no refill",
+      "n_dots": 33829,
+      "pct_changed": 10.158,
+      "sha256": "2880b0e90582d4cfe03165c41201c107071d3a1a88a5717351a6943f29365e7a",
+      "zeros_sha256": "db2df78d2c0fa9b856328fb644c80ecce6232e4009dc2100ac3e3daee6e46b87",
+      "predicted_live_change": "+0.003 (-0.004 to +0.010) MODEL",
+      "all_gates_passed": true
+    },
+    {
+      "id": "h33-2-b2-prune5-20261023-7ebfc408",
+      "value": "2px<d_cat<=5px, no refill",
+      "n_dots": 32017,
+      "pct_changed": 14.971,
+      "sha256": "7ebfc4086506e574ec9481de08f5efd0a4b4f3180081957d09e4692f14dde6e7",
+      "zeros_sha256": "9a670ccafcc470890a6c513e46518e040197a3d32597883248d276cd7a8e526c",
+      "predicted_live_change": "-0.003 (-0.012 to +0.006) MODEL",
+      "all_gates_passed": true
+    }
+  ],
   "submission_slots_used_by_agent": 0,
   "remaining_weekly_slots": null,
   "total_slots_used_by_human": null,
   "top_public": null,
-  "predicted_live_change": null,
-  "raster_sha256": null,
-  "candidate_validator": {"status": "NOT RUN: no candidate written", "safe_to_submit": false},
-  "proxy": {"status": "NOT RUN", "value": null, "withheld_positives": null, "ci95": null},
-  "leakage_canary": {"status": "NOT RUN: no feature experiment"},
-  "sgmc_control": {"status": "NOT RUN"},
-  "correlation_overlap": {"status": "NOT RUN: not v2 uniqueness gates"},
-  "submission": {"file": null, "name": null, "note": null},
-  "blockers": [
-    "Restoring pinned R0 bytes is not reproducing R0 from its recipe. Rebuild gate remains uncleared.",
-    "25/28 main manifest entries absent locally; absent does not mean unreachable.",
-    "Human AXIS unassigned; complete cross-session ledger/raw paste absent.",
-    "1611 R0 dots are closer than 3 px to the catalogue: resolve conflict before non-PRUNE edits.",
-    "Human quota, receipts, TOP_PUBLIC and deadline confirmation missing."
-  ],
-  "checks": {
-    "full_offline_pytest": {"passed": 72, "failed": 0},
-    "new_regression_tests": {"passed": 11, "scope": "3 byte-pin tests and 8 reduced-DTI identity cases"},
-    "input_audit_repeat": "Byte-identical JSON on repeat at input git SHA",
-    "site_link_check": "PASS for historical site only; not candidate approval",
-    "shared_template_integrity": {"matched": 12, "total": 13, "mismatched": ["uniqueness.py"], "pre_existing": true},
-    "readme_scope": "Only new CURRENT STATE block; historical text preserved"
+  "proxy_report_only": {
+    "catalogue_hide_and_recover": {
+      "withheld_positives": 60988,
+      "R0_parent": 0.00671,
+      "prune3": 0.0,
+      "prune4": 0.0,
+      "prune5": 0.0,
+      "note": "PROXY only; degenerate by construction (>3 px collar)"
+    },
+    "sgmc_minus_catalogue_3px": {
+      "R0_parent": 0.09539,
+      "prune3": 0.09369,
+      "prune4": 0.08989,
+      "prune5": 0.08461,
+      "calibrated_bias_to_claim": 0.00829
+    },
+    "leakage_canary": {
+      "best_single_feature": "geod_2ndinv",
+      "best_single_feature_auc": 0.5687,
+      "threshold": 0.9,
+      "verdict": "CLEAN"
+    }
   },
-  "review_passes": [
-    "Inspected manifests/ledger/slot state; restored hash-pinned parent, stopped before candidate work.",
-    "Re-read parent bytes; discovered exact exclusion conflict and public-raster publication risk.",
-    "Repeated audit; ran 72 tests and site checks; logged pre-existing shared-pin mismatch without modifying vendor code."
-  ],
-  "notes": "No geological negative inferred. No competition-page fetch, credentials, submission, new raster publication or site redesign. Header-only ledger is explicitly incomplete."
+  "checks": {
+    "data_manifest_verified": "23/23",
+    "learning_manifest_verified": "2/2",
+    "r0_lineage_pins_verified": "7/7",
+    "full_pytest": {
+      "passed": 129,
+      "skipped": 0,
+      "failed": 0
+    },
+    "site_link_check": "PASS"
+  }
 }

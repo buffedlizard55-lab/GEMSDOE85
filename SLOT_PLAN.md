@@ -1,9 +1,10 @@
 # SLOT_PLAN — 3 scored submissions per rolling week, ONE entity · deadline 2026-12-03 (provisional)
 
 Parent for every slot: **R0 = `h33-h33-2-b2`** (`e5eb6e7e`, 37,654 dots, live **0.2778 CLAIM** —
-owner-reported, no receipt here). `TOP_PUBLIC` is **unfilled** (the human reads it off the leaderboard
-with a date; no other target number is valid). Slots left this rolling week: **unknown** — 3/week is a
-ceiling, not a target. Every file below is BUILT and gated; none is scored.
+owner-reported, no receipt here; recipe-rebuilt and byte-verified against `baeae321…` / `c55bafc4…`).
+`TOP_PUBLIC` is **unfilled** (the human reads it off the leaderboard with a date; no other target
+number is valid). Slots left this rolling week: **unknown** — 3/week is a ceiling, not a target.
+Every file below is BUILT and gated; none is scored.
 **AXIS was not assigned by the human in any session** (asked each time; skipped). PRUNE was chosen from
 the measurements in IR-V3-02 and SNAP from the orthogonality argument in IR-V2-14; confirm or overrule
 before spending a slot.
@@ -22,7 +23,7 @@ before spending a slot.
 Two live/CLAIM rungs already anchor the curve: `≤1 px` gave **+0.0108** and `≤2 px` gave **+0.0070**
 (owner-reported, no receipts in this repository). Everything below is relative to that anchor.
 
-## Next three candidate slots (only if human confirms AXIS = PRUNE and quota permits)
+## Next 3 slots in order (if human confirms `AXIS = PRUNE` and quota permits)
 
 | # | upload | change vs R0 | what the result changes | prediction |
 |---|---|---|---|---|
@@ -55,8 +56,9 @@ most one** SNAP slot in a week, and only if the ladder is closed or a slot would
 | 2 | `releases/snap-ridge-lidar2-20261023-6913d029.tif` | 22.3 % moved, coverage −1.4 % | along-trace refinement only; informative after #1 |
 | 3 | `releases/snap-ridge-tmi2-20261023-de094d8e.tif` | 30.3 % moved, coverage −2.3 % | the only test of the 400 m *aeromagnetic* positional story; a loss demotes magnetic-gradient axes |
 
-## Calendar and decision gates
+## Weeks to the deadline (41 calendar days from Oct 23 to Dec 3; default plan)
 
+- **Default plan (brief §7):** wk 1–2 `MASS`, `CONCENTRATION`, `SNAP`, `PRUNE`, `RELIEF`; wk 3–4 combine the two best axes; wk 5–6 confirm, choose the final file and a fallback, re-validate the format of both.
 - **wk 1 (Oct 23–29):** slots 1–3 above.
 - **wk 2 (Oct 30–Nov 5):** if the shadow extends past 3 px, sweep 4.5 / 5 / 6 px at fine spacing; if it
   peaks at 3 px, freeze the optimum. A free slot may then go to `snap-free-lidar2` as the position
@@ -70,7 +72,7 @@ most one** SNAP slot in a week, and only if the ladder is closed or a slot would
   41 calendar days from Oct 23 to Dec 3, not six full weeks. Quota per
   https://docs.nlr.gov/docs/fy26osti/96647.pdf (not fetched this session).
 
-## Better axes for later human assignment (not built)
+## Proposed better axes for later sessions (do NOT build this session)
 
 1. **SNAP-AFTER-REPACK.** Re-thin the parent's 121k-px skeleton at 2.8 px with the edge response as the
    packing *priority* instead of raster order: same count ballpark, same exclusions, positions now

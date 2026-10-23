@@ -99,8 +99,19 @@ RELIEF cannot be built on this parent at its 2.8 px packing rung.
 
 ## Concurrent sessions merged to `main` during this PR (preserved verbatim)
 
-## 2026-10-23 — arena/30dcc7f0-gemsdoe85 (current verification turn)
+## 2026-10-23 — arena/30dcc7f0-gemsdoe85 (verification turn)
 
+- AI read the local manifest, ledger, slot plan, and existing R0 recipe; restored only the hash-pinned
+  H19-5, d2.8/solo, R0, labels, and sample-template inputs from their GitHub mirrors into ignored
+  `data/` storage. No competition-site or leaderboard page was accessed.
+- AI installed the locked Python dependencies, verified the relevant manifest and lineage hashes,
+  rebuilt R0 (37,654 dots) and matched both pinned R0 SHA-256 values exactly, re-read/validated all
+  three existing PRUNE release pairs, and ran the targeted metric/lineage tests (31 passed).
+- AI did not build another raster: the PRUNE axis was selected by the earlier AI session, not assigned
+  by the human in this brief, and all three corresponding axis/value experiments already exist in the
+  ledger. AI added the README CURRENT STATE block and recorded this decision in IRREGULARITIES.md.
+- Human has not supplied an AXIS, dated TOP_PUBLIC, slot availability, or receipt in this turn. No
+  competition submission was made; no slot use is claimed.
 
 ## What the AI agent did (SNAP session, branch `arena/a9cc6c47-gemsdoe85`, 2026-10-23)
 
@@ -129,3 +140,17 @@ RELIEF cannot be built on this parent at its 2.8 px packing rung.
 - Whether to spend any slot on them — `SLOT_PLAN.md` ranks them **below** the PRUNE ladder because
   their predicted effect is inside the ±0.01 no-evidence band (IR-V2-16).
 - `TOP_PUBLIC` with date, the rolling-week slot count, and a submission-page receipt for every score.
+
+## 2026-10-23 — arena/28da814f-gemsdoe85 (this session)
+
+- AI restored all 23 `registry/data_manifest.json` + 2 `registry/learning_manifest.json` + 7 R0 lineage
+  inputs from commit-pinned GitHub mirrors into gitignored storage and verified all SHA-256 digests
+  (`evidence/v2-input-audit.json`: 23/23 and 2/2 VERIFIED).
+- AI verified `IR-V2-19` (`requirements-lock.txt` `rasterio==1.4.4` deflate stream parity) and added a
+  GeoTIFF re-encoding SHA-256 check to `scripts/gemsdoe85_prune_session.py` and `tests/test_r0_lineage.py`
+  proving that rebuilding and writing `L.r0` from scratch reproduces both pinned R0 digests
+  (`baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd` and
+  `c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9`) and re-validated all 9 shipped
+  release pairs across `PRUNE`, `PRUNE-rungs`, and `SNAP`.
+- Human retains `AXIS` assignment/confirmation, `TOP_PUBLIC` (with date), weekly/total slot count, score
+  receipts, deadline/timezone confirmation, and all portal submissions. No forbidden hosts were contacted.
