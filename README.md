@@ -1,25 +1,17 @@
 # GEMSDOE85 — Lane H85-HJCD: Hydrothermal-Juxtaposition & Fault-Valve Conduit Discovery
 
-<!-- CURRENT STATE — update this block only for session status. -->
-## CURRENT STATE (2026-10-23, after PRUNE, PRUNE-rungs, SNAP, verification, RELIEF and the CONCENTRATION sessions `arena/28da814f` / `arena/3dd0b94c` / `arena/c4de5673`)
+## CURRENT STATE (2026-10-23, after merging `main`)
 
 | field | value |
 |---|---|
-| **parent** | R0 = `h33-h33-2-b2` (`e5eb6e7e`), 37,654 unit-mass dots; rebuilt **pixel- and byte-identical** from the pinned chain (121,131 → 44,090 → 40,199 → 37,654; `baeae321…` / `c55bafc4…`; 23/23 `data_manifest.json` + 2/2 `learning_manifest.json` SHA-256 verified) |
-| **best receipt** | **none in this repository.** 0.2778 is a **CLAIM** (owner-reported); every other number is MODEL or PROXY |
-| **TOP_PUBLIC** | **UNFILLED** — the human reads it off the leaderboard *with a date*; no other target number is valid |
-| **slots left this week** | **UNKNOWN** — the human reads it off the account page (3/week is a ceiling, not a target; +1 blind final submission) |
-| **reserve PRUNE & SNAP** | `PRUNE`: `prune4-…-2880b0e9` (+0.003), `prune5-…-7ebfc408` (−0.003), `r2p25-…-3908de12` (+0.003). `SNAP` (ranked below PRUNE + RELIEF; inside ±0.01 no-evidence band): `snap-free-lidar2-…-ac3fc128` (−0.004), `snap-ridge-lidar2-…-6913d029` (+0.001), `snap-ridge-tmi2-…-de094d8e` (0.000) |
-| **every prediction** | MODEL (`|Δ| < 0.01` live is no evidence). Hide-and-recover and SGMC are PROXY, never gates |
-| **human must supply** | AXIS/slot confirmation, dated `TOP_PUBLIC`, rolling-week/total slots remaining, score receipts for every upload, deadline/timezone confirmation, redistribution decision (IR-V2-10) |
-| **AXIS status** | **CONCENTRATION — assigned by the human on 2026-10-23** (session `arena/c4de5673`; asked, and answered). The earlier PRUNE and SNAP rungs were AI-chosen (no axis was assigned in those sessions) and remain built and gated as the backup ladder; the human may reorder. See `IRREGULARITIES.md` (IR-V2-08, IR-V2-14, IR-V2-20 … IR-V2-26) |
-| **CONCENTRATION variants (2026-10-23)** | `…-conc10-…-f89e4659` (10 % of dots moved) · `…-conc15-…-45bfb93b` (15 %) · `…-conc20-…-a93e0b41` (20 %) — count held at 37,654, 0 dots on the catalogue, new dots > 3 px from the catalogue, block-density CV 0.551 → 0.767 / 0.786 / 0.782 (0.8 km occupied blocks). Predicted **−0.01 to −0.05** against 0.2778 (MODEL); cards, falsifiers and the dose-series rationale in `docs/MECHANISM_CARDS.md` |
-| **next 3 slots** (human-assigned axis = CONCENTRATION; `SLOT_PLAN.md`, `docs/SUBMIT.md`) | 1. `…-conc10-…-f89e4659-zeros.tif` (−0.010 to −0.030 MODEL) · 2. `…-conc15-…-45bfb93b-zeros.tif` (−0.015 to −0.040) · 3. `…-conc20-…-a93e0b41-zeros.tif` (−0.020 to −0.050) — a dose series of one axis, so the **slope** of live score against dose is the measurement. **Backup ladder** (all built and gated; the human may reorder): `h33-2-b2-prune3-…-fb308615` (+0.007 MODEL) · `h33-2-b2-reliefp2r10-…-669f0637` (+0.008 MODEL) · `h33-2-b2-r3p61-…-f94be3ad` (+0.005, the RELIEF-session decision slot) · `h33-2-b2-r2p85-…-acce3907` (+0.005) — fallback: the `-zeros` twin of whichever is uploaded |
-Upload file, hash and ≤140-character note per slot: `docs/SUBMIT.md`. Ladder, decision rules and the
-calendar: `SLOT_PLAN.md`. Science: `docs/mechanism_cards_prune.md`, `docs/mechanism_cards_rung.md`,
-`docs/mechanism_cards_snap.md`, `docs/mechanism_cards_relief.md`, `docs/MECHANISM_CARDS.md` (CONCENTRATION). Decision-changing irregularities:
-`IRREGULARITIES.md`.
-
+| **Parent (R0)** | `h33-h33-2-b2` (GEMSDOE32) — 37,654 unit dots, rebuilt pixel-exactly from its own recipe (IR-86-001). |
+| **Best receipt** | **none.** 0.2778 is a CLAIM; no submission-page receipt exists in this repository (IR-86-004). |
+| **TOP_PUBLIC** | **unfilled by the human.** The 0.4413 cited in §6 was noted on 2026-10-22 and is *not* this session's target. |
+| **Slots left** | **3 of 3 this week, 0 used** (human, 2026-10-23). |
+| **Candidates** | **22 gated files** in `releases/`, all from this one parent: 6 PRUNE, 3 RELIEF, 3 CONCENTRATION, 7 SNAP, 3 SPACING. Ledger: `ledger/submissions.csv`. |
+| **Next 3 slots** | 1) `h33-2-b2-prune3-…-fb308615` (collar baseline) · 2) `gems85-h33-h33-2-b2-conc10-…-f89e4659` (concentration 10 %) · 3) conditional (`reliefp2r10` / `conc15` / `space10`). Rules: [`SLOT_PLAN.md`](SLOT_PLAN.md); upload sheet: [`docs/SUBMIT.md`](docs/SUBMIT.md). |
+| **SPACING (this session)** | `space10` / `space20` / `space10s`: 10–20 % of dots removed by exact unique kernel credit and refilled at matched count. **Filed as a capacity probe, not a slot bet** — matched-count refill is only possible by re-packing tighter (mean NN 10.03 → 9.49 / 8.97 / 9.23 px; IR-86-007). |
+| **SNAP (same branch)** | `snapd2t20` / `snapd2t10` / `snapd2t00` + control `prune3`: a ≤ 2 px snap is **non-positive in expectation** on this parent, because its credited dots already sit on truth (k̄ = 1.00 from its own back-solve). |
 
 ## Promoted Deliverable & One-Click Automated Validation Receipt
 

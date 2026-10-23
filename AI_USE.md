@@ -221,3 +221,49 @@ touched; it did **not** modify `vendor/gems57` (no private evaluator or writer f
 - Human decides slot order (`prune3` → `reliefp2r10` → conditional Slot 3, vs pure-`PRUNE`), supplies
   dated `TOP_PUBLIC` and remaining slot counts, uploads from their single registered account, records
   live `receipt_score` + `date`, and reviews competition redistribution/AI-disclosure rules.
+
+
+---
+
+## Session `arena/59608071-gemsdoe85`, second run (2026-10-23) — AXIS = SPACING
+
+### What the AI wrote
+`scripts/run_spacing_session.py` (parent rebuild gate, unique-credit ranking, greedy marginal-credit
+refill, twin writer, gates), `tests/test_spacing_session.py`, the SPACING entries in the ledger, and
+the rewritten `SLOT_PLAN.md` / `docs/SUBMIT.md` above.
+
+### What the human decided
+Nothing new this run: the axis was chosen by the agent because the human removed the axis question
+("Do not prompt me over choosing an Axis for the session, pick your own session"). TOP_PUBLIC and slot
+counts remain unfilled/unconfirmed.
+
+### Why SPACING, and what was rejected
+Checked the merged ledger first: PRUNE (6), SNAP (3), CONCENTRATION (3) and RELIEF (3) were already
+built on this parent; MASS was rejected by a merged sibling on its own two measurements (IR-V2-08).
+SPACING was unbuilt and has a mechanism that does not depend on a new geological signal.
+
+### Mechanism card — `space10` / `space20` (redundancy thinning with matched-count refill)
+* **Hypothesis.** The parent's 2.8 px packing rung is a spacing artefact, not a geological one. Dots
+  with low unique kernel credit `U_i` are paying 0.2 false-positive tax for credit another dot
+  already supplies; trading them for cells that add new credit raises `T` at constant `n`.
+* **Mechanism.** `U_i` is computed from the parent's own geometry (best minus second-best kernel
+  contribution per cell), so it is label-free and exact. Refill uses the same algebra in reverse:
+  each new dot is placed where the marginal credit against the kept roster is largest.
+* **Mimic.** Any process that thins a real trace to a lattice makes low-`U` dots *look* redundant
+  even where they carry independent positional insurance against the ~300 m lineament uncertainty of
+  a 400 m-spaced survey. That is the confounder this axis cannot separate from truth.
+* **Predicted sign/size.** `space10` +0.000…+0.010; `space20` −0.005…+0.010 (pre-registered).
+* **Falsifier.** A live loss at constant count ⇒ the redundancy is insurance and spacing should be
+  left alone. Measured before any score: the refill can only be paid for by densifying (IR-86-007),
+  which weakens the mechanism and is why these are not slot candidates.
+
+### Mechanism card — `space10s` (same, refills restricted to trace interiors)
+* **Hypothesis.** If the refill is worth anything, it is worth more on continuous traces than on
+  stubs, tips and isolated skeleton pixels.
+* **Mechanism.** A 5 × 5 skeleton-count ≥ 4 selects trace interiors; a structure-tensor coherence
+  guard was tried first and is degenerate on a 1-px binary skeleton (0 candidates), which is
+  recorded in the module docstring.
+* **Mimic.** Playa rims and caldera margins are also "continuous" in a morphological sense.
+* **Predicted sign/size.** +0.000…+0.012.
+* **Falsifier.** No live difference from `space10` (they differ by 0.26 px of mean spacing) ⇒ the
+  trace-interior filter is not a mechanism, and the axis is exhausted.

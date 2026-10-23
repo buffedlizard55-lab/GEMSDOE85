@@ -456,3 +456,33 @@ measures pure live `RELIEF` above the `d_cat > 3 px` collar, and choose Slot 3 c
 (`IR-V2-04`, `IR-V2-10`). **Decision:** add zero competition rasters in `arena/3dd0b94c-gemsdoe85`
 (only ~218–356 KB derived binary submissions in `releases/`) and flag the pre-existing tracked files for
 human review against DrivenData redistribution rules before any public release.
+
+
+## IR-86-007 — SPACING at matched count is only buildable by re-packing *tighter* (this session)
+
+Measured on the parent's own ridge (`evidence/session_spacing.json`): free skeleton cells at the
+parent's recorded 2.8 px rung = **201**, at 2.0 px = 4,311, at 1.5 px = 8,410. A 10 % matched-count
+refill needs 3,765 cells and a 20 % refill 7,531, so any matched-count refill must use cells closer
+than the parent's own packing. Result, measured after the build: mean nearest-neighbour distance
+10.03 → 9.49 / 8.97 / 9.23 px, share of dots with a neighbour inside 3 px 5.1 % → 7.5 / 11.8 / 9.2 %,
+10 km block CV 0.635 → 0.657 / 0.679 / 0.669.
+
+**Decision changed:** the three SPACING files are filed as a **capacity probe**, ranked *below* PRUNE
+and CONCENTRATION in `SLOT_PLAN.md`, and their pre-registered ranges are read against this measured
+densification rather than as a pure de-redundification test. This independently reproduces the
+conclusion of the merged IR-V2-09 ("refill to hold the count is impossible here") with numbers from
+a different construction (marginal-credit refill vs the sibling's packing rung).
+
+## IR-86-008 — the branch inherited a conflicting ledger and two incompatible schemas
+
+At session start this branch held `ledger/submissions.csv` in the v2 schema (9 rows, `parent, axis,
+value, …`) while `main` held a 15-row ledger in a different schema (`site, name, score,
+evidence_label, …`), plus 15 release files covering PRUNE, SNAP, CONCENTRATION and RELIEF on the same
+parent. Two sessions had therefore been choosing axes without seeing each other's `(parent, axis,
+value)` pairs, exactly the failure mode the brief's "check the ledger first" is meant to prevent.
+
+**Decision changed:** this branch was merged with `main` (docs, ledger and `build_ledger.py` taken from
+`main`; its own releases kept as additions), the ledger now carries all **22** rows in `main`'s schema
+including this branch's 4 SNAP and 3 SPACING files, and the axis choice for this session was made
+against the merged 15-row ledger — SPACING and MASS were the only unbuilt axes, and MASS was rejected
+on a merged sibling's measurements (IR-V2-08) rather than re-litigated.

@@ -1,0 +1,355 @@
+{
+  "schema_version": 1,
+  "session": "arena/59608071-gemsdoe85",
+  "axis": "SPACING",
+  "built_utc": "20261023",
+  "git_sha": "ab2fce6c58e694114e73df506af84ee35dfb73d9",
+  "alpha": 0.2,
+  "beta": 0.8,
+  "kernel_px": 3.0,
+  "catalogue_clear_px": 3.0,
+  "min_sep_px": 1.42,
+  "min_amount_separation_px": 1.414,
+  "parent_rebuild": {
+    "n_dots": 37654,
+    "pixel_identical": true,
+    "skeleton_sha256": "ec1f9b56b83ce33cad781ceb9f104b18fb4f2ff785263a4e89616af4aabdee8d",
+    "dots_on_skeleton": 37654,
+    "skeleton_px": 121131
+  },
+  "unique_credit": {
+    "mean": 6.7912,
+    "min": 2.3741,
+    "p10": 4.781,
+    "median": 6.8927,
+    "p90": 9.3803,
+    "n_fully_redundant": 0
+  },
+  "candidate_capacity": {
+    "sep_1.5px": 8410,
+    "sep_2.0px": 4311,
+    "sep_2.8px": 201
+  },
+  "collar": {
+    "n_dots_below_3px": 1611,
+    "note": "R0 keeps dots at 2.236/2.828 px; every non-PRUNE axis in this repository applies the collar first (IR-86-002 / IR-V2-03). The collar is identical in all three variants and in main's PRUNE and RELIEF builds, so it cancels in the comparison and is reported separately from the axis part."
+  },
+  "variants": [
+    {
+      "id": "h33-h33-2-b2-space10-20261023-b4a3bd25",
+      "slug": "h33-h33-2-b2-space10-20261023",
+      "value": "space10",
+      "fraction": 0.1,
+      "coherent_only": false,
+      "zeros": {
+        "path": "releases/h33-h33-2-b2-space10-20261023-b4a3bd25-zeros.tif",
+        "sha256": "b4a3bd259829987c9c349b4db1d693e37f744bd6f684da4048530db9d145d921",
+        "bytes": 149354,
+        "meta": {
+          "bands": 1,
+          "dtype": "float32",
+          "crs": "EPSG:32611",
+          "shape": [
+            3730,
+            3292
+          ],
+          "transform": [
+            100.0,
+            0.0,
+            243350.0,
+            0.0,
+            -100.0,
+            4508550.0
+          ]
+        },
+        "n_positive": 37654,
+        "min_inside": 0.0,
+        "max_inside": 1.0,
+        "reread_ok": true
+      },
+      "nan": {
+        "path": "releases/h33-h33-2-b2-space10-20261023-8b3a3244-nan.tif",
+        "sha256": "8b3a3244484c34e9624dd27afed145a7d7bbb70729f1ad60dd55ddd5e997bb7c",
+        "bytes": 221306,
+        "meta": {
+          "bands": 1,
+          "dtype": "float32",
+          "crs": "EPSG:32611",
+          "shape": [
+            3730,
+            3292
+          ],
+          "transform": [
+            100.0,
+            0.0,
+            243350.0,
+            0.0,
+            -100.0,
+            4508550.0
+          ]
+        },
+        "n_positive": 37654,
+        "min_inside": 0.0,
+        "max_inside": 1.0,
+        "reread_ok": true
+      },
+      "format_report": {
+        "ok": true,
+        "problems": []
+      },
+      "local_validate": {
+        "all_checks_passed": true
+      },
+      "nan_format_ok": false,
+      "nan_local_ok": false,
+      "stats": {
+        "n_dots": 37654,
+        "n_removed": 3765,
+        "n_added": 3765,
+        "n_collar_removed": 1611,
+        "n_axis_removed": 2154,
+        "pct_dots_changed": 9.999,
+        "jaccard_vs_parent": 0.818199,
+        "n_voxels_changed": 7530,
+        "U_removed_mean": 8.6333,
+        "U_kept_mean": 6.5866,
+        "added_min_dist_parent_px": 1.414,
+        "added_median_dist_parent_px": 2.236,
+        "added_on_skeleton_pct": 100.0,
+        "spacing_before": {
+          "mean_nn_px": 10.0333,
+          "median_nn_px": 8.0623,
+          "frac_nn_lt_3px": 0.051,
+          "sampled": 6000
+        },
+        "spacing_after": {
+          "mean_nn_px": 9.4887,
+          "median_nn_px": 7.2801,
+          "frac_nn_lt_3px": 0.0747,
+          "sampled": 6000
+        },
+        "block_cv_10km_parent": 0.6353,
+        "block_cv_10km_variant": 0.6568
+      },
+      "predicted": {
+        "low": 0.0,
+        "high": 0.01,
+        "text": "10 % of the most redundant dots traded for coverage where the ridge is unserved; FP tax falls by 0.2 x 3,765 mass units"
+      }
+    },
+    {
+      "id": "h33-h33-2-b2-space20-20261023-48eea7b7",
+      "slug": "h33-h33-2-b2-space20-20261023",
+      "value": "space20",
+      "fraction": 0.2,
+      "coherent_only": false,
+      "zeros": {
+        "path": "releases/h33-h33-2-b2-space20-20261023-48eea7b7-zeros.tif",
+        "sha256": "48eea7b7475cbb591c32d362d51ef5af58116062276fc4b7548d3e47704e00fe",
+        "bytes": 147568,
+        "meta": {
+          "bands": 1,
+          "dtype": "float32",
+          "crs": "EPSG:32611",
+          "shape": [
+            3730,
+            3292
+          ],
+          "transform": [
+            100.0,
+            0.0,
+            243350.0,
+            0.0,
+            -100.0,
+            4508550.0
+          ]
+        },
+        "n_positive": 37654,
+        "min_inside": 0.0,
+        "max_inside": 1.0,
+        "reread_ok": true
+      },
+      "nan": {
+        "path": "releases/h33-h33-2-b2-space20-20261023-dc6f4f7e-nan.tif",
+        "sha256": "dc6f4f7e8237c5623471fc016ff288b7e2accee14c5621077e6511ff37b9c033",
+        "bytes": 219390,
+        "meta": {
+          "bands": 1,
+          "dtype": "float32",
+          "crs": "EPSG:32611",
+          "shape": [
+            3730,
+            3292
+          ],
+          "transform": [
+            100.0,
+            0.0,
+            243350.0,
+            0.0,
+            -100.0,
+            4508550.0
+          ]
+        },
+        "n_positive": 37654,
+        "min_inside": 0.0,
+        "max_inside": 1.0,
+        "reread_ok": true
+      },
+      "format_report": {
+        "ok": true,
+        "problems": []
+      },
+      "local_validate": {
+        "all_checks_passed": true
+      },
+      "nan_format_ok": false,
+      "nan_local_ok": false,
+      "stats": {
+        "n_dots": 37654,
+        "n_removed": 7531,
+        "n_added": 7531,
+        "n_collar_removed": 1611,
+        "n_axis_removed": 5920,
+        "pct_dots_changed": 20.001,
+        "jaccard_vs_parent": 0.666659,
+        "n_voxels_changed": 15062,
+        "U_removed_mean": 8.8881,
+        "U_kept_mean": 6.267,
+        "added_min_dist_parent_px": 1.414,
+        "added_median_dist_parent_px": 2.0,
+        "added_on_skeleton_pct": 100.0,
+        "spacing_before": {
+          "mean_nn_px": 10.0333,
+          "median_nn_px": 8.0623,
+          "frac_nn_lt_3px": 0.051,
+          "sampled": 6000
+        },
+        "spacing_after": {
+          "mean_nn_px": 8.97,
+          "median_nn_px": 6.7082,
+          "frac_nn_lt_3px": 0.118,
+          "sampled": 6000
+        },
+        "block_cv_10km_parent": 0.6353,
+        "block_cv_10km_variant": 0.6792
+      },
+      "predicted": {
+        "low": -0.005,
+        "high": 0.01,
+        "text": "20 %: refill must reuse the holes it opens (capacity 4,311 cells vs 7,530 refills), so the file mixes thinning with re-packing"
+      }
+    },
+    {
+      "id": "h33-h33-2-b2-space10s-20261023-55abf636",
+      "slug": "h33-h33-2-b2-space10s-20261023",
+      "value": "space10s",
+      "fraction": 0.1,
+      "coherent_only": true,
+      "zeros": {
+        "path": "releases/h33-h33-2-b2-space10s-20261023-55abf636-zeros.tif",
+        "sha256": "55abf6368ab79167266b580a174b58e164b07a6877080c7e29e7d9527d7527a6",
+        "bytes": 148664,
+        "meta": {
+          "bands": 1,
+          "dtype": "float32",
+          "crs": "EPSG:32611",
+          "shape": [
+            3730,
+            3292
+          ],
+          "transform": [
+            100.0,
+            0.0,
+            243350.0,
+            0.0,
+            -100.0,
+            4508550.0
+          ]
+        },
+        "n_positive": 37654,
+        "min_inside": 0.0,
+        "max_inside": 1.0,
+        "reread_ok": true
+      },
+      "nan": {
+        "path": "releases/h33-h33-2-b2-space10s-20261023-50e7e2ea-nan.tif",
+        "sha256": "50e7e2eac9181ce602fb526815cc12c5e525cf1fecc86adb0dec670d31830e84",
+        "bytes": 220652,
+        "meta": {
+          "bands": 1,
+          "dtype": "float32",
+          "crs": "EPSG:32611",
+          "shape": [
+            3730,
+            3292
+          ],
+          "transform": [
+            100.0,
+            0.0,
+            243350.0,
+            0.0,
+            -100.0,
+            4508550.0
+          ]
+        },
+        "n_positive": 37654,
+        "min_inside": 0.0,
+        "max_inside": 1.0,
+        "reread_ok": true
+      },
+      "format_report": {
+        "ok": true,
+        "problems": []
+      },
+      "local_validate": {
+        "all_checks_passed": true
+      },
+      "nan_format_ok": false,
+      "nan_local_ok": false,
+      "stats": {
+        "n_dots": 37654,
+        "n_removed": 3765,
+        "n_added": 3765,
+        "n_collar_removed": 1611,
+        "n_axis_removed": 2154,
+        "pct_dots_changed": 9.999,
+        "jaccard_vs_parent": 0.818199,
+        "n_voxels_changed": 7530,
+        "U_removed_mean": 8.6333,
+        "U_kept_mean": 6.5866,
+        "added_min_dist_parent_px": 1.414,
+        "added_median_dist_parent_px": 2.236,
+        "added_on_skeleton_pct": 100.0,
+        "spacing_before": {
+          "mean_nn_px": 10.0333,
+          "median_nn_px": 8.0623,
+          "frac_nn_lt_3px": 0.051,
+          "sampled": 6000
+        },
+        "spacing_after": {
+          "mean_nn_px": 9.2293,
+          "median_nn_px": 7.0711,
+          "frac_nn_lt_3px": 0.0923,
+          "sampled": 6000
+        },
+        "block_cv_10km_parent": 0.6353,
+        "block_cv_10km_variant": 0.6686
+      },
+      "predicted": {
+        "low": 0.0,
+        "high": 0.012,
+        "text": "as space10 but refill restricted to strike-coherent skeleton cells (coherence >= 0.5), i.e. onto traces rather than tips and rims"
+      }
+    }
+  ],
+  "parent_stats": {
+    "n_dots": 37654,
+    "spacing": {
+      "mean_nn_px": 10.0333,
+      "median_nn_px": 8.0623,
+      "frac_nn_lt_3px": 0.051,
+      "sampled": 6000
+    },
+    "block_cv_10km": 0.6353
+  }
+}
