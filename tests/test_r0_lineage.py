@@ -131,16 +131,29 @@ def test_prune_variant_semantics_on_parent():
 
 @pytest.mark.skipif(not HAVE_DATA, reason="pinned rasters not restored")
 def test_shipped_releases_pass_their_own_gates_and_match_the_ledger():
+    """Every BUILT row in the ledger must be a real, gated, hash-matching file.
+
+    Axis-aware: PRUNE releases must additionally sit >= 3 px from the catalogue; SNAP releases must
+    sit outside 2 px and may never reduce the parent's own minimum catalogue distance (the parent
+    carries 2,171 dots at 2.24-3.00 px -- IR-V2-03 -- and SNAP is not allowed to touch that).
+    """
     ledger = ROOT / "ledger" / "submissions.csv"
-    receipt = ROOT / "evidence" / "session_prune_receipt.json"
-    if not ledger.is_file() or not receipt.is_file():
+    receipts = {"PRUNE": ROOT / "evidence" / "session_prune_receipt.json",
+                "SNAP": ROOT / "evidence" / "session_snap_receipt.json"}
+    if not ledger.is_file():
         pytest.skip("session outputs not built")
     rows = list(csv.DictReader(ledger.open()))
-    assert len(rows) == 3
-    assert rows[0]["parent"] == "h33-h33-2-b2" and rows[0]["axis"] == "PRUNE"
+    assert len(rows) >= 3
+    assert all(r["parent"] == "h33-h33-2-b2" for r in rows)
     assert all(r["status"] == "BUILT" and r["receipt"] == "N" for r in rows)
-    rec = json.loads(receipt.read_text())
+    assert len({r["sha256"] for r in rows}) == len(rows), "duplicate sha256 in the ledger"
+    dist_cat = RL.catalogue_distance()
+    parent_min = float(dist_cat[RL.rebuild(verify_against_pinned_files=False).r0].min())
     for row in rows:
+        axis = row["axis"]
+        receipt = receipts.get(axis)
+        assert receipt is not None and receipt.is_file(), f"no receipt for axis {axis}"
+        rec = json.loads(receipt.read_text())
         tif = ROOT / "releases" / f'{row["id"]}.tif'
         assert tif.is_file(), tif
         assert RL.sha256_file(tif) == row["sha256"]
@@ -151,8 +164,13 @@ def test_shipped_releases_pass_their_own_gates_and_match_the_ledger():
         assert float(row["pct_changed"]) > 0.0
         assert row["sha8"] == row["sha256"][:8]
         assert entry["nan"]["checks"]["zero_mass_on_catalogue"]
-        assert entry["nan"]["checks"]["min_distance_to_catalogue_px_gt_3"]
-        # the zeros twin must be all-finite and byte-identical in pixels
+        if axis == "PRUNE":
+            assert entry["nan"]["checks"]["min_distance_to_catalogue_px_gt_3"]
+        elif axis == "SNAP":
+            assert entry["nan"]["within_2px_catalogue_px"] == 0
+            assert entry["nan"]["min_distance_to_catalogue_px"] >= parent_min - 1e-9
+            assert entry["nan"]["positive_pixels"] == entry["snap"]["pair"]["parent_dots"]
+        # the zeros twin must be all-finite and pixel-identical
         import rasterio
         with rasterio.open(ROOT / "releases" / f'{row["id"]}-zeros.tif') as z:
             a = z.read(1)

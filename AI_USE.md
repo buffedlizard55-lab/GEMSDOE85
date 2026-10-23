@@ -1,7 +1,9 @@
 # AI-use disclosure
 
-Two v2 sessions are recorded. The first (2026-10-22/23, `arena/cf29702c`) stopped BLOCKED; the
-second (2026-10-23, `arena/e081f5da`) cleared the rebuild blocker and built the PRUNE variants.
+Three v2 sessions are recorded. The first (2026-10-22/23, `arena/cf29702c`) stopped BLOCKED; the
+second (2026-10-23, `arena/e081f5da`) cleared the rebuild blocker and built the PRUNE variants; the
+third (2026-10-23, `arena/a9cc6c47`) built the SNAP variants, and its entry starts at
+"What the AI agent did (SNAP session)".
 
 ## 2026-10-23 — arena/cf29702c-gemsdoe85 (kept verbatim)
 - Human supplied the v2 brief, R0 identity, evidence policy, allowed axes, quota and no-submission constraints. Human did **not** assign AXIS, provide TOP_PUBLIC, receipts or remaining quota.
@@ -59,3 +61,31 @@ offset argument, and the live scores 0.2600 / 0.2708 / 0.2778 come from the owne
 (GEMSDOE19/24/25/28/31/32) and the brief. This session's own contributions are the exact rebuild
 verification, the unique-credit ranking and its rejection as a MASS tool, the measured refill-capacity
 result, and the SGMC-proxy bias calibration (+0.0083) used to state the predictions.
+
+## What the AI agent did (SNAP session, branch `arena/a9cc6c47-gemsdoe85`, 2026-10-23)
+
+- Verified all 11 SHA-256 pins it used (7 parent-lineage pins, plus the lidar scarp, GeoDAWN
+  extension, SGMC and 419 MB feature-stack manifests) and rebuilt R0 pixel-identically
+  (121,131 → 44,090 → 40,199 → 37,654 dots; parent files `baeae321…` / `c55bafc4…`).
+- Wrote `src/gems85/snap85.py` (the two response fields, the deterministic snap rule with its
+  catalogue/separation/footprint constraints, the label-free support-coverage diagnostic) and
+  `tests/test_snap85.py` (10 synthetic contract tests).
+- Wrote `scripts/gemsdoe85_snap_session.py`: pin verification, parent rebuild, three SNAP variants,
+  both GeoTIFF encodings, re-read validation against the brief's gates, per-fold catalogue proxy with
+  CI, SGMC control, leakage canary, receipt JSON, and idempotent ledger append.
+- Wrote `docs/mechanism_cards_snap.md` (hypothesis / mechanism / confounder / predicted sign /
+  falsifier per variant), rewrote `SLOT_PLAN.md`, added the SNAP contingency to `docs/SUBMIT.md`,
+  inserted the README CURRENT STATE block, and added IR-V2-13 … IR-V2-16.
+- Chose the AXIS (SNAP) **after asking the human and receiving no answer** (the question was skipped);
+  the choice, its rejected alternatives and the re-scope condition are recorded in IR-V2-13. Chose the
+  three values (on-ridge lidar, on-ridge TMI, free-window lidar) to separate "which physics" from
+  "may a dot leave the mapped trace".
+- Fetched only GitHub-hosted, SHA-256-pinned files through the repository's own restore path. No
+  leaderboard, competition page, forum, Dropbox or credentials were accessed; nothing was submitted.
+
+### What remains the human's decision (SNAP session)
+
+- Whether SNAP was the intended axis at all (IR-V2-13); if not, these three files are simply unspent.
+- Whether to spend any slot on them — `SLOT_PLAN.md` ranks them **below** the PRUNE ladder because
+  their predicted effect is inside the ±0.01 no-evidence band.
+- `TOP_PUBLIC` with date, the rolling-week slot count, and a submission-page receipt for every score.

@@ -8,6 +8,23 @@
 
 ---
 
+## CURRENT STATE (v2 session 2026-10-23 — this block overrides the historical narrative below)
+
+| field | value | status |
+|---|---|---|
+| **Parent** | `h33-h33-2-b2` (R0, GEMSDOE32 `e5eb6e7e`), 37,654 dots, rebuild pixel-identical to the pinned rasters | verified this session |
+| **Best receipt** | none in this repository | — |
+| **Incumbent score** | 0.2778 | **CLAIM** (owner-reported, no submission-page receipt) |
+| **TOP_PUBLIC** | *unfilled — human must read it off the leaderboard with a date* | missing |
+| **Slots left this rolling week** | *unknown — human reads it from the account page (3/week is a ceiling)* | missing |
+| **Next 3 slots** | 1. `h33-2-b2-prune3-…-fb308615` · 2. `h33-2-b2-prune4-…-2880b0e9` · 3. `h33-2-b2-prune5-…-7ebfc408` (only if 1 and 2 both ≥ 0.2778) | built, unscored |
+| **Contingency (only if a slot is free)** | `snap-free-lidar2-…-ac3fc128`, then `snap-ridge-lidar2-…-6913d029`, then `snap-ridge-tmi2-…-de094d8e` | built, unscored |
+| **This session's axis** | SNAP — 3 variants, fixed count and mass, ≤ 2 px moves | see `docs/mechanism_cards_snap.md` |
+| **Evidence labels** | 0.2778 / 0.2600 / 0.2708 are CLAIMs; holdouts are PROXYs; predictions are MODELs | no score in this repo is a receipt |
+
+Upload instructions and format receipts: `docs/SUBMIT.md`. Slot logic and the decision tree:
+`SLOT_PLAN.md`. Decision-changing irregularities: `IRREGULARITIES.md`.
+
 ## Promoted Deliverable & One-Click Automated Validation Receipt
 
 | Field | Machine-Verified Value |
