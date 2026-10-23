@@ -95,3 +95,39 @@ rather than silently loosening: the exhaustion case raises.
 - `registry/lane.json` remains `unassigned`. The human assigned AXIS=MASS explicitly for this
   session; that is a session assignment, not a lane declaration, and `lane.json` was not
   edited.
+
+## IR-85-MASS-06 — a parallel session already tested MASS and rejected it (changes how to read this release)
+
+**Finding.** While this session was building, `main` advanced to `751d0bd`, which includes a
+PRUNE session whose register records a MASS evaluation with two measurements
+(`origin/main:IRREGULARITIES.md` IR-V2-08, `origin/main:docs/mechanism_cards_prune.md`):
+
+- the label-free ranking the parent's own geometry offers (unique kernel credit `U_i`) is
+  *lowest* for the on-ridge dots that carry coverage and highest for isolated dots, so
+  dropping the lowest-ranked dots deletes the backbone;
+- an SGMC proxy puts mass-down as monotonically harmful, roughly −0.005 at −10 % to −0.020
+  at −30 %;
+- the recorded packing order is not a usable rank (Spearman with `U_i` = −0.003).
+
+**Why this release is not a duplicate of that.** The ranking here is credit against the
+*pinned h19-5 ancestor field*, not `U_i` against the parent's own dot set, and the three
+variants are built as dose-response pairs on the same parent for a live measurement, not as a
+proxy screen. But the two converge on the same sign for mass-down on the ridge interior: my
+drop set removes the *isolated* dots (credit 1.0, versus median 2.45), which is the opposite
+of "deleting the backbone" only if isolated dots are worthless — precisely the open question.
+
+**Decision.** `SLOT_PLAN.md` ranks `mass-m20` first, but the prediction paragraph now carries
+the SGMC result as prior evidence that mass-down hurts, which is why the bracket floor
+(+0.0074) and not the point estimate is the number the human should weight. If `mass-m20`
+lands at or below R0 − 0.01, MASS is closed permanently and CONCENTRATION takes the slot. The
+conflict between the two branches' SLOT_PLAN/AI_USE/IRREGULARITIES/ledger files is left
+unresolved deliberately (see the PR): both branches created those files independently this
+week and merging them by hand into one ≤1-page plan is a human decision, not an agent's.
+
+**Scoping note on IR-85-MASS-03.** The same main-branch register claims a byte-identical
+re-encoding of "the pinned 44,090-px raster" (`src/gems85/r0_lineage.py`). I re-tested the
+family writer's exact profile (tiled 256, deflate, predictor 2, with and without `zlevel`)
+against the 44,090-px file in *this* branch's inputs and did not reproduce its bytes
+(161,523 / 326,923 / 131,357 B vs 806,758 B). My byte-level claim is therefore scoped to
+`h33-2-b2` only, and the two branches' byte-identity claims are about different files, not a
+contradiction — but it must be checked before anyone states "R0 is byte-reproducible" as fact.

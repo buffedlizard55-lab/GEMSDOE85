@@ -27,6 +27,12 @@ prompt, not a receipt. Parent: **R0 = h33-h33-2-b2, CLAIM 0.2778**.
 
 | # | file | why this one, and what the result buys |
 |---|---|---|
+**Prior evidence against this bet.** A parallel PRUNE session merged to `main` this week
+records that mass-down measured −0.005 at −10 % and −0.020 at −30 % on its SGMC proxy, and
+that dropping the lowest-ranked dots deletes the ridge backbone (IR-85-MASS-06). That is why
+the floor, not the point estimate, governs how each file below should be read: this release is
+the first *live* test of the question, and it is a slot only if you accept the two-sided risk.
+
 | 1 | `h33-2-b2-mass-m20-20261023-a6075d2f` (30,124 dots) | Largest single test of the only mechanism in this family that has ever produced a positive live delta (denominator shedding). Bracket [−0.081, +0.0074]. **If ≥ 0.288** (+0.01): the field fringe is worthless → go to −30 %/−40 % and stop touching the +MASS direction. **If ≤ 0.268**: fringe dots carry real faults → R0's count is at or below optimum, and the axis is closed. Anywhere in between: no evidence, and slot 2 should skip MASS. |
 | 2 | `h33-2-b2-mass-p10-20261023-82aa483f` (41,415 dots) | The only file that can falsify "saturation". Predicted −0.0037 to +0.020; **≤ 0.268 retires +MASS permanently**, ≥ 0.288 says the field's coverage, not its count, was binding. Pair it with slot 1: together they bracket the optimum to a ±10 % window. |
 | 3 | `h33-2-b2-mass-m10-20261023-a296bbd1` (33,887 dots) | Use **only** if slot 1's result was inside ±0.01 (then m10 is the cheapest dose–response point, nested inside m20, and tells you whether the effect is monotone near 37.7 k). If slot 1 was decisive, **do not spend slot 3 on MASS** — spend it on CONCENTRATION at fixed count, which is the one axis with a reported empirical optimum (block-density CV 0.51–0.59) that this lineage has never tested at constant mass. |
