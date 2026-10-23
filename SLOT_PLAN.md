@@ -1,3 +1,8 @@
+<!-- CROSS-SESSION NOTE (2026-10-23): while this branch was open, `main` received a sibling
+session that built six PRUNE rungs, three RELIEF files and three SNAP files on the same parent
+(`h33-h33-2-b2`), with its own SLOT_PLAN and a differently-shaped ledger. This plan is therefore
+superseded as the repository's single plan; see IRREGULARITIES.md IR-86-006. It remains the
+correct plan for the four files in `releases/` built here. -->
 # SLOT_PLAN — one entity, 3 scored submissions/week, deadline 2026-12-03
 
 **Parent (R0):** `h33-h33-2-b2` (GEMSDOE32) — 37,654 unit dots, 0 on the catalogue,
