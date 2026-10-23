@@ -59,3 +59,25 @@ offset argument, and the live scores 0.2600 / 0.2708 / 0.2778 come from the owne
 (GEMSDOE19/24/25/28/31/32) and the brief. This session's own contributions are the exact rebuild
 verification, the unique-credit ranking and its rejection as a MASS tool, the measured refill-capacity
 result, and the SGMC-proxy bias calibration (+0.0083) used to state the predictions.
+
+---
+
+## Session 2026-10-23 (branch `arena/fb7ddb5a-gemsdoe85`) — SNAP axis
+
+**What the AI wrote (and the human should review):** `src/gems85/snap_axis.py` (offset set, nodata-aware
+edge field, kernel-credit accounting, the constrained snapping loop), `scripts/gemsdoe85_snap_session.py`
+(pins → rebuild → three arms → gates → proxies → ledger → receipt), `scripts/restore_axis_inputs.py`
+(the six pinned inputs this session reads), `tests/test_snap_axis.py` (9 contract tests), the three SNAP
+rows in `ledger/submissions.csv`, the CURRENT STATE block in `README.md`, the SNAP section of
+`docs/SUBMIT.md`, the rewritten `SLOT_PLAN.md`, and IR-V2-13…16. The mechanism cards, the choice of
+SNAP, the three edge fields and the predictions are AI-authored models, not measurements of the live
+metric.
+
+**What the AI decided without the human:** the axis (the human skipped the question; IR-V2-14), the
+`min_sep = 2.0 px` packing floor, `margin = 0.05`, the "never move closer to the catalogue" rule, and
+the reading that the SGMC-minus-catalogue proxy is the least mass-confounded local instrument.
+
+**What only the human can do:** read `TOP_PUBLIC` and the remaining slots off the account page; decide
+whether a spare slot is worth spending on a predicted-null SNAP receipt; upload, and paste the
+submission-page receipts back into `ledger/submissions.csv`. No file here is endorsed for upload by the
+AI, and none was submitted.

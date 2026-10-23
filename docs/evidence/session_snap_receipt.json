@@ -1,0 +1,635 @@
+{
+  "schema_version": 2,
+  "generated_utc": "2026-10-23T16:13:10+00:00",
+  "git_sha": "f2d6e4e9bd481bd73a76bc2c21642f038984595d",
+  "python": "3.11.2",
+  "date_tag": "20261023",
+  "axis": "SNAP",
+  "axis_assignment": "human did not assign an axis this session (question skipped); the agent selected SNAP from brief \u00a75 on the measurements in `diagnostics`, and the choice is recorded in IRREGULARITIES.md IR-V2-14",
+  "pins": {
+    "h19_5": {
+      "path": "data/scored/gems19-h19-5-powerlaw-budget-multiline-corroborated-20260930-e27054cf-nan.tif",
+      "sha256": "ec1f9b56b83ce33cad781ceb9f104b18fb4f2ff785263a4e89616af4aabdee8d",
+      "bytes": 1712322
+    },
+    "d28": {
+      "path": "data/scored/gems24-h25-1-dotted-h19-5-d2-8-20261002-e56ea318af89-nan.tif",
+      "sha256": "91eae1ca42ec845eaa8c2ba32da49806e24751743459b8a10017c479bbe639b8",
+      "bytes": 1603424
+    },
+    "solo_d28": {
+      "path": "data/registry_rasters/gemsdoe31-h27-4-solo-d28-20261004-8acb75e1-nan.tif",
+      "sha256": "07b6db440535404bb41ec8ddc797713e200d308e3da35937393efde5eb84bc40",
+      "bytes": 199214
+    },
+    "r0_zeros": {
+      "path": "data/registry_rasters/gemsdoe32-h33-h33-2-b2-20261004T220000Z-e5eb6e7e-zeros.tif",
+      "sha256": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
+      "bytes": 219065
+    },
+    "r0_nan": {
+      "path": "data/registry_rasters/gemsdoe32-h33-h33-2-b2-20261004T220000Z-e5eb6e7e-nan.tif",
+      "sha256": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
+      "bytes": 355443
+    },
+    "labels": {
+      "path": "data/labels.tif",
+      "sha256": "7ba308ccdc4418b31a178f4f1ef21aaa6e152e4028f2f6f64b01f7eb25ae4093",
+      "bytes": 425830
+    },
+    "sample_submission": {
+      "path": "data/sample_submission.tif",
+      "sha256": "2176d08e485aa2cd2860ce8df539db4faf4d76163b38a4dd8c30a40454d35cbc",
+      "bytes": 1599597
+    },
+    "training_features": {
+      "path": "data/training_features.tif",
+      "sha256": "4371c82e3b8339b807bdffcf4ef59a225520fe2988d521be208ae33743123bc5",
+      "bytes": 418912844
+    },
+    "sgmc_proxy": {
+      "path": "data/external/derived_sgmc_faults_100m_u8.tif",
+      "sha256": "643cbe992ef4ba37588fb469163ed8291e3ceb23d6c1f78a3cfaa462430c2da0",
+      "bytes": 198602
+    }
+  },
+  "parent_rebuild": {
+    "counts": {
+      "skeleton": 121131,
+      "d28": 44090,
+      "solo": 40199,
+      "r0": 37654
+    },
+    "pixel_identical_to_pinned": true,
+    "file_sha256_nan": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
+    "file_sha256_zeros": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
+    "reemit_byte_identical": false,
+    "reemit_attempts": "deflate z1-9 x predictor none/2/3 -> no sha256 match"
+  },
+  "arms": {
+    "snapgrav2": {
+      "id": "h33-2-b2-snapgrav2-20261023-1b033f40",
+      "parent": "h33-2-b2 (R0, GEMSDOE32 e5eb6e7e)",
+      "parent_sha256_nan": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
+      "parent_sha256_zeros": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
+      "axis": "SNAP",
+      "value": "edge=iso_grav_anom_hg|max_px=2.0|margin=0.05|min_sep=2.0",
+      "submission_note": "R0 SNAP 2603 dots (6.9%) <=2px onto gravity-hg edge, count fixed; pred -0.000 MODEL; UNSCORED",
+      "stats": {
+        "n_dots": 37654,
+        "n_moved": 2603,
+        "pct_moved": 6.913,
+        "mean_displacement_px": 1.915,
+        "p95_displacement_px": 2.0,
+        "max_displacement_px": 2.0,
+        "count_preserved": true,
+        "min_sep_px": 2.0,
+        "max_px": 2.0,
+        "margin": 0.05,
+        "candidates_considered": 4634
+      },
+      "nan": {
+        "mode": "nan",
+        "filename": "h33-2-b2-snapgrav2-20261023-1b033f40.tif",
+        "bytes": 331797,
+        "sha256": "1b033f4005e2a996206ce8694ebefbefa6d2822bbb317fb4ae3fef7ecddab6aa",
+        "sha8": "1b033f40",
+        "crs": "EPSG:32611",
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "shape": [
+          3730,
+          3292
+        ],
+        "dtype": "float32",
+        "nodata": "nan",
+        "positive_pixels": 37654,
+        "min_distance_to_catalogue_px": 2.23606797749979,
+        "on_catalogue_px": 0,
+        "checks": {
+          "single_band": true,
+          "dtype_float32": true,
+          "shape_matches_sample": true,
+          "crs_matches_sample": true,
+          "transform_matches_sample": true,
+          "no_nan_inside_footprint": true,
+          "no_inf_anywhere": true,
+          "values_in_0_1_inside_footprint": true,
+          "binary_values_only": true,
+          "zero_mass_on_catalogue": true,
+          "min_distance_to_catalogue_gt_2px": true,
+          "no_dot_moved_closer_to_catalogue": true,
+          "dot_count_equals_parent": true,
+          "nodata_is_nan": true,
+          "outside_footprint_all_nan": true
+        },
+        "all_checks_passed": true
+      },
+      "zeros": {
+        "mode": "zeros",
+        "filename": "h33-2-b2-snapgrav2-20261023-1b033f40-zeros.tif",
+        "bytes": 205007,
+        "sha256": "83a3c1e4e14597847f035484aeb476c3bb0a6813759caf465dcd912cd55ea7a9",
+        "sha8": "83a3c1e4",
+        "crs": "EPSG:32611",
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "shape": [
+          3730,
+          3292
+        ],
+        "dtype": "float32",
+        "nodata": null,
+        "positive_pixels": 37654,
+        "min_distance_to_catalogue_px": 2.23606797749979,
+        "on_catalogue_px": 0,
+        "checks": {
+          "single_band": true,
+          "dtype_float32": true,
+          "shape_matches_sample": true,
+          "crs_matches_sample": true,
+          "transform_matches_sample": true,
+          "no_nan_inside_footprint": true,
+          "no_inf_anywhere": true,
+          "values_in_0_1_inside_footprint": true,
+          "binary_values_only": true,
+          "zero_mass_on_catalogue": true,
+          "min_distance_to_catalogue_gt_2px": true,
+          "no_dot_moved_closer_to_catalogue": true,
+          "dot_count_equals_parent": true,
+          "nodata_is_none": true,
+          "all_finite_whole_grid": true
+        },
+        "all_checks_passed": true
+      },
+      "min_pair_distance_px": 2.0,
+      "all_gates_passed": true
+    },
+    "snapmag2": {
+      "id": "h33-2-b2-snapmag2-20261023-a2fa8b95",
+      "parent": "h33-2-b2 (R0, GEMSDOE32 e5eb6e7e)",
+      "parent_sha256_nan": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
+      "parent_sha256_zeros": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
+      "axis": "SNAP",
+      "value": "edge=tmi_hg|max_px=2.0|margin=0.05|min_sep=2.0",
+      "submission_note": "R0 SNAP 9213 dots (24.5%) <=2px onto magnetic-hg edge, count fixed; pred -0.000 MODEL; UNSCORED",
+      "stats": {
+        "n_dots": 37654,
+        "n_moved": 9213,
+        "pct_moved": 24.468,
+        "mean_displacement_px": 1.779,
+        "p95_displacement_px": 2.0,
+        "max_displacement_px": 2.0,
+        "count_preserved": true,
+        "min_sep_px": 2.0,
+        "max_px": 2.0,
+        "margin": 0.05,
+        "candidates_considered": 22080
+      },
+      "nan": {
+        "mode": "nan",
+        "filename": "h33-2-b2-snapmag2-20261023-a2fa8b95.tif",
+        "bytes": 332500,
+        "sha256": "a2fa8b95aff406d7ea623d2e46ffd17840e75c4789b1788b4d11e4785347eeed",
+        "sha8": "a2fa8b95",
+        "crs": "EPSG:32611",
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "shape": [
+          3730,
+          3292
+        ],
+        "dtype": "float32",
+        "nodata": "nan",
+        "positive_pixels": 37654,
+        "min_distance_to_catalogue_px": 2.23606797749979,
+        "on_catalogue_px": 0,
+        "checks": {
+          "single_band": true,
+          "dtype_float32": true,
+          "shape_matches_sample": true,
+          "crs_matches_sample": true,
+          "transform_matches_sample": true,
+          "no_nan_inside_footprint": true,
+          "no_inf_anywhere": true,
+          "values_in_0_1_inside_footprint": true,
+          "binary_values_only": true,
+          "zero_mass_on_catalogue": true,
+          "min_distance_to_catalogue_gt_2px": true,
+          "no_dot_moved_closer_to_catalogue": true,
+          "dot_count_equals_parent": true,
+          "nodata_is_nan": true,
+          "outside_footprint_all_nan": true
+        },
+        "all_checks_passed": true
+      },
+      "zeros": {
+        "mode": "zeros",
+        "filename": "h33-2-b2-snapmag2-20261023-a2fa8b95-zeros.tif",
+        "bytes": 205776,
+        "sha256": "f0089972003f8c814c04ba6e650d14f2957acc614fc42913e6ec10bfe504b29e",
+        "sha8": "f0089972",
+        "crs": "EPSG:32611",
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "shape": [
+          3730,
+          3292
+        ],
+        "dtype": "float32",
+        "nodata": null,
+        "positive_pixels": 37654,
+        "min_distance_to_catalogue_px": 2.23606797749979,
+        "on_catalogue_px": 0,
+        "checks": {
+          "single_band": true,
+          "dtype_float32": true,
+          "shape_matches_sample": true,
+          "crs_matches_sample": true,
+          "transform_matches_sample": true,
+          "no_nan_inside_footprint": true,
+          "no_inf_anywhere": true,
+          "values_in_0_1_inside_footprint": true,
+          "binary_values_only": true,
+          "zero_mass_on_catalogue": true,
+          "min_distance_to_catalogue_gt_2px": true,
+          "no_dot_moved_closer_to_catalogue": true,
+          "dot_count_equals_parent": true,
+          "nodata_is_none": true,
+          "all_finite_whole_grid": true
+        },
+        "all_checks_passed": true
+      },
+      "min_pair_distance_px": 2.0,
+      "all_gates_passed": true
+    },
+    "snaptop2": {
+      "id": "h33-2-b2-snaptop2-20261023-7be865f5",
+      "parent": "h33-2-b2 (R0, GEMSDOE32 e5eb6e7e)",
+      "parent_sha256_nan": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
+      "parent_sha256_zeros": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
+      "axis": "SNAP",
+      "value": "edge=det_elev_slope|max_px=2.0|margin=0.05|min_sep=2.0",
+      "submission_note": "R0 SNAP 19768 dots (52.5%) <=2px onto det-elev scarp edge, count fixed; pred +0.000 MODEL; UNSCORED",
+      "stats": {
+        "n_dots": 37654,
+        "n_moved": 19768,
+        "pct_moved": 52.499,
+        "mean_displacement_px": 1.773,
+        "p95_displacement_px": 2.0,
+        "max_displacement_px": 2.0,
+        "count_preserved": true,
+        "min_sep_px": 2.0,
+        "max_px": 2.0,
+        "margin": 0.05,
+        "candidates_considered": 56812
+      },
+      "nan": {
+        "mode": "nan",
+        "filename": "h33-2-b2-snaptop2-20261023-7be865f5.tif",
+        "bytes": 332941,
+        "sha256": "7be865f5c3da2f26c755afbbe79720007cc01844943410617801ebe4cecb9bbd",
+        "sha8": "7be865f5",
+        "crs": "EPSG:32611",
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "shape": [
+          3730,
+          3292
+        ],
+        "dtype": "float32",
+        "nodata": "nan",
+        "positive_pixels": 37654,
+        "min_distance_to_catalogue_px": 2.23606797749979,
+        "on_catalogue_px": 0,
+        "checks": {
+          "single_band": true,
+          "dtype_float32": true,
+          "shape_matches_sample": true,
+          "crs_matches_sample": true,
+          "transform_matches_sample": true,
+          "no_nan_inside_footprint": true,
+          "no_inf_anywhere": true,
+          "values_in_0_1_inside_footprint": true,
+          "binary_values_only": true,
+          "zero_mass_on_catalogue": true,
+          "min_distance_to_catalogue_gt_2px": true,
+          "no_dot_moved_closer_to_catalogue": true,
+          "dot_count_equals_parent": true,
+          "nodata_is_nan": true,
+          "outside_footprint_all_nan": true
+        },
+        "all_checks_passed": true
+      },
+      "zeros": {
+        "mode": "zeros",
+        "filename": "h33-2-b2-snaptop2-20261023-7be865f5-zeros.tif",
+        "bytes": 206095,
+        "sha256": "3e662a257052cc863be8e535acd60797783e95811481702cf5807e85b7120509",
+        "sha8": "3e662a25",
+        "crs": "EPSG:32611",
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "shape": [
+          3730,
+          3292
+        ],
+        "dtype": "float32",
+        "nodata": null,
+        "positive_pixels": 37654,
+        "min_distance_to_catalogue_px": 2.23606797749979,
+        "on_catalogue_px": 0,
+        "checks": {
+          "single_band": true,
+          "dtype_float32": true,
+          "shape_matches_sample": true,
+          "crs_matches_sample": true,
+          "transform_matches_sample": true,
+          "no_nan_inside_footprint": true,
+          "no_inf_anywhere": true,
+          "values_in_0_1_inside_footprint": true,
+          "binary_values_only": true,
+          "zero_mass_on_catalogue": true,
+          "min_distance_to_catalogue_gt_2px": true,
+          "no_dot_moved_closer_to_catalogue": true,
+          "dot_count_equals_parent": true,
+          "nodata_is_none": true,
+          "all_finite_whole_grid": true
+        },
+        "all_checks_passed": true
+      },
+      "min_pair_distance_px": 2.0,
+      "all_gates_passed": true
+    }
+  },
+  "proxies": {
+    "R0": {
+      "sgmc": 0.08938,
+      "sgmc_minus_catalogue_3px": 0.09539,
+      "catalogue_hide_and_recover": {
+        "score": 0.00458,
+        "folds": 4,
+        "fold_values": [
+          0.00387,
+          0.00569,
+          0.00476,
+          0.00401
+        ],
+        "ci95": [
+          0.00394,
+          0.00527
+        ]
+      },
+      "credit_sgmc_minus_catalogue_3px": 0.06462
+    },
+    "snapgrav2": {
+      "sgmc": 0.08767,
+      "sgmc_minus_catalogue_3px": 0.09501,
+      "catalogue_hide_and_recover": {
+        "score": 0.00426,
+        "folds": 4,
+        "fold_values": [
+          0.00373,
+          0.00543,
+          0.00459,
+          0.0033
+        ],
+        "ci95": [
+          0.00351,
+          0.00501
+        ]
+      },
+      "credit_sgmc_minus_catalogue_3px": 0.06429
+    },
+    "snapmag2": {
+      "sgmc": 0.08785,
+      "sgmc_minus_catalogue_3px": 0.09433,
+      "catalogue_hide_and_recover": {
+        "score": 0.00405,
+        "folds": 4,
+        "fold_values": [
+          0.00317,
+          0.00479,
+          0.00439,
+          0.00387
+        ],
+        "ci95": [
+          0.00347,
+          0.00459
+        ]
+      },
+      "credit_sgmc_minus_catalogue_3px": 0.06395
+    },
+    "snaptop2": {
+      "sgmc": 0.0867,
+      "sgmc_minus_catalogue_3px": 0.0952,
+      "catalogue_hide_and_recover": {
+        "score": 0.00312,
+        "folds": 4,
+        "fold_values": [
+          0.0023,
+          0.00341,
+          0.00338,
+          0.00339
+        ],
+        "ci95": [
+          0.00257,
+          0.00341
+        ]
+      },
+      "credit_sgmc_minus_catalogue_3px": 0.06482
+    }
+  },
+  "proxy_baseline": {
+    "sgmc": 0.08938,
+    "sgmc_minus_catalogue_3px": 0.09539
+  },
+  "proxy_baseline_credit": {
+    "sgmc": 0.07519,
+    "sgmc_minus_catalogue_3px": 0.06462
+  },
+  "canary": {
+    "n_positive": 60988,
+    "n_background": 200000,
+    "best_single_feature": "geod_2ndinv - Geodetic second invariant - measure of strain rate tensor magnitude",
+    "best_single_feature_auc": 0.5693,
+    "threshold": 0.9,
+    "verdict": "CLEAN"
+  },
+  "predictions": {
+    "snapgrav2": {
+      "delta_credit_sgmc_minus_catalogue": -0.00033,
+      "model_delta": -0.00022,
+      "prediction": -0.0002,
+      "band": [
+        -0.0102,
+        0.0098
+      ],
+      "proxy_delta_calibrated": -0.00038,
+      "proxy_bias_if_mass_removal": 0.0083
+    },
+    "snapmag2": {
+      "delta_credit_sgmc_minus_catalogue": -0.00067,
+      "model_delta": -0.00044,
+      "prediction": -0.0004,
+      "band": [
+        -0.0104,
+        0.0096
+      ],
+      "proxy_delta_calibrated": -0.00106,
+      "proxy_bias_if_mass_removal": 0.0083
+    },
+    "snaptop2": {
+      "delta_credit_sgmc_minus_catalogue": 0.0002,
+      "model_delta": 0.00013,
+      "prediction": 0.0001,
+      "band": [
+        -0.0099,
+        0.0101
+      ],
+      "proxy_delta_calibrated": -0.00019,
+      "proxy_bias_if_mass_removal": 0.0083
+    }
+  },
+  "mechanism_cards": {
+    "snapgrav2": {
+      "hypothesis": "R0's dot positions carry ~1.5-2 px of uncertainty (GeoDAWN Area 2 was flown at 400 m line spacing, 150-200 m above terrain), so moving each dot onto the strongest local edge should shorten its distance to truth and raise the 300 m kernel credit without changing mass.",
+      "mechanism": "gravity steps mark density boundaries across a fault plane and are insensitive to the magnetic overprint that dominates rtp/tmi. Under the metric a dot pays 0.2*(1-credit) of denominator mass, so a 2 px error costs ~0.67 of that dot's possible credit; SNAP moves nothing else.",
+      "mimic": "Magnetic and gravity gradients mark lithologic contacts, Tertiary flow margins, mesa rims and isostatic compensation edges; det_elev_slope marks every hillslope, channel bank and Lake Lahontan shoreline bench. If those outnumber faults, SNAP moves dots onto non-faults.",
+      "predicted": "approximately zero: {-0.0002} MODEL, band [-0.0102, 0.0098]; a live change under 0.01 is no evidence and this axis is expected to be a null result.",
+      "falsifier": "If <= 2 px repositioning of 5-38 % of the dots moves the live score by >= 0.01, position is the binding constraint and the next session should test larger SNAP radii; if it does not, dot *selection* is the constraint and the slot budget should go there."
+    },
+    "snapmag2": {
+      "hypothesis": "R0's dot positions carry ~1.5-2 px of uncertainty (GeoDAWN Area 2 was flown at 400 m line spacing, 150-200 m above terrain), so moving each dot onto the strongest local edge should shorten its distance to truth and raise the 300 m kernel credit without changing mass.",
+      "mechanism": "fault-zone magnetite destruction and basement juxtaposition put a magnetic-gradient maximum on the trace (classic edge-detector target). Under the metric a dot pays 0.2*(1-credit) of denominator mass, so a 2 px error costs ~0.67 of that dot's possible credit; SNAP moves nothing else.",
+      "mimic": "Magnetic and gravity gradients mark lithologic contacts, Tertiary flow margins, mesa rims and isostatic compensation edges; det_elev_slope marks every hillslope, channel bank and Lake Lahontan shoreline bench. If those outnumber faults, SNAP moves dots onto non-faults.",
+      "predicted": "approximately zero: {-0.0004} MODEL, band [-0.0104, 0.0096]; a live change under 0.01 is no evidence and this axis is expected to be a null result.",
+      "falsifier": "If <= 2 px repositioning of 5-38 % of the dots moves the live score by >= 0.01, position is the binding constraint and the next session should test larger SNAP radii; if it does not, dot *selection* is the constraint and the slot budget should go there."
+    },
+    "snaptop2": {
+      "hypothesis": "R0's dot positions carry ~1.5-2 px of uncertainty (GeoDAWN Area 2 was flown at 400 m line spacing, 150-200 m above terrain), so moving each dot onto the strongest local edge should shorten its distance to truth and raise the 300 m kernel credit without changing mass.",
+      "mechanism": "a Holocene scarp is a slope step; the parent ridge is topographic already, so this arm tests the most responsive layer available. Under the metric a dot pays 0.2*(1-credit) of denominator mass, so a 2 px error costs ~0.67 of that dot's possible credit; SNAP moves nothing else.",
+      "mimic": "Magnetic and gravity gradients mark lithologic contacts, Tertiary flow margins, mesa rims and isostatic compensation edges; det_elev_slope marks every hillslope, channel bank and Lake Lahontan shoreline bench. If those outnumber faults, SNAP moves dots onto non-faults.",
+      "predicted": "approximately zero: {+0.0001} MODEL, band [-0.0099, 0.0101]; a live change under 0.01 is no evidence and this axis is expected to be a null result.",
+      "falsifier": "If <= 2 px repositioning of 5-38 % of the dots moves the live score by >= 0.01, position is the binding constraint and the next session should test larger SNAP radii; if it does not, dot *selection* is the constraint and the slot budget should go there."
+    }
+  },
+  "diagnostics": {
+    "edge_field_quality": {
+      "iso_grav_anom_hg": {
+        "auc_catalogue": 0.5289,
+        "mean_at_R0_dots": 0.2637,
+        "mean_footprint": 0.2538
+      },
+      "tmi_hg": {
+        "auc_catalogue": 0.5282,
+        "mean_at_R0_dots": 0.1814,
+        "mean_footprint": 0.1444
+      },
+      "det_elev_slope": {
+        "auc_catalogue": 0.5549,
+        "mean_at_R0_dots": 0.3028,
+        "mean_footprint": 0.2527
+      }
+    },
+    "note": "All three SNAP fields sit at AUC 0.51-0.56 against the mapped catalogue, and R0's dots already sit above the footprint mean on every one of them, so this axis tests *refinement* of positions the parent already chose, not a new geometry.",
+    "add_mass_capacity": {
+      "free_parent_ridge_cells": {
+        "overall": 794,
+        "tercile_0": 185,
+        "tercile_1": 326,
+        "tercile_2": 283
+      },
+      "finding": "REFILL IS NOT AVAILABLE: after a 2.8 px exclusion around R0 only 283 free skeleton cells remain in the high-relief tercile (794 overall) versus the 3,766-7,696 dots that a count-holding RELIEF / CONCENTRATION / MASS-add arm would have to place. Every add-mass arm is blocked by capacity, not geology.",
+      "context": "parent skeleton 121131 px, R0 37654 dots, needed >= 3766 for a 10% shift"
+    },
+    "relief_gradient": {
+      "per_tercile": {
+        "tercile_0": {
+          "area_px": 1722458,
+          "fault_density": 0.00402,
+          "dot_density": 0.00447,
+          "dots_per_fault_px": 1.112,
+          "dots": 7696,
+          "fault_px": 6923
+        },
+        "tercile_1": {
+          "area_px": 1722457,
+          "fault_density": 0.00899,
+          "dot_density": 0.00914,
+          "dots_per_fault_px": 1.017,
+          "dots": 15744,
+          "fault_px": 15480
+        },
+        "tercile_2": {
+          "area_px": 1722458,
+          "fault_density": 0.02306,
+          "dot_density": 0.00825,
+          "dots_per_fault_px": 0.358,
+          "dots": 14214,
+          "fault_px": 39719
+        }
+      },
+      "finding": "Mapped-fault density (SGMC minus catalogue, > 3 px) is 5.8x higher in the high detrended-elevation tercile than in the low one, while R0's dot density is only 1.8x higher: dots per mapped-fault pixel are 1.11 / 1.02 / 0.36. The RELIEF prior is real but cannot be exploited by adding mass (see add_mass_capacity)."
+    },
+    "mass_down_probe": {
+      "proxy_sgmc_minus_catalogue": {
+        "drop_5pct": 0.09259,
+        "drop_10pct": 0.08978,
+        "drop_20pct": 0.08285,
+        "drop_30pct": 0.07313,
+        "parent": 0.09539,
+        "unique_credit_stats": {
+          "min": 2.374,
+          "median": 6.893,
+          "max": 9.38,
+          "frac_zero": 0.0
+        }
+      },
+      "finding": "Dropping the lowest unique-credit dots lowers the fault proxy monotonically, so the parent's redundant dots are not the ones far from faults; MASS-down as specified in brief \u00a75 is not supported by this instrument."
+    },
+    "catalogue_exclusion": {
+      "parent_dots_within_3px": 2171,
+      "parent_min_distance_px": 2.236,
+      "policy": "SNAP keeps the parent's own exclusion (> 2 px) and forbids every move that ends closer to the catalogue than it started; it does NOT re-prune the 2,171 inherited flank dots, because that is PRUNE rung 3 and would be a second axis. Hard constraint \u00a74 (>= 3 px) is therefore met only by the PRUNE files; for SNAP it is inherited from R0 and disclosed."
+    },
+    "position_vs_selection": "SNAP is the only \u00a75 axis that changes neither mass nor geometry source, so it isolates position. It is built here to close that question: <= 2 px refinement of 5-38 % of the dots either moves the live score or proves selection, not position, is binding."
+  },
+  "note": "Proxies are local holdouts, reported for context and never used as gates or as scores. No DrivenData access, no submission, no slot spent by this script."
+}

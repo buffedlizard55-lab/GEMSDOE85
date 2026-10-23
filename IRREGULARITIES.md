@@ -106,3 +106,40 @@ incumbent are absent from the brief and the repository (`registry/scored_artifac
 scores OWNER-REPORT). **Decision:** 0.2778 stays a CLAIM, `TOP_PUBLIC` stays unfilled, and every
 prediction here is labelled MODEL. The human must fill all three before slot 2 is spent, because the
 third slot is conditional on the first two receipts.
+
+---
+
+## IR-V2-13 — the parent's *file* SHA-256 cannot be reproduced by re-emitting it
+R0 is rebuilt from four pinned inputs and every intermediate is compared **pixel-for-pixel** with its
+pinned raster (skeleton 121,131 → d2.8 44,090 → solo 40,199 → R0 37,654: all identical). A byte-identical
+*re-emit* was attempted with `deflate` z1–z9 × predictor none/2/3 and matches nothing: GTiff bytes depend
+on the writer's libdeflate/GDAL build, not on the array. Decision: proceed, treating the decoded array
+as the identity of the parent and recording both pinned file hashes
+(`baeae321…` nan / `c55bafc4…` zeros) in `evidence/session_snap_receipt.json → parent_rebuild`. Nothing
+in this session claims a byte-identical regeneration of the parent.
+
+## IR-V2-14 — no axis was assigned, so the agent selected one and recorded the evidence
+The human was asked which §5 axis to build and the question was skipped. Decision: **SNAP**, chosen on
+measurements taken before any file was built (all recorded in the receipt's `diagnostics`):
+SNAP is the only §5 axis that changes neither mass nor geometry source, and the alternatives are
+blocked — add-mass arms have **794** free parent-ridge cells against the ≥ 3,766 dots a 10 % shift
+needs, and MASS-down lowers the fault proxy monotonically. The human can override this at any time; no
+slot is spent by building a file. IR-V2-02 (no assigned axis) is therefore *superseded for this session
+only*, not closed.
+
+## IR-V2-15 — `scripts/restore_data.py` cannot restore 19 of its own manifest entries
+`restore()` rejects any `dest` containing `/` unless the entry carries `_subdirs`, which is set only for
+the geothermal and learning manifests; every `external/…` and `scored/…` entry of
+`registry/data_manifest.json` therefore fails with `dest must be a single local filename`. Decision:
+do **not** edit the shared restorer mid-session; `scripts/restore_axis_inputs.py` restores exactly the
+six files this session reads, each cross-checked against `data_manifest.json` / `scored_artifacts.json`
+/ `r0_lineage.PINS` and verified by SHA-256 (9/9, `evidence/axis_inputs_receipt.json`). The shared bug
+is left for its owner with this note.
+
+## IR-V2-16 — SNAP cannot satisfy the `>= 3 px` catalogue rule without becoming two axes
+R0 carries 2,171 dots at 2 < d_cat ≤ 3 px (min 2.236 px), as already logged in IR-V2-03. SNAP keeps the
+parent's `> 2 px` exclusion, forbids any move that ends closer to the catalogue, and does not re-prune
+the inherited flank dots, because that re-prune *is* PRUNE rung 3. Consequence: the three SNAP files
+fail hard constraint §4 numerically (2.236 px) in exactly the way R0 does, and are disclosed as such in
+`docs/SUBMIT.md` and in the receipt. Only the PRUNE files meet the rule. If the human requires strict
+compliance for every non-PRUNE upload, SNAP cannot be uploaded until a PRUNE base becomes the parent.

@@ -131,29 +131,54 @@ def test_prune_variant_semantics_on_parent():
 
 @pytest.mark.skipif(not HAVE_DATA, reason="pinned rasters not restored")
 def test_shipped_releases_pass_their_own_gates_and_match_the_ledger():
+    """Every ledger row must match its own receipt, its file bytes and the brief's MUST gates.
+
+    Two axes now ship files: PRUNE (session 1) and SNAP (session 2).  The `>= 3 px` catalogue rule
+    is checked for PRUNE only: SNAP deliberately keeps the parent's `> 2 px` exclusion so that the
+    position is the only changed variable (IR-V2-16), and it must instead prove that no dot moved
+    *closer* to the catalogue.
+    """
     ledger = ROOT / "ledger" / "submissions.csv"
-    receipt = ROOT / "evidence" / "session_prune_receipt.json"
-    if not ledger.is_file() or not receipt.is_file():
-        pytest.skip("session outputs not built")
+    if not ledger.is_file():
+        pytest.skip("ledger not built")
     rows = list(csv.DictReader(ledger.open()))
-    assert len(rows) == 3
-    assert rows[0]["parent"] == "h33-h33-2-b2" and rows[0]["axis"] == "PRUNE"
+    assert len(rows) >= 4, "expected at least the three PRUNE arms plus the SNAP arm"
+    assert {r["axis"] for r in rows} == {"PRUNE", "SNAP"}
     assert all(r["status"] == "BUILT" and r["receipt"] == "N" for r in rows)
-    rec = json.loads(receipt.read_text())
+    assert len({r["sha256"] for r in rows}) == len(rows), "duplicate hash in the ledger"
+
+    receipts = {}
+    for axis, name in (("PRUNE", "session_prune_receipt.json"),
+                       ("SNAP", "session_snap_receipt.json")):
+        f = ROOT / "evidence" / name
+        if f.is_file():
+            receipts[axis] = json.loads(f.read_text())
+    assert set(receipts) == {"PRUNE", "SNAP"}, "both session receipts must exist"
+
+    import rasterio
     for row in rows:
+        axis = row["axis"]
+        rec = receipts[axis]
+        bucket = rec["variants"] if axis == "PRUNE" else rec["arms"]
         tif = ROOT / "releases" / f'{row["id"]}.tif'
         assert tif.is_file(), tif
         assert RL.sha256_file(tif) == row["sha256"]
-        entry = rec["variants"][row["id"].rsplit("-", 2)[0]]
+        key = [k for k in bucket if k in row["id"]]
+        entry = bucket[key[0]]
         assert entry["all_gates_passed"], entry["nan"]["checks"]
         assert entry["nan"]["sha256"] == row["sha256"]
         assert int(row["n_dots"]) == entry["nan"]["positive_pixels"]
-        assert float(row["pct_changed"]) > 0.0
         assert row["sha8"] == row["sha256"][:8]
         assert entry["nan"]["checks"]["zero_mass_on_catalogue"]
-        assert entry["nan"]["checks"]["min_distance_to_catalogue_px_gt_3"]
-        # the zeros twin must be all-finite and byte-identical in pixels
-        import rasterio
+        assert entry["nan"]["checks"]["binary_values_only"]
+        if axis == "PRUNE":
+            assert entry["nan"]["checks"]["min_distance_to_catalogue_px_gt_3"]
+            assert float(row["pct_changed"]) > 0.0
+        else:
+            assert entry["nan"]["checks"]["no_dot_moved_closer_to_catalogue"]
+            assert entry["nan"]["checks"]["dot_count_equals_parent"]
+            assert float(row["pct_changed"]) > 0.0
+        # the zeros twin must be all-finite and pixel-identical to the NaN primary
         with rasterio.open(ROOT / "releases" / f'{row["id"]}-zeros.tif') as z:
             a = z.read(1)
         assert np.isfinite(a).all()

@@ -1,3 +1,15 @@
+## CURRENT STATE — v2 session, 2026-10-23 (overrides the historical narrative below)
+
+| field | value |
+|---|---|
+| **Parent** | R0 = `h33-h33-2-b2` (`e5eb6e7e`): 37,654 unit dots, rebuilt pixel-identically this session from four SHA-256-pinned inputs (`evidence/session_snap_receipt.json → parent_rebuild`) |
+| **Best receipt** | **none in this repo.** Best live number is **0.2778 CLAIM** (owner-reported, no submission-page receipt in `ledger/`) |
+| **TOP_PUBLIC** | **UNFILLED** — the human reads it off the leaderboard with a date; no other target number is valid |
+| **Slots left this week** | **unknown** — from the account page (3/week is a ceiling, not a target) |
+| **Next 3 slots** | 1) `releases/h33-2-b2-prune3-20261023-fb308615.tif` · 2) `…-prune4-20261023-2880b0e9.tif` · 3) `…-prune5-20261023-7ebfc408.tif` (spend only if 1–2 both score ≥ 0.2778) → `SLOT_PLAN.md` |
+| **Built this session** | PRUNE axis already in the ledger; **SNAP** arms `snapgrav2` `1b033f40` (6.9 % of dots moved ≤ 2 px), `snapmag2` `a2fa8b95` (24.5 %), `snaptop2` `7be865f5` (52.5 %) — all gates PASS, all predicted ≈ 0.000 MODEL |
+| **Do not** | treat any PROXY, MODEL or CLAIM number as a score; upload a file whose hash is already in `ledger/submissions.csv`; infer a mass effect from file names |
+
 # GEMSDOE85 — Lane H85-HJCD: Hydrothermal-Juxtaposition & Fault-Valve Conduit Discovery
 
 **DOE GEMS Prize Challenge · DrivenData Competition #306 · Verified End-to-End Research, Holdout Validation & Unique GeoTIFF Submission System**
