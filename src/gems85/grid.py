@@ -24,7 +24,9 @@ DATA = ROOT / "data"
 # The grid as published by the organisers and as present in every restored raster.
 HEIGHT = 3730
 WIDTH = 3292
+SHAPE = (HEIGHT, WIDTH)
 EPSG = 32611
+CRS = rasterio.crs.CRS.from_epsg(EPSG)
 PIXEL_M = 100.0
 TRANSFORM = Affine(100.0, 0.0, 243350.0, 0.0, -100.0, 4508550.0)
 R_METERS = 300.0
@@ -47,6 +49,7 @@ BANDS = {
     18: "iso_grav_anom_hg", 19: "det_elev_slope",
 }
 NAME_TO_BAND = {v: k for k, v in BANDS.items()}
+FEATURE_NAMES = tuple(BANDS[k] for k in sorted(BANDS))
 
 # float32 sentinel used as nodata inside training_features.tif
 SENTINEL = np.float32(-3.4028234663852886e38)
@@ -84,41 +87,9 @@ def read_band(path: Path | str, band: int = 1, *, check: bool = True) -> np.ndar
         return src.read(band)
 
 
-def unpack_raw19() -> Path:
-    """Unpack pixel-interleaved LZW training_features.tif once to per-band .npy files."""
-    raw_dir = DATA / "cache" / "raw19"
-    done = raw_dir / "b19_det_elev_slope.npy"
-    if done.exists():
-        return raw_dir
-    raw_dir.mkdir(parents=True, exist_ok=True)
-    mmaps = {
-        idx: np.lib.format.open_memmap(
-            raw_dir / f"b{idx:02d}_{name}.npy", mode="w+", dtype=np.float32, shape=(HEIGHT, WIDTH)
-        )
-        for idx, name in BANDS.items()
-    }
-    with rasterio.open(TRAINING_FEATURES) as src:
-        assert_grid(src, str(TRAINING_FEATURES))
-        for r0 in range(0, HEIGHT, 500):
-            r1 = min(HEIGHT, r0 + 500)
-            blk = src.read(window=((r0, r1), (0, WIDTH))).astype(np.float32)
-            blk[blk <= SENTINEL / 2] = np.nan
-            blk[~np.isfinite(blk)] = np.nan
-            for idx in range(1, 20):
-                mmaps[idx][r0:r1, :] = blk[idx - 1]
-            del blk
-    for m in mmaps.values():
-        m.flush()
-    return raw_dir
-
-
 def read_feature(name_or_index: str | int) -> np.ndarray:
     """Read one band of training_features.tif as float32 with the sentinel replaced by NaN."""
     idx = NAME_TO_BAND[name_or_index] if isinstance(name_or_index, str) else int(name_or_index)
-    name = BANDS[idx]
-    cached = DATA / "cache" / "raw19" / f"b{idx:02d}_{name}.npy"
-    if cached.exists():
-        return np.array(np.load(cached, mmap_mode="r"), dtype=np.float32, copy=True)
     arr = read_band(TRAINING_FEATURES, idx).astype(np.float32)
     arr[arr <= SENTINEL / 2] = np.nan      # sentinel is -3.4e38; nothing real is near it
     arr[~np.isfinite(arr)] = np.nan

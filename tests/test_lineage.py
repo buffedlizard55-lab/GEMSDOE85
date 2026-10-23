@@ -156,7 +156,8 @@ def test_every_ledger_row_has_two_validated_files() -> None:
             assert int(L.read_dots(nan if rep is nan_rep else zeros).sum()) == int(expected)
         assert nan_rep["dots_on_catalogue"] == 0
         pct = float(r["pct_changed"])
-        assert 1.0 <= pct <= 50.0
+        if r["axis"] != "SNAP":          # the brief exempts SNAP from the 1-50 % window
+            assert 1.0 <= pct <= 50.0
 
 
 @pytest.mark.skipif(not LEDGER.is_file(), reason="no ledger on this branch")
@@ -166,6 +167,53 @@ def test_ledger_has_no_duplicate_hash_or_axis_value_pair() -> None:
     assert len(hashes) == len(set(hashes))
     pairs = [(r["parent"], r["axis"], r["value"]) for r in rows]
     assert len(pairs) == len(set(pairs))
+
+
+# ---------------------------------------------------------------------------------- MASS axis
+def _mass_inputs():
+    need = ("r0", "h19_5")
+    return all(Path(L.PINNED[k]["dest"]).is_file() for k in need)
+
+
+@pytest.mark.skipif(not _have_pins(), reason="pinned rasters not fetched in this checkout")
+def test_mass_arms_move_exactly_ten_percent() -> None:
+    from gems85 import mass as M
+    r0 = L.read_dots(Path(L.PINNED["r0"]["dest"]))
+    field = L.read_dots(Path(L.PINNED["h19_5"]["dest"]))
+    rank = M.rank_by_extent(r0, field)
+    drop_e = M.drop_by_rank(r0, rank, M.DELTA)[0]
+    drop_u = M.drop_uniform(r0, M.DELTA)[0]
+    for arm in (drop_e, drop_u):
+        assert int(r0.sum()) - int(arm.sum()) == M.DELTA
+        assert not (arm & ~r0).any(), "a deletion arm added mass"
+    added = M.add_by_extent(r0, field, np.zeros_like(r0, float) + 99.0, M.DELTA)[0]
+    assert int(added.sum()) - int(r0.sum()) == M.DELTA
+
+
+@pytest.mark.skipif(not _mass_inputs(), reason="pinned rasters not fetched in this checkout")
+def test_the_two_deletion_arms_are_not_the_same_set() -> None:
+    """If the ranking were degenerate (e.g. raster order) the arms would coincide."""
+    from gems85 import mass as M
+    r0 = L.read_dots(Path(L.PINNED["r0"]["dest"]))
+    field = L.read_dots(Path(L.PINNED["h19_5"]["dest"]))
+    rank = M.rank_by_extent(r0, field)
+    e = M.drop_by_rank(r0, rank, M.DELTA)[0]
+    u = M.drop_uniform(r0, M.DELTA)[0]
+    overlap = int((r0 & ~e & ~u).sum())     # dots dropped by BOTH arms
+    assert overlap < 0.25 * M.DELTA, overlap
+
+
+def test_structural_ranking_is_catalogue_free() -> None:
+    """The rank must depend only on the field's geometry, never on the fault catalogue."""
+    from gems85 import mass as M
+    field = np.zeros((30, 30), bool)
+    field[5:25, 5] = True       # one long structure
+    field[8, 20] = True         # one speck
+    field[9, 24] = True         # another speck
+    r0 = field.copy()
+    rank = M.rank_by_extent(r0, field)
+    # rank 0 is the FIRST dot to be dropped, i.e. the smallest structure
+    assert rank[8, 20] < rank[5, 5], "speckle must rank below (be dropped before) a long structure"
 
 
 def test_mechanism_cards_exist_and_are_complete() -> None:
@@ -178,3 +226,17 @@ def test_mechanism_cards_exist_and_are_complete() -> None:
     for card in data["cards"]:
         assert required <= set(card), card.get("id")
         assert len(card["falsifier"]) > 40
+
+
+def test_mass_mechanism_cards_exist_and_are_complete() -> None:
+    cards = ROOT / "evidence" / "mechanism_cards_mass.json"
+    if not cards.is_file():
+        pytest.skip("no MASS cards on this branch")
+    data = json.loads(cards.read_text())
+    required = {"hypothesis", "mechanism", "mimic", "predicted_change", "falsifier", "id"}
+    assert len(data["cards"]) == 3
+    for card in data["cards"]:
+        assert required <= set(card), card.get("id")
+        assert len(card["falsifier"]) > 40
+        pred = card["predicted_change"]
+        assert -0.05 < pred["central"] < 0.05, "a MASS prediction that large needs a receipt"

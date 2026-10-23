@@ -1,7 +1,7 @@
 {
-  "schema_version": 1,
-  "verified_files_count": 23,
-  "storage_root": "/tmp/gems_raw",
+  "groups": [
+    "all"
+  ],
   "files": [
     {
       "id": "training_features",
@@ -12,24 +12,21 @@
     },
     {
       "id": "labels",
-      "dest": "labels.tif",
-      "status": "restored",
-      "bytes": 425830,
-      "sha256": "7ba308ccdc4418b31a178f4f1ef21aaa6e152e4028f2f6f64b01f7eb25ae4093"
+      "status": "cached",
+      "sha256": "7ba308ccdc4418b31a178f4f1ef21aaa6e152e4028f2f6f64b01f7eb25ae4093",
+      "bytes": 425830
     },
     {
       "id": "existing_faults",
-      "dest": "existing_faults.tif",
-      "status": "restored",
-      "bytes": 425830,
-      "sha256": "7ba308ccdc4418b31a178f4f1ef21aaa6e152e4028f2f6f64b01f7eb25ae4093"
+      "status": "cached",
+      "sha256": "7ba308ccdc4418b31a178f4f1ef21aaa6e152e4028f2f6f64b01f7eb25ae4093",
+      "bytes": 425830
     },
     {
       "id": "sample_submission",
-      "dest": "sample_submission.tif",
-      "status": "restored",
-      "bytes": 1599597,
-      "sha256": "2176d08e485aa2cd2860ce8df539db4faf4d76163b38a4dd8c30a40454d35cbc"
+      "status": "cached",
+      "sha256": "2176d08e485aa2cd2860ce8df539db4faf4d76163b38a4dd8c30a40454d35cbc",
+      "bytes": 1599597
     },
     {
       "id": "ext_lidar_scarp_features_u8",

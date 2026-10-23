@@ -1,0 +1,396 @@
+{
+  "axis": "MASS",
+  "chosen_by": "agent (no other axis remained unbuilt)",
+  "delta_dots": 3765,
+  "generated_utc": "2026-10-23T16:24:58+00:00",
+  "parent": {
+    "id": "h33-h33-2-b2",
+    "n_dots": 37654,
+    "rebuild": "pixel-identical (evidence/r0_rebuild.json)",
+    "sha256": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9"
+  },
+  "ranking": {
+    "r0_median_extent_px": 97,
+    "r0_pct_on_structures_under_30px": 28.3,
+    "rule": "bridged (r=1) connected-component size of the H19-5 field",
+    "why": "parent stores no scores; its literal rank is raster scan order (IR-V2-08)"
+  },
+  "refusals": {
+    "uniqueness": "not applied; brief \u00a76 forbids overlap/rank thresholds"
+  },
+  "schema_version": 1,
+  "seed": 20261023,
+  "variants": {
+    "mass-m10e": {
+      "axis": "MASS",
+      "detail": {
+        "mean_extent_px": 5.276494023904382,
+        "selection": "smallest bridged structural extent first"
+      },
+      "diff": {
+        "jaccard": 0.900011,
+        "n_added": 0,
+        "n_changed": 3765,
+        "n_child": 33889,
+        "n_common": 33889,
+        "n_parent": 37654,
+        "n_removed": 3765,
+        "pct_mass_added": 0.0,
+        "pct_of_parent_dots_changed": 9.9989
+      },
+      "files": {
+        "nan": "releases/h33-2-b2-mass-m10e-20261023-1238b3ab.tif",
+        "sha256_nan": "1238b3aba945c0d6c10ceee007ab48941ab42715bbcd108bab87ff56a1689f5b",
+        "sha256_zeros": "459e37a60f94d60c04816152d7f56c4dda670d2b480a7b78b28a9fa7a4665eb0",
+        "zeros": "releases/h33-2-b2-mass-m10e-20261023-1238b3ab-zeros.tif"
+      },
+      "gates": {
+        "nan": {
+          "bands": 1,
+          "bytes": 211075,
+          "crs": "EPSG:32611",
+          "dots_on_catalogue": 0,
+          "dtype": "float32",
+          "finite_outside_footprint": 0,
+          "mass_inside": 33889.0,
+          "max_inside": 1.0,
+          "min_distance_to_catalogue_px": 2.23606797749979,
+          "min_inside": 0.0,
+          "mode": "nan",
+          "n_dots_inside_3px": 0,
+          "nan_inside_footprint": 0,
+          "nan_outside_footprint": 7111787,
+          "nodata": NaN,
+          "ok": true,
+          "path": "releases/h33-2-b2-mass-m10e-20261023-1238b3ab.tif",
+          "problems": [],
+          "ref_transform": [
+            100.0,
+            0.0,
+            243350.0,
+            0.0,
+            -100.0,
+            4508550.0
+          ],
+          "sha256": "1238b3aba945c0d6c10ceee007ab48941ab42715bbcd108bab87ff56a1689f5b",
+          "shape": [
+            3730,
+            3292
+          ],
+          "transform": [
+            100.0,
+            0.0,
+            243350.0,
+            0.0,
+            -100.0,
+            4508550.0
+          ],
+          "zeros_outside_footprint": true
+        },
+        "pixels_equal_intended": true,
+        "zeros": {
+          "bands": 1,
+          "bytes": 139274,
+          "crs": "EPSG:32611",
+          "dots_on_catalogue": 0,
+          "dtype": "float32",
+          "finite_outside_footprint": 7111787,
+          "mass_inside": 33889.0,
+          "max_inside": 1.0,
+          "min_distance_to_catalogue_px": 2.23606797749979,
+          "min_inside": 0.0,
+          "mode": "zeros",
+          "n_dots_inside_3px": 0,
+          "nan_inside_footprint": 0,
+          "nan_outside_footprint": 0,
+          "nodata": null,
+          "ok": true,
+          "path": "releases/h33-2-b2-mass-m10e-20261023-1238b3ab-zeros.tif",
+          "problems": [],
+          "ref_transform": [
+            100.0,
+            0.0,
+            243350.0,
+            0.0,
+            -100.0,
+            4508550.0
+          ],
+          "sha256": "459e37a60f94d60c04816152d7f56c4dda670d2b480a7b78b28a9fa7a4665eb0",
+          "shape": [
+            3730,
+            3292
+          ],
+          "transform": [
+            100.0,
+            0.0,
+            243350.0,
+            0.0,
+            -100.0,
+            4508550.0
+          ],
+          "zeros_outside_footprint": true
+        }
+      },
+      "id": "h33-2-b2-mass-m10e-20261023-1238b3ab",
+      "n_dots": 33889,
+      "parent": "h33-h33-2-b2",
+      "pct_of_parent_dots_changed": 9.9989,
+      "predicted_change_vs_r0": -0.008,
+      "predicted_range": [
+        -0.013,
+        -0.003
+      ],
+      "prediction_basis": "PROXY -0.00278 (0/5 folds) scaled x3.07; deleting structural speckle still deletes crediting dots",
+      "value": "m10e"
+    },
+    "mass-m10u": {
+      "axis": "MASS",
+      "detail": {
+        "mean_extent_px": 293.71181938911025,
+        "seed": 20261023,
+        "selection": "uniform random"
+      },
+      "diff": {
+        "jaccard": 0.900011,
+        "n_added": 0,
+        "n_changed": 3765,
+        "n_child": 33889,
+        "n_common": 33889,
+        "n_parent": 37654,
+        "n_removed": 3765,
+        "pct_mass_added": 0.0,
+        "pct_of_parent_dots_changed": 9.9989
+      },
+      "files": {
+        "nan": "releases/h33-2-b2-mass-m10u-20261023-288aaa03.tif",
+        "sha256_nan": "288aaa035aec34f3e6de82620f07536fa0d0aae09f562c7353efa5450e1e8102",
+        "sha256_zeros": "adf93dfbf4d5fc2b8fd3611f674676a29f6811a03cdef1c498a41fc52d40ba53",
+        "zeros": "releases/h33-2-b2-mass-m10u-20261023-288aaa03-zeros.tif"
+      },
+      "gates": {
+        "nan": {
+          "bands": 1,
+          "bytes": 212280,
+          "crs": "EPSG:32611",
+          "dots_on_catalogue": 0,
+          "dtype": "float32",
+          "finite_outside_footprint": 0,
+          "mass_inside": 33889.0,
+          "max_inside": 1.0,
+          "min_distance_to_catalogue_px": 2.23606797749979,
+          "min_inside": 0.0,
+          "mode": "nan",
+          "n_dots_inside_3px": 0,
+          "nan_inside_footprint": 0,
+          "nan_outside_footprint": 7111787,
+          "nodata": NaN,
+          "ok": true,
+          "path": "releases/h33-2-b2-mass-m10u-20261023-288aaa03.tif",
+          "problems": [],
+          "ref_transform": [
+            100.0,
+            0.0,
+            243350.0,
+            0.0,
+            -100.0,
+            4508550.0
+          ],
+          "sha256": "288aaa035aec34f3e6de82620f07536fa0d0aae09f562c7353efa5450e1e8102",
+          "shape": [
+            3730,
+            3292
+          ],
+          "transform": [
+            100.0,
+            0.0,
+            243350.0,
+            0.0,
+            -100.0,
+            4508550.0
+          ],
+          "zeros_outside_footprint": true
+        },
+        "pixels_equal_intended": true,
+        "zeros": {
+          "bands": 1,
+          "bytes": 140300,
+          "crs": "EPSG:32611",
+          "dots_on_catalogue": 0,
+          "dtype": "float32",
+          "finite_outside_footprint": 7111787,
+          "mass_inside": 33889.0,
+          "max_inside": 1.0,
+          "min_distance_to_catalogue_px": 2.23606797749979,
+          "min_inside": 0.0,
+          "mode": "zeros",
+          "n_dots_inside_3px": 0,
+          "nan_inside_footprint": 0,
+          "nan_outside_footprint": 0,
+          "nodata": null,
+          "ok": true,
+          "path": "releases/h33-2-b2-mass-m10u-20261023-288aaa03-zeros.tif",
+          "problems": [],
+          "ref_transform": [
+            100.0,
+            0.0,
+            243350.0,
+            0.0,
+            -100.0,
+            4508550.0
+          ],
+          "sha256": "adf93dfbf4d5fc2b8fd3611f674676a29f6811a03cdef1c498a41fc52d40ba53",
+          "shape": [
+            3730,
+            3292
+          ],
+          "transform": [
+            100.0,
+            0.0,
+            243350.0,
+            0.0,
+            -100.0,
+            4508550.0
+          ],
+          "zeros_outside_footprint": true
+        }
+      },
+      "id": "h33-2-b2-mass-m10u-20261023-288aaa03",
+      "n_dots": 33889,
+      "parent": "h33-h33-2-b2",
+      "pct_of_parent_dots_changed": 9.9989,
+      "predicted_change_vs_r0": -0.014,
+      "predicted_range": [
+        -0.02,
+        -0.008
+      ],
+      "prediction_basis": "PROXY -0.00471 (0/5 folds) scaled x3.07; uniform deletion is worse than the ranked deletion at the same mass, so the ranking has signal",
+      "value": "m10u"
+    },
+    "mass-p10": {
+      "axis": "MASS",
+      "detail": {
+        "n_added": 3765,
+        "n_free_cells_at_add_sep": 4076,
+        "n_free_cells_at_parent_sep": 794,
+        "n_requested": 3765,
+        "selection": "largest bridged structural extent first",
+        "sep_px": 2.2
+      },
+      "diff": {
+        "jaccard": 0.9091,
+        "n_added": 3765,
+        "n_changed": 3765,
+        "n_child": 41419,
+        "n_common": 37654,
+        "n_parent": 37654,
+        "n_removed": 0,
+        "pct_mass_added": 9.9989,
+        "pct_of_parent_dots_changed": 9.9989
+      },
+      "files": {
+        "nan": "releases/h33-2-b2-mass-p10-20261023-3cdf5014.tif",
+        "sha256_nan": "3cdf50146ea72f358d7ac42136db8f49d469c455c50667ddb6681501bd4b427f",
+        "sha256_zeros": "71ef18e9f5bdf578a7bdc727eb5064bf7fbfda5410e38b000368bffdfe480afe",
+        "zeros": "releases/h33-2-b2-mass-p10-20261023-3cdf5014-zeros.tif"
+      },
+      "gates": {
+        "nan": {
+          "bands": 1,
+          "bytes": 227196,
+          "crs": "EPSG:32611",
+          "dots_on_catalogue": 0,
+          "dtype": "float32",
+          "finite_outside_footprint": 0,
+          "mass_inside": 41419.0,
+          "max_inside": 1.0,
+          "min_distance_to_catalogue_px": 2.23606797749979,
+          "min_inside": 0.0,
+          "mode": "nan",
+          "n_dots_inside_3px": 0,
+          "nan_inside_footprint": 0,
+          "nan_outside_footprint": 7111787,
+          "nodata": NaN,
+          "ok": true,
+          "path": "releases/h33-2-b2-mass-p10-20261023-3cdf5014.tif",
+          "problems": [],
+          "ref_transform": [
+            100.0,
+            0.0,
+            243350.0,
+            0.0,
+            -100.0,
+            4508550.0
+          ],
+          "sha256": "3cdf50146ea72f358d7ac42136db8f49d469c455c50667ddb6681501bd4b427f",
+          "shape": [
+            3730,
+            3292
+          ],
+          "transform": [
+            100.0,
+            0.0,
+            243350.0,
+            0.0,
+            -100.0,
+            4508550.0
+          ],
+          "zeros_outside_footprint": true
+        },
+        "pixels_equal_intended": true,
+        "zeros": {
+          "bands": 1,
+          "bytes": 155120,
+          "crs": "EPSG:32611",
+          "dots_on_catalogue": 0,
+          "dtype": "float32",
+          "finite_outside_footprint": 7111787,
+          "mass_inside": 41419.0,
+          "max_inside": 1.0,
+          "min_distance_to_catalogue_px": 2.23606797749979,
+          "min_inside": 0.0,
+          "mode": "zeros",
+          "n_dots_inside_3px": 0,
+          "nan_inside_footprint": 0,
+          "nan_outside_footprint": 0,
+          "nodata": null,
+          "ok": true,
+          "path": "releases/h33-2-b2-mass-p10-20261023-3cdf5014-zeros.tif",
+          "problems": [],
+          "ref_transform": [
+            100.0,
+            0.0,
+            243350.0,
+            0.0,
+            -100.0,
+            4508550.0
+          ],
+          "sha256": "71ef18e9f5bdf578a7bdc727eb5064bf7fbfda5410e38b000368bffdfe480afe",
+          "shape": [
+            3730,
+            3292
+          ],
+          "transform": [
+            100.0,
+            0.0,
+            243350.0,
+            0.0,
+            -100.0,
+            4508550.0
+          ],
+          "zeros_outside_footprint": true
+        }
+      },
+      "id": "h33-2-b2-mass-p10-20261023-3cdf5014",
+      "n_dots": 41419,
+      "parent": "h33-h33-2-b2",
+      "pct_of_parent_dots_changed": 9.9989,
+      "predicted_change_vs_r0": 0.005,
+      "predicted_range": [
+        -0.004,
+        0.013
+      ],
+      "prediction_basis": "PROXY +0.00158 (5/5 folds) scaled x3.07; the only positive direction, but below the 0.01 evidence bar",
+      "value": "p10"
+    }
+  }
+}

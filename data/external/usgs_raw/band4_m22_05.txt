@@ -1,0 +1,70 @@
+nn00520250|2015-11-25T03:32:14.630|40.5737|-119.6793|0|nn|nn|nn|nn00520250|ml|2.5|nn|28 km W of Empire, Nevada
+nn00520290|2015-11-25T03:32:53.821|40.5856|-119.6816|0|nn|nn|nn|nn00520290|ml|2.5|nn|28 km WSW of Gerlach, Nevada
+nn00522975|2015-12-16T10:49:35.104|40.1191|-119.7989|16.2|nn|nn|nn|nn00522975|ml|2.4|nn|25 km NW of Sutcliffe, Nevada
+nn00525108|2016-01-02T15:26:48.716|40.7192|-116.4179|0|nn|nn|nn|nn00525108|ml|2.2|nn|26 km W of Carlin, Nevada
+nn00530380|2016-02-08T01:58:48.741|40.6142|-119.6515|0.4|nn|nn|nn|nn00530380|ml|2.3|nn|25 km W of Gerlach, Nevada
+nn00530423|2016-02-08T15:41:59.283|40.375|-119.4016|9|nn|nn|nn|nn00530423|ml|2.9|nn|22 km SSW of Empire, Nevada
+nn00536173|2016-03-19T16:15:39.961|40.3688|-117.7202|14.2|nn|nn|nn|nn00536173|ml|2.9|nn|48 km SE of Imlay, Nevada
+nn00541587|2016-04-23T15:40:16.512|40.6281|-119.4558|4.6|nn|nn|nn|nn00541587|ml|2.6|nn|8 km WSW of Gerlach, Nevada
+nn00541688|2016-04-24T20:31:24.830|40.622|-119.4942|3.3|nn|nn|nn|nn00541688|ml|3.1|nn|12 km WSW of Gerlach, Nevada
+nn00542364|2016-04-30T06:42:29.077|40.6508|-119.4758|0|nn|nn|nn|nn00542364|ml|2.5|nn|10 km W of Gerlach, Nevada
+nn00542367|2016-04-30T07:22:58.564|40.6455|-119.4629|0|nn|nn|nn|nn00542367|ml|2.3|nn|9 km W of Gerlach, Nevada
+nn00542898|2016-05-05T04:02:44.184|40.6434|-119.469|0|nn|nn|nn|nn00542898|ml|2.3|nn|9 km W of Gerlach, Nevada
+nn00542900|2016-05-05T04:13:17.240|40.6438|-119.4887|0|nn|nn|nn|nn00542900|ml|2.2|nn|11 km W of Gerlach, Nevada
+nn00542908|2016-05-05T07:20:17.730|40.6521|-119.4737|0.2|nn|nn|nn|nn00542908|ml|2.8|nn|10 km W of Gerlach, Nevada
+nn00542917|2016-05-05T09:30:04.670|40.65|-119.4435|0|nn|nn|nn|nn00542917|ml|2.4|nn|7 km W of Gerlach, Nevada
+nn00543016|2016-05-05T23:11:45.008|40.6519|-119.5093|0|nn|nn|nn|nn00543016|ml|3.5|nn|13 km W of Gerlach, Nevada
+nn00543019|2016-05-05T23:17:28.662|40.6459|-119.4578|0|nn|nn|nn|nn00543019|ml|2.5|nn|8 km W of Gerlach, Nevada
+nn00543077|2016-05-06T03:54:52.538|40.6364|-119.4359|4|nn|nn|nn|nn00543077|ml|3|nn|7 km WSW of Gerlach, Nevada
+nn00543201|2016-05-07T04:21:42.241|40.631|-119.4653|12.4|nn|nn|nn|nn00543201|ml|2.4|nn|9 km WSW of Gerlach, Nevada
+nn00543410|2016-05-08T19:46:10.344|40.6189|-119.4688|1.7|nn|nn|nn|nn00543410|ml|2.2|nn|10 km WSW of Gerlach, Nevada
+nn00543739|2016-05-11T11:54:53.761|40.6569|-119.4728|0|nn|nn|nn|nn00543739|ml|2.2|nn|9 km W of Gerlach, Nevada
+nn00543789|2016-05-11T18:48:11.477|40.643|-119.4607|8|nn|nn|nn|nn00543789|ml|2.8|nn|8 km W of Gerlach, Nevada
+nn00543968|2016-05-13T07:24:24.189|40.655|-119.4711|5.9|nn|nn|nn|nn00543968|ml|2.4|nn|9 km W of Gerlach, Nevada
+nn00543972|2016-05-13T11:32:11.027|40.6578|-119.4539|9.6|nn|nn|nn|nn00543972|ml|2.6|nn|8 km W of Gerlach, Nevada
+nn00544062|2016-05-14T07:38:04.853|40.6575|-119.4697|7.7|nn|nn|nn|nn00544062|ml|2.4|nn|9 km W of Gerlach, Nevada
+nn00544078|2016-05-14T14:20:30.755|40.6519|-119.4521|8.8|nn|nn|nn|nn00544078|ml|3.9|nn|8 km W of Gerlach, Nevada
+nn00544087|2016-05-14T14:23:15.359|40.6477|-119.5004|3.1|nn|nn|nn|nn00544087|ml|2.4|nn|12 km W of Gerlach, Nevada
+nn00544201|2016-05-15T16:10:46.843|40.6533|-119.4634|7.5|nn|nn|nn|nn00544201|ml|2.9|nn|9 km W of Gerlach, Nevada
+nn00544247|2016-05-15T23:04:58.681|40.6516|-119.4747|7.5|nn|nn|nn|nn00544247|ml|2.9|nn|10 km W of Gerlach, Nevada
+nn00544468|2016-05-17T13:21:17.998|40.6552|-119.4563|8.1|nn|nn|nn|nn00544468|ml|2.2|nn|8 km W of Gerlach, Nevada
+nn00544982|2016-05-21T11:01:53.198|40.6317|-119.4809|4.8|nn|nn|nn|nn00544982|ml|2.2|nn|10 km WSW of Gerlach, Nevada
+nn00545510|2016-05-25T21:54:59.513|40.6532|-119.4588|8.9|nn|nn|nn|nn00545510|ml|2.5|nn|8 km W of Gerlach, Nevada
+nn00549768|2016-06-23T10:57:37.760|40.7344|-116.1673|14.9|nn|nn|nn|nn00549768|ml|2.3|nn|5 km WNW of Carlin, Nevada
+nn00553820|2016-07-30T14:31:17.110|40.7346|-116.173|15.7|nn|nn|nn|nn00553820|ml|2.3|nn|6 km WNW of Carlin, Nevada
+nn00557784|2016-08-27T12:36:19.458|39.6852|-119.4559|9.4|nn|nn|nn|nn00557784|ml|2.4|nn|15 km WNW of Wadsworth, Nevada
+nn00558006|2016-08-29T09:44:34.762|39.6949|-119.4353|11.4|nn|nn|nn|nn00558006|ml|2.3|nn|14 km WNW of Wadsworth, Nevada
+nn00559946|2016-09-13T20:00:03.006|40.1229|-119.6472|10.5|nn|nn|nn|nn00559946|ml|3|nn|19 km NNW of Sutcliffe, Nevada
+nn00565327|2016-11-03T03:25:00.769|39.8319|-118.8314|7.5|nn|nn|nn|nn00565327|ml|2.7|nn|40 km N of Fallon, Nevada
+nn00568129|2016-12-01T12:22:19.893|40.478|-119.7655|13.1|nn|nn|nn|nn00568129|ml|2.3|nn|37 km WSW of Empire, Nevada
+nn00579283|2017-02-20T23:03:06.321|39.8966|-119.0002|10.7|nn|nn|nn|nn00579283|ml|2.3|nn|31 km ENE of Nixon, Nevada
+nn00586537|2017-04-20T21:59:17.185|40.3725|-116.5238|0|nn|nn|nn|nn00586537|ml|2.2|nn|6 km SE of Crescent Valley, Nevada
+nn00587717|2017-05-02T13:27:42.900|40.506|-117.1553|11.6|nn|nn|nn|nn00587717|ml|2.2|nn|24 km SW of Battle Mountain, Nevada
+nn00588318|2017-05-08T22:42:06.565|39.9825|-119.9273|7.8|nn|nn|nn|nn00588318|ml|3.1|nn|15 km ESE of Doyle, California
+nn00588607|2017-05-11T16:07:31.748|40.2914|-119.6173|15.1|nn|nn|nn|nn00588607|ml|2.5|nn|37 km N of Sutcliffe, Nevada
+nn00594747|2017-07-05T22:35:03.394|40.1197|-118.8927|12|nn|nn|nn|nn00594747|ml|2.8|nn|36 km W of Lovelock, Nevada
+nn00596117|2017-07-15T21:06:56.650|40.3437|-119.7779|2.1|nn|nn|nn|nn00596117|ml|2.4|nn|37 km NE of Herlong, California
+nn00596121|2017-07-15T22:15:15.534|40.348|-119.7939|11.6|nn|nn|nn|nn00596121|ml|2.7|nn|36 km NE of Herlong, California
+nn00597621|2017-07-25T18:09:07.838|40.3333|-119.7845|12.7|nn|nn|nn|nn00597621|ml|2.2|nn|36 km NE of Herlong, California
+nn00599112|2017-08-03T21:25:01.635|40.4066|-119.9854|11.8|nn|nn|nn|nn00599112|ml|3.5|nn|31 km NNE of Herlong, California
+nn00603209|2017-09-02T05:54:53.059|40.4382|-116.4597|3.1|nn|nn|nn|nn00603209|ml|3|nn|10 km ENE of Crescent Valley, Nevada
+nn00604381|2017-09-09T14:07:00.076|40.6574|-119.3553|6.9|nn|nn|nn|nn00604381|ml|2.3|nn|0 km N of Gerlach, Nevada
+nn00606357|2017-09-21T21:09:28.100|39.7645|-119.6985|7.3|nn|nn|nn|nn00606357|ml|2.6|nn|12 km N of Spanish Springs, Nevada
+us2000bpdy|2017-11-16T02:40:32.270|40.1774|-116.6701|0|us|us|us|us2000bpdy|ml|2.2|us|27 km SSW of Crescent Valley, Nevada
+nn00617130|2018-01-04T20:02:02.856|40.5645|-117.145|0|nn|nn|nn|nn00617130|ml|2.4|nn|19 km WSW of Battle Mountain, Nevada
+nn00620007|2018-01-30T00:20:19.003|39.9647|-117.8989|1.2|nn|nn|nn|nn00620007|ml|2.5|nn|54 km ESE of Lovelock, Nevada
+nn00620603|2018-02-04T13:27:44.311|40.0035|-117.1986|9.4|nn|nn|nn|nn00620603|ml|3.4|nn|57 km N of Austin, Nevada
+nn00621858|2018-02-15T02:12:58.595|40.2691|-118.7313|0.1|nn|nn|nn|nn00621858|ml|2.3|nn|24 km WNW of Lovelock, Nevada
+nn00626772|2018-03-20T01:05:21.450|40.509|-116.1842|16|nn|nn|nn|nn00626772|ml|2.4|nn|23 km SSW of Carlin, Nevada
+nn00630617|2018-04-16T21:57:19.764|40.4951|-117.123|0|nn|nn|nn|nn00630617|ml|2.2|nn|22 km SW of Battle Mountain, Nevada
+nn00635936|2018-05-19T14:47:51.609|40.5229|-118.6561|2.2|nn|nn|nn|nn00635936|ml|2.5|nn|35 km WSW of Humboldt, Nevada
+nn00640997|2018-06-23T09:35:42.544|39.9401|-118.7882|6.8|nn|nn|nn|nn00640997|ml|2.4|nn|37 km SW of Lovelock, Nevada
+nn00644291|2018-07-12T21:24:22.591|40.6041|-117.3392|8.6|nn|nn|nn|nn00644291|ml|2.2|nn|27 km SW of Valmy, Nevada
+nn00647659|2018-07-29T22:22:03.769|40.1393|-119.6848|11.8|nn|nn|nn|nn00647659|ml|2.7|nn|22 km NNW of Sutcliffe, Nevada
+nn00648561|2018-08-04T20:34:10.316|40.4139|-116.4494|9.1|nn|nn|nn|nn00648561|ml|2.7|nn|10 km E of Crescent Valley, Nevada
+nn00659292|2018-10-02T18:51:52.585|40.5931|-119.7187|1.8|nn|nn|nn|nn00659292|ml|2.6|nn|31 km WSW of Gerlach, Nevada
+nn00659308|2018-10-02T19:13:04.888|40.5602|-119.7346|4|nn|nn|nn|nn00659308|ml|2.6|nn|33 km W of Empire, Nevada
+nn00659351|2018-10-02T21:37:35.155|40.5864|-119.7358|0.9|nn|nn|nn|nn00659351|ml|2.8|nn|33 km WSW of Gerlach, Nevada
+nn00661201|2018-10-16T17:20:04.491|39.9892|-117.8488|16.6|nn|nn|nn|nn00661201|ml|2.4|nn|57 km ESE of Lovelock, Nevada
+nn00663766|2018-11-01T19:42:57.825|40.4465|-117.2836|0|nn|nn|nn|nn00663766|ml|2.2|nn|36 km SW of Battle Mountain, Nevada
+nn00664430|2018-11-06T06:55:23.322|40.3268
