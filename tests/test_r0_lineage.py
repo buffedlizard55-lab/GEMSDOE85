@@ -146,13 +146,14 @@ def test_shipped_releases_pass_their_own_gates_and_match_the_ledger():
     receipts = [ROOT / "evidence" / "session_prune_receipt.json",
                 ROOT / "evidence" / "session_rung_receipt.json",
                 ROOT / "evidence" / "session_snap_receipt.json",
+                ROOT / "evidence" / "session_relief_receipt.json",
                 ROOT / "evidence" / "session_prune_refill_receipt.json"]
     if not ledger.is_file():
         pytest.skip("session outputs not built")
     rows = list(csv.DictReader(ledger.open()))
     assert len(rows) >= 3
     assert all(r["parent"] == "h33-h33-2-b2" for r in rows)
-    assert all(r["axis"] in {"PRUNE", "SNAP"} for r in rows)
+    assert all(r["axis"] in {"PRUNE", "SNAP", "RELIEF"} for r in rows)
     assert all(r["status"] == "BUILT" and r["receipt"] == "N" for r in rows)
     assert len({r["sha256"] for r in rows}) == len(rows), "duplicate sha256 in the ledger"
     variants = {}
@@ -179,6 +180,9 @@ def test_shipped_releases_pass_their_own_gates_and_match_the_ledger():
             # the 3 px rule is waived for PRUNE; each rung proves its own declared threshold instead
             assert checks.get("min_distance_to_catalogue_px_gt_3") or \
                 checks["all_dots_beyond_declared_rung"]
+        elif axis == "RELIEF":
+            assert checks["min_distance_to_catalogue_px_gt_3"]
+            assert checks["fixed_count_matches_parent"]
         else:
             # SNAP keeps count and mass and may never move a dot closer to the catalogue
             assert entry["nan"]["within_2px_catalogue_px"] == 0

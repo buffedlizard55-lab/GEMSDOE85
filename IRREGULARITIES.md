@@ -296,13 +296,173 @@ from scratch is verified against both `baeae321…` and `c55bafc4…`.
 
 ---
 
-# Session `arena/85dc0b4a` — AXIS=PRUNE applied (2026-10-23)
+## Session `arena/c4de5673-gemsdoe85` (2026-10-23) — AXIS = CONCENTRATION
 
-## IR-V2-20 — AXIS and slots are now human-supplied (updates IR-V2-02/08/12/14)
-In this session the human answered the assignment questions: **AXIS = PRUNE**, content-exact rebuild accepted (since superseded by the byte-identical rebuild, IR-V2-07/19), parent exclusions stand for untouched dots, **3 slots free this week**, and **no R0 variant built/submitted in any prior session** (submission sense consistent with the ledger: all rows BUILT, receipt N; parallel sessions had *built* ladder rungs, none scored). Still missing and decision-relevant: dated TOP_PUBLIC, total/rolling slot usage, any receipt, deadline/timezone confirmation. README CURRENT STATE and SLOT_PLAN updated accordingly; SNAP remains unassigned.
+This session is the first in the v2 line where the **human assigned the axis**
+(CONCENTRATION). Its items are numbered IR-V2-21 … IR-V2-27 and are appended below;
+they are decision-changing, so they are not summarised away.
 
-## IR-V2-21 — Independent rebuild converged byte-identically; refill exists only at a 2.0 px floor
-This session's builder (`scripts/build_prune_variants.py`, rasterio 1.4.3 at first build) reproduced R0 content-exactly but not byte-identically; after the merge to the 1.4.4 lock (IR-V2-19) the same code reproduces tracked `prune3` (`fb308615…`) and `r2p85` (`acce3907…`) **byte-for-byte** — cross-session duplication detected and deduped, no new rows for those values. Its one new build, `prune3fill20` (`12a3b132…`), holds the 37,654 count by refilling the H19-5 support at a **2.0 px floor** (realized min spacing 2.24 px; all 2,171 refills are d1.5-thinning selections). This does not contradict IR-V2-09 (impossible at the 2.8 px rung: 611 pool px) or IR-V2-18 (same floor logic as SNAP); it is a mass-vs-position control with declared spacing/ranking confounders, not a pure count control. No continuous parent ranking field exists in any pinned file (H19-5/H19-4 binary), so MASS remains blocked until ranking recovery is verified against the d2.8 dot set.
+## IR-V2-21 — The parent's ranking is not recoverable from the archive (changes the axis definition)
 
-## IR-V2-22 — Lineage CLAIMs kept out of `ledger/submissions.csv` by schema tests
-The five hash-verified lineage artifacts (H19-5 → R0, scores CLAIM from `registry/scored_artifacts.json`) cannot be rows in `submissions.csv`: upstream tests require every row there to be a BUILT R0 variant with a tracked release file. They are recorded separately in `ledger/lineage_claims.csv` (status HISTORICAL, receipt N; the ≤1 px arm `h27-4` included so nobody rebuilds it). `submissions.csv` remains BUILT-variants-only; neither file is a complete cross-session submission history (IR-V2-02/12 stand).
+**Expected.** MASS and CONCENTRATION both say "by the parent's own ranking"; the H19-5
+field is the parent's ranking, and the brief calls it a *continuous* field (121k px).
+**Found.** Every archived copy of the H19-5 field (`scored_h19_5`, and the byte-identical
+`gems24-reference-h19-5-20261002-80d47e1ab2ee-nan.tif`, sha256 `ec1f9b56…`) is **binarised**:
+121,131 cells with the single value 1.0. The continuous field value — and therefore the
+exact rank order inside a block — is gone. (Checked on GitHub, `buffedlizard55-lab/19GEMSDOE`
+and `…/GEMSDOE24` `docs/downloads/`: no continuous version is published.)
+**Consequence.** The ranking used in this session is the lineage's own nested-set membership
+plus **local support density** (3×3 window) as a monotone proxy for the archived field
+value — evidence class **MODEL**, not a reconstruction of the original field. A future
+session that needs the true ranking must rebuild the H19-5 field from GEMSDOE19's code, or
+use an independent prior (the competition's own 19 provided bands) — which is a *different*
+axis from the one the human assigned.
+**Human action:** none required for this session; flag if the true field must be rebuilt.
+
+## IR-V2-22 — The parent's dot set is a maximal 300 m cover of its own field (changes what "concentration" can mean)
+
+**Expected.** "Move 10–20 % of dots from the lowest-prior blocks to the highest-prior ones"
+would add *new* coverage in the strongest blocks.
+**Found.** Measured: of the 121,131 H19-5 support cells, only **74** are ≥ 3 px from every
+R0 dot and > 3 px from the catalogue (4,076 at a 2 px separation; 26,376 at 1 px). The
+parent is already a saturated 300 m Poisson cover of its field, so a concentration edit can
+only **double up** at ≥ 1 px offset — it can sharpen the credit kernel on truth that is
+offset from the parent's lineament, but it can never widen coverage.
+**Consequence.** The three variants are therefore "concentration *plus* kernel sharpening",
+not "concentration alone". The mechanism cards say so explicitly, and the predicted effect
+is small and negative. A candidate that moved mass into the strongest blocks *without*
+doubling would have to leave the H19-5 field (i.e. use a new detector) — that is a different
+axis, not this one.
+**Human action:** if the human wants a "pure coverage gain" arm, it must be a new axis
+(e.g. T-RETRACE in `SLOT_PLAN.md`, whose power is limited to 74 cells).
+
+## IR-V2-23 — The brief's CV band is reproduced at 0.8 km blocks, and R0 already sits inside it
+
+**Expected.** "The best files reportedly sit at 0.51–0.59" block-density CV, and the axis
+asks for the CV before/after.
+**Found.** CV of dot counts over occupied blocks at **0.8 km** (8×8 px) puts the family's
+three best files at **0.541 / 0.547 / 0.551** — inside the stated band — while R0 itself is
+**0.551** and the 121,131-cell H19-5 field is 0.787 (0.1922 CLAIM). At 1.0 km the same
+files read 0.603–0.619 (just above the band), so the band is reproduced at 0.8–0.9 km.
+**Consequence.** (i) The brief's statistic is identified and is used verbatim in the cards
+and the ledger. (ii) R0 is already at the *most even* end of the best-file band, so the
+assigned axis pushes the file **away** from the signature of the best files; that is why
+all three arms are predicted to lose, and it is stated before submission rather than after.
+**Human action:** if the human's 0.51–0.59 came from a different block size or population,
+say which; the CV comparison in the cards would be re-based on that definition (the
+variants themselves do not change).
+
+## IR-V2-24 — Constraint 4 (≥ 3 px from the catalogue) vs the parent it is applied to
+
+**Expected.** "Emit zero mass on catalogue pixels and keep ≥ 3 px from them unless
+AXIS = PRUNE."
+**Found.** R0 itself keeps **2,171 dots in the 2–3 px annulus** (min dot-to-catalogue
+distance 2.236 px); it satisfies "≥ 3 px" nowhere. A strict reading would force every
+non-PRUNE variant to delete those 2,171 dots, which is exactly the PRUNE=3 edit and would
+contaminate every other axis.
+**Decision taken.** "Zero mass *on* catalogue pixels" is enforced as a hard gate for every
+variant; "≥ 3 px" is enforced for **all newly placed mass** (the moved dots are > 3 px from
+the catalogue, verified per file); the parent's inherited dots are left untouched so that
+each variant differs from R0 on its axis only.
+**Human action:** confirm this reading, or instruct that inherited dots must also be
+re-checked (which would make every non-PRUNE arm a hybrid of its axis and PRUNE=3).
+
+## IR-V2-25 — The brief names the NaN-outside file as primary; the incumbent and the shared validator say zeros-outside
+
+**Expected.** "releases/<id>.tif (NaN outside footprint, per spec) and <id>-zeros.tif
+(fallback; the human uploads only one per slot)."
+**Found.** The published format does say null/NaN outside the footprint, and the NaN twins
+are built and stored. But: (a) the **incumbent R0 itself is a zeros-outside file**
+(`…-e5eb6e7e-zeros.tif`, sha256 `c55bafc4…`) and the family's proven submissions are
+zeros-outside; (b) the shared validator `vendor/gems57.gates.format_report` returns
+`ok = true` for the zeros twin and `ok = false` for the NaN twin (it rejects the 7,111,787
+NaN pixels); the repo's own writer (`vendor/gems57/grid.py: write_submission`) documents
+zeros as "the only submission-compatible mode".
+**Decision taken.** Both encodings are delivered. `docs/SUBMIT.md` tells the human to upload
+the **zeros** twin; the NaN twin is the spec-literal alternate and is kept for the case
+where the portal rejects the zeros encoding.
+**Human action:** upload exactly one file per slot — the zeros twin — and keep the NaN twin
+on disk as the alternate.
+
+## IR-V2-26 — Two of the session's inputs are git-ignored and vanish with the workspace snapshot
+
+**Found.** `data/scored/` and `data/registry_rasters/` (restored, SHA-256-verified) are in
+`.gitignore`, and a directory named `.venv` is excluded from arena snapshots, so a venv and
+the restored control rasters do not survive between turns. `scripts/session_setup.sh` now
+recreates the venv (outside the repo, at `/home/user/g85env`) and re-restores the pinned
+rasters from `registry/data_manifest.json` + `scripts/build_registry.py` at the start of a
+session; both were re-verified by SHA-256 this session (12/12 scored files, 17/17 control
+rasters).
+**Human action:** none; but do not treat the absence of `data/scored/` or
+`data/registry_rasters/` in a fresh clone as a data problem.
+
+## IR-V2-27 — The 0.2778 and TOP_PUBLIC numbers are owner-reported, not receipts
+
+`h33-h33-2-b2` = 0.2778 is a **CLAIM** (owner-reported; no DrivenData receipt exists in
+this repository, and the organiser's leaderboard was not read — the DrivenData terms ban
+automated access). The 0.3195 / 0.4413 leaderboard numbers in the brief and the README are
+dated snapshots of a dynamic page and are **not** targets until the human pastes a dated
+read. `TOP_PUBLIC` and "slots left" are therefore UNKNOWN in every file written this
+session; the human fills them.
+**Human action:** paste the current leaderboard value with its read date into
+`README.md` (CURRENT STATE) and `SLOT_PLAN.md`, and paste the three receipts into
+`ledger/submissions.csv` (`receipt_score`, `receipt_date`).
+
+## IR-V2-28 — Competition rasters in a public repository (flagged, per constraint 2)
+
+**Rule.** "Keep competition rasters out of public repos and releases; if they already are,
+flag it (data-use terms unchecked)."
+**Found.** The repository is public (`buffedlizard55-lab/GEMSDOE85` on GitHub Pages) and
+**already publishes competition rasters** under `docs/downloads/` from earlier sessions
+(e.g. `gems85-gapvent57-37654dots-sep2.8-exc3-20261023T013000Z-566072f4-zeros.tif`), and
+sibling repos `GEMSDOE19…GEMSDOE84` publish more. The competition's data-use terms have
+**not** been checked in this sandbox, so whether candidate rasters may be published is
+**UNVERIFIED**.
+**Decision taken.** The three candidates (6 files, NaN-outside + zeros-outside twins) are
+committed under `releases/` for the same reason as the existing files: the human has to
+download and upload them, and the bytes are byte-reproducible from pinned inputs by
+`scripts/build_concentration_variants.py` (verified: two independent runs produced
+identical sha256).
+**Human action:** if the operator wants the rasters out of the public repo, (a) add
+`releases/` to `.gitignore`, (b) `git rm --cached releases/*.tif`, and (c) regenerate
+locally with the command above — the sha256 values in `ledger/submissions.csv` and
+`docs/SUBMIT.md` are the acceptance test. The same question applies to the pre-existing
+`docs/downloads/*.tif` files.
+
+## IR-V2-20 — `RELIEF` *is* buildable at the 2.8 px packing rung AND `d_cat > 3.0 px` via pinned sibling ancestors (`arena/3dd0b94c-gemsdoe85`)
+
+IR-V3-02 found only 85–794 free pixels on the single `H19-5` 1-px skeleton at `2.8 px` spacing and
+concluded `RELIEF` could not be built on R0 at fixed count. Restoring all 28 SHA-pinned manifest files
+reveals **6,519** unpacked `d_cat > 3.0 px` ridge pixels across the pinned sibling ancestor union
+(`H19-5 | H19-4 | H16-1` in `registry/data_manifest.json`), supplemented where needed by 1-px multi-band
+physical NMS crests (`tmi_hg`, `iso_grav_anom_slope`, `tc`, `det_elev_slope`). Meanwhile, `19GEMSDOE`'s
+continuous pre-skeleton surface (`oof_probs_h16_1.npz`, `oof_probs_h19_arms.npz`) is unpinned and thus
+excluded under Hard Constraint #2.
+
+To satisfy Hard Constraint #4 (`d_cat ≥ 3 px`) without confounding `RELIEF`, an unshipped in-tercile
+control (`ctrl_collar3_0pct`, `100 %` filled from pinned sibling ancestors) replaces R0's 2,171
+`d_cat ≤ 3 px` dots 1-for-1 inside each tercile (`sgmc_minus_catalogue_3px` `0.09539 -> 0.09883`,
+`+0.00344` PROXY). Holding count (`37,654`), `2.8 px` spacing, and `d_cat > 3.0 px` (`min = 3.162 px`)
+constant, `reliefp2r10` (`+10 %` Piedmont→Range) and `reliefbp2r15` (`+15 %` Basin+Pied→Range) reach
+`0.10388` and `0.10418` (`+0.0085` to `+0.0088` PROXY vs R0), while opposite-direction `reliefr2bp10`
+(`+10 %` Range→Basin+Pied) hedges the Quaternary `gems57-pooled-hide-v2` sign split (`0.09518` vs
+`0.09283`). **Decision:** pair `prune3` (Slot 1) with `reliefp2r10` (Slot 2) so `Slot 2 − Slot 1`
+measures pure live `RELIEF` above the `d_cat > 3 px` collar, and choose Slot 3 conditionally.
+
+## IR-V2-21 — Pre-existing Git-tracked competition rasters flagged again (`arena/3dd0b94c-gemsdoe85`)
+
+`git ls-files data/` confirms `data/labels.tif`, `data/existing_faults.tif`, and
+`data/sample_submission.tif` (plus `data/bridge/*`) remain tracked from pre-`.gitignore` history
+(`IR-V2-04`, `IR-V2-10`). **Decision:** add zero competition rasters in `arena/3dd0b94c-gemsdoe85`
+(only ~218–356 KB derived binary submissions in `releases/`) and flag the pre-existing tracked files for
+human review against DrivenData redistribution rules before any public release.
+
+---
+
+# Session `arena/85dc0b4a` — AXIS=PRUNE applied (2026-10-23), merged by union
+
+## IR-V2-29 — Two parallel human AXIS assignments coexist (PRUNE vs CONCENTRATION)
+The human assigned **PRUNE** in this session (with: 3 slots free this week; no R0 variant submitted in any session; TOP_PUBLIC still unfilled) and **CONCENTRATION** in session `arena/c4de5673`. The CURRENT STATE next-3 table follows CONCENTRATION; the PRUNE ladder + new count-held control are the gated backup programme. Neither assignment cancels the other on the record available here: the human must order them before spending slots. Do not treat either session's slot order as overriding the other.
+
+## IR-V2-30 — Independent duplicate builds deduped; refill novelties and ledger split
+This session's `prune3`/`r2p85` reproduce the tracked upstream files byte-for-byte under the 1.4.4 lock (`fb308615…`/`acce3907…`); no duplicate ledger rows were added. Its new build `prune3fill20` (`12a3b132…`, 37,654 dots) refills the H19-5 support at a **2.0 px floor** (2.8 px refill impossible: 611 pool px — IR-V2-09; cf. IR-V2-18); all refills are d1.5-thinning selections, a lineage proxy — no continuous parent ranking is pinned (cf. IR-V2-21 concentration numbering), so MASS-by-parent-ranking remains blocked. The five lineage CLAIMs live in `ledger/lineage_claims.csv`, not `submissions.csv` (schema tests require BUILT-variant rows only there); neither file is a complete submission history.

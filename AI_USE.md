@@ -155,7 +155,73 @@ RELIEF cannot be built on this parent at its 2.8 px packing rung.
 - Human retains `AXIS` assignment/confirmation, `TOP_PUBLIC` (with date), weekly/total slot count, score
   receipts, deadline/timezone confirmation, and all portal submissions. No forbidden hosts were contacted.
 
-## 2026-10-23 — arena/85dc0b4a-gemsdoe85 (AXIS=PRUNE applied; merged with parallel ladder/SNAP sessions)
-- Human supplied the v2 brief and decided in-session: AXIS=PRUNE; content-exact rebuild acceptable (later superseded upstream by byte-identical rebuild under rasterio 1.4.4); parent exclusions stand; 3 slots free this week; no R0 variant previously submitted. TOP_PUBLIC/receipts/deadline still not supplied.
-- AI restored pinned rasters from GitHub mirrors only (SHA-256 verified; no drivendata.org/dropbox), verified the recorded R0 recipe content-exactly, built prune3/r2p85/prune3fill20, found on merge that the first two duplicate tracked upstream builds byte-for-byte (deduped; no duplicate ledger rows), kept the novel count-held refill (`12a3b132…`) with upstream-schema receipt, computed report-only proxies, seeded `ledger/lineage_claims.csv`, and reconciled README/SLOT_PLAN/SUBMIT/IRREGULARITIES as addenda to the upstream canonical text.
-- AI wrote `scripts/build_prune_variants.py`, `scripts/validate_v2_release.py`, `scripts/proxy_prune_holdout.py`, `tests/test_v2_prune.py`, `evidence/v2-prune-*`, `evidence/session_prune_refill_receipt.json`, and one receipts-list line in `tests/test_r0_lineage.py`. No slot used, nothing submitted, no credentials accessed.
+---
+
+Disclosed for the competition's generative-AI disclosure requirement
+(rules: <https://docs.nlr.gov/docs/fy26osti/96647.pdf>).
+
+## 2026-10-23 — arena/c4de5673-gemsdoe85 (this session)
+
+Everything in this session was written by the AI agent (Arena.ai Agent Mode) under the
+operator's brief:
+
+* `scripts/session_setup.sh` — venv + pinned-restore bootstrap.
+* `scripts/inspect_r0_lineage.py`, `scripts/probe_d15_d28_solo_rules.py` — read-only
+  lineage forensics (how `d1.5`, `d2.8`, `h27-4-solo-d28` and `h33-2-b2` relate).
+* `scripts/axis_concentration_stats.py` — calibration of the block-density CV statistic
+  against the family's own scored files.
+* `scripts/build_concentration_variants.py` — builds the three CONCENTRATION variants,
+  rebuilds and verifies the parent, runs the format gates, writes
+  `evidence/axis_concentration_build.json`.
+* `scripts/build_ledger.py` — writes `ledger/submissions.csv` and `ledger/history.csv`.
+* `evidence/holdout_proxy/*.json` — report-only holdout-proxy receipts produced by the
+  shared evaluator (`vendor/gems57/evaluate_holdout.py`).
+* `releases/*` — the six raster files (3 variants × NaN-outside and zeros-outside).
+* `docs/MECHANISM_CARDS.md`, `SLOT_PLAN.md`, `IRREGULARITIES.md`, `docs/SUBMIT.md`,
+  `AI_USE.md`, and the CURRENT STATE block in `README.md`.
+
+The AI also wrote the code and prose in the repository's existing modules that this session
+touched; it did **not** modify `vendor/gems57` (no private evaluator or writer fork).
+
+## What the human decided (and the AI did not)
+
+* **The AXIS for this session: CONCENTRATION.** The brief assigns the axis to the human;
+  the AI asked and did not choose. (The AI did rank the axes by predicted effect before
+  asking, as input to the decision — SNAP, CONCENTRATION, PRUNE, MASS, RELIEF, SPACING.)
+* **`TOP_PUBLIC` and "slots left this week": left UNKNOWN** at the human's explicit
+  instruction. The AI did not read the DrivenData leaderboard (the terms ban automated
+  access) and did not guess.
+* **The upload encoding: zeros-outside twin.** The human is the one who submits; the AI
+  wrote both encodings and documented which one the shared validator accepts and which
+  encoding the incumbent uses. The human may override.
+* **Nothing was submitted.** The AI never contacted `dropbox.com`, never fetched a
+  `drivendata.org` page, never read, requested, stored or printed credentials, and never
+  wrote code that logs in, scrapes a leaderboard or submits.
+* **The interpretation of constraint 4** (≥ 3 px from the catalogue) for non-PRUNE axes is
+  documented in `IRREGULARITIES.md` (IR-85-A4) and is offered for the human's confirmation.
+* **The final selection** of which file to submit, and of the final Phase 2 file, is the
+  human's; the AI proposes the order in `SLOT_PLAN.md`.
+
+## 2026-10-23 — `arena/3dd0b94c-gemsdoe85` (`AXIS = RELIEF`)
+
+- AI restored and SHA-256-verified all 28 pinned manifest/lineage inputs (`23/23` `data_manifest.json`,
+  `2/2` `learning_manifest.json`, `3/3` R0 lineage rasters) in gitignored `data/`, and rebuilt parent
+  R0 (`37,654` dots) matching both `r0_nan` (`baeae321…`) and `r0_zeros` (`c55bafc4…`) pixel- and
+  byte-identically.
+- AI wrote `src/gems85/relief_lineage.py`, `scripts/gemsdoe85_relief_session.py`, and
+  `tests/test_relief_lineage.py`: equal-area Basin / Piedmont / Range-front terciles from
+  `0.70 · pct_rank(det_elev) + 0.30 · pct_rank(det_elev_slope)`, in-tercile `ctrl_collar3_0pct`
+  decomposition, three fixed-count (`37,654`), `2.8 px`-spaced, `d_cat > 3.0 px` `RELIEF` variants
+  (`reliefp2r10-…-669f0637`, `reliefbp2r15-…-21af1eee`, `reliefr2bp10-…-7a0329ee` + `-zeros` twins),
+  report-only `gems57-pooled-hide-v2` and `sgmc_minus_catalogue_3px` 95 % CIs, and 19-band leakage
+  canary (`AUC = 0.5693`, CLEAN).
+- AI wrote `docs/mechanism_cards_relief.md` (including the 12-run `SNAP` negative result), reconciled
+  `ledger/submissions.csv` (12 unioned rows across `PRUNE`, `SNAP`, `RELIEF`), `SLOT_PLAN.md`,
+  `docs/SUBMIT.md`, `README.md` (`CURRENT STATE` block only), and `IR-V2-20 … IR-V2-21`.
+- Human decides slot order (`prune3` → `reliefp2r10` → conditional Slot 3, vs pure-`PRUNE`), supplies
+  dated `TOP_PUBLIC` and remaining slot counts, uploads from their single registered account, records
+  live `receipt_score` + `date`, and reviews competition redistribution/AI-disclosure rules.
+
+## 2026-10-23 — arena/85dc0b4a-gemsdoe85 (AXIS=PRUNE applied; union-merged with ladder/SNAP/RELIEF/CONCENTRATION sessions)
+- Human assigned AXIS=PRUNE in this session, stated 3 slots free this week and no prior R0-variant submission; a parallel session assigned CONCENTRATION — both recorded (IR-V2-29), ordering left to the human.
+- AI verified the R0 recipe content-exactly (byte-exact under the merged 1.4.4 lock), reproduced tracked `prune3`/`r2p85` byte-for-byte (deduped), built the novel count-held `prune3fill20` (`12a3b132…`) with upstream-schema receipt, seeded `ledger/lineage_claims.csv`, computed report-only proxies, and union-merged docs/ledger. No slot used; nothing submitted; no credentials or drivendata.org/dropbox access. AI wrote the `v2-prune` scripts/tests/evidence and the IR-V2-29/30 records.

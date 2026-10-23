@@ -1,7 +1,9 @@
-# SUBMIT — 2026-10-23 (supersedes every earlier SUBMIT note)
+# SUBMIT — 2026-10-23 (PRUNE, PRUNE-rungs, RELIEF & SNAP gated candidates; human submits)
 
-Slots 1–3 are the PRUNE ladder (session 3's choice). The SNAP contingency follows. Upload one file per
-slot, from the human's own registered account; nothing here logs in, scrapes or submits.
+Twelve gated candidates sit in `releases/`: six `PRUNE` rungs, three `RELIEF` tercile-exchange files
+(`SLOT_PLAN.md` pairs `prune3` in Slot 1 with `reliefp2r10` in Slot 2 and picks Slot 3 conditionally,
+or stays pure-`PRUNE` if the human prefers), and three `SNAP` position-bound contingencies. Upload one
+file per slot, from the human's own registered account; nothing here logs in, scrapes or submits.
 
 Upload **one file per slot** from your own registered account. Nothing in this repository logs in,
 scrapes or submits. All three files below are built from the SHA-256-verified parent R0
@@ -46,6 +48,46 @@ left, take them in the order below.
 A fourth built file, `releases/h33-2-b2-r2p25-20261023-3908de12.tif` (941 dots removed, min distance
 2.83 px, +0.003 MODEL), is the cheapest possible probe of the shadow. Spend a slot on it only if one is
 otherwise unused.
+
+## RELIEF variants — orthogonal relief-regime test (`SLOT_PLAN.md` Slot 2 & conditional Slot 3)
+
+Axis `RELIEF` keeps the parent's **exact dot count and mass** (`37,654` dots, each `1.0`), clears R0's
+2,171 `d_cat ≤ 3 px` flank dots (`min d_cat = 3.162 px > 3.0 px` on 100 % of emitted pixels), and
+exchanges 10–15 % of R0's dots across equal-area Basin (`T1`) / Piedmont (`T2`) / Range-front (`T3`)
+terciles (`0.70 · pct_rank(det_elev) + 0.30 · pct_rank(det_elev_slope)`) at `≥ 2.8 px` spacing. Built by
+`scripts/gemsdoe85_relief_session.py`; structural mechanism cards in `docs/mechanism_cards_relief.md`.
+
+### RELIEF-1 (`SLOT_PLAN.md` Slot 2 — Piedmont → Range-front +10 %)
+
+- **File:** `releases/h33-2-b2-reliefp2r10-20261023-669f0637.tif`
+  (fallback `-zeros` twin: `…-669f0637-zeros.tif`, sha256 `e730deb681a25ab19c67a9befaa2c47affd7ca6744a40e50142a332ba35ddbf9`)
+- **sha256:** `669f0637b8141e1cf37d89929bf22155771d2e48a7d32b046fb75a6dfae4d050` · 37,654 dots (`12.769 %` parent dots replaced)
+- **Name:** `h33-2-b2-reliefp2r10-20261023-669f0637`
+- **Note (114/140):** `R0 h33-2-b2; RELIEF piedmont->range +10% (3765 dots, d_cat>3px, n=37654 fixed); pred +0.008 (+0.001..+0.015) MODEL`
+- **Format receipt:** `evidence/session_relief_receipt.json → variants["h33-2-b2-reliefp2r10"]` —
+  EPSG:32611 · 3730×3292 · 1 band · float32 · transform `100,0,243350,0,-100,4508550` · `nodata=nan` ·
+  values ⊆ {0,1} inside footprint · 0 NaN/Inf inside · NaN outside · 0 catalogue mass ·
+  `min d_cat = 3.162 px > 3.0 px` · re-read from disk · **16/16 PASS** (zeros 17/17).
+
+### RELIEF-2 (`SLOT_PLAN.md` conditional Slot 3A if `Slot2 − Slot1 ≥ +0.01` — Basin+Piedmont → Range-front +15 %)
+
+- **File:** `releases/h33-2-b2-reliefbp2r15-20261023-21af1eee.tif`
+  (fallback `-zeros` twin: `…-21af1eee-zeros.tif`, sha256 `e61ad36064dd7e898ed99916444ce194e50c8ae8751ed80e21ea6872bee67be5`)
+- **sha256:** `21af1eee6b8ce7eb92f79f0be586b8a34e551d74a1901ad16deb496b26bdf3d0` · 37,654 dots (`17.092 %` parent dots replaced)
+- **Name:** `h33-2-b2-reliefbp2r15-20261023-21af1eee`
+- **Note (120/140):** `R0 h33-2-b2; RELIEF basin+piedmont->range +15% (5648 dots, d_cat>3px, n=37654 fixed); pred +0.006 (-0.002..+0.014) MODEL`
+- **Format receipt:** `evidence/session_relief_receipt.json → variants["h33-2-b2-reliefbp2r15"]` —
+  0 catalogue mass, `min d_cat = 3.162 px > 3.0 px`, re-read from disk, **16/16 PASS** (zeros 17/17).
+
+### RELIEF-3 (`SLOT_PLAN.md` conditional Slot 3B if `Slot2 − Slot1 ≤ −0.01` — Range-front → Basin+Piedmont +10 %)
+
+- **File:** `releases/h33-2-b2-reliefr2bp10-20261023-7a0329ee.tif`
+  (fallback `-zeros` twin: `…-7a0329ee-zeros.tif`, sha256 `108dde9c53f8c68850ea80d8ad71add672d41ef2fa8fbd27787ef47744e69c58`)
+- **sha256:** `7a0329ee1d53cf4738d114c0c7f1601e3828099d2bd15c0385fd1382675180c2` · 37,654 dots (`13.672 %` parent dots replaced)
+- **Name:** `h33-2-b2-reliefr2bp10-20261023-7a0329ee`
+- **Note (120/140):** `R0 h33-2-b2; RELIEF range->basin+piedmont +10% (3765 dots, d_cat>3px, n=37654 fixed); pred -0.002 (-0.010..+0.007) MODEL`
+- **Format receipt:** `evidence/session_relief_receipt.json → variants["h33-2-b2-reliefr2bp10"]` —
+  0 catalogue mass, `min d_cat = 3.162 px > 3.0 px`, re-read from disk, **16/16 PASS** (zeros 17/17).
 
 ## Contingency uploads — SNAP (only if a slot is free and the PRUNE ladder is closed)
 
@@ -131,6 +173,15 @@ sha256 not already in the ledger. The script is **byte-idempotent**: re-running 
   0.0942 / 0.0912 across the fractional rungs, and the vendor hide-and-recover proxy falls 0.004006 →
   0.000455 → 0 → 0. Both use catalogue pixels as truth while the live scorer **masks** them, so they
   are structurally biased against any shadow-direction edit (IR-V3-04) and are never gates.
+- **RELIEF (`arena/3dd0b94c-gemsdoe85`, `evidence/session_relief_receipt.json`):** SGMC off-catalogue
+  control (`sgmc_minus_catalogue_3px`, `n = 62,122` positives, 20 km block 95 % CI): R0 `0.09539`
+  `[0.08457, 0.10672]`, in-tercile collar control `ctrl_collar3_0pct` `0.09883` `[0.08830, 0.10959]`,
+  `reliefp2r10` **`0.10388`** `[0.09296, 0.11487]`, `reliefbp2r15` **`0.10418`** `[0.09339, 0.11595]`,
+  `reliefr2bp10` `0.09434` `[0.08458, 0.10454]`. Fold-proper whole-component hide-and-recover PROXY
+  (`gems57-pooled-hide-v2`, `n = 11,321` withheld positives): R0 rule `0.09609` `[0.08242, 0.10899]`,
+  `ctrl_collar3_0pct` `0.09638` `[0.08292, 0.11017]`, `reliefp2r10` `0.09283` `[0.07952, 0.10584]`,
+  `reliefbp2r15` `0.09295` `[0.07983, 0.10578]`, `reliefr2bp10` `0.09518` `[0.08203, 0.10820]`.
+  19-band leakage canary: max single-feature AUC **`0.5693`** (`geod_2ndinv`) < 0.90 (**CLEAN**).
 
 ## Gate summary for all files (re-check after download)
 
@@ -139,11 +190,81 @@ that same hash, so a truncated download is visible immediately. All files: 1 ban
 EPSG:32611, 3730×3292, values in {0,1}, NaN exactly outside the sample footprint, zero mass on the
 catalogue, and no dot inside the declared prune rung.
 
-## Count-held PRUNE control — only after a `prune3` receipt (session `arena/85dc0b4a`)
+---
+
+## CONCENTRATION candidates (session `arena/c4de5673`, 2026-10-23 — the axis the **human assigned**)
+
+The PRUNE / SNAP files below remain the backup ladder. Upload ONE file per slot.
+
+| slot | file to upload | sha256 | bytes | dots | note (≤ 140 chars) |
+|---|---|---|---|---|---|
+| 1 | `releases/gems85-h33-h33-2-b2-conc10-20261023-f89e4659-zeros.tif` | `8b406ca6d73af59d757fe26686c8b9035488cfc9f05217222f19b7a7cc5a9fef` | 145,105 | 37,654 | `parent h33-2-b2 0.2778 CLAIM; 10% of dots moved from lowest- to highest-prior 0.8km blocks; pred live -0.01 to -0.03` |
+| 2 | `releases/gems85-h33-h33-2-b2-conc15-20261023-45bfb93b-zeros.tif` | `a52fba562d4dbc57e5741a04bd19f4a644d68deffaeec1d134c3fa93261fd2cd` | 144,107 | 37,654 | `parent h33-2-b2 0.2778 CLAIM; 15% of dots moved from lowest- to highest-prior 0.8km blocks; pred live -0.01 to -0.03` |
+| 3 | `releases/gems85-h33-h33-2-b2-conc20-20261023-a93e0b41-zeros.tif` | `67b6680f0ec18e72b8266a1f0f6126dc937803cecf92472cdb702b3fe7f96337` | 143,050 | 37,654 | `parent h33-2-b2 0.2778 CLAIM; 20% of dots moved from lowest- to highest-prior 0.8km blocks; pred live -0.01 to -0.03` |
+
+The three notes are also in `ledger/submissions.csv` (`form_note`); the exact strings there
+are the ones to paste into the portal.
+
+## Format receipt (re-read from disk after writing; `evidence/axis_concentration_build.json`)
+
+| check | conc10 | conc15 | conc20 |
+|---|---|---|---|
+| single band, float32, 3730×3292, EPSG:32611, transform = `sample_submission.tif` | PASS | PASS | PASS |
+| values in [0, 1] inside the footprint | PASS | PASS | PASS |
+| no NaN inside the footprint; NaN outside (NaN twin) | PASS | PASS | PASS |
+| all finite, zeros outside (zeros twin) | PASS | PASS | PASS |
+| no Inf anywhere | PASS | PASS | PASS |
+| **zero mass on catalogue pixels** (60,988 known-fault pixels) | PASS | PASS | PASS |
+| dot count held exactly at 37,654 | PASS | PASS | PASS |
+| every newly placed dot > 3 px from the catalogue | PASS | PASS | PASS |
+| every newly placed dot ≥ 1 px from every retained dot | PASS | PASS | PASS |
+| sha256 not already present in the ledger | PASS | PASS | PASS |
+| file re-read from disk after writing | PASS | PASS | PASS |
+| shared validator `vendor/gems57.gates.format_report` (zeros twin) | `ok = true` | `ok = true` | `ok = true` |
+| shared validator `vendor/gems57.validate.validate` (zeros twin, footprint + catalogue) | all checks passed | all checks passed | all checks passed |
+| shared validator on the NaN twin | `ok = false` (rejects NaN pixels) | same | same |
+
+**Parent rebuild (the "never approximate the parent" check).** R0 was rebuilt from its
+recipe — `h27-4-solo-d28` minus every dot with Euclidean catalogue distance ≤ 2 px — and
+the rebuild is **pixel-exact** against the pinned parent
+(`c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9`); the rebuilt file's
+own sha256 differs only because the pinned parent was written with a different GeoTIFF byte
+layout. The recipe, both hashes and the verdict are in
+`evidence/axis_concentration_build.json → parent_rebuild`.
+
+**Parent diff (what changed, per file).** Dot count is unchanged; the edit is a relocation.
+
+| | conc10 | conc15 | conc20 |
+|---|---|---|---|
+| dots moved | 3,765 (10.00 %) | 5,648 (15.00 %) | 7,531 (20.00 %) |
+| source blocks (lowest prior) | 3,713 | 5,299 | 6,740 |
+| target blocks (highest prior) | 838 | 1,367 | 1,940 |
+| mean block prior: source → target | 0.017 → 0.260 | 0.022 → 0.243 | 0.026 → 0.229 |
+| share of dots in top-decile prior blocks | 10.6 % → 20.6 % | 10.6 % → 22.1 % | 10.6 % → 22.2 % |
+| block-density CV, 0.8 km occupied blocks (R0 = 0.551) | 0.767 | 0.786 | 0.782 |
+| block-density CV, 1.0 km occupied blocks (R0 = 0.619) | 0.774 | 0.806 | 0.820 |
+| mean displacement | 151.8 km | 142.7 km | 151.5 km |
+
+**Report only (never gates).** Catalogue hide-and-recover PROXY, evaluator
+`gems57-pooled-hide-v2`, 22,663 withheld positives, 95 % CI from the paired physical
+spatial-cluster bootstrap (157 clusters, 1,000 draws, seed 520810): R0 `0.00401`
+[0.00342, 0.00469] → conc10 `0.00378` [0.00322, 0.00444] → conc15 `0.00366`
+[0.00311, 0.00431] → conc20 `0.00350` [0.00297, 0.00414]. This instrument correlates
+−0.87…+0.54 with live scores in the family record and is **never** called a score.
+
+
+## Count-held PRUNE control — only after a `prune3` receipt (session `arena/85dc0b4a`; AXIS=PRUNE human-assigned there)
 
 - **File:** `releases/h33-2-b2-prune3fill20-20261023-12a3b132.tif` (fallback `…-12a3b132-zeros.tif`, identical pixels)
 - **sha256:** `12a3b132083c6fe3f625b8b67de4ef4538bb481aa654faefaa3f039bcae1975f` · 37,654 dots (count held; −2,171 flank +2,171 refill @2.0 px floor)
 - **Note (113/140):** `R0 h33-2-b2 PRUNE rung3+refill@2px: drop 2171 flank, refill 2171 support, 37654 kept; pred +0.002 MODEL; UNSCORED`
-- **Format receipt:** `evidence/session_prune_refill_receipt.json → variants["h33-2-b2-prune3fill20"]` — same grid/CRS/encoding as slot 1, 0 positive px on the catalogue, min distance to catalogue 3.16 px, all gates PASS; builder `scripts/build_prune_variants.py`.
-- **What it decides:** vs the slot-1 receipt only. ≥ +0.01 above it ⇒ held mass at closer spacing pays (reopen MASS/SPACING); ≤ −0.01 ⇒ suppressed-halo mass is dead weight. Do not spend ahead of the ladder.
-- Human status recorded 2026-10-23 (same session): AXIS = PRUNE assigned; 3 slots free this week; no R0 variant previously submitted. `TOP_PUBLIC` still to be read off the leaderboard with a date.
+- **Format receipt:** `evidence/session_prune_refill_receipt.json → variants["h33-2-b2-prune3fill20"]` — same grid/CRS/encoding as the ladder, 0 positive px on the catalogue, min distance to catalogue 3.16 px, all gates PASS; builder `scripts/build_prune_variants.py`. Spend only to disambiguate a `prune3` receipt (mass vs position); it does not displace the CONCENTRATION next-3 above unless the human reorders (IR-V2-29).
+
+## After the human submits
+
+1. Copy the receipt score and the date into `ledger/submissions.csv`
+   (`receipt_score`, `receipt_date`) and add the row to `ledger/history.csv` with
+   `receipt = Y` and evidence class `RECEIPT`.
+2. Update the CURRENT STATE block in `README.md` (best receipt, slots left).
+3. Re-plan against `SLOT_PLAN.md`: a live change under 0.01 is "no evidence" (public chunks
+   only; the private score may differ).
