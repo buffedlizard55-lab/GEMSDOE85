@@ -106,3 +106,12 @@ incumbent are absent from the brief and the repository (`registry/scored_artifac
 scores OWNER-REPORT). **Decision:** 0.2778 stays a CLAIM, `TOP_PUBLIC` stays unfilled, and every
 prediction here is labelled MODEL. The human must fill all three before slot 2 is spent, because the
 third slot is conditional on the first two receipts.
+
+## IR-V2-13 — This brief has no human-assigned AXIS; do not build a new variant
+
+The current task's AXIS field is blank and explicitly reserves axis assignment to the human. The three
+PRUNE variants already in `ledger/submissions.csv` were built in the earlier `arena/e081f5da` session,
+where AI_USE records that the AI selected PRUNE; there is no evidence that the human assigned that
+axis. Their exact `(parent, axis, value)` pairs are already used, so rebuilding them would be a
+forbidden duplicate. No new raster was built this turn. The human must assign an axis/value before a
+new experiment; the existing PRUNE files remain available only if that assignment is confirmed.

@@ -59,3 +59,17 @@ offset argument, and the live scores 0.2600 / 0.2708 / 0.2778 come from the owne
 (GEMSDOE19/24/25/28/31/32) and the brief. This session's own contributions are the exact rebuild
 verification, the unique-credit ranking and its rejection as a MASS tool, the measured refill-capacity
 result, and the SGMC-proxy bias calibration (+0.0083) used to state the predictions.
+
+## 2026-10-23 — arena/30dcc7f0-gemsdoe85 (current verification turn)
+
+- AI read the local manifest, ledger, slot plan, and existing R0 recipe; restored only the hash-pinned
+  H19-5, d2.8/solo, R0, labels, and sample-template inputs from their GitHub mirrors into ignored
+  `data/` storage. No competition-site or leaderboard page was accessed.
+- AI installed the locked Python dependencies, verified the relevant manifest and lineage hashes,
+  rebuilt R0 (37,654 dots) and matched both pinned R0 SHA-256 values exactly, re-read/validated all
+  three existing PRUNE release pairs, and ran the targeted metric/lineage tests (31 passed).
+- AI did not build another raster: the PRUNE axis was selected by the earlier AI session, not assigned
+  by the human in this brief, and all three corresponding axis/value experiments already exist in the
+  ledger. AI added the README CURRENT STATE block and recorded this decision in IRREGULARITIES.md.
+- Human has not supplied an AXIS, dated TOP_PUBLIC, slot availability, or receipt in this turn. No
+  competition submission was made; no slot use is claimed.
