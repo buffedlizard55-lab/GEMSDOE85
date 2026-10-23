@@ -61,50 +61,155 @@
       "id": "IR-85-09",
       "severity": "medium",
       "status": "acknowledged",
-      "finding": "E1's supervised field has canary AUC 0.673 and no single feature exceeds AUC 0.90 (max single channel curv_s2 0.600) — no leakage flag; but the detector is trained on the same catalogue the holdout withholds from, fold-properly, so holdout measures catalogue-transfer, not hidden-fault discovery (inherited IR-32-PROXY-01 limitation).",
+      "finding": "E1's supervised field has canary AUC 0.673 and no single feature exceeds AUC 0.90 (max single channel curv_s2 0.600) \u2014 no leakage flag; but the detector is trained on the same catalogue the holdout withholds from, fold-properly, so holdout measures catalogue-transfer, not hidden-fault discovery (inherited IR-32-PROXY-01 limitation).",
       "action_taken": "Stated on the site and in the run card; no live-score projection is made."
     },
     {
-      "id": "IR-85-003",
+      "id": "IR-85-006",
+      "severity": "high",
+      "status": "fixed-on-branch",
+      "finding": "Live Pages site serves repo root (source main:/, API update returned 403), whose index.html stated 'No verified submission TIFF is available' while docs/ published a 17/17-PASS validated TIF; also docs/downloads/run_card.json contained the duplex lane's card, not the primary GEO-Pb file's card.",
+      "action_taken": "Root index.html rewritten to state the PASS verdict + sha256 and redirect to docs/index.html; docs/downloads/run_card.json replaced with evidence/run_card.json (GEO-Pb primary; duplex card preserved at evidence/run_card_duplex.json). Pages source could not be switched to /docs from this token (403) \u2014 root redirect is the workaround; owner may optionally set Settings>Pages to /docs."
+    },
+    {
+      "id": "IR-85-10",
+      "severity": "high",
+      "status": "open",
+      "finding": "evidence/duplicate_check.json reports is_duplicate=false while its own thresholds are exceeded: raw dot_overlap_3px=0.9914>0.7 (13gems lattice) and max overlap_lift=1.519>1.5 (gems49). Chance-corrected exemption not authorised by AGENTS.md.",
+      "action_taken": "Session bf7be90f: site verdict downgraded to BLOCKED/negative; no slot recommendation. Fix duplicate checker logic upstream; do not re-promote on lift alone."
+    },
+    {
+      "id": "IR-85-11",
+      "severity": "high",
+      "status": "fixed-on-branch",
+      "finding": "Merged site/README claimed 'OK TO DOWNLOAD AND SUBMIT / promote-as-candidate' while registry/lane.json=unassigned and evidence/saturation_certificate.json (overlap 1.0, universal blocker) was binding per AGENTS.md 3,7.",
+      "action_taken": "Banner, README status and root index corrected to BLOCKED (format PASS only); NaN-outside twin removed from download offers - it carries 7,111,787 NaNs and risks the reported [0,1] rejection."
+    },
+    {
+      "id": "IR-85-12",
+      "severity": "medium",
+      "status": "open",
+      "finding": "scripts/check_site.py (blocked-only session) forbids ANY .tif/.zip link or binary under docs/ and requires docs/evidence/run_card.json verdict=negative, so it can never pass on the merged GEO-Pb site that the user requires to offer a download. It is stale relative to the merged design.",
+      "action_taken": "Not deleted and not gamed: reported here; site instead carries visible BLOCKED banner + 'Current decision: do not submit'. Owner should update check_site.py to forbid only unlabelled/promoted downloads."
+    },
+    {
+      "id": "IR-85-014",
+      "severity": "high",
+      "status": "fixed-on-branch",
+      "finding": "Previous GEO-Pb primary (90,000 dots) was emitted at the catalogue-holdout-optimal budget. The holdout marginal bar at DTI~0.1 is ~0.02/dot while the live bar at 0.2778 is 0.0588/dot (docs/research/metric-algebra.md S4 of this repo explicitly warns a holdout-tuned budget does not transfer). The fleet live cascade peaks near 37,654 dots, so the 90k primary is very likely worse live than this repo's own 37,654-dot alternate of the same field.",
+      "action_taken": "Session arena/22847afd primary emitted at 37,654 dots; 90k file relabelled SUPERSEDED on the site; pre-registered gate required <=44,090 dots (research/session-22847afd-hypotheses.md)."
+    },
+    {
+      "id": "IR-85-015",
+      "severity": "medium",
+      "status": "acknowledged",
+      "finding": "RELAY network-completion channel (session E2) is a train/test reversal: built from the visible mask and smoothed along it, fold0 training mean 0.090 on positives vs 0.006 on withheld positives, canary AUC vs withheld 0.457. As a classifier channel it teaches 'near visible network', collapsing holdout DTI 0.0623->0.0402 relative to the previous 24ch arm at matched protocol; as a multiplicative gate (E1) 0.0371 vs crest 0.0695.",
+      "action_taken": "Removed from the shipped field (E2b/E3b loggeg bugfix ablation); RELAY published as a negative result on this instrument. Note the spatially-blocked holdout structurally penalises catalogue-proximal geometry, so this negative does not prove tip/relay geometry is live-worthless."
+    },
+    {
+      "id": "IR-85-017",
+      "severity": "low",
+      "status": "acknowledged",
+      "finding": "Raw 3px dot overlap of the session primary vs this repo's own superseded 90,000-dot GEO-Pb file is 0.79 (chance coverage 0.44, lift 1.81, exact pixel overlap 0.26). Vs every comparable-budget (<=60k) own-repo file overlap <=0.41; vs the 17-raster registry max comparable overlap 0.42 (h33 winner: 0.379, Spearman 0.065).",
+      "action_taken": "Disclosed in evidence/duplicate_check_ownrepo_session.json and the run card. Dense-file raw overlap is the IR-85-002 artifact; candidate is a distinct field and dot set, not a rename."
+    },
+    {
+      "id": "IR-85-018",
+      "severity": "critical",
+      "status": "fixed-on-branch",
+      "finding": "Current site entry pages and README promoted historical TIFFs as OK TO DOWNLOAD AND SUBMIT while the lane was unassigned, the transformed cache was unavailable, and the binding literal saturation certificate blocked all nonempty candidates. Old tests also asserted this unsafe PASS state.",
+      "action_taken": "Fail-closed website and checker now require an assigned lane, available pinned cache, no binding saturation blocker, and an explicitly authorizing current run card. Historical prediction links are deactivated in published pages; existing bytes remain preserved for audit. Current preflight card is negative; no new TIFF, experiment, or submission slot was used."
+    },
+    {
+      "id": "IR-85-019",
+      "severity": "high",
+      "status": "resolved-by-fresh-hash-verified-audit",
+      "finding": "The prior saturation certificate names witness data/raw/learning/registry-saturation-witness.tif, while registry/learning_manifest.json and scripts/restore_learning.py target data/learning/registry-saturation-witness.tif. The actual witness is absent locally, so the prior measurement is binding by AGENTS.md but was not freshly re-opened in this review.",
+      "action_taken": "Preflight now preserves the prior certificate, marks local re-verification false, reports the path mismatch, and blocks submission. Resolve the manifest/certificate provenance before any future attempt to verify or change the saturation result. Follow-up arena/df29b0af: restored witness at manifest destination; exact SHA-256 matches the prior certificate identity. Fresh unchanged shared-code saturation result retains prior provenance and confirms the literal blocker."
+    },
+    {
+      "id": "IR-85-df29b0af-018",
+      "severity": "critical",
+      "status": "fixed-on-branch",
+      "finding": "Merged promotion banners and tests treated format PASS / comparable-budget overlap as clearance despite unassigned lane, unavailable pinned cache and binding literal dense-prior saturation.",
+      "action_taken": "Canonical release audit recomputed with unchanged shared tools; current site/root and all legacy HTML entry points now carry BLOCKED. Historical promotion cards retained, never silently rewritten into experimental negatives."
+    },
+    {
+      "id": "IR-85-df29b0af-019",
+      "severity": "high",
+      "status": "fixed-on-branch",
+      "finding": "check_site validated neither the exact reference transform nor release governance; README/root and canonical submission registry also referred to different primaries.",
+      "action_taken": "Shared on-disk validator checks all historical TIFFs with reference/hash integrity; current decision lives in evidence/run_card.json. Registry submissions remain explicitly historical, not selected."
+    },
+    {
+      "id": "IR-85-df29b0af-020",
+      "severity": "high",
+      "status": "acknowledged",
+      "finding": "Historical literature note and README inferred feature independence from nonsignificant AUC, constant false-positive mass from constant dot count, hidden truth mass from unreceipted scores and universal external-data eligibility.",
+      "action_taken": "Current research review corrects these claims and separates official reference facts, local measurements, hypotheses and unverified owner reports. Historical documents preserved and labeled."
+    },
+    {
+      "id": "IR-85-df29b0af-021",
+      "severity": "high",
+      "status": "fixed-on-branch",
+      "finding": "Session exporter and local uniqueness CLI retained thresholded partial-registry/chance-exemption paths inconsistent with literal shared gate.",
+      "action_taken": "Historical exporter retired before model imports or any field/TIFF construction; uniqueness CLI delegates only to pinned shared gate at surface and dots stages, with surface-only checks supported; no private shared-tool changes."
+    },
+    {
+      "id": "IR-85-df29b0af-022",
+      "severity": "medium",
+      "status": "fixed-on-branch",
+      "finding": "A historical docs/research Markdown page already contained committed merge-conflict markers before this session.",
+      "action_taken": "Preserved both historical drafts in labeled sections, removed marker syntax, and added a published-text regression."
+    },
+    {
+      "id": "IR-85-session6-003",
       "severity": "medium",
       "status": "resolved",
       "finding": "tests/test_shared_contracts.py was skipped in PR #6 with a claim that vendor/gems57 was not vendored, when in fact vendor/gems57 was present and only missing from pytest.ini pythonpath.",
       "action_taken": "Added vendor to pytest.ini pythonpath and removed the erroneous skip so all 33 shared contract tests execute and pass."
     },
     {
-      "id": "IR-85-004",
+      "id": "IR-85-session6-004",
       "severity": "medium",
       "status": "resolved",
       "finding": "tests/test_project.py and scripts/check_site.py were left in a skipped/blocked-only state from PR #3 and docs/research/lane-h85-session.md contained unresolved git merge conflict markers.",
       "action_taken": "Updated check_site.py and test_project.py to verify both internal links/fragments and the active submission status banner, and resolved the conflict markers in docs/research/lane-h85-session.md."
     },
     {
-      "id": "IR-85-006",
+      "id": "IR-85-session6-006",
       "severity": "high",
       "status": "resolved",
       "finding": "GEO-Pb v1 split-halo defect: src/gems85/geopb.py applied the two-sample across-line step difference Y(x+3n) - Y(x-3n) to det_elev_slope (band 19) and 1m LiDAR step_max (lidar band 3). Both are non-negative edge magnitudes that peak ON the fault trace (x=0). Differencing a positive impulse across +/-3 px produces ZERO on the fault trace (x=0) and two false shoulders at x = +/-3 px (+/-300 m, where the 300 m triangular kernel k(300 m) = 0), causing crest() NMS to place dots on the +/-300 m shoulders and collapsing geopb_crest AUC from 0.5884 to 0.5036.",
       "action_taken": "Separated bulk STATE juxtaposition (16-strike whitened step across rtp, tmi, iso_grav_anom, depth_to_base_surf, cond_surf, TMI_up150, K/Th/U/ThK/UK/UTh, det_elev) from on-fault INTERFACE localization (LiDAR lappos_max/lapneg_max/step_max/ex_max/relief, det_elev_slope, -tc, iso_grav_anom_slope, tmi_hg evaluated at x=0) in src/gems85/next_gen.py, recovering post-crest AUC from 0.5036 to 0.5831."
     },
     {
-      "id": "IR-85-007",
+      "id": "IR-85-session6-007",
       "severity": "high",
       "status": "resolved",
       "finding": "Withheld-block negative contamination and 2D ribbon blob-clumping in scripts/run_supervised.py: (1) sampling negatives across the full footprint labeled unmasked withheld faults inside the 20 km withheld blocks as negatives, and including smooth regional fields (det_elev, depth_to_base, cond_surf, geod_*, ieq_*, deq_*) let the GBM identify and suppress the withheld blocks (OOF AUC 0.5475-0.5728); (2) running poisson_thin directly on smooth 2D probabilities packed dots in 2D across range-front ribbons (4-10 px off-fault) rather than along 1D fault centerlines.",
       "action_taken": "Restricted the fold-proper GBM to translation-invariant local derivative/juxtaposition/scarp channels, sampled negatives only within visible-fault blocks, and applied 1-step Hessian-normal axial crest extraction (crest_1step). This lifted OOF withheld-AUC from 0.5728 to 0.6455 (4/4 folds) and 37,654-dot HOLDOUT-DTI from 0.06233 to 0.10154, peaking at 0.11440 at 72,000 dots."
     },
     {
-      "id": "IR-85-008",
+      "id": "IR-85-session6-008",
       "severity": "high",
       "status": "resolved",
       "finding": "Target leakage in static d2.8 holdout benchmark: d2.8 (gems24-h25-1-dotted-h19-5-d2-8, 44,090 dots) was derived from H19-5, which was trained on the FULL labels.tif (including fold.withheld of gems85-holdout-v1.0.0) and zeroed d=0 while leaving 6,436 dots at d=1..2 px around labels.tif (3.03x density lift vs 1.23x on off-catalogue SGMC faults). Deleting d=1 px (h27-4) drops d2.8's holdout tp_w from 9,498.8 to 2,804.3 (DTI 0.11818 -> 0.03560), and deleting d<=2 px (h33-2-b2) drops tp_w by 96.0% to 378.0 (DTI 0.00485), while the live score rises 0.2600 -> 0.2708 -> 0.2778.",
       "action_taken": "Documented the exact 3-step decomposition in evidence/experiments.json and README.md. Even against this leaked 0.11153 static benchmark, our zero-leakage fold-proper H85-S6-2 detector achieves HOLDOUT-DTI 0.11440 at 72,000 dots and 0.11309 at 60,000 dots."
     },
     {
-      "id": "IR-85-009",
+      "id": "IR-85-session6-009",
       "severity": "medium",
       "status": "resolved",
       "finding": "scripts/build_registry.py referenced 5 of the 17 registry rasters (GEMSDOE32, GEMSDOE31, GEMSDOE30, GEMSDOE49, GEMSDOE63) via /home/user/ref/... without pinning them in registry/data_manifest.json, causing build_registry.py and build_submission.py to fail on a clean checkout.",
       "action_taken": "Pinned all 5 rasters by commit SHA and SHA-256 in registry/data_manifest.json (28/28 verified) and updated scripts/build_registry.py to resolve from data/scored/ when /home/user/ref is absent."
+    },
+    {
+      "id": "IR-85-df29b0af-023",
+      "severity": "critical",
+      "status": "fixed-on-branch",
+      "finding": "Parallel PR #19 reintroduced promotion with its own raw dot-overlap 0.9970833333333333 above the literal 0.70 gate and deleted prior safety history/tests. Its pandas module import also broke the locked lightweight test environment.",
+      "action_taken": "Preserve detector/geometry tests and TIFF receipts as Session-6 history; do not promote. Retain prior research/tests and atomic path-safe restoration. Defer optional pandas import to the data-table function; no new experiment run."
     }
   ]
 }

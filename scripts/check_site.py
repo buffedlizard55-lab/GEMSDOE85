@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
-"""Offline internal-link, evidence-integrity and submission-readiness checks."""
+"""Check links, published evidence, current audit identity and blocked UI contracts.
+
+A successful site check means the blocked status is truthful, NOT slot approval.
+"""
 from html.parser import HTMLParser
 import json
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
+BANNER = 'BLOCKED — DO NOT SUBMIT'
 
 
 class Links(HTMLParser):
@@ -13,9 +17,11 @@ class Links(HTMLParser):
         super().__init__()
         self.links = []
         self.ids = set()
+        self.blocked = False
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        self.blocked |= attrs.get('data-release-status') == 'blocked'
         if attrs.get('id'):
             self.ids.add(attrs['id'])
         for name in ['href', 'src']:
@@ -23,18 +29,25 @@ class Links(HTMLParser):
                 self.links.append(attrs[name])
 
 
-def check(root=ROOT):
+def check(root=ROOT, *, fresh_audit=True):
+    root = Path(root).resolve()
     errors = []
-    files = [f for f in [root / 'index.html', *sorted((root / 'docs').rglob('*.html'))] if f.exists()]
-    for file in files:
+    for file in [root / 'index.html', *sorted((root / 'docs').rglob('*.html'))]:
+        text = file.read_text()
         parser = Links()
-        parser.feed(file.read_text())
+        parser.feed(text)
+        if not parser.blocked or BANNER not in text:
+            errors.append(f'{file}: missing current BLOCKED status')
+        primary = file.parent == root / 'docs' and file.name in (
+            'index.html', 'executive-summary.html', 'method.html', 'data.html')
+        if primary and ('OK TO DOWNLOAD AND SUBMIT' in text or 'ready to upload' in text.lower()):
+            errors.append(f'{file}: unauthorized promotion text')
         for url in parser.links:
             part = urlsplit(url)
             if part.scheme or part.netloc:
                 continue
             dest = (file.parent / unquote(part.path)).resolve() if part.path else file
-            if not dest.is_relative_to(root.resolve()):
+            if not dest.is_relative_to(root):
                 errors.append(f'{file}: link escapes project: {url}')
             elif not dest.exists():
                 errors.append(f'{file}: broken link: {url}')
@@ -43,28 +56,27 @@ def check(root=ROOT):
                 target.feed(dest.read_text())
                 if unquote(part.fragment) not in target.ids:
                     errors.append(f'{file}: missing fragment: {url}')
-
-    sub_path = root / 'registry' / 'submission.json'
-    if sub_path.exists():
-        sub = json.loads(sub_path.read_text())
-        prim = sub.get('primary', {})
-        fn = prim.get('filename', '')
-        tif_path = root / 'docs' / 'downloads' / fn
-        if not fn or not tif_path.exists():
-            errors.append(f'Missing advertised primary download TIFF: {tif_path}')
-        if not (0 < len(sub.get('note', '')) <= 140):
-            errors.append(f'Submission note exceeds 140 chars: {len(sub.get("note", ""))}')
-        for name in ['index.html', 'executive-summary.html']:
-            html = (root / 'docs' / name).read_text()
-            if 'OK TO DOWNLOAD' not in html and 'DO NOT DOWNLOAD' not in html:
-                errors.append(f'Missing visible download status banner in docs/{name}')
-            if fn and fn not in html:
-                errors.append(f'Primary filename {fn} not shown in docs/{name}')
-    else:
-        for name in ['index.html', 'executive-summary.html']:
-            html = (root / 'docs' / name).read_text()
-            if 'No verified submission TIFF is available' not in html and 'Current decision: do not submit' not in html:
-                errors.append(f'Missing visible blocked status in {name}')
+            if primary and part.path.lower().endswith(('.tif', '.zip')):
+                errors.append(f'{file}: blocked primary page offers a submission binary')
+    for group in ('evidence', 'registry'):
+        for source in (root / group).glob('*.json'):
+            public = root / 'docs' / group / source.name
+            if not public.is_file() or source.read_bytes() != public.read_bytes():
+                errors.append(f'Missing/stale published {group}: {source.name}')
+    card = json.loads((root / 'evidence/run_card.json').read_text())
+    if card.get('safe_to_submit') is not False or card.get('verdict') != 'negative':
+        errors.append('Current blocked review must not promote a historical raster')
+    if card.get('raster_sha256') is not None or card.get('experiments_run') != 0:
+        errors.append('Preflight must not fabricate a new raster or experiment')
+    if len(card.get('submission_note', '')) > 140:
+        errors.append('Submission note exceeds 140 characters')
+    public_card = root / 'docs/downloads/run_card.json'
+    if not public_card.exists() or public_card.read_bytes() != (root / 'evidence/run_card.json').read_bytes():
+        errors.append('Download run card differs from current decision')
+    if fresh_audit:
+        from release_audit import audit
+        if audit(root) != card:
+            errors.append('Current run card does not match a fresh byte-level release audit')
     return errors
 
 
@@ -74,4 +86,4 @@ if __name__ == '__main__':
         print(error)
     if errors:
         raise SystemExit(1)
-    print('Site OK: internal links, fragments, and submission status verified.')
+    print('Site OK: links, evidence identity and BLOCKED release status verified; no submission authorized.')

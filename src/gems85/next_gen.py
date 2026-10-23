@@ -28,7 +28,6 @@ discovered in the earlier GEO-Pb and supervised implementations:
 from __future__ import annotations
 
 import numpy as np
-import pandas as pd
 import rasterio
 from scipy import ndimage as ndi
 
@@ -118,6 +117,8 @@ def geothermal_upflow_prior(fp: np.ndarray) -> np.ndarray:
         (where measured fault enrichment is 1.50x) with a 2.5 km (25 px) kernel around
         high-temperature geothermometer upflow sites (temp_c >= 50 C or geothermcat_c >= 120 C).
     """
+    import pandas as pd  # Optional table dependency; synthetic geometry tests do not need it.
+
     ws = pd.read_csv(
         grid.DATA / "external" / "gdr_wellspring_in_footprint.csv",
         usecols=["row", "col", "thermalclass", "temp_c", "geothermcat_c"],
@@ -363,4 +364,3 @@ def fuse_oof_geopb_thermal(
         * (1.0 + 0.30 * g_th)
     ).astype(np.float32)
     return crest_1step(combined, fp, sigma=1.0, keep_floor=0.04)
-

@@ -43,24 +43,21 @@ def test_crest_1step_collapses_ribbon_onto_centerline():
     assert np.all(np.abs(ys - 32) <= 1), f"dots wandered off centerline: {ys}"
 
 
-def test_shipped_session6_submission_beats_pr6_and_d28_on_holdout():
-    """Verify the promoted Session-6 run card and submission artifacts on disk."""
-    card = json.loads((ROOT / "evidence" / "run_card.json").read_text())
-    sub = json.loads((ROOT / "registry" / "submission.json").read_text())
-
-    assert card["verdict"] == "promote-as-candidate"
+def test_session6_history_is_preserved_but_not_release_authority():
+    """Byte/receipt diagnostics cannot authorize an overlap-violating candidate."""
+    import hashlib
+    card = json.loads((ROOT / "evidence/run_card_session6_historical.json").read_text())
+    sub = json.loads((ROOT / "registry/submission_session6_historical.json").read_text())
+    current = json.loads((ROOT / "evidence/run_card.json").read_text())
     assert card["holdout_dti"]["label"] == "HOLDOUT-DTI"
-    assert card["holdout_dti"]["value"] > 0.11153, "must beat d2.8 static holdout benchmark"
-    assert card["holdout_dti"]["value"] > 0.09838, "must beat PR #6 90k GEO-Pb v1"
-    assert card["holdout_dti"]["ci95"][0] > 0.10654, "lower 95% CI must exceed PR #6 upper 95% CI"
-    assert card["budget"]["experiments_run"] <= 3
-    assert len(card["submission_note"]) <= 140
-    assert not card["correlation_vs_registry"]["is_duplicate"]
-
-    for item in sub["ladder"]:
-        z_path = ROOT / "docs" / "downloads" / Path(item["zeros"]["path"]).name
-        n_path = ROOT / "docs" / "downloads" / Path(item["nan"]["path"]).name
-        assert z_path.exists(), z_path
-        assert n_path.exists(), n_path
-        rep = submission.validate(z_path)
-        assert rep.passed, rep.checks
+    assert len(card["holdout_dti"]["ci95"]) == 2
+    assert card["correlation_vs_registry"]["max_dot_overlap_3px"] > 0.70
+    assert current["safe_to_submit"] is False
+    assert current["verdict"] == "negative"
+    assert sub["release_status"].startswith("historical-only")
+    path = ROOT / "docs/downloads" / sub["primary"]["filename"]
+    assert hashlib.sha256(path.read_bytes()).hexdigest() == card["raster_sha256"]
+    # This is a synthetic/byte contract, not a new HOLDOUT-DTI experiment.
+    rows = {row["file"]: row for row in current["historical_artifacts"]}
+    assert rows[path.relative_to(ROOT).as_posix()]["format_ok"]
+    assert not rows[path.relative_to(ROOT).as_posix()]["safe_to_submit"]

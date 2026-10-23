@@ -1,0 +1,121 @@
+{
+  "experiment": 2,
+  "hypothesis_id": "H85-2 GEO-Pb 16 strikes, persistence retired",
+  "hypothesis": "double GEO-Pb strike resolution 8 -> 16 (normal azimuth spacing ~22.5 -> ~11 deg) and retire the 1.5 km persistence term (null result), to raise credit per emitted dot on strikes sampled off-angle.",
+  "mechanism": "off-angle strike sampling attenuates the two-sample step statistic; 16 strikes reduce the worst-case angular error; persistence removed because L = 1/15/25 px were statistically indistinguishable on holdout.",
+  "named_non_fault_mimic": "distal alluvial-fan margins and Lake Lahontan shorelines (straightness from orientation consensus); aeromagnetic/radiometric acquisition seams (two-of-three median vote); erosional volcanic mesa/flow margins (irreducible confounder).",
+  "layers": "same 10-band whitened step stack as H85-1: rtp, iso_grav_anom, cond_surf, depth_to_base_surf (potential field); GeoDAWN K/Th/TC (radiometric); det_elev, det_elev_slope, LiDAR step_max (topographic).",
+  "difference_from_repo": "H85-1 uses 8 strikes + persistence 15 px; this experiment uses 16 strikes + persistence 1 px (retired). No new data.",
+  "leakage_canary": "not rerun: surface is unchanged in construction (covariance-whitened offset differences, no catalogue input); H85-1 canary AUC = 0.5036.",
+  "results": {
+    "crest8": {
+      "37654": {
+        "pooled_dti": 0.07475094419724748,
+        "ci95": [
+          0.07025149064637033,
+          0.07925039774812463
+        ],
+        "n_withheld_positives": 60988,
+        "per_fold": [
+          0.0771162803876064,
+          0.07504295704142082,
+          0.0681532281295331,
+          0.07849780281723791
+        ],
+        "tp_w": 5954.324057206745,
+        "fp_w": 148371.19077223123,
+        "fn_w": 55033.675942793256
+      },
+      "60000": {
+        "pooled_dti": 0.08970713087363251,
+        "ci95": [
+          0.08278382006147397,
+          0.09663044168579105
+        ],
+        "n_withheld_positives": 60988,
+        "per_fold": [
+          0.09431559483530476,
+          0.09114547869633031,
+          0.07920152202251127,
+          0.09371973735146019
+        ],
+        "tp_w": 8780.34649481573,
+        "fp_w": 236657.20421906875,
+        "fn_w": 52207.653505184266
+      },
+      "90000": {
+        "pooled_dti": 0.09838308302222241,
+        "ci95": [
+          0.09022123039966035,
+          0.10654493564478448
+        ],
+        "n_withheld_positives": 60988,
+        "per_fold": [
+          0.10327788027153373,
+          0.10469137584536177,
+          0.08636118725538369,
+          0.09831572297936028
+        ],
+        "tp_w": 12029.669022419077,
+        "fp_w": 355387.1076453063,
+        "fn_w": 48958.33097758092
+      }
+    },
+    "crest16": {
+      "37654": {
+        "pooled_dti": 0.07258390685669243,
+        "ci95": [
+          0.06663031409579921,
+          0.07853749961758565
+        ],
+        "n_withheld_positives": 60988,
+        "per_fold": [
+          0.07817192977427324,
+          0.07109065162012371,
+          0.06461208064871886,
+          0.07628822335200891
+        ],
+        "tp_w": 5779.984920084612,
+        "fp_w": 148426.86119276288,
+        "fn_w": 55208.015079915385
+      },
+      "60000": {
+        "pooled_dti": 0.08662390669753736,
+        "ci95": [
+          0.08007483922236049,
+          0.09317297417271424
+        ],
+        "n_withheld_positives": 60988,
+        "per_fold": [
+          0.09103206685467667,
+          0.08883661446445668,
+          0.07656011469016887,
+          0.0895291980027291
+        ],
+        "tp_w": 8475.345717771881,
+        "fp_w": 236776.27259541763,
+        "fn_w": 52512.65428222812
+      },
+      "90000": {
+        "pooled_dti": 0.09449805979878373,
+        "ci95": [
+          0.08706007328078418,
+          0.10193604631678328
+        ],
+        "n_withheld_positives": 60988,
+        "per_fold": [
+          0.09878456441881384,
+          0.10149257388288437,
+          0.08444519225477018,
+          0.09233588890017924
+        ],
+        "tp_w": 11549.281354365583,
+        "fp_w": 355584.3525177826,
+        "fn_w": 49438.71864563441
+      }
+    }
+  },
+  "n_withheld_positives": 60988,
+  "evaluator_version": "gems85-holdout-v1.0.0",
+  "runtime_s": 167.81305956840515
+}

@@ -1,4 +1,8 @@
-# GEMSDOE85 — DOE GEMS Prize (DrivenData #306): Lane H85 (Archived Session Notes)
+> **Historical drafts, not current release guidance.** Both sides of an inherited committed merge conflict are preserved below as labeled archival sections. See [current status](../index.html).
+
+## Archived draft A
+
+# GEMSDOE85 — DOE GEMS Prize (DrivenData #306): Lane H85
 
 **Read this first, every session.** This repository exists to generate ONE unique,
 validated, easy-to-download GeoTIFF submission for the DOE GEMS competition, and to
@@ -158,10 +162,9 @@ organizer-authenticated — IR-85-03). `data/` is gitignored.
 - EPSG:32611: https://epsg.io/32611
 - Tversky index: https://en.wikipedia.org/wiki/Tversky_index
 - GDR submission 1391 (wellsprings): https://gdr.openei.org/submissions/1391
-
 ---
 
-## Archived Preflight Session (PR #3)
+## Archived draft B
 
 # GEMSDOE85 — evidence-first fault discovery
 

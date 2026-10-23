@@ -1,0 +1,122 @@
+{
+  "candidate_id": "GEMSDOE85-H85-WORM-46000",
+  "slug": "h85-worm-pure",
+  "content_digest8": "e3091ec2",
+  "description": "Pure gravity worm persistence (13/18/11/5/15) 46000 dots, B=2",
+  "submission_note_zeros": "GEMSDOE85 worm-only 46000 | gravity worm | 0 on-cat 200 m | HOLDOUT-DTI see audit | gems85-h85-worm-pure-20261022T221114Z-e3091ec2-zeros.tif 5544436d | UNSCORED",
+  "submission_note_nan": "GEMSDOE85 worm-only 46000 | gravity worm | 0 on-cat 200 m | HOLDOUT-DTI see audit | gems85-h85-worm-pure-20261022T221114Z-e3091ec2-nan.tif b3d3f846 | UNSCORED",
+  "zeros_tif": {
+    "filename": "gems85-h85-worm-pure-20261022T221114Z-e3091ec2-zeros.tif",
+    "size_bytes": 175572,
+    "sha256": "5544436d93354b92a6e6c1a8222b3cda9a1c3624ce53009227cb66e252d005d2",
+    "mode": "zeros",
+    "crs": "EPSG:32611",
+    "transform": [
+      100.0,
+      0.0,
+      243350.0,
+      0.0,
+      -100.0,
+      4508550.0
+    ],
+    "shape": [
+      3730,
+      3292
+    ],
+    "dtype": "float32",
+    "nodata": null,
+    "nodata_repr": "None",
+    "emitted_positive_pixels": 46000,
+    "footprint_fraction": 0.008902,
+    "on_catalogue_positive_pixels": 0,
+    "in_footprint_finite_pixels": 5167373,
+    "in_footprint_min": 0.0,
+    "in_footprint_max": 1.0,
+    "full_grid_finite_pixels": 12279160,
+    "checks": {
+      "single_band": true,
+      "dtype_float32": true,
+      "dimensions_3730x3292": true,
+      "crs_epsg_32611": true,
+      "in_footprint_all_finite": true,
+      "in_footprint_zero_nan": true,
+      "in_footprint_zero_inf": true,
+      "in_footprint_zero_sentinel": true,
+      "in_footprint_range_0_1": true,
+      "outside_footprint_compliant": true,
+      "zero_on_catalogue_leakage": true,
+      "validator_range_0_1_guaranteed": true
+    },
+    "all_checks_passed": true
+  },
+  "nan_tif": {
+    "filename": "gems85-h85-worm-pure-20261022T221114Z-e3091ec2-nan.tif",
+    "size_bytes": 305762,
+    "sha256": "b3d3f846de50c6fd2521757efe9362f25a03b61b3fd90fff6718f9e91479d37f",
+    "mode": "nan",
+    "crs": "EPSG:32611",
+    "transform": [
+      100.0,
+      0.0,
+      243350.0,
+      0.0,
+      -100.0,
+      4508550.0
+    ],
+    "shape": [
+      3730,
+      3292
+    ],
+    "dtype": "float32",
+    "nodata": null,
+    "nodata_repr": "nan",
+    "emitted_positive_pixels": 46000,
+    "footprint_fraction": 0.008902,
+    "on_catalogue_positive_pixels": 0,
+    "in_footprint_finite_pixels": 5167373,
+    "in_footprint_min": 0.0,
+    "in_footprint_max": 1.0,
+    "full_grid_finite_pixels": 5167373,
+    "checks": {
+      "single_band": true,
+      "dtype_float32": true,
+      "dimensions_3730x3292": true,
+      "crs_epsg_32611": true,
+      "in_footprint_all_finite": true,
+      "in_footprint_zero_nan": true,
+      "in_footprint_zero_inf": true,
+      "in_footprint_zero_sentinel": true,
+      "in_footprint_range_0_1": true,
+      "outside_footprint_compliant": true,
+      "zero_on_catalogue_leakage": true,
+      "validator_range_0_1_guaranteed": true
+    },
+    "all_checks_passed": true
+  },
+  "duplication_check": [
+    {
+      "ref": "gemsdoe32-h33-h33-2-b2-20261004T220000Z-e5eb6e7e-zeros.tif",
+      "overlap_within_3px": 0.13354347826086957,
+      "pearson_r": -0.9921273214953699
+    },
+    {
+      "ref": "gems25-dotted-h19-5-d2-8-20261002-e56ea318af89-nan.tif",
+      "overlap_within_3px": 0.14178260869565218,
+      "pearson_r": -0.992759526428325
+    }
+  ],
+  "holdout_metrics": {
+    "catalogue_hidden_mean": 0.138,
+    "drift_corrected_holdout_mean": 0.149,
+    "predicted_leaderboard_dti": 0.276,
+    "ei_drift_corrected": 0.004
+  },
+  "validator_output": {
+    "zeros_all_finite_inside": true,
+    "zeros_no_nan_inside": true,
+    "zeros_range_0_1": true,
+    "zeros_validator_guaranteed": true,
+    "nan_all_finite_inside": true,
+    "crs_shape_transform_match": true
+  }
+}

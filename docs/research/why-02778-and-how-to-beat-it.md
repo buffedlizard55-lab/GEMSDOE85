@@ -77,4 +77,3 @@ Despite `d2.8`'s leaked `0.11153` benchmark, our strictly **fold-proper, zero-le
 - **`HOLDOUT-DTI = 0.10154`** (`95% CI [0.09616, 0.10693]`) at `37,654` dots (beating PR #6's 90k `0.09838` and PR #4's 37.6k `0.09837` at matched 37,654-dot mass),
 - **`HOLDOUT-DTI = 0.11309`** (`95% CI [0.10709, 0.11908]`) at `60,000` dots, and
 - **`HOLDOUT-DTI = 0.11440`** (`95% CI [0.10786, 0.12094]`) at `72,000` dots — **beating both PR #6 (`0.09838`, non-overlapping 95% CI) and `d2.8` (`0.11153`), while scoring `+56.1%` higher than `h33-2-b2` (`0.12944` vs `0.08291`) on independent off-catalogue USGS SGMC faults (`sgmc_far10`)**!
-

@@ -1,0 +1,100 @@
+{
+  "run_id": "gems85-20261023T002139Z",
+  "hypothesis": "H85-S6-2 GEO-Pb-v2 + Translation-Invariant Multi-Physics OOF + Geothermal Upflow Crest: separates bulk block STATE juxtaposition (16-strike whitened step across rtp, tmi, iso_grav, depth_to_base, cond_surf, TMI_up150, K/Th/U/ThK/UK/UTh, det_elev) from on-fault INTERFACE localization (1m LiDAR lappos/lapneg/step_max/ex_max, det_elev_slope, -tc, iso_grav_slope, tmi_hg; fixing the IR-85-006 split-halo bug), fuses with a fold-proper translation-invariant local-derivative GBM (fixing IR-85-007 withheld-block negative contamination, raising OOF AUC from 0.5728 to 0.6455) and GDR 1391 geothermal upflow proximity (1 + 0.30*g_thermal), and extracts 1-px axial centerlines via Hessian-normal non-maximum suppression before sep=3.6px Poisson thinning.",
+  "mechanism": "Concealed range-front and intrabasin geothermal faults produce a joint step in subsurface potential/radiometric state variables coinciding with an on-line piedmont/LiDAR inflection, shallow magnetic continuation residual (tmi - TMI_up150), and warm fluid upflow (1.50x fault enrichment within 1.5 km of GDR 1391 thermal springs/wells). Extracting the 1-px Hessian-normal axial crest prevents 2D ribbon blob-clumping and allocates every dot along 1D fault centerlines where the 300 m triangular kernel pays.",
+  "named_non_fault_process_that_could_mimic_it": "Erosional volcanic mesa and lava-flow margins (straight, multi-physics contrast in magnetics, radiometrics and elevation without tectonic offset), partially mitigated by the high-elevation flat-plateau volcanic-mesa suppressor (det_elev > 1.3 IQR & tmi_hg > 1.5 IQR & low regional gravity slope); secondary mimics are distal alluvial-fan aprons, Lake Lahontan shoreline benches, and GeoDAWN flight-line seams (azimuth audit max single-orientation share 0.254 < 0.35).",
+  "holdout_dti": {
+    "label": "HOLDOUT-DTI",
+    "evaluator_version": "gems85-holdout-v1.0.0",
+    "value": 0.11439816178158387,
+    "ci95": [
+      0.10785935730617695,
+      0.12093696625699078
+    ],
+    "per_fold": [
+      0.122220660978755,
+      0.11713058635240105,
+      0.1092187658555097,
+      0.10821462070711703
+    ],
+    "n_withheld_positives": 60988,
+    "protocol": "hide-and-recover; whole fault segments withheld by spatial block with a 5 px buffer; catalogue-derived features from visible faults only; visible faults masked pixel-exactly; pooled DTI, alpha 0.2, beta 0.8, 300 m triangular kernel"
+  },
+  "controls_at_matched_mass": {
+    "uniform_random": 0.06854276785936068,
+    "derivative_control_sato_det_elev": 0.017631075061456277,
+    "pr6_geopb_crest_90k": 0.09838,
+    "d28_static_holdout_benchmark": 0.11153,
+    "control_budget_used": 60000
+  },
+  "vs_random_delta": 0.04585539392222318,
+  "vs_pr6_delta": 0.01601816178158387,
+  "vs_d28_delta": 0.002868161781583861,
+  "geopb_ablation_37654px": {
+    "with": 0.06229918424308149,
+    "without": 0.05712739506360241,
+    "delta": 0.0051717891794790805,
+    "folds_positive": 4
+  },
+  "leakage_canary": {
+    "geopb_v2_ti_crest_auc": 0.6238886651371113,
+    "oof_ti_auc": 0.645523980463461,
+    "geopb_v2_s1_auc": 0.5830919299595823,
+    "mag_alt_s3_auc": 0.5606603808279907,
+    "g_thermal_auc": 0.50405579594039,
+    "threshold": 0.9,
+    "verdict": "clean"
+  },
+  "correlation_vs_registry": {
+    "max_abs_spearman": 0.16361956400910876,
+    "max_dot_overlap_3px": 0.9970833333333333,
+    "thresholds": {
+      "spearman": 0.9,
+      "dot_overlap_3px": 0.7,
+      "overlap_lift_over_chance": 1.5
+    },
+    "is_duplicate": false
+  },
+  "raster_sha256": "9de192d12081f33b03ae65bbebd944cb4c9f1fa393002fba1d0c1f6980c7c8d2",
+  "validator_output": {
+    "all_checks_passed": true,
+    "checks": {
+      "file_exists": true,
+      "single_band": true,
+      "dtype_float32": true,
+      "shape_3730x3292": true,
+      "crs_epsg_32611": true,
+      "transform_matches_template": true,
+      "resolution_100m": true,
+      "no_nan_inside_footprint": true,
+      "no_inf_inside_footprint": true,
+      "values_in_0_1_inside_footprint": true,
+      "all_finite_whole_raster": true,
+      "values_in_0_1_whole_raster": true,
+      "outside_footprint_is_zero": true,
+      "no_nodata_tag": true,
+      "has_positive_predictions": true,
+      "no_prediction_outside_footprint": true,
+      "zero_mass_within_2px_of_catalogue": true
+    },
+    "no_nan_inside_footprint": true,
+    "values_in_0_1": true,
+    "crs_shape_transform_match": true
+  },
+  "submission_name": "gems85-geopb-v2-ti-crest-72000dots-sep3p6-20261023T002139Z-7c15023c-zeros.tif",
+  "submission_note": "H85-S6-2 GEO-Pb-v2+TI-OOF+thermal crest, 72000 dots sep3.6, 0 in 200m cat, HOLDOUT-DTI 0.1144 (UNSCORED)",
+  "preregistered_gate": {
+    "beats_derivative_control": true,
+    "beats_uniform_random": true,
+    "beats_pr6_geopb_crest_90k": true,
+    "beats_d28_holdout_benchmark": true,
+    "leakage_canary_clean": true
+  },
+  "verdict": "promote-as-candidate",
+  "verdict_caveat": "'promote-as-candidate' means the file cleared this repository's pre-registered gate and beat both PR #6 (0.09838) and d2.8 (0.11153) on the spatially-blocked holdout. It is NOT a leaderboard projection. No organizer score exists for any artifact in this repository.",
+  "budget": {
+    "experiments_run": 3,
+    "limit": 3,
+    "note": "Session 6 ran exactly 3 hypotheses (H85-S6-1 geopb_v2_piedmont_thermal, H85-S6-3 mag_continuation_k_alteration, H85-S6-2 oof_ti_geopb_v2_thermal_crest) within the 3-experiment / 2-hour Parallel-Run Protocol cap."
+  }
+}

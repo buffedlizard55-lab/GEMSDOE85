@@ -1,45 +1,61 @@
+"""Release contracts: format-valid history must never imply protocol clearance."""
 from pathlib import Path
 import json
-import shutil
+import hashlib
+import numpy as np
 import pytest
-from check_site import check
-from preflight import review
+import rasterio
 
 ROOT = Path(__file__).resolve().parents[1]
+import importlib.util
 
 
-def test_site_links_and_submission_status_work():
-    assert check() == []
-    sub_path = ROOT / 'registry/submission.json'
-    assert sub_path.exists()
-    sub = json.loads(sub_path.read_text())
-    assert len(sub['note']) <= 140
-    assert (ROOT / 'docs/downloads' / sub['primary']['filename']).exists()
+def load(name):
+    spec = importlib.util.spec_from_file_location(name, ROOT / 'scripts' / (name + '.py'))
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
 
 
-def test_preflight_missing_data_is_negative_not_success(tmp_path):
-    shutil.copytree(ROOT / 'registry', tmp_path / 'registry')
-    shutil.copytree(ROOT / 'vendor', tmp_path / 'vendor')
-    card = review(tmp_path)
+@pytest.fixture(scope='module')
+def generated():
+    builder = load('build_site')
+    assert builder.build() == 0
+    return json.loads((ROOT / 'evidence/run_card.json').read_text())
+
+
+def test_site_generation_and_validation(generated):
+    assert load('check_site').check(ROOT) == []
+
+
+def test_all_historical_files_revalidated_not_promoted(generated):
+    rows = generated['historical_artifacts']
+    expected = set((ROOT / 'submissions').rglob('*.tif')) | set((ROOT / 'docs/downloads').rglob('*.tif'))
+    assert {row['file'] for row in rows} == {p.relative_to(ROOT).as_posix() for p in expected}
+    assert rows and any(r['format_ok'] for r in rows)
+    for row in rows:
+        assert row['safe_to_submit'] is False
+        path = ROOT / row['file']
+        assert row['sha256'] == hashlib.sha256(path.read_bytes()).hexdigest()
+        if row['format_ok']:
+            assert all(row['checks'].values())
+            assert row['validator_output']['ok']
+    assert any(not row['format_ok'] for row in rows if '-nan.tif' in row['file'])
+
+
+def test_run_card_and_note_contracts(generated):
+    card = generated
     assert card['verdict'] == 'negative'
     assert card['safe_to_submit'] is False
-    assert card['safe_to_download'] is False
-    assert card['experiments_run'] == 0
-    assert card['submission_slots_used'] == 0
-    assert not all(row['ok'] for row in card['gates']['core_mirror_integrity'])
+    assert card['raster_sha256'] is None
+    assert card['submission_name'] is None
+    assert len(card['submission_note']) <= 140
+    assert card['holdout']['evidence_class'] == 'HOLDOUT-DTI'
+    for key in ('dti', 'ci95', 'withheld_positive_pixels'):
+        assert card['holdout'][key] is None
+    assert card['experiments_run'] == card['submission_slots_used'] == 0
     assert card['gates']['template_unmodified']
     assert not card['gates']['cached_stack_available']
-    assert not list(tmp_path.rglob('*.tif'))
-
-
-def test_preflight_detects_shared_code_drift(tmp_path):
-    shutil.copytree(ROOT / 'registry', tmp_path / 'registry')
-    shutil.copytree(ROOT / 'vendor', tmp_path / 'vendor')
-    p = tmp_path / 'vendor/gems57/metric.py'
-    p.write_text(p.read_text() + '\n# synthetic tampering test\n')
-    card = review(tmp_path)
-    assert not card['gates']['template_unmodified']
-    assert any('metric.py' in blocker for blocker in card['blockers'])
 
 
 def test_source_register_does_not_claim_organizer_score_receipt():

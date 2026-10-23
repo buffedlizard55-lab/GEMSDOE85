@@ -1,0 +1,48 @@
+{
+  "session": "arena/df29b0af-gemsdoe85",
+  "review_date_utc": "2026-10-23",
+  "scope": "Release-safety repair and scientific review; not a model experiment or slot selector",
+  "passes": [
+    {
+      "pass": 1,
+      "work": [
+        "Read standing brief, project instructions, historical review and pinned protocol evidence",
+        "Restore and hash-verify educational H33 and dense-prior witness through pinned GitHub mirrors",
+        "Recompute literal saturation using unchanged shared code after verifying pins",
+        "Unify site, executive summary, current run card and historical byte diagnostics around a blocked release decision",
+        "Preserve historical results and document ranked research proposals without assigning a lane"
+      ],
+      "verification": "Initial full suite passed; source reference README and notebook fetched at immutable organizer commit"
+    },
+    {
+      "pass": 2,
+      "work": [
+        "Test corrupt reference, missing inputs, modified shared code, wrong transform/CRS/shape/bands/dtype, NaN and out-of-range data",
+        "Add blocked banners to all historical HTML entry points; remove primary-page upload links and unsupported approval claims",
+        "Retire the historical session exporter before model imports, feature construction or any TIFF write",
+        "Replace the thresholded partial-directory uniqueness CLI with delegation to the unchanged literal shared gate",
+        "Support surface-only checks and prevent any final-dot load after a failed surface gate",
+        "Correct CPU/GPU, H33 causal attribution, thermal independence and external-data eligibility overclaims",
+        "Restore the pinned learning witness in CI so fresh-checkout reproducibility is meaningful"
+      ],
+      "verification": "Adversarial format/status fixtures pass; shared-file hash mismatch list is empty"
+    },
+    {
+      "pass": 3,
+      "work": [
+        "Re-check original request and explicitly mark unique new TIFF, valid holdout comparison and organizer scoring as unmet",
+        "Retain the standing prompt and score ledger as unverified owner context in README",
+        "Run final full suite, site/evidence checks, syntax compilation, whitespace checks and byte-identical rebuild test",
+        "Reconcile concurrently merged main changes, preserve their research/cards/tests, and rerun all checks",
+        "Preserve Session-6 scientific bytes/receipts as historical evidence without its unauthorized overlap exemption; retain safety tests and atomic restoration API"
+      ],
+      "verification": "Combined post-reconciliation suite: 114 tests passed; 38 historical TIFFs diagnosed, 19 conservative format PASS, zero cleared. Byte-identical rebuilds and clean indexed checkouts checked. Upstream safety tests and Session-6 geometry contracts retained."
+    }
+  ],
+  "experiments_run": 0,
+  "submission_slots_used": 0,
+  "new_tiff_generated": false,
+  "original_submission_goal_fully_met": false,
+  "reason": "Missing assigned lane/cache and proven literal any-raster overlap obstruction prevent a compliant unique nonempty candidate.",
+  "result": "negative protocol preflight, not a geological negative"
+}

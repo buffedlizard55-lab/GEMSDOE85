@@ -11,7 +11,10 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'vendor'))
-from restore_data import sha256
+try:
+    from restore_data import sha256_file as sha256
+except ImportError:
+    from restore_data import sha256
 
 
 def verify_template(root=ROOT):
@@ -32,11 +35,12 @@ def review(root=ROOT):
     integrity = []
     manifest = json.loads((root / 'registry/data_manifest.json').read_text())
     required = {'training_features', 'labels', 'existing_faults', 'sample_submission'}
-    manifest_ok = {entry['id'] for entry in manifest['files']} == required and len(manifest['files']) == len(required)
+    core_entries = [entry for entry in manifest['files'] if entry.get('group', 'core') == 'core']
+    manifest_ok = {entry['id'] for entry in core_entries} == required and len(core_entries) == len(required)
     if not manifest_ok:
         blockers.append('Core data manifest must contain exactly the four required input identities.')
-    for entry in manifest['files']:
-        path = root / 'data/raw' / entry['dest']
+    for entry in core_entries:
+        path = root / 'data' / entry['dest']
         integrity.append(dict(id=entry['id'], ok=path.is_file() and path.stat().st_size == entry['bytes'] and sha256(path) == entry['sha256']))
     core_ok = manifest_ok and all(row['ok'] for row in integrity)
     if not core_ok:
@@ -48,9 +52,17 @@ def review(root=ROOT):
         (root / row['path']).is_file() and sha256(root / row['path']) == row['sha256'] for row in cache_rows)
     if not cache_ok:
         blockers.append('The template cached feature-stack bytes and hash manifest are unavailable locally.')
-    witness = root / 'data/raw/learning/registry-saturation-witness.tif'
+    witness = root / 'data/learning/registry-saturation-witness.tif'
+    # Preserve the prior binding certificate even when its witness cannot currently be
+    # re-opened. Never silently reinterpret that literal result as cleared.
+    prior_certificate_path = root / 'evidence/saturation_certificate.json'
+    prior_certificate = None
+    if prior_certificate_path.is_file():
+        prior_certificate = json.loads(prior_certificate_path.read_text())
     saturation = None
-    if core_ok and witness.is_file() and not modified:
+    grid_ok = all(any(row['id'] == name and row['ok'] for row in integrity)
+                  for name in ['sample_submission', 'existing_faults'])
+    if grid_ok and witness.is_file() and not modified:
         # Do not execute changed shared code before/after an integrity failure.
         from gems57.grid import load_grid
         from gems57.uniqueness import saturation_certificate
@@ -59,7 +71,7 @@ def review(root=ROOT):
         if sha256(witness) != witness_entry['sha256']:
             blockers.append('Registry witness hash mismatch; certificate invalid.')
         else:
-            grid = load_grid(root / 'data/raw')
+            grid = load_grid(root / 'data')
             saturation = saturation_certificate(witness, grid.footprint, grid.catalogue,
                 expected_grid=(grid.shape, grid.crs, grid.transform))
             saturation['witness_file'] = str(witness.relative_to(root))
@@ -67,19 +79,32 @@ def review(root=ROOT):
                 blockers.append('Literal registry overlap rule blocks every nonempty candidate: a prior is positive throughout the allowed domain.')
     if saturation is None:
         blockers.append('Registry saturation witness has not been locally verified.')
+        if prior_certificate and prior_certificate.get('universal_overlap_blocker'):
+            blockers.append('Binding prior certificate reports a universal literal-overlap blocker; local witness re-verification is still required.')
+        if prior_certificate and prior_certificate.get('witness_file') != str(witness.relative_to(root)):
+            blockers.append('Prior certificate witness path differs from the restore destination; no fresh verification is available.')
+    else:
+        saturation['local_witness_reverified'] = True
+        # Old records used data/raw/learning, but identity is established by the
+        # fresh SHA-256 check against the pinned manifest, not by a stale path.
+        saturation['prior_certificate'] = prior_certificate
+
     blockers.extend([
         'Full registry raster bytes have not been compared at either the pre-placement surface or final-dot stage.',
-        'No lane-specific feature canaries, whole-segment holdout run, paired baseline improvement or conditional 95% CI exists.',
-        'No trained lane model, candidate raster or automatic selector is implemented in this empty-seed repository.',
+        'Historical lane results exist but no current candidate has passed the strict protocol and a paired current-best improvement gate.',
+        'Historical model scripts and quarantined rasters exist; no current lane candidate or automatic slot selector is approved.',
         'Account-specific weekly remaining quota and submission-page receipts are unavailable; no slot selection authorized.'
     ])
     return dict(schema_version=1, reviewed_utc=datetime.now(timezone.utc).isoformat(),
-        hypothesis=None, mechanism=None, non_fault_mimic=None,
+        hypothesis='No hypothesis selected or experiment run: method lane is unassigned.',
+        mechanism='Not evaluated; prerequisites and the literal uniqueness gate are blocked.',
+        non_fault_mimic='Not applicable because no hypothesis was tested; proposal-specific mimics are recorded in research/current-session-hypotheses-2026-10-23.md.',
         experiment_status='NOT RUN: prerequisites and literal uniqueness gate blocked',
         holdout=dict(evidence_class='HOLDOUT-DTI', evaluator_version='gems57-pooled-hide-v2',
             dti=None, ci95=None, withheld_positive_pixels=None, status='not run'),
         registry=dict(correlation=None, overlap=None, phase_surface='not run', phase_final_dots='not run',
-            uniqueness_cleared=False, saturation_certificate=saturation),
+            uniqueness_cleared=False, saturation_certificate=(saturation if saturation is not None else
+                dict(prior_measurement=prior_certificate, local_witness_reverified=False))),
         raster_sha256=None,
         validator=dict(status='not run: no candidate', no_nan_inside_footprint=None,
             values_in_0_1=None, crs_match=None, shape_match=None, transform_match=None),
