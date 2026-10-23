@@ -73,3 +73,23 @@ result, and the SGMC-proxy bias calibration (+0.0083) used to state the predicti
   ledger. AI added the README CURRENT STATE block and recorded this decision in IRREGULARITIES.md.
 - Human has not supplied an AXIS, dated TOP_PUBLIC, slot availability, or receipt in this turn. No
   competition submission was made; no slot use is claimed.
+
+## 2026-10-23 — arena/28da814f-gemsdoe85 (this session)
+
+- AI restored all 23 `registry/data_manifest.json` + 2 `registry/learning_manifest.json` + 7 R0 lineage
+  inputs from commit-pinned GitHub mirrors into gitignored storage and verified all SHA-256 digests
+  (`evidence/v2-input-audit.json`: 23/23 and 2/2 VERIFIED).
+- AI discovered and fixed `IR-V2-14` (`requirements-lock.txt` pinned `rasterio==1.4.3`, whose deflate
+  stream differed from `rasterio==1.4.4`, preventing byte-identical regeneration of R0 and the shipped
+  PRUNE GeoTIFFs) and `IR-V2-15` (`scripts/restore_data.py` rejected subdirectory entries in
+  `registry/data_manifest.json`).
+- AI added a GeoTIFF re-encoding SHA-256 check to `scripts/gemsdoe85_prune_session.py` and
+  `tests/test_r0_lineage.py` proving that rebuilding and writing `L.r0` from scratch reproduces both
+  pinned R0 digests (`baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd` and
+  `c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9`) and all three shipped PRUNE
+  variant pairs (`fb308615`, `2880b0e9`, `7ebfc408`) byte-for-byte.
+- AI consolidated the duplicate `CURRENT STATE` blocks in `README.md`, restored the default week-by-week
+  plan and proposed axes in `SLOT_PLAN.md`, updated `evidence/v2-input-audit.json` and
+  `evidence/v2-run-card.json`, and ran all 129 tests (0 skipped, 0 failed).
+- Human retains `AXIS` assignment, `TOP_PUBLIC` (with date), weekly/total slot count, score receipts,
+  deadline/timezone confirmation, and all portal submissions. No forbidden hosts were contacted.

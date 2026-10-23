@@ -132,7 +132,15 @@ def main() -> int:
     args = ap.parse_args()
 
     manifest = json.loads(MANIFEST.read_text())
-    files = [{**f, "group": f.get("group", "core"), "_target": DATA / "raw"} for f in manifest["files"]]
+    files = [
+        {
+            **f,
+            "group": f.get("group", "core"),
+            "_target": DATA if "/" in f.get("dest", "") else DATA / "raw",
+            "_subdirs": "/" in f.get("dest", ""),
+        }
+        for f in manifest["files"]
+    ]
     if MANIFEST_GEO.is_file():
         files.extend(
             [{**f, "_target": DATA, "_subdirs": True} for f in json.loads(MANIFEST_GEO.read_text()).get("files", [])]

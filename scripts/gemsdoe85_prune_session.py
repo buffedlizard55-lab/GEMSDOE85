@@ -219,14 +219,23 @@ def main() -> int:
     L = rebuild(verify_against_pinned_files=True)
     print(f"  skeleton {L.counts()['skeleton']} -> d2.8 {L.counts()['d28']} -> solo "
           f"{L.counts()['solo']} -> R0 {L.counts()['r0']}  (all pixel-identical to pinned files)")
+    import tempfile
+    with tempfile.TemporaryDirectory() as td:
+        reb_nan, reb_zeros = write_pair(L.r0, Path(td), "rebuilt_r0")
+        rebuilt_nan_sha = sha256_file(reb_nan)
+        rebuilt_zeros_sha = sha256_file(reb_zeros)
     parent_sha = dict(
         r0_nan_file=sha256_file(PATHS["r0_nan"]),
         r0_zeros_file=sha256_file(PATHS["r0_zeros"]),
+        r0_nan_rebuilt=rebuilt_nan_sha,
+        r0_zeros_rebuilt=rebuilt_zeros_sha,
     )
     assert parent_sha["r0_nan_file"] == PINS["r0_nan"]
     assert parent_sha["r0_zeros_file"] == PINS["r0_zeros"]
-    print(f"  pinned R0 nan sha256={parent_sha['r0_nan_file']}")
-    print(f"  pinned R0 zeros sha256={parent_sha['r0_zeros_file']}")
+    assert parent_sha["r0_nan_rebuilt"] == PINS["r0_nan"]
+    assert parent_sha["r0_zeros_rebuilt"] == PINS["r0_zeros"]
+    print(f"  pinned & rebuilt R0 nan sha256={parent_sha['r0_nan_rebuilt']}")
+    print(f"  pinned & rebuilt R0 zeros sha256={parent_sha['r0_zeros_rebuilt']}")
 
     r0 = L.r0
     d = L.dist_cat

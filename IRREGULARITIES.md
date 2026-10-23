@@ -115,3 +115,22 @@ where AI_USE records that the AI selected PRUNE; there is no evidence that the h
 axis. Their exact `(parent, axis, value)` pairs are already used, so rebuilding them would be a
 forbidden duplicate. No new raster was built this turn. The human must assign an axis/value before a
 new experiment; the existing PRUNE files remain available only if that assignment is confirmed.
+
+## IR-V2-14 — Lockfile `rasterio==1.4.3` diverged in deflate output from R0 and shipped `releases/` (`arena/28da814f`)
+
+Running `scripts/gemsdoe85_prune_session.py` under `requirements-lock.txt`'s `rasterio==1.4.3` produced
+pixel-identical rasters whose compressed GeoTIFF tile streams differed (`1,082` B vs `1,178` B on empty
+NaN tiles), yielding different SHA-256 digests (`24952cda…`, `56a67442…`, `ed507edc…`) from the shipped
+`releases/` files (`fb308615…`, `2880b0e9…`, `7ebfc408…`) and failing to match the pinned R0 GeoTIFF
+hashes (`baeae321…`, `c55bafc4…`) when `L.r0` was written from scratch. **Decision:** updated
+`requirements-lock.txt` to `rasterio==1.4.4` (matching CI `requirements.txt`) and added an explicit
+re-encoding SHA-256 gate in `scripts/gemsdoe85_prune_session.py` and `tests/test_r0_lineage.py` so
+rebuilding and writing R0 from scratch is verified against both `baeae321…` and `c55bafc4…`.
+
+## IR-V2-15 — `scripts/restore_data.py` rejected subdirectory entries in `registry/data_manifest.json` (`arena/28da814f`)
+
+`scripts/restore_data.py` set `allow_subdirs=False` and `_target=DATA / "raw"` for all entries in
+`registry/data_manifest.json`, causing `restore_data.py --groups all` to raise `ValueError` on the 19
+`external/…` and `scored/…` manifest entries. **Decision:** fixed `scripts/restore_data.py` so entries
+with subdirectory relative paths restore into `data/<subdir>/…` with SHA-256 verification while single-filename
+unit tests in `tests/test_failure_paths.py` remain enforced.
