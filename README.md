@@ -43,6 +43,8 @@ All arms and sibling controls were evaluated on unmodified `vendor/gems57/evalua
 | **`E3_full_multiphysics_diverse_crest` (WINNER)** | **86 ch + LGBM+HGB + Stage-2 Crest + Dinkelbach-300** | `HOLDOUT-DTI` | **0.191400** | `[0.1661, 0.2213]` | **2,879.3** | **27,053.2** |
 | **`E2_plus_blind_hydrothermal_seismic`** | **77 ch (+17 ComCat26, 2m `F2mDAB`, sinter, wells)** | `HOLDOUT-DTI` | **0.187017** | `[0.1621, 0.2140]` | **2,891.0** | 29,116.8 |
 | **`E1_structural_dinkelbach`** | **60 ch (Structural + Fold-Safe Network + Dinkelbach)** | `HOLDOUT-DTI` | **0.182981** | `[0.1594, 0.2088]` | 2,819.0 | 28,927.3 |
+| `H85-GAPVENT` preserved sibling candidate | `gems85-gapvent57-37654dots-sep2.8-exc3-20261023T013000Z-566072f4-zeros.tif` (`45.14%` overlap vs E3) | `HOLDOUT-DTI` (`v1`) | `0.142325` | `[0.1386, 0.1461]` | — | — |
+| `H85-TVFV` preserved sibling candidate | `gems85-h85-tvfv-e85-3-20261022-zeros.tif` (`40.86%` overlap vs E3) | `HOLDOUT-DTI` | `0.103681` | `[0.0880, 0.1200]` | — | — |
 | **`CTRL_d28_0.2600` (Primary Valid Bar)** | `gems24-h25-1-dotted-h19-5-d2-8` (`0.2600` live) | `HOLDOUT-DTI` | `0.091888` | `[0.0796, 0.1045]` | 1,605.9 | 40,492.5 |
 | `CTRL_gems81_poisson` | `gems81-cont-poisson44090-buf2` | `HOLDOUT-DTI` | `0.091841` | `[0.0871, 0.0961]` | 1,592.2 | 39,805.4 |
 | `CTRL_d15` | `gems24-h25-1-dotted-h19-5-d1-5` (`60,069` dots) | `HOLDOUT-DTI` | `0.088808` | `[0.0767, 0.1014]` | 1,816.5 | 55,172.1 |
@@ -84,7 +86,7 @@ PYTHONUNBUFFERED=1 .venv/bin/python scripts/run_conduit_lane.py
 ## 6. Standing Project Prompt & Parallel-Run Protocol Record
 
 ```text
-Work on previous sessions' next steps first. Put this prompt in the readme.
+I want to win this competition: Work on previous sessions' next steps first. Put this prompt in the readme.
 
 You MUST conduct extensive research and verification and save all knowledge in structured form to ensure you have zero hallucinations. Use all available research tools and verify your work line by line against trusted primary sources. You MUST include links to trusted official sources in your research and analysis.
 

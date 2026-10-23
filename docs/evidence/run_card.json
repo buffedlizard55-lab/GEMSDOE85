@@ -27,8 +27,17 @@
   "correlation_vs_registry": {
     "max_abs_spearman": 0.0999,
     "max_nonsaturating_dot_overlap_3px": 0.6249,
+    "max_comparable_dot_overlap_3px": 0.5706,
+    "overlap_vs_gapvent57": 0.4514,
+    "overlap_vs_tvfv": 0.4086,
     "overlap_vs_h33_2_b2": 0.4532,
     "is_duplicate": false
+  },
+  "controls_at_matched_mass": {
+    "ctrl_d28_02600": 0.091888,
+    "prior_record_s85_ctxfus50_37654": 0.080818,
+    "uniform_random": 0.04571,
+    "control_budget_used": 37511
   },
   "validator_output": {
     "file": "/home/user/GEMSDOE85/docs/downloads/gems85-h85-conduit-dink300-37511dots-20261023T044652Z-da545b82-zeros.tif",
@@ -171,6 +180,7 @@
   "experiments_run": 3,
   "experiments_limit": 3,
   "submission_slots_used_live": 0,
-  "verdict": "PROMOTE_CANDIDATE_READY_TO_SUBMIT",
+  "verdict": "promote-as-candidate",
+  "promotion_status": "PROMOTE_CANDIDATE_READY_TO_SUBMIT",
   "fleet_slot_governance_note": "File passed 15/15 byte-level GeoTIFF checks, beat CTRL_d28 by +108.3% on unmodified gems57-pooled-hide-v2 (0.191400 vs 0.091888), and passed uniqueness. Live portal upload consumes 1 of the team's 3 weekly slots on DrivenData; upload directly via the Executive Summary guide when selecting weekly finalists."
 }

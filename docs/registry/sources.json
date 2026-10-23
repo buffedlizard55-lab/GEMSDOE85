@@ -91,6 +91,33 @@
       "excerpt": "NO ORGANISER SCORE EXISTS for this or any artifact in this repository.",
       "supports": "Owner's claimed H33 genealogy, near-catalogue deletion and dot-placement description; primary file source. Artifact bytes were audited separately.",
       "limits": "Historic statement conflicts with later owner-reported scores. Does not establish whether the file was later scored. A sibling's ORGANIZER-CONFIRMED label without a receipt is not imported."
+    },
+    {
+      "id": "usgs-3dep-10m",
+      "class": "official USGS public-domain elevation dataset",
+      "url": "https://www.usgs.gov/3d-elevation-program",
+      "status": "SHA-256-verified derived 100 m rasters restored from pinned template commit 60GEMSDOE@b99591eede63c6d45c8a896255b8cd34824fa00b",
+      "excerpt": "1/3 arc-second (~10 m) seamless DEM (USGS_Seamless_DEM_13.vrt) and 18 1x1-degree 3DEP tiles (n38w117..n41w121)",
+      "supports": "100% footprint coverage across the 24.63% non-LiDAR gap: sub-100m slope_p90, steep_frac, slope_std, relief_local, curv_prof_absmax, aspect_coherence, hs_lineament, zmean_m, and fluvial chi/ksn knickpoints.",
+      "limits": "10 m horizontal resolution cannot resolve sub-meter Holocene scarps (<0.5 m throw) that 1 m LiDAR captures where available."
+    },
+    {
+      "id": "ingenious-2m-probes-paleo",
+      "class": "DOE Geothermal Data Repository (GDR 1391)",
+      "url": "https://gdr.openei.org/submissions/1391",
+      "status": "SHA-256-verified ZIP archives restored and parsed in-project (2m_temperature_probe_INGENIOUS_regional_data.zip, paleo_geothermal_regional.zip)",
+      "excerpt": "DOI 10.15121/1881483 (CC BY 4.0): 2,782 in-footprint 2 m temperature probe stations (464 positive anomalies) and 281 Quaternary paleogeothermal deposits (195 non-tufa hydrothermal vents, 86 lacustrine tufas)",
+      "supports": "Direct shallow conductive thermal anomalies (F2mDAB >= 2 C, T2m >= 25 C) and Quaternary sinter/travertine/explosion-crater upflow corridors over blind Great Basin geothermal faults.",
+      "limits": "2 m probe surveys are spatially clustered around targeted geothermal prospects; raw radial proximity causes spatial overfitting unless encoded as translation-invariant strike corridors."
+    },
+    {
+      "id": "faulds-hinz-2015",
+      "class": "peer-reviewed Great Basin structural geology reference",
+      "url": "https://gbcge.org/current-projects/ingenious/",
+      "status": "structural synthesis cited by DOE INGENIOUS",
+      "excerpt": "Structural controls of geothermal activity in the Great Basin region: ~39% of systems are blind (no surface hot springs or mapped Quaternary scarps), preferentially hosted in step-overs, relay ramps, fault terminations, and intersections.",
+      "supports": "Physical mechanism for blind geothermal Radon strike corridors, Andersonian 60-deg normal-fault up-dip gravity back-projection, and shallow hydrothermal magnetite destruction.",
+      "limits": "Conceptual structural framework; predictive gain must be verified empirically on spatially-blocked holdout."
     }
   ]
 }

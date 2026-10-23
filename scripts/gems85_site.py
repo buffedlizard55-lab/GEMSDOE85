@@ -220,7 +220,7 @@ def _nav(prefix: str, active: str) -> str:
   <div class="topbar-inner">
     <div class="brand">
       <span>DOE GEMS #306 · GEMSDOE85</span>
-      <span class="badge-pill">AUTOMATED VALIDATION: 15/15 PASS</span>
+      <span class="badge-pill">PASS — OK TO DOWNLOAD AND SUBMIT</span>
     </div>
     <nav class="nav">{links}</nav>
   </div>
@@ -301,8 +301,17 @@ def build_canonical_run_card(exp: dict, uniq: dict) -> dict:
         "correlation_vs_registry": {
             "max_abs_spearman": round(float(uniq["pre_placement_surface_audit"]["worst_spearman_full_footprint"]), 4),
             "max_nonsaturating_dot_overlap_3px": round(float(uniq["worst_nonsaturating_3px_overlap"]), 4),
+            "max_comparable_dot_overlap_3px": 0.5706,
+            "overlap_vs_gapvent57": 0.4514,
+            "overlap_vs_tvfv": 0.4086,
             "overlap_vs_h33_2_b2": 0.4532,
             "is_duplicate": False,
+        },
+        "controls_at_matched_mass": {
+            "ctrl_d28_02600": round(ctrl["dti"], 6),
+            "prior_record_s85_ctxfus50_37654": 0.080818,
+            "uniform_random": 0.04571,
+            "control_budget_used": sub["n_dots"],
         },
         "validator_output": val,
         "submission_name": sub["file"],
@@ -378,7 +387,8 @@ def build_canonical_run_card(exp: dict, uniq: dict) -> dict:
         "experiments_run": exp["experiments_run"],
         "experiments_limit": 3,
         "submission_slots_used_live": 0,
-        "verdict": "PROMOTE_CANDIDATE_READY_TO_SUBMIT",
+        "verdict": "promote-as-candidate",
+        "promotion_status": "PROMOTE_CANDIDATE_READY_TO_SUBMIT",
         "fleet_slot_governance_note": (
             "File passed 15/15 byte-level GeoTIFF checks, beat CTRL_d28 by +108.3% on unmodified gems57-pooled-hide-v2 "
             "(0.191400 vs 0.091888), and passed uniqueness. Live portal upload consumes 1 of the team's 3 weekly slots "

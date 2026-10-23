@@ -157,3 +157,24 @@ f = np.load("data/cache/ch_geopb_crest.npy")
 u = st.mannwhitneyu(f[hot.row.values, hot.col.values], f[ys[k], xs[k]], alternative="greater")
 print(u.statistic / (len(hot) * 20_000), u.pvalue)        # AUC 0.5034, p 0.213
 ```
+
+---
+
+## 6. Session `arena/7ded4c0a-gemsdoe85` Empirical Expansion — Seamless 10 m 3DEP, Fluvial $\chi$-Knickpoints, Non-Tufa Paleo-Vents & 2 m Thermal Probes
+
+All datasets below were restored via `scripts/restore_data.py` and SHA-256-verified against `registry/data_manifest.json` (`28/28` verified):
+
+### 6.1 Audited Public Datasets & Measured Footprint Coverage (`5,167,373` pixels)
+
+| Dataset ID (`registry/data_manifest.json`) | Official Public Source & License | Measured Coverage / Count in Footprint | Key Physical Signal & Mimic Control |
+|---|---|---|---|
+| `ext_lidar_scarp` (`lidar_scarp_features_u8.tif`) | USGS 3DEP 1 m LiDAR (`1m_DEM_links.csv`), public domain | **`75.37%` valid** (`3,894,768` px; **`24.63%` gap** = `1,272,605` px) | Explicit `gv_lidar_valid` (band 12) + unused scarp bands `lapneg` (b4), `upface` (b7, `AUC=0.5796`), `cross` (b8) (`IR-85-018`). |
+| `ext_topo_10m_derived_u8` (`topo_10m_derived_100m_u8.tif`) | USGS 3DEP 1/3 arc-sec (`~10 m`) seamless DEM (`usgs.gov/3d-elevation-program`), public domain | **`100.00%` valid** (`5,167,373` px) | Relief-normalized piedmont scarp `curv_prof * aspect_coh / (G_8(relief)+12)` (`AUC=0.5922`) + 1.5 km strike persistence `gv_dem10_line_s15` (`AUC=0.5942`). |
+| `ext_dem10_chi_u8` & `ext_dem10_chi_i16` (`dem10_chi_100m_{u8,i16}.tif`) | USGS 3DEP 10 m tiles (`n38w117..n41w121`), $\theta=0.45$, $A_c=0.2\text{ km}^2$ (`Perron & Royden 2013`) | **`99.90%` valid** (`21.77%` active channel cells) | Across-fault steepness step $\Delta k_{sn} > 0$ (`gv_chi_step_pos`, `AUC=0.5542`), uplifted footwall $\chi$ asymmetry, and orthometric elevation `zmean_m` (m ASL). |
+| `ext_gdr_paleo_geothermal` (`paleo_geothermal_regional.zip`) | DOE GDR 1391 INGENIOUS (`DOI 10.15121/1881483`, CC BY 4.0) | `281 / 709` in footprint: **`195` hydrothermal vents** vs **`86` lacustrine `Tufa`** | `Sinter` (50), `Travertine` (36), `Explosion craters` (10), `Silica-cemented sand` (73), `Alteration/Sulfur/Breccia` (26); **`Tufa` explicitly excluded** to avoid Lake Lahontan shoreline mimicry. |
+| `ext_gdr_2m_probes` (`2m_temperature_probe_INGENIOUS_regional_data.zip`) | DOE GDR 1391 INGENIOUS (`Coolbaugh/Sladek` UNR/GBCGE, CC BY 4.0) | `2,782 / 3,800` stations in footprint; **`464` anomalies** (`F2mDAB >= 2 °C` or `T2m >= 25 °C`) | Spans 12 blind Great Basin geothermal systems (`Gabbs Valley`, `Astor Pass`, `Desert Queen`, `Dead Horse Wells`, `Desert Peak`, `Salt Wells`, `Hawthorne`, etc.); encoded via 2.5 km 8-strike Radon collinearity (`gv_vent_radon_corridor`) rather than radial halos (`GEMSDOE36` lesson). |
+| `ext_geodawn_ext` (`geodawn_extensions_u8.tif`) + `training_features.tif` | USGS GeoDAWN (`DOI 10.5066/P93LGLVQ`, CC0) + INGENIOUS regional compilations | **`99.98%`–`100%` valid** | Shallow hydrothermal magnetite destruction `robust_z(TMI) - robust_z(TMI_up150)`, unit-calibrated Miller & Singh (1994) magnetic tilt zero-crossing, Andersonian $60^\circ$-dip gravity back-projection, and `1,335 m` Lake Lahontan shoreline deconfounder. |
+
+### 6.2 Key Methodological Discovery (`IR-85-023`): Positive-Unlabeled Basin-Void Debiasing
+When training supervised fault detectors on an incomplete geological map (`existing_faults`), sampling background negatives uniformly across `d_vis > 12 px` while supplying long-wavelength basin-identifying coordinates (`zmean_m`, `depth_to_base`, `cond_surf`, `rad_K/Th/TC`, radial site proximity) teaches tree ensembles to predict zero inside **unsurveyed quadrangles and blind basins** — the exact regions where concealed faults reside. Restricting PU negative sampling to **surveyed corridors (`4 <= d_vis <= 45 px`, strictly from `fold.visible`)** and restricting tree splits to **48 translation-invariant local physical channels** raised 4-fold spatially-blocked `OOF ROC-AUC` from `0.5844 -> 0.6842` (`0.6801` inside the `24.63%` non-LiDAR gap and **`0.7184` inside deep unmapped basin interiors `d_vis > 45 px`**) and raised `HOLDOUT-DTI` at `37,654` dots from **`0.08082` to `0.14232` (`+76.1%`)**.
+
