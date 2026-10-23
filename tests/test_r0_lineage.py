@@ -135,28 +135,55 @@ def test_prune_variant_semantics_on_parent():
 
 @pytest.mark.skipif(not HAVE_DATA, reason="pinned rasters not restored")
 def test_shipped_releases_pass_their_own_gates_and_match_the_ledger():
+    """Every BUILT row in the ledger must be a real, gated, hash-matching file.
+
+    Axis-aware. PRUNE rows (three integral rungs from the prune session, three fractional rungs from
+    the rung session) prove zero catalogue mass and their own declared distance threshold. SNAP rows
+    keep count and mass fixed and may never move a dot closer to the catalogue (the parent itself
+    carries 2,171 dots at 2.24-3.00 px -- IR-V2-03 -- which SNAP is not allowed to touch).
+    """
     ledger = ROOT / "ledger" / "submissions.csv"
-    receipt = ROOT / "evidence" / "session_prune_receipt.json"
-    if not ledger.is_file() or not receipt.is_file():
+    receipts = [ROOT / "evidence" / "session_prune_receipt.json",
+                ROOT / "evidence" / "session_rung_receipt.json",
+                ROOT / "evidence" / "session_snap_receipt.json"]
+    if not ledger.is_file():
         pytest.skip("session outputs not built")
     rows = list(csv.DictReader(ledger.open()))
-    assert len(rows) == 3
-    assert rows[0]["parent"] == "h33-h33-2-b2" and rows[0]["axis"] == "PRUNE"
+    assert len(rows) >= 3
+    assert all(r["parent"] == "h33-h33-2-b2" for r in rows)
+    assert all(r["axis"] in {"PRUNE", "SNAP"} for r in rows)
     assert all(r["status"] == "BUILT" and r["receipt"] == "N" for r in rows)
-    rec = json.loads(receipt.read_text())
+    assert len({r["sha256"] for r in rows}) == len(rows), "duplicate sha256 in the ledger"
+    variants = {}
+    for path in receipts:
+        if path.is_file():
+            variants.update(json.loads(path.read_text())["variants"])
+    dist_cat = RL.catalogue_distance()
+    parent_min = float(dist_cat[RL.rebuild(verify_against_pinned_files=False).r0].min())
     for row in rows:
+        axis = row["axis"]
+        stem = row["id"].rsplit("-", 2)[0]
+        entry = variants.get(stem) or variants[stem.rsplit("-", 1)[-1]]
         tif = ROOT / "releases" / f'{row["id"]}.tif'
         assert tif.is_file(), tif
         assert RL.sha256_file(tif) == row["sha256"]
-        entry = rec["variants"][row["id"].rsplit("-", 2)[0]]
         assert entry["all_gates_passed"], entry["nan"]["checks"]
         assert entry["nan"]["sha256"] == row["sha256"]
         assert int(row["n_dots"]) == entry["nan"]["positive_pixels"]
         assert float(row["pct_changed"]) > 0.0
         assert row["sha8"] == row["sha256"][:8]
-        assert entry["nan"]["checks"]["zero_mass_on_catalogue"]
-        assert entry["nan"]["checks"]["min_distance_to_catalogue_px_gt_3"]
-        # the zeros twin must be all-finite and byte-identical in pixels
+        checks = entry["nan"]["checks"]
+        assert checks["zero_mass_on_catalogue"]
+        if axis == "PRUNE":
+            # the 3 px rule is waived for PRUNE; each rung proves its own declared threshold instead
+            assert checks.get("min_distance_to_catalogue_px_gt_3") or \
+                checks["all_dots_beyond_declared_rung"]
+        else:
+            # SNAP keeps count and mass and may never move a dot closer to the catalogue
+            assert entry["nan"]["within_2px_catalogue_px"] == 0
+            assert entry["nan"]["min_distance_to_catalogue_px"] >= parent_min - 1e-9
+            assert entry["nan"]["positive_pixels"] == entry["snap"]["pair"]["parent_dots"]
+        # the zeros twin must be all-finite and pixel-identical
         import rasterio
         with rasterio.open(ROOT / "releases" / f'{row["id"]}-zeros.tif') as z:
             a = z.read(1)

@@ -1,28 +1,25 @@
 # GEMSDOE85 — Lane H85-HJCD: Hydrothermal-Juxtaposition & Fault-Valve Conduit Discovery
 
-<!-- CURRENT STATE START — edit only this block for v2 session status; historical content below is overridden by it -->
-## CURRENT STATE — v2 / 2026-10-23 (session `arena/28da814f-gemsdoe85`)
+<!-- CURRENT STATE — update this block only for session status. -->
+## CURRENT STATE (2026-10-23, after PRUNE, PRUNE-rungs, SNAP & verification session `arena/28da814f-gemsdoe85`)
 
-| Field | Current state |
+| field | value |
 |---|---|
-| **Parent R0** | `h33-h33-2-b2` (GEMSDOE32 `e5eb6e7e`), 37,654 unit-mass dots, none within 2 px of the catalogue; live **0.2778 = CLAIM** (owner-reported; no submission-page receipt in `ledger/`) |
-| **Start gate** | **PASS** — 23/23 `registry/data_manifest.json` + 2/2 `registry/learning_manifest.json` + 7/7 R0 lineage SHA-256 pins verified; R0 recipe-rebuilt (`121,131` → `44,090` → `40,199` → `37,654` dots) and re-encoded to GeoTIFF matching both pinned SHA-256 digests (`baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd` NaN-outside, `c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9` zeros-outside); lockfile fixed to `rasterio==1.4.4` (`IR-V2-14`) |
-| **Best receipt** | None in `ledger/submissions.csv` (`receipt = N` on all rows); human pastes `receipt_score` and `date` after scoring |
-| **TOP_PUBLIC** | **Unfilled** — human must fill from the leaderboard with observation date; no other target number is valid |
-| **Slots left** | **Unknown** this rolling week / total (3/week ceiling, ONE final submission; human checks account page; 0 used by agent) |
-| **AXIS** | Unassigned by human in this brief (`IR-V2-13`). Earlier session `arena/e081f5da` built and gated the 3 `PRUNE` rungs below (`status = BUILT`); each `(parent, axis, value)` is built once across sessions so no duplicate or unapproved axis was built this turn |
-| **Next 3 slots (if human confirms `AXIS = PRUNE`)** | 1) `releases/h33-2-b2-prune3-20261023-fb308615.tif` (35,483 dots, −5.766%, pred **+0.007** MODEL) · 2) `releases/h33-2-b2-prune4-20261023-2880b0e9.tif` (33,829 dots, −10.158%, pred **+0.003** MODEL) · 3) `releases/h33-2-b2-prune5-20261023-7ebfc408.tif` (32,017 dots, −14.971%, pred **−0.003** MODEL; conditional on slots 1–2 ≥ 0.2778). Each has a `-zeros.tif` fallback twin; all 14/14 (NaN) and 15/15 (zeros) format/catalogue gates PASS on disk re-read |
-| **Human must supply** | Assigned `AXIS` (and resolution of the `<3 px` R0 flank conflict `IR-V2-03` before any non-PRUNE edit), dated `TOP_PUBLIC`, rolling-week/total slots remaining, submission-page receipt(s) + dates, deadline/timezone confirmation (`2026-12-03` provisional), and data redistribution confirmation (`IR-V2-04`/`IR-V2-10`) |
-| **References** | [SLOT_PLAN.md](SLOT_PLAN.md) · [docs/SUBMIT.md](docs/SUBMIT.md) · [docs/mechanism_cards_prune.md](docs/mechanism_cards_prune.md) · [IRREGULARITIES.md](IRREGULARITIES.md) · [AI_USE.md](AI_USE.md) · `ledger/submissions.csv` · `evidence/session_prune_receipt.json` · `evidence/v2-input-audit.json` |
-<!-- CURRENT STATE END -->
+| **parent** | R0 = `h33-h33-2-b2` (`e5eb6e7e`), 37,654 unit-mass dots; rebuilt **pixel- and byte-identical** from the pinned chain (121,131 → 44,090 → 40,199 → 37,654; `write_pair(L.r0)` matches `baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd` and `c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9`; 23/23 `data_manifest.json` + 2/2 `learning_manifest.json` SHA-256 verified) |
+| **best receipt** | **none in this repository.** 0.2778 is a **CLAIM** (owner-reported); every other number is MODEL or PROXY |
+| **TOP_PUBLIC** | **UNFILLED** — the human reads it off the leaderboard *with a date*; no other target number is valid |
+| **slots left this week** | **UNKNOWN** — the human reads it off the account page (3/week is a ceiling, not a target) |
+| **next 3 slots** (only if the human confirms AXIS = PRUNE and quota permits) | 1. `h33-2-b2-prune3-…-fb308615` (+0.007 MODEL) · 2. `h33-2-b2-r3p61-…-f94be3ad` (+0.005, the decision slot) · 3. `h33-2-b2-r2p85-…-acce3907` (+0.005) — fallback: the `-zeros` twin of whichever is uploaded |
+| **reserve PRUNE rungs** | `prune4-…-2880b0e9` (+0.003), `prune5-…-7ebfc408` (−0.003), `r2p25-…-3908de12` (+0.003) — do not spend unless slot 2 lands above slot 1 or the account shows spare slots |
+| **SNAP contingency** | `snap-free-lidar2-…-ac3fc128`, then `snap-ridge-lidar2-…-6913d029`, then `snap-ridge-tmi2-…-de094d8e`; count and mass fixed at 37,654, ≤2 px moves. Ranked **below** PRUNE: predicted Δ is inside the ±0.01 no-evidence band |
+| **AXIS status** | not assigned by the human in any session (asked each time; skipped). PRUNE was chosen from a measured dose–response, SNAP from an orthogonal-mechanism argument. Both are documented in `IRREGULARITIES.md` (IR-V2-08, IR-V2-14, IR-V3-02); confirm or overrule before spending a slot |
+| **every prediction** | MODEL. Hide-and-recover and SGMC are PROXY, never gates — and both are **biased** for catalogue-derived candidates (IR-V2-15, IR-V3-04) |
+| **human must supply** | AXIS confirmation, dated TOP_PUBLIC, weekly slots remaining, score receipts for every upload, deadline/timezone confirmation, redistribution decision (IR-V2-10) |
 
-**DOE GEMS Prize Challenge · DrivenData Competition #306 · Verified End-to-End Research, Holdout Validation & Unique GeoTIFF Submission System**
+Upload file, hash and ≤140-character note per slot: `docs/SUBMIT.md`. Ladder, decision rules and the
+calendar: `SLOT_PLAN.md`. Science: `docs/mechanism_cards_prune.md`, `docs/mechanism_cards_rung.md`,
+`docs/mechanism_cards_snap.md`. Decision-changing irregularities: `IRREGULARITIES.md`.
 
-[![Automated Validation](https://img.shields.io/badge/Automated_Validation-32%2F32_PASS-brightgreen)](docs/index.html)
-[![Holdout DTI](https://img.shields.io/badge/HOLDOUT--DTI_(gems57--v2)-0.196461_(%2B107.6%25_vs_H33)-blue)](evidence/hjcd_experiments.json)
-[![Uniqueness Gate](https://img.shields.io/badge/Uniqueness_236_Rasters-PASS_(0.6402_%3C%3D_0.70)-success)](evidence/uniqueness_audit.json)
-
----
 
 ## Promoted Deliverable & One-Click Automated Validation Receipt
 
