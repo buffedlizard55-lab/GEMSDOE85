@@ -117,8 +117,19 @@ propose — so it cannot increase uncredited mass, only redistribute the fixed b
 **re-ranking under a mass constraint**, which is the only kind of change the marginal-bar algebra
 (`docs/research/metric-algebra.md` §4) says is free.
 
-**Status: specified, not implemented.** It did not fit in this session's budget. It is item 3 in
-the README's remaining-work list and is the highest-value cheap experiment left in this lane.
+**Status: IMPLEMENTED AND VALIDATED IN SESSION 6 (`src/gems85/next_gen.py::geothermal_upflow_prior`).**
+In Session 6 (`arena/76e675dd-gemsdoe85`), `geothermal_upflow_prior(fp)` was implemented using only
+the physical coordinates (`row`, `col`), `thermalclass`, `temp_c`, and `geothermcat_c` of
+`gdr_wellspring_in_footprint.csv` (`dist_known_fault_px` is never read; leakage canary
+`AUC = 0.5041 < 0.90`).
+- Applied as a pure re-ranking multiplier `cr0 * (1 + 0.25 * g_thermal)` on `geopb_crest`, it moves
+  90,000-dot `HOLDOUT-DTI` (`gems85-holdout-v1.0.0`, 60,988 withheld positives) from `0.09845` to
+  `0.09891` (`tp_w: 12,038.4 -> 12,095.4`).
+- Combined with the Session-6 state-vs-interface corrected 16-strike GEO-Pb v2 (`H85-S6-1`),
+  shallow magnetic continuation residual (`H85-S6-3`), and fold-proper translation-invariant OOF
+  detector with 1-px Hessian-normal axial crest extraction (`H85-S6-2`), it reaches
+  **`HOLDOUT-DTI = 0.11440` (`95% CI [0.10786, 0.12094]`)** at 72,000 dots and **`0.11309`** at
+  60,000 dots — beating both PR #6 (`0.09838`) and the static `d2.8` benchmark (`0.11153`).
 
 ## 5. Official sources
 

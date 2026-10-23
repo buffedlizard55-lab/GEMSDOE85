@@ -61,8 +61,50 @@
       "id": "IR-85-09",
       "severity": "medium",
       "status": "acknowledged",
-      "finding": "E1's supervised field has canary AUC 0.673 and no single feature exceeds AUC 0.90 (max single channel curv_s2 0.600) \u2014 no leakage flag; but the detector is trained on the same catalogue the holdout withholds from, fold-properly, so holdout measures catalogue-transfer, not hidden-fault discovery (inherited IR-32-PROXY-01 limitation).",
+      "finding": "E1's supervised field has canary AUC 0.673 and no single feature exceeds AUC 0.90 (max single channel curv_s2 0.600) — no leakage flag; but the detector is trained on the same catalogue the holdout withholds from, fold-properly, so holdout measures catalogue-transfer, not hidden-fault discovery (inherited IR-32-PROXY-01 limitation).",
       "action_taken": "Stated on the site and in the run card; no live-score projection is made."
+    },
+    {
+      "id": "IR-85-003",
+      "severity": "medium",
+      "status": "resolved",
+      "finding": "tests/test_shared_contracts.py was skipped in PR #6 with a claim that vendor/gems57 was not vendored, when in fact vendor/gems57 was present and only missing from pytest.ini pythonpath.",
+      "action_taken": "Added vendor to pytest.ini pythonpath and removed the erroneous skip so all 33 shared contract tests execute and pass."
+    },
+    {
+      "id": "IR-85-004",
+      "severity": "medium",
+      "status": "resolved",
+      "finding": "tests/test_project.py and scripts/check_site.py were left in a skipped/blocked-only state from PR #3 and docs/research/lane-h85-session.md contained unresolved git merge conflict markers.",
+      "action_taken": "Updated check_site.py and test_project.py to verify both internal links/fragments and the active submission status banner, and resolved the conflict markers in docs/research/lane-h85-session.md."
+    },
+    {
+      "id": "IR-85-006",
+      "severity": "high",
+      "status": "resolved",
+      "finding": "GEO-Pb v1 split-halo defect: src/gems85/geopb.py applied the two-sample across-line step difference Y(x+3n) - Y(x-3n) to det_elev_slope (band 19) and 1m LiDAR step_max (lidar band 3). Both are non-negative edge magnitudes that peak ON the fault trace (x=0). Differencing a positive impulse across +/-3 px produces ZERO on the fault trace (x=0) and two false shoulders at x = +/-3 px (+/-300 m, where the 300 m triangular kernel k(300 m) = 0), causing crest() NMS to place dots on the +/-300 m shoulders and collapsing geopb_crest AUC from 0.5884 to 0.5036.",
+      "action_taken": "Separated bulk STATE juxtaposition (16-strike whitened step across rtp, tmi, iso_grav_anom, depth_to_base_surf, cond_surf, TMI_up150, K/Th/U/ThK/UK/UTh, det_elev) from on-fault INTERFACE localization (LiDAR lappos_max/lapneg_max/step_max/ex_max/relief, det_elev_slope, -tc, iso_grav_anom_slope, tmi_hg evaluated at x=0) in src/gems85/next_gen.py, recovering post-crest AUC from 0.5036 to 0.5831."
+    },
+    {
+      "id": "IR-85-007",
+      "severity": "high",
+      "status": "resolved",
+      "finding": "Withheld-block negative contamination and 2D ribbon blob-clumping in scripts/run_supervised.py: (1) sampling negatives across the full footprint labeled unmasked withheld faults inside the 20 km withheld blocks as negatives, and including smooth regional fields (det_elev, depth_to_base, cond_surf, geod_*, ieq_*, deq_*) let the GBM identify and suppress the withheld blocks (OOF AUC 0.5475-0.5728); (2) running poisson_thin directly on smooth 2D probabilities packed dots in 2D across range-front ribbons (4-10 px off-fault) rather than along 1D fault centerlines.",
+      "action_taken": "Restricted the fold-proper GBM to translation-invariant local derivative/juxtaposition/scarp channels, sampled negatives only within visible-fault blocks, and applied 1-step Hessian-normal axial crest extraction (crest_1step). This lifted OOF withheld-AUC from 0.5728 to 0.6455 (4/4 folds) and 37,654-dot HOLDOUT-DTI from 0.06233 to 0.10154, peaking at 0.11440 at 72,000 dots."
+    },
+    {
+      "id": "IR-85-008",
+      "severity": "high",
+      "status": "resolved",
+      "finding": "Target leakage in static d2.8 holdout benchmark: d2.8 (gems24-h25-1-dotted-h19-5-d2-8, 44,090 dots) was derived from H19-5, which was trained on the FULL labels.tif (including fold.withheld of gems85-holdout-v1.0.0) and zeroed d=0 while leaving 6,436 dots at d=1..2 px around labels.tif (3.03x density lift vs 1.23x on off-catalogue SGMC faults). Deleting d=1 px (h27-4) drops d2.8's holdout tp_w from 9,498.8 to 2,804.3 (DTI 0.11818 -> 0.03560), and deleting d<=2 px (h33-2-b2) drops tp_w by 96.0% to 378.0 (DTI 0.00485), while the live score rises 0.2600 -> 0.2708 -> 0.2778.",
+      "action_taken": "Documented the exact 3-step decomposition in evidence/experiments.json and README.md. Even against this leaked 0.11153 static benchmark, our zero-leakage fold-proper H85-S6-2 detector achieves HOLDOUT-DTI 0.11440 at 72,000 dots and 0.11309 at 60,000 dots."
+    },
+    {
+      "id": "IR-85-009",
+      "severity": "medium",
+      "status": "resolved",
+      "finding": "scripts/build_registry.py referenced 5 of the 17 registry rasters (GEMSDOE32, GEMSDOE31, GEMSDOE30, GEMSDOE49, GEMSDOE63) via /home/user/ref/... without pinning them in registry/data_manifest.json, causing build_registry.py and build_submission.py to fail on a clean checkout.",
+      "action_taken": "Pinned all 5 rasters by commit SHA and SHA-256 in registry/data_manifest.json (28/28 verified) and updated scripts/build_registry.py to resolve from data/scored/ when /home/user/ref is absent."
     }
   ]
 }

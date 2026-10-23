@@ -65,19 +65,19 @@ no human inspected it, and it cannot reach this page unless all
 <div class="hero">
   <div style="font-size:13px;color:#9198a1;text-transform:uppercase;letter-spacing:.7px;
   font-weight:700;margin-bottom:10px">⬇ Submission file — ready to upload</div>
-  <a class="dl" href="downloads/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.tif">⬇ Download the GeoTIFF
-  (428 KB)</a>
-  <div style="margin-top:14px"><a class="dl2" href="downloads/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-nan.tif">⬇ NaN-outside twin (alternate format) · 465 KB</a><a class="dl2" href="downloads/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.zip">⬇ zipped primary · 360 KB</a><a class="dl2" href="downloads/gems85-geopb-crest-60000dots-sep4-20261022T222707Z-cbb4e82c-zeros.tif">⬇ alt-60k (60,000 dots) · 355 KB</a><a class="dl2" href="downloads/gems85-geopb-crest-37654dots-sep4-20261022T222707Z-60029d07-zeros.tif">⬇ alt-38k (37,654 dots) · 294 KB</a></div>
+  <a class="dl" href="downloads/gems85-geopb-v2-ti-crest-72000dots-sep3p6-20261023T002139Z-7c15023c-zeros.tif">⬇ Download the GeoTIFF
+  (338 KB)</a>
+  <div style="margin-top:14px"><a class="dl2" href="downloads/gems85-geopb-v2-ti-crest-72000dots-sep3p6-20261023T002139Z-7c15023c-nan.tif">⬇ NaN-outside twin (alternate format) · 384 KB</a><a class="dl2" href="downloads/gems85-geopb-v2-ti-crest-72000dots-sep3p6-20261023T002139Z-7c15023c-zeros.zip">⬇ zipped primary · 262 KB</a><a class="dl2" href="downloads/gems85-geopb-v2-ti-crest-60000dots-sep3p6-20261023T002139Z-3d1a1762-zeros.tif">⬇ alt-60k (60,000 dots, HOLDOUT-DTI 0.1131) · 314 KB</a><a class="dl2" href="downloads/gems85-geopb-v2-ti-crest-37654dots-sep3p6-20261023T002139Z-85c3012c-zeros.tif">⬇ alt-38k (37,654 dots, HOLDOUT-DTI 0.1015) · 269 KB</a></div>
   <div style="margin-top:16px">
     <span class="tag t-ok">
     ALL 17 CHECKS PASS — OK TO DOWNLOAD AND SUBMIT</span>
   </div>
   <table style="margin-top:16px">
-    <tr><th>file</th><td class="mono">gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.tif</td></tr>
-    <tr><th>sha256</th><td class="mono">ba33ea18936e6324037457e1ff5070d8e879b7b29a25b4ae2c0003bc509a567f</td></tr>
+    <tr><th>file</th><td class="mono">gems85-geopb-v2-ti-crest-72000dots-sep3p6-20261023T002139Z-7c15023c-zeros.tif</td></tr>
+    <tr><th>sha256</th><td class="mono">9de192d12081f33b03ae65bbebd944cb4c9f1fa393002fba1d0c1f6980c7c8d2</td></tr>
     <tr><th>format</th><td>single-band float32 GeoTIFF · EPSG:32611 · 3730 × 3292 ·
         100 m · all values finite and in [0, 1] · no nodata tag</td></tr>
-    <tr><th>emitting pixels</th><td class="n">90,000</td></tr>
+    <tr><th>emitting pixels</th><td class="n">72,000</td></tr>
     <tr><th>pixels on a mapped fault</th>
         <td class="n">0</td></tr>
   </table>
@@ -85,8 +85,8 @@ no human inspected it, and it cannot reach this page unless all
 
 <div class="card">
   <h3 style="margin-top:0">Paste this into the “Note” box on the submission form</h3>
-  <pre><code>H85-1 GEO-Pb 2of3-physics juxtaposition crest, 90000 dots sep4px, 0 within 200m of catalogue, holdout DTI 0.0984 (UNSCORED)</code></pre>
-  <p class="sub" style="margin-bottom:0">123 characters (the form asks for a short
+  <pre><code>H85-S6-2 GEO-Pb-v2+TI-OOF+thermal crest, 72000 dots sep3.6, 0 in 200m cat, HOLDOUT-DTI 0.1144 (UNSCORED)</code></pre>
+  <p class="sub" style="margin-bottom:0">104 characters (the form asks for a short
   comment; this one names the hypothesis, the budget and the holdout result).</p>
 </div>
 
@@ -113,37 +113,37 @@ re-verified against a DrivenData receipt here.</div>
 <h2>Run card</h2>
 <div class="grid">
   <div class="kpi"><div class="l">Holdout DTI (pooled)</div>
-    <div class="v">0.09838</div>
+    <div class="v">0.11440</div>
     <div class="l" style="text-transform:none">95% CI
-      [0.09022, 0.10654]</div></div>
+      [0.10786, 0.12094]</div></div>
   <div class="kpi"><div class="l">Withheld positives</div>
     <div class="v">60,988</div>
     <div class="l" style="text-transform:none">4 spatially-blocked folds</div></div>
   <div class="kpi"><div class="l">vs uniform random</div>
-    <div class="v">0.02984</div>
+    <div class="v">0.04586</div>
     <div class="l" style="text-transform:none">matched emitted mass</div></div>
   <div class="kpi"><div class="l">Verdict</div>
     <div class="v" style="font-size:21px">promote-as-candidate</div>
     <div class="l" style="text-transform:none">pre-registered gate</div></div>
 </div>
 <pre><code>{
-  &quot;run_id&quot;: &quot;gems85-20261022T222707Z&quot;,
-  &quot;hypothesis&quot;: &quot;H85-1 GEO-Pb: a fault is a JUXTAPOSITION, not a gradient. At each pixel and 8 candidate strikes, the offset difference of a covariance-whitened 10-band multi-physics stack across the candidate line (windowed Hotelling-style two-sample step), reduced by the MEDIAN of three independent physics domains so two of three must agree, times an along-strike persistence term over 1.5 km, then crest-thinned by non-maximum suppression across its own normal.&quot;,
-  &quot;mechanism&quot;: &quot;A fault concealed under Holocene alluvium has no scarp but still juxtaposes different basement susceptibility, cover thickness and surface geochemistry. Each band changes a little; the joint 10-vector changes a lot. A derivative operator weights the magnitude of each band&#x27;s change; a whitened two-sample statistic weights how improbable the JOINT change is.&quot;,
-  &quot;named_non_fault_process_that_could_mimic_it&quot;: &quot;Erosional volcanic mesa and lava-flow margins: straight, long, and expressed in all three physics domains (magnetic contrast, radiometric contrast, topographic step) with no tectonic offset. Declared as the irreducible confounder; the straightness term and the two-of-three vote do NOT remove it. Secondary, partly mitigated: distal alluvial-fan margins and Lake Lahontan shorelines (lobate -- suppressed by the 1.5 km straightness term) and aeromagnetic/radiometric acquisition seams (single-domain -- suppressed by the two-of-three median; azimuth audit in evidence/experiments.json shows max single-orientation share 0.254 &lt; 0.35).&quot;,
+  &quot;run_id&quot;: &quot;gems85-20261023T002139Z&quot;,
+  &quot;hypothesis&quot;: &quot;H85-S6-2 GEO-Pb-v2 + Translation-Invariant Multi-Physics OOF + Geothermal Upflow Crest: separates bulk block STATE juxtaposition (16-strike whitened step across rtp, tmi, iso_grav, depth_to_base, cond_surf, TMI_up150, K/Th/U/ThK/UK/UTh, det_elev) from on-fault INTERFACE localization (1m LiDAR lappos/lapneg/step_max/ex_max, det_elev_slope, -tc, iso_grav_slope, tmi_hg; fixing the IR-85-006 split-halo bug), fuses with a fold-proper translation-invariant local-derivative GBM (fixing IR-85-007 withheld-block negative contamination, raising OOF AUC from 0.5728 to 0.6455) and GDR 1391 geothermal upflow proximity (1 + 0.30*g_thermal), and extracts 1-px axial centerlines via Hessian-normal non-maximum suppression before sep=3.6px Poisson thinning.&quot;,
+  &quot;mechanism&quot;: &quot;Concealed range-front and intrabasin geothermal faults produce a joint step in subsurface potential/radiometric state variables coinciding with an on-line piedmont/LiDAR inflection, shallow magnetic continuation residual (tmi - TMI_up150), and warm fluid upflow (1.50x fault enrichment within 1.5 km of GDR 1391 thermal springs/wells). Extracting the 1-px Hessian-normal axial crest prevents 2D ribbon blob-clumping and allocates every dot along 1D fault centerlines where the 300 m triangular kernel pays.&quot;,
+  &quot;named_non_fault_process_that_could_mimic_it&quot;: &quot;Erosional volcanic mesa and lava-flow margins (straight, multi-physics contrast in magnetics, radiometrics and elevation without tectonic offset), partially mitigated by the high-elevation flat-plateau volcanic-mesa suppressor (det_elev &gt; 1.3 IQR &amp; tmi_hg &gt; 1.5 IQR &amp; low regional gravity slope); secondary mimics are distal alluvial-fan aprons, Lake Lahontan shoreline benches, and GeoDAWN flight-line seams (azimuth audit max single-orientation share 0.254 &lt; 0.35).&quot;,
   &quot;holdout_dti&quot;: {
     &quot;label&quot;: &quot;HOLDOUT-DTI&quot;,
     &quot;evaluator_version&quot;: &quot;gems85-holdout-v1.0.0&quot;,
-    &quot;value&quot;: 0.09838308302222241,
+    &quot;value&quot;: 0.11439816178158387,
     &quot;ci95&quot;: [
-      0.09022123039966032,
-      0.10654493564478451
+      0.10785935730617695,
+      0.12093696625699078
     ],
     &quot;per_fold&quot;: [
-      0.10327788027153373,
-      0.10469137584536177,
-      0.08636118725538365,
-      0.09831572297936028
+      0.122220660978755,
+      0.11713058635240105,
+      0.1092187658555097,
+      0.10821462070711703
     ],
     &quot;n_withheld_positives&quot;: 60988,
     &quot;protocol&quot;: &quot;hide-and-recover; whole fault segments withheld by spatial block with a 5 px buffer; catalogue-derived features from visible faults only; visible faults masked pixel-exactly; pooled DTI, alpha 0.2, beta 0.8, 300 m triangular kernel&quot;
@@ -151,9 +151,13 @@ re-verified against a DrivenData receipt here.</div>
   &quot;controls_at_matched_mass&quot;: {
     &quot;uniform_random&quot;: 0.06854276785936068,
     &quot;derivative_control_sato_det_elev&quot;: 0.017631075061456277,
+    &quot;pr6_geopb_crest_90k&quot;: 0.09838,
+    &quot;d28_static_holdout_benchmark&quot;: 0.11153,
     &quot;control_budget_used&quot;: 60000
   },
-  &quot;vs_random_delta&quot;: 0.02984031516286173,
+  &quot;vs_random_delta&quot;: 0.04585539392222318,
+  &quot;vs_pr6_delta&quot;: 0.01601816178158387,
+  &quot;vs_d28_delta&quot;: 0.002868161781583861,
   &quot;geopb_ablation_37654px&quot;: {
     &quot;with&quot;: 0.06229918424308149,
     &quot;without&quot;: 0.05712739506360241,
@@ -161,13 +165,17 @@ re-verified against a DrivenData receipt here.</div>
     &quot;folds_positive&quot;: 4
   },
   &quot;leakage_canary&quot;: {
-    &quot;geopb_crest_auc&quot;: 0.5036234229684529,
+    &quot;geopb_v2_ti_crest_auc&quot;: 0.6238886651371113,
+    &quot;oof_ti_auc&quot;: 0.645523980463461,
+    &quot;geopb_v2_s1_auc&quot;: 0.5830919299595823,
+    &quot;mag_alt_s3_auc&quot;: 0.5606603808279907,
+    &quot;g_thermal_auc&quot;: 0.50405579594039,
     &quot;threshold&quot;: 0.9,
     &quot;verdict&quot;: &quot;clean&quot;
   },
   &quot;correlation_vs_registry&quot;: {
-    &quot;max_abs_spearman&quot;: 0.01165560892932136,
-    &quot;max_dot_overlap_3px&quot;: 0.9914333333333334,
+    &quot;max_abs_spearman&quot;: 0.16361956400910876,
+    &quot;max_dot_overlap_3px&quot;: 0.9970833333333333,
     &quot;thresholds&quot;: {
       &quot;spearman&quot;: 0.9,
       &quot;dot_overlap_3px&quot;: 0.7,
@@ -175,7 +183,7 @@ re-verified against a DrivenData receipt here.</div>
     },
     &quot;is_duplicate&quot;: false
   },
-  &quot;raster_sha256&quot;: &quot;ba33ea18936e6324037457e1ff5070d8e879b7b29a25b4ae2c0003bc509a567f&quot;,
+  &quot;raster_sha256&quot;: &quot;9de192d12081f33b03ae65bbebd944cb4c9f1fa393002fba1d0c1f6980c7c8d2&quot;,
   &quot;validator_output&quot;: {
     &quot;all_checks_passed&quot;: true,
     &quot;checks&quot;: {
@@ -201,19 +209,21 @@ re-verified against a DrivenData receipt here.</div>
     &quot;values_in_0_1&quot;: true,
     &quot;crs_shape_transform_match&quot;: true
   },
-  &quot;submission_name&quot;: &quot;gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.tif&quot;,
-  &quot;submission_note&quot;: &quot;H85-1 GEO-Pb 2of3-physics juxtaposition crest, 90000 dots sep4px, 0 within 200m of catalogue, holdout DTI 0.0984 (UNSCORED)&quot;,
+  &quot;submission_name&quot;: &quot;gems85-geopb-v2-ti-crest-72000dots-sep3p6-20261023T002139Z-7c15023c-zeros.tif&quot;,
+  &quot;submission_note&quot;: &quot;H85-S6-2 GEO-Pb-v2+TI-OOF+thermal crest, 72000 dots sep3.6, 0 in 200m cat, HOLDOUT-DTI 0.1144 (UNSCORED)&quot;,
   &quot;preregistered_gate&quot;: {
     &quot;beats_derivative_control&quot;: true,
     &quot;beats_uniform_random&quot;: true,
+    &quot;beats_pr6_geopb_crest_90k&quot;: true,
+    &quot;beats_d28_holdout_benchmark&quot;: true,
     &quot;leakage_canary_clean&quot;: true
   },
   &quot;verdict&quot;: &quot;promote-as-candidate&quot;,
-  &quot;verdict_caveat&quot;: &quot;&#x27;promote-as-candidate&#x27; means the file cleared this repository&#x27;s pre-registered gate and is published for the separate selector step. It is NOT a leaderboard projection. No organizer score exists for any artifact in this repository.&quot;,
+  &quot;verdict_caveat&quot;: &quot;&#x27;promote-as-candidate&#x27; means the file cleared this repository&#x27;s pre-registered gate and beat both PR #6 (0.09838) and d2.8 (0.11153) on the spatially-blocked holdout. It is NOT a leaderboard projection. No organizer score exists for any artifact in this repository.&quot;,
   &quot;budget&quot;: {
-    &quot;experiments_run&quot;: 4,
+    &quot;experiments_run&quot;: 3,
     &quot;limit&quot;: 3,
-    &quot;note&quot;: &quot;experiment 4 (the separation sweep) was a 108 s refinement of experiment 3&#x27;s emission rule, not a new hypothesis; logged for transparency against the protocol&#x27;s 3-experiment cap&quot;
+    &quot;note&quot;: &quot;Session 6 ran exactly 3 hypotheses (H85-S6-1 geopb_v2_piedmont_thermal, H85-S6-3 mag_continuation_k_alteration, H85-S6-2 oof_ti_geopb_v2_thermal_crest) within the 3-experiment / 2-hour Parallel-Run Protocol cap.&quot;
   }
 }</code></pre>
 
@@ -246,7 +256,7 @@ lanes <em>do</em> now share one metric implementation, and
 <code>tests/test_metric.py</code> asserts the fast O(29N) path equals a literal brute-force
 transcription of the official definition — so at least the ruler is common.</p>
 
-<footer>Built 2026-10-22 22:40 UTC by <code>scripts/build_site.py</code> from <code>registry/</code> and
+<footer>Built 2026-10-23 00:22 UTC by <code>scripts/build_site.py</code> from <code>registry/</code> and
 <code>evidence/</code>. Every number on this site is generated from a measurement file; none is
 typed by hand. Repository:
 <a href="https://github.com/buffedlizard55-lab/GEMSDOE85">buffedlizard55-lab/GEMSDOE85</a>.

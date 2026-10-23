@@ -50,6 +50,7 @@ NAME_TO_BAND = {v: k for k, v in BANDS.items()}
 
 # float32 sentinel used as nodata inside training_features.tif
 SENTINEL = np.float32(-3.4028234663852886e38)
+NODATA_F32 = SENTINEL
 
 
 @dataclass(frozen=True)

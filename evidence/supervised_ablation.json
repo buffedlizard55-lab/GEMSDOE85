@@ -420,5 +420,33 @@
     }
   },
   "mean_auc_delta": 0.004241893564932431,
-  "runtime_s": 590.8505647182465
+  "runtime_s": 590.8505647182465,
+  "session6_translation_invariant_crest_ablation": {
+    "description": "Fixing IR-85-007 (removing smooth regional block-identifying levels, sampling negatives from visible-fault blocks only, and extracting 1-px Hessian-normal crests) raises OOF withheld-AUC from 0.5728 to 0.6455 and 37,654-dot HOLDOUT-DTI from 0.06233 to 0.10154 (peaking at 0.11440 at 72,000 dots).",
+    "oof_s6_2_raw_no_crest": {
+      "37654": 0.05191,
+      "60000": 0.0762,
+      "90000": 0.09843
+    },
+    "oof_s6_2_with_hessian_crest": {
+      "37654": 0.08144,
+      "60000": 0.10048,
+      "90000": 0.10191
+    },
+    "oof_ti_no_regional_levels_with_crest": {
+      "37654": 0.09942,
+      "44090": 0.1023,
+      "60000": 0.10341,
+      "90000": 0.09843
+    },
+    "oof_ti_fused_geopb_v2_thermal_crest": {
+      "25000": 0.08685533111986371,
+      "37654": 0.10154153798304771,
+      "44090": 0.10714973105735984,
+      "52000": 0.11102408113028465,
+      "60000": 0.11308594494683517,
+      "72000": 0.11439816178158387,
+      "90000": 0.11236570276080067
+    }
+  }
 }

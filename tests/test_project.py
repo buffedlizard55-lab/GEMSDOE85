@@ -1,40 +1,20 @@
-import pytest
-
-pytestmark = pytest.mark.skip(reason=(
-    "IR-85-004: stale suite from an earlier 'blocked, nothing to ship' state of this repo. "
-    "It asserts card['raster_sha256'] is None, card['safe_to_submit'] is False and "
-    "not list(docs.rglob('*.tif')) -- i.e. that the site must contain NO downloadable GeoTIFF "
-    "and must advertise itself as unsafe. That is the exact inverse of the current requirement "
-    "(a one-click download in the executive summary, with an automated PASS/FAIL verdict). It "
-    "also imports `build` from scripts/build_site.py, an entry point that has never existed, so "
-    "it could not have passed on main either. Quarantined with a reason rather than deleted so "
-    "the intent stays on the record; delete it once the blocked-state contract is formally "
-    "retired."))
-
 from pathlib import Path
 import json
 import shutil
 import pytest
-try:                                                    # IR-85-004: see the skip reason above
-    from build_site import build
-    from check_site import check
-    from preflight import review
-except ImportError as _e:                               # entry points that never existed
-    pytest.skip(f"IR-85-004: {_e}", allow_module_level=True)
+from check_site import check
+from preflight import review
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def test_site_is_blocked_and_links_work():
-    build()
+def test_site_links_and_submission_status_work():
     assert check() == []
-    card = json.loads((ROOT / 'docs/evidence/run_card.json').read_text())
-    assert card['raster_sha256'] is None
-    assert card['holdout']['dti'] is None
-    assert card['holdout']['ci95'] is None
-    assert card['safe_to_submit'] is False
-    assert len(card['submission']['note']) <= 140
-    assert not list((ROOT / 'docs').rglob('*.tif'))
+    sub_path = ROOT / 'registry/submission.json'
+    assert sub_path.exists()
+    sub = json.loads(sub_path.read_text())
+    assert len(sub['note']) <= 140
+    assert (ROOT / 'docs/downloads' / sub['primary']['filename']).exists()
 
 
 def test_preflight_missing_data_is_negative_not_success(tmp_path):
