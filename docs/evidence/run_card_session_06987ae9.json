@@ -1,0 +1,14 @@
+{
+  "session": "arena/06987ae9-gemsdoe85 (review + 2 pre-registered experiments)",
+  "hypothesis": "H85-1 GEO-Pb variant: retiring the along-strike persistence term (measured null) and/or widening the half-disc radius r3->r6 raises crest-field credit-per-dot.",
+  "mechanism": "geopb_surface(sigma, normals R3/R6, persistence_px=1.0) -> geopb.crest(NMS across own normal) -> emission.emit(sep 4px, exclude 2px), scored by holdout.score_folds (hide-and-recover, visible-only masking).",
+  "named_non_fault_mimic": "erosional volcanic mesa / lava-flow margins (straight, multi-domain) - declared irreducible in hypotheses.md; unchanged by this variant.",
+  "holdout_DTI": "HOLDOUT-DTI (evaluator gems85-holdout-1, 60988 withheld positives, 4 folds): exp1 r6/L1/crest 0.09105 @90k, 95% CI [0.08356,0.09854]; exp2 r3/L1/crest 0.09773 @90k, 95% CI [0.08917,0.10630]; shipped reference r3/L15/crest 0.09838, 95% CI [0.09022,0.10654]. Neither beats the reference.",
+  "leakage_canary": "single-surface AUC vs catalogue (400k subsample): exp1 0.4992, exp2 0.5030 - both < 0.90, no leakage flagged.",
+  "correlation_overlap_vs_registry": "Not computed for exp fields: both experiments are NEGATIVE and no raster was emitted, so there are no final dots to check (protocol check applies to emitted submissions). Shipped primary unchanged: max |Spearman| vs 17 registry rasters = 0.012, chance-corrected overlap lift = 1.00 (registry/submission.json).",
+  "raster_sha256": "ba33ea18936e6324037457e1ff5070d8e879b7b29a25b4ae2c0003bc509a567f",
+  "validator_output": "submission.validate(mode='zeros') re-run this session on the written bytes: passed=True, all 17 checks True, 90000 emitting pixels, values finite in [0,1], EPSG:32611, 3730x3292, no nodata tag. Full suite: 75 passed (pytest -q).",
+  "submission_name": "gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.tif (UNCHANGED primary)",
+  "submission_note": "H85-1 GEO-Pb 2of3-physics juxtaposition crest, 90000 dots sep4px, 0 within 200m of catalogue, holdout DTI 0.0984 (UNSCORED)",
+  "verdict": "negative (both variants); primary NOT replaced. Promote-as-candidate status of existing file unchanged; no organizer score exists; do not spend a slot on exp1/exp2."
+}

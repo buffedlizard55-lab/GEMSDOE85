@@ -1,0 +1,175 @@
+|-119.6852|3.8|nn|nn|nn|nn00664430|ml|2.8|nn|40 km SW of Empire, Nevada
+nn00666465|2018-11-21T12:42:55.466|40.2977|-119.6507|1.2|nn|nn|nn|nn00666465|ml|2.4|nn|38 km N of Sutcliffe, Nevada
+nn00666618|2018-11-22T00:48:53.177|40.6029|-119.6591|12.8|nn|nn|nn|nn00666618|ml|2.4|nn|26 km WSW of Gerlach, Nevada
+nn00666675|2018-11-23T11:08:41.547|40.5846|-119.6967|4.8|nn|nn|nn|nn00666675|ml|2.5|nn|29 km WSW of Gerlach, Nevada
+nn00667952|2018-12-03T11:52:51.439|40.3068|-119.671|6|nn|nn|nn|nn00667952|ml|2.3|nn|40 km N of Sutcliffe, Nevada
+nn00670161|2018-12-15T15:40:00.571|40.5594|-119.6618|5.1|nn|nn|nn|nn00670161|ml|2.4|nn|27 km W of Empire, Nevada
+nn00670905|2018-12-20T02:12:11.360|40.5418|-119.6463|8.3|nn|nn|nn|nn00670905|ml|2.5|nn|26 km W of Empire, Nevada
+nn00671903|2018-12-25T18:07:02.356|39.998|-117.8945|1.3|nn|nn|nn|nn00671903|ml|2.3|nn|53 km ESE of Lovelock, Nevada
+nn00679896|2019-03-13T17:24:22.675|40.0859|-117.6399|4|nn|nn|nn|nn00679896|ml|2.4|nn|71 km E of Lovelock, Nevada
+nn00679918|2019-03-14T02:43:57.953|40.0836|-117.5693|0|nn|nn|nn|nn00679918|ml|2.4|nn|77 km E of Lovelock, Nevada
+nn00680466|2019-03-20T14:51:55.438|40.6533|-117.5608|7.7|nn|nn|nn|nn00680466|ml|3.5|nn|33 km S of Golconda, Nevada
+nn00682032|2019-04-11T16:28:08.921|39.9672|-119.5613|11.4|nn|nn|nn|nn00682032|ml|2.8|nn|3 km ENE of Sutcliffe, Nevada
+nn00682663|2019-04-19T11:22:18.688|39.982|-119.6067|11.6|nn|nn|nn|nn00682663|ml|2.2|nn|3 km N of Sutcliffe, Nevada
+nn00683395|2019-04-28T05:19:41.448|39.7339|-117.564|13.8|nn|nn|nn|nn00683395|ml|2.9|nn|50 km WNW of Austin, Nevada
+nn00683408|2019-04-28T08:04:25.388|39.7973|-117.4622|1.5|nn|nn|nn|nn00683408|ml|2.5|nn|47 km NW of Austin, Nevada
+nn00683411|2019-04-28T10:20:46.216|39.6846|-116.905|3.3|nn|nn|nn|nn00683411|ml|2.4|nn|25 km NNE of Austin, Nevada
+nn00683435|2019-04-28T17:03:16.906|39.7969|-117.4942|4|nn|nn|nn|nn00683435|ml|4|nn|49 km NW of Austin, Nevada
+nn00683441|2019-04-28T17:10:40.277|39.7957|-117.4572|4.8|nn|nn|nn|nn00683441|ml|3.5|nn|47 km NW of Austin, Nevada
+nn00683449|2019-04-28T18:47:42.271|39.9024|-117.4079|0|nn|nn|nn|nn00683449|ml|2.2|nn|53 km NNW of Austin, Nevada
+nn00683453|2019-04-28T19:49:37.754|39.78|-117.4575|0.3|nn|nn|nn|nn00683453|ml|2.3|nn|46 km NW of Austin, Nevada
+nn00683456|2019-04-28T20:13:45.047|39.8022|-117.4714|2.8|nn|nn|nn|nn00683456|ml|3.3|nn|48 km NW of Austin, Nevada
+nn00683467|2019-04-28T21:56:49.435|39.7909|-117.4778|3.8|nn|nn|nn|nn00683467|ml|4.1|nn|Nevada
+nn00683481|2019-04-29T03:16:36.435|39.801|-117.4407|3.1|nn|nn|nn|nn00683481|ml|3.1|nn|46 km NW of Austin, Nevada
+nn00683851|2019-04-29T16:15:25.408|39.8241|-117.3223|22|nn|nn|nn|nn00683851|ml|2.3|nn|42 km NNW of Austin, Nevada
+nn00683566|2019-04-29T16:28:21.293|39.8223|-117.4296|2.3|nn|nn|nn|nn00683566|ml|2.4|nn|47 km NW of Austin, Nevada
+nn00683534|2019-04-29T18:02:22.663|39.8395|-117.4551|3.6|nn|nn|nn|nn00683534|ml|2.6|nn|50 km NW of Austin, Nevada
+nn00683558|2019-04-29T19:25:28.288|39.7574|-117.4363|2.7|nn|nn|nn|nn00683558|ml|2.3|nn|43 km NW of Austin, Nevada
+nn00683604|2019-04-30T06:02:56.995|39.7127|-117.4548|6.4|nn|nn|nn|nn00683604|ml|3.5|nn|41 km NW of Austin, Nevada
+nn00683614|2019-04-30T10:11:02.809|39.8116|-117.448|3.5|nn|nn|nn|nn00683614|ml|3.1|nn|48 km NW of Austin, Nevada
+nn00683673|2019-05-01T00:14:08.950|39.7993|-117.4575|4.5|nn|nn|nn|nn00683673|ml|3.1|nn|47 km NW of Austin, Nevada
+nn00683680|2019-05-01T00:38:48.481|39.8124|-117.4468|1.1|nn|nn|nn|nn00683680|ml|2.3|nn|47 km NW of Austin, Nevada
+nn00683702|2019-05-01T16:33:20.316|39.8453|-117.4093|4.1|nn|nn|nn|nn00683702|ml|2.6|nn|48 km NW of Austin, Nevada
+nn00683781|2019-05-02T04:35:28.886|39.8226|-117.4824|0.5|nn|nn|nn|nn00683781|ml|2.8|nn|50 km NW of Austin, Nevada
+nn00683796|2019-05-02T04:38:12.544|39.8098|-117.4521|3.8|nn|nn|nn|nn00683796|ml|2.2|nn|48 km NW of Austin, Nevada
+nn00684070|2019-05-05T11:01:27.644|39.7787|-117.4412|0|nn|nn|nn|nn00684070|ml|3.1|nn|44 km NW of Austin, Nevada
+nn00684169|2019-05-06T20:21:58.581|39.7242|-117.4458|1.2|nn|nn|nn|nn00684169|ml|2.2|nn|41 km NW of Austin, Nevada
+nn00684210|2019-05-07T04:58:38.613|39.7889|-117.4933|5.2|nn|nn|nn|nn00684210|ml|3.9|nn|48 km NW of Austin, Nevada
+nn00684309|2019-05-08T13:32:21.644|40.5551|-116.7245|0|nn|nn|nn|nn00684309|ml|2.2|nn|19 km NW of Crescent Valley, Nevada
+nn00693441|2019-07-09T06:50:33.237|39.8419|-117.3202|2.2|nn|nn|nn|nn00693441|ml|2.7|nn|44 km NNW of Austin, Nevada
+nn00703158|2019-09-09T05:09:28.370|40.5732|-116.4727|12.8|nn|nn|nn|nn00703158|ml|2.3|nn|19 km NNE of Crescent Valley, Nevada
+nn00711127|2019-11-20T05:31:51.803|39.7782|-117.2555|5.9|nn|nn|nn|nn00711127|ml|2.2|nn|Nevada
+nn00712267|2019-12-01T00:15:37.811|40.5978|-116.3998|14.3|nn|nn|nn|nn00712267|ml|2.2|nn|25 km NE of Crescent Valley, Nevada
+nn00712189|2019-12-02T22:17:40.466|40.5818|-116.4342|10.8|nn|nn|nn|nn00712189|ml|3.3|nn|22 km NNE of Crescent Valley, Nevada
+nn00712325|2019-12-04T08:26:15.174|39.6702|-117.6675|4.9|nn|nn|nn|nn00712325|ml|2.5|nn|55 km WNW of Austin, Nevada
+nn00712412|2019-12-05T16:07:30.874|40.5702|-116.3415|4.9|nn|nn|nn|nn00712412|ml|2.8|nn|25 km SW of Carlin, Nevada
+nn00713055|2019-12-16T08:36:25.291|40.5736|-117.5248|6.2|nn|nn|nn|nn00713055|ml|2.8|nn|41 km SW of Valmy, Nevada
+nn00718129|2020-03-02T12:56:26.829|40.5756|-116.2838|8.9|nn|nn|nn|nn00718129|ml|3.5|nn|21 km SW of Carlin, Nevada
+nn00719332|2020-03-18T02:09:47.941|40.5948|-119.6593|5.5|nn|nn|nn|nn00719332|ml|2.3|nn|26 km WSW of Gerlach, Nevada
+nn00725023|2020-04-14T23:50:19.938|40.7258|-119.2055|7.3|nn|nn|nn|nn00725023|ml|2.7|nn|4 km SSE of Burning Man Earth, Nevada
+nn00724942|2020-05-11T05:29:29.325|40.6255|-119.3824|8.7|nn|nn|nn|nn00724942|ml|2.7|nn|3 km SW of Gerlach, Nevada
+nn00744432|2020-06-07T05:35:30.181|40.2388|-117.7479|7|nn|nn|nn|nn00744432|ml|2.2|nn|57 km SE of Imlay, Nevada
+nn00758340|2020-07-08T23:48:49.973|40.0252|-119.6393|6.8|nn|nn|nn|nn00758340|ml|2.2|nn|8 km NNW of Sutcliffe, Nevada
+nn00765184|2020-08-02T16:42:26.948|40.034|-119.6324|11.4|nn|nn|nn|nn00765184|ml|2.8|nn|9 km NNW of Sutcliffe, Nevada
+nn00768776|2020-08-19T23:36:43.237|39.7715|-119.4653|9.4|nn|nn|nn|nn00768776|ml|2.2|nn|11 km SW of Nixon, Nevada
+nn00773966|2020-09-15T18:22:47.233|40.7498|-119.3356|6.6|nn|nn|nn|nn00773966|ml|2.2|nn|9 km WSW of Burning Man Earth, Nevada
+nn00778979|2020-10-16T15:25:23.814|39.6782|-119.9217|7.1|nn|nn|nn|nn00778979|ml|2.3|nn|4 km E of Cold Springs, Nevada
+nn00779025|2020-10-16T20:29:05.649|39.6764|-119.9258|6.4|nn|nn|nn|nn00779025|ml|2.4|nn|4 km E of Cold Springs, Nevada
+nn00790508|2020-12-07T17:48:37.827|40.0286|-119.6406|10|nn|nn|nn|nn00790508|ml|2.2|nn|9 km NNW of Sutcliffe, Nevada
+nn00796561|2021-01-09T04:12:49.054|40.03|-119.6386|8.9|nn|nn|nn|nn00796561|ml|2.6|nn|9 km NNW of Sutcliffe, Nevada
+nn00796594|2021-01-09T09:34:06.234|40.0345|-119.6581|11.2|nn|nn|nn|nn00796594|ml|2.8|nn|10 km NNW of Sutcliffe, Nevada
+nn00797267|2021-01-15T06:39:12.264|40.4689|-116.4134|11.9|nn|nn|nn|nn00797267|ml|2.4|nn|15 km ENE of Crescent Valley, Nevada
+nn00799833|2021-02-08T06:57:19.871|40.2529|-119.5306|9.4|nn|nn|nn|nn00799833|ml|2.5|nn|34 km N of Sutcliffe, Nevada
+nn00802273|2021-03-09T16:17:27.802|40.4183|-119.484|7.3|nn|nn|nn|nn00802273|ml|2.4|nn|21 km SW of Empire, Nevada
+nn00804453|2021-04-06T22:54:28.936|40.6255|-119.5494|14.6|nn|nn|nn|nn00804453|ml|2.2|nn|16 km W of Gerlach, Nevada
+nn00804484|2021-04-07T07:02:13.667|40.6326|-119.534|13.1|nn|nn|nn|nn00804484|ml|2.2|nn|15 km W of Gerlach, Nevada
+nn00815382|2021-07-21T08:08:27.993|40.5078|-119.6921|1.1|nn|nn|nn|nn00815382|ml|2.2|nn|30 km WSW of Empire, Nevada
+nn00821396|2021-09-06T08:45:20.712|39.8721|-119.0105|14.9|nn|nn|nn|nn00821396|ml|2.6|nn|30 km E of Nixon, Nevada
+nn00823374|2021-09-24T17:08:41.268|39.9328|-117.892|12|nn|nn|nn|nn00823374|ml|2.3|nn|56 km ESE of Lovelock, Nevada
+nn00828101|2021-11-15T10:54:09.716|40.0722|-119.6669|10.9|nn|nn|nn|nn00828101|ml|2.3|nn|14 km NNW of Sutcliffe, Nevada
+nn00828578|2021-11-21T10:12:01.819|40.0828|-117.5203|7.1|nn|nn|nn|nn00828578|ml|2.5|nn|75 km NNW of Austin, Nevada
+nn00830439|2021-12-24T03:58:46.343|40.1506|-119.6266|5.1|nn|nn|nn|nn00830439|ml|3.3|nn|22 km N of Sutcliffe, Nevada
+us7000g83i|2021-12-31T00:39:53.095|40.4315|-117.7098|5|us|us|us|us7000g83i|ml|2.5|us|45 km SE of Imlay, Nevada
+nn00832491|2022-01-26T00:21:26.958|40.5071|-119.1791|9.5|nn|nn|nn|nn00832491|ml|3.2|nn|15 km ESE of Empire, Nevada
+nn00832745|2022-01-29T07:03:15.375|40.2843|-117.756|7.6|nn|nn|nn|nn00832745|ml|3.3|nn|53 km SE of Imlay, Nevada
+nn00834257|2022-02-22T08:48:41.902|40.1717|-119.6443|8.6|nn|nn|nn|nn00834257|ml|3|nn|24 km N of Sutcliffe, Nevada
+nn00835224|2022-03-11T21:28:56.235|39.9843|-119.5813|10.5|nn|nn|nn|nn00835224|ml|2.3|nn|4 km NNE of Sutcliffe, Nevada
+nn00836357|2022-03-30T21:05:17.191|39.9787|-119.5704|7.5|nn|nn|nn|nn00836357|ml|2.6|nn|4 km NE of Sutcliffe, Nevada
+nn00836429|2022-03-31T19:40:20.315|40.4261|-118.6298|9.8|nn|nn|nn|nn00836429|ml|2.2|nn|30 km NNW of Lovelock, Nevada
+nn00836431|2022-03-31T19:57:07.469|40.4055|-118.6147|9.9|nn|nn|nn|nn00836431|ml|2.4|nn|27 km NNW of Lovelock, Nevada
+us7000h8fl|2022-05-10T21:33:44.270|40.1508|-116.7455|0|us|us|us|us7000h8fl|ml|2.5|us|32 km SSW of Crescent Valley, Nevada
+nn00839535|2022-05-25T08:58:07.156|40.1027|-119.4542|6.5|nn|nn|nn|nn00839535|ml|2.4|nn|21 km NE of Sutcliffe, Nevada
+nn00839547|2022-05-25T09:31:42.891|40.0985|-119.4644|9.4|nn|nn|nn|nn00839547|ml|2.5|nn|20 km NE of Sutcliffe, Nevada
+nn00839553|2022-05-25T9:59:11.337|40.1048|-119.4655|11.1|nn|nn|nn|nn00839553|ml|2.5|nn|20 km NE of Sutcliffe, Nevada
+nn00839562|2022-05-25T10:38:54.189|40.0984|-119.4617|7.5|nn|nn|nn|nn00839562|ml|2.2|nn|20 km NE of Sutcliffe, Nevada
+nn00839590|2022-05-25T18:44:55.576|40.0958|-119.4653|6|nn|nn|nn|nn00839590|ml|2.2|nn|19 km NE of Sutcliffe, Nevada
+us7000hh6a|2022-06-13T21:47:47.950|40.1433|-116.5843|0|us|us|us|us7000hh6a|ml|2.3|us|30 km S of Crescent Valley, Nevada
+nn00843952|2022-08-01T20:21:48.319|40.1642|-119.6284|7.8|nn|nn|nn|nn00843952|ml|2.7|nn|23 km N of Sutcliffe, Nevada
+nn00845456|2022-08-19T18:18:56.081|40.0237|-119.6349|8.3|nn|nn|nn|nn00845456|ml|2.2|nn|8 km NNW of Sutcliffe, Nevada
+us7000i4he|2022-09-01T21:56:44.362|40.2748|-116.6831|0|us|us|us|us7000i4he|ml|2.4|us|18 km SSW of Crescent Valley, Nevada
+nn00854299|2022-10-22T03:56:06.209|39.7196|-116.7267|11.2|nn|nn|nn|nn00854299|ml|2.3|nn|38 km NE of Austin, Nevada
+nn00849776|2022-10-22T07:22:45.991|39.6995|-116.7163|9.8|nn|nn|nn|nn00849776|ml|2.8|nn|38 km NE of Austin, Nevada
+nn00850566|2022-10-22T11:29:09.951|39.6703|-116.7279|15.9|nn|nn|nn|nn00850566|ml|2.6|nn|35 km ENE of Austin, Nevada
+nn00850805|2022-11-08T03:50:53.985|40.172|-119.148|8.3|nn|nn|nn|nn00850805|ml|3.3|nn|41 km NNE of Nixon, Nevada
+nn00850812|2022-11-08T12:53:04.754|40.172|-119.1458|7.1|nn|nn|nn|nn00850812|ml|2.2|nn|41 km NNE of Nixon, Nevada
+nn00850814|2022-11-08T13:42:31.680|40.1563|-119.1389|7|nn|nn|nn|nn00850814|ml|2.5|nn|40 km NNE of Nixon, Nevada
+nn00850914|2022-11-09T13:46:20.871|40.1617|-119.1423|9.3|nn|nn|nn|nn00850914|ml|2.2|nn|40 km NNE of Nixon, Nevada
+nn00850892|2022-11-09T13:48:48.770|40.1633|-119.1358|8|nn|nn|nn|nn00850892|ml|2.6|nn|41 km NNE of Nixon, Nevada
+nn00850964|2022-11-10T00:06:43.616|40.1662|-119.1438|13|nn|nn|nn|nn00850964|ml|2.5|nn|41 km NNE of Nixon, Nevada
+nn00850988|2022-11-10T02:34:13.443|40.1488|-119.1397|8.2|nn|nn|nn|nn00850988|ml|2.5|nn|39 km NNE of Nixon, Nevada
+nn00861095|2023-06-11T02:46:22.078|40.529|-119.2197|0|nn|nn|nn|nn00861095|ml|2.2|nn|Nevada
+nn00861604|2023-06-23T03:17:22.005|39.9268|-117.7919|5.2|nn|nn|nn|nn00861604|ml|2.5|nn|64 km ESE of Lovelock, Nevada
+nn00861727|2023-06-26T01:50:47.821|39.6486|-119.6521|10.3|nn|nn|nn|nn00861727|ml|3.4|nn|4 km E of Spanish Springs, Nevada
+nn00861731|2023-06-26T01:56:03.168|39.6407|-119.654|9.4|nn|nn|nn|nn00861731|ml|2.2|nn|4 km ESE of Spanish Springs, Nevada
+nn00861737|2023-06-26T02:26:51.900|39.6464|-119.6463|9.3|nn|nn|nn|nn00861737|ml|3.1|nn|5 km E of Spanish Springs, Nevada
+nn00861783|2023-06-26T23:37:52.887|39.6438|-119.653|9.3|nn|nn|nn|nn00861783|ml|2.6|nn|4 km E of Spanish Springs, Nevada
+nn00861785|2023-06-26T23:41:25.363|39.6441|-119.652|9.5|nn|nn|nn|nn00861785|ml|2.3|nn|4 km E of Spanish Springs, Nevada
+nn00861944|2023-06-29T11:23:08.126|39.6407|-119.6432|9.8|nn|nn|nn|nn00861944|ml|2.2|nn|5 km E of Spanish Springs, Nevada
+nn00862692|2023-07-16T02:45:28.328|39.646|-119.6479|5|nn|nn|nn|nn00862692|ml|2.3|nn|Nevada, United States
+nn00863089|2023-07-22T11:57:41.028|40.5866|-119.3515|0|nn|nn|nn|nn00863089|ml|2.5|nn|1 km NNW of Empire, Nevada
+nn00863299|2023-07-26T11:48:58.947|40.6033|-119.3895|14.8|nn|nn|nn|nn00863299|ml|2.2|nn|5 km NW of Empire, Nevada
+nn00863318|2023-07-26T17:10:03.627|40.379|-116.3622|0.7|nn|nn|nn|nn00863318|ml|2.9|nn|18 km ESE of Crescent Valley, Nevada
+nn00863761|2023-07-31T02:24:56.644|39.9998|-117.8643|2|nn|nn|nn|nn00863761|ml|2.6|nn|55 km ESE of Lovelock, Nevada
+nn00865740|2023-09-12T07:01:48.195|40.1787|-117.7743|7.5|nn|nn|nn|nn00865740|ml|2.6|nn|59 km E of Lovelock, Nevada
+nn00869403|2023-11-28T09:32:27.642|40.374|-119.3968|5.8|nn|nn|nn|nn00869403|ml|2.8|nn|22 km SSW of Empire, Nevada
+nn00869631|2023-12-03T23:09:47.088|40.3583|-119.5986|12.3|nn|nn|nn|nn00869631|ml|2.6|nn|32 km SW of Empire, Nevada
+nn00871497|2024-01-09T18:37:55.311|40.0639|-119.6837|13.4|nn|nn|nn|nn00871497|ml|2.5|nn|14 km NNW of Sutcliffe, Nevada
+nn00871979|2024-01-20T13:09:32.245|39.765|-117.9004|11|nn|nn|nn|nn00871979|ml|3.3|nn|67 km SE of Lovelock, Nevada
+nn00873352|2024-02-13T14:52:46.683|40.2183|-117.7876|9.5|nn|nn|nn|nn00873352|ml|2.9|nn|57 km SSE of Imlay, Nevada
+nn00874165|2024-03-04T21:02:46.579|40.4036|-116.3653|9.8|nn|nn|nn|nn00874165|ml|3.8|nn|17 km E of Crescent Valley, Nevada
+nn00875944|2024-04-09T10:40:02.636|40.5087|-119.7809|8.6|nn|nn|nn|nn00875944|ml|2.8|nn|37 km WSW of Empire, Nevada
+nn00875947|2024-04-09T10:59:15.909|40.4768|-119.7968|9.2|nn|nn|nn|nn00875947|ml|2.6|nn|40 km WSW of Empire, Nevada
+nn00875984|2024-04-10T02:48:42.777|40.4351|-119.7983|6.7|nn|nn|nn|nn00875984|ml|2.4|nn|41 km WSW of Empire, Nevada
+nn00875987|2024-04-10T02:53:52.111|40.4538|-119.8335|5.4|nn|nn|nn|nn00875987|ml|2.4|nn|42 km NE of Herlong, California
+nn00877049|2024-05-01T04:11:01.641|40.0887|-119.6852|15.1|nn|nn|nn|nn00877049|ml|2.5|nn|16 km NNW of Sutcliffe, Nevada
+nn00877184|2024-05-04T17:21:15.935|39.9673|-117.8138|3.8|nn|nn|nn|nn00877184|ml|2.6|nn|60 km ESE of Lovelock, Nevada
+nn00878072|2024-05-23T19:40:43.758|40.0942|-119.7267|15|nn|nn|nn|nn00878072|ml|2.3|nn|19 km NW of Sutcliffe, Nevada
+nn00881143|2024-07-19T05:00:06.780|40.1118|-119.7555|14.8|nn|nn|nn|nn00881143|ml|2.6|nn|22 km NW of Sutcliffe, Nevada
+nn00885655|2024-10-07T04:28:12.142|40.2319|-119.6872|9|nn|nn|nn|nn00885655|ml|2.5|nn|32 km NNW of Sutcliffe, Nevada
+nn00886031|2024-10-14T22:19:33.761|40.2279|-119.6837|9|nn|nn|nn|nn00886031|ml|2.6|nn|31 km NNW of Sutcliffe, Nevada
+nn00886135|2024-10-17T00:47:38.567|40.6314|-119.3746|2.4|nn|nn|nn|nn00886135|ml|2.8|nn|2 km SW of Gerlach, Nevada
+nn00887121|2024-11-02T20:27:57.760|39.9588|-117.8603|6.2|nn|nn|nn|nn00887121|ml|3.2|nn|57 km ESE of Lovelock, Nevada
+nn00889172|2024-12-11T06:30:14.953|39.7689|-117.5063|9.8|nn|nn|nn|nn00889172|ml|2.4|nn|48 km NW of Austin, Nevada
+nn00890843|2024-12-29T23:08:52.051|40.6283|-119.3678|3.3|nn|nn|nn|nn00890843|ml|3.1|nn|2 km SSW of Gerlach, Nevada
+nn00894836|2025-03-20T02:09:35.783|40.7466|-118.9806|6.2|nn|nn|nn|nn00894836|ml|2.6|nn|20 km E of Black Rock City, Nevada
+nn00895165|2025-03-26T14:46:00.759|40.7115|-118.9666|6.9|nn|nn|nn|nn00895165|ml|2.8|nn|22 km ESE of Black Rock City, Nevada
+nn00895525|2025-04-02T10:22:31.371|40.6496|-118.9729|8.7|nn|nn|nn|nn00895525|ml|2.4|nn|24 km ESE of Black Rock City, Nevada
+nn00895571|2025-04-03T00:59:37.768|39.7247|-119.9096|9.7|nn|nn|nn|nn00895571|ml|2.8|nn|7 km NE of Cold Springs, Nevada
+nn00895898|2025-04-08T09:41:55.294|40.5349|-119.8332|9.4|nn|nn|nn|nn00895898|ml|2.2|nn|41 km W of Empire, Nevada
+nn00899215|2025-06-21T00:54:02.900|39.7134|-119.9578|6.2|nn|nn|nn|nn00899215|ml|2.2|nn|4 km NNE of Cold Springs, Nevada
+nn00901165|2025-07-25T10:49:30.110|40.1638|-117.7186|6.5|nn|nn|nn|nn00901165|ml|3.1|nn|64 km E of Lovelock, Nevada
+nn00901394|2025-07-29T14:32:38.107|40.4097|-119.3912|2.5|nn|nn|nn|nn00901394|ml|2.3|nn|18 km SSW of Empire, Nevada
+nc75237772|2025-09-14T19:33:33.290|39.699333333333|-120.00883333333|6.87|nc|nc|nc|nc75237772|md|2.63|nc|3 km NW of Cold Springs, NV
+nn00904910|2025-09-24T04:56:26.467|40.5783|-119.6906|11.6|nn|nn|nn|nn00904910|ml|2.2|nn|29 km W of Empire, Nevada
+nn00907637|2025-11-22T16:18:22.253|40.5636|-117.722|6.6672|nn|nn|nn|nn00907637|ml|2.6|nn|37 km ESE of Imlay, Nevada
+nn00908900|2025-12-26T01:23:59.571|40.5788|-119.5905|4|nn|nn|nn|nn00908900|mw|3.41|nn|21 km W of Empire, Nevada
+nn00909397|2026-01-10T11:57:18.304|40.5908|-119.6181|11.7793|nn|nn|nn|nn00909397|ml|2.45|nn|23 km WSW of Gerlach, Nevada
+nn00909434|2026-01-11T15:27:10.929|40.5918|-119.6127|10.0055|nn|nn|nn|nn00909434|ml|2.22|nn|22 km WSW of Gerlach, Nevada
+nn00909679|2026-01-19T15:35:23.415|40.5904|-119.5973|6|nn|nn|nn|nn00909679|mw|3.75|nn|21 km WSW of Gerlach, Nevada
+nn00909686|2026-01-19T19:09:02.555|40.5831|-119.6008|11.142|nn|nn|nn|nn00909686|ml|3.45|nn|21 km W of Empire, Nevada
+nn00909712|2026-01-20T05:45:53.253|40.5737|-119.5493|1.2219|nn|nn|nn|nn00909712|ml|3.28|nn|17 km W of Empire, Nevada
+nn00909715|2026-01-20T05:46:19.190|40.5906|-119.5994|7|nn|nn|nn|nn00909715|mw|3.65|nn|21 km WSW of Gerlach, Nevada
+nn00909732|2026-01-20T09:56:28.704|40.5913|-119.5886|12.1065|nn|nn|nn|nn00909732|ml|2.49|nn|20 km WSW of Gerlach, Nevada
+nn00909734|2026-01-20T10:24:04.611|40.5956|-119.6436|7|nn|nn|nn|nn00909734|mw|3.41|nn|25 km WSW of Gerlach, Nevada
+nn00909743|2026-01-20T12:17:50.905|40.6017|-119.6514|10.5909|nn|nn|nn|nn00909743|ml|2.73|nn|25 km WSW of Gerlach, Nevada
+nn00909793|2026-01-21T09:02:20.830|40.6055|-119.6569|11.728|nn|nn|nn|nn00909793|ml|2.22|nn|26 km WSW of Gerlach, Nevada
+nn00909860|2026-01-23T09:13:31.785|40.5962|-119.5805|10.2417|nn|nn|nn|nn00909860|ml|2.37|nn|20 km WSW of Gerlach, Nevada
+nn00909889|2026-01-24T00:08:00.474|40.6004|-119.608|10.5957|nn|nn|nn|nn00909889|ml|2.47|nn|22 km WSW of Gerlach, Nevada
+nn00910042|2026-01-27T08:22:20.137|40.5898|-119.5578|11.8698|nn|nn|nn|nn00910042|ml|2.97|nn|18 km W of Empire, Nevada
+nn00910090|2026-01-28T04:04:36.582|40.5775|-119.5616|8.118|nn|nn|nn|nn00910090|ml|3.09|nn|18 km W of Empire, Nevada
+nn00910772|2026-02-13T05:46:41.462|40.5732|-119.6324|6.0734|nn|nn|nn|nn00910772|ml|2.53|nn|24 km W of Empire, Nevada
+nn00910880|2026-02-16T03:08:52.163|40.5855|-119.6538|3.5921|nn|nn|nn|nn00910880|ml|3.15|nn|26 km WSW of Gerlach, Nevada
+nn00910901|2026-02-16T18:50:45.670|40.5953|-119.5896|12.2843|nn|nn|nn|nn00910901|ml|2.77|nn|20 km WSW of Gerlach, Nevada
+nn00910958|2026-02-19T08:32:52.786|40.5899|-119.6754|3.3016|nn|nn|nn|nn00910958|ml|2.48|nn|27 km WSW of Gerlach, Nevada
+nn00914050|2026-04-13T20:07:30.584|39.948|-118.8298|9.4876|nn|nn|nn|nn00914050|ml|2.24|nn|39 km SW of Lovelock, Nevada
+nn00914931|2026-04-16T06:56:10.681|40.5744|-119.667|12.2816|nn|nn|nn|nn00914931|ml|2.86|nn|27 km W of Empire, Nevada
+nn00921352|2026-07-08T19:54:00.256|40.5822|-119.8069|7.4598|nn|nn|nn|nn00921352|ml|2.35|nn|38 km WSW of Gerlach, Nevada
+nc75412462|2026-08-06T09:27:17.820|39.7005|-120.00833333333|6.38|nc|nc|nc|nc75412462|md|2.41|nc|4 km NW of Cold Springs, NV
+nn00922992|2026-08-06T18:49:30.281|40.5944|-119.6243|3.32|nn|nn|nn|nn00922992|ml|2.62|nn|23 km WSW of Gerlach, Nevada
+nn00924308|2026-09-10T03:03:38.131|40.4437|-118.4642|8.0354|nn|nn|nn|nn00924308|ml|2.21|nn|25 km SW of Humboldt, Nevada
+nn00924436|2026-09-14T14:12:05.492|40.6186|-119.6265|11|nn|nn|nn|nn00924436|mwr|3.34|nn|23 km W of Gerlach, Nevada
+nn00924497|2026-09-16T06:05:11.054|40.6227|-119.6099|11.284|nn|nn|nn|nn00924497|ml|2.23|nn|21 km W of Gerlach, Nevada
+nn00924498|2026-09-16T06:19:08.697|40.6294|-119.6173|8.0282|nn|nn|nn|nn00924498|ml|2.36|nn|22 km W of Gerlach, Nevada
+nn00924508|2026-09-16T07:17:25.899|40.6069|-119.5899|7|nn|nn|nn|nn00924508|mwr|3.79|nn|20 km WSW of Gerlach, Nevada
+nn00925493|2026-10-08T22:10:12.270|40.7472|-119.2644|6.8683|nn|nn|nn|nn00925493|ml|2.37|nn|3 km SW of Burning Man Earth, Nevada
+nn00925943|2026-10-19T06:25:02.366|40.7483|-119.2894|1.5109|nn|nn|nn|nn00925943|ml|2.54|nn|5 km WSW of Burning Man Earth, Nevada
