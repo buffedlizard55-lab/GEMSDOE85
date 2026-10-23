@@ -1,5 +1,20 @@
 # GEMSDOE85 — Lane H85-HJCD: Hydrothermal-Juxtaposition & Fault-Valve Conduit Discovery
 
+<!-- CURRENT STATE START -->
+## CURRENT STATE (v2 — 2026-10-23, `arena/3dd0b94c-gemsdoe85`)
+
+The historical Lane H85-HJCD text below is kept untouched; **only this block governs current v2 builds and slot choices.**
+
+- **Parent:** `R0 = h33-h33-2-b2` (`GEMSDOE32` `e5eb6e7e`, `37,654` unit-mass dots; rebuilt pixel- and **byte-identically** from pinned `H19-5` `ec1f9b56…`: NaN `baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd`, zeros `c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9`).
+- **Best receipt:** **none in `ledger/submissions.csv`** — `0.2778` on `h33-h33-2-b2` is **CLAIM** (owner-reported, no receipt file). Human fills `receipt_score` and `date` after upload.
+- **`TOP_PUBLIC`:** **____** *(human fills from live leaderboard with observation date; no other target is valid).*
+- **Slots left:** **__ / 3** this rolling week · **__** total remaining to provisional `2026-12-03` deadline + **1** blind final submission *(human confirms from account page).*
+- **Next 3 slots (`SLOT_PLAN.md`, `docs/SUBMIT.md`, `docs/mechanism_cards_relief.md`):**
+  1. `releases/h33-2-b2-prune3-20261023-fb308615.tif` — `PRUNE` `2 < d_cat ≤ 3 px`, `35,483` dots (`5.77 %` changed); pred **+0.007 MODEL** (live `d_cat > 3 px` baseline).
+  2. `releases/h33-2-b2-reliefp2r10-20261023-669f0637.tif` — `RELIEF` Piedmont→Range `+10 %` (`3,765` dots, `d_cat > 3 px`, `37,654` fixed, `12.77 %` changed); pred **+0.008 MODEL**.
+  3. **Conditional on Receipts 1 & 2:** `releases/h33-2-b2-reliefbp2r15-20261023-21af1eee.tif` (`+15 %` Basin+Pied→Range, pred **+0.006 MODEL**) if `Slot2 − Slot1 ≥ +0.01`; `releases/h33-2-b2-reliefr2bp10-20261023-7a0329ee.tif` (`+10 %` Range→Basin+Pied, pred **−0.002 / +0.006 cond. MODEL**) if `Slot2 − Slot1 ≤ −0.01`; or `releases/h33-2-b2-prune4-20261023-2880b0e9.tif` (`PRUNE` `d_cat ≤ 4 px`, pred **+0.003 MODEL**) if relief is flat and `Slot1 − R0 ≥ +0.01`.
+<!-- CURRENT STATE END -->
+
 **DOE GEMS Prize Challenge · DrivenData Competition #306 · Verified End-to-End Research, Holdout Validation & Unique GeoTIFF Submission System**
 
 [![Automated Validation](https://img.shields.io/badge/Automated_Validation-32%2F32_PASS-brightgreen)](docs/index.html)

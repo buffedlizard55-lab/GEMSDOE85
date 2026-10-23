@@ -135,7 +135,8 @@ def test_shipped_releases_pass_their_own_gates_and_match_the_ledger():
     receipt = ROOT / "evidence" / "session_prune_receipt.json"
     if not ledger.is_file() or not receipt.is_file():
         pytest.skip("session outputs not built")
-    rows = list(csv.DictReader(ledger.open()))
+    all_rows = list(csv.DictReader(ledger.open()))
+    rows = [r for r in all_rows if r["axis"] == "PRUNE"]
     assert len(rows) == 3
     assert rows[0]["parent"] == "h33-h33-2-b2" and rows[0]["axis"] == "PRUNE"
     assert all(r["status"] == "BUILT" and r["receipt"] == "N" for r in rows)

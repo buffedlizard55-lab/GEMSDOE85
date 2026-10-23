@@ -59,3 +59,34 @@ offset argument, and the live scores 0.2600 / 0.2708 / 0.2778 come from the owne
 (GEMSDOE19/24/25/28/31/32) and the brief. This session's own contributions are the exact rebuild
 verification, the unique-credit ranking and its rejection as a MASS tool, the measured refill-capacity
 result, and the SGMC-proxy bias calibration (+0.0083) used to state the predictions.
+
+---
+
+# Generative-AI Disclosure — `arena/3dd0b94c-gemsdoe85`, 2026-10-23 (`AXIS = RELIEF`)
+
+## AI wrote in this session
+
+- `src/gems85/relief_lineage.py` — manifest/lineage SHA-256 verification (all 28 restored inputs),
+  byte-exact GeoTIFF regeneration check for parent `R0` (`baeae321…` NaN and `c55bafc4…` zeros),
+  equal-area Basin / Piedmont / Range-front terciles (`0.70 · pct_rank(det_elev) + 0.30 · pct_rank(det_elev_slope)`),
+  label-free physical+ancestor ridge prominence ranking, and deterministic 2.8 px-spaced fixed-count
+  (`37,654`) tercile exchange enforcing `d_cat > 3.0 px`.
+- `scripts/gemsdoe85_relief_session.py` — end-to-end build, disk re-read format/collar/dedupe validator,
+  report-only diagnostics (`gems57-pooled-hide-v2` 95 % CI on `n = 11,321` withheld positives,
+  `sgmc`/`sgmc_minus_catalogue_3px` 95 % CI, 19-band leakage canary), `evidence/session_relief_receipt.json`
+  (+ `docs/evidence/` mirror), and idempotent `ledger/submissions.csv` append for `reliefp2r10`
+  (`669f0637`), `reliefbp2r15` (`21af1eee`), and `reliefr2bp10` (`7a0329ee`).
+- `tests/test_relief_lineage.py` (and axis-filter update in `tests/test_r0_lineage.py`), plus
+  `docs/mechanism_cards_relief.md`, `SLOT_PLAN.md`, `docs/SUBMIT.md`, the `CURRENT STATE` block in
+  `README.md`, and `IR-V2-13 … IR-V2-15` in `IRREGULARITIES.md`.
+
+## Human decided / must supply
+
+- Supplied the v2 brief, constraints, parent choice (`R0 = h33-h33-2-b2`, `0.2778` CLAIM), and pinned
+  repository manifests (`registry/data_manifest.json`, `registry/learning_manifest.json`,
+  `registry/fleet_registry_manifest.json`).
+- Chooses which candidate files to upload from their single DrivenData account, verifies competition
+  data/AI-disclosure terms and final deadline in a human browser, supplies dated `TOP_PUBLIC` and
+  remaining rolling-week/total slot counts, and records live `receipt_score` + `date` in
+  `ledger/submissions.csv`.
+

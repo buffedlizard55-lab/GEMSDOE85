@@ -1,20 +1,22 @@
 # Decision-changing irregularities — v2, 2026-10-23
 
-Two v2 sessions on this branch history: `arena/cf29702c` (2026-10-22/23) stopped BLOCKED; this one
-(`arena/e081f5da`, 2026-10-23) cleared the rebuild blocker and built the PRUNE variants. Items
-IR-V2-01 … IR-V2-06 are the earlier session's, kept verbatim; the status line under each says what
-this session did about it. New items are IR-V2-07 … IR-V2-12. Only items that change a decision.
+Three v2 sessions on this branch history: `arena/cf29702c` (2026-10-22/23) stopped BLOCKED;
+`arena/e081f5da` (2026-10-23) cleared the rebuild blocker and built `PRUNE`; this session
+(`arena/3dd0b94c-gemsdoe85`, 2026-10-23) verified **byte-exact** R0 GeoTIFF regeneration on both NaN
+and zeros files, resolved the non-PRUNE `d_cat > 3 px` confound via an in-tercile collar control, and
+built the three `RELIEF` variants. Items IR-V2-01 … IR-V2-12 are kept verbatim; new decision-changing
+items are IR-V2-13 … IR-V2-15.
 
 ## Status of the earlier blockers
 
 | item | blocker | status now |
 |---|---|---|
-| IR-V2-01 | R0 not recipe-rebuilt | **CLEARED** — full chain reproduced and proven pixel-identical (below, IR-V2-07) |
-| IR-V2-02 | no axis, no history | **PARTLY CLEARED** — PRUNE chosen on evidence (IR-V2-08); history/receipts still absent (IR-V2-12) |
-| IR-V2-03 | R0 has dots < 3 px, conflicts with a non-PRUNE edit | **RESOLVED by choosing PRUNE** — all three variants sit at > 3 px (3.16 / 4.12 / 5.10 px) |
-| IR-V2-04 | competition rasters in a public repo | **OPEN** — unchanged, restated in IR-V2-10 |
-| IR-V2-05 | historical instructions conflict with v2 | **OPEN** — unchanged; the CURRENT STATE block still overrides |
-| IR-V2-06 | `vendor/gems57/uniqueness.py` byte mismatch | **OPEN** — vendor untouched, no uniqueness gate used |
+| IR-V2-01 | R0 not recipe-rebuilt | **CLEARED (byte-exact)** — `H19-5 -> d2.8 -> solo -> R0` regenerated pixel- and byte-identically on both NaN (`baeae321…`) and zeros (`c55bafc4…`) GeoTIFFs |
+| IR-V2-02 | no axis, no history | **PARTLY CLEARED** — `PRUNE` and `RELIEF` built in `ledger/submissions.csv`; live receipts/`TOP_PUBLIC` still human-supplied (IR-V2-12) |
+| IR-V2-03 | R0 has dots ≤ 3 px, conflicts with a non-PRUNE edit | **CLEARED for non-PRUNE (`RELIEF`)** — in-tercile `ctrl_collar3_0pct` isolates the 2,171 `d_cat ≤ 3 px` replacements from inter-tercile `RELIEF` shifts (IR-V2-13) |
+| IR-V2-04 | competition rasters in a public repo | **OPEN** — competition rasters remain tracked in `data/labels.tif`, `data/existing_faults.tif`, `data/sample_submission.tif` (flagged in IR-V2-10 & IR-V2-15) |
+| IR-V2-05 | historical instructions conflict with v2 | **OPEN** — `README.md` `CURRENT STATE` block restored after PR #28 stripped it |
+| IR-V2-06 | `vendor/gems57/uniqueness.py` byte mismatch | **OPEN** — vendor uniqueness untouched; no Spearman or dot-overlap gate used |
 
 ---
 
@@ -106,3 +108,37 @@ incumbent are absent from the brief and the repository (`registry/scored_artifac
 scores OWNER-REPORT). **Decision:** 0.2778 stays a CLAIM, `TOP_PUBLIC` stays unfilled, and every
 prediction here is labelled MODEL. The human must fill all three before slot 2 is spent, because the
 third slot is conditional on the first two receipts.
+
+## IR-V2-13 — De-confounding Hard Constraint #4 (`d_cat > 3 px`) on non-PRUNE `RELIEF` variants
+
+R0 holds 2,171 dots at `2 < d_cat ≤ 3 px` (255 Basin, 1,128 Piedmont, 788 Range-front). Any non-PRUNE
+variant obeying Hard Constraint #4 (`d_cat ≥ 3 px`; here enforced strictly as `d_cat > 3.0 px`,
+`min = 3.162 px`) must clear those 2,171 dots. To keep `RELIEF` single-axis at fixed count (`37,654`),
+each tercile clears its `d_cat ≤ 3 px` dots first and `ctrl_collar3_0pct` measures pure in-tercile
+replacement (`100 %` filled from pinned sibling ancestors `H19-5 | H19-4 | H16-1`, `sgmc_minus_catalogue_3px`
+`+0.00344` PROXY). **Decision:** schedule `prune3` (`fb308615`, Slot 1) immediately before
+`reliefp2r10` (`669f0637`, Slot 2) so `Slot 2 − Slot 1` isolates the live `RELIEF` effect cleanly from
+the `d_cat > 3 px` collar.
+
+## IR-V2-14 — Provided-band `SNAP` rejected after 12 measured losses; `19GEMSDOE` OOF caches unpinned
+
+Two pre-build checks changed axis selection (`docs/mechanism_cards_relief.md`): (1) 12 deterministic
+`SNAP` runs (`≤ 1.5–2.0 px` onto raw and high-pass `tmi_hg`, `iso_grav_anom_slope`, `det_elev_slope`,
+and fusions) all lost `−0.0015` to `−0.0057` on `sgmc_minus_catalogue_3px` PROXY because potential-field
+gradients peak downdip over dipping normal faults and compress R0's 2.8 px spacing; (2) `19GEMSDOE`'s
+continuous pre-skeleton surface depends on `oof_probs_h16_1.npz` / `oof_probs_h19_arms.npz`, which are
+not SHA-pinned in `registry/data_manifest.json` (Hard Constraint #2). **Decision:** reject 100 m
+potential-field `SNAP`, build `RELIEF` strictly from SHA-pinned manifest inputs (`training_features.tif`
++ `H19-5 | H19-4 | H16-1`), and include opposite-direction `reliefr2bp10` (`7a0329ee`) because
+Quaternary `HOLDOUT` and bedrock `SGMC` split on sign.
+
+## IR-V2-15 — Competition rasters remain Git-tracked from pre-v2 history; `README.md` block restored
+
+`git ls-files data/` confirms `data/labels.tif`, `data/existing_faults.tif`, and
+`data/sample_submission.tif` (plus `data/bridge/*` copies) were committed prior to `.gitignore` in
+earlier branches (`IR-V2-04`). In addition, PR #28 removed PR #26's `CURRENT STATE` block from
+`README.md`. **Decision:** add zero competition rasters in this branch (only derived ~218–356 KB binary
+submissions in `releases/`), flag the pre-existing tracked files for human review against DrivenData
+redistribution rules before public release, and restore `<!-- CURRENT STATE START --> … <!-- CURRENT STATE END -->`
+in `README.md` without altering historical body lines.
+
