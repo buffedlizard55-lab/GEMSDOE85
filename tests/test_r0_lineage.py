@@ -114,15 +114,11 @@ def test_r0_rebuild_is_pixel_identical_to_pinned_parent(tmp_path):
     assert RL.sha256_file(RL.PATHS["r0_zeros"]) == RL.PINS["r0_zeros"]
     assert RL.sha256_file(RL.PATHS["r0_nan"]) == RL.PINS["r0_nan"]
     reb_nan, reb_zeros = write_pair(L.r0, tmp_path, "rebuilt_r0")
-    # A byte-identical re-emit is NOT guaranteed: GTiff bytes depend on the writer's
-    # libdeflate/GDAL build even when the array, creation options and profile match
-    # (deflate z1-9 x predictor none/2/3 all miss; IR-V2-29).  The operative identity of the
-    # parent is its decoded array, so assert that instead of a hash the environment controls.
-    import rasterio as _rio
-    with _rio.open(reb_nan) as a, _rio.open(RL.PATHS["r0_nan"]) as b:
-        assert np.array_equal(np.nan_to_num(a.read(1)), np.nan_to_num(b.read(1)))
-    with _rio.open(reb_zeros) as a, _rio.open(RL.PATHS["r0_zeros"]) as b:
-        assert np.array_equal(a.read(1), b.read(1))
+    # byte-exact under the PINNED writer environment (requirements-lock.txt -> rasterio 1.4.4,
+    # GDAL 3.10.3).  A 1.4.3/GDAL 3.9.3 environment silently produces different, still
+    # pixel-identical bytes -- the pin is load-bearing (IR-V2-31).
+    assert RL.sha256_file(reb_nan) == RL.PINS["r0_nan"]
+    assert RL.sha256_file(reb_zeros) == RL.PINS["r0_zeros"]
     # R0 carries no mass on the catalogue and stays outside 2 px of it
     assert int((L.r0 & (L.dist_cat <= 2.0)).sum()) == 0
 
@@ -154,6 +150,7 @@ def test_shipped_releases_pass_their_own_gates_and_match_the_ledger():
                 ROOT / "evidence" / "session_rung_receipt.json",
                 ROOT / "evidence" / "session_snap_receipt.json",
                 ROOT / "evidence" / "session_relief_receipt.json",
+                ROOT / "evidence" / "session_prune_refill_receipt.json",
                 ROOT / "evidence" / "session_snap_axis_receipt.json"]
     conc = ROOT / "evidence" / "axis_concentration_build.json"
     if not ledger.is_file():

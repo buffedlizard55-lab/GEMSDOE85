@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_utc": "2026-10-23T16:21:41+00:00",
-  "git_sha": "bd88ceb53f89ac4d8f6120ae47102ea03d72e16a",
+  "generated_utc": "2026-10-23T16:32:34+00:00",
+  "git_sha": "b464c649f164afc496bf86c99c0a759fda1690ff",
   "python": "3.11.2",
   "date_tag": "20261023",
   "axis": "SNAP",
@@ -63,12 +63,14 @@
     "pixel_identical_to_pinned": true,
     "file_sha256_nan": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
     "file_sha256_zeros": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
-    "reemit_byte_identical": false,
-    "reemit_attempts": "deflate z1-9 x predictor none/2/3 -> no sha256 match"
+    "reemit_byte_identical": true,
+    "rasterio": "1.4.4",
+    "gdal": "3.10.3",
+    "reemit_note": "byte-exact under the pinned rasterio/GDAL lock; other writers give different bytes for the same array"
   },
   "arms": {
     "snapgrav2": {
-      "id": "h33-2-b2-snapgrav2-20261023-1b033f40",
+      "id": "h33-2-b2-snapgrav2-20261023-5b98feb8",
       "parent": "h33-2-b2 (R0, GEMSDOE32 e5eb6e7e)",
       "parent_sha256_nan": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
       "parent_sha256_zeros": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
@@ -90,10 +92,10 @@
       },
       "nan": {
         "mode": "nan",
-        "filename": "h33-2-b2-snapgrav2-20261023-1b033f40.tif",
-        "bytes": 331797,
-        "sha256": "1b033f4005e2a996206ce8694ebefbefa6d2822bbb317fb4ae3fef7ecddab6aa",
-        "sha8": "1b033f40",
+        "filename": "h33-2-b2-snapgrav2-20261023-5b98feb8.tif",
+        "bytes": 355392,
+        "sha256": "5b98feb843557d0995bce3b2800efb49e3821b2faa50e19148ccf5fee766923e",
+        "sha8": "5b98feb8",
         "crs": "EPSG:32611",
         "transform": [
           100.0,
@@ -141,10 +143,10 @@
       },
       "zeros": {
         "mode": "zeros",
-        "filename": "h33-2-b2-snapgrav2-20261023-1b033f40-zeros.tif",
-        "bytes": 205007,
-        "sha256": "83a3c1e4e14597847f035484aeb476c3bb0a6813759caf465dcd912cd55ea7a9",
-        "sha8": "83a3c1e4",
+        "filename": "h33-2-b2-snapgrav2-20261023-5b98feb8-zeros.tif",
+        "bytes": 219082,
+        "sha256": "24b3ab4ab33bd3fdcdb6ec9d117c6efba80bb906d12ff6c3f73e73f1d7a001d9",
+        "sha8": "24b3ab4a",
         "crs": "EPSG:32611",
         "transform": [
           100.0,
@@ -187,7 +189,7 @@
       "all_gates_passed": true
     },
     "snapmag2": {
-      "id": "h33-2-b2-snapmag2-20261023-a2fa8b95",
+      "id": "h33-2-b2-snapmag2-20261023-e4183b96",
       "parent": "h33-2-b2 (R0, GEMSDOE32 e5eb6e7e)",
       "parent_sha256_nan": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
       "parent_sha256_zeros": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
@@ -209,10 +211,10 @@
       },
       "nan": {
         "mode": "nan",
-        "filename": "h33-2-b2-snapmag2-20261023-a2fa8b95.tif",
-        "bytes": 332500,
-        "sha256": "a2fa8b95aff406d7ea623d2e46ffd17840e75c4789b1788b4d11e4785347eeed",
-        "sha8": "a2fa8b95",
+        "filename": "h33-2-b2-snapmag2-20261023-e4183b96.tif",
+        "bytes": 355542,
+        "sha256": "e4183b962731b497f09dcbd41333b2eec59014835744ce269a9a4e95d0cdafd3",
+        "sha8": "e4183b96",
         "crs": "EPSG:32611",
         "transform": [
           100.0,
@@ -260,10 +262,10 @@
       },
       "zeros": {
         "mode": "zeros",
-        "filename": "h33-2-b2-snapmag2-20261023-a2fa8b95-zeros.tif",
-        "bytes": 205776,
-        "sha256": "f0089972003f8c814c04ba6e650d14f2957acc614fc42913e6ec10bfe504b29e",
-        "sha8": "f0089972",
+        "filename": "h33-2-b2-snapmag2-20261023-e4183b96-zeros.tif",
+        "bytes": 219258,
+        "sha256": "737b8231d5c9c0b31e4ed9f8afb3778dac603ac99fbd033c17e9480dadf18f09",
+        "sha8": "737b8231",
         "crs": "EPSG:32611",
         "transform": [
           100.0,
@@ -306,7 +308,7 @@
       "all_gates_passed": true
     },
     "snaptop2": {
-      "id": "h33-2-b2-snaptop2-20261023-7be865f5",
+      "id": "h33-2-b2-snaptop2-20261023-29de4fa6",
       "parent": "h33-2-b2 (R0, GEMSDOE32 e5eb6e7e)",
       "parent_sha256_nan": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
       "parent_sha256_zeros": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
@@ -328,10 +330,10 @@
       },
       "nan": {
         "mode": "nan",
-        "filename": "h33-2-b2-snaptop2-20261023-7be865f5.tif",
-        "bytes": 332941,
-        "sha256": "7be865f5c3da2f26c755afbbe79720007cc01844943410617801ebe4cecb9bbd",
-        "sha8": "7be865f5",
+        "filename": "h33-2-b2-snaptop2-20261023-29de4fa6.tif",
+        "bytes": 355670,
+        "sha256": "29de4fa666b9803905f8ae7d05ea79a058b87495ff0fd39a1df31c3e4a915110",
+        "sha8": "29de4fa6",
         "crs": "EPSG:32611",
         "transform": [
           100.0,
@@ -379,10 +381,10 @@
       },
       "zeros": {
         "mode": "zeros",
-        "filename": "h33-2-b2-snaptop2-20261023-7be865f5-zeros.tif",
-        "bytes": 206095,
-        "sha256": "3e662a257052cc863be8e535acd60797783e95811481702cf5807e85b7120509",
-        "sha8": "3e662a25",
+        "filename": "h33-2-b2-snaptop2-20261023-29de4fa6-zeros.tif",
+        "bytes": 219317,
+        "sha256": "f9cffa27f0cc8ff26716d75ef46e6ac23825556d176a41fc9c028e2f6cb611f9",
+        "sha8": "f9cffa27",
         "crs": "EPSG:32611",
         "transform": [
           100.0,
@@ -427,7 +429,7 @@
   },
   "variants": {
     "snapgrav2": {
-      "id": "h33-2-b2-snapgrav2-20261023-1b033f40",
+      "id": "h33-2-b2-snapgrav2-20261023-5b98feb8",
       "parent": "h33-2-b2 (R0, GEMSDOE32 e5eb6e7e)",
       "parent_sha256_nan": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
       "parent_sha256_zeros": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
@@ -449,10 +451,10 @@
       },
       "nan": {
         "mode": "nan",
-        "filename": "h33-2-b2-snapgrav2-20261023-1b033f40.tif",
-        "bytes": 331797,
-        "sha256": "1b033f4005e2a996206ce8694ebefbefa6d2822bbb317fb4ae3fef7ecddab6aa",
-        "sha8": "1b033f40",
+        "filename": "h33-2-b2-snapgrav2-20261023-5b98feb8.tif",
+        "bytes": 355392,
+        "sha256": "5b98feb843557d0995bce3b2800efb49e3821b2faa50e19148ccf5fee766923e",
+        "sha8": "5b98feb8",
         "crs": "EPSG:32611",
         "transform": [
           100.0,
@@ -500,10 +502,10 @@
       },
       "zeros": {
         "mode": "zeros",
-        "filename": "h33-2-b2-snapgrav2-20261023-1b033f40-zeros.tif",
-        "bytes": 205007,
-        "sha256": "83a3c1e4e14597847f035484aeb476c3bb0a6813759caf465dcd912cd55ea7a9",
-        "sha8": "83a3c1e4",
+        "filename": "h33-2-b2-snapgrav2-20261023-5b98feb8-zeros.tif",
+        "bytes": 219082,
+        "sha256": "24b3ab4ab33bd3fdcdb6ec9d117c6efba80bb906d12ff6c3f73e73f1d7a001d9",
+        "sha8": "24b3ab4a",
         "crs": "EPSG:32611",
         "transform": [
           100.0,
@@ -546,7 +548,7 @@
       "all_gates_passed": true
     },
     "snapmag2": {
-      "id": "h33-2-b2-snapmag2-20261023-a2fa8b95",
+      "id": "h33-2-b2-snapmag2-20261023-e4183b96",
       "parent": "h33-2-b2 (R0, GEMSDOE32 e5eb6e7e)",
       "parent_sha256_nan": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
       "parent_sha256_zeros": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
@@ -568,10 +570,10 @@
       },
       "nan": {
         "mode": "nan",
-        "filename": "h33-2-b2-snapmag2-20261023-a2fa8b95.tif",
-        "bytes": 332500,
-        "sha256": "a2fa8b95aff406d7ea623d2e46ffd17840e75c4789b1788b4d11e4785347eeed",
-        "sha8": "a2fa8b95",
+        "filename": "h33-2-b2-snapmag2-20261023-e4183b96.tif",
+        "bytes": 355542,
+        "sha256": "e4183b962731b497f09dcbd41333b2eec59014835744ce269a9a4e95d0cdafd3",
+        "sha8": "e4183b96",
         "crs": "EPSG:32611",
         "transform": [
           100.0,
@@ -619,10 +621,10 @@
       },
       "zeros": {
         "mode": "zeros",
-        "filename": "h33-2-b2-snapmag2-20261023-a2fa8b95-zeros.tif",
-        "bytes": 205776,
-        "sha256": "f0089972003f8c814c04ba6e650d14f2957acc614fc42913e6ec10bfe504b29e",
-        "sha8": "f0089972",
+        "filename": "h33-2-b2-snapmag2-20261023-e4183b96-zeros.tif",
+        "bytes": 219258,
+        "sha256": "737b8231d5c9c0b31e4ed9f8afb3778dac603ac99fbd033c17e9480dadf18f09",
+        "sha8": "737b8231",
         "crs": "EPSG:32611",
         "transform": [
           100.0,
@@ -665,7 +667,7 @@
       "all_gates_passed": true
     },
     "snaptop2": {
-      "id": "h33-2-b2-snaptop2-20261023-7be865f5",
+      "id": "h33-2-b2-snaptop2-20261023-29de4fa6",
       "parent": "h33-2-b2 (R0, GEMSDOE32 e5eb6e7e)",
       "parent_sha256_nan": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
       "parent_sha256_zeros": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
@@ -687,10 +689,10 @@
       },
       "nan": {
         "mode": "nan",
-        "filename": "h33-2-b2-snaptop2-20261023-7be865f5.tif",
-        "bytes": 332941,
-        "sha256": "7be865f5c3da2f26c755afbbe79720007cc01844943410617801ebe4cecb9bbd",
-        "sha8": "7be865f5",
+        "filename": "h33-2-b2-snaptop2-20261023-29de4fa6.tif",
+        "bytes": 355670,
+        "sha256": "29de4fa666b9803905f8ae7d05ea79a058b87495ff0fd39a1df31c3e4a915110",
+        "sha8": "29de4fa6",
         "crs": "EPSG:32611",
         "transform": [
           100.0,
@@ -738,10 +740,10 @@
       },
       "zeros": {
         "mode": "zeros",
-        "filename": "h33-2-b2-snaptop2-20261023-7be865f5-zeros.tif",
-        "bytes": 206095,
-        "sha256": "3e662a257052cc863be8e535acd60797783e95811481702cf5807e85b7120509",
-        "sha8": "3e662a25",
+        "filename": "h33-2-b2-snaptop2-20261023-29de4fa6-zeros.tif",
+        "bytes": 219317,
+        "sha256": "f9cffa27f0cc8ff26716d75ef46e6ac23825556d176a41fc9c028e2f6cb611f9",
+        "sha8": "f9cffa27",
         "crs": "EPSG:32611",
         "transform": [
           100.0,

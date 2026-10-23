@@ -459,24 +459,36 @@ human review against DrivenData redistribution rules before any public release.
 
 ---
 
-## IR-V2-29 (PR #40 session `arena/fb7ddb5a`) — the parent's *file* SHA-256 cannot be reproduced by re-emitting it
-R0 is rebuilt from four pinned inputs and every intermediate is compared **pixel-for-pixel** with its
-pinned raster (skeleton 121,131 → d2.8 44,090 → solo 40,199 → R0 37,654: all identical). A byte-identical
-*re-emit* was attempted with `deflate` z1–z9 × predictor none/2/3 and matched nothing: GTiff bytes depend
-on the writer's libdeflate/GDAL build, not on the array. Decision: proceed, treating the decoded array as
-the parent's identity and recording both pinned file hashes (`baeae321…` nan / `c55bafc4…` zeros) in
-`evidence/session_snap_axis_receipt.json → parent_rebuild`. No byte-identical regeneration is claimed.
+# Session `arena/85dc0b4a` — AXIS=PRUNE applied (2026-10-23), merged by union
 
-## IR-V2-30 — an axis was assigned to a *parallel* session after this one asked and got no answer
+## IR-V2-29 — Two parallel human AXIS assignments coexist (PRUNE vs CONCENTRATION)
+The human assigned **PRUNE** in this session (with: 3 slots free this week; no R0 variant submitted in any session; TOP_PUBLIC still unfilled) and **CONCENTRATION** in session `arena/c4de5673`. The CURRENT STATE next-3 table follows CONCENTRATION; the PRUNE ladder + new count-held control are the gated backup programme. Neither assignment cancels the other on the record available here: the human must order them before spending slots. Do not treat either session's slot order as overriding the other.
+
+## IR-V2-30 — Independent duplicate builds deduped; refill novelties and ledger split
+This session's `prune3`/`r2p85` reproduce the tracked upstream files byte-for-byte under the 1.4.4 lock (`fb308615…`/`acce3907…`); no duplicate ledger rows were added. Its new build `prune3fill20` (`12a3b132…`, 37,654 dots) refills the H19-5 support at a **2.0 px floor** (2.8 px refill impossible: 611 pool px — IR-V2-09; cf. IR-V2-18); all refills are d1.5-thinning selections, a lineage proxy — no continuous parent ranking is pinned (cf. IR-V2-21 concentration numbering), so MASS-by-parent-ranking remains blocked. The five lineage CLAIMs live in `ledger/lineage_claims.csv`, not `submissions.csv` (schema tests require BUILT-variant rows only there); neither file is a complete submission history.
+
+## IR-V2-31 (PR #40, `arena/fb7ddb5a`) — the pinned writer environment reproduces the parent byte-for-byte
+Under `requirements-lock.txt` (rasterio **1.4.4** / GDAL **3.10.3**) the R0 re-emit is **byte-identical**
+to both pinned parent files (`baeae321…` nan, `c55bafc4…` zeros); the check now runs every time the
+builder does and records its verdict in `evidence/session_snap_axis_receipt.json → parent_rebuild`
+(`reemit_byte_identical: true`, with the rasterio/GDAL versions). This session first ran on rasterio
+1.4.3 / GDAL 3.9.3, where the same array, profile and creation options produced *different, still
+pixel-identical* bytes, and an earlier draft of this item wrongly concluded that byte identity was
+unattainable. Consequence: **the lock is load-bearing** — the three SNAP TIFFs were re-emitted under
+1.4.4 so the hashes in `ledger/submissions.csv` are reproducible, and no release byte should be produced
+outside the lock.
+
+## IR-V2-32 — an axis was assigned to a *parallel* session after this one asked and got no answer
 This session asked the human which §5 axis to build; the question was skipped. Main now records that the
-human assigned **CONCENTRATION** on 2026-10-23 to session `arena/c4de5673`. Decision: this session keeps
-its already-built, gated **SNAP** arms as *reserve* only and does **not** claim the axis. The three arms
-are distinct `(AXIS, value)` pairs from the SNAP arms already on main (`snap-ridge-lidar2`,
-`snap-ridge-tmi2`, `snap-free-lidar2`): different target fields (gravity / magnetic / detrended-elevation
-instead of LiDAR scarp / TMI), a `min_sep = 2.0 px` anti-pile-up floor, and a hard "never move closer to
-the catalogue" rule. No slot is spent by building a file, and the human may ignore them.
+human assigned **CONCENTRATION** on 2026-10-23 (session `arena/c4de5673`) and **PRUNE** in session
+`arena/85dc0b4a`. Decision: this session keeps its already-built, gated **SNAP** arms as *reserve* only
+and does **not** claim an axis. The three arms are distinct `(AXIS, value)` pairs from the SNAP arms
+already on main (`snap-ridge-lidar2`, `snap-ridge-tmi2`, `snap-free-lidar2`): different target fields
+(gravity / magnetic / detrended-elevation instead of LiDAR scarp / TMI), a `min_sep = 2.0 px`
+anti-pile-up floor, and a hard "never move closer to the catalogue" rule. No slot is spent by building a
+file, and the human may ignore them.
 
-## IR-V2-31 — `scripts/restore_data.py` cannot restore 19 of its own manifest entries
+## IR-V2-33 — `scripts/restore_data.py` cannot restore 19 of its own manifest entries
 `restore()` rejects any `dest` containing `/` unless the entry carries `_subdirs`, which is set only for
 the geothermal and learning manifests; every `external/…` and `scored/…` entry of
 `registry/data_manifest.json` therefore fails with `dest must be a single local filename`. Decision: do
@@ -485,7 +497,7 @@ files this session reads, each cross-checked against `data_manifest.json` / `sco
 `r0_lineage.PINS` and verified by SHA-256 (9/9, `evidence/axis_inputs_receipt.json`). The shared bug is
 left for its owner with this note.
 
-## IR-V2-32 — SNAP cannot satisfy the `>= 3 px` catalogue rule without becoming two axes
+## IR-V2-34 — SNAP cannot satisfy the `>= 3 px` catalogue rule without becoming two axes
 R0 carries 2,171 dots at 2 < d_cat ≤ 3 px (min 2.236 px; IR-V2-03). SNAP keeps the parent's `> 2 px`
 exclusion, forbids any move that ends closer to the catalogue, and does not re-prune the inherited flank
 dots, because that re-prune *is* PRUNE rung 3. Consequence: the three SNAP files fail hard constraint §4
@@ -493,10 +505,10 @@ numerically (2.236 px) in exactly the way R0 does, and are disclosed as such in 
 the receipt (which records `parent_dots_within_3px = 2171`). Only the PRUNE and RELIEF files meet the
 rule. If strict compliance is required for every upload, the SNAP arms cannot be spent.
 
-## IR-V2-33 — a capacity measurement on the *on-skeleton* pool does not bound the RELIEF/CONCENTRATION arms
+## IR-V2-35 — a capacity measurement on the *on-skeleton* pool does not bound the RELIEF/CONCENTRATION arms
 Measured here: after a 2.8 px exclusion around R0, only **794** free parent-ridge cells remain (283 in
 the high-relief tercile) against the ≥ 3,766 dots a 10 % count-holding move needs. The RELIEF session
-(PR #34) and the CONCENTRATION session (`arena/c4de5673`) nevertheless moved 3,765–7,530 dots, because
+(PR #34) and the CONCENTRATION session (`arena/c4de5673`) nevertheless moved 3,765–7,531 dots, because
 they place destinations **off** the parent skeleton (with their own `> 3 px` catalogue rule and reported
 block-density CV). Both statements are true; they answer different questions. Consequence for the
 reader: the 794-cell number bounds *add-mass from the parent's own ridge*, not mass relocation in

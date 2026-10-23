@@ -252,6 +252,14 @@ spatial-cluster bootstrap (157 clusters, 1,000 draws, seed 520810): R0 `0.00401`
 [0.00311, 0.00431] → conc20 `0.00350` [0.00297, 0.00414]. This instrument correlates
 −0.87…+0.54 with live scores in the family record and is **never** called a score.
 
+
+## Count-held PRUNE control — only after a `prune3` receipt (session `arena/85dc0b4a`; AXIS=PRUNE human-assigned there)
+
+- **File:** `releases/h33-2-b2-prune3fill20-20261023-12a3b132.tif` (fallback `…-12a3b132-zeros.tif`, identical pixels)
+- **sha256:** `12a3b132083c6fe3f625b8b67de4ef4538bb481aa654faefaa3f039bcae1975f` · 37,654 dots (count held; −2,171 flank +2,171 refill @2.0 px floor)
+- **Note (113/140):** `R0 h33-2-b2 PRUNE rung3+refill@2px: drop 2171 flank, refill 2171 support, 37654 kept; pred +0.002 MODEL; UNSCORED`
+- **Format receipt:** `evidence/session_prune_refill_receipt.json → variants["h33-2-b2-prune3fill20"]` — same grid/CRS/encoding as the ladder, 0 positive px on the catalogue, min distance to catalogue 3.16 px, all gates PASS; builder `scripts/build_prune_variants.py`. Spend only to disambiguate a `prune3` receipt (mass vs position); it does not displace the CONCENTRATION next-3 above unless the human reorders (IR-V2-29).
+
 ## After the human submits
 
 1. Copy the receipt score and the date into `ledger/submissions.csv`
@@ -271,12 +279,12 @@ expire unused; see `SLOT_PLAN.md` addendum.
 
 | arm | file (fallback `-zeros` twin) | sha256 (nan) | dots / moved | note (≤ 140 chars) |
 |---|---|---|---|---|
-| gravity edge | `releases/h33-2-b2-snapgrav2-20261023-1b033f40.tif` | `1b033f4005e2a996206ce8694ebefbefa6d2822bbb317fb4ae3fef7ecddab6aa` | 37,654 / 2,603 (6.9 %) | `R0 SNAP 2603 dots (6.9%) <=2px onto gravity-hg edge, count fixed; pred -0.000 MODEL; UNSCORED` |
-| magnetic edge | `releases/h33-2-b2-snapmag2-20261023-a2fa8b95.tif` | `a2fa8b95aff406d7ea623d2e46ffd17840e75c4789b1788b4d11e4785347eeed` | 37,654 / 9,213 (24.5 %) | `R0 SNAP 9213 dots (24.5%) <=2px onto magnetic-hg edge, count fixed; pred -0.000 MODEL; UNSCORED` |
-| scarp edge | `releases/h33-2-b2-snaptop2-20261023-7be865f5.tif` | `7be865f5c3da2f26c755afbbe79720007cc01844943410617801ebe4cecb9bbd` | 37,654 / 19,768 (52.5 %) | `R0 SNAP 19768 dots (52.5%) <=2px onto det-elev scarp edge, count fixed; pred +0.000 MODEL; UNSCORED` |
+| gravity edge | `releases/h33-2-b2-snapgrav2-20261023-5b98feb8.tif` | `5b98feb843557d0995bce3b2800efb49e3821b2faa50e19148ccf5fee766923e` | 37,654 / 2,603 (6.9 %) | `R0 SNAP 2603 dots (6.9%) <=2px onto gravity-hg edge, count fixed; pred -0.000 MODEL; UNSCORED` |
+| magnetic edge | `releases/h33-2-b2-snapmag2-20261023-e4183b96.tif` | `e4183b962731b497f09dcbd41333b2eec59014835744ce269a9a4e95d0cdafd3` | 37,654 / 9,213 (24.5 %) | `R0 SNAP 9213 dots (24.5%) <=2px onto magnetic-hg edge, count fixed; pred -0.000 MODEL; UNSCORED` |
+| scarp edge | `releases/h33-2-b2-snaptop2-20261023-29de4fa6.tif` | `29de4fa666b9803905f8ae7d05ea79a058b87495ff0fd39a1df31c3e4a915110` | 37,654 / 19,768 (52.5 %) | `R0 SNAP 19768 dots (52.5%) <=2px onto det-elev scarp edge, count fixed; pred +0.000 MODEL; UNSCORED` |
 
 All three: `EPSG:32611` · 3730×3292 · 1 band · `float32` · transform `100,0,243350,0,-100,4508550` ·
 values ⊆ {0,1} inside the footprint · no NaN/Inf inside · NaN outside (primary) or `nodata=None`
 all-finite (twin) · **0 dots on the catalogue** · no dot moved closer to the catalogue · count equals
 the parent · re-read from disk after writing. **Disclosed exception:** the parent's 2,171 flank dots at
-2–3 px are inherited unchanged (min 2.236 px), because re-pruning them is PRUNE rung 3 (IR-V2-32).
+2–3 px are inherited unchanged (min 2.236 px), because re-pruning them is PRUNE rung 3 (IR-V2-34).

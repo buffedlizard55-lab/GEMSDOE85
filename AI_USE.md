@@ -222,6 +222,10 @@ touched; it did **not** modify `vendor/gems57` (no private evaluator or writer f
   dated `TOP_PUBLIC` and remaining slot counts, uploads from their single registered account, records
   live `receipt_score` + `date`, and reviews competition redistribution/AI-disclosure rules.
 
+## 2026-10-23 — arena/85dc0b4a-gemsdoe85 (AXIS=PRUNE applied; union-merged with ladder/SNAP/RELIEF/CONCENTRATION sessions)
+- Human assigned AXIS=PRUNE in this session, stated 3 slots free this week and no prior R0-variant submission; a parallel session assigned CONCENTRATION — both recorded (IR-V2-29), ordering left to the human.
+- AI verified the R0 recipe content-exactly (byte-exact under the merged 1.4.4 lock), reproduced tracked `prune3`/`r2p85` byte-for-byte (deduped), built the novel count-held `prune3fill20` (`12a3b132…`) with upstream-schema receipt, seeded `ledger/lineage_claims.csv`, computed report-only proxies, and union-merged docs/ledger. No slot used; nothing submitted; no credentials or drivendata.org/dropbox access. AI wrote the `v2-prune` scripts/tests/evidence and the IR-V2-29/30 records.
+
 ---
 
 ## Session 2026-10-23 (PR #40, branch `arena/fb7ddb5a`) — SNAP reserve axis
@@ -230,11 +234,11 @@ touched; it did **not** modify `vendor/gems57` (no private evaluator or writer f
 constrained snapping loop), `scripts/gemsdoe85_snap_axis_session.py`, `scripts/restore_axis_inputs.py`
 (six pinned inputs, 9/9 hash-verified), `tests/test_snap_axis.py` (9 contract tests), the three SNAP rows
 in `ledger/submissions.csv`, the SNAP reserve row in the README CURRENT STATE block, the addendum in
-`SLOT_PLAN.md`, the reserve section of `docs/SUBMIT.md`, and IR-V2-29…33. The mechanism cards, the choice
+`SLOT_PLAN.md`, the reserve section of `docs/SUBMIT.md`, and IR-V2-31…35. The mechanism cards, the choice
 of SNAP (the human did not answer the axis question) and the predictions are AI-authored models, not
 measurements of the live metric.
 
-**AI decided without the human:** the axis (IR-V2-30), the 2.0 px anti-pile-up floor, `margin = 0.05`,
+**AI decided without the human:** the axis (IR-V2-32), the 2.0 px anti-pile-up floor, `margin = 0.05`,
 the "never move closer to the catalogue" rule, and the reading that the SGMC-minus-catalogue proxy is the
 least mass-confounded local instrument.
 

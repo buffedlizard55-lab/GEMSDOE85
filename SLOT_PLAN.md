@@ -171,6 +171,10 @@ zeros twins are the proven-submittable encoding. See `docs/SUBMIT.md`.
    and `iso_grav_anom_hg` strikes agree within 20° over ≥ 1.5 km open traces (vs closed playa/caldera
    rims). *Confounder:* linear basalt dikes and pluvial shorelines. *Falsifier:* live Δ ≤ 0 vs parent.
 
+## Addendum — session `arena/85dc0b4a` (2026-10-23): parallel PRUNE assignment + count-held control
+
+In that session the human assigned **AXIS = PRUNE**, stated **3 slots free this week** and that **no R0 variant has been submitted in any session**. A parallel session assigned CONCENTRATION (above). Both stand; **the human orders the two programmes before spending** — this addendum does not displace the next-3 table. New tracked file: **`h33-2-b2-prune3fill20-20261023-12a3b132.tif`** (37,654; rung-3 prune + 2,171 refills @2.0 px; +0.002 MODEL) — a mass-vs-position control to spend only after a `prune3` receipt (≥ +0.01 above it ⇒ mass/spacing pays; ≤ −0.01 ⇒ 2.8 px packing load-bearing). Cards: `evidence/v2-prune-mechanism-cards.md`; receipt `evidence/session_prune_refill_receipt.json`. See IR-V2-29/30.
+
 ---
 
 ## Addendum (PR #40, session `arena/fb7ddb5a`) — SNAP reserve arms and one measurement to keep on file
@@ -183,9 +187,9 @@ anti-pile-up floor and a "never move closer to the catalogue" rule):
 
 | arm | file | dots moved | prediction (MODEL) | use |
 |---|---|---|---|---|
-| `snapgrav2` | `releases/h33-2-b2-snapgrav2-20261023-1b033f40.tif` | 2,603 (6.9 %) | −0.0002 (−0.010…+0.010) | cheapest position-sensitivity probe |
-| `snapmag2` | `releases/h33-2-b2-snapmag2-20261023-a2fa8b95.tif` | 9,213 (24.5 %) | −0.0004 (−0.010…+0.010) | layer contrast at mid dose |
-| `snaptop2` | `releases/h33-2-b2-snaptop2-20261023-7be865f5.tif` | 19,768 (52.5 %) | +0.0001 (−0.010…+0.010) | largest dose; **do not** spend a first SNAP slot here |
+| `snapgrav2` | `releases/h33-2-b2-snapgrav2-20261023-5b98feb8.tif` | 2,603 (6.9 %) | −0.0002 (−0.010…+0.010) | cheapest position-sensitivity probe |
+| `snapmag2` | `releases/h33-2-b2-snapmag2-20261023-e4183b96.tif` | 9,213 (24.5 %) | −0.0004 (−0.010…+0.010) | layer contrast at mid dose |
+| `snaptop2` | `releases/h33-2-b2-snaptop2-20261023-29de4fa6.tif` | 19,768 (52.5 %) | +0.0001 (−0.010…+0.010) | largest dose; **do not** spend a first SNAP slot here |
 
 Spend one only if a rolling-week slot would otherwise expire unused. A null receipt is the point: it
 closes "we are 1–2 px off" and frees every later slot for selection.
@@ -194,7 +198,7 @@ closes "we are 1–2 px off" and frees every later slot for selection.
 `evidence/session_snap_axis_receipt.json → diagnostics` that any future add-mass proposal must answer:
 (1) after the parent's 2.8 px packing rung only **794** free parent-ridge cells remain, so add-mass *from
 the parent's own ridge* is impossible at a 10 % dose (this does **not** bound off-skeleton relocation —
-see IR-V2-33); (2) the RELIEF prior is real (mapped-fault density 5.8× higher in the high
+see IR-V2-35); (2) the RELIEF prior is real (mapped-fault density 5.8× higher in the high
 detrended-elevation tercile; dots per mapped-fault pixel 1.11 / 1.02 / 0.36) and MASS-down lowers the
 fault proxy monotonically at 5/10/20/30 % — so removals chosen by relief deserve a slot before removals
 chosen by unique credit.

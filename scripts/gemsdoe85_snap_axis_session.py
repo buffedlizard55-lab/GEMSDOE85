@@ -246,10 +246,20 @@ def main() -> int:
     assert parent_sha_nan == PINS["r0_nan"] and parent_sha_zeros == PINS["r0_zeros"]
     # A byte-identical *re-emit* is impossible: GTiff bytes depend on the writer's deflate build.
     # Recorded as IR-V2-13; the operative equality is the decoded array, which is asserted above.
+    # Does the pinned writer environment re-emit the parent's bytes exactly?  (It does under
+    # requirements-lock.txt -> rasterio 1.4.4 / GDAL 3.10.3; a 1.4.3/GDAL 3.9.3 environment
+    # produces different, still pixel-identical bytes.  The pin is load-bearing -- IR-V2-31.)
+    import tempfile
+    with tempfile.TemporaryDirectory() as td:
+        re_nan, re_zeros = write_pair(r0, Path(td), "reemit")
+        reemit_ok = (sha256_file(re_nan) == PINS["r0_nan"]
+                     and sha256_file(re_zeros) == PINS["r0_zeros"])
     rebuild_receipt = dict(counts=L.counts(), pixel_identical_to_pinned=True,
                            file_sha256_nan=parent_sha_nan, file_sha256_zeros=parent_sha_zeros,
-                           reemit_byte_identical=False,
-                           reemit_attempts="deflate z1-9 x predictor none/2/3 -> no sha256 match")
+                           reemit_byte_identical=bool(reemit_ok),
+                           rasterio=rasterio.__version__, gdal=rasterio.__gdal_version__,
+                           reemit_note=("byte-exact under the pinned rasterio/GDAL lock; other "
+                                        "writers give different bytes for the same array"))
 
     # ---- 3. truth proxies -------------------------------------------------------
     with rasterio.open(PATHS["labels"]) as d:
