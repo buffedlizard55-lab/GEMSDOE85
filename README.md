@@ -1,5 +1,17 @@
 # GEMSDOE85 — Lane H85-HJCD: Hydrothermal-Juxtaposition & Fault-Valve Conduit Discovery
 
+<!-- CURRENT STATE — update this block only for session status. -->
+## CURRENT STATE (2026-10-23)
+
+- **Parent:** R0 `h33-h33-2-b2`, 37,654 dots; `0.2778` is a **CLAIM**, not a receipt. Pinned NaN raster SHA-256: `baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd`.
+- **Best receipt:** none found in `ledger/submissions.csv`; human must paste a submission-page receipt and date.
+- **TOP_PUBLIC:** not supplied (human must fill with observed date). **Slots left this rolling week:** unknown (human checks account page).
+- **AXIS for this brief:** not assigned by the human. Prior PRUNE candidates were built under an AI-selected axis; no new candidate is authorized until the human assigns an axis.
+- **Next three candidate files already built and revalidated:** `h33-2-b2-prune3-20261023-fb308615`, `h33-2-b2-prune4-20261023-2880b0e9`, `h33-2-b2-prune5-20261023-7ebfc408`. These are PRUNE rungs, not new work this session; each has status BUILT and predicted change only. Use only if the human confirms PRUNE and the account has slots. Slot 3 remains conditional as stated in `docs/SUBMIT.md`.
+- **Human must supply:** AXIS (and value), dated TOP_PUBLIC, weekly slots remaining, any score receipts, and deadline confirmation. No submission was made.
+
+---
+
 **DOE GEMS Prize Challenge · DrivenData Competition #306 · Verified End-to-End Research, Holdout Validation & Unique GeoTIFF Submission System**
 
 [![Automated Validation](https://img.shields.io/badge/Automated_Validation-32%2F32_PASS-brightgreen)](docs/index.html)
