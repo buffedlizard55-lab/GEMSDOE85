@@ -170,3 +170,46 @@ zeros twins are the proven-submittable encoding. See `docs/SUBMIT.md`.
 4. **CROSS-PHYSICS STRIKE AGREEMENT & PERSISTENCE.** Retain basin/piedmont ridges only where `tmi_hg`
    and `iso_grav_anom_hg` strikes agree within 20° over ≥ 1.5 km open traces (vs closed playa/caldera
    rims). *Confounder:* linear basalt dikes and pluvial shorelines. *Falsifier:* live Δ ≤ 0 vs parent.
+
+---
+
+## Session 2026-10-23 (branch `arena/991f7136-gemsdoe85`) — AXIS chosen here: **SPACING**
+
+The human has delegated axis choice. Axis availability was checked against this ledger first:
+PRUNE ×6, SNAP ×3, CONCENTRATION ×3, RELIEF ×3, MASS ×3 (this branch) are already built.
+**SPACING had no row**, so it is the only listed axis that adds new information this week.
+
+**The axis is a negative result, and that is its value.** The packing-ceiling hypothesis —
+"R0 is packed at 2.828 px, so a truth pixel between two dots can only earn 0.53; halving the
+along-trace spacing is nearly free profit" — is **false under the competition metric**, and the
+reason is arithmetic: a dot's marginal T is largest where it is the *sole* cover of a pixel
+(credit ≈ 1.0), and a gap filler by construction lands where two dots already give 0.53. Measured,
+not assumed: T falls 76,726 → 74,686 → 72,302 as gap dots are added at constant count.
+
+| order | file | change | prediction (MODEL) | what the result changes |
+|---|---|---|---|---|
+| A | *(not a slot — already decided)* | — | — | Do not build further gap-filling or TRACKB-scale interpolation on the "spacing ceiling" story; it is refuted on the metric's own terms. |
+| B | `spacing-fill10-20261023-93975107` | 3,765 isolates → 3,765 higher-marginal-credit sites at ≥2.0 px, count fixed | **+0.005** | The only SPACING file with a positive prediction. If a slot is otherwise idle, this is the cheap count-neutral alternative to MASS. |
+| C | `spacing-infill10-20261023-f3b2aa49` | 3,765 isolates → 3,765 trace-gap midpoints | **−0.008** | Run **only** as the twin of B: the *contrast* (0.013) is the measurable quantity, and it decides whether arrangement matters at all. |
+
+Neither SPACING file should displace a PRUNE-ladder slot: the ladder's rungs predict +0.005 to
++0.007 with an already-measured live anchor (≤1 px +0.0108, ≤2 px +0.0070, owner-reported), while
+these predict inside the ±0.01 no-evidence band. **Recommended slot order this week is unchanged
+from the PRUNE section above**, with `spacing-fill10` as the substitute if a slot would otherwise
+go unused or if the ladder has been falsified.
+
+Also on file from this branch: **MASS ×3** (`mass-m20` −0.081…+0.007 bracket, `mass-m10`,
+`mass-p10` +0.020 circular), built earlier today under the human's then-explicit assignment. The
+`main` register (IR-V2-08) already measured mass-down as harmful on its SGMC proxy, which is why
+the MASS brackets, not their point estimates, are what the human should read.
+
+### Axes for week 2+ (proposed here, not built)
+
+1. **CATFLANK** — mass only in the 3–6 px ring around the catalogue (free credit on the
+   new-fault side, per the algebra's 0.056 bar). *Confounder:* the mapped fault's damage zone sits
+   in the same ring. *Falsifier:* doubling the ring changes nothing.
+2. **PURITY** — rank by local field coherence at the 400 m survey limit instead of raw credit.
+   *Confounder:* coherence is also what a broad fold axis looks like. *Falsifier:* PURITY and MASS
+   deltas identical.
+3. **DOSE** — a 5-point count ladder at fixed spacing. Blocked today: the 2.828 px packing is
+   saturated above 37.7 k (only 605 free sites), so a ladder requires re-packing first.

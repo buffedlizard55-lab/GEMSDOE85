@@ -456,3 +456,53 @@ measures pure live `RELIEF` above the `d_cat > 3 px` collar, and choose Slot 3 c
 (`IR-V2-04`, `IR-V2-10`). **Decision:** add zero competition rasters in `arena/3dd0b94c-gemsdoe85`
 (only ~218–356 KB derived binary submissions in `releases/`) and flag the pre-existing tracked files for
 human review against DrivenData redistribution rules before any public release.
+
+## IR-85-SP-01 — SPACING was chosen by the agent (human delegated), and it is a negative result
+
+**Finding.** The brief now says not to prompt for an axis. Checking the merged ledger first
+(PRUNE ×6, SNAP ×3, CONCENTRATION ×3, RELIEF ×3, MASS ×3) left **SPACING** as the only listed
+axis with no row.
+
+**Decision and outcome.** SPACING was built at fixed count (37,654 before and after) and it
+**refutes** the packing-ceiling hypothesis that motivated it. At constant count, adding dots at
+trace-gap midpoints *lowers* the metric's own T term (76,726 → 74,686 at 3,765 swaps; → 72,302 at
+7,530), because a gap filler lands where two dots already provide 0.53 credit, so its marginal T is
+≈0.47 instead of ≈1.0, while it still pays α. This is measured on the pinned inputs, not argued
+from a proxy, and it is recorded as a deliverable: it forbids spending week-2 slots on
+interpolation-style geometry (including TRACKB's "connect the top dots" rationale).
+
+## IR-85-SP-02 — my ablation silently re-used the sites it had just removed (fixed before release)
+
+**Finding.** The first `spacing-fill10` build reported `+2,119 / −2,119` where `+3,765 / −3,765`
+was intended: 1,646 of the "new" dots had been placed back on the exact pixels removed a step
+earlier, because the freed sites were still in the candidate pool. The count assertion could not
+see it — the file still had 37,654 dots, so only the added/dropped arithmetic exposed it.
+
+**Decision.** Removed sites are now explicitly banned from the pool (`credit_pool(..., banned=)`),
+and the ablation reports a clean `+3,765 / −3,765`. Lesson recorded here because the same pattern
+(matched count hiding a self-cancelling edit) will recur in any axis with a swap step.
+
+## IR-85-SP-03 — release naming diverged from the fleet convention (fixed, and it matters for upload)
+
+**Finding.** This branch first wrote `releases/<id>-nan.tif` plus `<id>-zeros.tif`, while every other
+session writes `<id>.tif` (NaN-outside primary) plus `<id>-zeros.tif`. A shared test
+(`tests/test_rung_session.py::test_each_ledger_row_matches_its_release_file`) failed on it, and the
+ledger's `sha8` disagreed with the file hash for one build.
+
+**Decision.** All six files on this branch were rebuilt so that `<id>.tif` is the NaN primary and
+its sha8 is the filename suffix; the ledger's `sha256` is the primary's hash. Uploading the wrong
+twin is harmless for scoring (twins score alike, per the ledger) but it is not harmless for
+reproducibility, which is why the ids changed and why `ledger/submissions.csv` carries exactly one
+row per file.
+
+## IR-85-SP-04 — TOP_PUBLIC and slots are still unset; the target is not a number I may invent
+
+**Finding.** §1 requires `TOP_PUBLIC` and the week's slot count from the leaderboard, with a date.
+Neither the brief nor any session has supplied them (the earlier 0.3195 in this branch came from the
+repo's own prompt text, not from a leaderboard reading).
+
+**Decision.** No prediction or ranking on this branch is expressed against a target number. Every
+ranking is by expected live *change* from the R0 CLAIM, and `SLOT_PLAN.md` says so. If a real
+`TOP_PUBLIC` later shows R0 is, say, 0.15 behind, the ±0.01-scale edits in this ledger cannot win
+the competition on their own and the plan must change at the axis level — that decision needs the
+number, so it is left to the human rather than guessed.

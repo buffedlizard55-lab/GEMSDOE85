@@ -260,3 +260,32 @@ spatial-cluster bootstrap (157 clusters, 1,000 draws, seed 520810): R0 `0.00401`
 2. Update the CURRENT STATE block in `README.md` (best receipt, slots left).
 3. Re-plan against `SLOT_PLAN.md`: a live change under 0.01 is "no evidence" (public chunks
    only; the private score may differ).
+## Pick a slot
+
+See `SLOT_PLAN.md` for ordering. Current branch builds (one row per file in `ledger/submissions.csv`;
+upload **one** file per slot, `-zeros` twin is the fallback if the form rejects NaN):
+
+| axis | id (upload `<id>.tif`) | name field (≤140) | note (≤140) |
+|---|---|---|---|
+| SPACING | `spacing-fill10-20261023-93975107` | `R0-37654-swap3765-creditfill` | `R0 count fixed 37654: +3765 credit sites / -3765 isolates; MODEL +0.005` |
+| SPACING | `spacing-infill10-20261023-f3b2aa49` | `R0-37654-swap3765-tracegap` | `R0 count fixed: +3765 trace-gap dots / -3765 isolates; MODEL -0.008 (ablation twin)` |
+| SPACING | `spacing-infill20-20261023-7e1be53d` | `R0-37654-swap7530-tracegap` | `R0 count fixed: +7530 trace-gap dots / -7530 isolates; MODEL -0.017` |
+| MASS | `h33-2-b2-mass-p10-20261023-6ec5d841` | `R0-plus10pc-41415` | `R0 plus 10% next-ranked dots (41415); MODEL bracket [-0.004,+0.020]` |
+| MASS | `h33-2-b2-mass-m20-20261023-02204f67` | `R0-minus20pc-30124` | `R0 minus 20% lowest field-credit dots (30124); MODEL bracket [-0.081,+0.007]` |
+| MASS | `h33-2-b2-mass-m10-20261023-719d2fb9` | `R0-minus10pc-33887` | `R0 minus 10% lowest field-credit dots (33887); MODEL bracket [-0.040,+0.004]` |
+
+Format receipt for each file: `evidence/spacing_axis.json` → `variants.<value>.checks`, or
+`evidence/mass_axis.json` → `variants.<value>.checks`. Every file passed, on disk and after
+re-read: single band, float32, 3730×3292, EPSG:32611, template transform, values in [0, 1], no
+NaN/Inf inside the footprint, NaN (primary) or zeros (twin) outside it, zero mass on catalogue
+pixels, minimum Euclidean distance to the catalogue > 2.0 px. **Not** satisfied: this repo's
+Chebyshev-2 buffer check and brief §4's ≥3 px rule — both inherited from R0 itself
+(IR-85-MASS-02).
+
+## After the upload
+
+1. Copy the score and date from the submission page into `ledger/submissions.csv` (`receipt_score`,
+   `date`, and set `status` to `RECEIPT <score>`); the receipt columns are deliberately empty.
+2. Never re-upload a file whose sha256 is already in the ledger.
+3. If a SPACING receipt lands, compare `fill10` against `infill10`: a difference under 0.005 means
+   arrangement at this scale does not matter and the axis is exhausted.

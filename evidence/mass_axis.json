@@ -10,19 +10,20 @@
  "packing_px": 2.828,
  "variants": {
   "mass-m20": {
-   "id": "h33-2-b2-mass-m20-20261023-a6075d2f",
+   "id": "h33-2-b2-mass-m20-20261023-02204f67",
    "parent": "h33-2-b2",
    "axis": "MASS",
    "value": "-20%",
    "operation": "drop",
    "n_dots": 30124,
    "pct_changed": 19.99787539172465,
-   "sha256": "a6075d2fdeb5a8ce567fce376340071863eea301f9025a35168056944b4fc4cb",
+   "sha256": "02204f67828e29527041db810cef1535bfe0fadfa1e1d6b8617cb429573f04c1",
    "sha256_nan": "02204f67828e29527041db810cef1535bfe0fadfa1e1d6b8617cb429573f04c1",
+   "sha256_zeros": "a6075d2fdeb5a8ce567fce376340071863eea301f9025a35168056944b4fc4cb",
    "bytes_zeros": 258362,
    "bytes_nan": 301612,
-   "file_zeros": "releases/h33-2-b2-mass-m20-20261023-a6075d2f-zeros.tif",
-   "file_nan": "releases/h33-2-b2-mass-m20-20261023-a6075d2f-nan.tif",
+   "file_zeros": "releases/h33-2-b2-mass-m20-20261023-02204f67-zeros.tif",
+   "file_nan": "releases/h33-2-b2-mass-m20-20261023-02204f67.tif",
    "checks": {
     "file_exists": true,
     "single_band": true,
@@ -135,22 +136,25 @@
      0.0,
      1.0
     ]
-   }
+   },
+   "file_primary": "releases/h33-2-b2-mass-m20-20261023-02204f67.tif",
+   "sha256_primary": "02204f67828e29527041db810cef1535bfe0fadfa1e1d6b8617cb429573f04c1"
   },
   "mass-m10": {
-   "id": "h33-2-b2-mass-m10-20261023-a296bbd1",
+   "id": "h33-2-b2-mass-m10-20261023-719d2fb9",
    "parent": "h33-2-b2",
    "axis": "MASS",
    "value": "-10%",
    "operation": "drop",
    "n_dots": 33887,
    "pct_changed": 10.004249216550699,
-   "sha256": "a296bbd1acefc0e2d11577d23ed0293ec0e8a1028a023f02b65bec4cfe110e8a",
+   "sha256": "719d2fb94bf23f9757b517b3e948714cd7c3c80e732f9c3c401faf3c03ef20b6",
    "sha256_nan": "719d2fb94bf23f9757b517b3e948714cd7c3c80e732f9c3c401faf3c03ef20b6",
+   "sha256_zeros": "a296bbd1acefc0e2d11577d23ed0293ec0e8a1028a023f02b65bec4cfe110e8a",
    "bytes_zeros": 266688,
    "bytes_nan": 310029,
-   "file_zeros": "releases/h33-2-b2-mass-m10-20261023-a296bbd1-zeros.tif",
-   "file_nan": "releases/h33-2-b2-mass-m10-20261023-a296bbd1-nan.tif",
+   "file_zeros": "releases/h33-2-b2-mass-m10-20261023-719d2fb9-zeros.tif",
+   "file_nan": "releases/h33-2-b2-mass-m10-20261023-719d2fb9.tif",
    "checks": {
     "file_exists": true,
     "single_band": true,
@@ -263,22 +267,25 @@
      0.0,
      1.0
     ]
-   }
+   },
+   "file_primary": "releases/h33-2-b2-mass-m10-20261023-719d2fb9.tif",
+   "sha256_primary": "719d2fb94bf23f9757b517b3e948714cd7c3c80e732f9c3c401faf3c03ef20b6"
   },
   "mass-p10": {
-   "id": "h33-2-b2-mass-p10-20261023-82aa483f",
+   "id": "h33-2-b2-mass-p10-20261023-6ec5d841",
    "parent": "h33-2-b2",
    "axis": "MASS",
    "value": "+10%",
    "operation": "add",
    "n_dots": 41415,
    "pct_changed": 9.98831465448558,
-   "sha256": "82aa483f70b480776d73a0167c5a0b3568d541950e6b54cd7a3ad7e0e73f9261",
+   "sha256": "6ec5d84114c74fa0c2969908ab82417b1f9cfda6d83cdda3321a175cc90489a7",
    "sha256_nan": "6ec5d84114c74fa0c2969908ab82417b1f9cfda6d83cdda3321a175cc90489a7",
+   "sha256_zeros": "82aa483f70b480776d73a0167c5a0b3568d541950e6b54cd7a3ad7e0e73f9261",
    "bytes_zeros": 283407,
    "bytes_nan": 327232,
-   "file_zeros": "releases/h33-2-b2-mass-p10-20261023-82aa483f-zeros.tif",
-   "file_nan": "releases/h33-2-b2-mass-p10-20261023-82aa483f-nan.tif",
+   "file_zeros": "releases/h33-2-b2-mass-p10-20261023-6ec5d841-zeros.tif",
+   "file_nan": "releases/h33-2-b2-mass-p10-20261023-6ec5d841.tif",
    "checks": {
     "file_exists": true,
     "single_band": true,
@@ -391,7 +398,9 @@
      0.0,
      1.0
     ]
-   }
+   },
+   "file_primary": "releases/h33-2-b2-mass-p10-20261023-6ec5d841.tif",
+   "sha256_primary": "6ec5d84114c74fa0c2969908ab82417b1f9cfda6d83cdda3321a175cc90489a7"
   }
  }
 }

@@ -14,9 +14,9 @@ Changed fraction 10.00 %, 10.00 %, 9.99 % of R0's dots (the ±50 % band in the b
 
 | id | change | n dots | sha256 (zeros) |
 |---|---|---|---|
-| `h33-2-b2-mass-m20-20261023-a6075d2f` | drop 20 % lowest-ranked | 30,124 | `a6075d2f…4fc4cb` |
-| `h33-2-b2-mass-m10-20261023-a296bbd1` | drop 10 % lowest-ranked | 33,887 | `a296bbd1…10e8a` |
-| `h33-2-b2-mass-p10-20261023-82aa483f` | add 10 % next-ranked | 41,415 | `82aa483f…f9261` |
+| `h33-2-b2-mass-m20-20261023-02204f67` | drop 20 % lowest-ranked | 30,124 | `02204f67…` |
+| `h33-2-b2-mass-m10-20261023-719d2fb9` | drop 10 % lowest-ranked | 33,887 | `719d2fb9…` |
+| `h33-2-b2-mass-p10-20261023-6ec5d841` | add 10 % next-ranked | 41,415 | `6ec5d841…` |
 
 ---
 

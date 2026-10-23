@@ -391,6 +391,7 @@ def main() -> int:
         tmp_zeros = RELEASES / f".{stem}.zeros.tmp.tif"
         tmp_nan = RELEASES / f".{stem}.nan.tmp.tif"
         rep_zeros = None
+        rep_nan = None
         for mode, tmp in (("zeros", tmp_zeros), ("nan", tmp_nan)):
             write_raster(variant, tmp, mode=mode)
             # The catalogue-buffer check is disabled in the shared validator on purpose: it
@@ -403,9 +404,11 @@ def main() -> int:
                 raise SystemExit(f"{stem} {mode}: validation failed {rep.checks}")
             if mode == "zeros":
                 rep_zeros = rep
-        sha8 = rep_zeros.sha256[:8]
+            else:
+                rep_nan = rep
+        sha8 = rep_nan.sha256[:8]
         final_zeros = RELEASES / f"{stem}-{sha8}-zeros.tif"
-        final_nan = RELEASES / f"{stem}-{sha8}-nan.tif"
+        final_nan = RELEASES / f"{stem}-{sha8}.tif"
         tmp_zeros.replace(final_zeros)
         tmp_nan.replace(final_nan)
 
@@ -444,7 +447,8 @@ def main() -> int:
         results[suffix] = {
             "id": f"{stem}-{sha8}", "parent": PARENT_ID, "axis": "MASS", "value": value,
             "operation": op, "n_dots": int(variant.sum()), "pct_changed": pct,
-            "sha256": rep_zeros.sha256, "sha256_nan": sha256_file(final_nan),
+            "sha256": rep_nan.sha256, "sha256_nan": rep_nan.sha256,
+            "sha256_zeros": rep_zeros.sha256,
             "bytes_zeros": final_zeros.stat().st_size,
             "bytes_nan": final_nan.stat().st_size,
             "file_zeros": str(final_zeros.relative_to(ROOT)),

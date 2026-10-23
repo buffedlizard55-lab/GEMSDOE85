@@ -221,3 +221,20 @@ touched; it did **not** modify `vendor/gems57` (no private evaluator or writer f
 - Human decides slot order (`prune3` → `reliefp2r10` → conditional Slot 3, vs pure-`PRUNE`), supplies
   dated `TOP_PUBLIC` and remaining slot counts, uploads from their single registered account, records
   live `receipt_score` + `date`, and reviews competition redistribution/AI-disclosure rules.
+
+## Session 2026-10-23 (second entry) — AXIS=SPACING, agent-chosen
+
+- **Human decision:** axis selection delegated to the agent ("do not prompt me over choosing an
+  Axis; pick your own session"). The agent chose SPACING after checking that every other listed
+  axis already had rows in `ledger/submissions.csv`. Nothing else was delegated.
+- **AI wrote:** `scripts/build_spacing_axis.py` (gap-site finder, marginal-credit ablation pool,
+  build + validate + re-read for three variants), `tests/test_spacing_axis.py`, the merged-ledger
+  schema conformance, `releases/MECHANISM_CARDS_SPACING.md`, the SPACING sections of
+  `SLOT_PLAN.md` and `IRREGULARITIES.md`, and the six release rasters on this branch.
+- **AI decided, and is accountable for:** that the packing-ceiling hypothesis was worth a session;
+  that the 2.83–3.0 px pair midpoint is the right definition of a "trace gap"; the ±2.0 px
+  separation floor for the ablation. All three are stated in the cards with their confounders.
+- **AI did not:** submit anything, log in, read the leaderboard, or invent a target score. No
+  number in this branch is presented as a receipt.
+- **Human must still supply:** `TOP_PUBLIC` with a date, remaining slots, and the receipt after
+  any upload.
