@@ -1,85 +1,10 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Evidence-first GEMS fault-discovery review. No verified submission is available; see automated preflight and scientific blockers.">
-<title>Research shortlist · GEMSDOE85</title><link rel="stylesheet" href="style.css"></head>
-<body><div role="alert" style="padding:14px;background:#5b1616;color:white;font-weight:bold;text-align:center">BLOCKED — DO NOT DOWNLOAD OR SUBMIT any historical TIFF here. No artifact has current lane/uniqueness clearance.</div><a class="skip" href="#main">Skip to content</a><header><div class="brand"><a href="index.html">GEMS<span>DOE85</span></a><small>FAULT DISCOVERY / RESEARCH LOG</small></div><nav aria-label="Main navigation"><a href="index.html">Overview</a><a href="executive-summary.html">How to submit</a><a href="hypotheses.html" aria-current="page">Research</a><a href="why-h33.html">H33 analysis</a><a href="sources.html">Sources</a><a href="review.html">Review</a></nav></header>
-<main id="main"><article class="prose"><h1>Research shortlist — proposed, not assigned or tested</h1>
-<p>Prepared before any geological implementation. <strong>No hypothesis has a HOLDOUT-DTI result.</strong> These are falsifiable proposals, not discovered faults or claimed new global methods. The seed repo implements none; metadata-only review of sibling repos cannot prove that another lane has never tried them. Their cross-lane novelty is <strong>unverified</strong>. Implementation is blocked by the missing lane/cache and the literal uniqueness-saturation certificate, so this is not an invitation to start another lane.</p>
-<p>Expected improvement is ranked <strong>qualitatively</strong>; no numerical DTI forecast is justified. Cost means relative CPU/memory engineering cost, not a measured runtime. All proposals use only layers present in the restored core raster; none is made “viable” by assuming an unavailable new external dataset.</p>
-<h2>Ranked shortlist</h2>
-<table>
-<thead>
-<tr>
-<th>Priority</th>
-<th>Hypothesis</th>
-<th>Expected benefit conditional on validation</th>
-<th>Implementation cost</th>
-<th>Primary non-fault mimic</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>First</td>
-<td>Paired basin-interface flexure</td>
-<td>Highest research priority: tests buried displacement rather than another surface scarp</td>
-<td>Medium: directional profiles and scale selection</td>
-<td>Lateral sedimentary facies / erosional basement relief</td>
-</tr>
-<tr>
-<td>Second</td>
-<td>Gravity curvature polarity reversal across a basin shoulder</td>
-<td>Moderate: possible independent evidence for a concealed structural step</td>
-<td>Medium: multiscale signed profiles and detrending</td>
-<td>Unfaulted lithologic density contact</td>
-</tr>
-<tr>
-<td>Third</td>
-<td>Magnetic depth/edge displacement, conditioned on subdued relief</td>
-<td>Moderate-to-low: could detect covered continuation not expressed topographically</td>
-<td>Medium-to-high: uncertainty and coherent displacement estimation</td>
-<td>Intrusive contact / remanent magnetization</td>
-</tr>
-<tr>
-<td>Fourth</td>
-<td>Cross-drainage residual facet discontinuity</td>
-<td>Lower: stronger surface evidence but more likely to reproduce known-scarp lanes</td>
-<td>High: terrain matching and channel controls</td>
-<td>Lake terrace / resistant bedding / fluvial incision</td>
-</tr>
-</tbody>
-</table>
-<p>These priority words are research judgments, not scores or a selected submission. The top candidate must beat a <strong>same-split current incumbent</strong> in shared pooled HOLDOUT-DTI, with paired CI reported, before consideration by a separate selector. At present neither top candidate nor comparable incumbent has been evaluated here.</p>
-<h2>First — paired basin-interface flexure</h2>
-<p><strong>Specific supplied layers:</strong> <code>depth_to_base_surf</code> (band 15), <code>cond_surf</code> (17), <code>iso_grav_anom</code> (13), with <code>det_elev</code> (12) and <code>det_elev_slope</code> (19) as nuisance controls. Band identities come from the restored raster audit, not inferred units. The band-15 metadata says basement depth; the official summary describes a conductive base. Resolve this provenance ambiguity before interpreting a fitted scale as a geological thickness.</p>
-<p><strong>Physical signature to test:</strong> for each candidate direction, detrend a depth profile across an edge; seek a persistent signed offset/curvature pair whose gravity profile changes consistently across the same interface. Surface conductivity contrast is supporting evidence, not proof of fault-zone conductivity. Match comparison profiles within elevation/relief strata. Unlike a simple product of edge magnitudes, this hypothesis asks for an <strong>ordered pair of flanks with consistent sign and relative displacement</strong>, allowing the detector to reject a symmetric valley-shaped anomaly.</p>
-<p><strong>Why a missing fault might be recovered:</strong> a structural step under basin fill can affect subsurface proxy fields while lacking an exposed scarp. That makes off-catalogue discovery plausible, not guaranteed; catalogue absence does not itself prove concealment. Predictive features must not use distance to the withheld trace to define profile orientation, scale, or evaluation geometry.</p>
-<p><strong>Difference from inspected work:</strong> the seed repo had no implementation. GEMSDOE32's H33 description includes multiphysics line/orientation consensus; the proposed object is signed paired-flank geometry, not line-strength consensus or H33's post-placement near-catalogue deletion. H32 clay-cap/dip-projection ideas are related, so <strong>cross-repo novelty remains unresolved</strong> and requires the registry surface check. It must not be advertised as new merely because its code is new.</p>
-<p><strong>Falsification/control:</strong> if matched sedimentary basin edges without independent structural evidence produce the same signature, the model is detecting stratigraphy/erosion rather than fault displacement. Compare to a depth-only arm, a gravity-only arm and the fixed incumbent; assess each feature alone for leakage before trusting a combined result. Small missing-value regions or interpolation boundaries can create artificial paired edges.</p>
-<h2>Second — gravity curvature polarity reversal</h2>
-<p><strong>Layers:</strong> <code>iso_grav_anom</code> (13), <code>iso_grav_anom_vg</code> (11), <code>iso_grav_anom_hg</code> (18), <code>iso_grav_anom_slope</code> (5), and detrended terrain (12/19) as controls.</p>
-<p><strong>Signature:</strong> signed second derivatives and directional cross-edge profiles at several physical scales; require an inflection bracketed by opposite curvature lobes, persistent under smoothing, rather than simply selecting the largest gradient. Fit profile scales on training regions only. Treat the derived gravity layers as <strong>one source family</strong>, not independent confirmation.</p>
-<p><strong>Missing-fault rationale:</strong> an intrabasin basement offset may retain a density step even where young sediment removes scarp expression. A density contact can also be wholly unfaulted, so this inference needs heldout evidence.</p>
-<p><strong>Difference:</strong> not a global upward-continuation worm or maximum-gradient ridge; it tests profile polarity/order and uses non-edge controls. No such implementation exists in this seed repo. Broad sibling worm/curvature work makes uniqueness unproven.</p>
-<p><strong>Mimic/falsification:</strong> unfaulted density boundaries, inversion artifacts or regional detrending. Reject if performance is explained by a single raw gradient or survey-edge mask, or disappears when basin/relief strata are held out.</p>
-<h2>Third — depth-conditioned displaced magnetic edge</h2>
-<p><strong>Layers:</strong> <code>rtp</code> (2), <code>tmi</code> (14), <code>tmi_vg</code> (9), <code>tmi_hg</code> (3), <code>depth_to_base_surf</code> (15), <code>det_elev_slope</code> (19). Do not assume any of these is an independently measured fault probability.</p>
-<p><strong>Signature:</strong> estimate consistent lateral displacement between magnetic edge responses at different smoothing scales, conditioned on the supplied depth proxy and low terrain relief. Require coherent orientation over a track, but do not equate grid-scale changes with a physically inverted dip without an uncertainty model. RTP and TMI are not independent experiments.</p>
-<p><strong>Missing-fault rationale:</strong> a covered continuation could produce a deeper magnetic boundary offset from the surviving surface lineament. This targets evidence that visible-scarp cataloguing could miss, but remanence/source geometry can move magnetic edges without faulting.</p>
-<p><strong>Difference:</strong> proposed measured <strong>edge displacement under scale change</strong>, not another scalar Euler-depth or orientation-consensus rank. Existing sibling Euler/depth lanes are closely related; clearance is not assumed.</p>
-<p><strong>Mimic/falsification:</strong> intrusive contacts, remanent magnetization, interpolation and survey flight-height variation. USGS explicitly warns that variable terrain clearance should be considered when modeling GeoDAWN. If a flight-direction/height proxy predicts detections as well as the geological variables, downgrade the candidate.</p>
-<h2>Fourth — cross-drainage residual facet discontinuity</h2>
-<p><strong>Layers:</strong> <code>det_elev</code> (12), <code>det_elev_slope</code> (19), optionally gravity (13) as a separate corroboration arm. No 1 m DEM is assumed available or required for this proposal's first coarse-scale test.</p>
-<p><strong>Signature:</strong> seek a signed terrain-height/slope change that repeats across separate drainage profiles after matching local elevation, aspect and relief. Test discontinuity of aligned residual facets across drainages, not simple straight-valley occupancy or local slope peaks. At the supplied coarse resolution some scarps will be unresolved; that is a limitation, not evidence of absence.</p>
-<p><strong>Missing-fault rationale:</strong> a degraded fault may preserve repeated facet offsets despite losing a continuous scarp. Catalogue completeness/selection bias may instead favor exactly these visible features.</p>
-<p><strong>Difference:</strong> profile-to-profile residual consistency, not H33 valley collinearity or simple LiDAR-scarp thinning. The seed repo implements neither. The many existing scarp/drainage lanes make this the least attractive novelty risk.</p>
-<p><strong>Mimic/falsification:</strong> lacustrine terraces, dipping resistant strata and channel incision. Use matched nonaligned profiles and basin-floor/terrace controls. If the signature follows a constant elevation more closely than a structural trajectory, reject it as a likely shoreline mimic.</p>
-<h2>Data viability and sources</h2>
-<ul>
-<li><strong>Available locally, integrity-verified owner mirror:</strong> all named core layers, documented in <a href="evidence/input_audit.json"><code>evidence/input_audit.json</code></a>. Authentication to original organizer bytes is not established.</li>
-<li><strong>Official definitions and task:</strong> <a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/">DrivenData problem description</a>, retrieved 2026-10-22. Supports the feature families and fault-prediction objective, not the success of these hypotheses.</li>
-<li><strong>Official physics/acquisition caveats:</strong> <a href="https://www.usgs.gov/data/geodawn-airborne-magnetic-and-radiometric-surveys-northwestern-great-basin-nevada-and">USGS GeoDAWN release</a>, <a href="https://doi.org/10.5066/P93LGLVQ">DOI</a>, retrieved 2026-10-22. Describes magnetic/radiometric products, processing, varying terrain clearance and flight-path products; marks the work CC0. These details motivate artifact controls, not fault labels.</li>
-<li><strong>Official baseline:</strong> <a href="https://github.com/drivendataorg/gems-prize-reference-solution/tree/aebe92f7c8a990f0e3443451b7a825d9afd6336b">reference solution</a> uses a U-Net with Monte Carlo patch splits; this is not an endorsement of random-patch validation for this research. The protocol's whole-segment blocked hide-and-recover instrument remains binding.</li>
-</ul>
-<h2>Proposed validation design — not executed</h2>
-<p>Use the template's cached non-catalogue features and shared whole-component splits. Any catalogue-dependent transform gets <strong>only visible faults</strong> for its fold, including profile orientation priors; no saved full-catalogue distances, tip positions or densities are admissible. Never derive the allowed placement region from hidden-fault geometry. Mask non-withheld known pixels exactly, pool additive metric components rather than averaging quadrant ratios, and bootstrap aligned physical spatial clusters with the same truth counts in candidate/control arms. Keep scale tuning and threshold tuning out of outer held regions. Report conditional CI scope and selection bias.</p>
-<p>Feature-only AUC canaries are diagnostic stop gates, not the optimization target. Missing features, nodata fill, spatial coverage and source-edge masks must be tested as features too. Final output format checks run only after scientific evidence and uniqueness gates; they cannot make a low-skill model a high-scoring model. No weekly slot is consumed by this shortlist.</p></article></main><footer><strong>Evidence before emission.</strong><span>Maximize P(Win) · Own the Outcome</span><p>Fault predictions are not proof of a geothermal resource. Local validation is not organizer acceptance.</p><a href="https://github.com/buffedlizard55-lab/GEMSDOE85">Repository &amp; reproducibility</a> · <a href="evidence/run_card.json">Machine-readable run card</a></footer></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Historical page — not submission cleared · GEMSDOE85</title>
+<style>body{margin:0;background:#101722;color:#e6edf3;font:17px/1.65 system-ui}main{max-width:960px;margin:auto;padding:32px 22px}a{color:#92c9ff}nav{display:flex;gap:24px;flex-wrap:wrap}.status{border:2px solid #e9ac60;background:#302619;padding:24px;border-radius:12px;margin:24px 0}h1{line-height:1.2}code,pre{overflow-wrap:anywhere;white-space:pre-wrap}table{border-collapse:collapse}td,th{border:1px solid #637083;padding:12px;text-align:left}footer{margin-top:40px;border-top:1px solid #637083;padding-top:16px}</style></head><body><main>
+<nav><a href="index.html">Status</a><a href="executive-summary.html">How to submit</a><a href="method.html">Research</a><a href="data.html">Sources</a></nav>
+<h1>Historical page — not submission cleared</h1><section class="status"><h2>BLOCKED — DO NOT SUBMIT</h2>
+<p>No new unique submission TIFF was generated in this review. Historical files are not approved for submission.
+Format validity alone does not establish uniqueness, scientific improvement, or eligibility.</p><ul><li>Automated release selector is not implemented; historical format PASS is not submission clearance.</li><li>Literal any-raster overlap gate: saturated prior blocks every nonempty allowed candidate.</li><li>No explicit assigned single-method paragraph.</li><li>Pinned transformed cache unavailable; no comparable current-best shared holdout receipt.</li><li>No authenticated organizer score receipts or account-specific remaining quota.</li><li>Current run card does not clear submission.</li><li>No explicit single-method lane assignment.</li><li>Pinned transformed feature cache is unavailable.</li></ul></section>
+<p>This historical public URL is superseded. Use the navigation above for current evidence. Prior research remains in Git history and repository research files.</p><footer>Review date: 2026-10-23. No weekly submission slot used. No human inspection is a release gate.
+<a href="https://github.com/buffedlizard55-lab/GEMSDOE85">Repository and historical artifacts</a>.
+AI assistance must be disclosed as required by the competition rules.</footer></main></body></html>

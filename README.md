@@ -1,37 +1,63 @@
-# GEMSDOE85 — research review, current status BLOCKED
+# Current release status — 2026-10-23
 
-**DOE GEMS Prize · DrivenData competition #306 · review date 2026-10-23**
+**BLOCKED — DO NOT SUBMIT. No new unique TIFF was generated this session.**
+The older submission-ready claims below are retained as historical session records, **not current authorization**.
+The literal registry overlap gate is saturated: the verified witness covers every allowed pixel.
+Format PASS alone does not clear uniqueness, scientific promotion, eligibility or a weekly slot.
+No chance-corrected exemption is authorized by the standing prompt. No method lane or pinned transformed cache is assigned/available.
 
-> **Current decision: DO NOT DOWNLOAD OR SUBMIT any TIFF in this repository.** The existing
-> GeoTIFFs are historical artifacts retained for audit and learning; earlier format PASS
-> receipts do not clear today's method-lane, cached-stack, or strict uniqueness gates. No new
-> TIFF was generated in this review, no holdout experiment was run, and no competition slot was
-> used. This is a governance/preflight negative, **not** a negative geological experiment.
-
-| Gate | Current evidence | Result |
-|---|---|---|
-| Explicit single-method lane | `registry/lane.json` status is `unassigned`; method paragraph is null | **BLOCKED** |
-| Required transformed feature cache | `registry/cache_manifest.json` says `unavailable`, with no cache files | **BLOCKED** |
-| Literal uniqueness rule | Binding `evidence/saturation_certificate.json` reports a universal overlap blocker and covered fraction 1.0; `AGENTS.md` prohibits substituting a chance-corrected threshold | **BLOCKED** |
-| Current candidate and holdout | No current lane-authorized candidate has strict surface+dot uniqueness evidence and a same-evaluator paired improvement | **NOT RUN** |
-| TIF format | Historical TIFFs have prior format reports, but that is not current scientific/uniqueness clearance | **NOT sufficient** |
-| Download / submit | No current candidate authorization; no organizer receipt or current quota available | **DO NOT SUBMIT** |
-
-The website places this state at the top of its home and executive-summary pages. Its automated
-site gate fails closed: it cannot show the historical TIFF as “OK TO DOWNLOAD AND SUBMIT” unless
-the explicit lane, cached stack, uniqueness clearance, and current run card all allow it.
-
-**Safe local review commands** (no model experiments, output rasters, or submission slots):
+- **Current executive summary:** [submission status](docs/index.html) · [how to submit](docs/executive-summary.html).
+- **Authoritative current card:** [evidence/run_card.json](evidence/run_card.json) (negative preflight; no current HOLDOUT-DTI).
+- **Research and three-pass review:** [2026-10-23 review](research/session-20261023-review.md) · [supplementary ranked hypotheses and official-source review](research/current-session-hypotheses-2026-10-23.md).
+- Historical TIFFs remain solely for reproducibility; they are not unique-cleared submission deliverables.
+- H33's reported result has no authenticated receipt here; a higher score is not established.
+- The standing brief and full quoted prompt remain below; read them at every session start.
 
 ```bash
-python scripts/preflight.py       # writes evidence/run_card.json; expected exit 2 while blocked
-python scripts/build_site.py      # updates docs/ from current evidence
-python scripts/check_site.py     # validates local links and the BLOCKED UI contract
+python -m venv .venv
+.venv/bin/pip install -r requirements-lock.txt
+.venv/bin/python scripts/restore_learning.py  # educational priors only; SHA-256 checked
+.venv/bin/python scripts/release_audit.py     # expected exit 2: blocked; needs reference data
+.venv/bin/python scripts/build_site.py
+.venv/bin/python scripts/check_site.py
+.venv/bin/python -m pytest -q
 ```
 
-The remainder of this README contains the preserved standing brief and historical scientific
-notes. Interpret historical candidate scores as historical measurements only; they do not
-override the current gate above.
+A green CI verifies contracts and honest blocked presentation; **it does not authorize a submission**.
+This review fetched official USGS 3DEP and GDR-1391 documentation pages for hypothesis provenance, but downloaded no external raster dataset and obtained no DrivenData account receipt. Shell-based outbound data access is restricted; mirrored hashes establish consistency, not organizer authentication. No weekly slot used.
+
+---
+
+## Historical README (superseded release claims; standing prompt preserved)
+
+# GEMSDOE85 — S85-CTXFUS: contextual supervised + GEO-Pb crest fusion for concealed faults
+
+**DOE GEMS Prize · DrivenData competition #306 · safety review state: BLOCKED**
+
+This repository contains candidate rasters and a reproducible analysis pipeline, but the current
+candidate is **not cleared for competition upload**. `registry/lane.json` records no assigned
+method lane, and the strict 70% overlap requirement is unresolved against registry space-filling
+rasters. Format validation is necessary but does not establish uniqueness, scientific validity,
+or permission to spend a weekly submission slot.
+
+| | |
+|---|---|
+| **Site** | `docs/index.html` (GitHub Pages; source configuration should be confirmed in repository settings) |
+| **Candidate artifact** | `docs/downloads/gems85-s85-ctxfus50-37654dots-sep4-20261022T232600Z-4f38c2b3-zeros.tif` (candidate only; do not upload while blocked) |
+| **Format** | Archived candidate run reports 17 format checks passed; rerun `python scripts/check_submission.py <path>` before any release. |
+| **HOLDOUT-DTI** | 0.08082 (evaluator `gems85-holdout-v1.0.0`, 60,988 withheld positives, 95% CI [0.07356, 0.08808]); inherited report, not recomputed during this review. |
+| **Uniqueness / lane** | BLOCKED: lane unassigned; strict overlap-saturation/open irregularities remain. |
+| **Verdict** | `negative` for slot promotion until the lane is assigned and the literal uniqueness gate passes. No organizer-confirmed score is established here. |
+```bash
+python -m venv .venv && .venv/bin/pip install numpy scipy rasterio pandas scikit-learn pytest
+.venv/bin/python scripts/restore_data.py --groups core external scored   # 23 files, SHA-256 verified
+.venv/bin/python -m pytest                                               # 79 passed
+.venv/bin/python scripts/run_session_experiments.py                      # E1-E3 holdout (session 22847afd)
+.venv/bin/python scripts/run_e2b.py                                      # E2b/E3b bugfix ablation -> gate
+.venv/bin/python scripts/build_submission_session.py --field fusion5050 --label ctxfus50
+.venv/bin/python scripts/make_session_run_card.py                        # run card + registry
+.venv/bin/python scripts/build_site.py && .venv/bin/python scripts/check_site.py
+```
 
 ---
 

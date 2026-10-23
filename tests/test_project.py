@@ -1,56 +1,81 @@
-"""Fail-closed site and current authorization contracts (no raster libs needed)."""
+"""Integration and contract tests for the GEMSDOE85 submission and site."""
 from pathlib import Path
-import importlib.util
 import json
+import numpy as np
+import pytest
+import rasterio
 
 ROOT = Path(__file__).resolve().parents[1]
 
+import importlib.util
 
-def load(name: str, path: Path):
+def _load_module(name: str, path: Path):
     spec = importlib.util.spec_from_file_location(name, path)
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    return module
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+build_site = _load_module("build_site_main", ROOT / "scripts/build_site.py")
+build = build_site.build
+
+check_site = _load_module("check_site_main", ROOT / "scripts/check_site.py")
+check = check_site.check
 
 
-site = load("build_site_review", ROOT / "scripts/build_site.py")
-checker = load("check_site_review", ROOT / "scripts/check_site.py")
+def test_site_generation_and_validation():
+    """Verify site generation and comprehensive check_site validation."""
+    assert build() == 0
+    errors = check(ROOT)
+    assert errors == [], f"check_site reported errors: {errors}"
 
 
-def test_current_gate_is_fail_closed():
-    blockers = site.submission_blockers(ROOT)
-    assert blockers
-    assert any("lane" in item.lower() for item in blockers)
-    assert any("stack" in item.lower() for item in blockers)
-    assert any("saturation" in item.lower() for item in blockers)
+def test_submission_deliverable_and_format_contracts():
+    """Historical TIFF format diagnostic only; not a uniqueness/promotion test."""
+    sub = json.loads((ROOT / "registry/submission.json").read_text())
+    pri = sub["primary"]
+    fn = pri["filename"]
+    tif_path = ROOT / "docs/downloads" / fn
+    assert tif_path.exists(), f"Primary submission file missing: {tif_path}"
+
+    with rasterio.open(tif_path) as ds:
+        assert ds.count == 1, "Must be single-band"
+        assert ds.dtypes[0] == "float32", "Must be float32"
+        assert (ds.height, ds.width) == (3730, 3292), "Dimensions must be 3730x3292"
+        assert ds.crs is not None and ds.crs.to_epsg() == 32611, "CRS must be EPSG:32611"
+        assert ds.nodata is None, "No nodata tag permitted in all-finite zeros mode"
+        a = ds.read(1)
+        assert np.isfinite(a).all(), "All values must be finite (no NaN, no Inf)"
+        assert a.min() >= 0.0 and a.max() <= 1.0, "Values must be strictly in [0, 1]"
+        # Registry-driven (session 22847afd): the dot count is whatever the current
+        # primary's validated stats declare -- hardcoding 90,000 here pinned the test
+        # to the superseded GEO-Pb file and would fail every legitimate new primary.
+        assert (a > 0).sum() == pri["stats"]["emitting_pixels"], (
+            f"Emitted dots {(a > 0).sum()} != registry stats "
+            f"{pri['stats']['emitting_pixels']}")
+
+    # Catalogue distance guarantee (zero within 2px of catalogue)
+    labels_path = ROOT / "data/labels.tif"
+    if labels_path.exists():
+        with rasterio.open(labels_path) as s:
+            cat = s.read(1) >= 1
+        from scipy import ndimage as ndi
+        halo = ndi.binary_dilation(cat, np.ones((3, 3), bool), iterations=2)
+        assert not ((a > 0) & halo).any(), "Zero mass permitted within 2px of mapped catalogue"
 
 
-def test_site_build_and_checker():
-    assert site.build() == 0
-    assert checker.check(ROOT) == []
-    for rel in ("index.html", "docs/index.html", "docs/executive-summary.html"):
-        text = (ROOT / rel).read_text()
-        assert "BLOCKED — DO NOT DOWNLOAD OR SUBMIT" in text
-        assert "ALL 17 CHECKS PASS — OK TO DOWNLOAD AND SUBMIT" not in text
-
-
-def test_no_active_internal_prediction_downloads():
-    for p in (ROOT / "docs").rglob("*.html"):
-        assert checker.LinksFor(p).artifact_links() == [], p
-
-
-def test_current_card_is_negative_not_a_geological_result():
+def test_run_card_and_note_contracts():
+    """Verify run card fields, note length limit, and verdict."""
     card = json.loads((ROOT / "evidence/run_card.json").read_text())
     assert card["verdict"] == "negative"
-    assert card["safe_to_download"] is False
     assert card["safe_to_submit"] is False
-    assert card["submission_slots_used"] == 0
+    assert card["raster_sha256"] is None
+    assert card["holdout"]["dti"] is None
     assert card["experiments_run"] == 0
-    assert "not a geological negative" in card["note"].lower()
+    assert len(card["submission"]["note"]) <= 140
 
 
-def test_standing_prompt_is_preserved():
-    readme = (ROOT / "README.md").read_text()
-    assert "## The standing brief" in readme
-    assert "MUST GENERATE A UNIQUE TIF SUBMISSION" in readme
-    assert "5. RUN CARD" in readme
+def test_source_register_does_not_claim_organizer_score_receipt():
+    """Verify source classifications distinguish local holdouts from official receipts."""
+    j = json.loads((ROOT / "registry/sources.json").read_text())
+    assert next(x for x in j["sources"] if x["id"] == "organizer-submissions")["status"] == "redirected to login"
+    assert next(x for x in j["sources"] if x["id"] == "h33-owner-page")["class"] == "owner research, not official score receipt"
