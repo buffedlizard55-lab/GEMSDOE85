@@ -1,0 +1,233 @@
+{
+  "source": "USGS Earthquake Hazards Program ComCat FDSN Event Web Service v1",
+  "license": "Public Domain (17 U.S.C. 105 / CC0)",
+  "endpoint": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=text",
+  "retrieved_utc_date": "2026-10-22",
+  "temporal_span": "1900-01-01 to 2026-10-20",
+  "valid_geodawn_pixels_total": 5165852,
+  "valid_geodawn_pixels_covered_modern": 5165852,
+  "valid_geodawn_pixels_covered_historical": 5165852,
+  "coverage_fraction": 1.0,
+  "raw_records_parsed": 4083,
+  "unique_events_deduplicated": 3977,
+  "events_in_raster_bbox": 3907,
+  "events_inside_valid_geodawn_footprint": 2040,
+  "events_m_ge_4_0": 591,
+  "events_m_ge_5_0": 126,
+  "events_post_2021_post_gdr1391_cutoff": 541,
+  "group_record_counts": {
+    "hist_1900_1950": 253,
+    "hist_1950_1980": 601,
+    "band4_m22": 659,
+    "band3_m24": 680,
+    "band3E_m24": 85,
+    "band3W_m26": 255,
+    "band2_pre2020_m26": 691,
+    "band2_post2020_m31": 476,
+    "band1N_m29": 278,
+    "band1S_m28": 84,
+    "band1NW_m29": 21
+  },
+  "output_csv": "data/external/usgs_comcat_geodawn.csv",
+  "output_csv_sha256": "c580226b3b0516653873b87077edb8e164c3545e9bc1e7c764789c52bdd30624",
+  "raw_chunk_sha256": {
+    "hist_1900_1950_00_01.txt": "1d97f6681f97ab229cfa108b192036b486b9c291ce97ac120b5310f647b87ee4",
+    "hist_1900_1950_02_03.txt": "1be4850b9fb465cb3de2cbf701dbe4a198da8f645641aa87c02e03728d6530eb",
+    "hist_1950_1980_00_03.txt": "02e671c86550191fb6b0d2a645a660fe91eace897dce2090aaf5600fd873d9c5",
+    "hist_1950_1980_04_09.txt": "69e2fefcd8706cf25a52845adebb900c064fc1333d3acf188818dd7724e73b0e",
+    "band4_m22_00_05.txt": "ff128fff63af3569d9ab4f0da5629b4497d4be1660a5a39d146f071f5045802e",
+    "band4_m22_05.txt": "b9c96260b1312fe9d4573e51c9bceb6a6792ff8eeb94bf6157fec49401d7609f",
+    "band4_m22_06_08.txt": "d85e90b39fc46ee57200c4cff015336788c5724f90bfd7f3b24d8e0dc65c9305",
+    "band3_m24_00_05.txt": "60f6929eb422060e5d915472399276fbf30dfb3891d5a4f7b5a7dccf76195d8e",
+    "band3_m24_06_10.txt": "9e626a501db8091a1782ae484e00ed080759e13aa6824d45812ca080c26ab8e4",
+    "band3E_m24_00_01.txt": "11ede6f94910749945ca49295f203670012658f54d08f57627c217265dfacf18",
+    "band3W_m26_00_01.txt": "0885b6d06f1bf2d8858c066f2079ced635fe1ad882963e633230dafee3fabba9",
+    "band3W_m26_02_03.txt": "2414e343da3b0572e7a20e109eaa463f906bab33c537ed3f38ef6847591bdc11",
+    "band2_pre2020_00_04.txt": "e1f20ada4a566dcec2dc6c6274dc60db901e4c22e426d7ce9d0dc315047c4d95",
+    "band2_pre2020_05_07.txt": "791fc95ea05e7766fa1e90fbb1ded511d9977e7a3568aa19535cd30abfe2b8e3",
+    "band2_pre2020_08_09.txt": "b6e0692947dafcb729a18dfc1c2a171ed35b7af608f08a26b02c543fdc6437d1",
+    "band2_post2020_00_03.txt": "f83b248cbd8bbc3b8860b60fadb613edd754bf5b0715bd37e0669ded9988fb2f",
+    "band2_post2020_04_06.txt": "74ecc6676994fbc99dab35eefc9a58fc2884ddc127f92207678ad67d8b3b1258",
+    "band1N_m29_00_01.txt": "a45c94ad4d54a566b5857961a5e7fff035df4738fa958d3bf4f662068e4eb1a6",
+    "band1N_m29_02_04.txt": "1912642dd2e5a6899b168633d9581cd45ce4e5d7ee81743d34ae3b0237c7e4f8",
+    "band1S_m28_00_01.txt": "db7695a6d2d2212f886ec6fcaa78d8f3ea6f1a7f4d936e099fcca4e3ca370338",
+    "band1NW_m29_00.txt": "1f6854ade4dd16de2eb7cba26c5e76286579ab2b05e8dd0ec1f2ea09c2622a74"
+  },
+  "query_groups": [
+    {
+      "name": "hist_1900_1950",
+      "files": [
+        "hist_1900_1950_00_01.txt",
+        "hist_1900_1950_02_03.txt"
+      ],
+      "parameters": {
+        "starttime": "1900-01-01",
+        "endtime": "1950-01-01",
+        "minlatitude": 37.35,
+        "maxlatitude": 40.75,
+        "minlongitude": -120.01,
+        "maxlongitude": -116.14,
+        "minmagnitude": 3.5
+      }
+    },
+    {
+      "name": "hist_1950_1980",
+      "files": [
+        "hist_1950_1980_00_03.txt",
+        "hist_1950_1980_04_09.txt"
+      ],
+      "parameters": {
+        "starttime": "1950-01-01",
+        "endtime": "1980-01-01",
+        "minlatitude": 37.35,
+        "maxlatitude": 40.75,
+        "minlongitude": -120.01,
+        "maxlongitude": -116.14,
+        "minmagnitude": 3.0
+      }
+    },
+    {
+      "name": "band4_m22",
+      "files": [
+        "band4_m22_00_05.txt",
+        "band4_m22_05.txt",
+        "band4_m22_06_08.txt"
+      ],
+      "parameters": {
+        "starttime": "1980-01-01",
+        "endtime": "2026-10-20",
+        "minlatitude": 39.64,
+        "maxlatitude": 40.76,
+        "minlongitude": -120.02,
+        "maxlongitude": -116.13,
+        "minmagnitude": 2.2
+      }
+    },
+    {
+      "name": "band3_m24",
+      "files": [
+        "band3_m24_00_05.txt",
+        "band3_m24_06_10.txt"
+      ],
+      "parameters": {
+        "starttime": "1980-01-01",
+        "endtime": "2026-10-20",
+        "minlatitude": 38.8,
+        "maxlatitude": 39.65,
+        "minlongitude": -119.5,
+        "maxlongitude": -117.1,
+        "minmagnitude": 2.4
+      }
+    },
+    {
+      "name": "band3E_m24",
+      "files": [
+        "band3E_m24_00_01.txt"
+      ],
+      "parameters": {
+        "starttime": "1980-01-01",
+        "endtime": "2026-10-20",
+        "minlatitude": 38.8,
+        "maxlatitude": 39.65,
+        "minlongitude": -117.11,
+        "maxlongitude": -116.13,
+        "minmagnitude": 2.4
+      }
+    },
+    {
+      "name": "band3W_m26",
+      "files": [
+        "band3W_m26_00_01.txt",
+        "band3W_m26_02_03.txt"
+      ],
+      "parameters": {
+        "starttime": "1980-01-01",
+        "endtime": "2026-10-20",
+        "minlatitude": 38.8,
+        "maxlatitude": 39.65,
+        "minlongitude": -120.02,
+        "maxlongitude": -119.49,
+        "minmagnitude": 2.6
+      }
+    },
+    {
+      "name": "band2_pre2020_m26",
+      "files": [
+        "band2_pre2020_00_04.txt",
+        "band2_pre2020_05_07.txt",
+        "band2_pre2020_08_09.txt"
+      ],
+      "parameters": {
+        "starttime": "1980-01-01",
+        "endtime": "2020-05-14",
+        "minlatitude": 38.05,
+        "maxlatitude": 38.81,
+        "minlongitude": -118.9,
+        "maxlongitude": -117.24,
+        "minmagnitude": 2.6
+      }
+    },
+    {
+      "name": "band2_post2020_m31",
+      "files": [
+        "band2_post2020_00_03.txt",
+        "band2_post2020_04_06.txt"
+      ],
+      "parameters": {
+        "starttime": "2020-05-14",
+        "endtime": "2026-10-20",
+        "minlatitude": 38.05,
+        "maxlatitude": 38.81,
+        "minlongitude": -118.9,
+        "maxlongitude": -117.24,
+        "minmagnitude": 3.1
+      }
+    },
+    {
+      "name": "band1N_m29",
+      "files": [
+        "band1N_m29_00_01.txt",
+        "band1N_m29_02_04.txt"
+      ],
+      "parameters": {
+        "starttime": "1980-01-01",
+        "endtime": "2026-10-20",
+        "minlatitude": 37.75,
+        "maxlatitude": 38.06,
+        "minlongitude": -118.66,
+        "maxlongitude": -117.24,
+        "minmagnitude": 2.9
+      }
+    },
+    {
+      "name": "band1S_m28",
+      "files": [
+        "band1S_m28_00_01.txt"
+      ],
+      "parameters": {
+        "starttime": "1980-01-01",
+        "endtime": "2026-10-20",
+        "minlatitude": 37.34,
+        "maxlatitude": 37.76,
+        "minlongitude": -118.25,
+        "maxlongitude": -117.24,
+        "minmagnitude": 2.8
+      }
+    },
+    {
+      "name": "band1NW_m29",
+      "files": [
+        "band1NW_m29_00.txt"
+      ],
+      "parameters": {
+        "starttime": "1980-01-01",
+        "endtime": "2026-10-20",
+        "minlatitude": 37.64,
+        "maxlatitude": 37.76,
+        "minlongitude": -118.66,
+        "maxlongitude": -118.24,
+        "minmagnitude": 2.9
+      }
+    }
+  ]
+}
