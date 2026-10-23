@@ -77,7 +77,8 @@ def page(title: str, body: str, active: str) -> str:
     links = "".join(
         f'<a href="{h}" class="{"on" if h == active else ""}">{html.escape(t)}</a>'
         for h, t in nav)
-    stamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    rc = jload(ROOT / "evidence" / "run_card.json") or {}
+    stamp = str(rc.get("timestamp_utc", "2026-10-23T00:21:39Z"))[:16].replace("T", " ") + " UTC"
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(title)}</title><style>{CSS}</style></head><body>
