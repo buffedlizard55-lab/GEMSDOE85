@@ -1,8 +1,6 @@
 {
   "groups": [
-    "core",
-    "external",
-    "scored"
+    "all"
   ],
   "files": [
     {
@@ -13,19 +11,19 @@
     },
     {
       "id": "labels",
-      "status": "restored",
+      "status": "cached",
       "sha256": "7ba308ccdc4418b31a178f4f1ef21aaa6e152e4028f2f6f64b01f7eb25ae4093",
       "bytes": 425830
     },
     {
       "id": "existing_faults",
-      "status": "restored",
+      "status": "cached",
       "sha256": "7ba308ccdc4418b31a178f4f1ef21aaa6e152e4028f2f6f64b01f7eb25ae4093",
       "bytes": 425830
     },
     {
       "id": "sample_submission",
-      "status": "restored",
+      "status": "cached",
       "sha256": "2176d08e485aa2cd2860ce8df539db4faf4d76163b38a4dd8c30a40454d35cbc",
       "bytes": 1599597
     },

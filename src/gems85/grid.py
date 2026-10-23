@@ -24,7 +24,9 @@ DATA = ROOT / "data"
 # The grid as published by the organisers and as present in every restored raster.
 HEIGHT = 3730
 WIDTH = 3292
+SHAPE = (HEIGHT, WIDTH)
 EPSG = 32611
+CRS = rasterio.crs.CRS.from_epsg(EPSG)
 PIXEL_M = 100.0
 TRANSFORM = Affine(100.0, 0.0, 243350.0, 0.0, -100.0, 4508550.0)
 R_METERS = 300.0
@@ -47,6 +49,7 @@ BANDS = {
     18: "iso_grav_anom_hg", 19: "det_elev_slope",
 }
 NAME_TO_BAND = {v: k for k, v in BANDS.items()}
+FEATURE_NAMES = tuple(BANDS[k] for k in sorted(BANDS))
 
 # float32 sentinel used as nodata inside training_features.tif
 SENTINEL = np.float32(-3.4028234663852886e38)

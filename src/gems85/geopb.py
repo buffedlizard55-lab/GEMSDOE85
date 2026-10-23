@@ -51,6 +51,17 @@ from . import grid
 NORMALS_R3 = [(3, 0), (3, 1), (2, 2), (1, 3), (0, 3), (-1, 3), (-2, 2), (-3, 1)]
 NORMALS_R6 = [(6, 0), (6, 2), (4, 4), (2, 6), (0, 6), (-2, 6), (-4, 4), (-6, 2)]
 
+# Exact non-duplicate integer normal vectors retiring the null persistence term in favour of
+# fine azimuth resolution (~15 deg at r=400 m; exact 16-strike ~11.25 deg at r=600 m).
+NORMALS_R4_12 = [
+    (4, 0), (4, 1), (4, 2), (3, 3), (2, 4), (1, 4),
+    (0, 4), (-1, 4), (-2, 4), (-3, 3), (-4, 2), (-4, 1),
+]
+NORMALS_R6_16 = [
+    (6, 0), (6, 1), (5, 2), (5, 3), (4, 4), (3, 5), (2, 5), (1, 6),
+    (0, 6), (-1, 6), (-2, 5), (-3, 5), (-4, 4), (-5, 3), (-5, 2), (-6, 1),
+]
+
 # Three independent physics domains.  (source, key) where source is "feat" (training_features.tif
 # band name), "rad" (geodawn_rad_u8 band index) or "lidar" (lidar_scarp_features_u8 band index).
 DOMAINS: dict[str, list[tuple[str, object]]] = {
@@ -68,6 +79,8 @@ def shift(a: np.ndarray, dy: int, dx: int, fill: float = 0.0) -> np.ndarray:
     """Exact integer array shift; out-of-frame filled with `fill`."""
     out = np.full_like(a, fill)
     h, w = a.shape
+    if abs(dy) >= h or abs(dx) >= w:
+        return out
     ys_src = slice(max(0, -dy), h - max(0, dy))
     ys_dst = slice(max(0, dy), h - max(0, -dy))
     xs_src = slice(max(0, -dx), w - max(0, dx))
@@ -244,3 +257,92 @@ def crest(field: np.ndarray, axis: np.ndarray, normals=tuple(NORMALS_R3)) -> np.
             b = shift(field, -sy, -sx)
             keep &= ~(sel & ((field < a) | (field < b)))
     return (field * keep).astype(np.float32)
+
+
+def geopb16_components(
+    *,
+    sigma: float = 1.5,
+    footprint: np.ndarray | None = None,
+) -> dict[str, np.ndarray]:
+    """High-angular-resolution (12/16-strike) domain-resolved GEO-Pb decomposition.
+
+    Retires the uninformative persistence blur identified in prior session ablations and
+    preserves both the 2-of-3 multi-domain consensus AND each individual whitened Hotelling
+    domain response (`potential_field`, `radiometric`, `topographic`), so concealed faults
+    beneath >0.5 m of Holocene playa clay (where gamma rays attenuate and surface relief is
+    flat) retain their full covariance-whitened basement/magnetic/MT step signature.
+    """
+    fp = grid.footprint() if footprint is None else footprint
+    names = list(DOMAINS)
+
+    # 12-strike near-field (r ~= 400 m) across all 3 domains
+    whitened_r4 = {d: whiten(load_domain_stack(d, fp, sigma), NORMALS_R4_12, fp) for d in names}
+    pot_r4 = np.zeros(fp.shape, dtype=np.float32)
+    rad_r4 = np.zeros(fp.shape, dtype=np.float32)
+    topo_r4 = np.zeros(fp.shape, dtype=np.float32)
+    med_r4 = np.zeros(fp.shape, dtype=np.float32)
+    axis_r4 = np.zeros(fp.shape, dtype=np.int8)
+
+    for j, (dy, dx) in enumerate(NORMALS_R4_12):
+        dom_resp = []
+        for d in names:
+            Y = whitened_r4[d]
+            s = np.zeros(fp.shape, dtype=np.float32)
+            for k in range(Y.shape[0]):
+                u = shift(Y[k], dy, dx) - shift(Y[k], -dy, -dx)
+                s += u * u
+            dom_resp.append(np.sqrt(s, out=s))
+        np.maximum(pot_r4, dom_resp[0], out=pot_r4)
+        np.maximum(rad_r4, dom_resp[1], out=rad_r4)
+        np.maximum(topo_r4, dom_resp[2], out=topo_r4)
+        med = np.median(np.stack(dom_resp), axis=0).astype(np.float32)
+        upd = med > med_r4
+        med_r4[upd] = med[upd]
+        axis_r4[upd] = j
+        del dom_resp, med
+
+    crest_r4 = crest(med_r4, axis_r4, normals=NORMALS_R4_12)
+    del whitened_r4
+
+    # 16-strike mid-depth hanging-wall step (r ~= 600 m, exact 11.25 deg strike spacing)
+    whitened_r6 = {d: whiten(load_domain_stack(d, fp, sigma), NORMALS_R6_16, fp) for d in names}
+    pot_r6 = np.zeros(fp.shape, dtype=np.float32)
+    med_r6 = np.zeros(fp.shape, dtype=np.float32)
+    best_joint_r6 = np.zeros(fp.shape, dtype=np.float32)
+    strike_rad = np.zeros(fp.shape, dtype=np.float32)
+
+    for j, (dy, dx) in enumerate(NORMALS_R6_16):
+        dom_resp = []
+        for d in names:
+            Y = whitened_r6[d]
+            s = np.zeros(fp.shape, dtype=np.float32)
+            for k in range(Y.shape[0]):
+                u = shift(Y[k], dy, dx) - shift(Y[k], -dy, -dx)
+                s += u * u
+            dom_resp.append(np.sqrt(s, out=s))
+        np.maximum(pot_r6, dom_resp[0], out=pot_r6)
+        med = np.median(np.stack(dom_resp), axis=0).astype(np.float32)
+        np.maximum(med_r6, med, out=med_r6)
+        joint = (0.6 * dom_resp[0] + 0.4 * med).astype(np.float32)
+        # Fault strike vector is perpendicular to normal (dy, dx): tangent = (-dx, dy)
+        ang = float(np.arctan2(dy, -dx) % np.pi)
+        upd = joint > best_joint_r6
+        best_joint_r6[upd] = joint[upd]
+        strike_rad[upd] = ang
+        del dom_resp, med, joint
+
+    del whitened_r6, best_joint_r6
+    out = {
+        "geopb16_pot_r4": pot_r4,
+        "geopb16_rad_r4": rad_r4,
+        "geopb16_topo_r4": topo_r4,
+        "geopb16_med_r4": med_r4,
+        "geopb16_crest_r4": crest_r4,
+        "geopb16_pot_r6": pot_r6,
+        "geopb16_med_r6": med_r6,
+        "geopb16_strike_rad": strike_rad,
+    }
+    for arr in out.values():
+        arr[~fp] = 0.0
+    return out
+
