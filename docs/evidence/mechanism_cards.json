@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "axis": "PRUNE",
+  "written_for": "a structural geologist reviewing why these three rasters differ from the incumbent",
+  "parent": {
+    "id": "h33-h33-2-b2 (GEMSDOE32)",
+    "n_dots": 37654,
+    "sha256": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
+    "claim": "0.2778 owner-claimed, no receipt in ledger/",
+    "rebuild": "pixel-identical from the 44,090-dot d2.8 parent at Euclidean catalogue distance > 2.0 px (evidence/r0_rebuild.json)"
+  },
+  "shared_instrument": {
+    "what": "fold-clean catalogue hide-and-recover",
+    "recipe": "hide 20 % of whole connected catalogue components, rebuild each cutoff against the VISIBLE catalogue only, score DTI on the withheld components (5 folds, 20 % component-level holdout)",
+    "why_it_is_usable_as_a_sign_test": "it reproduces the direction of both scored ladder steps: 0->1 px +0.00207 (5/5 folds, live +0.0108), 0->2 px +0.00214 (5/5 folds, live +0.0178)",
+    "why_it_is_not_a_magnitude": "it cannot resolve 1->2 px (+0.00007, 3/5 folds) although live separates them by +0.0070; magnitude is compressed 5-8x and unstable",
+    "verdict_above_2px": "cutoff 3 minus cutoff 2 = -0.00168 (0/5 folds); cutoff 4 = -0.00596 (0/5); cutoff 5 = -0.01265 (0/5)",
+    "receipt": "evidence/prune_holdout_proxy.json"
+  },
+  "cards": [
+    {
+      "id": "h33-2-b2-prune3-20261023-c493fdeb",
+      "variant": "PRUNE 3.0 px, no refill, 35,483 dots (5.77 % of parent dots changed)",
+      "hypothesis": "Dots 200-300 m from a mapped trace are the mapped fault's own geophysical flank. They cannot earn credit, because mapped faults are masked pixel-exactly out of the scored truth, yet each pays alpha*(1-k) in the denominator. Cutting at the kernel's own support radius R = 300 m should therefore raise DTI.",
+      "mechanism": "A fault's expression is wider than its mapped centerline. Potential-field upward continuation smears a 100 m fault signature to several hundred metres, and colluvial wedges plus antithetic splays build a scarp halo of comparable width. The H19-5 field is a multi-line field assembled from exactly such channels, so its dots cluster near mapped traces: 8,607 of the 44,090 parent dots sit within 3 px, and 6,436 within 2 px. At 2.24-3.0 px the kernel still returns k = 0.0-0.25, so the dot pays 0.15-0.20 of alpha while standing on truth that has been masked away.",
+      "mimic": "A second, unmapped strand of the same fault zone (step-over, antithetic splay, or newly mapped geometry of an existing system) is not halo at all: it is real truth at 200-300 m from the mapped trace, which is the exact case the organizers say the new-fault label set may contain. Playa margins and Lake Lahontan shorelines also run parallel to range-front faults and inflate the apparent halo, which would make a genuine 2-3 px strand look like halo.",
+      "predicted_change": {"sign": "negative", "central": -0.002, "range": [-0.010, 0.004], "basis": "PROXY sign test above 2 px, 0/5 folds; the naive per-dot extrapolation from the two scored rungs would have said +0.006 and is not used"},
+      "falsifier": "If the live score is >= 0.2840 (+0.006 or better, the naive model) the annulus is halo and PRUNE should continue; if it is <= 0.2700 the annulus carries real new-fault truth and PRUNE is closed at 2 px. Either outcome is decision-grade; a move under 0.01 is treated as no evidence."
+    },
+    {
+      "id": "h33-2-b2-prune3r-20261023-b633c5e9",
+      "variant": "PRUNE 3.0 px with refill toward the parent's count, 35,923 dots (6.93 % changed). Refill saturated: only 440 of the 2,171 intended replacements fit.",
+      "hypothesis": "If the ladder's gain is about how many dots there are rather than how far they sit from the catalogue, replacing the deleted dots elsewhere in the field would keep the gain.",
+      "mechanism": "Replacement dots were chosen to newly credit the largest amount of still-uncovered H19-5 support at d > 3 px and >= 2.8 px from a kept dot. The field only admits 440 such cells, because the 44,090-dot placement already consumed the entire d > 3 px support at its own spacing. The count therefore cannot be held: 440 of 2,171 (20 %) of the intended refill exists.",
+      "mimic": "None; this card is bookkeeping, not geology. Its value is as the mass-control for card 1.",
+      "predicted_change": {"sign": "negative", "central": -0.003, "range": [-0.011, 0.003], "basis": "card 1 minus the cost of 440 low-value dots"},
+      "falsifier": "If this file scores at least 0.005 above the no-refill twin, mass far from the catalogue is cheap and the next axis must be MASS, not a further prune."
+    },
+    {
+      "id": "h33-2-b2-prune4-20261023-37fe5e5e",
+      "variant": "PRUNE 4.0 px, no refill, 33,829 dots (10.16 % of parent dots changed)",
+      "hypothesis": "The ladder continues past R because everything catalogue-proximal is waste and the field's value per dot is flat.",
+      "mechanism": "The same halo argument, extended one pixel beyond the kernel's support. Past R the kernel returns exactly zero from mapped truth, so these dots are judged only by whether they sit on new faults. There is no halo rationale left at 4 px; only the mass argument remains.",
+      "mimic": "New faults are not concentrated in a 3-4 px annulus, they are spread across the basin. If the field carries any real signal, deleting its d > 3 px dots deletes exploration mass that does capture new truth: this is the variant where a pure mass effect and a distance effect can no longer be separated.",
+      "predicted_change": {"sign": "negative", "central": -0.006, "range": [-0.013, 0.001], "basis": "PROXY sign test, 0/5 folds (-0.0060 proxy units); the naive per-dot model said +0.0106"},
+      "falsifier": "If this file reaches 0.2838 (+0.006), mass reduction dominates distance, the PRUNE axis is a proxy for MASS, and every future variant should be a mass-budget sweep at fixed field before any physical signal is tried."
+    }
+  ]
+}

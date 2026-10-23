@@ -466,3 +466,78 @@ The human assigned **PRUNE** in this session (with: 3 slots free this week; no R
 
 ## IR-V2-30 — Independent duplicate builds deduped; refill novelties and ledger split
 This session's `prune3`/`r2p85` reproduce the tracked upstream files byte-for-byte under the 1.4.4 lock (`fb308615…`/`acce3907…`); no duplicate ledger rows were added. Its new build `prune3fill20` (`12a3b132…`, 37,654 dots) refills the H19-5 support at a **2.0 px floor** (2.8 px refill impossible: 611 pool px — IR-V2-09; cf. IR-V2-18); all refills are d1.5-thinning selections, a lineage proxy — no continuous parent ranking is pinned (cf. IR-V2-21 concentration numbering), so MASS-by-parent-ranking remains blocked. The five lineage CLAIMs live in `ledger/lineage_claims.csv`, not `submissions.csv` (schema tests require BUILT-variant rows only there); neither file is a complete submission history.
+
+## IR-V2-31 — MASS was "rejected" in IR-V2-08 on evidence that its own author called a proxy; it is now measured, and the rejection was right about the sign but wrong about the ceiling
+
+**Found:** IR-V2-08 rejected MASS before building it, using two arguments: (a) the parent's own
+label-free ranking (unique kernel credit U_i) ranks on-ridge dots *lowest*, so a ranked mass cut
+deletes the backbone; (b) the SGMC proxy says mass-down is monotonic-negative, −0.005 at −10 % to
+−0.020 at −30 %. This session built the axis anyway, because (b) is a proxy on a *different*
+catalogue and (a) depends on which ranking is rebuilt — and because if mass is what moved the score,
+every other axis is measuring it by accident.
+
+**Measured (fold-clean hide-and-recover, every arm rebuilt per fold, mass-anchor calibrated):**
+ranked 10 % deletion **−0.0028 proxy units (0/5 folds)**, uniform 10 % deletion **−0.0047 (0/5)**,
+10 % addition **+0.0016 (5/5)**. Scaled by the d1.5→d2.8 mass anchor (3.07 proxy units per live
+unit): **−0.008, −0.014, +0.005**.
+
+**Where IR-V2-08 was right:** mass-down does hurt, and it hurts more when unranked — so the ranking
+does carry signal (0.0028 vs 0.0047 at identical mass). Mass-down is not a free lunch.
+
+**Where it was wrong, and this changes the plan:** MASS is not merely negative, it is **capped**.
+The H19-5 field offers only 5,383 free cells at d > 2 px, so the largest possible addition is
+**+14.3 %**, worth about +0.007 extrapolated. No mass variant can reach the +0.01 evidence bar in
+either direction. That is a *closed* axis, not an unbuilt one, and it should stay closed until a new
+field exists (SLOT_PLAN proposal 1). Recorded here so no later session re-litigates MASS from the
+"unassigned/untested" premise in IR-V2-08.
+
+## IR-V2-32 — the parent has no ranking: its literal order is raster scan
+
+**Found:** the brief's MASS definition says to drop "the lowest-ranked 10 % … by the parent's own
+ranking". R0 stores no scores: `h33-2-b2` is 0/1 and the field it sits on (`H19-5`) is binary (all
+121,131 support cells are 1.0), so the parent's order is `poisson_thin`'s tie-break — **row-major
+scan order**. Ranking by it would delete the bottom of the image: region-isolated and patterned,
+forbidden by brief §4.5 and a measurement of geography, not mass. (Main's IR-V2-08 already noted
+the packing order is unusable; this records *why*.)
+
+**Decision changed:** the ranking was rebuilt catalogue-free as bridged (r = 1) connected-component
+size — "coherent lineament versus speckle". It is not PRUNE in disguise: the smallest-10 % selection
+has mean catalogue distance 30.3 px against 29.0 px for all of R0, and overlaps a uniform random
+10 % on only 442 of 3,765 dots. Both a ranked and a uniform arm were built so the ranking itself is
+measured rather than assumed.
+
+## IR-V2-33 — "add the next-ranked 10 %" is impossible at the parent's own spacing
+
+**Found:** at R0's 2.8 px minimum separation the whole field offers **794** free cells against the
+3,765 needed. Only 31 % of the 121,131 support cells are dotted, and nearly every undotted one sits
+inside a neighbour's exclusion.
+
+**Decision changed:** the add arm (`mass-p10`) uses **2.2 px** separation (4,076 free cells at
+d > 3 px — enough, with almost no slack) and says so in its ledger value and card. Consequence:
+the mass axis cannot exceed +14.3 % from this field (IR-V2-31).
+
+## IR-V2-34 — the ≥3 px rule cannot be applied to MASS without turning it into PRUNE
+
+**Found:** brief §4.4 requires ≥3 px from the catalogue "unless AXIS = PRUNE", but R0 itself carries
+**2,171** dots at 2 < d ≤ 3 px. Enforcing the rule on the MASS arms deletes exactly those dots —
+which is `prune3`, already built and predicted −0.002 — so all three arms would silently become
+PRUNE variants and the mass signal would vanish into the axis it is meant to isolate.
+
+**Decision changed:** the rule is enforced on mass each variant **adds** (the add arm's 3,765 new
+dots all sit at d ≥ 3.16 px); inherited dots are kept and counted in every receipt
+(`inherited_dots_at_2_to_3px = 2171`). Under the strict reading the honest comparison is
+`mass-*` against `prune3`, not against R0.
+
+## IR-V2-35 — a hide-and-recover proxy is silently artefactual unless every arm is rebuilt per fold
+
+**Found:** the first run of the MASS proxy fed the *shipped* `d28`/`p1`/`r0` files. Those were pruned
+against the **full** catalogue, so in a fold that hides components they have already removed mass
+near the *withheld* truth. The instrument reported **−0.0676** for the `d28 → p1` step that scores
+**+0.0108 live**, and handed the add arm — which *was* rebuilt against the visible catalogue — the
+mirror-image advantage: **+0.0632, 5/5 folds**, i.e. "adding mass is worth +0.19", a pure artefact.
+
+**Decision changed:** every arm is now rebuilt fold-clean from the same catalogue-free source, and
+the instrument must reproduce a known ladder step before any prediction is taken from it. It does:
+`d28 → R0` gives **+0.002143 (5/5)**, matching the PRUNE session's +0.00214 exactly. Any later
+session using this instrument must run the same anchor check first; a proxy that cannot reproduce a
+known step is not evidence, however tight its confidence interval looks.

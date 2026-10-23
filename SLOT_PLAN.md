@@ -1,3 +1,43 @@
+## MASS session (2026-10-23, `arena/eb7e09d3`) — axis chosen by the agent, result: the plateau is confirmed from above
+
+**What was asked:** the confound the ledger names but never resolved — "mass is confounded with
+field". R0's climb cut mass at every rung (121,131 → 37,654); nothing ever asked whether the *amount*
+of mass, rather than its *position*, is what moved the score. Three variants, one axis, all 10.0 %:
+
+| file | change | PROXY (5 folds) | prediction |
+|---|---|---|---|
+| `…-mass-m10e-…-1238b3ab` | −3,765 dots, smallest bridged structure first | −0.00278 (0/5) | **−0.008** |
+| `…-mass-m10u-…-288aaa03` | −3,765 dots, uniform, seed 20261023 | −0.00471 (0/5) | **−0.014** |
+| `…-mass-p10-…-3cdf5014` | **+3,765 dots**, largest structure first, all d ≥ 3.16 px | **+0.00158 (5/5)** | **+0.005** |
+
+**What it changes.** Adding mass is the only positive direction found in any session, but it is
++0.005 — inside the no-evidence band — and it is **capped**: the field offers only 5,383 free cells at
+d > 2 px, i.e. **+14.3 % is the absolute maximum** (IR-V2-09). So "spend more dots" cannot reach +0.01
+either. Mass is not the lever. That is a negative result with a hard ceiling attached, which is more
+useful than another null: it closes the axis.
+
+**Does the ranking earn its keep?** Yes, weakly and consistently: at identical mass, the ranked
+deletion loses 0.0028 proxy units and the uniform deletion loses 0.0047, 0/5 folds each. Structural
+extent carries signal — it is the first ranking in this project that does — but not enough to make
+deletion profitable at 10 %.
+
+**Consequence for the three slots (this supersedes nothing above; it re-prices one option):**
+`mass-p10` (+0.005) is the only file in the 18-file inventory with a positive predicted sign other
+than PRUNE/RELIEF rungs already ranked. If the operator wants one slot spent on "the other
+direction" instead of a fourth CONCENTRATION dose, `mass-p10` is the cheapest such test and its
+falsifier is sharp: ≥ 0.2878 means the field was mass-starved and the last +4.3 % should be taken
+before any new signal is tried.
+
+**Proposed next axes (not built):** (1) *field-extension* — the ceiling above is a property of the
+H19-5 field, not of the competition; a second field with new support is the only way left to add
+mass, and it is the only experiment that can exceed +0.0143 of budget. Mechanism: DTI credits per
+truth pixel; more support means more chances. Confounder: every "replace the field" lane so far
+scored 0.00–0.19. Falsifier: a new field that adds ≥ 5,000 dots at matched exclusion and does not
+lose more than 0.005. (2) *spacing at fixed count* — 2.2 vs 2.8 vs 3.5 px, which is the one knobs
+dimension this session had to move and therefore measured accidentally.
+
+---
+
 # SLOT_PLAN — 3 scored submissions per rolling week, ONE entity · deadline 2026-12-03 (provisional)
 
 Parent for every built file: **R0 = `h33-h33-2-b2`** (`e5eb6e7e`, 37,654 dots, live **0.2778 CLAIM** —

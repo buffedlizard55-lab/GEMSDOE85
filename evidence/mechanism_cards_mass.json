@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "axis": "MASS",
+  "chosen_by": "agent (only axis with no prior rows in the ledger)",
+  "written_for": "a structural geologist reviewing why these three rasters differ from the incumbent",
+  "parent": {
+    "id": "h33-h33-2-b2",
+    "n_dots": 37654,
+    "claim": "0.2778 CLAIM, no receipt",
+    "rebuild": "pixel-identical from d2.8 at Euclidean catalogue distance > 2 px"
+  },
+  "instrument": {
+    "evidence_class": "PROXY",
+    "folds": 5,
+    "recipe": "whole-component hide-and-recover, every arm rebuilt fold-clean from d2.8 against the VISIBLE catalogue",
+    "calibration": {
+      "mass_anchor": "d1.5 60,069 dots 0.2477 -> d2.8 44,090 dots 0.2600 (both CLAIM, both catalogue-free)",
+      "mass_anchor_proxy": 0.004006,
+      "mass_anchor_live": 0.012300000000000005,
+      "scale_proxy_per_live": 3.07,
+      "prune_anchor_check": "fold-clean d28->R0 proxy +0.002143 vs live +0.0178 \u2014 reproduces the PRUNE session's +0.00214 exactly"
+    },
+    "honest_limit": "proxy deltas are compressed 3-5x relative to live; the scaled numbers are MODEL on PROXY and every one is under 0.01, i.e. below the brief's evidence bar"
+  },
+  "cards": [
+    {
+      "id": "h33-2-b2-mass-m10e-20261023-1238b3ab",
+      "variant": "MASS -10 % by structural rank: 3,765 dots removed, 33,889 dots left (10.00 % of parent dots changed)",
+      "hypothesis": "The weakest mass in R0 is the speckle: dots sitting on tiny bridged structures (< 8 px) that a lineament cannot explain. Removing it saves alpha without losing credit.",
+      "mechanism": "The H19-5 field is 121,131 support pixels in 26,645 raw fragments; after bridging 1-px gaps it is 10,767 structures. 28.3 % of R0's dots sit on structures under 30 px, which is the scale of single-channel noise in a 400 m-spaced aeromagnetic survey rather than a fault trace. Each such dot pays alpha*(1-k) and credits truth only if truth happens to sit under it.",
+      "mimic": "A genuine short fault (a 200-400 m antithetic break, or a mapped trace truncated by the 100 m raster) is also a small structure. If the label set contains many short faults, this deletion removes real truth and the sign flips.",
+      "predicted_change": {
+        "sign": "negative",
+        "central": -0.008,
+        "range": [
+          -0.013,
+          -0.003
+        ],
+        "basis": "PROXY -0.00278 (0/5 folds) x mass-anchor scale"
+      },
+      "falsifier": "If live >= 0.2878 (+0.010) the speckle was pure waste and a second, larger extent cut is the best next slot. If live is within +-0.003 of R0, structural rank carries no information at 10 % and the ranking idea is dead."
+    },
+    {
+      "id": "h33-2-b2-mass-m10u-20261023-288aaa03",
+      "variant": "MASS -10 % uniformly at random: 3,765 dots removed, 33,889 dots left (10.00 % changed)",
+      "hypothesis": "Control. Same mass removed, no ranking. The difference from mass-m10e is the value of the ranking, not of the mass.",
+      "mechanism": "Uniform deletion removes crediting and non-crediting dots in proportion to their abundance. With roughly 8 % of dots delivering credit, a 10 % uniform cut costs about 300 crediting dots and saves about 3,465 wasteful ones; the metric's beta = 0.8 weights the loss more heavily than the saving, so the net is negative.",
+      "mimic": "None \u2014 this arm is deliberately blind to geology. Its only failure mode is that it is a single draw; the seed is fixed and logged so the file is reproducible.",
+      "predicted_change": {
+        "sign": "negative",
+        "central": -0.014,
+        "range": [
+          -0.02,
+          -0.008
+        ],
+        "basis": "PROXY -0.00471 (0/5 folds) x scale"
+      },
+      "falsifier": "If this arm beats mass-m10e, the structural ranking is actively harmful and must be abandoned. If both arms beat R0, mass is the dominant lever and the final file should be chosen by a mass sweep alone."
+    },
+    {
+      "id": "h33-2-b2-mass-p10-20261023-3cdf5014",
+      "variant": "MASS +10 %: 3,765 dots added at d > 300 m from the catalogue and >= 2.2 px from every existing dot, 41,419 dots (10.00 % changed)",
+      "hypothesis": "The lineage has cut mass at every rung since 121,131 pixels. If the field still holds real structure that the 37,654-dot budget never used, adding back a tenth should pay.",
+      "mechanism": "Only 31 % of the H19-5 support is dotted. The undotted support is not empty: it is the flanks and continuations of the same lineaments. DTI credits each truth pixel once, so a new dot pays only where the nearest existing dot is more than 3 px away in kernel terms - which is why the added dots had to go at 2.2 px spacing inside structures the field already draws, not at 2.8 px (only 794 cells exist at that separation).",
+      "mimic": "Denser sampling of a non-fault linear feature - a drainage, a basalt flow margin, a shoreline - buys nothing and pays alpha twice. This is the same mimic that governs the whole field, and this arm makes it more expensive.",
+      "predicted_change": {
+        "sign": "positive",
+        "central": 0.005,
+        "range": [
+          -0.004,
+          0.013
+        ],
+        "basis": "PROXY +0.00158 (5/5 folds) x scale"
+      },
+      "falsifier": "If live >= 0.2878 the field was mass-starved and the remaining headroom (+14.3 % is the hard ceiling: only 5,383 free cells exist at d > 2 px) should be spent before any new signal. If live <= 0.2728 the mass plateau is confirmed from above and every future variant must change WHERE mass is, not how much."
+    }
+  ],
+  "mass_geometry": {
+    "stock_r0_dots": 37654,
+    "r0_dots_inside_300m": 2171,
+    "free_cells_d_gt_3px_sep2p2": 4076,
+    "free_cells_d_gt_2px_sep2p2": 5383,
+    "max_possible_add_pct": 14.3,
+    "free_cells_at_parent_spacing_2p8": 794
+  }
+}
