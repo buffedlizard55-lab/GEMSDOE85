@@ -12,12 +12,43 @@ import rasterio
 from scipy.ndimage import distance_transform_edt
 
 from gems57.uniqueness import (
-    DENSE_HALO_FRACTION,
-    binding_duplicate_decision,
+    OVERLAP_LIMIT,
+    RHO_LIMIT,
     compare_array_to_registry,
     compare_to_registry,
     two_phase_summary,
 )
+try:
+    from gems57.uniqueness import DENSE_HALO_FRACTION, binding_duplicate_decision
+except ImportError:
+    DENSE_HALO_FRACTION = 0.70
+
+    def binding_duplicate_decision(rows, *, rho_limit: float = RHO_LIMIT, overlap_limit: float = OVERLAP_LIMIT) -> dict:
+        checked = [r for r in rows if "error" not in r]
+        disc = [r for r in checked if float(r.get("halo_coverage", 0.0)) < DENSE_HALO_FRACTION]
+        space = [r for r in checked if r not in disc]
+        fwd = [r for r in disc if r.get("forward_overlap") is not None]
+        rho_key = "spearman_full_footprint" if any("spearman_full_footprint" in r for r in disc) else "spearman"
+        rho = [r for r in disc if r.get(rho_key) is not None]
+        worst_fwd = max(fwd, key=lambda r: r["forward_overlap"]) if fwd else None
+        worst_rho = max(rho, key=lambda r: abs(r[rho_key])) if rho else None
+        return dict(
+            evidence_class="REGISTRY-MEASUREMENT",
+            binding_rule="like-for-like",
+            discriminating_priors=len(disc),
+            space_filling_priors=len(space),
+            space_filling_files=[r.get("file") or r.get("submission") for r in space],
+            worst_forward_overlap=float(worst_fwd["forward_overlap"]) if worst_fwd else None,
+            worst_forward_overlap_file=(worst_fwd.get("file") or worst_fwd.get("submission")) if worst_fwd else None,
+            worst_abs_spearman=abs(float(worst_rho[rho_key])) if worst_rho else None,
+            worst_abs_spearman_file=(worst_rho.get("file") or worst_rho.get("submission")) if worst_rho else None,
+            overlap_limit=overlap_limit,
+            rho_limit=rho_limit,
+            duplicate=bool(
+                (worst_fwd and worst_fwd["forward_overlap"] > overlap_limit)
+                or (worst_rho and abs(float(worst_rho[rho_key])) > rho_limit)
+            ),
+        )
 from gems57.validate import validate
 
 from .paths import EVIDENCE_DIR, ROOT, resolve_raw_dir

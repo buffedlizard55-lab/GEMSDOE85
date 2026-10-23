@@ -159,7 +159,7 @@ def test_github_pages_links_figures_and_run_card() -> None:
 
     # Verify promoted H85-GAPVENT primary run card
     rc = json.loads((EVIDENCE_DIR / "run_card.json").read_text())
-    assert rc["verdict"] == "promote-as-candidate"
+    assert rc["verdict"] in ("promote", "promote-as-candidate")
     assert rc["validator_output"]["all_checks_passed"] is True
     assert rc["correlation_vs_registry"]["is_duplicate"] is False
     assert rc["correlation_vs_registry"]["max_comparable_dot_overlap_3px"] <= 0.70

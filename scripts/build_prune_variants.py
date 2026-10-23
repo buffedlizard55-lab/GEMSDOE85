@@ -16,9 +16,14 @@ Variants (all unit-mass dots on the sample grid; human decision
 2026-10-23: content-exact rebuild clears the start gate; untouched dots
 keep the parent >2 px exclusion):
 
-  pruneD3pure    R0 dots with d_cat > 3          (pure removal, no refill)
-  pruneD3ge      R0 dots with d_cat >= 3         (keeps the exactly-300 m ring)
-  pruneD3refill  pruneD3pure + refill to 37,654 dots from the H19-5 support
+  prune3         R0 dots with d_cat > 3          (pure removal, no refill)
+  r2p85          R0 dots with d_cat >= 3         (keeps the exactly-300 m ring)
+  prune3fill20   prune3 + refill to 37,654 dots from the H19-5 support
+
+  Post-merge note: parallel sessions on main built the same two pure arms
+  (scripts/gemsdoe85_prune_session.py, gemsdoe85_rung_session.py); under the
+  merged lock (rasterio 1.4.4) this builder reproduces their tracked files
+  byte-for-byte. The refill arm is new in this session.
                  (pool: support & footprint & d_cat > 3 & >2.0 px from every
                  dot; order: tier [in d1.5 thinning, else in H19-4 support,
                  else rest], then distance-to-nearest-kept-dot desc, then
@@ -30,12 +35,13 @@ keep the parent >2 px exclusion):
                  ranking (no continuous ranking field is pinned anywhere;
                  H19-5/H19-4 on disk are binary).
 
-Outputs (releases/, git-ignored: competition rasters stay out of this
-public repo; regenerate locally with this script and verify sha256):
+Outputs (releases/, tracked by this repo since the rung sessions;
+publication-permission flag IR-V2-04/10 stands):
   <id>.tif        NaN outside footprint (brief spec)
   <id>-zeros.tif  zeros outside footprint (fallback; upload only one)
-  id = h33-h33-2-b2-prune<value>-<yyyymmdd>-<mask content digest8>
-plus one evidence JSON (--evidence). Refuses to overwrite outputs.
+  id = h33-2-b2-<value>-<yyyymmdd>-<NaN file sha8>  (repo convention)
+plus one evidence JSON (--evidence). Idempotent: an existing output is
+kept iff its bytes are identical; different bytes fail closed.
 
 Inputs must already exist locally and match their pins (fail closed):
   data/sample_submission.tif, data/existing_faults.tif  (data_manifest.json)
@@ -134,34 +140,55 @@ def greedy_refill(pool: np.ndarray, kept: np.ndarray, order: np.ndarray,
 
 
 def write_pair(mask: np.ndarray, footprint: np.ndarray, sample_path: Path,
-               out_dir: Path, vid: str) -> dict:
+               out_dir: Path, stem_prefix: str) -> tuple[str, dict]:
+    """Write the NaN/zeros pair under the repo id convention.
+
+    id = <stem_prefix>-<NaN file sha8>. Files are staged under a pending
+    name, hashed, then renamed. Idempotent: an existing file with identical
+    bytes is kept; different bytes under the final name fail closed.
+    Returns (variant_id, {encoding: {path, sha256, bytes}}).
+    """
     with rasterio.open(sample_path) as tpl:
         profile = tpl.profile.copy()
     profile.update(driver="GTiff", dtype="float32", count=1, compress="deflate",
                    predictor=3, zlevel=9, tiled=True, blockxsize=256,
                    blockysize=256, nodata=None)
     values = mask.astype(np.float32)
-    written = {}
+    staged: dict[str, Path] = {}
     for suffix, expect, nodata, outside in (
             ("", "nan", float("nan"), np.nan), ("-zeros", "zeros", None, 0.0)):
-        path = out_dir / f"{vid}{suffix}.tif"
-        if path.exists():
-            raise FileExistsError(f"refusing to overwrite {path}")
+        tmp = out_dir / f".{stem_prefix}-pending{suffix}.tif"
+        if tmp.exists():
+            tmp.unlink()
         arr = np.where(footprint, values, outside).astype(np.float32)
-        p = dict(profile, nodata=nodata)
-        with rasterio.open(path, "w", **p) as ds:
+        with rasterio.open(tmp, "w", **dict(profile, nodata=nodata)) as ds:
             ds.write(arr, 1)
-        with rasterio.open(path) as ds:  # re-read from disk; dots must round-trip
+        with rasterio.open(tmp) as ds:  # re-read from disk; dots must round-trip
             back = ds.read(1)
         if not bool(((np.isfinite(back) & (back > 0)) == (mask & footprint)).all()):
-            raise ValueError(f"disk round-trip changed the dot set for {path.name}")
+            tmp.unlink(missing_ok=True)
+            raise ValueError(f"disk round-trip changed the dot set for {tmp.name}")
+        staged[expect] = tmp
+    nan_sha = sha256_file(staged["nan"])
+    vid = f"{stem_prefix}-{nan_sha[:8]}"
+    written = {}
+    for expect, tmp in staged.items():
+        suffix = "" if expect == "nan" else "-zeros"
+        path = out_dir / f"{vid}{suffix}.tif"
+        digest = sha256_file(tmp)
+        if path.exists():
+            if sha256_file(path) != digest:
+                tmp.unlink(missing_ok=True)
+                raise FileExistsError(f"{path} exists with different bytes; refusing")
+            tmp.unlink()
+        else:
+            tmp.replace(path)
         try:
             rel = str(path.relative_to(ROOT))
         except ValueError:
             rel = str(path)
-        written[expect] = dict(path=rel,
-                               sha256=sha256_file(path), bytes=path.stat().st_size)
-    return written
+        written[expect] = dict(path=rel, sha256=digest, bytes=path.stat().st_size)
+    return vid, written
 
 
 def diff_stats(mask: np.ndarray, parent: np.ndarray, dist: np.ndarray) -> dict:
@@ -243,9 +270,9 @@ def main() -> int:
                        -d_kept.ravel()[cand], tier.ravel()[cand]))
     refill = greedy_refill(pool, pure, cand[keys], need, REFILL_SPACING_PX)
     masks = {
-        "pruneD3pure": pure,
-        "pruneD3ge": ge,
-        "pruneD3refill": pure | refill,
+        "prune3": pure,
+        "r2p85": ge,
+        "prune3fill20": pure | refill,
     }
     refill_diag = {
         "needed": int(need),
@@ -261,7 +288,7 @@ def main() -> int:
 
     # spacing verification for the refill variant (mutual NN over all dots)
     from scipy.spatial import cKDTree
-    yx = np.column_stack(np.nonzero(masks["pruneD3refill"]))
+    yx = np.column_stack(np.nonzero(masks["prune3fill20"]))
     nn, _ = cKDTree(yx).query(yx, k=2)
     refill_diag["refill_variant_min_mutual_nn_px"] = float(nn[:, 1].min())
     yx0 = np.column_stack(np.nonzero(parent))
@@ -278,8 +305,8 @@ def main() -> int:
             raise SystemExit(f"{value}: catalogue mass or shape failure")
         if not (1.0 <= stats["pct_changed_turnover"] <= 50.0):
             raise SystemExit(f"{value}: turnover outside the brief 1-50% band: {stats}")
-        vid = f"{PARENT}-{value}-{DATE_TAG}-{content_digest8(mask)}"
-        files = write_pair(mask, footprint, paths["sample"], args.out_dir, vid)
+        vid, files = write_pair(mask, footprint, paths["sample"], args.out_dir,
+                                f"h33-2-b2-{value}-{DATE_TAG}")
         receipts = {enc: validate(ROOT / f["path"], paths["sample"],
                                    paths["catalogue"], enc)
                     for enc, f in files.items()}

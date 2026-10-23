@@ -1,10 +1,10 @@
 {
   "purpose": "v2 PRUNE-axis variant builds from parent R0; BUILT, not submitted",
-  "git_sha_at_build": "793cf6064daa430c27c5cea02ccaac4f65fcd14b",
+  "git_sha_at_build": "72caf958a1d6887f29a17f7542e97bc4f6735086",
   "seed": "none (fully deterministic; no RNG)",
   "environment": {
-    "rasterio": "1.4.3",
-    "gdal": "3.9.3",
+    "rasterio": "1.4.4",
+    "gdal": "3.10.3",
     "numpy": "2.2.6"
   },
   "inputs_verified": {
@@ -73,8 +73,8 @@
     "parent_min_mutual_nn_px": 2.8284271247461903
   },
   "variants": {
-    "pruneD3pure": {
-      "id": "h33-h33-2-b2-pruneD3pure-20261023-f8b4c584",
+    "prune3": {
+      "id": "h33-2-b2-prune3-20261023-fb308615",
       "axis": "PRUNE",
       "parent": "h33-h33-2-b2",
       "content_digest8": "f8b4c584",
@@ -90,14 +90,14 @@
       },
       "files": {
         "nan": {
-          "path": "releases/h33-h33-2-b2-pruneD3pure-20261023-f8b4c584.tif",
-          "sha256": "24952cdabe1c7e639775cd83d01dcb28458e147177e892faabc52d983d99ccfe",
-          "bytes": 323188
+          "path": "releases/h33-2-b2-prune3-20261023-fb308615.tif",
+          "sha256": "fb308615161ad8f62b063d90972a4c36e7c66e7c58beb3316c81497cfe65261e",
+          "bytes": 346839
         },
         "zeros": {
-          "path": "releases/h33-h33-2-b2-pruneD3pure-20261023-f8b4c584-zeros.tif",
-          "sha256": "02c65c537cdc9c73dbd39079bdb784b1cf694569900c1f750401bfc62c063e5a",
-          "bytes": 196545
+          "path": "releases/h33-2-b2-prune3-20261023-fb308615-zeros.tif",
+          "sha256": "a438e92b79dfb7f9f1763c40ffb2d42dd60e45697dfc06fc49efae067d3c1a22",
+          "bytes": 210325
         }
       },
       "format_receipts": {
@@ -137,8 +137,8 @@
         }
       }
     },
-    "pruneD3ge": {
-      "id": "h33-h33-2-b2-pruneD3ge-20261023-a225c607",
+    "r2p85": {
+      "id": "h33-2-b2-r2p85-20261023-acce3907",
       "axis": "PRUNE",
       "parent": "h33-h33-2-b2",
       "content_digest8": "a225c607",
@@ -154,14 +154,14 @@
       },
       "files": {
         "nan": {
-          "path": "releases/h33-h33-2-b2-pruneD3ge-20261023-a225c607.tif",
-          "sha256": "f045acca8b5022a1bd303b40575574fb2b1e555b023c165d945d11a3d6fe9a62",
-          "bytes": 325401
+          "path": "releases/h33-2-b2-r2p85-20261023-acce3907.tif",
+          "sha256": "acce390710c0d1fcf066947712c52cec45f8c0dcc2fb53bb1b254fbff959fcd7",
+          "bytes": 349052
         },
         "zeros": {
-          "path": "releases/h33-h33-2-b2-pruneD3ge-20261023-a225c607-zeros.tif",
-          "sha256": "014376bd1f96a0c781cad6033af0bc8505839efa9c6ebcf4e652c20045772f52",
-          "bytes": 198732
+          "path": "releases/h33-2-b2-r2p85-20261023-acce3907-zeros.tif",
+          "sha256": "6ff3861845856a00af22c489472ae27d8a37366fbcf503bf5a0091c673b140fc",
+          "bytes": 212595
         }
       },
       "format_receipts": {
@@ -201,8 +201,8 @@
         }
       }
     },
-    "pruneD3refill": {
-      "id": "h33-h33-2-b2-pruneD3refill-20261023-8148117b",
+    "prune3fill20": {
+      "id": "h33-2-b2-prune3fill20-20261023-12a3b132",
       "axis": "PRUNE",
       "parent": "h33-h33-2-b2",
       "content_digest8": "8148117b",
@@ -218,14 +218,14 @@
       },
       "files": {
         "nan": {
-          "path": "releases/h33-h33-2-b2-pruneD3refill-20261023-8148117b.tif",
-          "sha256": "554441e68f0f0e53b1e3edd6f7496cb4b1aab47bdf9e8ab7c77308bec594f20b",
-          "bytes": 331020
+          "path": "releases/h33-2-b2-prune3fill20-20261023-12a3b132.tif",
+          "sha256": "12a3b132083c6fe3f625b8b67de4ef4538bb481aa654faefaa3f039bcae1975f",
+          "bytes": 354508
         },
         "zeros": {
-          "path": "releases/h33-h33-2-b2-pruneD3refill-20261023-8148117b-zeros.tif",
-          "sha256": "ee106fccd7e39601aae9f7e1a92a46e57289a08574fb574e332350d90c1885be",
-          "bytes": 204327
+          "path": "releases/h33-2-b2-prune3fill20-20261023-12a3b132-zeros.tif",
+          "sha256": "21057e760b573d11d431581d0472d1aebc5b014e1f0924ae624746917e9b1db4",
+          "bytes": 218074
         }
       },
       "format_receipts": {

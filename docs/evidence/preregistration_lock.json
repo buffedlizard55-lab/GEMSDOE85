@@ -1,0 +1,22 @@
+{
+  "locked_at_utc": "2026-10-23T00:35:05Z",
+  "labels_opened_before_lock": false,
+  "declared_lane": "Lane H85-Conduit: Out-of-fold multi-physics hidden geothermal fault-conduit discovery (1px crest learning) + Bayes prior-shift dual-expectation submodular Dinkelbach 300m DTI dot selection",
+  "max_experiments": 3,
+  "planned_experiments": [
+    "E1_structural_dinkelbach",
+    "E2_plus_blind_hydrothermal_seismic",
+    "E3_full_multiphysics_diverse_ensemble"
+  ],
+  "sha256": {
+    "docs/research/literature_synthesis.md": "339476ab8e602ccc31c62652b4339ede0a62eaabcc9cc7cc1a1ee7c3bd5ccd61",
+    "docs/research/hypotheses.md": "54c31cdf3be13d164631a5b62651c6b9c60817c43916048cef797c3874d879ba",
+    "data/external/usgs_comcat_geodawn.csv": "c580226b3b0516653873b87077edb8e164c3545e9bc1e7c764789c52bdd30624",
+    "data/external/usgs_comcat_provenance.json": "4cfe61c531e9b600c02020ef92c5fa593a8ca7fb577802a4371892a88203d17d",
+    "vendor/gems57/evaluate_holdout.py": "ad86640b46f3c5fc6b1aceec4c4bfc82d03e35008b37ab2a8ad6076e6810ff3a",
+    "vendor/gems57/holdout.py": "7a0a84176986190b527aa9c6a84216c2dab4b599f25b1143db5f420e85020ab1",
+    "vendor/gems57/metric.py": "4afe10cbaa229948520c75194b1ebc32676e72544f05582f0725092b097b4d7f",
+    "vendor/gems57/uniqueness.py": "1c5094b814277ae801ccea6a47cf744429cffcdc10f9cc79f229d5fc44a8df95",
+    "vendor/gems57/submission_writer.py": "41220185ac2823fe5358603d38f2a915ea3e5f1ab1f94f0b237295b38b4a2565"
+  }
+}

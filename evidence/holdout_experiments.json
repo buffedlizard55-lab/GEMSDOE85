@@ -1,0 +1,652 @@
+{
+  "evaluator": "gems85-pooled-hide-v1",
+  "global_budget": 37654,
+  "support_global": 150000,
+  "n_withheld_positives": 24885,
+  "experiments": {
+    "E1_supervised_hgb": {
+      "evaluator": "gems85-pooled-hide-v1",
+      "pooled_dti": 0.09836644419609976,
+      "ci95": [
+        0.07908310354145492,
+        0.11829354283892304
+      ],
+      "tp": 3412.983460373985,
+      "fp": 72310.13307731367,
+      "n_withheld_positives": 24440,
+      "emitted_in_cells": 75308,
+      "per_cell": {
+        "draw20_fold0": {
+          "tp": 359.56128952838174,
+          "fp": 8119.234584619568,
+          "n_truth": 2041,
+          "dti": 0.10802310268279663,
+          "emitted": 8414
+        },
+        "draw20_fold1": {
+          "tp": 498.7819176906687,
+          "fp": 9898.715363604531,
+          "n_truth": 2520,
+          "dti": 0.12178781196720555,
+          "emitted": 10404
+        },
+        "draw20_fold2": {
+          "tp": 306.8745839632977,
+          "fp": 10153.396565753857,
+          "n_truth": 4027,
+          "dti": 0.057752079959211916,
+          "emitted": 10410
+        },
+        "draw20_fold3": {
+          "tp": 619.2717981481119,
+          "fp": 7925.802623155332,
+          "n_truth": 3640,
+          "dti": 0.13401207606090376,
+          "emitted": 8426
+        },
+        "draw21_fold0": {
+          "tp": 341.4625613041311,
+          "fp": 8127.802840432125,
+          "n_truth": 2199,
+          "dti": 0.09888714518972652,
+          "emitted": 8414
+        },
+        "draw21_fold1": {
+          "tp": 487.80195318966696,
+          "fp": 9936.45509559841,
+          "n_truth": 2511,
+          "dti": 0.1191605987815532,
+          "emitted": 10404
+        },
+        "draw21_fold2": {
+          "tp": 323.0982345563479,
+          "fp": 10151.925254527578,
+          "n_truth": 3972,
+          "dti": 0.06127867592465871,
+          "emitted": 10410
+        },
+        "draw21_fold3": {
+          "tp": 476.1311219933788,
+          "fp": 7996.800749622266,
+          "n_truth": 3530,
+          "dti": 0.10537169870183166,
+          "emitted": 8426
+        }
+      }
+    },
+    "E2_orientation_consensus": {
+      "evaluator": "gems85-pooled-hide-v1",
+      "pooled_dti": 0.03661919908780273,
+      "ci95": [
+        0.028791344845300045,
+        0.04418560106113763
+      ],
+      "tp": 1270.9690466123823,
+      "fp": 74507.64980260786,
+      "n_withheld_positives": 24440,
+      "emitted_in_cells": 75308,
+      "per_cell": {
+        "draw20_fold0": {
+          "tp": 114.44636956519545,
+          "fp": 8343.774572567812,
+          "n_truth": 2041,
+          "dti": 0.034425715421428325,
+          "emitted": 8414
+        },
+        "draw20_fold1": {
+          "tp": 87.31665132591408,
+          "fp": 10349.840530538475,
+          "n_truth": 2520,
+          "dti": 0.021278935125353372,
+          "emitted": 10404
+        },
+        "draw20_fold2": {
+          "tp": 221.21699488017762,
+          "fp": 10274.42787313903,
+          "n_truth": 4027,
+          "dti": 0.04157644487769176,
+          "emitted": 10410
+        },
+        "draw20_fold3": {
+          "tp": 263.16304022989533,
+          "fp": 8259.98600256369,
+          "n_truth": 3640,
+          "dti": 0.0570032796959419,
+          "emitted": 8426
+        },
+        "draw21_fold0": {
+          "tp": 127.19820157338583,
+          "fp": 8343.783336180639,
+          "n_truth": 2199,
+          "dti": 0.03683278437961742,
+          "emitted": 8414
+        },
+        "draw21_fold1": {
+          "tp": 79.38594229864187,
+          "fp": 10362.076595116556,
+          "n_truth": 2511,
+          "dti": 0.019376165452366336,
+          "emitted": 10404
+        },
+        "draw21_fold2": {
+          "tp": 185.10125018827287,
+          "fp": 10286.654763439634,
+          "n_truth": 3972,
+          "dti": 0.035110577293009856,
+          "emitted": 10410
+        },
+        "draw21_fold3": {
+          "tp": 193.1405965508991,
+          "fp": 8287.106129062007,
+          "n_truth": 3530,
+          "dti": 0.04272975399246691,
+          "emitted": 8426
+        }
+      }
+    },
+    "E3_strain_gated": {
+      "evaluator": "gems85-pooled-hide-v1",
+      "pooled_dti": 0.031702508962376065,
+      "ci95": [
+        0.022257003088955247,
+        0.03989449774243403
+      ],
+      "tp": 1100.0103598025848,
+      "fp": 74629.46978009048,
+      "n_withheld_positives": 24440,
+      "emitted_in_cells": 75308,
+      "per_cell": {
+        "draw20_fold0": {
+          "tp": 81.80161533001291,
+          "fp": 8365.021912431483,
+          "n_truth": 2041,
+          "dti": 0.024622986088949382,
+          "emitted": 8414
+        },
+        "draw20_fold1": {
+          "tp": 53.63620449972893,
+          "fp": 10372.857961070198,
+          "n_truth": 2520,
+          "dti": 0.013077858181576264,
+          "emitted": 10404
+        },
+        "draw20_fold2": {
+          "tp": 256.45953547394873,
+          "fp": 10261.396565753857,
+          "n_truth": 4027,
+          "dti": 0.04815986657835998,
+          "emitted": 10410
+        },
+        "draw20_fold3": {
+          "tp": 207.68839940096868,
+          "fp": 8289.475983114482,
+          "n_truth": 3640,
+          "dti": 0.045037714949558466,
+          "emitted": 8426
+        },
+        "draw21_fold0": {
+          "tp": 109.44668353591604,
+          "fp": 8351.834368493506,
+          "n_truth": 2199,
+          "dti": 0.03171029179102501,
+          "emitted": 8414
+        },
+        "draw21_fold1": {
+          "tp": 50.376543945536376,
+          "fp": 10376.44593841103,
+          "n_truth": 2511,
+          "dti": 0.012304474817500615,
+          "emitted": 10404
+        },
+        "draw21_fold2": {
+          "tp": 204.95723763205598,
+          "fp": 10276.553526942038,
+          "n_truth": 3972,
+          "dti": 0.03886254080743205,
+          "emitted": 10410
+        },
+        "draw21_fold3": {
+          "tp": 135.64413998441734,
+          "fp": 8335.883523873887,
+          "n_truth": 3530,
+          "dti": 0.030021019827140644,
+          "emitted": 8426
+        }
+      }
+    }
+  },
+  "controls": {
+    "CTRL_d28_0.2600": {
+      "evaluator": "gems85-pooled-hide-v1",
+      "pooled_dti": 0.10230495593167505,
+      "ci95": [
+        0.08452043678926073,
+        0.12224614200086349
+      ],
+      "tp": 3849.5550405783724,
+      "fp": 86531.62568332125,
+      "n_withheld_positives": 24440,
+      "emitted_in_cells": 88180,
+      "per_cell": {
+        "draw20_fold0": {
+          "tp": 349.1612804808528,
+          "fp": 10000.1292836857,
+          "n_truth": 2041,
+          "dti": 0.09430016756628687,
+          "emitted": 10159
+        },
+        "draw20_fold1": {
+          "tp": 511.6086954509774,
+          "fp": 11695.967209256898,
+          "n_truth": 2520,
+          "dti": 0.11477441459726193,
+          "emitted": 11924
+        },
+        "draw20_fold2": {
+          "tp": 444.37847214830765,
+          "fp": 12244.714342088535,
+          "n_truth": 4027,
+          "dti": 0.0771568288186045,
+          "emitted": 12438
+        },
+        "draw20_fold3": {
+          "tp": 774.8200663325356,
+          "fp": 9263.354904505744,
+          "n_truth": 3640,
+          "dti": 0.15749543761907195,
+          "emitted": 9569
+        },
+        "draw21_fold0": {
+          "tp": 384.0289572742961,
+          "fp": 9986.960950518,
+          "n_truth": 2199,
+          "dti": 0.10017977760769048,
+          "emitted": 10159
+        },
+        "draw21_fold1": {
+          "tp": 501.3973689478668,
+          "fp": 11702.884134725233,
+          "n_truth": 2511,
+          "dti": 0.11268226915977489,
+          "emitted": 11924
+        },
+        "draw21_fold2": {
+          "tp": 390.0670512464585,
+          "fp": 12265.720183363946,
+          "n_truth": 3972,
+          "dti": 0.06832783751510864,
+          "emitted": 12438
+        },
+        "draw21_fold3": {
+          "tp": 494.0931486970783,
+          "fp": 9371.894675177198,
+          "n_truth": 3530,
+          "dti": 0.10299620601935065,
+          "emitted": 9569
+        }
+      }
+    },
+    "CTRL_h33_0.2778": {
+      "evaluator": "gems85-pooled-hide-v1",
+      "pooled_dti": 0.004603236384668694,
+      "ci95": [
+        0.003989170377916605,
+        0.0053551710186306705
+      ],
+      "tp": 159.36811714716845,
+      "fp": 75185.05649805602,
+      "n_withheld_positives": 24440,
+      "emitted_in_cells": 75308,
+      "per_cell": {
+        "draw20_fold0": {
+          "tp": 18.678787170490786,
+          "fp": 8876.71821313695,
+          "n_truth": 2041,
+          "dti": 0.005474632887127884,
+          "emitted": 8891
+        },
+        "draw20_fold1": {
+          "tp": 25.996684088030424,
+          "fp": 10125.224996278022,
+          "n_truth": 2520,
+          "dti": 0.006424892302292257,
+          "emitted": 10145
+        },
+        "draw20_fold2": {
+          "tp": 21.110845328655614,
+          "fp": 10922.081397785878,
+          "n_truth": 4027,
+          "dti": 0.0039020175412100458,
+          "emitted": 10938
+        },
+        "draw20_fold3": {
+          "tp": 21.064515591760255,
+          "fp": 7663.790012383025,
+          "n_truth": 3640,
+          "dti": 0.004734693941304458,
+          "emitted": 7680
+        },
+        "draw21_fold0": {
+          "tp": 18.990622136408792,
+          "fp": 8876.24023590654,
+          "n_truth": 2199,
+          "dti": 0.005367241626315417,
+          "emitted": 8891
+        },
+        "draw21_fold1": {
+          "tp": 19.65103346359571,
+          "fp": 10128.847203341442,
+          "n_truth": 2511,
+          "dti": 0.00486592427374281,
+          "emitted": 10145
+        },
+        "draw21_fold2": {
+          "tp": 19.525790325237256,
+          "fp": 10923.635142004705,
+          "n_truth": 3972,
+          "dti": 0.0036386406041994715,
+          "emitted": 10938
+        },
+        "draw21_fold3": {
+          "tp": 14.349839042989593,
+          "fp": 7668.519297219452,
+          "n_truth": 3530,
+          "dti": 0.003290814377068153,
+          "emitted": 7680
+        }
+      }
+    }
+  },
+  "canary": {
+    "band01": {
+      "auc": 0.47288579135237596,
+      "leakage_flag": false
+    },
+    "band02": {
+      "auc": 0.5156409288826868,
+      "leakage_flag": false
+    },
+    "band03": {
+      "auc": 0.5087791467621676,
+      "leakage_flag": false
+    },
+    "band04": {
+      "auc": 0.518433046166025,
+      "leakage_flag": false
+    },
+    "band05": {
+      "auc": 0.5299850892148513,
+      "leakage_flag": false
+    },
+    "band06": {
+      "auc": 0.438746064310325,
+      "leakage_flag": false
+    },
+    "band07": {
+      "auc": 0.5183080194010883,
+      "leakage_flag": false
+    },
+    "band08": {
+      "auc": 0.5259873827331942,
+      "leakage_flag": false
+    },
+    "band09": {
+      "auc": 0.4999811301175603,
+      "leakage_flag": false
+    },
+    "band10": {
+      "auc": 0.504872151480394,
+      "leakage_flag": false
+    },
+    "band11": {
+      "auc": 0.5110878198644038,
+      "leakage_flag": false
+    },
+    "band12": {
+      "auc": 0.4724738808457646,
+      "leakage_flag": false
+    },
+    "band13": {
+      "auc": 0.48846168050203903,
+      "leakage_flag": false
+    },
+    "band14": {
+      "auc": 0.48400790671816235,
+      "leakage_flag": false
+    },
+    "band15": {
+      "auc": 0.47456065643622763,
+      "leakage_flag": false
+    },
+    "band16": {
+      "auc": 0.5243094913789885,
+      "leakage_flag": false
+    },
+    "band17": {
+      "auc": 0.4831054963061979,
+      "leakage_flag": false
+    },
+    "band18": {
+      "auc": 0.4607558276403336,
+      "leakage_flag": false
+    },
+    "band19": {
+      "auc": 0.5619591135292382,
+      "leakage_flag": false
+    },
+    "curv_s1": {
+      "auc": 0.5752179262425217,
+      "leakage_flag": false
+    },
+    "curv_s2": {
+      "auc": 0.5999155393023771,
+      "leakage_flag": false
+    },
+    "ridge_s1": {
+      "auc": 0.491046713950586,
+      "leakage_flag": false
+    },
+    "ridge_s2": {
+      "auc": 0.4905618118094019,
+      "leakage_flag": false
+    },
+    "ridge_s3": {
+      "auc": 0.4871725060509356,
+      "leakage_flag": false
+    },
+    "relief5": {
+      "auc": 0.5733043971059519,
+      "leakage_flag": false
+    },
+    "tophat2": {
+      "auc": 0.47286831923900585,
+      "leakage_flag": false
+    },
+    "tmi_edge": {
+      "auc": 0.5095479364701786,
+      "leakage_flag": false
+    },
+    "rtp_edge": {
+      "auc": 0.5157378899160419,
+      "leakage_flag": false
+    },
+    "grav_edge": {
+      "auc": 0.5389591746030523,
+      "leakage_flag": false
+    },
+    "cond_edge": {
+      "auc": 0.4967855725406567,
+      "leakage_flag": false
+    },
+    "depth_grad": {
+      "auc": 0.5164798712158445,
+      "leakage_flag": false
+    },
+    "coherence_s2": {
+      "auc": 0.572116042600898,
+      "leakage_flag": false
+    },
+    "strike_cos": {
+      "auc": 0.5866625952128188,
+      "leakage_flag": false
+    },
+    "strike_sin": {
+      "auc": 0.5337417273472328,
+      "leakage_flag": false
+    },
+    "footprint": {
+      "auc": 0.4993457638207393,
+      "leakage_flag": false
+    },
+    "lidar_ex_max": {
+      "auc": 0.5283418946354452,
+      "leakage_flag": false
+    },
+    "lidar_ex_mean": {
+      "auc": 0.5161115657538927,
+      "leakage_flag": false
+    },
+    "lidar_step_max": {
+      "auc": 0.5272991789731873,
+      "leakage_flag": false
+    },
+    "lidar_lapneg_max": {
+      "auc": 0.5319699647649838,
+      "leakage_flag": false
+    },
+    "lidar_lappos_max": {
+      "auc": 0.5361540393412738,
+      "leakage_flag": false
+    },
+    "lidar_downface_max": {
+      "auc": 0.5445040442475102,
+      "leakage_flag": false
+    },
+    "lidar_upface_max": {
+      "auc": 0.5496605012878737,
+      "leakage_flag": false
+    },
+    "lidar_cross_max": {
+      "auc": 0.5407323984893286,
+      "leakage_flag": false
+    },
+    "lidar_relief": {
+      "auc": 0.5351209107697398,
+      "leakage_flag": false
+    },
+    "lidar_coh100": {
+      "auc": 0.47181836059156906,
+      "leakage_flag": false
+    },
+    "lidar_strike": {
+      "auc": 0.49908393291607317,
+      "leakage_flag": false
+    },
+    "lidar_valid": {
+      "auc": 0.4909508998904149,
+      "leakage_flag": false
+    },
+    "rad_K": {
+      "auc": 0.4153894735710092,
+      "leakage_flag": false
+    },
+    "rad_Th": {
+      "auc": 0.44570469042611915,
+      "leakage_flag": false
+    },
+    "rad_U": {
+      "auc": 0.48407570186198356,
+      "leakage_flag": false
+    },
+    "rad_TC": {
+      "auc": 0.43872656911014357,
+      "leakage_flag": false
+    },
+    "ext_ThK": {
+      "auc": 0.5025093231865732,
+      "leakage_flag": false
+    },
+    "ext_UK": {
+      "auc": 0.5622324308854691,
+      "leakage_flag": false
+    },
+    "ext_UTh": {
+      "auc": 0.5513845190213765,
+      "leakage_flag": false
+    },
+    "ext_TMIup150": {
+      "auc": 0.48044229813994255,
+      "leakage_flag": false
+    },
+    "E1_supervised_hgb": {
+      "auc": 0.6726445638313115,
+      "leakage_flag": false
+    },
+    "E2_orientation_consensus": {
+      "auc": 0.5304256807389509,
+      "leakage_flag": false
+    },
+    "E3_strain_gated": {
+      "auc": 0.5257832917293055,
+      "leakage_flag": false
+    }
+  },
+  "feature_names": [
+    "band01",
+    "band02",
+    "band03",
+    "band04",
+    "band05",
+    "band06",
+    "band07",
+    "band08",
+    "band09",
+    "band10",
+    "band11",
+    "band12",
+    "band13",
+    "band14",
+    "band15",
+    "band16",
+    "band17",
+    "band18",
+    "band19",
+    "curv_s1",
+    "curv_s2",
+    "ridge_s1",
+    "ridge_s2",
+    "ridge_s3",
+    "relief5",
+    "tophat2",
+    "tmi_edge",
+    "rtp_edge",
+    "grav_edge",
+    "cond_edge",
+    "depth_grad",
+    "coherence_s2",
+    "strike_cos",
+    "strike_sin",
+    "footprint",
+    "lidar_ex_max",
+    "lidar_ex_mean",
+    "lidar_step_max",
+    "lidar_lapneg_max",
+    "lidar_lappos_max",
+    "lidar_downface_max",
+    "lidar_upface_max",
+    "lidar_cross_max",
+    "lidar_relief",
+    "lidar_coh100",
+    "lidar_strike",
+    "lidar_valid",
+    "rad_K",
+    "rad_Th",
+    "rad_U",
+    "rad_TC",
+    "ext_ThK",
+    "ext_UK",
+    "ext_UTh",
+    "ext_TMIup150"
+  ],
+  "seconds": 486.9574944972992
+}

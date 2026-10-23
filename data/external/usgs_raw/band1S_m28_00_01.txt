@@ -1,0 +1,85 @@
+#EventID|Time|Latitude|Longitude|Depth/km|Author|Catalog|Contributor|ContributorID|MagType|Magnitude|MagAuthor|EventLocationName
+ci3328363|1980-04-18T10:34:34.650|37.7458333|-117.4183333|6|ci|ci|ci|ci3328363|mh|3.05|ci|40km SSW of Tonopah, NV
+ci9726918|1980-05-25T17:17:29.330|37.686|-117.7673333|6|ci|ci|ci|ci9726918|ml|3.73|ci|64km SW of Tonopah, NV
+ci9727086|1980-05-25T18:54:55.160|37.7085|-117.76|6|ci|ci|ci|ci9727086|ml|2.84|ci|61km SW of Tonopah, NV
+ci12330923|1980-05-25T21:54:47.460|37.6366667|-117.5998333|6|ci|ci|ci|ci12330923|ml|3.27|ci|58km SW of Tonopah, NV
+ci3308083|1980-05-25T23:40:35.650|37.6708333|-118.1405|6|ci|ci|ci|ci3308083|ml|2.85|ci|40km NE of Dixon Lane-Meadow Creek, CA
+ci9728226|1980-05-27T02:22:15.820|37.7018333|-117.702|6|ci|ci|ci|ci9728226|ml|3.55|ci|58km SW of Tonopah, NV
+ci9728634|1980-05-27T18:09:30.190|37.599|-118.0446667|6|ci|ci|ci|ci9728634|ml|2.96|ci|40km NE of Dixon Lane-Meadow Creek, CA
+ci9729562|1980-05-31T18:30:26.410|37.5416667|-117.7308333|6|ci|ci|ci|ci9729562|ml|3.01|ci|62km ENE of Bishop, CA
+ci12332247|1980-05-31T19:50:25.590|37.6863333|-117.4068333|6|ci|ci|ci|ci12332247|ml|3.06|ci|45km SSW of Tonopah, NV
+ci12332751|1980-06-04T16:59:49.570|37.6246667|-117.5318333|6|ci|ci|ci|ci12332751|ml|3.21|ci|56km SSW of Tonopah, NV
+nc1054249|1980-07-05T14:19:25.640|37.4345|-118.1966667|2.561|nc|nc|nc|nc1054249|ml|3.6|nc|19 km ENE of Bishop, California
+ci519870|1981-07-24T12:02:27.620|37.356|-117.681|4.211|ci|ci|ci|ci519870|ml|2.96|ci|58km ENE of Big Pine, CA
+nc1071501|1982-01-24T15:44:07.480|37.3971667|-117.9226667|7.678|nc|nc|nc|nc1071501|ml|4.3|nc|32 km SSE of Dyer, Nevada
+nc1071502|1982-01-24T16:48:19.170|37.4156667|-117.9523333|7.593|nc|nc|nc|nc1071502|md|2.9|nc|29 km SSE of Dyer, Nevada
+nc1071524|1982-01-25T02:38:46.650|37.4386667|-117.9528333|16.201|nc|nc|nc|nc1071524|md|3.35|nc|27 km SSE of Dyer, Nevada
+nc1082903|1982-12-10T15:20:25.370|37.4605|-117.9583333|6.382|nc|nc|nc|nc1082903|md|4.12|nc|24 km SSE of Dyer, Nevada
+usp0001s0b|1983-01-05T09:17:16.000|37.583|-117.8|6|pas|us|us|usp0001s0b|ml|3.2|pas|24 km SW of Silver Peak, Nevada
+ci16745|1983-10-01T10:33:04.390|37.3545|-117.2831667|6.803|ci|ci|ci|ci16745|mh|2.81|ci|68km NW of Beatty, NV
+ci16750|1983-10-01T10:47:45.880|37.3775|-117.2723333|4.803|ci|ci|ci|ci16750|mh|2.98|ci|69km NW of Beatty, NV
+ci16880|1983-10-01T11:21:20.120|37.3775|-117.2966667|4.803|ci|ci|ci|ci16880|mh|2.88|ci|71km NW of Beatty, NV
+ci28175|1983-12-31T01:59:25.480|37.674|-118.194|4.201|ci|ci|ci|ci28175|ml|2.88|ci|38km NNE of Dixon Lane-Meadow Creek, CA
+nc1112439|1984-03-09T17:18:56.670|37.6188333|-118.1841667|5.833|nc|nc|nc|nc1112439|md|2.97|nc|11 km WSW of Dyer, Nevada
+nc1118780|1984-08-02T15:00:27.820|37.4408333|-118.1885|41.822|nc|nc|nc|nc1118780|md|4.49|nc|20 km ENE of Bishop, California
+usp0002j02|1985-08-22T02:27:23.930|37.617|-117.279|5|us|us|us|usp0002j02|ml|3|pas|10 km SSW of Goldfield, Nevada
+usp0002j03|1985-08-22T03:15:36.560|37.587|-117.395|5|us|us|us|usp0002j03|ml|4|brk|19 km SW of Goldfield, Nevada
+ci110266|1985-08-22T03:53:01.820|37.65|-117.339|3.599|ci|ci|ci|ci110266|mc|2.8|ci|48km SSW of Tonopah, NV
+ci110284|1985-08-22T04:58:24.680|37.634|-117.426|4.803|ci|ci|ci|ci110284|ml|3.18|ci|51km SSW of Tonopah, NV
+ci127726|1986-07-21T14:47:55.630|37.617|-118|4.803|ci|ci|ci|ci127726|ml|4.09|ci|45km NE of Bishop, CA
+ci127729|1986-07-21T14:54:40.300|37.5|-118|4.405|ci|ci|ci|ci127729|ml|4.24|ci|38km ENE of Bishop, CA
+nc1139697|1986-07-21T15:09:46.340|37.3406667|-118.2246667|-2.09|nc|nc|nc|nc1139697|ml|3.1|nc|15 km E of Bishop, California
+nc1161253|1989-01-28T01:02:58.610|37.532|-117.9281667|6.271|nc|nc|nc|nc1161253|md|2.83|nc|19 km SE of Dyer, Nevada
+nc201737|1990-12-04T09:46:09.490|37.4745|-117.922|5.746|nc|nc|nc|nc201737|ml|3|nc|24 km SSE of Dyer, Nevada
+usp0005a8b|1992-07-04T03:45:56.300|37.633|-118.063|9|brk|us|us|usp0005a8b|ml|3.5|brk|3 km S of Dyer, Nevada
+usp0005aa9|1992-07-05T06:16:18.570|37.648|-118.056|0.8|nc|us|us|usp0005aa9|ml|4|gs$|2 km SSE of Dyer, Nevada
+ci3035115|1992-07-05T11:02:20.490|37.673|-118.19|3.903|ci|ci|ci|ci3035115|mc|2.87|ci|38km NNE of Dixon Lane-Meadow Creek, California
+nc1197525|1992-08-04T13:38:08.350|37.5191667|-118.2153333|5.095|nc|nc|nc|nc1197525|md|3.41|nc|21 km SW of Dyer, Nevada
+nc392841|1994-01-28T16:32:47.950|37.5678333|-117.9571667|42.626|nc|nc|nc|nc392841|md|2.86|nc|14 km SE of Dyer, Nevada
+ci9060971|1998-07-18T00:42:49.090|37.462|-118.245|0.32|ci|ci|ci|ci9060971|mc|3.38|ci|17km NE of Bishop, California
+nn00037779|2001-10-03T12:58:59.539|37.5515|-117.8091|5.7|nn|nn|nn|nn00037779|ml|2.9|nn|26 km ESE of Dyer, Nevada
+usp000cxgf|2004-06-09T08:30:43.570|37.431|-118.088|10.5|ren|us|us|usp000cxgf|ml|3.3|ren|26 km S of Dyer, Nevada
+nc21549926|2006-11-29T13:14:48.730|37.4941667|-118.2198333|-0.386|nc|nc|nc|nc21549926|md|3.08|nc|21 km NE of Dixon Lane-Meadow Creek, California
+nc51176974|2006-12-19T15:15:19.180|37.4918333|-118.189|7.4|nc|nc|nc|nc51176974|md|2.81|nc|22 km SSW of Dyer, Nevada
+nc51176975|2006-12-19T15:18:40.640|37.4918333|-118.1901667|6.13|nc|nc|nc|nc51176975|ml|3.22|nc|22 km SSW of Dyer, Nevada
+ci12265659|2006-12-19T15:18:46.720|37.5053333|-118.1978333|-2.165|ci|ci|ci|ci12265659|ml|3.26|ci|23km NE of Dixon Lane-Meadow Creek, CA
+nc51176976|2006-12-19T15:21:42.410|37.4956667|-118.1878333|3.938|nc|nc|nc|nc51176976|mw|3.7|nc|21 km SSW of Dyer, Nevada
+nn00312414|2010-06-12T15:29:25.436|37.4531|-117.5215|5.3|nn|nn|nn|nn00312414|ml|4.4|nn|California-Nevada border region
+nn00315673|2010-08-25T14:54:19.823|37.4538|-117.5251|7.7|nn|nn|nn|nn00315673|ml|3.6|nn|34 km SSE of Silver Peak, Nevada
+nn00345038|2011-08-13T16:05:50.970|37.5508|-117.7768|0|nn|nn|nn|nn00345038|ml|2.9|nn|25 km SSW of Silver Peak, Nevada
+nn00498164|2015-06-11T01:50:27.638|37.6918|-117.6481|5.4|nn|nn|nn|nn00498164|ml|3.4|nn|7 km S of Silver Peak, Nevada
+nn00531954|2016-02-17T22:19:53.002|37.4798|-117.5416|7.7|nn|nn|nn|nn00531954|ml|3|nn|31 km SSE of Silver Peak, Nevada
+nc73196616|2019-06-12T18:16:20.530|37.55|-117.9318333|0.37|nc|nc|nc|nc73196616|ml|3.36|nc|20km NNE of Deep Springs, CA
+nn00705411|2019-09-26T08:30:03.576|37.3929|-117.2562|8.4|nn|nn|nn|nn00705411|ml|3.6|nn|35 km S of Goldfield, Nevada
+nn00707043|2019-10-11T19:59:33.485|37.3983|-117.2466|6.5|nn|nn|nn|nn00707043|ml|2.8|nn|34 km S of Goldfield, Nevada
+nn00718981|2020-03-13T22:03:49.683|37.5421|-117.7467|5.9|nn|nn|nn|nn00718981|ml|3|nn|25 km SSW of Silver Peak, Nevada
+nn00718984|2020-03-13T22:37:29.787|37.5417|-117.7428|5.8|nn|nn|nn|nn00718984|ml|4|nn|25 km SSW of Silver Peak, Nevada
+nc73384075|2020-05-12T18:15:13.700|37.4503333|-118.025|13.02|nc|nc|nc|nc73384075|ml|3.45|nc|10km NNW of Deep Springs, CA
+nn00755304|2020-06-30T15:23:47.288|37.7019|-117.6966|6.8|nn|nn|nn|nn00755304|ml|3.2|nn|8 km SW of Silver Peak, Nevada
+nn00755652|2020-07-01T22:48:50.941|37.5265|-117.4405|6.6|nn|nn|nn|nn00755652|ml|2.9|nn|27 km SW of Goldfield, Nevada
+nn00755754|2020-07-02T06:10:03.667|37.5268|-117.4372|6.8|nn|nn|nn|nn00755754|ml|2.9|nn|26 km SW of Goldfield, Nevada
+nn00755777|2020-07-02T06:10:20.487|37.5224|-117.4485|4.4|nn|nn|nn|nn00755777|ml|2.9|nn|27 km SW of Goldfield, Nevada
+nn00756389|2020-07-03T18:43:58.699|37.5253|-117.4354|6|nn|nn|nn|nn00756389|ml|3.4|nn|26 km SW of Goldfield, Nevada
+nn00756704|2020-07-04T12:58:11.955|37.5209|-117.4439|9.5|nn|nn|nn|nn00756704|ml|3.3|nn|27 km SW of Goldfield, Nevada
+nn00757652|2020-07-07T01:05:58.963|37.5243|-117.4412|7.3|nn|nn|nn|nn00757652|ml|3.2|nn|27 km SW of Goldfield, Nevada
+nn00757683|2020-07-07T03:39:50.971|37.527|-117.4389|6.8|nn|nn|nn|nn00757683|ml|3|nn|26 km SW of Goldfield, Nevada
+nn00758285|2020-07-08T21:23:34.591|37.5281|-117.4357|5.5|nn|nn|nn|nn00758285|ml|3|nn|26 km SW of Goldfield, Nevada
+nn00758288|2020-07-08T21:27:44.887|37.5281|-117.4392|9.1|nn|nn|nn|nn00758288|ml|3.7|nn|26 km SW of Goldfield, Nevada
+nn00758868|2020-07-10T15:43:10.436|37.5334|-117.4341|7.3|nn|nn|nn|nn00758868|ml|2.9|nn|26 km SW of Goldfield, Nevada
+nn00760148|2020-07-15T02:36:50.647|37.5287|-117.438|6.7|nn|nn|nn|nn00760148|ml|3|nn|26 km SW of Goldfield, Nevada
+nn00760150|2020-07-15T02:37:58.074|37.532|-117.4344|5.6|nn|nn|nn|nn00760150|ml|2.9|nn|26 km SW of Goldfield, Nevada
+nn00794857|2020-12-27T04:17:10.681|37.5355|-117.7351|11.3|nn|nn|nn|nn00794857|ml|3.4|nn|25 km SSW of Silver Peak, Nevada
+nc73856490|2023-03-14T05:00:29.240|37.5176667|-117.9835|0.11|nc|nc|nc|nc73856490|mw|3.82|nc|16km N of Deep Springs, CA
+nc73856610|2023-03-14T09:25:08.500|37.5136667|-117.9836667|1.11|nc|nc|nc|nc73856610|ml|3.04|nc|16km N of Deep Springs, CA
+nc73856630|2023-03-14T09:32:51.750|37.53|-117.978|4.25|nc|nc|nc|nc73856630|md|2.81|nc|18km N of Deep Springs, CA
+nc73856635|2023-03-14T09:35:28.880|37.5195|-117.972|-0.46|nc|nc|nc|nc73856635|ml|3.15|nc|16km N of Deep Springs, CA
+nc73856670|2023-03-14T10:13:18.680|37.5213333|-117.971|-1.23|nc|nc|nc|nc73856670|mw|3.88|nc|17km N of Deep Springs, CA
+nc73856680|2023-03-14T10:45:44.960|37.5071667|-117.9851667|-0.12|nc|nc|nc|nc73856680|md|2.81|nc|15km N of Deep Springs, CA
+nc73856740|2023-03-14T14:39:25.740|37.5028333|-117.9585|-0.24|nc|nc|nc|nc73856740|ml|2.91|nc|15km N of Deep Springs, CA
+nc73856750|2023-03-14T14:51:42.710|37.5095|-117.9848333|3.18|nc|nc|nc|nc73856750|md|2.85|nc|15km N of Deep Springs, CA
+nc73857425|2023-03-15T21:44:05.160|37.5105|-117.9556667|-0.79|nc|nc|nc|nc73857425|mw|3.75|nc|16km N of Deep Springs, CA
+nc73858500|2023-03-18T07:03:42.530|37.5096667|-117.972|-0.21|nc|nc|nc|nc73858500|mw|3.87|nc|15km N of Deep Springs, CA
+nc73858675|2023-03-18T14:23:06.660|37.508|-117.9741667|0.32|nc|nc|nc|nc73858675|mw|3.7|nc|15km N of Deep Springs, CA
+nc73870040|2023-04-10T00:23:06.960|37.506|-117.9835|1.32|nc|nc|nc|nc73870040|md|2.85|nc|15km N of Deep Springs, CA
+nn00899307|2025-06-23T01:55:18.617|37.5936|-117.7287|6.1|nn|nn|nn|nn00899307|mw|3.4|nn|19 km SSW of Silver Peak, Nevada
+nn00914026|2026-04-13T04:16:25.132|37.5524|-117.742|6.8777|nn|nn|nn|nn00914026|ml|2.82|nn|24 km SSW of Silver Peak, Nevada

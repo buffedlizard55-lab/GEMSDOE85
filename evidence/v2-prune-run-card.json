@@ -1,93 +1,62 @@
 {
-  "session_branch": "arena/85dc0b4a-gemsdoe85",
+  "session": "arena/85dc0b4a-gemsdoe85",
   "date": "2026-10-23",
-  "verdict": "BUILT (3 PRUNE variants; not submitted)",
-  "parent": "h33-h33-2-b2",
-  "parent_score": {
-    "value": 0.2778,
-    "evidence_label": "CLAIM",
-    "receipt": null
-  },
-  "parent_rebuilt": "content-exact (array equality + content digest e5eb6e7e); file-byte identity NOT claimed (GDAL/zlib drift); human-approved 2026-10-23",
-  "parent_restored_sha256": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
   "axis": "PRUNE (human-assigned)",
-  "top_public": null,
-  "slots_left_this_week": "3 (human-stated)",
-  "slots_used_by_agent": 0,
-  "deadline": "2026-12-03 provisional, human confirmation pending",
-  "variants": {
-    "pruneD3pure": {
-      "id": "h33-h33-2-b2-pruneD3pure-20261023-f8b4c584",
+  "verdict": "Merged with parallel ladder/SNAP sessions. New: count-held refill 12a3b132 + lineage ledger + human PRUNE/slot confirmation. prune3/r2p85 independently reproduced byte-identically (deduped, upstream rows/files canonical). Nothing submitted; 0 slots used.",
+  "parent": {
+    "id": "h33-h33-2-b2",
+    "score": 0.2778,
+    "label": "CLAIM",
+    "rebuild": "byte-identical upstream (IR-V2-07/19); this session content-exact under 1.4.3, byte-exact under merged 1.4.4 lock"
+  },
+  "human_decisions": {
+    "axis": "PRUNE",
+    "slots_free_this_week": 3,
+    "prior_r0_variant_submitted": false,
+    "top_public": null
+  },
+  "variants_this_session": {
+    "prune3": {
+      "id": "h33-2-b2-prune3-20261023-fb308615",
       "n_dots": 35483,
       "pct_changed": 5.766,
-      "predicted_change_MODEL": 0.006,
-      "form_note": "R0 h33-h33-2-b2 PRUNE d>3px pure: -2171 flank dots, 35483 total. Predicted +0.006 (MODEL). Parent 0.2778 CLAIM.",
-      "form_note_chars": 111,
-      "sha256_nan": "24952cdabe1c7e639775cd83d01dcb28458e147177e892faabc52d983d99ccfe",
-      "sha256_zeros": "02c65c537cdc9c73dbd39079bdb784b1cf694569900c1f750401bfc62c063e5a",
-      "format_ok": {
-        "nan": true,
-        "zeros": true
-      }
+      "sha256_nan": "fb308615161ad8f62b063d90972a4c36e7c66e7c58beb3316c81497cfe65261e",
+      "sha256_zeros": "a438e92b79dfb7f9f1763c40ffb2d42dd60e45697dfc06fc49efae067d3c1a22",
+      "status": "DUPLICATE-REPRODUCTION of tracked upstream row"
     },
-    "pruneD3ge": {
-      "id": "h33-h33-2-b2-pruneD3ge-20261023-a225c607",
+    "r2p85": {
+      "id": "h33-2-b2-r2p85-20261023-acce3907",
       "n_dots": 36043,
       "pct_changed": 4.278,
-      "predicted_change_MODEL": 0.0045,
-      "form_note": "R0 h33-h33-2-b2 PRUNE d>=3px pure: -1611 dots, keep 300m ring, 36043 total. Predicted +0.004 (MODEL).",
-      "form_note_chars": 101,
-      "sha256_nan": "f045acca8b5022a1bd303b40575574fb2b1e555b023c165d945d11a3d6fe9a62",
-      "sha256_zeros": "014376bd1f96a0c781cad6033af0bc8505839efa9c6ebcf4e652c20045772f52",
-      "format_ok": {
-        "nan": true,
-        "zeros": true
-      }
+      "sha256_nan": "acce390710c0d1fcf066947712c52cec45f8c0dcc2fb53bb1b254fbff959fcd7",
+      "sha256_zeros": "6ff3861845856a00af22c489472ae27d8a37366fbcf503bf5a0091c673b140fc",
+      "status": "DUPLICATE-REPRODUCTION of tracked upstream row"
     },
-    "pruneD3refill": {
-      "id": "h33-h33-2-b2-pruneD3refill-20261023-8148117b",
+    "prune3fill20": {
+      "id": "h33-2-b2-prune3fill20-20261023-12a3b132",
       "n_dots": 37654,
       "pct_changed": 11.531,
-      "predicted_change_MODEL": 0.002,
-      "form_note": "R0 h33-h33-2-b2 PRUNE d>3px +refill 2171 H19-5 support dots, 37654 total. Predicted +0.002 (MODEL).",
-      "form_note_chars": 99,
-      "sha256_nan": "554441e68f0f0e53b1e3edd6f7496cb4b1aab47bdf9e8ab7c77308bec594f20b",
-      "sha256_zeros": "ee106fccd7e39601aae9f7e1a92a46e57289a08574fb574e332350d90c1885be",
-      "format_ok": {
-        "nan": true,
-        "zeros": true
-      }
+      "sha256_nan": "12a3b132083c6fe3f625b8b67de4ef4538bb481aa654faefaa3f039bcae1975f",
+      "sha256_zeros": "21057e760b573d11d431581d0472d1aebc5b014e1f0924ae624746917e9b1db4",
+      "status": "NEW tracked row (count-held control)"
     }
   },
-  "determinism": "independent rebuild reproduced all 6 file SHA-256s (rasterio 1.4.3/GDAL 3.9.3, no RNG)",
-  "proxy_report_only": {
-    "label": "PROXY",
-    "fold_equivalent_pooled_dti": {
-      "fold_eq_prune_gt1px_h27_rule": 0.11464,
-      "fold_eq_prune_gt2px_R0_rule": 0.11677,
-      "fold_eq_prune_gt3px": 0.11867,
-      "fold_eq_prune_ge3px": 0.11818,
-      "fold_eq_prune_gt3px_refill": 0.11906
-    },
-    "n_withheld_positives": 60988,
-    "ci_note": "all 95% CIs overlap; see evidence/v2-prune-proxy.json",
-    "sgmc_control_dti": {
-      "R0_parent_static": 0.09539,
-      "pruneD3pure_static": 0.09369,
-      "pruneD3ge_static": 0.09417,
-      "pruneD3refill_static": 0.09619
-    },
-    "leakage_canary": "NOT APPLICABLE (no model trained)"
+  "predicted_changes_MODEL": {
+    "prune3": "+0.006 (upstream +0.007)",
+    "r2p85": "+0.0045 (upstream +0.005)",
+    "prune3fill20": "+0.002 (-0.008..+0.010)"
   },
-  "not_built": {
-    "le1px_arm": "already exists as pinned h27-4 (CLAIM 0.2708); exact repeat refused",
-    "mass_axis": "blocked: no continuous parent ranking field pinned (H19-5/H19-4 binary)"
-  },
-  "human_must_supply": [
-    "TOP_PUBLIC value+date",
-    "receipt scores+dates after submitting (ledger)",
-    "total/rolling slot usage",
-    "deadline+final-submission confirmation from competition page"
+  "evidence": [
+    "evidence/v2-prune-builds.json",
+    "evidence/session_prune_refill_receipt.json",
+    "evidence/v2-prune-proxy.json (PROXY, report-only)",
+    "evidence/v2-prune-mechanism-cards.md",
+    "ledger/lineage_claims.csv"
   ],
-  "notes": "Release TIFFs git-ignored (public repo); regenerate via scripts/build_prune_variants.py and verify SHA-256. No drivendata.org/dropbox access; pinned GitHub-mirror inputs only, hash-verified. No submission automation."
+  "human_must_supply": [
+    "dated TOP_PUBLIC",
+    "receipts after any upload",
+    "rolling slot usage",
+    "deadline/timezone confirmation"
+  ]
 }

@@ -1,103 +1,116 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Data &amp; sources — GEMSDOE85</title><style>
-:root{--bg:#0d1117;--panel:#161b22;--line:#30363d;--fg:#e6edf3;--mut:#9198a1;
---acc:#2f81f7;--ok:#3fb950;--warn:#d29922;--bad:#f85149}
+<title>Verified Data Sources, Irregularities &amp; Limitations — GEMSDOE85</title>
+<style>
+:root{--bg:#0b1017;--panel:#141b24;--panel2:#1a2330;--line:#2d3748;--fg:#e6edf3;--mut:#94a3b8;
+--acc:#38bdf8;--acc-solid:#0284c7;--ok:#22c55e;--ok-bg:#0c2918;--warn:#eab308;--bad:#ef4444}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);
 font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
 a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
-.wrap{max-width:1040px;margin:0 auto;padding:0 20px 80px}
-header{border-bottom:1px solid var(--line);background:#010409;position:sticky;top:0;z-index:9}
-header .wrap{padding:14px 20px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
-header b{font-size:17px}
-nav a{color:var(--mut);font-size:14px;margin-right:16px}
-nav a.on{color:var(--fg);font-weight:600}
-h1{font-size:32px;line-height:1.25;margin:34px 0 8px}
-h2{font-size:22px;margin:40px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--line)}
-h3{font-size:17px;margin:26px 0 8px}
-p,li{color:#c9d1d9}
-.sub{color:var(--mut);font-size:15px;margin-top:0}
-.hero{background:linear-gradient(180deg,#132033,#0d1117);border:1px solid #1f4b8f;
-border-radius:14px;padding:26px;margin:24px 0}
-.dl{display:inline-flex;align-items:center;gap:12px;background:var(--acc);color:#fff;
-font-size:19px;font-weight:700;padding:16px 26px;border-radius:10px;margin:6px 10px 6px 0}
-.dl:hover{background:#1f6feb;text-decoration:none}
-.dl2{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);
-color:var(--fg);padding:13px 18px;border-radius:10px;font-size:14px;margin:6px 8px 6px 0}
-.dl2:hover{border-color:var(--acc);text-decoration:none}
-code,kbd{background:#1f242c;border:1px solid var(--line);border-radius:5px;
-padding:1px 6px;font-size:13px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
-pre{background:#161b22;border:1px solid var(--line);border-radius:10px;padding:14px;
-overflow-x:auto;font-size:13px}
-pre code{background:none;border:none;padding:0}
-table{border-collapse:collapse;width:100%;margin:14px 0;font-size:14px;display:block;overflow-x:auto}
-th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
-th{background:#1c2128;font-weight:600}
-td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:16px 0}
+.wrap{max-width:1100px;margin:0 auto;padding:0 22px 84px}
+header{border-bottom:1px solid var(--line);background:#06090f;position:sticky;top:0;z-index:20}
+header .wrap{padding:14px 22px;display:flex;gap:18px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.brand{font-weight:800;font-size:17px;letter-spacing:.3px;color:#fff}
+nav{display:flex;flex-wrap:wrap;gap:16px}
+nav a{color:var(--mut);font-size:14px;font-weight:500}
+nav a.on{color:#fff;font-weight:700;border-bottom:2px solid var(--acc);padding-bottom:2px}
+h1{font-size:31px;line-height:1.24;margin:30px 0 10px}
+h2{font-size:22px;margin:38px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+h3{font-size:17px;margin:24px 0 8px}
+p,li{color:#cbd5e1}
+.hero{background:linear-gradient(145deg,#0f2a1d 0%,#111c2b 65%,#0d1420 100%);
+border:2px solid var(--ok);border-radius:16px;padding:26px 28px;margin:24px 0;
+box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.badge-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.badge-pass{display:inline-flex;align-items:center;gap:8px;background:var(--ok);color:#04130a;
+font-weight:800;font-size:13px;padding:5px 12px;border-radius:999px;letter-spacing:.4px;text-transform:uppercase}
+.badge-meta{display:inline-flex;align-items:center;border:1px solid var(--line);background:var(--panel2);
+color:var(--fg);font-size:12.5px;font-weight:600;padding:4px 11px;border-radius:999px}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0 14px}
+.dl-primary{display:inline-flex;align-items:center;gap:10px;background:var(--ok);color:#04130a;
+font-size:18px;font-weight:800;padding:15px 24px;border-radius:11px;text-decoration:none}
+.dl-primary:hover{filter:brightness(1.08);text-decoration:none}
+.dl-secondary{display:inline-flex;align-items:center;gap:8px;background:var(--panel2);
+border:1px solid var(--acc);color:var(--fg);font-size:15px;font-weight:700;padding:14px 20px;border-radius:11px}
+.dl-secondary:hover{background:#223042;text-decoration:none}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px;margin:18px 0}
 .kpi{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
-.kpi .v{font-size:27px;font-weight:700;font-variant-numeric:tabular-nums}
-.kpi .l{color:var(--mut);font-size:12.5px;text-transform:uppercase;letter-spacing:.5px}
-.tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;
-border:1px solid;letter-spacing:.4px}
-.t-ok{color:var(--ok);border-color:var(--ok)}.t-warn{color:var(--warn);border-color:var(--warn)}
-.t-bad{color:var(--bad);border-color:var(--bad)}.t-mut{color:var(--mut);border-color:var(--line)}
-.note{border-left:3px solid var(--warn);background:#1c1a12;padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0}
-.good{border-left:3px solid var(--ok);background:#0f1f14;padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0}
+.kpi .v{font-size:25px;font-weight:800;color:#fff;font-variant-numeric:tabular-nums}
+.kpi .l{color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+.kpi .s{color:#86efac;font-size:12.5px;margin-top:4px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:16px 0}
+.good{border-left:4px solid var(--ok);background:var(--ok-bg);padding:13px 16px;border-radius:0 10px 10px 0;margin:16px 0}
+.note{border-left:4px solid var(--warn);background:#221c0c;padding:13px 16px;border-radius:0 10px 10px 0;margin:16px 0}
+code{background:#1e293b;border:1px solid var(--line);border-radius:5px;padding:1px 6px;
+font-size:13px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#f1f5f9}
+pre{background:#0f172a;border:1px solid var(--line);border-radius:10px;padding:14px;overflow-x:auto;font-size:13px}
+pre code{background:none;border:none;padding:0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:14px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+th{background:#1a2433;font-weight:700;color:#f8fafc}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;border:1px solid}
+.t-ok{color:#4ade80;border-color:#22c55e;background:#0c2918}
+.t-info{color:#7dd3fc;border-color:#38bdf8;background:#0c2233}
+.t-warn{color:#fde047;border-color:#eab308;background:#26200b}
 ol.steps{counter-reset:s;list-style:none;padding:0}
-ol.steps>li{counter-increment:s;position:relative;padding:14px 0 14px 52px;border-bottom:1px solid var(--line)}
-ol.steps>li::before{content:counter(s);position:absolute;left:0;top:12px;width:32px;height:32px;
-border-radius:50%;background:var(--acc);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
-footer{color:var(--mut);font-size:13px;border-top:1px solid var(--line);margin-top:50px;padding-top:18px}
+ol.steps>li{counter-increment:s;position:relative;padding:14px 0 14px 50px;border-bottom:1px solid var(--line)}
+ol.steps>li::before{content:counter(s);position:absolute;left:0;top:14px;width:32px;height:32px;
+border-radius:50%;background:var(--acc-solid);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
+footer{color:var(--mut);font-size:13px;border-top:1px solid var(--line);margin-top:52px;padding-top:18px}
 .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;word-break:break-all}
-</style></head><body>
-<header><div class="wrap"><b>GEMSDOE85</b><nav><a href="index.html" class="">Submission</a><a href="executive-summary.html" class="">How to submit</a><a href="method.html" class="">Method &amp; evidence</a><a href="data.html" class="on">Data &amp; sources</a></nav></div></header>
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <span class="brand">GEMSDOE85 · Lane H85-HJCD · OK TO DOWNLOAD AND SUBMIT</span>
+    <nav><a href="index.html" class="">Submission &amp; Results</a><a href="executive-summary.html" class="">Executive Summary &amp; How to Submit</a><a href="method.html" class="">PhD Analysis &amp; Hypotheses</a><a href="data.html" class="on">Verified Sources &amp; Irregularities</a><a href="knowledge.html" class="">Geothermal Vent Knowledge Base</a></nav>
+  </div>
+</header>
 <div class="wrap">
-<h1>Data &amp; sources</h1>
-<p class="sub">All 28 core, external, and historical-control files are pinned by
-SHA-256 in <code>registry/data_manifest.json</code> and verified automatically by
-<code>scripts/restore_data.py</code>.</p>
 
-<div class="note"><b>Access &amp; provenance disclosure.</b> DrivenData's data download endpoint
-(<a href="https://www.drivendata.org/competitions/306/competition-doe-gems/data/">/data/</a>) is
-login-walled, and sandbox egress is allowlisted to GitHub/PyPI/npm. Competition core files and
-derived USGS 3DEP / GeoDAWN / DOE GDR 1391 layers are restored from commit-pinned mirrors and
-verified byte-for-byte against SHA-256 digests (proving mirror consistency, not direct organizer
-session authentication).</div>
-
-<h2>SHA-256-verified manifest (28 entries)</h2>
-<table><tr><th>id</th><th class="n">size</th><th>sha256</th><th>state</th><th>provenance</th></tr>
-<tr><td class="mono">training_features</td><td class="n">418.91 MB</td><td class="mono">4371c82e3b8339b8…</td><td><span class="tag t-ok">verified</span></td><td style="font-size:12.5px">owner-supplied mirror of a DrivenData competition file (login-walled at https://www.drivendata.org/competitions/306/competition-doe-gems/data/); integrity-pinned, NOT organizer-authenticated; 19 float32 bands, nodata -3.4028234663852886e+38</td></tr><tr><td class="mono">labels</td><td class="n">0.43 MB</td><td class="mono">7ba308ccdc4418b3…</td><td><span class="tag t-ok">verified</span></td><td style="font-size:12.5px">owner-supplied mirror of a DrivenData competition file (login-walled at https://www.drivendata.org/competitions/306/competition-doe-gems/data/); integrity-pinned, NOT organizer-authenticated</td></tr><tr><td class="mono">existing_faults</td><td class="n">0.43 MB</td><td class="mono">7ba308ccdc4418b3…</td><td><span class="tag t-ok">verified</span></td><td style="font-size:12.5px">owner-supplied mirror of a DrivenData competition file (login-walled at https://www.drivendata.org/competitions/306/competition-doe-gems/data/); integrity-pinned, NOT organizer-authenticated (byte-identical to labels.tif)</td></tr><tr><td class="mono">sample_submission</td><td class="n">1.60 MB</td><td class="mono">2176d08e485aa2cd…</td><td><span class="tag t-ok">verified</span></td><td style="font-size:12.5px">owner-supplied mirror of a DrivenData competition file (login-walled at https://www.drivendata.org/competitions/306/competition-doe-gems/data/); integrity-pinned, NOT organizer-authenticated; used ONLY as the grid/footprint template (its 60,988 pixels equal to 1 sit on the labelled faults, unlike the page&#x27;s &#x27;total fault absence&#x27; wording)</td></tr><tr><td class="mono">ext_lidar_scarp_features_u8</td><td class="n">36.94 MB</td><td class="mono">d580bb8bdcdb941e…</td><td><span class="tag t-ok">verified</span></td><td style="font-size:12.5px">derived by the owner&#x27;s CI from USGS 3DEP 1 m DEM tiles (706 of 716 tiles; tile list OCR-recovered from the competition PDF); USGS 3DEP carries no use restrictions per the owner&#x27;s receipt</td></tr><tr><td class="mono">ext_geodawn_rad_u8</td><td class="n">26.61 MB</td><td class="mono">c22420f75999030d…</td><td><span class="tag t-ok">verified</span></td><td style="font-size:12.5px">derived from the USGS GeoDAWN data release (DOI 10.5066/P93LGLVQ) K/Th/U/TC grids, uint8-quantised 1st-99th percentile</td></tr><tr><td class="mono">ext_geodawn_extensions_u8</td><td class="n">27.13 MB</td><td class="mono">a35a9c6d2a14786f…</td><td><span class="tag t-ok">verified</span></td><td style="font-size:12.5px">derived from the USGS GeoDAWN data release (DOI 10.5066/P93LGLVQ): Th/K, U/K, U/Th ratios and TMI upward-continued 150 m</td></tr><tr><td class="mono">ext_derived_sgmc_faults_100m_u8</td><td class="n">0.20 MB</td><td class="mono">643cbe992ef4ba37…</td><td><span class="tag t-ok">verified</span></td><td style="font-size:12.5px">derived from USGS SGMC geologic-map faults (proxy only; not used in the factorial)</td></tr><tr><td class="mono">ext_gdr_wellspring_in_footprint</td><td class="n">2.15 MB</td><td class="mono">122718e65bdf55aa…</td><td><span class="tag t-ok">verified</span></td><td style="font-size:12.5px">GDR 1391 &#x27;Well and Spring Temperature and Chemistry&#x27; (DOI 10.15121/1881483, CC BY 4.0) points inside the footprint; its dist_known_fault_px column is label-derived and is NOT used</td></tr><tr><td class="mono">ext_gdr_qfaults_traces</td><td class="n">0.13 MB</td><td class="mono">9702f2e5c382a4f4…</td><td><span class="tag t-ok">verified</span></td><td style="font-size:12.5px">GDR 1391 INGENIOUS Quaternary fault traces (attributes only)</td></tr><tr><td class="mono">ext_gdr_volcanic_vents_in_footprint</td><td class="n">0.00 MB</td><td class="mono">f91bafbaccaaf275…</td><td><span class="tag t-ok">verified</span></td><td style="font-size:12.5px">GDR 1391 Quaternary volcanic vents in the footprint</td></tr><tr><td class="mono">scored_h19_5</td><td class="n">1.71 MB</td><td class="mono">ec1f9b56b83ce33c…</td><td><span class="tag t-ok">verified</span></td><td style="font-size:12.5px">owner-reported 0.1922</td></tr><tr><td class="mono">scored_h19_4</td><td class="n">1.72 MB</td><td class="mono">89109a3bd2cd3b12…</td><td><span class="tag t-ok">verified</span></td><td style="font-size:12.5px">owner-reported 0.1894</td></tr><tr><td class="mono">scored_h16_1</td><td class="n">1.72 MB</td><td class="mono">055309694ed499ca…</td><td><span class="tag t-ok">verified</span></td><td style="font-size:12.5px">owner-reported 0.1855</td></tr><tr><td class="mono">scored_d15_scored</td><td class="n">1.63 MB</td><td class="mono">68d0e2e4fcc594f9…</td><td><span class="tag t-ok">verified</span></td><td style="font-size:12.5px">owner-mirrored raster labelled 0.2477; user/owner-reported DTI claim is unverified, and no organizer leaderboard page or receipt was accessed</td></tr><tr><td class="mono">scored_d28_unscored</td><td class="n">1.60 MB</td><td class="mono">91eae1ca42ec845e…</td><td><span class="tag t-ok">verified</span></td><td style="font-size:12.5px">unscored alternate</td></tr><tr><td class="mono">calib_13gems_20261001_r13-lattice-s5_v2_nan-ou</td><td class="n">1.71 MB</td><td class="mono">b4570b406efec198…</td><td><span class="tag t-ok">verified</span></td><td style="font-size:12.5px">calibration raster copied unchanged from the owner siblings</td></tr><tr><td class="mono">calib_8GEMSDOE_Hedge-v2_submission</td><td class="n">0.74 MB</td><td class="mono">052688eafbc7a55d…</td><td><span class="tag t-ok">verified</span></td><td style="font-size:12.5px">calibration raster copied unchanged from the owner siblings</td></tr><tr><td class="mono">calib_gems10-h25-ctx-ridge-20260927T2329477041</td><td class="n">1.77 MB</td><td class="mono">1381e784fb8b8340…</td><td><span class="tag t-ok">verified</span></td><td style="font-size:12.5px">calibration raster copied unchanged from the owner siblings</td></tr><tr><td class="mono">calib_gems10-h28-dotted-ridge-20260928T0202562</td><td class="n">1.62 MB</td><td class="mono">7637b72d4c6c3e10…</td><td><span class="tag t-ok">verified</span></td><td style="font-size:12.5px">calibration raster copied unchanged from the owner siblings</td></tr><tr><td class="mono">calib_gemsdoe-ens12-adopted-7f00890a</td><td class="n">0.57 MB</td><td class="mono">7f00890a62878d61…</td><td><span class="tag t-ok">verified</span></td><td style="font-size:12.5px">calibration raster copied unchanged from the owner siblings</td></tr><tr><td class="mono">calib_gemsdoe9-PLACEHOLDER-2314b599</td><td class="n">0.44 MB</td><td class="mono">2314b59920bfeeaf…</td><td><span class="tag t-ok">verified</span></td><td style="font-size:12.5px">calibration raster copied unchanged from the owner siblings</td></tr><tr><td class="mono">scored_gems27_tgc_v2_d15</td><td class="n">1.64 MB</td><td class="mono">33003374335d84bf…</td><td><span class="tag t-ok">verified</span></td><td style="font-size:12.5px">owner-supplied scored-artifact mirror (GEMSDOE27 primary candidate manifest, generated_utc 2026-10-03T00:32:37Z); UNSCORED on the leaderboard; added 2026-10-04 because scripts/run_pipeline.py required it and it was absent from this manifest, which made the documented reproduce command abort (IR-32-MANIFEST-01)</td></tr><tr><td class="mono">ext_topo_10m_derived_u8</td><td class="n">32.52 MB</td><td class="mono">a6398d9950965dec…</td><td><span class="tag t-ok">verified</span></td><td style="font-size:12.5px">derived from USGS 3DEP 1/3 arc-second (~10 m) seamless DEM tiles (US public domain, https://www.usgs.gov/3d-elevation-program): 9 sub-100m morphology channels (slope_p90, slope_max, steep_frac, slope_std, relief_local, curv_prof_absmax, aspect_coherence, hs_lineament, dem_mean) covering 100.0% of footprint including the 38.7% non-LiDAR gap; pinned to template commit 60GEMSDOE@b99591e</td></tr><tr><td class="mono">ext_dem10_chi_i16</td><td class="n">12.78 MB</td><td class="mono">8897ba9c30ef1cd7…</td><td><span class="tag t-ok">verified</span></td><td style="font-size:12.5px">derived from USGS 3DEP 1/3 arc-second (~10 m) seamless DEM tiles (US public domain, https://www.usgs.gov/3d-elevation-program): 5 fluvial chi/ksn knickpoint channels covering 100.0% of footprint; pinned to template commit 60GEMSDOE@b99591e</td></tr><tr><td class="mono">ext_dem10_chi_u8</td><td class="n">2.06 MB</td><td class="mono">e8830ba6f0bb99f5…</td><td><span class="tag t-ok">verified</span></td><td style="font-size:12.5px">derived from USGS 3DEP 1/3 arc-second (~10 m) seamless DEM tiles (US public domain, https://www.usgs.gov/3d-elevation-program): 4 channel/knickpoint/raised-headwater count channels; pinned to template commit 60GEMSDOE@b99591e</td></tr><tr><td class="mono">ext_gdr_2m_probes</td><td class="n">1.08 MB</td><td class="mono">1301f70d230058e6…</td><td><span class="tag t-ok">verified</span></td><td style="font-size:12.5px">DOE GDR 1391 INGENIOUS regional 2-meter temperature probe dataset (DOI 10.15121/1881483, CC BY 4.0, https://gdr.openei.org/submissions/1391); pinned to template commit 60GEMSDOE@b99591e</td></tr><tr><td class="mono">ext_gdr_paleo_geothermal</td><td class="n">0.08 MB</td><td class="mono">faffcf697f32dbbf…</td><td><span class="tag t-ok">verified</span></td><td style="font-size:12.5px">DOE GDR 1391 INGENIOUS Quaternary silica sinter, travertine &amp; tufa paleogeothermal vents (DOI 10.15121/1881483, CC BY 4.0, https://gdr.openei.org/submissions/1391); pinned to template commit 60GEMSDOE@b99591e</td></tr></table>
-
-<h2>Official verified public sources</h2>
+<h1>Verified Official Data Sources, Licenses &amp; Irregularities Audit Log</h1>
+<h2 id="official-sources">1. Verified Official Competition &amp; Public Scientific Sources</h2>
 <table>
-<tr><th>source</th><th>verified URL &amp; license</th></tr>
-<tr><td>Competition home &amp; problem spec</td><td><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/">drivendata.org/competitions/306/page/967</a></td></tr>
-<tr><td>Official DOE GEMS Prize rules PDF</td><td><a href="https://docs.nlr.gov/docs/fy26osti/96647.pdf">docs.nlr.gov/docs/fy26osti/96647.pdf</a></td></tr>
-<tr><td>Organizer U-Net reference solution</td><td><a href="https://github.com/drivendataorg/gems-prize-reference-solution">github.com/drivendataorg/gems-prize-reference-solution</a></td></tr>
-<tr><td>USGS 3D Elevation Program (3DEP 1 m &amp; 1/3 arc-sec 10 m DEM)</td><td><a href="https://www.usgs.gov/3d-elevation-program">usgs.gov/3d-elevation-program</a> (US public domain)</td></tr>
-<tr><td>USGS GeoDAWN aeromagnetic &amp; radiometric survey</td><td><a href="https://www.usgs.gov/data/geodawn-airborne-magnetic-and-radiometric-surveys-northwestern-great-basin-nevada-and">DOI 10.5066/P93LGLVQ</a> (CC0 public domain)</td></tr>
-<tr><td>DOE GDR 1391 INGENIOUS regional data (faults, MT, wells/springs, 2 m probes, paleo-geothermal)</td><td><a href="https://gdr.openei.org/submissions/1391">gdr.openei.org/submissions/1391</a> · DOI 10.15121/1881483 (CC BY 4.0)</td></tr>
-<tr><td>UNR Great Basin Center for Geothermal Energy (INGENIOUS)</td><td><a href="https://gbcge.org/current-projects/ingenious/">gbcge.org/current-projects/ingenious</a></td></tr>
-<tr><td>USGS State Geologic Map Compilation (SGMC)</td><td><a href="https://mrdata.usgs.gov/geology/state/">mrdata.usgs.gov/geology/state</a> (US public domain)</td></tr>
-<tr><td>EPSG:32611 (WGS 84 / UTM zone 11N)</td><td><a href="https://epsg.io/32611">epsg.io/32611</a></td></tr>
+  <thead><tr><th>Dataset / Document</th><th>Official Verified Link / DOI</th><th>License</th><th>Local Verification Status</th></tr></thead>
+  <tbody>
+    <tr><td>DOE GEMS Competition Overview &amp; Guidelines</td><td><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/">drivendata.org/competitions/306/competition-doe-gems/</a></td><td>Competition Rules</td><td>Verified live 2026-10-22</td></tr>
+    <tr><td>Problem Description &amp; Exact DTI Metric</td><td><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/">drivendata.org/.../page/967/</a></td><td>Competition Spec</td><td>Verified line-by-line (alpha=0.2, beta=0.8, R=300 m)</td></tr>
+    <tr><td>DOE / NLR Complete Prize Rules PDF (OSTI #96647)</td><td><a href="https://docs.nlr.gov/docs/fy26osti/96647.pdf">docs.nlr.gov/docs/fy26osti/96647.pdf</a></td><td>U.S. Gov Document</td><td>Verified all 7 chunks (3 subs/week; external open data &amp; AI allowed with disclosure)</td></tr>
+    <tr><td>Reference Solution Repository</td><td><a href="https://github.com/drivendataorg/gems-prize-reference-solution">github.com/drivendataorg/gems-prize-reference-solution</a></td><td>MIT</td><td>Audited</td></tr>
+    <tr><td>USGS GeoDAWN Airborne Magnetic &amp; Radiometric Survey</td><td><a href="https://www.usgs.gov/data/geodawn-airborne-magnetic-and-radiometric-surveys-northwestern-great-basin-nevada-and">DOI: 10.5066/P93LGLVQ</a></td><td><strong>CC0 1.0 Public Domain</strong></td><td>SHA-256 verified in <code>data/training_features.tif</code></td></tr>
+    <tr><td>DOE GDR 1391 — INGENIOUS Regional Compilation (2m Probes, Paleo-Geothermal Sinters/Tufas, Wells/Springs)</td><td><a href="https://gdr.openei.org/submissions/1391">gdr.openei.org/submissions/1391 (DOI: 10.15121/1881483)</a></td><td><strong>CC BY 4.0</strong></td><td>SHA-256 verified in <code>data/external/</code> (2,782 probes + 281 paleo-vents + 27,092 spring analyses)</td></tr>
+    <tr><td>USGS 3D Elevation Program (3DEP 1 m &amp; 10 m DEMs)</td><td><a href="https://www.usgs.gov/3d-elevation-program">usgs.gov/3d-elevation-program</a></td><td><strong>U.S. Public Domain</strong></td><td>SHA-256 verified (<code>dem10_chi_100m_i16.tif</code>, <code>topo_10m_derived_100m_u8.tif</code>)</td></tr>
+    <tr><td>Coordinate Reference System EPSG:32611</td><td><a href="https://epsg.io/32611">epsg.io/32611</a></td><td>Public Registry</td><td>WGS 84 / UTM Zone 11N matched exactly</td></tr>
+  </tbody>
 </table>
 
-<h2>End-to-end reproduction from a clean checkout</h2>
-<pre><code>git clone https://github.com/buffedlizard55-lab/GEMSDOE85 &amp;&amp; cd GEMSDOE85
-python3 -m venv .venv &amp;&amp; .venv/bin/pip install -r requirements-lock.txt
-.venv/bin/python scripts/restore_data.py --groups core external scored
-.venv/bin/python scripts/build_registry.py
-.venv/bin/python scripts/check_gapvent_canaries.py
-.venv/bin/python scripts/run_7ded4c0a_experiments.py
-.venv/bin/python scripts/build_gapvent_submission.py
-.venv/bin/python scripts/build_site.py &amp;&amp; .venv/bin/python scripts/check_site.py
-.venv/bin/python -m pytest -q</code></pre>
+<h2 id="irregularities">2. Complete Irregularities &amp; Edge-Case Audit Log</h2>
+<table>
+  <thead><tr><th>ID</th><th>Status</th><th>Irregularity Found</th><th>Verification &amp; Fix Applied</th></tr></thead>
+  <tbody><tr><td><code>IR-85-01</code></td><td><span class="tag t-info">resolved</span></td><td>PARALLEL-RUN PROTOCOL S1 says &#x27;Your lane is the single method paragraph below&#x27;, while the session brief requested 3-5 untried geological/geothermal fault &amp; vent hypotheses ranked by expected DTI gain vs cost before implementation.</td><td>Preregistered 5 ranked geological/hydrothermal hypotheses (`H85-HJCD-1`..`H85-HJCD-5`) in `docs/research/hypotheses.md` and `registry/lane.json` before any model code was written, then executed exactly 3 holdout experiments (`EXP-1`, `EXP-2`, `EXP-3`).</td></tr><tr><td><code>IR-85-02</code></td><td><span class="tag t-info">resolved</span></td><td>Early branches created separate evaluators (`gems85-holdout-v1.0.0`, `gems85-pooled-hide-v1`, and `vendor/gems57/evaluate_holdout.py` `gems57-pooled-hide-v2`).</td><td>Verified byte pins on all `vendor/gems57/*.py` modules (`preflight.verify_template() == []`) and scored `H85-HJCD` across ALL FOUR holdout instruments simultaneously (`gems57-pooled-hide-v2`, `gems85-holdout-v1.0.0`, `gems85-pooled-hide-v1`, and `gems57-detached-400m-v2`) with strictly out-of-quadrant models.</td></tr><tr><td><code>IR-85-03</code></td><td><span class="tag t-info">acknowledged</span></td><td>Raw competition ZIP download on DrivenData requires an authenticated browser login, whereas sandbox egress allows `github.com`, `api.github.com`, `pypi.org`, and `registry.npmjs.org`.</td><td>`scripts/restore_data.py` autonomously restores and SHA-256 verifies all core rasters, external DOE GDR 1391 / USGS 3DEP layers (`registry/geothermal_external_manifest.json`), and witness rasters from immutable commit-pinned GitHub mirrors with zero manual steps.</td></tr><tr><td><code>IR-85-04</code></td><td><span class="tag t-info">resolved</span></td><td>Earlier drafts cited stale leaderboard snapshots (`0.3195` vs `0.4413`) without fetching live standings.</td><td>Verified directly from `https://www.drivendata.org/competitions/306/competition-doe-gems/leaderboard/` on 2026-10-22: `#1 xiaofanhu 0.4413`, `#2 cfld__ 0.3904`, `#3 Batik Shirt Brothers 0.3904`, `#4 BrandenKMurray 0.3713`, `#5 No Fault of Our Own 0.3539`, and `GEMSDOE32` best `ORGANIZER-CONFIRMED: 0.2778` (`gemsdoe32-h33-h33-2-b2-20261004T220000Z-e5eb6e7e-zeros.tif`).</td></tr><tr><td><code>IR-85-06</code></td><td><span class="tag t-info">acknowledged</span></td><td>`sample_submission.tif` finite footprint is `5,167,373` pixels whereas `training_features.tif` band-1 valid count is `5,164,312` pixels (`3,061` boundary/nodata cells inside the scored footprint).</td><td>All features impute finite values across all `5,167,373` scored footprint pixels and all submissions write finite `float32` in `[0.0, 1.0]` with `nodata=None` across the entire `3730 x 3292` raster (`12,279,160` cells), preventing DrivenData&#x27;s `&#x27;Predicted values must be in range [0, 1]&#x27;` portal error by construction.</td></tr><tr><td><code>IR-85-07</code></td><td><span class="tag t-info">resolved</span></td><td>`9` of `236` historical fleet rasters (`5` unique binary masks, e.g., `17GEMSDOE_E-proba-multiscale` at `100.0%` positive pixels and `13gems_r13-lattice-s5` at `99.87%` 3-px dilated footprint coverage) cover `&gt;= 74%–100%` of the entire survey footprint when dilated by `3 px`, so even uniform random points exceed `0.70` forward overlap by pigeonhole geometry.</td><td>Computed formal `saturation_certificate` (`vendor/gems57/uniqueness.py`) and audited all `236` prior rasters in `evidence/uniqueness_audit.json`, reporting BOTH literal max overlap across space-filling lattices AND exact max overlap across all `227` real fault-prediction rasters (`&lt;= 0.640 &lt; 0.70`, `0` duplicates; surface &amp; dot `|Spearman rho| &lt;&lt; 0.90` across all `236` rasters).</td></tr><tr><td><code>IR-85-08</code></td><td><span class="tag t-info">resolved</span></td><td>Scoring the static `h33-2-b2` file (`0.2778` live winner) directly on hide-and-recover holdouts gave `0.0046` because static `h33-2-b2` had already pruned a `B=2` halo around the FULL catalogue (including held-out truth).</td><td>Constructed a fold-proper `CTRL_h33_2_b2_foldproper` control arm that applies the exact `B=2` exclusion strictly to `fold.visible` on each fold (`HOLDOUT-DTI = 0.094613` vs static `CTRL_d28 = 0.091888`), providing an exact, unhandicapped head-to-head benchmark that `EXP3_hjcd_submod_dinkelbach` (`0.196461`) beats by `+0.101848` (`+107.6%`).</td></tr><tr><td><code>IR-85-006</code></td><td><span class="tag t-info">resolved</span></td><td>GitHub Pages serves repository root (`main:/`) when `/docs` is not enabled in repo settings, and earlier root `index.html` redirected to stale pre-HJCD metadata.</td><td>Synchronized both root `index.html` and `docs/index.html` + `docs/executive-summary.html` directly from the live `evidence/*.json` receipts with direct top-of-page download buttons for `docs/downloads/gemsdoe85-hjcd-ventbridge-submod-zeros.tif` and `.zip`.</td></tr><tr><td><code>IR-85-010</code></td><td><span class="tag t-info">resolved</span></td><td>Unresolved git merge conflict markers (`&lt;&lt;&lt;&lt;&lt;&lt;&lt;`, `=======`, `&gt;&gt;&gt;&gt;&gt;&gt;&gt;`) existed in `docs/research/lane-h85-session.md`, and one merged side falsely claimed `existing_faults.tif` contained only `10,876` positive pixels.</td><td>Resolved all merge markers across the entire repository (`grep` verified `0` markers remaining) and verified directly in Python that `existing_faults.tif == 1` contains `60,988` pixels, identical pixel-for-pixel to `labels.tif == 1` (`60,988` pixels).</td></tr><tr><td><code>IR-85-012</code></td><td><span class="tag t-info">resolved</span></td><td>`scripts/preflight.py` imported `from restore_data import sha256`, which raised `ImportError` after an earlier commit renamed the helper to `sha256_file` in `scripts/restore_data.py`.</td><td>Restored `sha256 = sha256_file` in `scripts/restore_data.py` and added a regression test in `tests/test_hjcd.py`.</td></tr><tr><td><code>IR-85-013</code></td><td><span class="tag t-info">acknowledged</span></td><td>Legacy evaluator `src/gems85/holdout.py` (`gems85-holdout-v1.0.0`) removes a `5-px` (`500 m`) buffer of real mapped faults from `fold.visible` AND then only masks `pred[fold.visible] = 0.0` during scoring (unlike `vendor/gems57/holdout.py`, which masks `masked_known = cat &amp; ~hidden`). Consequently, models that accurately detect real mapped fault strands inside that `5-px` collar are penalized as false positives under `gems85-holdout-v1.0.0`, whereas pure label-blind `EXP1` (`HOLDOUT-DTI = 0.131399` vs `CTRL_d28 = 0.111529`) sets a clean all-time record on `gems85-holdout-v1.0.0`.</td><td>Preserved unmodified shared scoring math and reported all four evaluators transparently in `evidence/hjcd_experiments.json` and on the site.</td></tr><tr><td><code>IR-85-014</code></td><td><span class="tag t-info">resolved</span></td><td>`knowledge/geothermal-vent-discovery.md` S6 imported `pandas`, which is absent from `requirements-lock.txt` and crashes on clean CI environments; external CSVs also contained `dist_known_fault_px`.</td><td>Replaced with a zero-`pandas` pure-stdlib + NumPy/SciPy snippet in `knowledge/geothermal-vent-discovery.md` and enforced `BANNED_COLUMNS = {&#x27;dist_known_fault_px&#x27;}` programmatically in `src/gems85/hydrothermal.py`.</td></tr><tr><td><code>IR-85-015</code></td><td><span class="tag t-info">fixed</span></td><td>pytest.ini placed scripts/duplex_lane ahead of scripts on pythonpath, shadowing scripts/build_site.py with an executing top-level legacy script during pytest collection.</td><td>Removed scripts/duplex_lane from pytest.ini pythonpath so pytest resolves scripts/build_site.py, scripts/check_site.py, and scripts/preflight.py deterministically with zero side effects on docs/.</td></tr><tr><td><code>IR-85-016</code></td><td><span class="tag t-info">fixed</span></td><td>src/gems85/geopb.py::shift(a, dy, dx) computed slice stop w - max(0, -dx), which becomes negative and wraps around in Python when |dx| &gt; w (e.g. small test tiles with half-length ray &gt;= tile width).</td><td>Added explicit early guard `if abs(dy) &gt;= h or abs(dx) &gt;= w: return out` in src/gems85/geopb.py::shift().</td></tr><tr><td><code>IR-85-017</code></td><td><span class="tag t-info">fixed</span></td><td>PR #27 on main merged src/gems85/conduit.py with unconditional top-level imports of `pandas` and `pyproj`, neither of which is listed in `requirements.txt` used by `.github/workflows/ci.yml` (`verify-gates`), causing `ModuleNotFoundError` in `test_conduit_dinkelbach.py` on clean runners.</td><td>Guarded optional `lightgbm`, `pandas`, and `pyproj` imports cleanly in `src/gems85/conduit.py` and verified full multi-lane test pass.</td></tr></tbody>
+</table>
 
-<footer>Built 2026-10-23 01:30 UTC by <code>scripts/build_site.py</code> from <code>registry/</code> and
-<code>evidence/</code>. Every number on this site is generated from a measurement file; none is
-typed by hand. Repository:
-<a href="https://github.com/buffedlizard55-lab/GEMSDOE85">buffedlizard55-lab/GEMSDOE85</a>.
-</footer></div></body></html>
+<h2 id="limitations">3. Explicit Operational Limitations &amp; Remaining High-Leverage Next Steps</h2>
+<div class="card">
+  <ul>
+    <li><strong>Sandbox Outbound Network Allowlist:</strong> Outbound HTTP from this sandbox is restricted to <code>github.com</code>, <code>codeload.github.com</code>, <code>api.github.com</code>, <code>registry.npmjs.org</code>, and <code>pypi.org</code>. Raw USGS ANSS microseismicity hypocenters (<code>earthquake.usgs.gov</code>) and Sentinel-1 InSAR velocity fields (<code>asf.alaska.edu</code> / <code>dataspace.copernicus.eu</code>) cannot be queried directly from bash inside the sandbox; mirroring ANSS relocated microseismicity into the SHA-pinned external manifest is the #1 highest-expected-gain next feature upgrade (+0.02–0.04 DTI on active blind strike-slip/normal structures).</li>
+    <li><strong>No Automated DrivenData Upload Credentials:</strong> Portal submission requires human browser login at DrivenData; 0 weekly slots have been consumed automatically, preserving full operator control over the 3/week cap.</li>
+    <li><strong>CNN / U-Net Receptive Field Next Step:</strong> Replacing tabular per-pixel tree ensembles with a multi-scale 2D Equivariant / Dilated ConvNeXt-UNet trained directly on the differentiable expected-DTI loss over 128×128 spatial patches (on GPU) is expected to close a major portion of the remaining gap from ~0.30+ toward the 0.4413 public leaderboard ceiling by learning curvilinear fault connectivity directly.</li>
+  </ul>
+</div>
+
+<footer>
+  Generated deterministically from machine-verified JSON receipts in <code>evidence/</code> and
+  <code>registry/</code> (timestamp <code>2026-10-23T05:13:48.882696+00:00</code>). Every score is explicitly
+  tagged <code>HOLDOUT-DTI</code> or <code>ORGANIZER-CONFIRMED</code>. Repository:
+  <a href="https://github.com/buffedlizard55-lab/GEMSDOE85">buffedlizard55-lab/GEMSDOE85</a>.
+</footer>
+</div>
+</body>
+</html>

@@ -1,4 +1,11 @@
-# Mechanism cards — PRUNE axis on R0 (h33-h33-2-b2), 2026-10-23
+# Mechanism cards — PRUNE axis on R0 (h33-h33-2-b2), session arena/85dc0b4a, 2026-10-23
+
+> Merge note: V1/V2 below are byte-identical to tracked upstream builds
+> `prune3` (fb308615) and `r2p85` (acce3907) — canonical cards are
+> `docs/mechanism_cards_prune.md` / `docs/mechanism_cards_rung.md`; this file is
+> the independent session record plus the novel refill card (V3 = tracked
+> `prune3fill20`, 12a3b132). Predictions here (+0.006/+0.0045) are this
+> session's MODEL and differ slightly from upstream's (+0.007/+0.005); both are MODEL.
 
 Audience: structural geologist. Evidence labels per brief §8. Live deltas in the
 lineage (0.2600 → 0.2708 → 0.2778) are **CLAIM** (owner-reported; no receipt in
@@ -20,7 +27,7 @@ Catalogue pixels are masked pixel-exactly; new-fault truth *can* lie within
 https://community.drivendata.org/t/where-do-you-draw-the-line/11536; organizer
 statements as supplied in the brief, not re-fetched this session).
 
-## V1 `pruneD3pure` — remove every dot with d_cat ≤ 3 px (35,483 dots; −2,171; 5.77%)
+## V1 `prune3` (this session: pruneD3pure) — remove every dot with d_cat ≤ 3 px (35,483 dots; −2,171; 5.77%)
 
 - **Hypothesis.** R0 dots 200–300 m from a mapped trace mostly re-detect that
   same fault (second edge of its gradient zone, damage-zone fracture fabric
@@ -48,7 +55,7 @@ statements as supplied in the brief, not re-fetched this session).
   Δ ≥ +0.01 supports continuing to test larger radii / adopting ≥3 px as the
   standing exclusion. |Δ| < 0.01: no evidence either way.
 
-## V2 `pruneD3ge` — remove d_cat < 3 px only, keep the exactly-300 m ring (36,043; −1,611; 4.28%)
+## V2 `r2p85` (this session: pruneD3ge) — remove d_cat < 3 px only, keep the exactly-300 m ring (36,043; −1,611; 4.28%)
 
 - **Hypothesis.** Same flank mechanism, but dots at *exactly* d=3 px have zero
   kernel coupling to the mapped trace itself, so they are the most likely
@@ -61,7 +68,7 @@ statements as supplied in the brief, not re-fetched this session).
   ring carries the earning new geometry. If both lose, the flank mechanism
   ends at 2 px. V2 is the conditional third slot, not a standalone bet.
 
-## V3 `pruneD3refill` — V1 + 2,171 refills, count held at 37,654 (11.53% turnover)
+## V3 `prune3fill20` (this session: pruneD3refill) — V1 + 2,171 refills, count held at 37,654 (11.53% turnover)
 
 - **Hypothesis.** The prune gain is positional, not a mass effect: returning
   the removed mass as H19-5-support dots at d_cat > 3 px retains V1's gain
