@@ -1,0 +1,506 @@
+{
+  "schema_version": 2,
+  "generated_utc": "2026-10-23T03:48:37+00:00",
+  "git_sha": "793cf6064daa430c27c5cea02ccaac4f65fcd14b",
+  "python": "3.11.2",
+  "date_tag": "20261023",
+  "pins": {
+    "h19_5": {
+      "path": "data/scored/gems19-h19-5-powerlaw-budget-multiline-corroborated-20260930-e27054cf-nan.tif",
+      "sha256": "ec1f9b56b83ce33cad781ceb9f104b18fb4f2ff785263a4e89616af4aabdee8d",
+      "bytes": 1712322
+    },
+    "d28": {
+      "path": "data/scored/gems24-h25-1-dotted-h19-5-d2-8-20261002-e56ea318af89-nan.tif",
+      "sha256": "91eae1ca42ec845eaa8c2ba32da49806e24751743459b8a10017c479bbe639b8",
+      "bytes": 1603424
+    },
+    "solo_d28": {
+      "path": "data/registry_rasters/gemsdoe31-h27-4-solo-d28-20261004-8acb75e1-nan.tif",
+      "sha256": "07b6db440535404bb41ec8ddc797713e200d308e3da35937393efde5eb84bc40",
+      "bytes": 199214
+    },
+    "r0_zeros": {
+      "path": "data/registry_rasters/gemsdoe32-h33-h33-2-b2-20261004T220000Z-e5eb6e7e-zeros.tif",
+      "sha256": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
+      "bytes": 219065
+    },
+    "r0_nan": {
+      "path": "data/registry_rasters/gemsdoe32-h33-h33-2-b2-20261004T220000Z-e5eb6e7e-nan.tif",
+      "sha256": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
+      "bytes": 355443
+    },
+    "labels": {
+      "path": "data/labels.tif",
+      "sha256": "7ba308ccdc4418b31a178f4f1ef21aaa6e152e4028f2f6f64b01f7eb25ae4093",
+      "bytes": 425830
+    },
+    "sample_submission": {
+      "path": "data/sample_submission.tif",
+      "sha256": "2176d08e485aa2cd2860ce8df539db4faf4d76163b38a4dd8c30a40454d35cbc",
+      "bytes": 1599597
+    }
+  },
+  "parent_rebuild": {
+    "counts": {
+      "skeleton": 121131,
+      "d28": 44090,
+      "solo": 40199,
+      "r0": 37654
+    },
+    "pixel_identical_to_pinned": true,
+    "r0_nan_file": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
+    "r0_zeros_file": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9"
+  },
+  "variants": {
+    "h33-2-b2-prune3": {
+      "id": "h33-2-b2-prune3-20261023-fb308615",
+      "parent": "h33-h33-2-b2 (R0, GEMSDOE32 e5eb6e7e)",
+      "parent_nan_sha256": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
+      "parent_zeros_sha256": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
+      "axis": "PRUNE",
+      "value": "2px<d_cat<=3px, no refill",
+      "note": "PRUNE rung 3: drop the 2<d_cat<=3 px catalogue-flank dots R0 still carries; no refill; count falls.",
+      "submission_note": "R0 h33-2-b2 PRUNE rung3: drop 2<d_cat<=3px flank dots, 37654->35483 (5.77%), no refill; pred +0.007 MODEL; UNSCORED",
+      "stats": {
+        "parent_dots": 37654,
+        "variant_dots": 35483,
+        "dots_removed": 2171,
+        "dots_added": 0,
+        "unchanged": 35483,
+        "pct_changed": 5.766,
+        "jaccard": 0.9423
+      },
+      "nan": {
+        "mode": "nan",
+        "filename": "h33-2-b2-prune3-20261023-fb308615.tif",
+        "bytes": 346839,
+        "sha256": "fb308615161ad8f62b063d90972a4c36e7c66e7c58beb3316c81497cfe65261e",
+        "sha8": "fb308615",
+        "crs": "EPSG:32611",
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "shape": [
+          3730,
+          3292
+        ],
+        "dtype": "float32",
+        "nodata": "nan",
+        "positive_pixels": 35483,
+        "emitted_mass": 35483.0,
+        "min": 0.0,
+        "max": 1.0,
+        "on_catalogue_px": 0,
+        "within_2px_catalogue_px": 0,
+        "within_3px_catalogue_px": 0,
+        "min_distance_to_catalogue_px": 3.1622776601683795,
+        "checks": {
+          "single_band": true,
+          "dtype_float32": true,
+          "shape_matches_sample": true,
+          "crs_matches_sample": true,
+          "transform_matches_sample": true,
+          "footprint_pixels_match_sample": true,
+          "no_nan_inside_footprint": true,
+          "no_inf_anywhere": true,
+          "values_in_0_1_inside_footprint": true,
+          "binary_values_only": true,
+          "zero_mass_on_catalogue": true,
+          "min_distance_to_catalogue_px_gt_3": true,
+          "nodata_is_nan": true,
+          "outside_footprint_all_nan": true
+        },
+        "all_checks_passed": true
+      },
+      "zeros": {
+        "mode": "zeros",
+        "filename": "h33-2-b2-prune3-20261023-fb308615-zeros.tif",
+        "bytes": 210325,
+        "sha256": "a438e92b79dfb7f9f1763c40ffb2d42dd60e45697dfc06fc49efae067d3c1a22",
+        "sha8": "a438e92b",
+        "crs": "EPSG:32611",
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "shape": [
+          3730,
+          3292
+        ],
+        "dtype": "float32",
+        "nodata": null,
+        "positive_pixels": 35483,
+        "emitted_mass": 35483.0,
+        "min": 0.0,
+        "max": 1.0,
+        "on_catalogue_px": 0,
+        "within_2px_catalogue_px": 0,
+        "within_3px_catalogue_px": 0,
+        "min_distance_to_catalogue_px": 3.1622776601683795,
+        "checks": {
+          "single_band": true,
+          "dtype_float32": true,
+          "shape_matches_sample": true,
+          "crs_matches_sample": true,
+          "transform_matches_sample": true,
+          "footprint_pixels_match_sample": true,
+          "no_nan_inside_footprint": true,
+          "no_inf_anywhere": true,
+          "values_in_0_1_inside_footprint": true,
+          "binary_values_only": true,
+          "zero_mass_on_catalogue": true,
+          "min_distance_to_catalogue_px_gt_3": true,
+          "nodata_is_none": true,
+          "all_finite_whole_grid": true,
+          "whole_grid_in_0_1": true
+        },
+        "all_checks_passed": true
+      },
+      "all_gates_passed": true
+    },
+    "h33-2-b2-prune4": {
+      "id": "h33-2-b2-prune4-20261023-2880b0e9",
+      "parent": "h33-h33-2-b2 (R0, GEMSDOE32 e5eb6e7e)",
+      "parent_nan_sha256": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
+      "parent_zeros_sha256": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
+      "axis": "PRUNE",
+      "value": "2px<d_cat<=4px, no refill",
+      "note": "PRUNE rung 4: one rung past prune3; tests the 100-400 m USGS-vs-LiDAR offset shadow width; count falls.",
+      "submission_note": "R0 h33-2-b2 PRUNE rung4: drop 2<d_cat<=4px flank dots, 37654->33829 (10.16%), no refill; pred +0.003 MODEL; UNSCORED",
+      "stats": {
+        "parent_dots": 37654,
+        "variant_dots": 33829,
+        "dots_removed": 3825,
+        "dots_added": 0,
+        "unchanged": 33829,
+        "pct_changed": 10.158,
+        "jaccard": 0.8984
+      },
+      "nan": {
+        "mode": "nan",
+        "filename": "h33-2-b2-prune4-20261023-2880b0e9.tif",
+        "bytes": 340096,
+        "sha256": "2880b0e90582d4cfe03165c41201c107071d3a1a88a5717351a6943f29365e7a",
+        "sha8": "2880b0e9",
+        "crs": "EPSG:32611",
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "shape": [
+          3730,
+          3292
+        ],
+        "dtype": "float32",
+        "nodata": "nan",
+        "positive_pixels": 33829,
+        "emitted_mass": 33829.0,
+        "min": 0.0,
+        "max": 1.0,
+        "on_catalogue_px": 0,
+        "within_2px_catalogue_px": 0,
+        "within_3px_catalogue_px": 0,
+        "min_distance_to_catalogue_px": 4.123105625617661,
+        "checks": {
+          "single_band": true,
+          "dtype_float32": true,
+          "shape_matches_sample": true,
+          "crs_matches_sample": true,
+          "transform_matches_sample": true,
+          "footprint_pixels_match_sample": true,
+          "no_nan_inside_footprint": true,
+          "no_inf_anywhere": true,
+          "values_in_0_1_inside_footprint": true,
+          "binary_values_only": true,
+          "zero_mass_on_catalogue": true,
+          "min_distance_to_catalogue_px_gt_3": true,
+          "nodata_is_nan": true,
+          "outside_footprint_all_nan": true
+        },
+        "all_checks_passed": true
+      },
+      "zeros": {
+        "mode": "zeros",
+        "filename": "h33-2-b2-prune4-20261023-2880b0e9-zeros.tif",
+        "bytes": 203663,
+        "sha256": "db2df78d2c0fa9b856328fb644c80ecce6232e4009dc2100ac3e3daee6e46b87",
+        "sha8": "db2df78d",
+        "crs": "EPSG:32611",
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "shape": [
+          3730,
+          3292
+        ],
+        "dtype": "float32",
+        "nodata": null,
+        "positive_pixels": 33829,
+        "emitted_mass": 33829.0,
+        "min": 0.0,
+        "max": 1.0,
+        "on_catalogue_px": 0,
+        "within_2px_catalogue_px": 0,
+        "within_3px_catalogue_px": 0,
+        "min_distance_to_catalogue_px": 4.123105625617661,
+        "checks": {
+          "single_band": true,
+          "dtype_float32": true,
+          "shape_matches_sample": true,
+          "crs_matches_sample": true,
+          "transform_matches_sample": true,
+          "footprint_pixels_match_sample": true,
+          "no_nan_inside_footprint": true,
+          "no_inf_anywhere": true,
+          "values_in_0_1_inside_footprint": true,
+          "binary_values_only": true,
+          "zero_mass_on_catalogue": true,
+          "min_distance_to_catalogue_px_gt_3": true,
+          "nodata_is_none": true,
+          "all_finite_whole_grid": true,
+          "whole_grid_in_0_1": true
+        },
+        "all_checks_passed": true
+      },
+      "all_gates_passed": true
+    },
+    "h33-2-b2-prune5": {
+      "id": "h33-2-b2-prune5-20261023-7ebfc408",
+      "parent": "h33-h33-2-b2 (R0, GEMSDOE32 e5eb6e7e)",
+      "parent_nan_sha256": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
+      "parent_zeros_sha256": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
+      "axis": "PRUNE",
+      "value": "2px<d_cat<=5px, no refill",
+      "note": "PRUNE rung 5: widest dose built this session; where the monotone flank gain stops or reverses; count falls.",
+      "submission_note": "R0 h33-2-b2 PRUNE rung5: drop 2<d_cat<=5px flank dots, 37654->32017 (14.97%), no refill; pred -0.003 MODEL; UNSCORED",
+      "stats": {
+        "parent_dots": 37654,
+        "variant_dots": 32017,
+        "dots_removed": 5637,
+        "dots_added": 0,
+        "unchanged": 32017,
+        "pct_changed": 14.971,
+        "jaccard": 0.8503
+      },
+      "nan": {
+        "mode": "nan",
+        "filename": "h33-2-b2-prune5-20261023-7ebfc408.tif",
+        "bytes": 332443,
+        "sha256": "7ebfc4086506e574ec9481de08f5efd0a4b4f3180081957d09e4692f14dde6e7",
+        "sha8": "7ebfc408",
+        "crs": "EPSG:32611",
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "shape": [
+          3730,
+          3292
+        ],
+        "dtype": "float32",
+        "nodata": "nan",
+        "positive_pixels": 32017,
+        "emitted_mass": 32017.0,
+        "min": 0.0,
+        "max": 1.0,
+        "on_catalogue_px": 0,
+        "within_2px_catalogue_px": 0,
+        "within_3px_catalogue_px": 0,
+        "min_distance_to_catalogue_px": 5.0990195135927845,
+        "checks": {
+          "single_band": true,
+          "dtype_float32": true,
+          "shape_matches_sample": true,
+          "crs_matches_sample": true,
+          "transform_matches_sample": true,
+          "footprint_pixels_match_sample": true,
+          "no_nan_inside_footprint": true,
+          "no_inf_anywhere": true,
+          "values_in_0_1_inside_footprint": true,
+          "binary_values_only": true,
+          "zero_mass_on_catalogue": true,
+          "min_distance_to_catalogue_px_gt_3": true,
+          "nodata_is_nan": true,
+          "outside_footprint_all_nan": true
+        },
+        "all_checks_passed": true
+      },
+      "zeros": {
+        "mode": "zeros",
+        "filename": "h33-2-b2-prune5-20261023-7ebfc408-zeros.tif",
+        "bytes": 195899,
+        "sha256": "9a670ccafcc470890a6c513e46518e040197a3d32597883248d276cd7a8e526c",
+        "sha8": "9a670cca",
+        "crs": "EPSG:32611",
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "shape": [
+          3730,
+          3292
+        ],
+        "dtype": "float32",
+        "nodata": null,
+        "positive_pixels": 32017,
+        "emitted_mass": 32017.0,
+        "min": 0.0,
+        "max": 1.0,
+        "on_catalogue_px": 0,
+        "within_2px_catalogue_px": 0,
+        "within_3px_catalogue_px": 0,
+        "min_distance_to_catalogue_px": 5.0990195135927845,
+        "checks": {
+          "single_band": true,
+          "dtype_float32": true,
+          "shape_matches_sample": true,
+          "crs_matches_sample": true,
+          "transform_matches_sample": true,
+          "footprint_pixels_match_sample": true,
+          "no_nan_inside_footprint": true,
+          "no_inf_anywhere": true,
+          "values_in_0_1_inside_footprint": true,
+          "binary_values_only": true,
+          "zero_mass_on_catalogue": true,
+          "min_distance_to_catalogue_px_gt_3": true,
+          "nodata_is_none": true,
+          "all_finite_whole_grid": true,
+          "whole_grid_in_0_1": true
+        },
+        "all_checks_passed": true
+      },
+      "all_gates_passed": true
+    }
+  },
+  "proxies": {
+    "d28_44090": {
+      "sgmc": 0.13766,
+      "sgmc_minus_catalogue_3px": 0.09417,
+      "catalogue_hide_and_recover": 0.16177
+    },
+    "solo_40199": {
+      "sgmc": 0.10774,
+      "sgmc_minus_catalogue_3px": 0.09529,
+      "catalogue_hide_and_recover": 0.0491
+    },
+    "R0_parent": {
+      "sgmc": 0.08938,
+      "sgmc_minus_catalogue_3px": 0.09539,
+      "catalogue_hide_and_recover": 0.00671
+    },
+    "prune3": {
+      "sgmc": 0.07713,
+      "sgmc_minus_catalogue_3px": 0.09369,
+      "catalogue_hide_and_recover": 0.0
+    },
+    "prune4": {
+      "sgmc": 0.07013,
+      "sgmc_minus_catalogue_3px": 0.08989,
+      "catalogue_hide_and_recover": 0.0
+    },
+    "prune5": {
+      "sgmc": 0.06496,
+      "sgmc_minus_catalogue_3px": 0.08461,
+      "catalogue_hide_and_recover": 0.0
+    }
+  },
+  "canary": {
+    "n_positives": 60988,
+    "n_background": 200000,
+    "best_single_feature": "geod_2ndinv - Geodetic second invariant - measure of strain rate tensor magnitude",
+    "best_single_feature_auc": 0.5687,
+    "threshold": 0.9,
+    "verdict": "CLEAN"
+  },
+  "refill_capacity": {
+    "rung_3": {
+      "pool_px": 611,
+      "accepted_at_2p8px": 475,
+      "dots_removed": 2171
+    },
+    "rung_4": {
+      "pool_px": 577,
+      "accepted_at_2p8px": 437,
+      "dots_removed": 3825
+    },
+    "rung_5": {
+      "pool_px": 469,
+      "accepted_at_2p8px": 350,
+      "dots_removed": 5637
+    }
+  },
+  "proxy_calibration": {
+    "sgmc": {
+      "proxy_vs_claim_errors": [
+        0.04072,
+        0.02536
+      ],
+      "mean_bias": 0.03304,
+      "sign_reproduced": [
+        true,
+        true
+      ]
+    },
+    "sgmc_minus_catalogue_3px": {
+      "proxy_vs_claim_errors": [
+        0.00968,
+        0.0069
+      ],
+      "mean_bias": 0.00829,
+      "sign_reproduced": [
+        true,
+        true
+      ]
+    }
+  },
+  "projections": {
+    "prune3": {
+      "proxy_delta": -0.0017,
+      "bias_corrected_model": 0.0066
+    },
+    "prune4": {
+      "proxy_delta": -0.0055,
+      "bias_corrected_model": 0.0028
+    },
+    "prune5": {
+      "proxy_delta": -0.01078,
+      "bias_corrected_model": -0.0025
+    }
+  },
+  "known_claim_contrasts": {
+    "d28_44090_to_solo_40199": 0.010799999999999976,
+    "solo_40199_to_R0_parent": 0.007000000000000006
+  },
+  "bootstrap": {
+    "seed": 851023,
+    "draws": 400
+  },
+  "note": "Proxies are local holdouts reported for context. They are not scores. No DrivenData access, no submission, no slot spent by this script."
+}
