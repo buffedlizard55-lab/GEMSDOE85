@@ -1,5 +1,22 @@
 # GEMSDOE85 — H85-GAPVENT: 57-Channel 10 m 3DEP + Fluvial χ + Blind Geothermal Vent Kernel Regressor
 
+<!-- CURRENT STATE START -->
+## CURRENT STATE — v2 / 2026-10-23 / BLOCKED
+
+This block supersedes historical recommendations below for the current session. No site redesign or prior candidate promotion.
+
+| Field | Current state |
+|---|---|
+| Parent | R0 `h33-h33-2-b2`; 37,654 unit dots; restored SHA-256 `c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9`; **not recipe-rebuilt** |
+| Best receipt | None in ledger; 0.2778 is **CLAIM**, not RECEIPT |
+| TOP_PUBLIC | Unknown; human must supply value and observation date |
+| Slots left | Unknown weekly / total; zero used by this session |
+| AXIS | Unassigned; no variants built |
+| Next 3 slots | Conditional MASS −10%, CONCENTRATION 10%, SNAP radius 2 px; proposals only, blocked on rebuild/history/assignment and exclusion clarification |
+
+Input audit: 3/28 main-manifest entries verified, 25 missing; pinned R0 separately restored and verified. R0 includes 1,611 dots <3 px from the catalogue, requiring resolution before a non-PRUNE edit. The header-only ledger is incomplete, not evidence that no experiments exist. See [IRREGULARITIES.md](IRREGULARITIES.md), [SLOT_PLAN.md](SLOT_PLAN.md), [AI_USE.md](AI_USE.md) and [docs/SUBMIT.md](docs/SUBMIT.md). Deadline 2026-12-03 is provisional pending human confirmation. Never supply credentials; no login, scraping or submission automation is authorized.
+<!-- CURRENT STATE END -->
+
 **DOE GEMS Prize · DrivenData competition #306 · current primary: session `arena/7ded4c0a-gemsdoe85` (2026-10-23 UTC)**
 
 A self-driving, fully auditable pipeline that restores 28 SHA-256-pinned public datasets and 17 historical control rasters, pre-registers 5 ranked concealed-fault hypotheses, trains a 57-channel multi-physics continuous 300 m kernel-target regressor (`H85-GAPVENT`) with Positive-Unlabeled surveyed-corridor debiasing (`IR-85-023`), validates on a 4-fold spatially-blocked hide-and-recover holdout (`gems85-holdout-v1.0.0`, `60,988` withheld positives), verifies uniqueness against all 17 fleet registry rasters, validates the written GeoTIFF against 17 format checks + `vendor/gems57/gates.py` **with zero human intervention**, and publishes a GitHub Pages site (`docs/`) with one-click download at the very top.
