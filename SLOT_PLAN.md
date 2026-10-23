@@ -1,3 +1,12 @@
+> **SUPERSEDED AS A SLOT PLAN — READ `IR-85-106` FIRST (2026-10-23, after `main` moved).**
+> `main` (PR #38) already merged a PRUNE slate that contains **the same `x3` edit** as slot 1 below
+> (`releases/h33-2-b2-prune3-20261023-fb308615.tif`, 35,483 dots from the same 2,171-dot deletion),
+> plus `prune4`/`prune5`/`r3p61`, RELIEF and SNAP files, with its own ledger and plan. **Do not spend
+> two slots on both `x3` files.** Use this page for the *diagnostics* it adds — the count-held
+> `x3-pushout` bracket, the `x2-readd` chain check, and the `IR-85-103` warning that the catalogue
+> PROXY is structurally 0 for any exclusion-compliant dot file — and follow `main`'s `SLOT_PLAN.md`
+> for the slot order unless you decide otherwise.
+
 # SLOT_PLAN — one page, GEMSDOE85, session `arena/fe618e6b-gemsdoe85` (2026-10-23)
 
 **AXIS (human-assigned this session): `PRUNE`.** Parent **R0 = `h33-h33-2-b2`** (`c55bafc4…`,
@@ -29,7 +38,7 @@ NaN-outside twin). Send the note from `docs/SUBMIT.md`.
 ## Weeks to the deadline (2026-12-03; confirm on the competition page)
 
 - **wk1 (this week):** slot 1 `x3-nofill`; slot 2 `x3-pushout` **iff** slot 1 ∈ [0.2780, 0.2830].
-- **wk2:** `PRUNE x4` (`3 < d_cat ≤ 4 px`, 1,654 dots, predicted +0.004 if the ladder holds; the
+- **wk2:** `PRUNE x4` (already built on `main` as `prune4`/`r3p61` — verify before rebuilding) (`3 < d_cat ≤ 4 px`, 1,654 dots, predicted +0.004 if the ladder holds; the
   300 m kernel makes this an out-of-range extrapolation and the natural place for the ladder to die)
   + `SPACING` at matched count, since the ladder is spent once `T` is fixed.
 - **wk3–4:** combine the two best axes (candidates on record: `CONCENTRATION` block rebalance and

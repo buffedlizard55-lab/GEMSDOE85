@@ -63,3 +63,37 @@ per-dot costs agree to 7 % (2.57e-6 vs 2.75e-6), which is what makes the third r
 **Decision it changes.** Predictions in `SLOT_PLAN.md` use the corrected lineage and the corrected
 per-dot identity. The site text is untouched (no site redesign this session); a future docs pass
 should fix it before the number is quoted to anyone outside the group.
+
+## IR-85-106 — `(parent, axis, value) = (h33-2-b2, PRUNE, x3)` was already merged on `main` (do not double-spend)
+
+**Finding.** While this branch was being built from `e990711`, `main` advanced to `ea2e72e`
+(PR #38, 281 files). That PR already contains the same axis on the same parent, including
+`releases/h33-2-b2-prune3-20261023-fb308615.tif` — "drop 2,171 dots at `2 < d_cat ≤ 3 px` →
+35,483 (5.77 %)". That is **the same edit as this session's `x3-nofill`** (same deleted set, same
+count, same percentage), plus `prune4`, `prune5`, `r3p61`, a `prune3fill20` refill, three RELIEF
+files and three SNAP files, with its own `SLOT_PLAN.md`, `ledger/submissions.csv` and a
+`scripts/build_prune_variants.py` **of the same filename as this branch's**.
+
+**Why the duplicate happened.** This branch's tree had **no `ledger/` directory at all** and no
+`SLOT_PLAN.md`; the instruction "check the ledger first" could not be satisfied from the checkout
+that was available, and the merged session landed after this branch point.
+
+**Decision it changes.**
+1. **Do not spend two slots on both `prune3` files.** They are the same physical edit; upload at most
+   one (main's `fb308615` already has a PLAN entry, so prefer it unless the human prefers this
+   branch's container/validation receipts).
+2. This branch's **PR #41 must stay open, not merged**: it conflicts with `main` on `SLOT_PLAN.md`,
+   `ledger/submissions.csv`, `scripts/build_prune_variants.py` and `docs/MECHANISM_CARDS.md`
+   (main keeps its cards at `evidence/v2-prune-mechanism-cards.md`), and merging it would fork the
+   ledger that the other session's plan depends on. The human chooses which ledger/plan survives.
+3. What remains genuinely **new** here and is worth porting by hand:
+   - the **count-held push-out** variant (`x3-pushout`, 37,645 dots) — displaces the ring rather than
+     deleting it, so it separates *proximity* from *mass*; main's `prune3fill20` refills from a
+     different pool and does not do this;
+   - **IR-85-103**: the catalogue PROXY is structurally **0.0000** for *every* exclusion-compliant dot
+     file (`k(3.0) = 0`), which means main's `+0.0085` "off-catalogue SGMC PROXY" claim and any other
+     dot-file proxy comparison need the same caveat;
+   - the **rung-to-rung identity check** (7 % scatter in per-dot cost, `T ≈ 5,470`) and the
+     **`x2-readd` negative control** that can validate the whole CLAIM chain with one slot;
+   - **IR-85-101** (rankings are unrecoverable — blocks a `MASS` session) and **IR-85-102**
+     (refill-to-count is unsatisfiable from the parent's own support).
