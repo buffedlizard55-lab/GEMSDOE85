@@ -42,7 +42,8 @@
       0.176165,
       0.216681
     ],
-    "n_withheld_positives": 11321
+    "n_withheld_positives": 11321,
+    "value": 0.196461
   },
   "ci_95": [
     0.176165,
@@ -64,7 +65,13 @@
     "literal_max_3px_overlap_including_saturating": 1.0,
     "discriminating_duplicates_count": 0,
     "passed_like_for_like_uniqueness": true,
-    "saturation_note": "9 of 236 prior rasters across historical repos are continuous surfaces or regular 5-6 px lattices (e.g. 17GEMSDOE_E-proba-multiscale with 100.00% positive pixels; 13gems_r13-lattice-s5 with 99.87% 3-px dilated footprint coverage) where even uniform random points have >= 0.74-1.00 overlap by pigeonhole geometry. Across ALL genuine fault-prediction rasters across the entire 88-repo fleet, forward 3-px overlap is strictly <= 0.640 (< 0.70) and |Spearman rho| is << 0.90 on both surface and dots (0 duplicates)."
+    "saturation_note": "9 of 236 prior rasters across historical repos are continuous surfaces or regular 5-6 px lattices (e.g. 17GEMSDOE_E-proba-multiscale with 100.00% positive pixels; 13gems_r13-lattice-s5 with 99.87% 3-px dilated footprint coverage) where even uniform random points have >= 0.74-1.00 overlap by pigeonhole geometry. Across ALL genuine fault-prediction rasters across the entire 88-repo fleet, forward 3-px overlap is strictly <= 0.640 (< 0.70) and |Spearman rho| is << 0.90 on both surface and dots (0 duplicates).",
+    "is_duplicate": false,
+    "max_comparable_dot_overlap_3px": 0.6402,
+    "max_abs_spearman": 0.41951,
+    "sibling_gemsdoe85_rasters_checked": 9,
+    "sibling_gemsdoe85_max_3px_overlap": 0.58489,
+    "sibling_gemsdoe85_max_abs_spearman": 0.02699
   },
   "raster_sha256": "61ef04376a55169786b96423114394db85b7aaadf3d298d3c75b7b90022da109",
   "zip_sha256": "c7d9b605917795e5bc1b7dbe7e09248aff7c811ddffaa7ef6f37a039e9e19520",
@@ -94,9 +101,10 @@
       4508550.0
     ],
     "transform_match": true,
-    "on_existing_catalogue_pixels": 0
+    "on_existing_catalogue_pixels": 0,
+    "all_checks_passed": true
   },
-  "submission_name": "gemsdoe85-hjcd-ventbridge-submod-20261022-zeros",
+  "submission_name": "gemsdoe85-hjcd-ventbridge-submod-zeros.tif",
   "note": "H85-HJCD: GDR1391 2m-T + sinter vents + 3DEP chi + GEO-Pb-16 + submodular 300m Dinkelbach emitter (B=2, zeros)",
   "download_tif": "docs/downloads/gemsdoe85-hjcd-ventbridge-submod-zeros.tif",
   "download_zip": "docs/downloads/gemsdoe85-hjcd-ventbridge-submod-zeros.zip",
@@ -115,7 +123,21 @@
     "literal_max_3px_overlap_including_saturating": 1.0,
     "discriminating_duplicates_count": 0,
     "passed_like_for_like_uniqueness": true,
-    "saturation_note": "9 of 236 prior rasters across historical repos are continuous surfaces or regular 5-6 px lattices (e.g. 17GEMSDOE_E-proba-multiscale with 100.00% positive pixels; 13gems_r13-lattice-s5 with 99.87% 3-px dilated footprint coverage) where even uniform random points have >= 0.74-1.00 overlap by pigeonhole geometry. Across ALL genuine fault-prediction rasters across the entire 88-repo fleet, forward 3-px overlap is strictly <= 0.640 (< 0.70) and |Spearman rho| is << 0.90 on both surface and dots (0 duplicates)."
+    "saturation_note": "9 of 236 prior rasters across historical repos are continuous surfaces or regular 5-6 px lattices (e.g. 17GEMSDOE_E-proba-multiscale with 100.00% positive pixels; 13gems_r13-lattice-s5 with 99.87% 3-px dilated footprint coverage) where even uniform random points have >= 0.74-1.00 overlap by pigeonhole geometry. Across ALL genuine fault-prediction rasters across the entire 88-repo fleet, forward 3-px overlap is strictly <= 0.640 (< 0.70) and |Spearman rho| is << 0.90 on both surface and dots (0 duplicates).",
+    "is_duplicate": false,
+    "max_comparable_dot_overlap_3px": 0.6402,
+    "max_abs_spearman": 0.41951,
+    "sibling_gemsdoe85_rasters_checked": 9,
+    "sibling_gemsdoe85_max_3px_overlap": 0.58489,
+    "sibling_gemsdoe85_max_abs_spearman": 0.02699
   },
-  "submission_note": "H85-HJCD: GDR1391 2m-T + sinter vents + 3DEP chi + GEO-Pb-16 + submodular 300m Dinkelbach emitter (B=2, zeros)"
+  "submission_note": "H85-HJCD: GDR1391 2m-T + sinter vents + 3DEP chi + GEO-Pb-16 + submodular 300m Dinkelbach emitter (B=2, zeros)",
+  "controls_at_matched_mass": {
+    "ctrl_d28": 0.091888,
+    "ctrl_h33_2_b2_foldproper": 0.094613,
+    "sibling_h85_tvfv": 0.130089,
+    "prior_record_s85_ctxfus50_37654": 0.156594,
+    "sibling_h85_gapvent57_37654": 0.171039,
+    "sibling_h85_conduit_dink300_37511": 0.191439
+  }
 }

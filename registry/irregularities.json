@@ -100,7 +100,15 @@
       "status": "fixed",
       "finding": "src/gems85/geopb.py::shift(a, dy, dx) computed slice stop w - max(0, -dx), which becomes negative and wraps around in Python when |dx| > w (e.g. small test tiles with half-length ray >= tile width).",
       "action_taken": "Added explicit early guard `if abs(dy) >= h or abs(dx) >= w: return out` in src/gems85/geopb.py::shift()."
+    },
+    {
+      "id": "IR-85-017",
+      "severity": "high",
+      "category": "ci_broken_import_on_main",
+      "status": "fixed",
+      "finding": "PR #27 on main merged src/gems85/conduit.py with unconditional top-level imports of `pandas` and `pyproj`, neither of which is listed in `requirements.txt` used by `.github/workflows/ci.yml` (`verify-gates`), causing `ModuleNotFoundError` in `test_conduit_dinkelbach.py` on clean runners.",
+      "action_taken": "Guarded optional `lightgbm`, `pandas`, and `pyproj` imports cleanly in `src/gems85/conduit.py` and verified full multi-lane test pass."
     }
   ],
-  "total_count": 14
+  "total_count": 15
 }

@@ -1,14 +1,25 @@
 from __future__ import annotations
 
+import importlib.util
 import json
 import shutil
 from pathlib import Path
 
-from build_site import build
-from check_site import check
-from preflight import review
-
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def _load_script(stem: str):
+    path = ROOT / "scripts" / f"{stem}.py"
+    spec = importlib.util.spec_from_file_location(f"_gems85_script_{stem}", path)
+    assert spec is not None and spec.loader is not None
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+build = _load_script("build_site").build
+check = _load_script("check_site").check
+review = _load_script("preflight").review
 
 
 def test_site_build_is_valid_idempotent_and_ships_verified_submission():

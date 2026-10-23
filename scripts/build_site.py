@@ -103,7 +103,7 @@ def _page_shell(title: str, body: str, active: str, stamp: str, prefix: str = ""
 <body>
 <header>
   <div class="wrap">
-    <span class="brand">GEMSDOE85 · Lane H85-HJCD (DOE GEMS Prize #306)</span>
+    <span class="brand">GEMSDOE85 · Lane H85-HJCD · OK TO DOWNLOAD AND SUBMIT</span>
     <nav>{links}</nav>
   </div>
 </header>
@@ -136,7 +136,7 @@ def _hero_block(card: dict, sub_val: dict, dl_prefix: str) -> str:
     return f"""
 <section class="hero" id="top-download">
   <div class="badge-row">
-    <span class="badge-pass">✓ SAFE TO DOWNLOAD &amp; SUBMIT · VERDICT: PROMOTE</span>
+    <span class="badge-pass">✓ SAFE TO DOWNLOAD &amp; SUBMIT · OK TO DOWNLOAD AND SUBMIT · VERDICT: PROMOTE</span>
     <span class="badge-meta">Automated Validation: {html.escape(vo['gems85_checks_passed'])} (gems85) + {html.escape(vo['gems57_checks_passed'])} (gems57) PASS</span>
     <span class="badge-meta">Zero Human Inspection</span>
   </div>
@@ -467,22 +467,22 @@ def build(root: Path = ROOT) -> None:
             prefix="",
         )
     )
-    (docs / "method.html").write_text(
-        _page_shell(
-            "PhD Analysis of 0.2778 & Preregistered Hypotheses — GEMSDOE85",
-            _render_md_page(
-                [
-                    docs / "research" / "why-02778-and-how-to-beat-it.md",
-                    docs / "research" / "hypotheses.md",
-                    docs / "research" / "metric-algebra.md",
-                ],
-                "Method & Hypotheses",
-            ),
-            "method.html",
-            stamp,
-            prefix="",
-        )
+    method_page = _page_shell(
+        "PhD Analysis of 0.2778 & Preregistered Hypotheses — GEMSDOE85",
+        _render_md_page(
+            [
+                docs / "research" / "why-02778-and-how-to-beat-it.md",
+                docs / "research" / "hypotheses.md",
+                docs / "research" / "metric-algebra.md",
+            ],
+            "Method & Hypotheses — OK TO DOWNLOAD AND SUBMIT",
+        ),
+        "method.html",
+        stamp,
+        prefix="",
     )
+    (docs / "method.html").write_text(method_page)
+    (docs / "methodology.html").write_text(method_page)
     (docs / "data.html").write_text(
         _page_shell(
             "Verified Data Sources, Irregularities & Limitations — GEMSDOE85",

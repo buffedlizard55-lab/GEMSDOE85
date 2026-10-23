@@ -1,0 +1,416 @@
+#EventID|Time|Latitude|Longitude|Depth/km|Author|Catalog|Contributor|ContributorID|MagType|Magnitude|MagAuthor|EventLocationName
+nc1056273|1980-10-09T08:07:31.000|39.8126667|-120.0026667|6.016|nc|nc|nc|nc1056273|md|2.52|nc|11 km E of Chilcoot-Vinton, California
+ci514492|1981-04-16T07:29:25.480|39.657|-117.825|-2.401|ci|ci|ci|ci514492|mc|2.87|ci|67km WNW of Austin, NV
+usp0002214|1984-02-16T11:14:57.530|39.933|-117.759|8.3|us|us|us|usp0002214|mb|4.8|us|66 km ESE of Lovelock, Nevada
+usp000223j|1984-02-19T10:22:41.290|39.976|-117.825|10|us|us|us|usp000223j|ml|4|us|59 km ESE of Lovelock, Nevada
+usp00028d0|1984-10-22T11:27:40.700|39.967|-119.479|5|us|us|us|usp00028d0|ml|3.9|brk|10 km E of Sutcliffe, Nevada
+usp0002yjz|1986-10-01T15:34:23.830|40.721|-116.37|5|us|us|us|usp0002yjz|ml|3.7|us|22 km W of Carlin, Nevada
+usp0002zbx|1986-10-26T00:46:19.040|40.311|-119.725|5|us|us|us|usp0002zbx|ml|2.5|brk|39 km ENE of Herlong, California
+usp00032z8|1987-03-04T04:19:26.300|40.645|-119.682|19|brk|us|us|usp00032z8|ml|3.7|brk|27 km W of Gerlach, Nevada
+usp00033ca|1987-03-16T16:51:05.920|39.649|-118.227|5|us|us|us|usp00033ca|ml|3.5|us|49 km ENE of Fallon Station, Nevada
+usp00033mp|1987-03-25T15:48:39.150|40.136|-117.694|5|us|us|us|usp00033mp|mb|3.9|us|66 km E of Lovelock, Nevada
+usp00033mq|1987-03-25T16:01:32.210|40.139|-117.687|5|us|us|us|usp00033mq|mb|3.9|us|67 km E of Lovelock, Nevada
+usp00033ms|1987-03-25T16:11:02.060|40.122|-117.738|10|us|us|us|usp00033ms|ml|3.8|brk|62 km E of Lovelock, Nevada
+usp00038dn|1987-09-15T06:16:45.270|39.642|-119.204|5|us|us|us|usp00038dn|ml|2.8|us|5 km NE of Fernley, Nevada
+usp0003bwy|1988-01-08T22:50:29.200|40.2|-119.8|5|brk|us|us|usp0003bwy|ml|3|brk|29 km ENE of Herlong, California
+usp0003djk|1988-03-03T18:43:51.750|40.389|-119.764|13.1|ren|us|us|usp0003djk|md|3.5|ren|41 km WSW of Empire, Nevada
+usp00055cx|1992-04-06T04:01:29.000|39.67|-119.82|9.5|ren|us|us|usp00055cx|ml|4.4|brk|4 km NNE of Lemmon Valley, Nevada
+usp0005mwc|1993-02-10T21:48:35.070|40.429|-119.612|5|us|us|us|usp0005mwc|mb|4.8|us|28 km SW of Empire, Nevada
+usp0005q8f|1993-03-28T07:34:24.140|40.571|-119.389|5|us|us|us|usp0005q8f|mb|3.4|us|4 km W of Empire, Nevada
+usp0005rf7|1993-04-20T01:33:58.180|39.839|-119.637|5|us|us|us|usp0005rf7|ml|3.5|brk|12 km SSW of Sutcliffe, Nevada
+usp00064vj|1993-12-08T15:12:36.490|40.148|-119.722|5|us|us|us|usp00064vj|ml|2.9|gs/|24 km NNW of Sutcliffe, Nevada
+usp00064vp|1993-12-08T18:25:40.800|40.166|-119.569|5|us|us|us|usp00064vp|ml|3.4|gs/|24 km N of Sutcliffe, Nevada
+usp00064wf|1993-12-09T09:54:58.470|40.132|-119.613|5|us|us|us|usp00064wf|md|3.3|gm$|20 km N of Sutcliffe, Nevada
+usp0006gwu|1994-08-13T11:09:39.240|40.128|-119.686|5|us|us|us|usp0006gwu|md|3.1|gm$|21 km NNW of Sutcliffe, Nevada
+usp00076m9|1995-11-11T00:26:34.280|40.63|-119.492|5|us|us|us|usp00076m9|ml|2.9|gs$|11 km WSW of Gerlach, Nevada
+usp00078xm|1995-12-13T15:24:03.550|40.201|-119.674|10|us|us|us|usp00078xm|ml|3.8|brk|28 km NNW of Sutcliffe, Nevada
+usp0007e5p|1996-02-29T12:43:19.200|39.921|-117.905|5|us|us|us|usp0007e5p|ml|3.5|gs/|56 km ESE of Lovelock, Nevada
+usp0007hfn|1996-05-16T13:30:21.270|40.666|-117.327|10|us|us|us|usp0007hfn|mw|3.6|brk|22 km SW of Valmy, Nevada
+usp0007tw6|1996-12-02T23:33:11.990|40.038|-119.581|5|us|us|us|usp0007tw6|ml|4.4|brk|9 km N of Sutcliffe, Nevada
+usp0007tw7|1996-12-02T23:35:51.060|40.029|-119.634|5|us|us|us|usp0007tw7|ml|3.7|us|9 km NNW of Sutcliffe, Nevada
+usp0007twj|1996-12-03T04:29:39.140|39.961|-119.652|5|us|us|us|usp0007twj|ml|3.6|brk|4 km WNW of Sutcliffe, Nevada
+usp0007twy|1996-12-03T09:08:50.650|40.024|-119.666|5|us|us|us|usp0007twy|md|2.8|nc|9 km NW of Sutcliffe, Nevada
+usp0007zt5|1997-04-01T08:24:57.630|40.555|-116.248|5|us|us|us|usp0007zt5|ml|3.6|us|21 km SW of Carlin, NV
+usp00080r1|1997-04-17T14:39:38.250|40.369|-116.177|5|us|us|us|usp00080r1|ml|4.3|us|34 km E of Crescent Valley, Nevada
+usp000843f|1997-06-28T14:12:51.670|39.728|-118.067|5|us|us|us|usp000843f|ml|3.5|us|60 km SE of Lovelock, Nevada
+usp0008465|1997-06-30T22:35:27.050|39.68|-118.066|5|us|us|us|usp0008465|ml|3.5|us|63 km ENE of Fallon Station, Nevada
+usp0008qy4|1998-07-04T11:18:18.000|40.13|-119.66|11.1|ren|us|us|usp0008qy4|mwr|3.9|brk|20 km NNW of Sutcliffe, Nevada
+usp0008vb0|1998-09-21T19:45:56.470|39.655|-118.15|10|us|us|us|usp0008vb0|ml|3.3|us|55 km ENE of Fallon Station, Nevada
+usp0008zgq|1998-12-12T06:25:12.000|39.7|-118.01|14.4|ren|us|us|usp0008zgq|ml|3.5|us|66 km SE of Lovelock, Nevada
+usp00094q9|1999-03-18T04:01:39.000|39.69|-118.03|11.7|ren|us|us|usp00094q9|md|3|ren|66 km SE of Lovelock, Nevada
+usp00094qb|1999-03-18T04:05:37.000|39.69|-118.03|10.9|ren|us|us|usp00094qb|md|3.1|ren|66 km SE of Lovelock, Nevada
+usp00094r0|1999-03-18T15:12:39.000|39.69|-118.03|11.1|ren|us|us|usp00094r0|md|3.3|ren|66 km SE of Lovelock, Nevada
+usp00096jr|1999-04-19T12:36:58.000|39.7|-117.97|14.6|ren|us|us|usp00096jr|ml|4.1|us|68 km SE of Lovelock, Nevada
+usp0009964|1999-06-02T09:58:47.630|39.643|-117.816|5|us|us|us|usp0009964|ml|3|us|66 km WNW of Austin, Nevada
+usp0009f4g|1999-09-28T00:47:24.000|39.68|-118.03|10.8|ren|us|us|usp0009f4g|md|2.9|ren|65 km ENE of Fallon Station, Nevada
+usp0009jt3|1999-12-12T18:12:38.000|39.69|-118.29|11.3|ren|us|us|usp0009jt3|mb|3.6|us|47 km NE of Fallon Station, Nevada
+usp0009kdk|1999-12-28T22:01:08.140|40.527|-116.14|5|us|us|us|usp0009kdk|ml|3|us|20 km S of Carlin, Nevada
+nn00001457|2000-01-22T14:17:03.421|39.6629|-118.3231|0|nn|nn|nn|nn00001457|ml|2.6|nn|43 km NE of Fallon Station, Nevada
+nn00001741|2000-01-27T20:09:10.190|40.3412|-118.0945|7|nn|nn|nn|nn00001741|ml|2.6|nn|31 km SSE of Humboldt, Nevada
+nn00002396|2000-02-09T01:25:28.324|40.0833|-117.0127|0|nn|nn|nn|nn00002396|ml|2.9|nn|52 km SW of Crescent Valley, Nevada
+nn00004408|2000-03-18T13:17:32.478|40.6065|-119.6272|13.3|nn|nn|nn|nn00004408|ml|2.4|nn|23 km WSW of Gerlach, Nevada
+nn00004741|2000-03-25T12:23:14.404|40.7018|-119.528|0|nn|nn|nn|nn00004741|ml|2.4|nn|15 km WNW of Gerlach, Nevada
+rusms00001812|2000-03-25T23:58:11.170|40.746|-117.206|0|us|rusms|us|rusms00001812|ml|2.2|us|8 km SW of Valmy, Nevada
+nn00006472|2000-04-23T08:27:34.910|40.4881|-119.4645|0|nn|nn|nn|nn00006472|ml|2.2|nn|14 km SW of Empire, Nevada
+nn00009866|2000-06-10T04:28:52.658|39.6995|-118.041|3.1|nn|nn|nn|nn00009866|ml|2.7|nn|64 km SE of Lovelock, Nevada
+nn00011385|2000-06-29T06:40:57.021|40.094|-119.5784|7.5|nn|nn|nn|nn00011385|ml|2.6|nn|16 km N of Sutcliffe, Nevada
+nn00388407|2000-07-05T12:26:30.508|40.2745|-119.5817|6|nn|nn|nn|nn00388407|ml|3.6|nn|36 km N of Sutcliffe, Nevada
+nn00011913|2000-07-09T01:29:44.714|39.8345|-118.4843|11.6|nn|nn|nn|nn00011913|ml|2.2|nn|38 km S of Lovelock, Nevada
+nn00012192|2000-07-14T20:03:25.096|40.6413|-117.1731|0|nn|nn|nn|nn00012192|ml|2.6|nn|17 km SSW of Valmy, Nevada
+nn00012481|2000-07-20T07:43:44.085|40.2324|-119.5228|12.8|nn|nn|nn|nn00012481|ml|2.6|nn|32 km NNE of Sutcliffe, Nevada
+nn00013993|2000-08-14T09:35:45.667|40.2521|-119.5832|0|nn|nn|nn|nn00013993|ml|2.3|nn|33 km N of Sutcliffe, Nevada
+nn00015194|2000-09-01T11:07:41.537|40.2263|-119.6301|11.2|nn|nn|nn|nn00015194|ml|2.5|nn|30 km N of Sutcliffe, Nevada
+nn00017225|2000-10-05T14:38:27.068|40.5185|-119.4985|0|nn|nn|nn|nn00017225|ml|2.5|nn|14 km WSW of Empire, Nevada
+nn00017319|2000-10-07T05:59:18.942|40.0189|-117.6803|11.8|nn|nn|nn|nn00017319|ml|2.2|nn|69 km ESE of Lovelock, Nevada
+nn00017546|2000-10-12T09:31:03.974|40.5225|-119.5085|14.2|nn|nn|nn|nn00017546|ml|2.6|nn|15 km WSW of Empire, Nevada
+nn00017547|2000-10-12T09:32:34.056|40.5074|-119.514|5.9|nn|nn|nn|nn00017547|ml|3.8|nn|16 km WSW of Empire, Nevada
+nn00017549|2000-10-12T09:59:06.233|40.5072|-119.512|15.2|nn|nn|nn|nn00017549|ml|3.3|nn|16 km WSW of Empire, Nevada
+nn00017560|2000-10-12T15:40:35.530|40.4881|-119.4789|7.7|nn|nn|nn|nn00017560|ml|2.4|nn|15 km SW of Empire, Nevada
+nn00017580|2000-10-12T21:24:05.485|40.4782|-119.4446|0|nn|nn|nn|nn00017580|ml|2.2|nn|13 km SW of Empire, Nevada
+nn00017626|2000-10-13T20:38:37.095|40.5024|-119.4655|17.8|nn|nn|nn|nn00017626|ml|2.8|nn|13 km SW of Empire, Nevada
+nn00017743|2000-10-16T08:25:36.587|40.5168|-119.4995|4.5|nn|nn|nn|nn00017743|ml|2.9|nn|14 km WSW of Empire, Nevada
+nn00017783|2000-10-17T08:51:36.894|40.5152|-119.4793|2.3|nn|nn|nn|nn00017783|ml|2.3|nn|13 km WSW of Empire, Nevada
+nn00017895|2000-10-18T23:58:31.350|40.4999|-119.4805|2.2|nn|nn|nn|nn00017895|ml|2.3|nn|14 km SW of Empire, Nevada
+nn00017928|2000-10-19T13:52:32.492|40.5124|-119.4658|0|nn|nn|nn|nn00017928|ml|2.5|nn|12 km SW of Empire, Nevada
+nn00017952|2000-10-19T23:52:18.670|40.4914|-119.4586|6.3|nn|nn|nn|nn00017952|ml|2.3|nn|13 km SW of Empire, Nevada
+nn00017958|2000-10-20T01:02:05.410|40.5119|-119.472|2.4|nn|nn|nn|nn00017958|ml|2.2|nn|13 km WSW of Empire, Nevada
+nn00018031|2000-10-20T01:03:30.224|40.5193|-119.4988|2.7|nn|nn|nn|nn00018031|ml|3.3|nn|14 km WSW of Empire, Nevada
+nn00017959|2000-10-20T01:13:41.107|40.5226|-119.4966|1|nn|nn|nn|nn00017959|ml|2.5|nn|Nevada
+nn00017995|2000-10-20T17:07:32.309|40.5056|-119.4627|2.1|nn|nn|nn|nn00017995|ml|2.6|nn|12 km SW of Empire, Nevada
+nn00017996|2000-10-20T17:10:13.079|40.5102|-119.4839|4.2|nn|nn|nn|nn00017996|ml|2.5|nn|14 km WSW of Empire, Nevada
+nn00019000|2000-11-04T15:19:31.549|40.5153|-119.4507|0|nn|nn|nn|nn00019000|ml|2.2|nn|11 km SW of Empire, Nevada
+nn00019477|2000-11-15T01:28:10.341|40.4986|-119.5175|6.4|nn|nn|nn|nn00019477|ml|2.9|nn|17 km WSW of Empire, Nevada
+nn00019478|2000-11-15T02:06:38.844|40.5028|-119.5118|0|nn|nn|nn|nn00019478|ml|2.3|nn|Nevada
+nn00019487|2000-11-15T08:27:58.780|40.5039|-119.4968|12.2|nn|nn|nn|nn00019487|ml|2.3|nn|15 km WSW of Empire, Nevada
+nn00019519|2000-11-15T10:04:56.609|40.5159|-119.5264|11.6|nn|nn|nn|nn00019519|ml|2.7|nn|16 km WSW of Empire, Nevada
+nn00019531|2000-11-15T21:08:26.543|40.4953|-119.5066|0|nn|nn|nn|nn00019531|ml|2.6|nn|16 km WSW of Empire, Nevada
+nn00399448|2000-11-16T13:06:52.786|40.5037|-119.4981|12.5|nn|nn|nn|nn00399448|ml|3.3|nn|15 km WSW of Empire, Nevada
+nn00019607|2000-11-16T22:26:05.497|40.4858|-119.463|0|nn|nn|nn|nn00019607|ml|2.4|nn|14 km SW of Empire, Nevada
+nn00019665|2000-11-17T20:36:45.323|40.4655|-119.483|15.3|nn|nn|nn|nn00019665|ml|2.4|nn|17 km SW of Empire, Nevada
+nn00019705|2000-11-18T18:41:50.708|39.7633|-118.0596|7.8|nn|nn|nn|nn00019705|ml|2.9|nn|58 km SE of Lovelock, Nevada
+nn00399831|2000-11-19T12:54:50.011|40.4909|-119.5187|5|nn|nn|nn|nn00399831|ml|4.2|nn|17 km WSW of Empire, Nevada
+nn00019978|2000-11-23T21:24:18.350|40.4776|-119.4725|3.4|nn|nn|nn|nn00019978|ml|2.5|nn|15 km SW of Empire, Nevada
+nn00019979|2000-11-23T22:12:49.356|40.4949|-119.4929|4.7|nn|nn|nn|nn00019979|ml|2.2|nn|15 km SW of Empire, Nevada
+nn00019986|2000-11-24T00:40:10.671|40.4775|-119.4735|5.1|nn|nn|nn|nn00019986|ml|3.4|nn|15 km SW of Empire, Nevada
+nn00020076|2000-11-25T17:38:20.098|39.6757|-119.293|8.9|nn|nn|nn|nn00020076|ml|3.4|nn|4 km N of Wadsworth, Nevada
+nn00020077|2000-11-25T17:55:09.005|40.4822|-119.4898|5.9|nn|nn|nn|nn00020077|ml|2.4|nn|16 km SW of Empire, Nevada
+nn00020108|2000-11-26T11:00:25.347|40.487|-119.4766|7.4|nn|nn|nn|nn00020108|ml|3|nn|15 km SW of Empire, Nevada
+nn00020151|2000-11-27T06:11:54.768|40.4948|-119.503|1.5|nn|nn|nn|nn00020151|ml|2.4|nn|16 km WSW of Empire, Nevada
+nn00020161|2000-11-27T10:43:42.654|40.4897|-119.481|5.3|nn|nn|nn|nn00020161|ml|2.4|nn|15 km SW of Empire, Nevada
+nn00020169|2000-11-27T15:09:58.236|40.4909|-119.4784|5.1|nn|nn|nn|nn00020169|ml|2.3|nn|14 km SW of Empire, Nevada
+nn00020239|2000-11-28T06:40:49.661|40.4898|-119.5377|2.3|nn|nn|nn|nn00020239|ml|2.4|nn|19 km WSW of Empire, Nevada
+nn00020232|2000-11-28T15:16:57.986|40.4595|-119.4753|0|nn|nn|nn|nn00020232|ml|2.4|nn|17 km SW of Empire, Nevada
+nn00020283|2000-11-29T04:50:39.669|40.4703|-119.4944|13|nn|nn|nn|nn00020283|ml|2.3|nn|17 km SW of Empire, Nevada
+nn00020291|2000-11-29T08:49:41.987|40.4864|-119.5055|0|nn|nn|nn|nn00020291|ml|3.1|nn|17 km SW of Empire, Nevada
+nn00020585|2000-12-04T19:04:37.355|40.4453|-119.4576|0|nn|nn|nn|nn00020585|ml|2.6|nn|17 km SW of Empire, Nevada
+nn00020664|2000-12-05T14:10:11.832|40.2133|-119.5961|7.1|nn|nn|nn|nn00020664|ml|2.3|nn|29 km N of Sutcliffe, Nevada
+nn00020774|2000-12-07T18:54:09.093|40.4186|-119.7306|18.6|nn|nn|nn|nn00020774|ml|2.3|nn|37 km WSW of Empire, Nevada
+nn00020777|2000-12-07T19:18:12.976|40.4162|-119.7306|18.8|nn|nn|nn|nn00020777|ml|2.4|nn|37 km WSW of Empire, Nevada
+nn00021117|2000-12-13T19:22:29.696|39.6543|-118.4528|0|nn|nn|nn|nn00021117|ml|2.2|nn|34 km NE of Fallon, Nevada
+nn00400791|2000-12-23T07:06:35.821|40.2273|-119.5805|8.2|nn|nn|nn|nn00400791|ml|3.5|nn|30 km N of Sutcliffe, Nevada
+nn00021670|2000-12-23T07:08:51.130|40.2206|-119.581|12.5|nn|nn|nn|nn00021670|ml|3|nn|30 km N of Sutcliffe, Nevada
+nn00021642|2000-12-23T07:18:13.097|40.2316|-119.5812|12.1|nn|nn|nn|nn00021642|ml|2.6|nn|31 km N of Sutcliffe, Nevada
+nn00021643|2000-12-23T07:27:32.272|40.2148|-119.5743|12.3|nn|nn|nn|nn00021643|ml|2.5|nn|29 km N of Sutcliffe, Nevada
+nn00022187|2001-01-04T19:21:30.036|40.5434|-119.4096|0|nn|nn|nn|nn00022187|ml|2.3|nn|6 km WSW of Empire, Nevada
+nn00022632|2001-01-12T03:57:16.875|40.4114|-119.7112|10.2|nn|nn|nn|nn00022632|ml|2.3|nn|36 km WSW of Empire, Nevada
+nn00022636|2001-01-12T06:06:55.690|40.3917|-119.7156|1|nn|nn|nn|nn00022636|ml|2.3|nn|37 km WSW of Empire, Nevada
+nn00023055|2001-01-19T14:49:22.704|39.9173|-118.8348|4.8|nn|nn|nn|nn00023055|ml|2.2|nn|42 km SW of Lovelock, Nevada
+nn00024113|2001-02-13T21:56:44.946|39.6805|-118.0399|9.8|nn|nn|nn|nn00024113|ml|2.2|nn|65 km ENE of Fallon Station, Nevada
+nn00025374|2001-03-06T04:38:03.013|40.4785|-119.5007|0|nn|nn|nn|nn00025374|ml|2.4|nn|17 km SW of Empire, Nevada
+nn00026906|2001-03-31T07:41:03.772|39.6798|-118.311|1.3|nn|nn|nn|nn00026906|ml|2.3|nn|45 km NE of Fallon Station, Nevada
+nn00029157|2001-05-07T17:14:20.725|40.6097|-117.1475|18|nn|nn|nn|nn00029157|ml|2.8|nn|18 km WSW of Battle Mountain, Nevada
+nn00029217|2001-05-08T08:49:51.841|40.4182|-119.5076|0|nn|nn|nn|nn00029217|ml|2.7|nn|22 km SW of Empire, Nevada
+nn00029415|2001-05-12T13:08:17.575|40.2472|-117.7577|0|nn|nn|nn|nn00029415|ml|2.3|nn|56 km SE of Imlay, Nevada
+nn00030878|2001-06-10T11:09:45.386|40.0608|-117.6605|0|nn|nn|nn|nn00030878|ml|2.9|nn|70 km E of Lovelock, Nevada
+nn00031783|2001-06-27T20:24:31.326|39.9875|-117.8478|0|nn|nn|nn|nn00031783|ml|2.5|nn|57 km ESE of Lovelock, Nevada
+nn00035474|2001-08-16T13:23:31.364|40.4099|-119.7769|0|nn|nn|nn|nn00035474|ml|2.6|nn|41 km WSW of Empire, Nevada
+nn00037199|2001-09-21T07:32:22.969|40.6502|-119.3353|4.7|nn|nn|nn|nn00037199|ml|2.6|nn|1 km E of Gerlach, Nevada
+nn00039251|2001-11-01T15:48:04.558|40.5637|-119.75|0|nn|nn|nn|nn00039251|ml|2.2|nn|34 km W of Empire, Nevada
+nn00041765|2001-12-13T14:35:39.894|40.7435|-118.9497|1.9|nn|nn|nn|nn00041765|ml|2.3|nn|23 km E of Black Rock City, Nevada
+nn00042506|2001-12-30T01:09:10.671|40.2521|-117.6493|4|nn|nn|nn|nn00042506|ml|2.2|nn|62 km SE of Imlay, Nevada
+nn00044246|2002-02-07T07:00:43.682|39.6878|-118.2857|12.2|nn|nn|nn|nn00044246|ml|2.3|nn|47 km NE of Fallon Station, Nevada
+nn00047791|2002-04-26T23:43:15.790|40.2406|-119.6363|0|nn|nn|nn|nn00047791|ml|2.7|nn|32 km N of Sutcliffe, Nevada
+nn00049038|2002-05-28T19:27:51.499|40.1386|-118.2831|6.9|nn|nn|nn|nn00049038|ml|2.3|nn|16 km ESE of Lovelock, Nevada
+nn00052217|2002-07-08T01:55:36.782|40.1348|-119.6647|14.1|nn|nn|nn|nn00052217|ml|2.2|nn|21 km NNW of Sutcliffe, Nevada
+nn00057291|2002-10-05T19:11:53.508|40.4348|-117.6094|6.2|nn|nn|nn|nn00057291|ml|2.5|nn|52 km ESE of Imlay, Nevada
+nn00057609|2002-10-12T10:51:21.445|40.7153|-119.2769|0|nn|nn|nn|nn00057609|ml|2.4|nn|7 km SW of Burning Man Earth, Nevada
+nn00060626|2002-12-14T18:47:32.316|40.1927|-119.6705|8.3|nn|nn|nn|nn00060626|ml|2.4|nn|27 km NNW of Sutcliffe, Nevada
+nn00061071|2002-12-25T14:54:37.687|40.3477|-119.8068|12.2|nn|nn|nn|nn00061071|ml|2.7|nn|35 km NE of Herlong, California
+nn00061072|2002-12-25T14:57:10.719|40.3538|-119.8051|11.4|nn|nn|nn|nn00061072|ml|2.7|nn|36 km NE of Herlong, California
+nn00062336|2003-01-23T21:49:46.761|39.9591|-117.8553|6.3|nn|nn|nn|nn00062336|mb|2.3|nn|58 km ESE of Lovelock, Nevada
+nn00062367|2003-01-24T20:21:50.696|39.9406|-117.8591|13|nn|nn|nn|nn00062367|ml|2.2|nn|58 km ESE of Lovelock, Nevada
+nn00062380|2003-01-25T02:43:00.213|39.9752|-117.8698|6.9|nn|nn|nn|nn00062380|ml|3.1|nn|56 km ESE of Lovelock, Nevada
+nn00380209|2003-01-25T02:45:49.364|39.9773|-117.8761|5.6|nn|nn|nn|nn00380209|ml|3.3|nn|55 km ESE of Lovelock, Nevada
+nn00062846|2003-02-04T12:08:28.250|40.0527|-119.9922|7|nn|nn|nn|nn00062846|ml|2.3|nn|9 km ENE of Doyle, California
+nn00063831|2003-02-25T23:16:46.266|39.9658|-117.8555|6|nn|nn|nn|nn00063831|ml|2.3|nn|57 km ESE of Lovelock, Nevada
+nn00063984|2003-03-01T03:14:50.364|40.5478|-119.6532|0|nn|nn|nn|nn00063984|ml|2.3|nn|26 km W of Empire, Nevada
+nn00065372|2003-03-23T23:43:46.945|40.2039|-119.7225|14.1|nn|nn|nn|nn00065372|ml|3.2|nn|30 km NNW of Sutcliffe, Nevada
+nn00065373|2003-03-23T23:46:10.432|40.2307|-119.7129|10.5|nn|nn|nn|nn00065373|ml|2.3|nn|32 km NNW of Sutcliffe, Nevada
+usp000btcd|2003-03-24T02:05:28.400|40.189|-119.762|8.7|nc|us|us|usp000btcd|md|2.8|nc|29 km NNW of Sutcliffe, Nevada
+nn00068647|2003-06-14T18:02:08.988|40.166|-119.7134|11.8|nn|nn|nn|nn00068647|ml|2.2|nn|25 km NNW of Sutcliffe, Nevada
+nn00068742|2003-06-17T20:42:21.285|40.1843|-118.2549|8|nn|nn|nn|nn00068742|ml|2.3|nn|18 km E of Lovelock, Nevada
+nn00069008|2003-06-24T11:44:45.598|40.3801|-119.7134|12.1|nn|nn|nn|nn00069008|ml|2.7|nn|38 km SW of Empire, Nevada
+nn00069061|2003-06-26T00:54:51.036|40.1841|-118.2936|3|nn|nn|nn|nn00069061|ml|2.3|nn|15 km E of Lovelock, Nevada
+nn00069110|2003-06-27T18:32:54.235|40.1963|-118.2662|8.9|nn|nn|nn|nn00069110|ml|2.6|nn|17 km E of Lovelock, Nevada
+nn00069113|2003-06-27T19:55:36.793|40.1782|-118.2445|7.5|nn|nn|nn|nn00069113|ml|2.4|nn|19 km E of Lovelock, Nevada
+nn00069325|2003-07-04T15:07:26.106|40.3878|-119.7269|11.8|nn|nn|nn|nn00069325|ml|2.6|nn|38 km WSW of Empire, Nevada
+nn00069344|2003-07-05T07:13:59.622|40.7075|-119.5961|6.8|nn|nn|nn|nn00069344|ml|2.5|nn|21 km WNW of Gerlach, Nevada
+nn00069998|2003-07-22T19:46:18.649|39.8057|-117.6611|0|nn|nn|nn|nn00069998|ml|2.3|nn|61 km NW of Austin, Nevada
+nn00071082|2003-08-18T10:07:00.386|39.9657|-117.8418|6.9|nn|nn|nn|nn00071082|ml|2.7|nn|58 km ESE of Lovelock, Nevada
+nn00073651|2003-10-01T08:33:43.043|40.6251|-119.3157|11.6|nn|nn|nn|nn00073651|ml|3.3|nn|4 km SE of Gerlach, Nevada
+nn00075110|2003-11-01T08:53:30.430|40.3993|-119.7304|0|nn|nn|nn|nn00075110|ml|2.2|nn|38 km WSW of Empire, Nevada
+nn00077009|2003-12-05T13:07:41.765|39.8454|-119.1461|10.5|nn|nn|nn|nn00077009|ml|2.4|nn|18 km E of Nixon, Nevada
+nn00102038|2004-02-11T04:34:59.048|40.6436|-119.4877|8.9|nn|nn|nn|nn00102038|ml|2.2|nn|11 km W of Gerlach, Nevada
+nn00102042|2004-02-11T05:41:14.602|40.6583|-119.4878|10.2|nn|nn|nn|nn00102042|ml|2.9|nn|11 km W of Gerlach, Nevada
+nn00102052|2004-02-11T11:19:18.890|40.6558|-119.4785|6.5|nn|nn|nn|nn00102052|ml|2.2|nn|10 km W of Gerlach, Nevada
+nn00103519|2004-03-15T05:26:42.736|40.43|-119.4629|0|nn|nn|nn|nn00103519|ml|2.5|nn|19 km SSW of Empire, Nevada
+nn00105700|2004-05-14T11:57:44.059|39.7035|-116.7725|0|nn|nn|nn|nn00105700|ml|2.3|nn|34 km NE of Austin, Nevada
+nn00105815|2004-05-18T12:58:06.474|40.0889|-119.68|14.7|nn|nn|nn|nn00105815|ml|2.2|nn|16 km NNW of Sutcliffe, Nevada
+nn00106742|2004-06-10T04:16:39.901|39.9761|-117.8462|6.8|nn|nn|nn|nn00106742|ml|3.4|nn|58 km ESE of Lovelock, Nevada
+nn00107389|2004-06-29T18:36:36.295|40.4639|-117.5849|10.6|nn|nn|nn|nn00107389|ml|2.4|nn|52 km ESE of Imlay, Nevada
+nn00108604|2004-07-15T03:53:03.128|40.3224|-117.1567|9.1|nn|nn|nn|nn00108604|ml|3.2|nn|40 km SSW of Battle Mountain, Nevada
+nn00111755|2004-09-02T12:35:19.682|39.6756|-118.0559|6.7|nn|nn|nn|nn00111755|ml|2.3|nn|63 km ENE of Fallon Station, Nevada
+nn00113959|2004-09-21T11:53:15.797|40.3904|-117.7149|11.3|nn|nn|nn|nn00113959|ml|3.3|nn|47 km SE of Imlay, Nevada
+nn00115085|2004-09-27T20:29:45.118|40.621|-119.3215|1.1|nn|nn|nn|nn00115085|ml|2.7|nn|4 km SE of Gerlach, Nevada
+nn00115578|2004-10-01T06:38:02.061|40.6408|-117.3737|0|nn|nn|nn|nn00115578|ml|2.6|nn|26 km SW of Valmy, Nevada
+nn00116700|2004-10-11T02:10:05.038|40.2803|-117.7613|0|nn|nn|nn|nn00116700|ml|2.3|nn|53 km SE of Imlay, Nevada
+nn00122482|2004-12-27T18:02:20.214|40.0518|-119.5927|8.7|nn|nn|nn|nn00122482|ml|2.2|nn|11 km N of Sutcliffe, Nevada
+nn00191064|2005-01-13T14:12:15.214|39.7474|-119.8862|6|nn|nn|nn|nn00191064|ml|3.2|nn|10 km NE of Cold Springs, Nevada
+nn00130120|2005-03-04T05:33:45.430|39.6508|-119.3244|12|nn|nn|nn|nn00130120|ml|3|nn|3 km WNW of Wadsworth, Nevada
+nn00131211|2005-03-14T11:24:36.947|40.3892|-119.7873|14.1|nn|nn|nn|nn00131211|ml|2.4|nn|40 km NE of Herlong, California
+nn00137654|2005-05-01T01:45:40.226|39.684|-118.4383|10.1|nn|nn|nn|nn00137654|ml|2.6|nn|37 km NE of Fallon, Nevada
+nn00139229|2005-05-15T19:16:47.695|39.9396|-117.8338|1|nn|nn|nn|nn00139229|ml|2.7|nn|60 km ESE of Lovelock, Nevada
+nn00140566|2005-05-24T21:36:30.658|39.7146|-119.4074|10.8|nn|nn|nn|nn00140566|ml|2.2|nn|Nevada
+nn00141900|2005-06-03T20:55:10.107|40.1534|-119.6461|11.1|nn|nn|nn|nn00141900|ml|2.3|nn|22 km N of Sutcliffe, Nevada
+nn00143401|2005-06-10T23:56:35.217|40.3921|-117.6353|9.3|nn|nn|nn|nn00143401|ml|3.3|nn|52 km SE of Imlay, Nevada
+nn00148591|2005-07-03T07:58:09.480|40.3628|-119.3913|9.1|nn|nn|nn|nn00148591|ml|3.4|nn|24 km S of Empire, Nevada
+nn00162548|2005-09-15T15:41:22.437|40.383|-117.5645|15.6|nn|nn|nn|nn00162548|ml|2.4|nn|58 km ESE of Imlay, Nevada
+nn00191028|2005-10-03T17:51:57.174|40.5172|-116.7416|0|nn|nn|nn|nn00191028|ml|2.9|nn|17 km NW of Crescent Valley, Nevada
+nn00164691|2005-10-06T01:01:45.170|40.4923|-117.6042|8|nn|nn|nn|nn00164691|ml|3.9|nn|49 km ESE of Imlay, Nevada
+nn00176068|2006-02-19T19:54:04.663|40.5304|-116.5655|0|nn|nn|nn|nn00176068|ml|3.4|nn|12 km N of Crescent Valley, Nevada
+nn00176115|2006-02-22T05:37:45.700|40.0585|-119.9946|4.7|nn|nn|nn|nn00176115|ml|3|nn|Nevada
+nn00176300|2006-02-24T18:00:39.709|40.4349|-119.5656|0|nn|nn|nn|nn00176300|ml|2.2|nn|24 km SW of Empire, Nevada
+nn00177596|2006-03-17T03:58:27.025|40.1353|-119.8108|11|nn|nn|nn|nn00177596|ml|2.6|nn|27 km NW of Sutcliffe, Nevada
+nn00178587|2006-04-05T00:42:40.075|40.1497|-118.2201|13.3|nn|nn|nn|nn00178587|ml|2.8|nn|21 km E of Lovelock, Nevada
+nn00179564|2006-04-19T22:38:36.013|40.0294|-118.1688|12.3|nn|nn|nn|nn00179564|ml|2.2|nn|30 km ESE of Lovelock, Nevada
+nn00184080|2006-06-28T02:49:20.909|40.4152|-117.7166|10.7|nn|nn|nn|nn00184080|ml|2.2|nn|45 km SE of Imlay, Nevada
+nn00191133|2006-10-27T12:41:33.100|40.4585|-117.6655|0|nn|nn|nn|nn00191133|ml|2.3|nn|46 km ESE of Imlay, Nevada
+nn00191620|2006-11-08T08:03:10.937|40.2054|-118.2585|10.1|nn|nn|nn|nn00191620|ml|3.7|nn|18 km E of Lovelock, Nevada
+nn00191621|2006-11-08T08:13:46.680|40.194|-118.2495|10.4|nn|nn|nn|nn00191621|ml|3.2|nn|19 km E of Lovelock, Nevada
+nn00193895|2006-12-05T22:48:46.500|40.2025|-119.9875|7|nn|nn|nn|nn00193895|ml|2.2|nn|14 km ENE of Herlong, California
+nn00195531|2006-12-31T23:47:48.307|40.2637|-116.706|0|nn|nn|nn|nn00195531|ml|2.6|nn|20 km SSW of Crescent Valley, Nevada
+usp000f1um|2007-01-07T00:27:12.160|39.934|-116.678|5|us|us|us|usp000f1um|ml|3|us|54 km S of Crescent Valley, Nevada
+nn00197649|2007-01-30T23:52:08.451|40.0948|-118.2633|0|nn|nn|nn|nn00197649|ml|2.2|nn|20 km ESE of Lovelock, Nevada
+usp000f5ec|2007-02-23T00:25:16.380|40.113|-116.31|5|us|us|us|usp000f5ec|ml|3.5|us|40 km SE of Crescent Valley, Nevada
+nn00203401|2007-03-01T17:06:13.150|39.6921|-118.2969|8.7|nn|nn|nn|nn00203401|ml|2.6|nn|47 km NE of Fallon Station, Nevada
+nn00218058|2007-08-29T04:08:14.398|40.368|-119.7905|13.3|nn|nn|nn|nn00218058|ml|2.6|nn|38 km NE of Herlong, California
+nn00219095|2007-09-09T01:33:23.775|40.3556|-117.107|7.9|nn|nn|nn|nn00219095|ml|3.6|nn|35 km SSW of Battle Mountain, Nevada
+nn00219602|2007-09-13T10:30:48.890|40.6421|-116.7864|5.8|nn|nn|nn|nn00219602|ml|3.6|nn|12 km E of Battle Mountain, Nevada
+nn00219568|2007-09-13T10:43:33.160|40.6424|-116.7842|7|nn|nn|nn|nn00219568|ml|3.4|nn|12 km E of Battle Mountain, Nevada
+rusms00004409|2007-11-14T22:15:52.320|40.698|-116.265|0|us|rusms|us|rusms00004409|ml|2.6|exp|13 km W of Carlin, Nevada
+nn00226392|2007-12-06T20:41:04.934|40.1428|-119.1734|9.8|nn|nn|nn|nn00226392|ml|2.3|nn|37 km NNE of Nixon, Nevada
+nn00235627|2008-02-25T10:32:49.589|40.6042|-116.2261|5.3|nn|nn|nn|nn00235627|ml|2.6|nn|15 km SW of Carlin, Nevada
+nn00236684|2008-03-02T12:54:54.253|40.4014|-116.4714|5.1|nn|nn|nn|nn00236684|ml|2.2|nn|9 km E of Crescent Valley, Nevada
+nn00239608|2008-03-28T03:59:45.503|40.7379|-116.2872|11.4|nn|nn|nn|nn00239608|ml|2.4|nn|15 km W of Carlin, Nevada
+nn00239636|2008-03-28T16:09:06.248|40.7395|-116.2823|11.5|nn|nn|nn|nn00239636|ml|2.6|nn|15 km W of Carlin, Nevada
+nn00244174|2008-05-05T20:31:08.131|40.128|-119.6609|11.8|nn|nn|nn|nn00244174|ml|2.2|nn|20 km NNW of Sutcliffe, Nevada
+nn00249406|2008-06-11T22:26:20.895|40.4533|-119.5356|5.6|nn|nn|nn|nn00249406|ml|2.9|nn|21 km SW of Empire, Nevada
+nn00249729|2008-06-13T18:31:04.336|40.4725|-119.6112|7.1|nn|nn|nn|nn00249729|ml|3.9|nn|25 km WSW of Empire, Nevada
+nn00249821|2008-06-13T18:33:30.452|40.4683|-119.5807|0|nn|nn|nn|nn00249821|ml|3.3|nn|23 km WSW of Empire, Nevada
+nn00249734|2008-06-13T18:54:52.868|40.4548|-119.5738|13.6|nn|nn|nn|nn00249734|ml|2.5|nn|23 km SW of Empire, Nevada
+nn00249772|2008-06-13T20:31:17.563|40.4482|-119.5704|0|nn|nn|nn|nn00249772|ml|2.9|nn|23 km SW of Empire, Nevada
+nn00249784|2008-06-13T21:34:16.548|40.4792|-119.5854|0|nn|nn|nn|nn00249784|ml|2.7|nn|23 km WSW of Empire, Nevada
+nn00249803|2008-06-13T22:59:08.849|40.4915|-119.6402|2.3|nn|nn|nn|nn00249803|ml|2.9|nn|26 km WSW of Empire, Nevada
+nn00249804|2008-06-13T23:45:49.986|40.4549|-119.5457|16.9|nn|nn|nn|nn00249804|ml|2.3|nn|21 km SW of Empire, Nevada
+nn00249883|2008-06-14T19:25:17.836|40.4451|-119.5777|12.3|nn|nn|nn|nn00249883|ml|2.5|nn|24 km SW of Empire, Nevada
+nn00249939|2008-06-15T21:26:49.337|40.4673|-119.6368|9.5|nn|nn|nn|nn00249939|ml|2.3|nn|27 km WSW of Empire, Nevada
+nn00250156|2008-06-16T22:58:42.575|40.4307|-119.5318|0|nn|nn|nn|nn00250156|ml|2.5|nn|22 km SW of Empire, Nevada
+nn00250734|2008-06-19T22:28:04.792|40.5911|-119.6966|15.7|nn|nn|nn|nn00250734|ml|3.1|nn|29 km WSW of Gerlach, Nevada
+nn00250790|2008-06-20T00:37:13.286|40.4472|-119.5727|10|nn|nn|nn|nn00250790|ml|2.4|nn|Nevada
+nn00251739|2008-06-26T17:39:19.576|39.8749|-118.3528|0|nn|nn|nn|nn00251739|ml|2.8|nn|35 km SSE of Lovelock, Nevada
+nn00252719|2008-07-05T02:14:32.238|40.4679|-119.5951|3.5|nn|nn|nn|nn00252719|ml|3|nn|24 km WSW of Empire, Nevada
+nn00255753|2008-07-29T11:29:09.786|40.0405|-119.9541|8|nn|nn|nn|nn00255753|ml|2.3|nn|12 km E of Doyle, California
+nn00256259|2008-08-04T06:36:04.162|40.0794|-119.6772|14.4|nn|nn|nn|nn00256259|ml|2.4|nn|15 km NNW of Sutcliffe, Nevada
+nn00257944|2008-08-20T12:54:21.248|39.9553|-117.8596|1.8|nn|nn|nn|nn00257944|ml|2.9|nn|57 km ESE of Lovelock, Nevada
+nn00258038|2008-08-20T22:16:39.806|40.4542|-119.5674|0|nn|nn|nn|nn00258038|ml|2.3|nn|23 km SW of Empire, Nevada
+nn00261817|2008-09-30T21:00:11.913|40.7325|-119.1267|0.7|nn|nn|nn|nn00261817|ml|2.6|nn|8 km ESE of Black Rock City, Nevada
+nn00262242|2008-10-05T16:19:56.665|40.7477|-119.1604|1.3|nn|nn|nn|nn00262242|ml|2.3|nn|5 km ESE of Black Rock City, Nevada
+nn00262243|2008-10-05T16:20:59.334|40.7377|-119.1311|0.5|nn|nn|nn|nn00262243|ml|2.2|nn|8 km ESE of Black Rock City, Nevada
+nn00265703|2008-11-21T02:16:52.359|40.1197|-119.6545|14.7|nn|nn|nn|nn00265703|ml|2.6|nn|19 km NNW of Sutcliffe, Nevada
+nn00266802|2008-12-03T19:29:47.919|40.7033|-119.3304|7.6|nn|nn|nn|nn00266802|ml|2.5|nn|6 km NNE of Gerlach, Nevada
+nn00268277|2008-12-14T08:28:27.625|40.463|-119.5504|0|nn|nn|nn|nn00268277|ml|2.8|nn|21 km SW of Empire, Nevada
+nn00268787|2008-12-18T14:39:25.940|40.1367|-119.357|5.6|nn|nn|nn|nn00268787|ml|2.3|nn|29 km NE of Sutcliffe, Nevada
+usp000gr5k|2008-12-22T01:17:21.400|40.551|-117.472|5|us|us|us|usp000gr5k|ml|2.9|ren|39 km SW of Valmy, Nevada
+nn00270785|2009-01-04T14:03:13.218|40.0966|-119.6637|15.3|nn|nn|nn|nn00270785|ml|2.4|nn|17 km NNW of Sutcliffe, Nevada
+nn00271733|2009-01-12T18:35:06.400|39.848|-118.3403|0|nn|nn|nn|nn00271733|ml|2.7|nn|38 km SSE of Lovelock, Nevada
+nn00272175|2009-01-15T02:44:32.868|40.1793|-117.0337|2.4|nn|nn|nn|nn00272175|ml|2.6|nn|46 km SW of Crescent Valley, Nevada
+nn00274258|2009-01-31T08:22:29.024|39.9242|-117.8555|0|nn|nn|nn|nn00274258|ml|3.2|nn|59 km ESE of Lovelock, Nevada
+nn00275636|2009-02-12T19:11:08.947|40.331|-118.7911|14.8|nn|nn|nn|nn00275636|ml|2.4|nn|31 km WNW of Lovelock, Nevada
+nn00278995|2009-03-19T11:17:31.875|40.448|-119.5826|4.8|nn|nn|nn|nn00278995|ml|2.9|nn|24 km SW of Empire, Nevada
+nn00279530|2009-03-25T19:30:38.359|40.0607|-118.8341|11.1|nn|nn|nn|nn00279530|ml|2.5|nn|33 km WSW of Lovelock, Nevada
+nn00283807|2009-05-20T16:09:06.077|40.5897|-119.511|0|nn|nn|nn|nn00283807|ml|2.3|nn|14 km W of Empire, Nevada
+nn00284865|2009-05-30T12:40:23.613|40.292|-119.7412|12|nn|nn|nn|nn00284865|ml|3|nn|37 km ENE of Herlong, California
+nn00286335|2009-06-18T01:10:30.380|40.6388|-118.7891|5.4|nn|nn|nn|nn00286335|ml|2.3|nn|39 km ESE of Black Rock City, Nevada
+nn00293843|2009-10-01T10:20:28.041|39.8478|-116.1816|10.8|nn|nn|nn|nn00293843|mb|2.2|nn|41 km NNW of Eureka, Nevada
+nn00294093|2009-10-03T16:56:22.053|39.9748|-117.8473|5|nn|nn|nn|nn00294093|ml|2.7|nn|58 km ESE of Lovelock, Nevada
+nn00295331|2009-10-06T17:51:27.501|40.287|-119.7368|22.9|nn|nn|nn|nn00295331|ml|2.3|nn|37 km ENE of Herlong, California
+nn00297836|2009-11-14T14:06:51.118|40.05|-119.6139|8.5|nn|nn|nn|nn00297836|ml|2.2|nn|11 km N of Sutcliffe, Nevada
+nn00299479|2009-12-13T01:28:16.915|40.5009|-118.3292|7.9|nn|nn|nn|nn00299479|ml|2.2|nn|Nevada
+nn00305642|2010-02-24T10:42:44.300|40.2409|-119.6868|12.5|nn|nn|nn|nn00305642|ml|2.4|nn|33 km NNW of Sutcliffe, Nevada
+usp000hbyh|2010-04-27T05:03:41.920|40.215|-119.704|15.5|ren|us|us|usp000hbyh|ml|2.7|ren|30 km NNW of Sutcliffe, Nevada
+nn00309307|2010-04-27T11:00:27.724|40.2309|-119.7166|12.4|nn|nn|nn|nn00309307|ml|2.5|nn|32 km NNW of Sutcliffe, Nevada
+nn00309319|2010-04-27T14:36:11.927|40.2544|-119.7163|0|nn|nn|nn|nn00309319|ml|2.3|nn|35 km NNW of Sutcliffe, Nevada
+nn00309590|2010-04-30T11:50:21.014|40.3385|-117.1701|0|nn|nn|nn|nn00309590|ml|2.9|nn|39 km SSW of Battle Mountain, Nevada
+nn00310200|2010-05-09T04:36:11.816|40.2354|-119.6871|12.9|nn|nn|nn|nn00310200|ml|2.5|nn|32 km NNW of Sutcliffe, Nevada
+nn00314044|2010-07-20T21:48:30.301|40.0581|-119.636|12.7|nn|nn|nn|nn00314044|ml|4.2|nn|12 km NNW of Sutcliffe, Nevada
+nn00314059|2010-07-21T00:42:27.858|40.0556|-119.6359|12.4|nn|nn|nn|nn00314059|ml|2.2|nn|12 km NNW of Sutcliffe, Nevada
+nn00314256|2010-07-25T08:16:11.452|40.0488|-119.6139|12.6|nn|nn|nn|nn00314256|ml|2.6|nn|11 km N of Sutcliffe, Nevada
+nn00314440|2010-07-29T09:08:09.305|40.0536|-119.6121|14.5|nn|nn|nn|nn00314440|ml|2.7|nn|11 km N of Sutcliffe, Nevada
+nn00315465|2010-08-21T09:53:52.293|40.2427|-119.6879|11|nn|nn|nn|nn00315465|ml|2.5|nn|33 km NNW of Sutcliffe, Nevada
+nn00316468|2010-09-09T07:58:53.643|40.624|-119.4016|0|nn|nn|nn|nn00316468|ml|2.3|nn|4 km SW of Gerlach, Nevada
+nn00320461|2010-11-07T20:40:38.499|39.7133|-118.7959|17.1|nn|nn|nn|nn00320461|ml|2.2|nn|26 km N of Fallon, Nevada
+nn00322165|2010-12-12T12:00:57.994|40.0309|-117.5855|13.8|nn|nn|nn|nn00322165|ml|3.8|nn|74 km NW of Austin, Nevada
+nn00327955|2011-03-04T09:51:10.058|40.0983|-119.7058|17|nn|nn|nn|nn00327955|ml|2.7|nn|18 km NNW of Sutcliffe, Nevada
+nn00346996|2011-03-21T17:51:08.339|39.8814|-117.0969|6|nn|nn|nn|nn00346996|ml|2.8|nn|43 km N of Austin, Nevada
+nn00337688|2011-05-18T15:55:50.641|39.7753|-119.9084|8.3|nn|nn|nn|nn00337688|ml|2.9|nn|12 km NNE of Cold Springs, Nevada
+nn00337700|2011-05-18T15:57:22.202|39.7737|-119.9049|8.9|nn|nn|nn|nn00337700|ml|2.2|nn|12 km NNE of Cold Springs, Nevada
+nn00342300|2011-07-04T03:50:47.823|39.6594|-118.3398|2.8|nn|nn|nn|nn00342300|ml|2.8|nn|42 km NE of Fallon Station, Nevada
+nn00343183|2011-07-16T13:57:53.268|40.6249|-119.6353|14.6|nn|nn|nn|nn00343183|ml|2.4|nn|23 km W of Gerlach, Nevada
+nn00344512|2011-08-06T18:19:44.568|39.9672|-119.5601|11.8|nn|nn|nn|nn00344512|ml|2.3|nn|3 km ENE of Sutcliffe, Nevada
+nn00345745|2011-08-21T00:17:46.645|40.0211|-119.6235|12.8|nn|nn|nn|nn00345745|ml|2.4|nn|8 km NNW of Sutcliffe, Nevada
+nn00349378|2011-09-28T10:53:10.362|39.8813|-117.9132|0|nn|nn|nn|nn00349378|ml|2.4|nn|58 km SE of Lovelock, Nevada
+nn00349385|2011-09-28T11:54:04.496|39.9857|-117.8821|0|nn|nn|nn|nn00349385|ml|4.1|nn|54 km ESE of Lovelock, Nevada
+nn00349388|2011-09-28T12:04:51.569|39.8216|-118.0388|9.3|nn|nn|nn|nn00349388|ml|2.4|nn|54 km SE of Lovelock, Nevada
+nn00351020|2011-10-12T17:19:30.066|40.1821|-119.612|9.8|nn|nn|nn|nn00351020|ml|2.3|nn|26 km N of Sutcliffe, NV
+nn00363064|2012-01-03T17:55:33.562|40.0349|-119.6101|12.7|nn|nn|nn|nn00363064|ml|2.4|nn|9 km N of Sutcliffe, Nevada
+nn00364791|2012-01-17T10:03:34.503|40.1819|-117.8559|1.3|nn|nn|nn|nn00364791|ml|2.3|nn|52 km E of Lovelock, Nevada
+nn00366530|2012-01-28T00:49:33.828|40.3174|-117.7069|0|nn|nn|nn|nn00366530|ml|2.9|nn|53 km SE of Imlay, Nevada
+nn00367571|2012-02-08T04:16:24.339|40.0271|-118.8231|13.9|nn|nn|nn|nn00367571|ml|3.4|nn|34 km WSW of Lovelock, Nevada
+nn00367673|2012-02-09T03:34:05.020|39.9527|-117.6817|0|nn|nn|nn|nn00367673|ml|2.5|nn|72 km ESE of Lovelock, Nevada
+nn00367784|2012-02-10T05:59:41.466|39.9047|-117.0625|9.5|nn|nn|nn|nn00367784|ml|2.7|nn|45 km N of Austin, Nevada
+nn00368658|2012-02-17T04:58:16.277|40.064|-119.5737|14.2|nn|nn|nn|nn00368658|ml|3|nn|12 km N of Sutcliffe, Nevada
+nn00368857|2012-02-19T11:15:38.995|39.8317|-117.3414|2.2|nn|nn|nn|nn00368857|ml|2.8|nn|44 km NNW of Austin, Nevada
+nn00368868|2012-02-19T14:40:31.858|39.7214|-117.2466|1.6|nn|nn|nn|nn00368868|ml|2.4|nn|29 km NNW of Austin, Nevada
+nn00371692|2012-03-20T00:45:41.698|40.1283|-119.6694|13.3|nn|nn|nn|nn00371692|ml|2.5|nn|20 km NNW of Sutcliffe, Nevada
+nn00379891|2012-06-18T02:55:28.653|40.4961|-117.3335|0|nn|nn|nn|nn00379891|ml|2.3|nn|37 km SSW of Valmy, Nevada
+nn00384759|2012-07-28T04:24:48.406|40.3203|-116.4411|0|nn|nn|nn|nn00384759|ml|3.2|nn|15 km SE of Crescent Valley, Nevada
+nn00385531|2012-08-10T02:29:44.168|40.1316|-119.6582|13.7|nn|nn|nn|nn00385531|ml|2.3|nn|20 km NNW of Sutcliffe, Nevada
+nn00385966|2012-08-14T22:17:45.624|40.251|-119.5706|9.2|nn|nn|nn|nn00385966|ml|3.5|nn|33 km N of Sutcliffe, Nevada
+nn00387545|2012-08-30T16:08:59.004|40.75|-118.9505|11.8|nn|nn|nn|nn00387545|ml|2.2|nn|22 km E of Black Rock City, Nevada
+nn00390140|2012-10-03T19:51:08.433|39.7236|-119.4361|10.9|nn|nn|nn|nn00390140|ml|3.8|nn|13 km SSW of Nixon, Nevada
+nn00390202|2012-10-04T05:54:15.618|39.717|-119.4623|8.2|nn|nn|nn|nn00390202|ml|2.2|nn|15 km SW of Nixon, Nevada
+nn00401229|2013-01-29T23:54:18.201|40.6081|-119.4457|7.6|nn|nn|nn|nn00401229|ml|2.2|nn|9 km WSW of Gerlach, Nevada
+nn00410294|2013-04-25T13:07:50.656|40.243|-119.5642|8.5|nn|nn|nn|nn00410294|ml|2.2|nn|32 km N of Sutcliffe, Nevada
+nn00411507|2013-05-10T00:56:36.258|40.0559|-118.6886|11.9|nn|nn|nn|nn00411507|ml|2.4|nn|22 km SW of Lovelock, Nevada
+usp000k0xm|2013-05-23T22:02:27.470|40.412|-117.142|5.8|us|us|us|usp000k0xm|ml|2.7|ren|Nevada
+nn00416647|2013-07-02T08:50:13.385|40.0849|-116.7815|0|nn|nn|nn|nn00416647|ml|2.5|nn|40 km SSW of Crescent Valley, Nevada
+nn00416892|2013-07-04T20:05:43.796|40.087|-119.6782|15.7|nn|nn|nn|nn00416892|ml|2.8|nn|16 km NNW of Sutcliffe, Nevada
+nn00420643|2013-08-18T07:14:26.012|40.1138|-117.4201|0|nn|nn|nn|nn00420643|ml|2.2|nn|71 km SW of Battle Mountain, Nevada
+usb000ja5e|2013-08-22T21:46:15.850|39.6682|-119.6849|13.675|nn|us|us|usb000ja5e|ml|2.4|nn|2 km NE of Spanish Springs, Nevada
+nn00421300|2013-08-27T00:26:40.330|39.6686|-119.6861|13.9|nn|nn|nn|nn00421300|ml|2.3|nn|2 km NE of Spanish Springs, Nevada
+nn00421303|2013-08-27T00:51:43.827|39.6696|-119.6841|13.9|nn|nn|nn|nn00421303|ml|4.2|nn|3 km NE of Spanish Springs, Nevada
+nn00421583|2013-08-28T01:34:56.505|39.8179|-119.5056|14.1|nn|nn|nn|nn00421583|ml|2.7|nn|12 km W of Nixon, Nevada
+nn00425568|2013-10-04T14:02:20.967|40.4443|-119.3755|4.2|nn|nn|nn|nn00425568|ml|2.2|nn|14 km S of Empire, Nevada
+nn00429109|2013-11-14T00:06:16.993|39.7363|-119.5736|15.1|nn|nn|nn|nn00429109|ml|2.3|nn|15 km NE of Spanish Springs, Nevada
+nn00431493|2013-12-18T12:06:41.200|39.6723|-119.6915|11.4|nn|nn|nn|nn00431493|ml|2.3|nn|2 km NNE of Spanish Springs, Nevada
+nn00433766|2014-01-10T17:36:04.943|39.6605|-119.6957|11.8|nn|nn|nn|nn00433766|ml|2.2|nn|1 km NE of Spanish Springs, Nevada
+nn00433910|2014-01-11T02:20:52.353|39.6607|-119.6964|11|nn|nn|nn|nn00433910|ml|2.7|nn|1 km NE of Spanish Springs, Nevada
+nn00435209|2014-01-20T07:31:16.385|39.6608|-119.6963|11.1|nn|nn|nn|nn00435209|ml|2.4|nn|1 km NE of Spanish Springs, Nevada
+nn00437325|2014-01-24T04:40:17.370|40.625|-116.6075|9.2|nn|nn|nn|nn00437325|ml|3.8|nn|23 km N of Crescent Valley, Nevada
+nn00436712|2014-01-24T07:12:30.022|40.462|-116.5146|0|nn|nn|nn|nn00436712|ml|2.4|nn|7 km NE of Crescent Valley, Nevada
+nn00435755|2014-01-24T09:08:07.062|40.6358|-116.6154|7.7|nn|nn|nn|nn00435755|ml|3.1|nn|24 km N of Crescent Valley, Nevada
+nn00435758|2014-01-24T09:25:41.561|40.3245|-116.3611|7.6|nn|nn|nn|nn00435758|ml|2.6|nn|20 km ESE of Crescent Valley, Nevada
+nn00437049|2014-02-03T08:56:52.816|40.1769|-119.7007|14.2|nn|nn|nn|nn00437049|ml|2.2|nn|26 km NNW of Sutcliffe, Nevada
+usc000msv9|2014-02-14T21:32:16.540|39.6751|-117.5395|4|nn|us|us|usc000msv9|ml|2.5|nn|45 km WNW of Austin, Nevada
+nn00442752|2014-04-03T15:41:48.990|40.5522|-116.2619|10.1|nn|nn|nn|nn00442752|ml|2.9|nn|22 km SW of Carlin, Nevada
+nn00443039|2014-04-06T08:24:20.295|40.4691|-116.5193|0|nn|nn|nn|nn00443039|ml|2.6|nn|7 km NE of Crescent Valley, Nevada
+nn00442972|2014-04-06T10:44:11.510|40.6096|-116.6302|0|nn|nn|nn|nn00442972|ml|2.5|nn|21 km NNW of Crescent Valley, Nevada
+nn00453937|2014-07-31T12:30:16.479|40.4698|-119.569|5.4|nn|nn|nn|nn00453937|ml|2.3|nn|22 km WSW of Empire, Nevada
+nn00458142|2014-09-02T21:34:16.337|40.0028|-117.8538|1.4|nn|nn|nn|nn00458142|ml|2.5|nn|Nevada
+nn00462883|2014-10-06T11:01:47.495|40.3721|-119.8162|12.3|nn|nn|nn|nn00462883|ml|3.1|nn|37 km NE of Herlong, California
+nn00462894|2014-10-06T12:07:59.988|40.3427|-119.816|13.2|nn|nn|nn|nn00462894|ml|2.9|nn|34 km NE of Herlong, California
+nn00465013|2014-10-23T14:16:25.000|40.297|-119.7156|11.8|nn|nn|nn|nn00465013|ml|2.5|nn|39 km ENE of Herlong, California
+nn00470737|2014-12-05T13:54:22.847|40.5878|-119.6194|0|nn|nn|nn|nn00470737|ml|2.5|nn|23 km WSW of Gerlach, Nevada
+nn00488543|2015-03-29T09:08:51.247|40.5191|-117.4074|0|nn|nn|nn|nn00488543|ml|2.2|nn|38 km SW of Valmy, Nevada
+nn00490395|2015-04-16T14:53:34.683|40.4214|-116.8588|0|nn|nn|nn|nn00490395|ml|2.3|nn|23 km W of Crescent Valley, Nevada
+us20002n3p|2015-06-08T21:03:19.100|40.7356|-116.2181|0|us|us|us|us20002n3p|ml|2.7|nn|9 km WNW of Carlin, Nevada
+nn00499724|2015-06-24T01:34:18.064|40.6207|-117.3259|2.1|nn|nn|nn|nn00499724|ml|3.1|nn|25 km SW of Valmy, Nevada
+nn00502472|2015-07-18T16:39:34.635|40.0416|-119.9933|7.6|nn|nn|nn|nn00502472|ml|2.7|nn|9 km E of Doyle, California
+nn00502473|2015-07-18T16:48:44.925|40.0368|-119.9905|7.5|nn|nn|nn|nn00502473|ml|2.2|nn|9 km E of Doyle, California
+nn00506293|2015-08-12T22:02:37.266|40.1305|-119.1781|6.6|nn|nn|nn|nn00506293|ml|3.5|nn|36 km NNE of Nixon, Nevada
+nn00506344|2015-08-13T13:23:12.582|40.1201|-119.1941|9|nn|nn|nn|nn00506344|ml|2.4|nn|34 km NNE of Nixon, Nevada
+nn00512464|2015-09-27T10:10:03.764|39.645|-119.1478|7.2|nn|nn|nn|nn00512464|ml|3|nn|9 km ENE of Fernley, Nevada
+nn00513685|2015-10-06T00:04:11.972|39.9723|-117.8888|0|nn|nn|nn|nn00513685|ml|2.7|nn|54 km ESE of Lovelock, Nevada
+nn00516462|2015-10-27T10:00:50.830|39.6428|-116.8114|7.5|nn|nn|nn|nn00516462|ml|2.5|nn|27 km NE of Austin, Nevada
+nn00517140|2015-10-30T19:45:32.859|40.4003|-119.4407|12.4|nn|nn|nn|nn00517140|ml|2.7|nn|21 km SSW of Empire, Nevada
+nn00517291|2015-11-01T05:50:57.004|40.3773|-119.4358|15.2|nn|nn|nn|nn00517291|ml|2.2|nn|23 km SSW of Empire, Nevada
+nn00519243|2015-11-18T06:48:27.557|40.4376|-116.5608|9.8|nn|nn|nn|nn00519243|ml|2.7|nn|2 km NNE of Crescent Valley, Nevada
+nn00520250|2015-11-25T03:32:14.630|40.5737|-119.6793|0|nn|nn|nn|nn00520250|ml|2.5|nn|28 km W of Empire, Nevada
+nn00520290|2015-11-25T03:32:53.821|40.5856|-119.6816|0|nn|nn|nn|nn00520290|ml|2.5|nn|28 km WSW of Gerlach, Nevada
+nn00522975|2015-12-16T10:49:35.104|40.1191|-119.7989|16.2|nn|nn|nn|nn00522975|ml|2.4|nn|25 km NW of Sutcliffe, Nevada
+nn00525108|2016-01-02T15:26:48.716|40.7192|-116.4179|0|nn|nn|nn|nn00525108|ml|2.2|nn|26 km W of Carlin, Nevada
+nn00530380|2016-02-08T01:58:48.741|40.6142|-119.6515|0.4|nn|nn|nn|nn00530380|ml|2.3|nn|25 km W of Gerlach, Nevada
+nn00530423|2016-02-08T15:41:59.283|40.375|-119.4016|9|nn|nn|nn|nn00530423|ml|2.9|nn|22 km SSW of Empire, Nevada
+nn00536173|2016-03-19T16:15:39.961|40.3688|-117.7202|14.2|nn|nn|nn|nn00536173|ml|2.9|nn|48 km SE of Imlay, Nevada
+nn00541587|2016-04-23T15:40:16.512|40.6281|-119.4558|4.6|nn|nn|nn|nn00541587|ml|2.6|nn|8 km WSW of Gerlach, Nevada
+nn00541688|2016-04-24T20:31:24.830|40.622|-119.4942|3.3|nn|nn|nn|nn00541688|ml|3.1|nn|12 km WSW of Gerlach, Nevada
+nn00542364|2016-04-30T06:42:29.077|40.6508|-119.4758|0|nn|nn|nn|nn00542364|ml|2.5|nn|10 km W of Gerlach, Nevada
+nn00542367|2016-04-30T07:22:58.564|40.6455|-119.4629|0|nn|nn|nn|nn00542367|ml|2.3|nn|9 km W of Gerlach, Nevada
+nn00542898|2016-05-05T04:02:44.184|40.6434|-119.469|0|nn|nn|nn|nn00542898|ml|2.3|nn|9 km W of Gerlach, Nevada
+nn00542900|2016-05-05T04:13:17.240|40.6438|-119.4887|0|nn|nn|nn|nn00542900|ml|2.2|nn|11 km W of Gerlach, Nevada
+nn00542908|2016-05-05T07:20:17.730|40.6521|-119.4737|0.2|nn|nn|nn|nn00542908|ml|2.8|nn|10 km W of Gerlach, Nevada
+nn00542917|2016-05-05T09:30:04.670|40.65|-119.4435|0|nn|nn|nn|nn00542917|ml|2.4|nn|7 km W of Gerlach, Nevada
+nn00543016|2016-05-05T23:11:45.008|40.6519|-119.5093|0|nn|nn|nn|nn00543016|ml|3.5|nn|13 km W of Gerlach, Nevada
+nn00543019|2016-05-05T23:17:28.662|40.6459|-119.4578|0|nn|nn|nn|nn00543019|ml|2.5|nn|8 km W of Gerlach, Nevada
+nn00543077|2016-05-06T03:54:52.538|40.6364|-119.4359|4|nn|nn|nn|nn00543077|ml|3|nn|7 km WSW of Gerlach, Nevada
+nn00543201|2016-05-07T04:21:42.241|40.631|-119.4653|12.4|nn|nn|nn|nn00543201|ml|2.4|nn|9 km WSW of Gerlach, Nevada
+nn00543410|2016-05-08T19:46:10.344|40.6189|-119.4688|1.7|nn|nn|nn|nn00543410|ml|2.2|nn|10 km WSW of Gerlach, Nevada
+nn00543739|2016-05-11T11:54:53.761|40.6569|-119.4728|0|nn|nn|nn|nn00543739|ml|2.2|nn|9 km W of Gerlach, Nevada
+nn00543789|2016-05-11T18:48:11.477|40.643|-119.4607|8|nn|nn|nn|nn00543789|ml|2.8|nn|8 km W of Gerlach, Nevada
+nn00543968|2016-05-13T07:24:24.189|40.655|-119.4711|5.9|nn|nn|nn|nn00543968|ml|2.4|nn|9 km W of Gerlach, Nevada
+nn00543972|2016-05-13T11:32:11.027|40.6578|-119.4539|9.6|nn|nn|nn|nn00543972|ml|2.6|nn|8 km W of Gerlach, Nevada
+nn00544062|2016-05-14T07:38:04.853|40.6575|-119.4697|7.7|nn|nn|nn|nn00544062|ml|2.4|nn|9 km W of Gerlach, Nevada
+nn00544078|2016-05-14T14:20:30.755|40.6519|-119.4521|8.8|nn|nn|nn|nn00544078|ml|3.9|nn|8 km W of Gerlach, Nevada
+nn00544087|2016-05-14T14:23:15.359|40.6477|-119.5004|3.1|nn|nn|nn|nn00544087|ml|2.4|nn|12 km W of Gerlach, Nevada
+nn00544201|2016-05-15T16:10:46.843|40.6533|-119.4634|7.5|nn|nn|nn|nn00544201|ml|2.9|nn|9 km W of Gerlach, Nevada
+nn00544247|2016-05-15T23:04:58.681|40.6516|-119.4747|7.5|nn|nn|nn|nn00544247|ml|2.9|nn|10 km W of Gerlach, Nevada
+nn00544468|2016-05-17T13:21:17.998|40.6552|-119.4563|8.1|nn|nn|nn|nn00544468|ml|2.2|nn|8 km W of Gerlach, Nevada
+nn00544982|2016-05-21T11:01:53.198|40.6317|-119.4809|4.8|nn|nn|nn|nn00544982|ml|2.2|nn|10 km WSW of Gerlach, Nevada
+nn00545510|2016-05-25T21:54:59.513|40.6532|-119.4588|8.9|nn|nn|nn|nn00545510|ml|2.5|nn|8 km W of Gerlach, Nevada
+nn00549768|2016-06-23T10:57:37.760|40.7344|-116.1673|14.9|nn|nn|nn|nn00549768|ml|2.3|nn|5 km WNW of Carlin, Nevada
+nn00553820|2016-07-30T14:31:17.110|40.7346|-116.173|15.7|nn|nn|nn|nn00553820|ml|2.3|nn|6 km WNW of Carlin, Nevada
+nn00557784|2016-08-27T12:36:19.458|39.6852|-119.4559|9.4|nn|nn|nn|nn00557784|ml|2.4|nn|15 km WNW of Wadsworth, Nevada
+nn00558006|2016-08-29T09:44:34.762|39.6949|-119.4353|11.4|nn|nn|nn|nn00558006|ml|2.3|nn|14 km WNW of Wadsworth, Nevada
+nn00559946|2016-09-13T20:00:03.006|40.1229|-119.6472|10.5|nn|nn|nn|nn00559946|ml|3|nn|19 km NNW of Sutcliffe, Nevada
+nn00565327|2016-11-03T03:25:00.769|39.8319|-118.8314|7.5|nn|nn|nn|nn00565327|ml|2.7|nn|40 km N of Fallon, Nevada
+nn00568129|2016-12-01T12:22:19.893|40.478|-119.7655|13.1|nn|nn|nn|nn00568129|ml|2.3|nn|37 km WSW of Empire, Nevada
+nn00579283|2017-02-20T23:03:06.321|39.8966|-119.0002|10.7|nn|nn|nn|nn00579283|ml|2.3|nn|31 km ENE of Nixon, Nevada
+nn00586537|2017-04-20T21:59:17.185|40.3725|-116.5238|0|nn|nn|nn|nn00586537|ml|2.2|nn|6 km SE of Crescent Valley, Nevada
+nn00587717|2017-05-02T13:27:42.900|40.506|-117.1553|11.6|nn|nn|nn|nn00587717|ml|2.2|nn|24 km SW of Battle Mountain, Nevada
+nn00588318|2017-05-08T22:42:06.565|39.9825|-119.9273|7.8|nn|nn|nn|nn00588318|ml|3.1|nn|15 km ESE of Doyle, California
+nn00588607|2017-05-11T16:07:31.748|40.2914|-119.6173|15.1|nn|nn|nn|nn00588607|ml|2.5|nn|37 km N of Sutcliffe, Nevada
+nn00594747|2017-07-05T22:35:03.394|40.1197|-118.8927|12|nn|nn|nn|nn00594747|ml|2.8|nn|36 km W of Lovelock, Nevada
+nn00596117|2017-07-15T21:06:56.650|40.3437|-119.7779|2.1|nn|nn|nn|nn00596117|ml|2.4|nn|37 km NE of Herlong, California
+nn00596121|2017-07-15T22:15:15.534|40.348|-119.7939|11.6|nn|nn|nn|nn00596121|ml|2.7|nn|36 km NE of Herlong, California
+nn00597621|2017-07-25T18:09:07.838|40.3333|-119.7845|12.7|nn|nn|nn|nn00597621|ml|2.2|nn|36 km NE of Herlong, California
+nn00599112|2017-08-03T21:25:01.635|40.4066|-119.9854|11.8|nn|nn|nn|nn00599112|ml|3.5|nn|31 km NNE of Herlong, California
+nn00603209|2017-09-02T05:54:53.059|40.4382|-116.4597|3.1|nn|nn|nn|nn00603209|ml|3|nn|10 km ENE of Crescent Valley, Nevada
+nn00604381|2017-09-09T14:07:00.076|40.6574|-119.3553|6.9|nn|nn|nn|nn00604381|ml|2.3|nn|0 km N of Gerlach, Nevada
+nn00606357|2017-09-21T21:09:28.100|39.7645|-119.6985|7.3|nn|nn|nn|nn00606357|ml|2.6|nn|12 km N of Spanish Springs, Nevada
+us2000bpdy|2017-11-16T02:40:32.270|40.1774|-116.6701|0|us|us|us|us2000bpdy|ml|2.2|us|27 km SSW of Crescent Valley, Nevada
+nn00617130|2018-01-04T20:02:02.856|40.5645|-117.145|0|nn|nn|nn|nn00617130|ml|2.4|nn|19 km WSW of Battle Mountain, Nevada
+nn00620007|2018-01-30T00:20:19.003|39.9647|-117.8989|1.2|nn|nn|nn|nn00620007|ml|2.5|nn|54 km ESE of Lovelock, Nevada
+nn00620603|2018-02-04T13:27:44.311|40.0035|-117.1986|9.4|nn|nn|nn|nn00620603|ml|3.4|nn|57 km N of Austin, Nevada
+nn00621858|2018-02-15T02:12:58.595|40.2691|-118.7313|0.1|nn|nn|nn|nn00621858|ml|2.3|nn|24 km WNW of Lovelock, Nevada
+nn00626772|2018-03-20T01:05:21.450|40.509|-116.1842|16|nn|nn|nn|nn00626772|ml|2.4|nn|23 km SSW of Carlin, Nevada
+nn00630617|2018-04-16T21:57:19.764|40.4951|-117.123|0|nn|nn|nn|nn00630617|ml|2.2|nn|22 km SW of Battle Mountain, Nevada
+nn00635936|2018-05-19T14:47:51.609|40.5229|-118.6561|2.2|nn|nn|nn|nn00635936|ml|2.5|nn|35 km WSW of Humboldt, Nevada
+nn00640997|2018-06-23T09:35:42.544|39.9401|-118.7882|6.8|nn|nn|nn|nn00640997|ml|2.4|nn|37 km SW of Lovelock, Nevada
+nn00644291|2018-07-12T21:24:22.591|40.6041|-117.3392|8.6|nn|nn|nn|nn00644291|ml|2.2|nn|27 km SW of Valmy, Nevada
+nn00647659|2018-07-29T22:22:03.769|40.1393|-119.6848|11.8|nn|nn|nn|nn00647659|ml|2.7|nn|22 km NNW of Sutcliffe, Nevada
+nn00648561|2018-08-04T20:34:10.316|40.4139|-116.4494|9.1|nn|nn|nn|nn00648561|ml|2.7|nn|10 km E of Crescent Valley, Nevada
+nn00659292|2018-10-02T18:51:52.585|40.5931|-119.7187|1.8|nn|nn|nn|nn00659292|ml|2.6|nn|31 km WSW of Gerlach, Nevada
+nn00659308|2018-10-02T19:13:04.888|40.5602|-119.7346|4|nn|nn|nn|nn00659308|ml|2.6|nn|33 km W of Empire, Nevada
+nn00659351|2018-10-02T21:37:35.155|40.5864|-119.7358|0.9|nn|nn|nn|nn00659351|ml|2.8|nn|33 km WSW of Gerlach, Nevada
+nn00661201|2018-10-16T17:20:04.491|39.9892|-117.8488|16.6|nn|nn|nn|nn00661201|ml|2.4|nn|57 km ESE of Lovelock, Nevada
+nn00663766|2018-11-01T19:42:57.825|40.4465|-117.2836|0|nn|nn|nn|nn00663766|ml|2.2|nn|36 km SW of Battle Mountain, Nevada

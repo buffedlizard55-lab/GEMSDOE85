@@ -1,0 +1,22 @@
+#EventID|Time|Latitude|Longitude|Depth/km|Author|Catalog|Contributor|ContributorID|MagType|Magnitude|MagAuthor|EventLocationName
+ci9723786|1980-01-15T00:00:42.780|37.7311667|-118.3651667|6|ci|ci|ci|ci9723786|ml|3.39|ci|39km N of Dixon Lane-Meadow Creek, CA
+ci3357010|1980-04-09T23:50:16.130|37.667|-118.4178333|6|ci|ci|ci|ci3357010|mh|2.98|ci|31km N of Dixon Lane-Meadow Creek, CA
+ci9726550|1980-05-17T09:20:04.020|37.7465|-118.3573333|6|ci|ci|ci|ci9726550|ml|2.99|ci|40km N of Dixon Lane-Meadow Creek, CA
+ci3308015|1980-05-25T18:08:13.950|37.7513333|-118.497|6|ci|ci|ci|ci3308015|ml|2.94|ci|41km N of Dixon Lane-Meadow Creek, CA
+ci12333651|1980-05-25T19:49:53.270|37.7068333|-118.5931667|6|ci|ci|ci|ci12333651|ml|3.91|ci|35km ENE of Mammoth Lakes, CA
+ci12333655|1980-05-25T20:18:22.020|37.728|-118.6593333|6|ci|ci|ci|ci12333655|ml|3.48|ci|30km ENE of Mammoth Lakes, CA
+ci3308051|1980-05-25T20:43:56.330|37.6611667|-118.6125|6|ci|ci|ci|ci3308051|ml|2.98|ci|32km E of Mammoth Lakes, CA
+ci9727310|1980-05-25T21:34:54.490|37.7326667|-118.5123333|6|ci|ci|ci|ci9727310|ml|3.09|ci|39km NNW of Dixon Lane-Meadow Creek, CA
+ci9727318|1980-05-25T21:39:31.390|37.664|-118.6218333|6|ci|ci|ci|ci9727318|ml|3.28|ci|32km E of Mammoth Lakes, CA
+ci9727366|1980-05-25T22:05:37.500|37.7351667|-118.6003333|6|ci|ci|ci|ci9727366|ml|2.96|ci|35km ENE of Mammoth Lakes, CA
+ci9727374|1980-05-25T22:26:38.290|37.7215|-118.5823333|6|ci|ci|ci|ci9727374|ml|3.36|ci|36km ENE of Mammoth Lakes, CA
+ci12333803|1980-05-26T00:44:47.840|37.75|-118.5221667|6|ci|ci|ci|ci12333803|ml|2.94|ci|42km NNW of Dixon Lane-Meadow Creek, CA
+ci9727474|1980-05-26T01:46:45.710|37.7475|-118.4935|6|ci|ci|ci|ci9727474|ml|3.22|ci|41km N of Dixon Lane-Meadow Creek, CA
+ci9727526|1980-05-26T02:50:30.910|37.7065|-118.6418333|6|ci|ci|ci|ci9727526|ml|3.07|ci|31km ENE of Mammoth Lakes, CA
+ci9728434|1980-05-27T11:32:48.440|37.7575|-118.4971667|6|ci|ci|ci|ci9728434|ml|3.51|ci|42km N of Dixon Lane-Meadow Creek, CA
+ci3308294|1980-05-27T17:07:19.450|37.7523333|-118.3285|6|ci|ci|ci|ci3308294|ml|2.99|ci|41km N of Dixon Lane-Meadow Creek, CA
+ci9733814|1980-08-01T16:43:21.830|37.7|-118.5|6|ci|ci|ci|ci9733814|ml|3.93|ci|36km NNW of Dixon Lane-Meadow Creek, CA
+ci9734270|1980-08-09T22:14:02.160|37.6531667|-118.5805|6|ci|ci|ci|ci9734270|ml|3.43|ci|33km NNW of Dixon Lane-Meadow Creek, CA
+usp0002w9v|1986-07-21T15:10:30.260|37.682|-118.405|10|us|us|us|usp0002w9v|ml|3.7|brk|16 km SSE of Benton, California
+nc1139698|1986-07-21T15:15:32.100|37.68|-118.6593333|6.82|nc|nc|nc|nc1139698|md|3.51|nc|13km N of Toms Place, CA
+nc1143886|1986-09-24T04:57:39.990|37.7115|-118.4731667|77.033|nc|nc|nc|nc1143886|md|4.02|nc|11 km S of Benton, California

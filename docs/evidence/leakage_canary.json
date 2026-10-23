@@ -1,0 +1,632 @@
+{
+  "schema_version": "gems85-leakage-canary-v1",
+  "evidence_class": "LEAKAGE-CANARY",
+  "evaluator_id": "gems57-pooled-hide-v2",
+  "seeds": [
+    20,
+    30
+  ],
+  "withheld_positive_pixels": {
+    "seed_20": 11321,
+    "seed_30": 11342
+  },
+  "max_allowed_symmetric_auc": 0.9,
+  "features_checked": 61,
+  "max_observed_symmetric_auc": 0.60183,
+  "top_feature": "d3_hw_triple_concordance",
+  "violations_count": 0,
+  "passed": true,
+  "elapsed_seconds": 40.0,
+  "features": [
+    {
+      "feature": "d3_hw_triple_concordance",
+      "domain": "D3_geopotential_dipole",
+      "seed_20_raw_auc": 0.56608,
+      "seed_20_sym_auc": 0.56608,
+      "seed_30_raw_auc": 0.60183,
+      "seed_30_sym_auc": 0.60183,
+      "max_symmetric_auc": 0.60183,
+      "passed": true
+    },
+    {
+      "feature": "d1_lid_antislope_graben",
+      "domain": "D1_lidar1m",
+      "seed_20_raw_auc": 0.59414,
+      "seed_20_sym_auc": 0.59414,
+      "seed_30_raw_auc": 0.5799,
+      "seed_30_sym_auc": 0.5799,
+      "max_symmetric_auc": 0.59414,
+      "passed": true
+    },
+    {
+      "feature": "d1_lid_tect_vs_fluv",
+      "domain": "D1_lidar1m",
+      "seed_20_raw_auc": 0.59338,
+      "seed_20_sym_auc": 0.59338,
+      "seed_30_raw_auc": 0.57764,
+      "seed_30_sym_auc": 0.57764,
+      "max_symmetric_auc": 0.59338,
+      "passed": true
+    },
+    {
+      "feature": "d1_lid_step_max5",
+      "domain": "D1_lidar1m",
+      "seed_20_raw_auc": 0.58781,
+      "seed_20_sym_auc": 0.58781,
+      "seed_30_raw_auc": 0.57205,
+      "seed_30_sym_auc": 0.57205,
+      "max_symmetric_auc": 0.58781,
+      "passed": true
+    },
+    {
+      "feature": "d1_lid_dipole_crest_toe",
+      "domain": "D1_lidar1m",
+      "seed_20_raw_auc": 0.58607,
+      "seed_20_sym_auc": 0.58607,
+      "seed_30_raw_auc": 0.57004,
+      "seed_30_sym_auc": 0.57004,
+      "max_symmetric_auc": 0.58607,
+      "passed": true
+    },
+    {
+      "feature": "d2_dem10_slope_std",
+      "domain": "D2_dem10m",
+      "seed_20_raw_auc": 0.58529,
+      "seed_20_sym_auc": 0.58529,
+      "seed_30_raw_auc": 0.55564,
+      "seed_30_sym_auc": 0.55564,
+      "max_symmetric_auc": 0.58529,
+      "passed": true
+    },
+    {
+      "feature": "d2_dem10_hgm200",
+      "domain": "D2_dem10m",
+      "seed_20_raw_auc": 0.58286,
+      "seed_20_sym_auc": 0.58286,
+      "seed_30_raw_auc": 0.55713,
+      "seed_30_sym_auc": 0.55713,
+      "max_symmetric_auc": 0.58286,
+      "passed": true
+    },
+    {
+      "feature": "d1_lid_ex_max",
+      "domain": "D1_lidar1m",
+      "seed_20_raw_auc": 0.5815,
+      "seed_20_sym_auc": 0.5815,
+      "seed_30_raw_auc": 0.56236,
+      "seed_30_sym_auc": 0.56236,
+      "max_symmetric_auc": 0.5815,
+      "passed": true
+    },
+    {
+      "feature": "d1_lid_piedmont_step",
+      "domain": "D1_lidar1m",
+      "seed_20_raw_auc": 0.58139,
+      "seed_20_sym_auc": 0.58139,
+      "seed_30_raw_auc": 0.56846,
+      "seed_30_sym_auc": 0.56846,
+      "max_symmetric_auc": 0.58139,
+      "passed": true
+    },
+    {
+      "feature": "d1_lid_step_max",
+      "domain": "D1_lidar1m",
+      "seed_20_raw_auc": 0.58077,
+      "seed_20_sym_auc": 0.58077,
+      "seed_30_raw_auc": 0.56506,
+      "seed_30_sym_auc": 0.56506,
+      "max_symmetric_auc": 0.58077,
+      "passed": true
+    },
+    {
+      "feature": "d1_lid_worm_1100m",
+      "domain": "D1_lidar1m",
+      "seed_20_raw_auc": 0.58056,
+      "seed_20_sym_auc": 0.58056,
+      "seed_30_raw_auc": 0.57882,
+      "seed_30_sym_auc": 0.57882,
+      "max_symmetric_auc": 0.58056,
+      "passed": true
+    },
+    {
+      "feature": "d2_dem10_hgm50",
+      "domain": "D2_dem10m",
+      "seed_20_raw_auc": 0.56782,
+      "seed_20_sym_auc": 0.56782,
+      "seed_30_raw_auc": 0.53673,
+      "seed_30_sym_auc": 0.53673,
+      "max_symmetric_auc": 0.56782,
+      "passed": true
+    },
+    {
+      "feature": "d2_dem10_hgm20",
+      "domain": "D2_dem10m",
+      "seed_20_raw_auc": 0.56728,
+      "seed_20_sym_auc": 0.56728,
+      "seed_30_raw_auc": 0.53905,
+      "seed_30_sym_auc": 0.53905,
+      "max_symmetric_auc": 0.56728,
+      "passed": true
+    },
+    {
+      "feature": "d4_strain_shear",
+      "domain": "D4_stress_strain",
+      "seed_20_raw_auc": 0.56724,
+      "seed_20_sym_auc": 0.56724,
+      "seed_30_raw_auc": 0.56617,
+      "seed_30_sym_auc": 0.56617,
+      "max_symmetric_auc": 0.56724,
+      "passed": true
+    },
+    {
+      "feature": "d4_strain_2ndinv",
+      "domain": "D4_stress_strain",
+      "seed_20_raw_auc": 0.56703,
+      "seed_20_sym_auc": 0.56703,
+      "seed_30_raw_auc": 0.56076,
+      "seed_30_sym_auc": 0.56076,
+      "max_symmetric_auc": 0.56703,
+      "passed": true
+    },
+    {
+      "feature": "d2_seamfree_scarp_qnorm",
+      "domain": "D2_dem10m",
+      "seed_20_raw_auc": 0.56661,
+      "seed_20_sym_auc": 0.56661,
+      "seed_30_raw_auc": 0.53795,
+      "seed_30_sym_auc": 0.53795,
+      "max_symmetric_auc": 0.56661,
+      "passed": true
+    },
+    {
+      "feature": "d4_det_elev_lap7",
+      "domain": "D4_stress_strain",
+      "seed_20_raw_auc": 0.43394,
+      "seed_20_sym_auc": 0.56606,
+      "seed_30_raw_auc": 0.44656,
+      "seed_30_sym_auc": 0.55344,
+      "max_symmetric_auc": 0.56606,
+      "passed": true
+    },
+    {
+      "feature": "d4_strain_kostrov_ratio",
+      "domain": "D4_stress_strain",
+      "seed_20_raw_auc": 0.43756,
+      "seed_20_sym_auc": 0.56244,
+      "seed_30_raw_auc": 0.43497,
+      "seed_30_sym_auc": 0.56503,
+      "max_symmetric_auc": 0.56503,
+      "passed": true
+    },
+    {
+      "feature": "d4_elev_slope_raw",
+      "domain": "D4_stress_strain",
+      "seed_20_raw_auc": 0.5637,
+      "seed_20_sym_auc": 0.5637,
+      "seed_30_raw_auc": 0.53544,
+      "seed_30_sym_auc": 0.53544,
+      "max_symmetric_auc": 0.5637,
+      "passed": true
+    },
+    {
+      "feature": "d2_dem10_curv_absmax",
+      "domain": "D2_dem10m",
+      "seed_20_raw_auc": 0.56309,
+      "seed_20_sym_auc": 0.56309,
+      "seed_30_raw_auc": 0.53779,
+      "seed_30_sym_auc": 0.53779,
+      "max_symmetric_auc": 0.56309,
+      "passed": true
+    },
+    {
+      "feature": "d3_hw_base_dipole",
+      "domain": "D3_geopotential_dipole",
+      "seed_20_raw_auc": 0.53324,
+      "seed_20_sym_auc": 0.53324,
+      "seed_30_raw_auc": 0.56155,
+      "seed_30_sym_auc": 0.56155,
+      "max_symmetric_auc": 0.56155,
+      "passed": true
+    },
+    {
+      "feature": "d4_seismic_ieq_log",
+      "domain": "D4_stress_strain",
+      "seed_20_raw_auc": 0.5445,
+      "seed_20_sym_auc": 0.5445,
+      "seed_30_raw_auc": 0.56076,
+      "seed_30_sym_auc": 0.56076,
+      "max_symmetric_auc": 0.56076,
+      "passed": true
+    },
+    {
+      "feature": "d5_hf_convective_3km",
+      "domain": "D5_geothermal_valve",
+      "seed_20_raw_auc": 0.43962,
+      "seed_20_sym_auc": 0.56038,
+      "seed_30_raw_auc": 0.46081,
+      "seed_30_sym_auc": 0.53919,
+      "max_symmetric_auc": 0.56038,
+      "passed": true
+    },
+    {
+      "feature": "d2_dem10_resid_std",
+      "domain": "D2_dem10m",
+      "seed_20_raw_auc": 0.55872,
+      "seed_20_sym_auc": 0.55872,
+      "seed_30_raw_auc": 0.53547,
+      "seed_30_sym_auc": 0.53547,
+      "max_symmetric_auc": 0.55872,
+      "passed": true
+    },
+    {
+      "feature": "d2_dem10_resid_range",
+      "domain": "D2_dem10m",
+      "seed_20_raw_auc": 0.55871,
+      "seed_20_sym_auc": 0.55871,
+      "seed_30_raw_auc": 0.53433,
+      "seed_30_sym_auc": 0.53433,
+      "max_symmetric_auc": 0.55871,
+      "passed": true
+    },
+    {
+      "feature": "d1_lid_contour_align_90fix",
+      "domain": "D1_lidar1m",
+      "seed_20_raw_auc": 0.46263,
+      "seed_20_sym_auc": 0.53737,
+      "seed_30_raw_auc": 0.44798,
+      "seed_30_sym_auc": 0.55202,
+      "max_symmetric_auc": 0.55202,
+      "passed": true
+    },
+    {
+      "feature": "d4_multi_dilation_tendency",
+      "domain": "dynamic_fold_physics",
+      "seed_20_raw_auc": 0.54931,
+      "seed_20_sym_auc": 0.54931,
+      "seed_30_raw_auc": 0.55175,
+      "seed_30_sym_auc": 0.55175,
+      "max_symmetric_auc": 0.55175,
+      "passed": true
+    },
+    {
+      "feature": "d3_hw_grav_dipole",
+      "domain": "D3_geopotential_dipole",
+      "seed_20_raw_auc": 0.51925,
+      "seed_20_sym_auc": 0.51925,
+      "seed_30_raw_auc": 0.55101,
+      "seed_30_sym_auc": 0.55101,
+      "max_symmetric_auc": 0.55101,
+      "passed": true
+    },
+    {
+      "feature": "d3_mag_tc",
+      "domain": "D3_geopotential_dipole",
+      "seed_20_raw_auc": 0.46934,
+      "seed_20_sym_auc": 0.53066,
+      "seed_30_raw_auc": 0.4523,
+      "seed_30_sym_auc": 0.5477,
+      "max_symmetric_auc": 0.5477,
+      "passed": true
+    },
+    {
+      "feature": "d4_seismic_deq_inv",
+      "domain": "D4_stress_strain",
+      "seed_20_raw_auc": 0.46107,
+      "seed_20_sym_auc": 0.53893,
+      "seed_30_raw_auc": 0.45322,
+      "seed_30_sym_auc": 0.54678,
+      "max_symmetric_auc": 0.54678,
+      "passed": true
+    },
+    {
+      "feature": "d2_dem10_steep_ratio",
+      "domain": "D2_dem10m",
+      "seed_20_raw_auc": 0.54356,
+      "seed_20_sym_auc": 0.54356,
+      "seed_30_raw_auc": 0.52136,
+      "seed_30_sym_auc": 0.52136,
+      "max_symmetric_auc": 0.54356,
+      "passed": true
+    },
+    {
+      "feature": "d5_hydro_demag_trough",
+      "domain": "D5_geothermal_valve",
+      "seed_20_raw_auc": 0.54206,
+      "seed_20_sym_auc": 0.54206,
+      "seed_30_raw_auc": 0.53021,
+      "seed_30_sym_auc": 0.53021,
+      "max_symmetric_auc": 0.54206,
+      "passed": true
+    },
+    {
+      "feature": "d2_seamfree_worm_1300m",
+      "domain": "D2_dem10m",
+      "seed_20_raw_auc": 0.54055,
+      "seed_20_sym_auc": 0.54055,
+      "seed_30_raw_auc": 0.5267,
+      "seed_30_sym_auc": 0.5267,
+      "max_symmetric_auc": 0.54055,
+      "passed": true
+    },
+    {
+      "feature": "d4_terzaghi_valve_criticality",
+      "domain": "dynamic_fold_physics",
+      "seed_20_raw_auc": 0.53024,
+      "seed_20_sym_auc": 0.53024,
+      "seed_30_raw_auc": 0.54015,
+      "seed_30_sym_auc": 0.54015,
+      "max_symmetric_auc": 0.54015,
+      "passed": true
+    },
+    {
+      "feature": "d3_fft_up500_persist",
+      "domain": "D3_geopotential_dipole",
+      "seed_20_raw_auc": 0.53781,
+      "seed_20_sym_auc": 0.53781,
+      "seed_30_raw_auc": 0.51761,
+      "seed_30_sym_auc": 0.51761,
+      "max_symmetric_auc": 0.53781,
+      "passed": true
+    },
+    {
+      "feature": "d5_hf_convective_1km",
+      "domain": "D5_geothermal_valve",
+      "seed_20_raw_auc": 0.46305,
+      "seed_20_sym_auc": 0.53695,
+      "seed_30_raw_auc": 0.48092,
+      "seed_30_sym_auc": 0.51908,
+      "max_symmetric_auc": 0.53695,
+      "passed": true
+    },
+    {
+      "feature": "d5_road_valley_berm_flag",
+      "domain": "D5_geothermal_valve",
+      "seed_20_raw_auc": 0.46608,
+      "seed_20_sym_auc": 0.53392,
+      "seed_30_raw_auc": 0.46889,
+      "seed_30_sym_auc": 0.53111,
+      "max_symmetric_auc": 0.53392,
+      "passed": true
+    },
+    {
+      "feature": "d1_lid_valid",
+      "domain": "D1_lidar1m",
+      "seed_20_raw_auc": 0.52867,
+      "seed_20_sym_auc": 0.52867,
+      "seed_30_raw_auc": 0.53331,
+      "seed_30_sym_auc": 0.53331,
+      "max_symmetric_auc": 0.53331,
+      "passed": true
+    },
+    {
+      "feature": "d3_mt_cond_grad_safe36",
+      "domain": "D3_geopotential_dipole",
+      "seed_20_raw_auc": 0.53279,
+      "seed_20_sym_auc": 0.53279,
+      "seed_30_raw_auc": 0.52838,
+      "seed_30_sym_auc": 0.52838,
+      "max_symmetric_auc": 0.53279,
+      "passed": true
+    },
+    {
+      "feature": "d3_up150_grad",
+      "domain": "D3_geopotential_dipole",
+      "seed_20_raw_auc": 0.53265,
+      "seed_20_sym_auc": 0.53265,
+      "seed_30_raw_auc": 0.50352,
+      "seed_30_sym_auc": 0.50352,
+      "max_symmetric_auc": 0.53265,
+      "passed": true
+    },
+    {
+      "feature": "d5_potassic_k_th_alteration",
+      "domain": "D5_geothermal_valve",
+      "seed_20_raw_auc": 0.5254,
+      "seed_20_sym_auc": 0.5254,
+      "seed_30_raw_auc": 0.53047,
+      "seed_30_sym_auc": 0.53047,
+      "max_symmetric_auc": 0.53047,
+      "passed": true
+    },
+    {
+      "feature": "d3_worm_mag_grav_1500m",
+      "domain": "D3_geopotential_dipole",
+      "seed_20_raw_auc": 0.53018,
+      "seed_20_sym_auc": 0.53018,
+      "seed_30_raw_auc": 0.51021,
+      "seed_30_sym_auc": 0.51021,
+      "max_symmetric_auc": 0.53018,
+      "passed": true
+    },
+    {
+      "feature": "d3_log_tmi_hg",
+      "domain": "D3_geopotential_dipole",
+      "seed_20_raw_auc": 0.52972,
+      "seed_20_sym_auc": 0.52972,
+      "seed_30_raw_auc": 0.49715,
+      "seed_30_sym_auc": 0.50285,
+      "max_symmetric_auc": 0.52972,
+      "passed": true
+    },
+    {
+      "feature": "d2_dem10_worm_1100m",
+      "domain": "D2_dem10m",
+      "seed_20_raw_auc": 0.48264,
+      "seed_20_sym_auc": 0.51736,
+      "seed_30_raw_auc": 0.47084,
+      "seed_30_sym_auc": 0.52916,
+      "max_symmetric_auc": 0.52916,
+      "passed": true
+    },
+    {
+      "feature": "d2_dem10_onesided3",
+      "domain": "D2_dem10m",
+      "seed_20_raw_auc": 0.48581,
+      "seed_20_sym_auc": 0.51419,
+      "seed_30_raw_auc": 0.47182,
+      "seed_30_sym_auc": 0.52818,
+      "max_symmetric_auc": 0.52818,
+      "passed": true
+    },
+    {
+      "feature": "d2_dem10_piedmont_step",
+      "domain": "D2_dem10m",
+      "seed_20_raw_auc": 0.47245,
+      "seed_20_sym_auc": 0.52755,
+      "seed_30_raw_auc": 0.47484,
+      "seed_30_sym_auc": 0.52516,
+      "max_symmetric_auc": 0.52755,
+      "passed": true
+    },
+    {
+      "feature": "d3_gallardo_crossgrad",
+      "domain": "D3_geopotential_dipole",
+      "seed_20_raw_auc": 0.5273,
+      "seed_20_sym_auc": 0.5273,
+      "seed_30_raw_auc": 0.52264,
+      "seed_30_sym_auc": 0.52264,
+      "max_symmetric_auc": 0.5273,
+      "passed": true
+    },
+    {
+      "feature": "d1_lid_coh100",
+      "domain": "D1_lidar1m",
+      "seed_20_raw_auc": 0.52653,
+      "seed_20_sym_auc": 0.52653,
+      "seed_30_raw_auc": 0.52599,
+      "seed_30_sym_auc": 0.52599,
+      "max_symmetric_auc": 0.52653,
+      "passed": true
+    },
+    {
+      "feature": "d3_verduzco_grav_tilt",
+      "domain": "D3_geopotential_dipole",
+      "seed_20_raw_auc": 0.50319,
+      "seed_20_sym_auc": 0.50319,
+      "seed_30_raw_auc": 0.51984,
+      "seed_30_sym_auc": 0.51984,
+      "max_symmetric_auc": 0.51984,
+      "passed": true
+    },
+    {
+      "feature": "d2_dem10_onesided",
+      "domain": "D2_dem10m",
+      "seed_20_raw_auc": 0.48518,
+      "seed_20_sym_auc": 0.51482,
+      "seed_30_raw_auc": 0.48266,
+      "seed_30_sym_auc": 0.51734,
+      "max_symmetric_auc": 0.51734,
+      "passed": true
+    },
+    {
+      "feature": "d5_gdr_diseq_updip",
+      "domain": "D5_geothermal_valve",
+      "seed_20_raw_auc": 0.51031,
+      "seed_20_sym_auc": 0.51031,
+      "seed_30_raw_auc": 0.51418,
+      "seed_30_sym_auc": 0.51418,
+      "max_symmetric_auc": 0.51418,
+      "passed": true
+    },
+    {
+      "feature": "d4_strain_dilate",
+      "domain": "D4_stress_strain",
+      "seed_20_raw_auc": 0.51312,
+      "seed_20_sym_auc": 0.51312,
+      "seed_30_raw_auc": 0.51383,
+      "seed_30_sym_auc": 0.51383,
+      "max_symmetric_auc": 0.51383,
+      "passed": true
+    },
+    {
+      "feature": "d1_lid_step_anom15",
+      "domain": "D1_lidar1m",
+      "seed_20_raw_auc": 0.51019,
+      "seed_20_sym_auc": 0.51019,
+      "seed_30_raw_auc": 0.51362,
+      "seed_30_sym_auc": 0.51362,
+      "max_symmetric_auc": 0.51362,
+      "passed": true
+    },
+    {
+      "feature": "d5_gdr_geotherm_upflow_1km",
+      "domain": "D5_geothermal_valve",
+      "seed_20_raw_auc": 0.49571,
+      "seed_20_sym_auc": 0.50429,
+      "seed_30_raw_auc": 0.51244,
+      "seed_30_sym_auc": 0.51244,
+      "max_symmetric_auc": 0.51244,
+      "passed": true
+    },
+    {
+      "feature": "d4_elev_slope_anom15",
+      "domain": "D4_stress_strain",
+      "seed_20_raw_auc": 0.4992,
+      "seed_20_sym_auc": 0.5008,
+      "seed_30_raw_auc": 0.50842,
+      "seed_30_sym_auc": 0.50842,
+      "max_symmetric_auc": 0.50842,
+      "passed": true
+    },
+    {
+      "feature": "d3_tmi_vg",
+      "domain": "D3_geopotential_dipole",
+      "seed_20_raw_auc": 0.49817,
+      "seed_20_sym_auc": 0.50183,
+      "seed_30_raw_auc": 0.49206,
+      "seed_30_sym_auc": 0.50794,
+      "max_symmetric_auc": 0.50794,
+      "passed": true
+    },
+    {
+      "feature": "d3_rtp_hp15",
+      "domain": "D3_geopotential_dipole",
+      "seed_20_raw_auc": 0.49538,
+      "seed_20_sym_auc": 0.50462,
+      "seed_30_raw_auc": 0.49357,
+      "seed_30_sym_auc": 0.50643,
+      "max_symmetric_auc": 0.50643,
+      "passed": true
+    },
+    {
+      "feature": "d4_lid1m_dilation_tendency_90fix",
+      "domain": "dynamic_fold_physics",
+      "seed_20_raw_auc": 0.5054,
+      "seed_20_sym_auc": 0.5054,
+      "seed_30_raw_auc": 0.50638,
+      "seed_30_sym_auc": 0.50638,
+      "max_symmetric_auc": 0.50638,
+      "passed": true
+    },
+    {
+      "feature": "d5_probes2m_and_paleo_vents",
+      "domain": "D5_geothermal_valve",
+      "seed_20_raw_auc": 0.49555,
+      "seed_20_sym_auc": 0.50445,
+      "seed_30_raw_auc": 0.49713,
+      "seed_30_sym_auc": 0.50287,
+      "max_symmetric_auc": 0.50445,
+      "passed": true
+    },
+    {
+      "feature": "d3_grav_slope_hp",
+      "domain": "D3_geopotential_dipole",
+      "seed_20_raw_auc": 0.50314,
+      "seed_20_sym_auc": 0.50314,
+      "seed_30_raw_auc": 0.50405,
+      "seed_30_sym_auc": 0.50405,
+      "max_symmetric_auc": 0.50405,
+      "passed": true
+    },
+    {
+      "feature": "d1_lid_openness_hires",
+      "domain": "D1_lidar1m",
+      "seed_20_raw_auc": 0.5,
+      "seed_20_sym_auc": 0.5,
+      "seed_30_raw_auc": 0.5,
+      "seed_30_sym_auc": 0.5,
+      "max_symmetric_auc": 0.5,
+      "passed": true
+    }
+  ]
+}

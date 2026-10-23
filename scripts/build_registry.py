@@ -62,10 +62,36 @@ def sha256(p: Path) -> str:
     return h.hexdigest()
 
 
-def resolve(src: str) -> Path | None:
+def resolve(src: str, expected_hashes: dict[str, str] | None = None) -> Path | None:
     if src.startswith("ref:"):
-        p = REF / src[4:]
-        return p if p.exists() else None
+        rel = src[4:]
+        p = REF / rel
+        if p.exists():
+            return p
+        # Fallback: fetch from buffedlizard55-lab/<repo> via gh api into DEST and verify SHA-256
+        repo_name, repo_path = rel.split("/", 1)
+        dst = DEST / Path(repo_path).name
+        exp = (expected_hashes or {}).get(dst.name)
+        if dst.exists() and (exp is None or sha256(dst) == exp):
+            return dst
+        import subprocess
+        import tempfile
+        DEST.mkdir(parents=True, exist_ok=True)
+        with tempfile.NamedTemporaryFile(dir=DEST, delete=False) as tf:
+            tmp_path = Path(tf.name)
+            res = subprocess.run(
+                ["gh", "api", f"repos/buffedlizard55-lab/{repo_name}/contents/{repo_path}",
+                 "-H", "Accept: application/vnd.github.raw"],
+                stdout=tf, check=False, timeout=180,
+            )
+        if res.returncode != 0 or not tmp_path.exists() or tmp_path.stat().st_size == 0:
+            tmp_path.unlink(missing_ok=True)
+            return None
+        if exp is not None and sha256(tmp_path) != exp:
+            tmp_path.unlink(missing_ok=True)
+            raise ValueError(f"SHA-256 mismatch fetching {src}")
+        tmp_path.replace(dst)
+        return dst
     if src.startswith("data:"):
         man = json.loads((ROOT / "registry" / "data_manifest.json").read_text())
         for f in man["files"]:
@@ -77,15 +103,20 @@ def resolve(src: str) -> Path | None:
 
 def main() -> int:
     DEST.mkdir(parents=True, exist_ok=True)
+    prev_path = ROOT / "registry" / "scored_artifacts.json"
+    expected_hashes = {}
+    if prev_path.exists():
+        for a in json.loads(prev_path.read_text()).get("artifacts", []):
+            expected_hashes[Path(a["file"]).name] = a["sha256"]
     out = []
     missing = []
     for src, score, label in SPEC:
-        p = resolve(src)
+        p = resolve(src, expected_hashes=expected_hashes)
         if p is None:
             missing.append(src)
             continue
         dst = DEST / p.name
-        if not dst.exists():
+        if p.resolve() != dst.resolve() and not dst.exists():
             shutil.copy2(p, dst)
         out.append({
             "file": f"data/registry_rasters/{p.name}",

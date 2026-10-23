@@ -10,5 +10,10 @@ work/
 # --- from the duplex lane ---
 .cache/
 data/training_features.tif
-data/external/
+data/external/*
+!data/external/
+!data/external/usgs_comcat_geodawn.csv
+!data/external/usgs_comcat_provenance.json
+!data/external/usgs_raw/
+!data/external/usgs_raw/**
 .mypy_cache/
