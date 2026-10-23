@@ -1,4 +1,18 @@
 # GEMSDOE85 — H85-GAPVENT: 57-Channel 10 m 3DEP + Fluvial χ + Blind Geothermal Vent Kernel Regressor
+<!-- CURRENT STATE: the only part of this README this session may edit. -->
+## CURRENT STATE (2026-10-23, branch `arena/991f7136-gemsdoe85`, AXIS=MASS)
+
+| Field | Value |
+|---|---|
+| Parent | **R0 = `h33-h33-2-b2`** (GEMSDOE32), 37,654 dots, **CLAIM 0.2778**, sha256 `c55bafc4…`; content reproduced pixel-exactly in-repo (0 differing pixels), container bytes not reproducible (IR-85-MASS-03) |
+| Best receipt | **none** — no organizer receipt exists in this repo for any score; 0.2778 and 0.2708 are owner-reported CLAIMs |
+| TOP_PUBLIC | **0.3195** — UNVERIFIED, human-supplied 2026-10-23, no leaderboard citation |
+| Slots left this week | **3 / 3** (human-supplied 2026-10-23) |
+| Built this session | `h33-2-b2-mass-m20` (30,124 dots), `h33-2-b2-mass-p10` (41,415), `h33-2-b2-mass-m10` (33,887) — all in `releases/`, all pass the 17 local format checks, all UNSHIPPED (`ledger/submissions.csv`) |
+| Next 3 slots | 1) mass-m20, 2) mass-p10, 3) mass-m10 (or CONCENTRATION if slot 1 is decisive) — `SLOT_PLAN.md` |
+| Live-change predictions | MODEL brackets: m20 [−0.081, +0.0074], m10 [−0.040, +0.0037], p10 [−0.0037, +0.020]; a null (<0.01) is the modal outcome for two of three |
+| What is NOT satisfied | brief §4's ≥3 px catalogue rule and this repo's Chebyshev-2 buffer check — **R0 itself fails both** (IR-85-MASS-02) |
+| What cannot be measured locally | any live-adjacent score: the catalogue-as-truth metric returns 0.0067 for R0 (claim 0.2778), so no local instrument can rank this lineage (IR-85-MASS-04) |
 
 **DOE GEMS Prize · DrivenData competition #306 · current primary: session `arena/7ded4c0a-gemsdoe85` (2026-10-23 UTC)**
 
