@@ -112,6 +112,34 @@
       "status": "acknowledged",
       "finding": "Raw 3px dot overlap of the session primary vs this repo's own superseded 90,000-dot GEO-Pb file is 0.79 (chance coverage 0.44, lift 1.81, exact pixel overlap 0.26). Vs every comparable-budget (<=60k) own-repo file overlap <=0.41; vs the 17-raster registry max comparable overlap 0.42 (h33 winner: 0.379, Spearman 0.065).",
       "action_taken": "Disclosed in evidence/duplicate_check_ownrepo_session.json and the run card. Dense-file raw overlap is the IR-85-002 artifact; candidate is a distinct field and dot set, not a rename."
+    },
+    {
+      "id": "IR-85-018",
+      "severity": "critical",
+      "status": "fixed-on-branch",
+      "finding": "Merged promotion banners and tests treated format PASS / comparable-budget overlap as clearance despite unassigned lane, unavailable pinned cache and binding literal dense-prior saturation.",
+      "action_taken": "Canonical release audit recomputed with unchanged shared tools; current site/root and all legacy HTML entry points now carry BLOCKED. Historical promotion cards retained, never silently rewritten into experimental negatives."
+    },
+    {
+      "id": "IR-85-019",
+      "severity": "high",
+      "status": "fixed-on-branch",
+      "finding": "check_site validated neither the exact reference transform nor release governance; README/root and canonical submission registry also referred to different primaries.",
+      "action_taken": "Shared on-disk validator checks all historical TIFFs with reference/hash integrity; current decision lives in evidence/run_card.json. Registry submissions remain explicitly historical, not selected."
+    },
+    {
+      "id": "IR-85-020",
+      "severity": "high",
+      "status": "acknowledged",
+      "finding": "Historical literature note and README inferred feature independence from nonsignificant AUC, constant false-positive mass from constant dot count, hidden truth mass from unreceipted scores and universal external-data eligibility.",
+      "action_taken": "Current research review corrects these claims and separates official reference facts, local measurements, hypotheses and unverified owner reports. Historical documents preserved and labeled."
+    },
+    {
+      "id": "IR-85-021",
+      "severity": "high",
+      "status": "fixed-on-branch",
+      "finding": "Session exporter and local uniqueness CLI retained thresholded partial-registry/chance-exemption paths inconsistent with literal shared gate.",
+      "action_taken": "Historical exporter retired before model imports or any field/TIFF construction; uniqueness CLI delegates only to pinned shared gate at surface and dots stages, with surface-only checks supported; no private shared-tool changes."
     }
   ]
 }

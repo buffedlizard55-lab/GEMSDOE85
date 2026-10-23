@@ -1,113 +1,2095 @@
 {
-  "run_id": "gems85-20261022T222707Z",
-  "hypothesis": "H85-1 GEO-Pb: a fault is a JUXTAPOSITION, not a gradient. At each pixel and 8 candidate strikes, the offset difference of a covariance-whitened 10-band multi-physics stack across the candidate line (windowed Hotelling-style two-sample step), reduced by the MEDIAN of three independent physics domains so two of three must agree, times an along-strike persistence term over 1.5 km, then crest-thinned by non-maximum suppression across its own normal.",
-  "mechanism": "A fault concealed under Holocene alluvium has no scarp but still juxtaposes different basement susceptibility, cover thickness and surface geochemistry. Each band changes a little; the joint 10-vector changes a lot. A derivative operator weights the magnitude of each band's change; a whitened two-sample statistic weights how improbable the JOINT change is.",
-  "named_non_fault_process_that_could_mimic_it": "Erosional volcanic mesa and lava-flow margins: straight, long, and expressed in all three physics domains (magnetic contrast, radiometric contrast, topographic step) with no tectonic offset. Declared as the irreducible confounder; the straightness term and the two-of-three vote do NOT remove it. Secondary, partly mitigated: distal alluvial-fan margins and Lake Lahontan shorelines (lobate -- suppressed by the 1.5 km straightness term) and aeromagnetic/radiometric acquisition seams (single-domain -- suppressed by the two-of-three median; azimuth audit in evidence/experiments.json shows max single-orientation share 0.254 < 0.35).",
-  "holdout_dti": {
-    "label": "HOLDOUT-DTI",
-    "evaluator_version": "gems85-holdout-v1.0.0",
-    "value": 0.09838308302222241,
-    "ci95": [
-      0.09022123039966032,
-      0.10654493564478451
+  "schema_version": 2,
+  "hypothesis": null,
+  "mechanism": null,
+  "non_fault_mimic": null,
+  "experiment_status": "NOT RUN: prerequisites and literal uniqueness gate blocked",
+  "holdout": {
+    "evidence_class": "HOLDOUT-DTI",
+    "evaluator_version": "gems57-pooled-hide-v2",
+    "dti": null,
+    "ci95": null,
+    "withheld_positive_pixels": null,
+    "status": "not run"
+  },
+  "registry": {
+    "correlation": null,
+    "overlap": null,
+    "phase_surface": "not run",
+    "phase_final_dots": "not run",
+    "uniqueness_cleared": false,
+    "saturation_certificate": {
+      "evidence_class": "REGISTRY-MEASUREMENT",
+      "witness_file": "data/learning/registry-saturation-witness.tif",
+      "witness_sha256": "ab0a0a62eecf066a82713b09dd49f0f638a91fa3dd81f54cc34ae89afa3872be",
+      "positive_pixels": 5167373,
+      "allowed_pixels": 5106385,
+      "uncovered_allowed_pixels": 0,
+      "covered_allowed_fraction": 1.0,
+      "universal_overlap_blocker": true,
+      "overlap_limit": 0.7,
+      "support_definition": "finite prediction > 0 (inherited literal support rule)",
+      "implication": "Every nonempty candidate dot set in the allowed domain has forward overlap 1.0 with this prior; therefore it cannot pass the 0.70 gate."
+    }
+  },
+  "raster_sha256": null,
+  "validator": {
+    "status": "not run: no candidate",
+    "no_nan_inside_footprint": null,
+    "values_in_0_1": null,
+    "crs_match": null,
+    "shape_match": null,
+    "transform_match": null
+  },
+  "submission": {
+    "name": null,
+    "note": "No candidate: missing lane/cache and literal registry saturation. No weekly slot used."
+  },
+  "gates": {
+    "core_manifest_valid": true,
+    "core_mirror_integrity": [
+      {
+        "id": "training_features",
+        "ok": false
+      },
+      {
+        "id": "labels",
+        "ok": true
+      },
+      {
+        "id": "existing_faults",
+        "ok": true
+      },
+      {
+        "id": "sample_submission",
+        "ok": true
+      }
     ],
-    "per_fold": [
-      0.10327788027153373,
-      0.10469137584536177,
-      0.08636118725538365,
-      0.09831572297936028
-    ],
-    "n_withheld_positives": 60988,
-    "protocol": "hide-and-recover; whole fault segments withheld by spatial block with a 5 px buffer; catalogue-derived features from visible faults only; visible faults masked pixel-exactly; pooled DTI, alpha 0.2, beta 0.8, 300 m triangular kernel"
+    "core_inputs_available": false,
+    "template_unmodified": true,
+    "cached_stack_available": false
   },
-  "controls_at_matched_mass": {
-    "uniform_random": 0.06854276785936068,
-    "derivative_control_sato_det_elev": 0.017631075061456277,
-    "control_budget_used": 60000
-  },
-  "vs_random_delta": 0.02984031516286173,
-  "geopb_ablation_37654px": {
-    "with": 0.06229918424308149,
-    "without": 0.05712739506360241,
-    "delta": 0.0051717891794790805,
-    "folds_positive": 4
-  },
-  "leakage_canary": {
-    "geopb_crest_auc": 0.5036234229684529,
-    "threshold": 0.9,
-    "verdict": "clean"
-  },
-  "correlation_vs_registry": {
-    "max_abs_spearman": 0.01165560892932136,
-    "max_dot_overlap_3px": 0.9914333333333334,
-    "thresholds": {
-      "spearman": 0.9,
-      "dot_overlap_3px": 0.7,
-      "overlap_lift_over_chance": 1.5
-    },
-    "is_duplicate": false
-  },
-  "raster_sha256": "ba33ea18936e6324037457e1ff5070d8e879b7b29a25b4ae2c0003bc509a567f",
-  "validator_output": {
-    "all_checks_passed": true,
-    "checks": {
-      "file_exists": true,
-      "single_band": true,
-      "dtype_float32": true,
-      "shape_3730x3292": true,
-      "crs_epsg_32611": true,
-      "transform_matches_template": true,
-      "resolution_100m": true,
-      "no_nan_inside_footprint": true,
-      "no_inf_inside_footprint": true,
-      "values_in_0_1_inside_footprint": true,
-      "all_finite_whole_raster": true,
-      "values_in_0_1_whole_raster": true,
-      "outside_footprint_is_zero": true,
-      "no_nodata_tag": true,
-      "has_positive_predictions": true,
-      "no_prediction_outside_footprint": true,
-      "zero_mass_within_2px_of_catalogue": true
-    },
-    "no_nan_inside_footprint": true,
-    "values_in_0_1": true,
-    "crs_shape_transform_match": true
-  },
-  "submission_name": "gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.tif",
-  "submission_note": "H85-1 GEO-Pb 2of3-physics juxtaposition crest, 90000 dots sep4px, 0 within 200m of catalogue, holdout DTI 0.0984 (UNSCORED)",
-  "preregistered_gate": {
-    "beats_derivative_control": true,
-    "beats_uniform_random": true,
-    "leakage_canary_clean": true
-  },
-  "verdict": "promote-as-candidate",
-  "verdict_caveat": "'promote-as-candidate' means the file cleared this repository's pre-registered gate and is published for the separate selector step. It is NOT a leaderboard projection. No organizer score exists for any artifact in this repository.",
-  "budget": {
-    "experiments_run": 4,
-    "limit": 3,
-    "note": "experiment 4 (the separation sweep) was a 108 s refinement of experiment 3's emission rule, not a new hypothesis; logged for transparency against the protocol's 3-experiment cap"
-  },
-  "negative_experiments_this_session": [
+  "blockers": [
+    "No explicit single-method lane assignment supplied.",
+    "One or more core data mirrors are missing or fail their hash/size pins.",
+    "The template cached feature-stack bytes and hash manifest are unavailable locally.",
+    "Literal registry overlap rule blocks every nonempty candidate: a prior is positive throughout the allowed domain.",
+    "Full registry raster bytes have not been compared at either the pre-placement surface or final-dot stage.",
+    "Historical lane results exist but no current candidate has passed the strict protocol and a paired current-best improvement gate.",
+    "Historical model scripts and quarantined rasters exist; no current lane candidate or automatic slot selector is approved.",
+    "Account-specific weekly remaining quota and submission-page receipts are unavailable; no slot selection authorized."
+  ],
+  "verdict": "negative",
+  "safe_to_download": false,
+  "safe_to_submit": false,
+  "promoted": false,
+  "selector_implemented": false,
+  "submission_slots_used": 0,
+  "experiments_run": 0,
+  "note": "Negative preflight deliverable; not a geological negative result or a competition submission.",
+  "audit_version": "gems85-release-audit-v2",
+  "historical_artifacts": [
     {
-      "id": 1,
-      "file": "evidence/experiment_1_thermal.json",
-      "hypothesis": "H_TM thermal-spring x GEO-Pb conjunction: score = crest * (1 + lambda*exp(-d_thermal/tau)); re-rank the fixed dot budget toward verified hot/warm springs (GDR 1391).",
-      "mechanism": "springs mark deep circulation along permeable fault conduits; 619/1839 sites are >3 km from any mapped fault.",
-      "mimic": "valley-floor/playa spring lines and road-aligned irrigation wells; mitigated by the GEO-Pb juxtaposition factor.",
-      "result": "best lambda=1.0 tau=5px: 0.09032 vs crest 0.08971 at 60k (CI overlap); 0.09917 vs 0.09838 at 90k. Leakage canary AUC 0.5093 (clean). Verdict: NEGATIVE."
-    },
-    {
-      "id": 2,
-      "file": "evidence/experiment_2_orientation.json",
-      "hypothesis": "H85-2 GEO-Pb 16 strikes, persistence retired: double strike resolution, drop the null-result persistence term.",
-      "result": "0.07258/0.08662/0.09450 vs crest 0.07475/0.08971/0.09838 at 37.654k/60k/90k -- worse everywhere. Verdict: NEGATIVE."
+      "file": "docs/downloads/gems85-geopb-crest-37654dots-sep4-20261022T222707Z-60029d07-nan.tif",
+      "sha256": "1a860abfb84ab6875fdc6e8f7c7a220f9329712490256467ed866b3f9f744783",
+      "safe_to_submit": false,
+      "classification": "historical diagnostic; NOT a new submission",
+      "validator_output": {
+        "path": "docs/downloads/gems85-geopb-crest-37654dots-sep4-20261022T222707Z-60029d07-nan.tif",
+        "bytes": 339110,
+        "sha256": "1a860abfb84ab6875fdc6e8f7c7a220f9329712490256467ed866b3f9f744783",
+        "bands": 1,
+        "dtype": "float32",
+        "crs": "EPSG:32611",
+        "width": 3292,
+        "height": 3730,
+        "bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "ref_bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "nodata": null,
+        "blocksize": [
+          1,
+          3292
+        ],
+        "fixture_grid": false,
+        "has_validity_mask": false,
+        "nan_pixels": 7111787,
+        "infinity_pixels": 0,
+        "n_nan": 7111787,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.0072868745774030685,
+        "n_nonzero": 37654,
+        "mass": 37654.0,
+        "mass_outside_footprint": 0,
+        "problems": [
+          "7111787 NaN/infinite pixels: fail our all-finite export policy (public spec permits outside-footprint NaN)"
+        ],
+        "ok": false,
+        "validation_class": "local on-disk template/range check; not organizer upload acceptance"
+      },
+      "checks": {
+        "no_nan_inside_footprint": true,
+        "values_in_0_1": false,
+        "crs_shape_transform_match": true
+      },
+      "format_ok": false
     },
     {
-      "id": 3,
-      "file": "evidence/experiment_3_emitter.json",
-      "hypothesis": "H85-3 credit-bar-gated emission (emitter.py marginal-gain theorem), hard cap 60k dots.",
-      "result": "credit bar never bound; gated 0.08765 vs plain top-n 0.08971 at 60k. Packing exhausted for this field. Verdict: NEGATIVE."
+      "file": "docs/downloads/gems85-geopb-crest-37654dots-sep4-20261022T222707Z-60029d07-zeros.tif",
+      "sha256": "a211e7c6e2cdb6665537b19d4902824d12bd1951185f6c66c1df86a843a5281e",
+      "safe_to_submit": false,
+      "classification": "historical diagnostic; NOT a new submission",
+      "validator_output": {
+        "path": "docs/downloads/gems85-geopb-crest-37654dots-sep4-20261022T222707Z-60029d07-zeros.tif",
+        "bytes": 301369,
+        "sha256": "a211e7c6e2cdb6665537b19d4902824d12bd1951185f6c66c1df86a843a5281e",
+        "bands": 1,
+        "dtype": "float32",
+        "crs": "EPSG:32611",
+        "width": 3292,
+        "height": 3730,
+        "bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "ref_bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "nodata": null,
+        "blocksize": [
+          1,
+          3292
+        ],
+        "fixture_grid": false,
+        "has_validity_mask": false,
+        "nan_pixels": 0,
+        "infinity_pixels": 0,
+        "n_nan": 0,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.0030664964579045773,
+        "n_nonzero": 37654,
+        "mass": 37654.0,
+        "mass_outside_footprint": 0,
+        "problems": [],
+        "ok": true,
+        "validation_class": "local on-disk template/range check; not organizer upload acceptance"
+      },
+      "checks": {
+        "no_nan_inside_footprint": true,
+        "values_in_0_1": true,
+        "crs_shape_transform_match": true
+      },
+      "format_ok": true
+    },
+    {
+      "file": "docs/downloads/gems85-geopb-crest-60000dots-sep4-20261022T222707Z-cbb4e82c-nan.tif",
+      "sha256": "f971f8c58ceb82db97d61e71300bc4c31468f549925810a597c0809f02f435ca",
+      "safe_to_submit": false,
+      "classification": "historical diagnostic; NOT a new submission",
+      "validator_output": {
+        "path": "docs/downloads/gems85-geopb-crest-60000dots-sep4-20261022T222707Z-cbb4e82c-nan.tif",
+        "bytes": 401298,
+        "sha256": "f971f8c58ceb82db97d61e71300bc4c31468f549925810a597c0809f02f435ca",
+        "bands": 1,
+        "dtype": "float32",
+        "crs": "EPSG:32611",
+        "width": 3292,
+        "height": 3730,
+        "bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "ref_bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "nodata": null,
+        "blocksize": [
+          1,
+          3292
+        ],
+        "fixture_grid": false,
+        "has_validity_mask": false,
+        "nan_pixels": 7111787,
+        "infinity_pixels": 0,
+        "n_nan": 7111787,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.011611315421760082,
+        "n_nonzero": 60000,
+        "mass": 60000.0,
+        "mass_outside_footprint": 0,
+        "problems": [
+          "7111787 NaN/infinite pixels: fail our all-finite export policy (public spec permits outside-footprint NaN)"
+        ],
+        "ok": false,
+        "validation_class": "local on-disk template/range check; not organizer upload acceptance"
+      },
+      "checks": {
+        "no_nan_inside_footprint": true,
+        "values_in_0_1": false,
+        "crs_shape_transform_match": true
+      },
+      "format_ok": false
+    },
+    {
+      "file": "docs/downloads/gems85-geopb-crest-60000dots-sep4-20261022T222707Z-cbb4e82c-zeros.tif",
+      "sha256": "2bdae85a89b2ce6f953fcbcda06a49c036776e0939a3bc1a62a0b1305d28aecc",
+      "safe_to_submit": false,
+      "classification": "historical diagnostic; NOT a new submission",
+      "validator_output": {
+        "path": "docs/downloads/gems85-geopb-crest-60000dots-sep4-20261022T222707Z-cbb4e82c-zeros.tif",
+        "bytes": 363090,
+        "sha256": "2bdae85a89b2ce6f953fcbcda06a49c036776e0939a3bc1a62a0b1305d28aecc",
+        "bands": 1,
+        "dtype": "float32",
+        "crs": "EPSG:32611",
+        "width": 3292,
+        "height": 3730,
+        "bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "ref_bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "nodata": null,
+        "blocksize": [
+          1,
+          3292
+        ],
+        "fixture_grid": false,
+        "has_validity_mask": false,
+        "nan_pixels": 0,
+        "infinity_pixels": 0,
+        "n_nan": 0,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.004886327777057886,
+        "n_nonzero": 60000,
+        "mass": 60000.0,
+        "mass_outside_footprint": 0,
+        "problems": [],
+        "ok": true,
+        "validation_class": "local on-disk template/range check; not organizer upload acceptance"
+      },
+      "checks": {
+        "no_nan_inside_footprint": true,
+        "values_in_0_1": true,
+        "crs_shape_transform_match": true
+      },
+      "format_ok": true
+    },
+    {
+      "file": "docs/downloads/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-nan.tif",
+      "sha256": "085c45c57d6532c7fdd9a00715c0f4f03465f8e665aa0cc2de3f71e25a33818c",
+      "safe_to_submit": false,
+      "classification": "historical diagnostic; NOT a new submission",
+      "validator_output": {
+        "path": "docs/downloads/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-nan.tif",
+        "bytes": 476599,
+        "sha256": "085c45c57d6532c7fdd9a00715c0f4f03465f8e665aa0cc2de3f71e25a33818c",
+        "bands": 1,
+        "dtype": "float32",
+        "crs": "EPSG:32611",
+        "width": 3292,
+        "height": 3730,
+        "bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "ref_bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "nodata": null,
+        "blocksize": [
+          1,
+          3292
+        ],
+        "fixture_grid": false,
+        "has_validity_mask": false,
+        "nan_pixels": 7111787,
+        "infinity_pixels": 0,
+        "n_nan": 7111787,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.017416974529623985,
+        "n_nonzero": 90000,
+        "mass": 90000.0,
+        "mass_outside_footprint": 0,
+        "problems": [
+          "7111787 NaN/infinite pixels: fail our all-finite export policy (public spec permits outside-footprint NaN)"
+        ],
+        "ok": false,
+        "validation_class": "local on-disk template/range check; not organizer upload acceptance"
+      },
+      "checks": {
+        "no_nan_inside_footprint": true,
+        "values_in_0_1": false,
+        "crs_shape_transform_match": true
+      },
+      "format_ok": false
+    },
+    {
+      "file": "docs/downloads/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.tif",
+      "sha256": "ba33ea18936e6324037457e1ff5070d8e879b7b29a25b4ae2c0003bc509a567f",
+      "safe_to_submit": false,
+      "classification": "historical diagnostic; NOT a new submission",
+      "validator_output": {
+        "path": "docs/downloads/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.tif",
+        "bytes": 438042,
+        "sha256": "ba33ea18936e6324037457e1ff5070d8e879b7b29a25b4ae2c0003bc509a567f",
+        "bands": 1,
+        "dtype": "float32",
+        "crs": "EPSG:32611",
+        "width": 3292,
+        "height": 3730,
+        "bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "ref_bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "nodata": null,
+        "blocksize": [
+          1,
+          3292
+        ],
+        "fixture_grid": false,
+        "has_validity_mask": false,
+        "nan_pixels": 0,
+        "infinity_pixels": 0,
+        "n_nan": 0,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.0073294914327561855,
+        "n_nonzero": 90000,
+        "mass": 90000.0,
+        "mass_outside_footprint": 0,
+        "problems": [],
+        "ok": true,
+        "validation_class": "local on-disk template/range check; not organizer upload acceptance"
+      },
+      "checks": {
+        "no_nan_inside_footprint": true,
+        "values_in_0_1": true,
+        "crs_shape_transform_match": true
+      },
+      "format_ok": true
+    },
+    {
+      "file": "docs/downloads/gems85-h85-duplex-pullapart-worm-20261022T220544Z-2f8b57d9-nan.tif",
+      "sha256": "ce8fb8c0f0b2fad1513bff4e34fa15a3e4c7bb8d373efa8f3cff6ceebcb99040",
+      "safe_to_submit": false,
+      "classification": "historical diagnostic; NOT a new submission",
+      "validator_output": {
+        "path": "docs/downloads/gems85-h85-duplex-pullapart-worm-20261022T220544Z-2f8b57d9-nan.tif",
+        "bytes": 215503,
+        "sha256": "ce8fb8c0f0b2fad1513bff4e34fa15a3e4c7bb8d373efa8f3cff6ceebcb99040",
+        "bands": 1,
+        "dtype": "float32",
+        "crs": "EPSG:32611",
+        "width": 3292,
+        "height": 3730,
+        "bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "ref_bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "nodata": "nan",
+        "blocksize": [
+          256,
+          256
+        ],
+        "fixture_grid": false,
+        "has_validity_mask": true,
+        "nan_pixels": 7111787,
+        "infinity_pixels": 0,
+        "n_nan": 7111787,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.008127921260893345,
+        "n_nonzero": 42000,
+        "mass": 42000.0,
+        "mass_outside_footprint": 0,
+        "problems": [
+          "7111787 NaN/infinite pixels: fail our all-finite export policy (public spec permits outside-footprint NaN)",
+          "nodata tag outside all-finite [0,1] export policy"
+        ],
+        "ok": false,
+        "validation_class": "local on-disk template/range check; not organizer upload acceptance"
+      },
+      "checks": {
+        "no_nan_inside_footprint": true,
+        "values_in_0_1": false,
+        "crs_shape_transform_match": true
+      },
+      "format_ok": false
+    },
+    {
+      "file": "docs/downloads/gems85-h85-duplex-pullapart-worm-20261022T220544Z-2f8b57d9-zeros.tif",
+      "sha256": "10efc0a5adf13b9e56c08e1be470eac88153a4985b9b9da776ed63772be298cb",
+      "safe_to_submit": false,
+      "classification": "historical diagnostic; NOT a new submission",
+      "validator_output": {
+        "path": "docs/downloads/gems85-h85-duplex-pullapart-worm-20261022T220544Z-2f8b57d9-zeros.tif",
+        "bytes": 88372,
+        "sha256": "10efc0a5adf13b9e56c08e1be470eac88153a4985b9b9da776ed63772be298cb",
+        "bands": 1,
+        "dtype": "float32",
+        "crs": "EPSG:32611",
+        "width": 3292,
+        "height": 3730,
+        "bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "ref_bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "nodata": null,
+        "blocksize": [
+          256,
+          256
+        ],
+        "fixture_grid": false,
+        "has_validity_mask": false,
+        "nan_pixels": 0,
+        "infinity_pixels": 0,
+        "n_nan": 0,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.003420429304242134,
+        "n_nonzero": 42000,
+        "mass": 42000.0,
+        "mass_outside_footprint": 0,
+        "problems": [],
+        "ok": true,
+        "validation_class": "local on-disk template/range check; not organizer upload acceptance"
+      },
+      "checks": {
+        "no_nan_inside_footprint": true,
+        "values_in_0_1": true,
+        "crs_shape_transform_match": true
+      },
+      "format_ok": true
+    },
+    {
+      "file": "docs/downloads/gems85-h85-ti-pure-20261022T221047Z-f53a0c81-nan.tif",
+      "sha256": "bf83e0a3b00592c1b355b9e54402a83d4f61af75da1c6223f5301f8b4fa22379",
+      "safe_to_submit": false,
+      "classification": "historical diagnostic; NOT a new submission",
+      "validator_output": {
+        "path": "docs/downloads/gems85-h85-ti-pure-20261022T221047Z-f53a0c81-nan.tif",
+        "bytes": 258932,
+        "sha256": "bf83e0a3b00592c1b355b9e54402a83d4f61af75da1c6223f5301f8b4fa22379",
+        "bands": 1,
+        "dtype": "float32",
+        "crs": "EPSG:32611",
+        "width": 3292,
+        "height": 3730,
+        "bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "ref_bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "nodata": "nan",
+        "blocksize": [
+          256,
+          256
+        ],
+        "fixture_grid": false,
+        "has_validity_mask": true,
+        "nan_pixels": 7111787,
+        "infinity_pixels": 0,
+        "n_nan": 7111787,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.00735383341088891,
+        "n_nonzero": 38000,
+        "mass": 38000.0,
+        "mass_outside_footprint": 0,
+        "problems": [
+          "7111787 NaN/infinite pixels: fail our all-finite export policy (public spec permits outside-footprint NaN)",
+          "nodata tag outside all-finite [0,1] export policy"
+        ],
+        "ok": false,
+        "validation_class": "local on-disk template/range check; not organizer upload acceptance"
+      },
+      "checks": {
+        "no_nan_inside_footprint": true,
+        "values_in_0_1": false,
+        "crs_shape_transform_match": true
+      },
+      "format_ok": false
+    },
+    {
+      "file": "docs/downloads/gems85-h85-ti-pure-20261022T221047Z-f53a0c81-zeros.tif",
+      "sha256": "e695ba4e00200837fce14dd08b60111c30d54f7b9bc91f9d372b383f2f665f0e",
+      "safe_to_submit": false,
+      "classification": "historical diagnostic; NOT a new submission",
+      "validator_output": {
+        "path": "docs/downloads/gems85-h85-ti-pure-20261022T221047Z-f53a0c81-zeros.tif",
+        "bytes": 129895,
+        "sha256": "e695ba4e00200837fce14dd08b60111c30d54f7b9bc91f9d372b383f2f665f0e",
+        "bands": 1,
+        "dtype": "float32",
+        "crs": "EPSG:32611",
+        "width": 3292,
+        "height": 3730,
+        "bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "ref_bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "nodata": null,
+        "blocksize": [
+          256,
+          256
+        ],
+        "fixture_grid": false,
+        "has_validity_mask": false,
+        "nan_pixels": 0,
+        "infinity_pixels": 0,
+        "n_nan": 0,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.0030946743208914995,
+        "n_nonzero": 38000,
+        "mass": 38000.0,
+        "mass_outside_footprint": 0,
+        "problems": [],
+        "ok": true,
+        "validation_class": "local on-disk template/range check; not organizer upload acceptance"
+      },
+      "checks": {
+        "no_nan_inside_footprint": true,
+        "values_in_0_1": true,
+        "crs_shape_transform_match": true
+      },
+      "format_ok": true
+    },
+    {
+      "file": "docs/downloads/gems85-h85-worm-pure-20261022T221114Z-e3091ec2-nan.tif",
+      "sha256": "b3d3f846de50c6fd2521757efe9362f25a03b61b3fd90fff6718f9e91479d37f",
+      "safe_to_submit": false,
+      "classification": "historical diagnostic; NOT a new submission",
+      "validator_output": {
+        "path": "docs/downloads/gems85-h85-worm-pure-20261022T221114Z-e3091ec2-nan.tif",
+        "bytes": 305762,
+        "sha256": "b3d3f846de50c6fd2521757efe9362f25a03b61b3fd90fff6718f9e91479d37f",
+        "bands": 1,
+        "dtype": "float32",
+        "crs": "EPSG:32611",
+        "width": 3292,
+        "height": 3730,
+        "bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "ref_bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "nodata": "nan",
+        "blocksize": [
+          256,
+          256
+        ],
+        "fixture_grid": false,
+        "has_validity_mask": true,
+        "nan_pixels": 7111787,
+        "infinity_pixels": 0,
+        "n_nan": 7111787,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.008902008645236492,
+        "n_nonzero": 46000,
+        "mass": 46000.0,
+        "mass_outside_footprint": 0,
+        "problems": [
+          "7111787 NaN/infinite pixels: fail our all-finite export policy (public spec permits outside-footprint NaN)",
+          "nodata tag outside all-finite [0,1] export policy"
+        ],
+        "ok": false,
+        "validation_class": "local on-disk template/range check; not organizer upload acceptance"
+      },
+      "checks": {
+        "no_nan_inside_footprint": true,
+        "values_in_0_1": false,
+        "crs_shape_transform_match": true
+      },
+      "format_ok": false
+    },
+    {
+      "file": "docs/downloads/gems85-h85-worm-pure-20261022T221114Z-e3091ec2-zeros.tif",
+      "sha256": "5544436d93354b92a6e6c1a8222b3cda9a1c3624ce53009227cb66e252d005d2",
+      "safe_to_submit": false,
+      "classification": "historical diagnostic; NOT a new submission",
+      "validator_output": {
+        "path": "docs/downloads/gems85-h85-worm-pure-20261022T221114Z-e3091ec2-zeros.tif",
+        "bytes": 175572,
+        "sha256": "5544436d93354b92a6e6c1a8222b3cda9a1c3624ce53009227cb66e252d005d2",
+        "bands": 1,
+        "dtype": "float32",
+        "crs": "EPSG:32611",
+        "width": 3292,
+        "height": 3730,
+        "bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "ref_bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "nodata": null,
+        "blocksize": [
+          256,
+          256
+        ],
+        "fixture_grid": false,
+        "has_validity_mask": false,
+        "nan_pixels": 0,
+        "infinity_pixels": 0,
+        "n_nan": 0,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.0037461845204234123,
+        "n_nonzero": 46000,
+        "mass": 46000.0,
+        "mass_outside_footprint": 0,
+        "problems": [],
+        "ok": true,
+        "validation_class": "local on-disk template/range check; not organizer upload acceptance"
+      },
+      "checks": {
+        "no_nan_inside_footprint": true,
+        "values_in_0_1": true,
+        "crs_shape_transform_match": true
+      },
+      "format_ok": true
+    },
+    {
+      "file": "docs/downloads/gems85-s85-ctxfus50-37654dots-sep2.8-20261022T232600Z-cd1bee11-nan.tif",
+      "sha256": "cb259abd71d8d6531a3999cbcb725835fdc96be420bc41262647b1c55b1468d3",
+      "safe_to_submit": false,
+      "classification": "historical diagnostic; NOT a new submission",
+      "validator_output": {
+        "path": "docs/downloads/gems85-s85-ctxfus50-37654dots-sep2.8-20261022T232600Z-cd1bee11-nan.tif",
+        "bytes": 320608,
+        "sha256": "cb259abd71d8d6531a3999cbcb725835fdc96be420bc41262647b1c55b1468d3",
+        "bands": 1,
+        "dtype": "float32",
+        "crs": "EPSG:32611",
+        "width": 3292,
+        "height": 3730,
+        "bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "ref_bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "nodata": null,
+        "blocksize": [
+          1,
+          3292
+        ],
+        "fixture_grid": false,
+        "has_validity_mask": false,
+        "nan_pixels": 7111787,
+        "infinity_pixels": 0,
+        "n_nan": 7111787,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.0072868745774030685,
+        "n_nonzero": 37654,
+        "mass": 37654.0,
+        "mass_outside_footprint": 0,
+        "problems": [
+          "7111787 NaN/infinite pixels: fail our all-finite export policy (public spec permits outside-footprint NaN)"
+        ],
+        "ok": false,
+        "validation_class": "local on-disk template/range check; not organizer upload acceptance"
+      },
+      "checks": {
+        "no_nan_inside_footprint": true,
+        "values_in_0_1": false,
+        "crs_shape_transform_match": true
+      },
+      "format_ok": false
+    },
+    {
+      "file": "docs/downloads/gems85-s85-ctxfus50-37654dots-sep2.8-20261022T232600Z-cd1bee11-zeros.tif",
+      "sha256": "724fe71743988badd2ec52ba5d5e1f0c5def79df46f8a939ad76ad72cbfaade8",
+      "safe_to_submit": false,
+      "classification": "historical diagnostic; NOT a new submission",
+      "validator_output": {
+        "path": "docs/downloads/gems85-s85-ctxfus50-37654dots-sep2.8-20261022T232600Z-cd1bee11-zeros.tif",
+        "bytes": 276806,
+        "sha256": "724fe71743988badd2ec52ba5d5e1f0c5def79df46f8a939ad76ad72cbfaade8",
+        "bands": 1,
+        "dtype": "float32",
+        "crs": "EPSG:32611",
+        "width": 3292,
+        "height": 3730,
+        "bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "ref_bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "nodata": null,
+        "blocksize": [
+          1,
+          3292
+        ],
+        "fixture_grid": false,
+        "has_validity_mask": false,
+        "nan_pixels": 0,
+        "infinity_pixels": 0,
+        "n_nan": 0,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.0030664964579045773,
+        "n_nonzero": 37654,
+        "mass": 37654.0,
+        "mass_outside_footprint": 0,
+        "problems": [],
+        "ok": true,
+        "validation_class": "local on-disk template/range check; not organizer upload acceptance"
+      },
+      "checks": {
+        "no_nan_inside_footprint": true,
+        "values_in_0_1": true,
+        "crs_shape_transform_match": true
+      },
+      "format_ok": true
+    },
+    {
+      "file": "docs/downloads/gems85-s85-ctxfus50-37654dots-sep4-20261022T232600Z-4f38c2b3-nan.tif",
+      "sha256": "888faf69e9051b7d877b6a86c61dd2a23f3f9162aef50aa93a70d69314d1c368",
+      "safe_to_submit": false,
+      "classification": "historical diagnostic; NOT a new submission",
+      "validator_output": {
+        "path": "docs/downloads/gems85-s85-ctxfus50-37654dots-sep4-20261022T232600Z-4f38c2b3-nan.tif",
+        "bytes": 317790,
+        "sha256": "888faf69e9051b7d877b6a86c61dd2a23f3f9162aef50aa93a70d69314d1c368",
+        "bands": 1,
+        "dtype": "float32",
+        "crs": "EPSG:32611",
+        "width": 3292,
+        "height": 3730,
+        "bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "ref_bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "nodata": null,
+        "blocksize": [
+          1,
+          3292
+        ],
+        "fixture_grid": false,
+        "has_validity_mask": false,
+        "nan_pixels": 7111787,
+        "infinity_pixels": 0,
+        "n_nan": 7111787,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.0072868745774030685,
+        "n_nonzero": 37654,
+        "mass": 37654.0,
+        "mass_outside_footprint": 0,
+        "problems": [
+          "7111787 NaN/infinite pixels: fail our all-finite export policy (public spec permits outside-footprint NaN)"
+        ],
+        "ok": false,
+        "validation_class": "local on-disk template/range check; not organizer upload acceptance"
+      },
+      "checks": {
+        "no_nan_inside_footprint": true,
+        "values_in_0_1": false,
+        "crs_shape_transform_match": true
+      },
+      "format_ok": false
+    },
+    {
+      "file": "docs/downloads/gems85-s85-ctxfus50-37654dots-sep4-20261022T232600Z-4f38c2b3-zeros.tif",
+      "sha256": "516730c0300e2bbd49f490b3bcb1d45dc6d59e23ab74f45bb9daf8fa9a9b7e2b",
+      "safe_to_submit": false,
+      "classification": "historical diagnostic; NOT a new submission",
+      "validator_output": {
+        "path": "docs/downloads/gems85-s85-ctxfus50-37654dots-sep4-20261022T232600Z-4f38c2b3-zeros.tif",
+        "bytes": 274360,
+        "sha256": "516730c0300e2bbd49f490b3bcb1d45dc6d59e23ab74f45bb9daf8fa9a9b7e2b",
+        "bands": 1,
+        "dtype": "float32",
+        "crs": "EPSG:32611",
+        "width": 3292,
+        "height": 3730,
+        "bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "ref_bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "nodata": null,
+        "blocksize": [
+          1,
+          3292
+        ],
+        "fixture_grid": false,
+        "has_validity_mask": false,
+        "nan_pixels": 0,
+        "infinity_pixels": 0,
+        "n_nan": 0,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.0030664964579045773,
+        "n_nonzero": 37654,
+        "mass": 37654.0,
+        "mass_outside_footprint": 0,
+        "problems": [],
+        "ok": true,
+        "validation_class": "local on-disk template/range check; not organizer upload acceptance"
+      },
+      "checks": {
+        "no_nan_inside_footprint": true,
+        "values_in_0_1": true,
+        "crs_shape_transform_match": true
+      },
+      "format_ok": true
+    },
+    {
+      "file": "docs/downloads/gems85-s85-ctxfus50-60000dots-sep2.8-20261022T232600Z-983db80a-nan.tif",
+      "sha256": "47b42ce5eb7b1f72c1c4411267517f80c43e2436c9cfbf8d752613485fe401ad",
+      "safe_to_submit": false,
+      "classification": "historical diagnostic; NOT a new submission",
+      "validator_output": {
+        "path": "docs/downloads/gems85-s85-ctxfus50-60000dots-sep2.8-20261022T232600Z-983db80a-nan.tif",
+        "bytes": 368401,
+        "sha256": "47b42ce5eb7b1f72c1c4411267517f80c43e2436c9cfbf8d752613485fe401ad",
+        "bands": 1,
+        "dtype": "float32",
+        "crs": "EPSG:32611",
+        "width": 3292,
+        "height": 3730,
+        "bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "ref_bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "nodata": null,
+        "blocksize": [
+          1,
+          3292
+        ],
+        "fixture_grid": false,
+        "has_validity_mask": false,
+        "nan_pixels": 7111787,
+        "infinity_pixels": 0,
+        "n_nan": 7111787,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.011611315421760082,
+        "n_nonzero": 60000,
+        "mass": 60000.0,
+        "mass_outside_footprint": 0,
+        "problems": [
+          "7111787 NaN/infinite pixels: fail our all-finite export policy (public spec permits outside-footprint NaN)"
+        ],
+        "ok": false,
+        "validation_class": "local on-disk template/range check; not organizer upload acceptance"
+      },
+      "checks": {
+        "no_nan_inside_footprint": true,
+        "values_in_0_1": false,
+        "crs_shape_transform_match": true
+      },
+      "format_ok": false
+    },
+    {
+      "file": "docs/downloads/gems85-s85-ctxfus50-60000dots-sep2.8-20261022T232600Z-983db80a-zeros.tif",
+      "sha256": "a6e229f8339e7fbf0a16681868636562b386d1f4babc9721636d3685371a543f",
+      "safe_to_submit": false,
+      "classification": "historical diagnostic; NOT a new submission",
+      "validator_output": {
+        "path": "docs/downloads/gems85-s85-ctxfus50-60000dots-sep2.8-20261022T232600Z-983db80a-zeros.tif",
+        "bytes": 323757,
+        "sha256": "a6e229f8339e7fbf0a16681868636562b386d1f4babc9721636d3685371a543f",
+        "bands": 1,
+        "dtype": "float32",
+        "crs": "EPSG:32611",
+        "width": 3292,
+        "height": 3730,
+        "bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "ref_bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "nodata": null,
+        "blocksize": [
+          1,
+          3292
+        ],
+        "fixture_grid": false,
+        "has_validity_mask": false,
+        "nan_pixels": 0,
+        "infinity_pixels": 0,
+        "n_nan": 0,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.004886327777057886,
+        "n_nonzero": 60000,
+        "mass": 60000.0,
+        "mass_outside_footprint": 0,
+        "problems": [],
+        "ok": true,
+        "validation_class": "local on-disk template/range check; not organizer upload acceptance"
+      },
+      "checks": {
+        "no_nan_inside_footprint": true,
+        "values_in_0_1": true,
+        "crs_shape_transform_match": true
+      },
+      "format_ok": true
+    },
+    {
+      "file": "submissions/gems85-h85a-foldproper-hgb-maxcov-37654-20261022T221031Z-bf96e456-nan.tif",
+      "sha256": "3404308cb068e6230a63831a3cba50af93b266ed2b8c639d4d1b9b109f4648ec",
+      "safe_to_submit": false,
+      "classification": "historical diagnostic; NOT a new submission",
+      "validator_output": {
+        "path": "submissions/gems85-h85a-foldproper-hgb-maxcov-37654-20261022T221031Z-bf96e456-nan.tif",
+        "bytes": 325261,
+        "sha256": "3404308cb068e6230a63831a3cba50af93b266ed2b8c639d4d1b9b109f4648ec",
+        "bands": 1,
+        "dtype": "float32",
+        "crs": "EPSG:32611",
+        "width": 3292,
+        "height": 3730,
+        "bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "ref_bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "nodata": "nan",
+        "blocksize": [
+          256,
+          256
+        ],
+        "fixture_grid": false,
+        "has_validity_mask": true,
+        "nan_pixels": 7111787,
+        "infinity_pixels": 0,
+        "n_nan": 7111787,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.0072868745774030685,
+        "n_nonzero": 37654,
+        "mass": 37654.0,
+        "mass_outside_footprint": 0,
+        "problems": [
+          "7111787 NaN/infinite pixels: fail our all-finite export policy (public spec permits outside-footprint NaN)",
+          "nodata tag outside all-finite [0,1] export policy"
+        ],
+        "ok": false,
+        "validation_class": "local on-disk template/range check; not organizer upload acceptance"
+      },
+      "checks": {
+        "no_nan_inside_footprint": true,
+        "values_in_0_1": false,
+        "crs_shape_transform_match": true
+      },
+      "format_ok": false
+    },
+    {
+      "file": "submissions/gems85-h85a-foldproper-hgb-maxcov-37654-20261022T221031Z-bf96e456-zeros.tif",
+      "sha256": "ccc8a7a4e53c406de00c5ba40612f5d3df2b0f4afc869dd1b997d5b836a0209b",
+      "safe_to_submit": false,
+      "classification": "historical diagnostic; NOT a new submission",
+      "validator_output": {
+        "path": "submissions/gems85-h85a-foldproper-hgb-maxcov-37654-20261022T221031Z-bf96e456-zeros.tif",
+        "bytes": 191404,
+        "sha256": "ccc8a7a4e53c406de00c5ba40612f5d3df2b0f4afc869dd1b997d5b836a0209b",
+        "bands": 1,
+        "dtype": "float32",
+        "crs": "EPSG:32611",
+        "width": 3292,
+        "height": 3730,
+        "bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "ref_bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "nodata": null,
+        "blocksize": [
+          256,
+          256
+        ],
+        "fixture_grid": false,
+        "has_validity_mask": false,
+        "nan_pixels": 0,
+        "infinity_pixels": 0,
+        "n_nan": 0,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.0030664964579045773,
+        "n_nonzero": 37654,
+        "mass": 37654.0,
+        "mass_outside_footprint": 0,
+        "problems": [],
+        "ok": true,
+        "validation_class": "local on-disk template/range check; not organizer upload acceptance"
+      },
+      "checks": {
+        "no_nan_inside_footprint": true,
+        "values_in_0_1": true,
+        "crs_shape_transform_match": true
+      },
+      "format_ok": true
+    },
+    {
+      "file": "submissions/quarantine/gems85-geopb-crest-37654dots-sep4-20261022T222707Z-60029d07-nan.tif",
+      "sha256": "1a860abfb84ab6875fdc6e8f7c7a220f9329712490256467ed866b3f9f744783",
+      "safe_to_submit": false,
+      "classification": "historical diagnostic; NOT a new submission",
+      "validator_output": {
+        "path": "submissions/quarantine/gems85-geopb-crest-37654dots-sep4-20261022T222707Z-60029d07-nan.tif",
+        "bytes": 339110,
+        "sha256": "1a860abfb84ab6875fdc6e8f7c7a220f9329712490256467ed866b3f9f744783",
+        "bands": 1,
+        "dtype": "float32",
+        "crs": "EPSG:32611",
+        "width": 3292,
+        "height": 3730,
+        "bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "ref_bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "nodata": null,
+        "blocksize": [
+          1,
+          3292
+        ],
+        "fixture_grid": false,
+        "has_validity_mask": false,
+        "nan_pixels": 7111787,
+        "infinity_pixels": 0,
+        "n_nan": 7111787,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.0072868745774030685,
+        "n_nonzero": 37654,
+        "mass": 37654.0,
+        "mass_outside_footprint": 0,
+        "problems": [
+          "7111787 NaN/infinite pixels: fail our all-finite export policy (public spec permits outside-footprint NaN)"
+        ],
+        "ok": false,
+        "validation_class": "local on-disk template/range check; not organizer upload acceptance"
+      },
+      "checks": {
+        "no_nan_inside_footprint": true,
+        "values_in_0_1": false,
+        "crs_shape_transform_match": true
+      },
+      "format_ok": false
+    },
+    {
+      "file": "submissions/quarantine/gems85-geopb-crest-37654dots-sep4-20261022T222707Z-60029d07-zeros.tif",
+      "sha256": "a211e7c6e2cdb6665537b19d4902824d12bd1951185f6c66c1df86a843a5281e",
+      "safe_to_submit": false,
+      "classification": "historical diagnostic; NOT a new submission",
+      "validator_output": {
+        "path": "submissions/quarantine/gems85-geopb-crest-37654dots-sep4-20261022T222707Z-60029d07-zeros.tif",
+        "bytes": 301369,
+        "sha256": "a211e7c6e2cdb6665537b19d4902824d12bd1951185f6c66c1df86a843a5281e",
+        "bands": 1,
+        "dtype": "float32",
+        "crs": "EPSG:32611",
+        "width": 3292,
+        "height": 3730,
+        "bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "ref_bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "nodata": null,
+        "blocksize": [
+          1,
+          3292
+        ],
+        "fixture_grid": false,
+        "has_validity_mask": false,
+        "nan_pixels": 0,
+        "infinity_pixels": 0,
+        "n_nan": 0,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.0030664964579045773,
+        "n_nonzero": 37654,
+        "mass": 37654.0,
+        "mass_outside_footprint": 0,
+        "problems": [],
+        "ok": true,
+        "validation_class": "local on-disk template/range check; not organizer upload acceptance"
+      },
+      "checks": {
+        "no_nan_inside_footprint": true,
+        "values_in_0_1": true,
+        "crs_shape_transform_match": true
+      },
+      "format_ok": true
+    },
+    {
+      "file": "submissions/quarantine/gems85-geopb-crest-60000dots-sep4-20261022T222707Z-cbb4e82c-nan.tif",
+      "sha256": "f971f8c58ceb82db97d61e71300bc4c31468f549925810a597c0809f02f435ca",
+      "safe_to_submit": false,
+      "classification": "historical diagnostic; NOT a new submission",
+      "validator_output": {
+        "path": "submissions/quarantine/gems85-geopb-crest-60000dots-sep4-20261022T222707Z-cbb4e82c-nan.tif",
+        "bytes": 401298,
+        "sha256": "f971f8c58ceb82db97d61e71300bc4c31468f549925810a597c0809f02f435ca",
+        "bands": 1,
+        "dtype": "float32",
+        "crs": "EPSG:32611",
+        "width": 3292,
+        "height": 3730,
+        "bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "ref_bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "nodata": null,
+        "blocksize": [
+          1,
+          3292
+        ],
+        "fixture_grid": false,
+        "has_validity_mask": false,
+        "nan_pixels": 7111787,
+        "infinity_pixels": 0,
+        "n_nan": 7111787,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.011611315421760082,
+        "n_nonzero": 60000,
+        "mass": 60000.0,
+        "mass_outside_footprint": 0,
+        "problems": [
+          "7111787 NaN/infinite pixels: fail our all-finite export policy (public spec permits outside-footprint NaN)"
+        ],
+        "ok": false,
+        "validation_class": "local on-disk template/range check; not organizer upload acceptance"
+      },
+      "checks": {
+        "no_nan_inside_footprint": true,
+        "values_in_0_1": false,
+        "crs_shape_transform_match": true
+      },
+      "format_ok": false
+    },
+    {
+      "file": "submissions/quarantine/gems85-geopb-crest-60000dots-sep4-20261022T222707Z-cbb4e82c-zeros.tif",
+      "sha256": "2bdae85a89b2ce6f953fcbcda06a49c036776e0939a3bc1a62a0b1305d28aecc",
+      "safe_to_submit": false,
+      "classification": "historical diagnostic; NOT a new submission",
+      "validator_output": {
+        "path": "submissions/quarantine/gems85-geopb-crest-60000dots-sep4-20261022T222707Z-cbb4e82c-zeros.tif",
+        "bytes": 363090,
+        "sha256": "2bdae85a89b2ce6f953fcbcda06a49c036776e0939a3bc1a62a0b1305d28aecc",
+        "bands": 1,
+        "dtype": "float32",
+        "crs": "EPSG:32611",
+        "width": 3292,
+        "height": 3730,
+        "bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "ref_bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "nodata": null,
+        "blocksize": [
+          1,
+          3292
+        ],
+        "fixture_grid": false,
+        "has_validity_mask": false,
+        "nan_pixels": 0,
+        "infinity_pixels": 0,
+        "n_nan": 0,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.004886327777057886,
+        "n_nonzero": 60000,
+        "mass": 60000.0,
+        "mass_outside_footprint": 0,
+        "problems": [],
+        "ok": true,
+        "validation_class": "local on-disk template/range check; not organizer upload acceptance"
+      },
+      "checks": {
+        "no_nan_inside_footprint": true,
+        "values_in_0_1": true,
+        "crs_shape_transform_match": true
+      },
+      "format_ok": true
+    },
+    {
+      "file": "submissions/quarantine/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-nan.tif",
+      "sha256": "085c45c57d6532c7fdd9a00715c0f4f03465f8e665aa0cc2de3f71e25a33818c",
+      "safe_to_submit": false,
+      "classification": "historical diagnostic; NOT a new submission",
+      "validator_output": {
+        "path": "submissions/quarantine/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-nan.tif",
+        "bytes": 476599,
+        "sha256": "085c45c57d6532c7fdd9a00715c0f4f03465f8e665aa0cc2de3f71e25a33818c",
+        "bands": 1,
+        "dtype": "float32",
+        "crs": "EPSG:32611",
+        "width": 3292,
+        "height": 3730,
+        "bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "ref_bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "nodata": null,
+        "blocksize": [
+          1,
+          3292
+        ],
+        "fixture_grid": false,
+        "has_validity_mask": false,
+        "nan_pixels": 7111787,
+        "infinity_pixels": 0,
+        "n_nan": 7111787,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.017416974529623985,
+        "n_nonzero": 90000,
+        "mass": 90000.0,
+        "mass_outside_footprint": 0,
+        "problems": [
+          "7111787 NaN/infinite pixels: fail our all-finite export policy (public spec permits outside-footprint NaN)"
+        ],
+        "ok": false,
+        "validation_class": "local on-disk template/range check; not organizer upload acceptance"
+      },
+      "checks": {
+        "no_nan_inside_footprint": true,
+        "values_in_0_1": false,
+        "crs_shape_transform_match": true
+      },
+      "format_ok": false
+    },
+    {
+      "file": "submissions/quarantine/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.tif",
+      "sha256": "ba33ea18936e6324037457e1ff5070d8e879b7b29a25b4ae2c0003bc509a567f",
+      "safe_to_submit": false,
+      "classification": "historical diagnostic; NOT a new submission",
+      "validator_output": {
+        "path": "submissions/quarantine/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.tif",
+        "bytes": 438042,
+        "sha256": "ba33ea18936e6324037457e1ff5070d8e879b7b29a25b4ae2c0003bc509a567f",
+        "bands": 1,
+        "dtype": "float32",
+        "crs": "EPSG:32611",
+        "width": 3292,
+        "height": 3730,
+        "bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "ref_bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "nodata": null,
+        "blocksize": [
+          1,
+          3292
+        ],
+        "fixture_grid": false,
+        "has_validity_mask": false,
+        "nan_pixels": 0,
+        "infinity_pixels": 0,
+        "n_nan": 0,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.0073294914327561855,
+        "n_nonzero": 90000,
+        "mass": 90000.0,
+        "mass_outside_footprint": 0,
+        "problems": [],
+        "ok": true,
+        "validation_class": "local on-disk template/range check; not organizer upload acceptance"
+      },
+      "checks": {
+        "no_nan_inside_footprint": true,
+        "values_in_0_1": true,
+        "crs_shape_transform_match": true
+      },
+      "format_ok": true
+    },
+    {
+      "file": "submissions/quarantine/gems85-h85-duplex-pullapart-worm-20261022T220544Z-2f8b57d9-nan.tif",
+      "sha256": "ce8fb8c0f0b2fad1513bff4e34fa15a3e4c7bb8d373efa8f3cff6ceebcb99040",
+      "safe_to_submit": false,
+      "classification": "historical diagnostic; NOT a new submission",
+      "validator_output": {
+        "path": "submissions/quarantine/gems85-h85-duplex-pullapart-worm-20261022T220544Z-2f8b57d9-nan.tif",
+        "bytes": 215503,
+        "sha256": "ce8fb8c0f0b2fad1513bff4e34fa15a3e4c7bb8d373efa8f3cff6ceebcb99040",
+        "bands": 1,
+        "dtype": "float32",
+        "crs": "EPSG:32611",
+        "width": 3292,
+        "height": 3730,
+        "bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "ref_bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "nodata": "nan",
+        "blocksize": [
+          256,
+          256
+        ],
+        "fixture_grid": false,
+        "has_validity_mask": true,
+        "nan_pixels": 7111787,
+        "infinity_pixels": 0,
+        "n_nan": 7111787,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.008127921260893345,
+        "n_nonzero": 42000,
+        "mass": 42000.0,
+        "mass_outside_footprint": 0,
+        "problems": [
+          "7111787 NaN/infinite pixels: fail our all-finite export policy (public spec permits outside-footprint NaN)",
+          "nodata tag outside all-finite [0,1] export policy"
+        ],
+        "ok": false,
+        "validation_class": "local on-disk template/range check; not organizer upload acceptance"
+      },
+      "checks": {
+        "no_nan_inside_footprint": true,
+        "values_in_0_1": false,
+        "crs_shape_transform_match": true
+      },
+      "format_ok": false
+    },
+    {
+      "file": "submissions/quarantine/gems85-h85-duplex-pullapart-worm-20261022T220544Z-2f8b57d9-zeros.tif",
+      "sha256": "10efc0a5adf13b9e56c08e1be470eac88153a4985b9b9da776ed63772be298cb",
+      "safe_to_submit": false,
+      "classification": "historical diagnostic; NOT a new submission",
+      "validator_output": {
+        "path": "submissions/quarantine/gems85-h85-duplex-pullapart-worm-20261022T220544Z-2f8b57d9-zeros.tif",
+        "bytes": 88372,
+        "sha256": "10efc0a5adf13b9e56c08e1be470eac88153a4985b9b9da776ed63772be298cb",
+        "bands": 1,
+        "dtype": "float32",
+        "crs": "EPSG:32611",
+        "width": 3292,
+        "height": 3730,
+        "bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "ref_bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "nodata": null,
+        "blocksize": [
+          256,
+          256
+        ],
+        "fixture_grid": false,
+        "has_validity_mask": false,
+        "nan_pixels": 0,
+        "infinity_pixels": 0,
+        "n_nan": 0,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.003420429304242134,
+        "n_nonzero": 42000,
+        "mass": 42000.0,
+        "mass_outside_footprint": 0,
+        "problems": [],
+        "ok": true,
+        "validation_class": "local on-disk template/range check; not organizer upload acceptance"
+      },
+      "checks": {
+        "no_nan_inside_footprint": true,
+        "values_in_0_1": true,
+        "crs_shape_transform_match": true
+      },
+      "format_ok": true
+    },
+    {
+      "file": "submissions/quarantine/gems85-h85-ti-pure-20261022T221047Z-f53a0c81-nan.tif",
+      "sha256": "bf83e0a3b00592c1b355b9e54402a83d4f61af75da1c6223f5301f8b4fa22379",
+      "safe_to_submit": false,
+      "classification": "historical diagnostic; NOT a new submission",
+      "validator_output": {
+        "path": "submissions/quarantine/gems85-h85-ti-pure-20261022T221047Z-f53a0c81-nan.tif",
+        "bytes": 258932,
+        "sha256": "bf83e0a3b00592c1b355b9e54402a83d4f61af75da1c6223f5301f8b4fa22379",
+        "bands": 1,
+        "dtype": "float32",
+        "crs": "EPSG:32611",
+        "width": 3292,
+        "height": 3730,
+        "bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "ref_bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "nodata": "nan",
+        "blocksize": [
+          256,
+          256
+        ],
+        "fixture_grid": false,
+        "has_validity_mask": true,
+        "nan_pixels": 7111787,
+        "infinity_pixels": 0,
+        "n_nan": 7111787,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.00735383341088891,
+        "n_nonzero": 38000,
+        "mass": 38000.0,
+        "mass_outside_footprint": 0,
+        "problems": [
+          "7111787 NaN/infinite pixels: fail our all-finite export policy (public spec permits outside-footprint NaN)",
+          "nodata tag outside all-finite [0,1] export policy"
+        ],
+        "ok": false,
+        "validation_class": "local on-disk template/range check; not organizer upload acceptance"
+      },
+      "checks": {
+        "no_nan_inside_footprint": true,
+        "values_in_0_1": false,
+        "crs_shape_transform_match": true
+      },
+      "format_ok": false
+    },
+    {
+      "file": "submissions/quarantine/gems85-h85-ti-pure-20261022T221047Z-f53a0c81-zeros.tif",
+      "sha256": "e695ba4e00200837fce14dd08b60111c30d54f7b9bc91f9d372b383f2f665f0e",
+      "safe_to_submit": false,
+      "classification": "historical diagnostic; NOT a new submission",
+      "validator_output": {
+        "path": "submissions/quarantine/gems85-h85-ti-pure-20261022T221047Z-f53a0c81-zeros.tif",
+        "bytes": 129895,
+        "sha256": "e695ba4e00200837fce14dd08b60111c30d54f7b9bc91f9d372b383f2f665f0e",
+        "bands": 1,
+        "dtype": "float32",
+        "crs": "EPSG:32611",
+        "width": 3292,
+        "height": 3730,
+        "bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "ref_bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "nodata": null,
+        "blocksize": [
+          256,
+          256
+        ],
+        "fixture_grid": false,
+        "has_validity_mask": false,
+        "nan_pixels": 0,
+        "infinity_pixels": 0,
+        "n_nan": 0,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.0030946743208914995,
+        "n_nonzero": 38000,
+        "mass": 38000.0,
+        "mass_outside_footprint": 0,
+        "problems": [],
+        "ok": true,
+        "validation_class": "local on-disk template/range check; not organizer upload acceptance"
+      },
+      "checks": {
+        "no_nan_inside_footprint": true,
+        "values_in_0_1": true,
+        "crs_shape_transform_match": true
+      },
+      "format_ok": true
+    },
+    {
+      "file": "submissions/quarantine/gems85-h85-worm-pure-20261022T221114Z-e3091ec2-nan.tif",
+      "sha256": "b3d3f846de50c6fd2521757efe9362f25a03b61b3fd90fff6718f9e91479d37f",
+      "safe_to_submit": false,
+      "classification": "historical diagnostic; NOT a new submission",
+      "validator_output": {
+        "path": "submissions/quarantine/gems85-h85-worm-pure-20261022T221114Z-e3091ec2-nan.tif",
+        "bytes": 305762,
+        "sha256": "b3d3f846de50c6fd2521757efe9362f25a03b61b3fd90fff6718f9e91479d37f",
+        "bands": 1,
+        "dtype": "float32",
+        "crs": "EPSG:32611",
+        "width": 3292,
+        "height": 3730,
+        "bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "ref_bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "nodata": "nan",
+        "blocksize": [
+          256,
+          256
+        ],
+        "fixture_grid": false,
+        "has_validity_mask": true,
+        "nan_pixels": 7111787,
+        "infinity_pixels": 0,
+        "n_nan": 7111787,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.008902008645236492,
+        "n_nonzero": 46000,
+        "mass": 46000.0,
+        "mass_outside_footprint": 0,
+        "problems": [
+          "7111787 NaN/infinite pixels: fail our all-finite export policy (public spec permits outside-footprint NaN)",
+          "nodata tag outside all-finite [0,1] export policy"
+        ],
+        "ok": false,
+        "validation_class": "local on-disk template/range check; not organizer upload acceptance"
+      },
+      "checks": {
+        "no_nan_inside_footprint": true,
+        "values_in_0_1": false,
+        "crs_shape_transform_match": true
+      },
+      "format_ok": false
+    },
+    {
+      "file": "submissions/quarantine/gems85-h85-worm-pure-20261022T221114Z-e3091ec2-zeros.tif",
+      "sha256": "5544436d93354b92a6e6c1a8222b3cda9a1c3624ce53009227cb66e252d005d2",
+      "safe_to_submit": false,
+      "classification": "historical diagnostic; NOT a new submission",
+      "validator_output": {
+        "path": "submissions/quarantine/gems85-h85-worm-pure-20261022T221114Z-e3091ec2-zeros.tif",
+        "bytes": 175572,
+        "sha256": "5544436d93354b92a6e6c1a8222b3cda9a1c3624ce53009227cb66e252d005d2",
+        "bands": 1,
+        "dtype": "float32",
+        "crs": "EPSG:32611",
+        "width": 3292,
+        "height": 3730,
+        "bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "ref_bounds": [
+          243350.0,
+          4135550.0,
+          572550.0,
+          4508550.0
+        ],
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "nodata": null,
+        "blocksize": [
+          256,
+          256
+        ],
+        "fixture_grid": false,
+        "has_validity_mask": false,
+        "nan_pixels": 0,
+        "infinity_pixels": 0,
+        "n_nan": 0,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.0037461845204234123,
+        "n_nonzero": 46000,
+        "mass": 46000.0,
+        "mass_outside_footprint": 0,
+        "problems": [],
+        "ok": true,
+        "validation_class": "local on-disk template/range check; not organizer upload acceptance"
+      },
+      "checks": {
+        "no_nan_inside_footprint": true,
+        "values_in_0_1": true,
+        "crs_shape_transform_match": true
+      },
+      "format_ok": true
     }
   ],
-  "session_note": "All three holdout experiments ran negative; none beat the current holdout best (0.09838 at 90,000 dots). Per the protocol no weekly submission slot was spent on them. The published crest8 candidate remains the lane's validated, unique, format-cleared artifact (verdict promote-as-candidate, UNSCORED)."
+  "reason": "Negative protocol preflight, not a geological negative. No new unique TIFF generated.",
+  "submission_name": null,
+  "submission_note": "No candidate: missing lane/cache and literal registry saturation. No weekly slot used.",
+  "validator_output": {
+    "status": "not run: no candidate",
+    "no_nan_inside_footprint": null,
+    "values_in_0_1": null,
+    "crs_match": null,
+    "shape_match": null,
+    "transform_match": null
+  }
 }

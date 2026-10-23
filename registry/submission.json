@@ -321,5 +321,7 @@
         "bytes": 222525
       }
     }
-  ]
+  ],
+  "release_status": "historical-only; BLOCKED \u2014 DO NOT SUBMIT",
+  "authoritative_release_decision": "evidence/run_card.json"
 }

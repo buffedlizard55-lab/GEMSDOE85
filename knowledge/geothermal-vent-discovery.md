@@ -1,3 +1,5 @@
+> **Historical exploratory note, not current verified guidance.** See [2026-10-23 corrections](../research/session-df29b0af-review.md#reusable-geothermal-knowledge-corrections). In particular, nonsignificant AUC does not establish independence, fixed dot count does not fix uncredited mass, and external-data eligibility/coverage is unverified. No submission is cleared.
+
 # Geothermal vent & blind-system discovery in the Great Basin — reusable knowledge
 
 **Scope.** What is actually known about how hidden geothermal upflow is found in the Basin and
