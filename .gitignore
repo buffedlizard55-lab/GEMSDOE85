@@ -35,3 +35,8 @@ artifacts/*.mmap
 artifacts/*.npy
 artifacts/*.tif
 registry/restore_receipt.json
+
+# v2: local historical parent and candidate rasters must not be published
+data/learning/
+releases/*.tif
+releases/*.zip
