@@ -151,14 +151,15 @@ def test_shipped_releases_pass_their_own_gates_and_match_the_ledger():
                 ROOT / "evidence" / "session_snap_receipt.json",
                 ROOT / "evidence" / "session_relief_receipt.json",
                 ROOT / "evidence" / "session_prune_refill_receipt.json",
-                ROOT / "evidence" / "session_snap_axis_receipt.json"]
+                ROOT / "evidence" / "session_snap_axis_receipt.json",
+                ROOT / "evidence" / "mass_session.json"]
     conc = ROOT / "evidence" / "axis_concentration_build.json"
     if not ledger.is_file():
         pytest.skip("session outputs not built")
     rows = list(csv.DictReader(ledger.open()))
     assert len(rows) >= 3
     assert all(r["parent"] == "h33-h33-2-b2" for r in rows)
-    assert all(r["axis"] in {"PRUNE", "SNAP", "RELIEF", "CONCENTRATION"} for r in rows)
+    assert all(r["axis"] in {"PRUNE", "SNAP", "RELIEF", "CONCENTRATION", "MASS"} for r in rows)
     assert all(r["status"] == "BUILT" and r["receipt"] == "N" for r in rows)
     assert len({r["sha256"] for r in rows}) == len(rows), "duplicate sha256 in the ledger"
     variants = {}
@@ -180,6 +181,20 @@ def test_shipped_releases_pass_their_own_gates_and_match_the_ledger():
         tif = ROOT / "releases" / f'{row["id"]}.tif'
         assert tif.is_file(), tif
         assert RL.sha256_file(tif) == row["sha256"]
+        if axis == "MASS":
+            # MASS ships `files`/`gates` per variant (no `nan`/`snap` pair); counts move, the
+            # catalogue floor is unchanged from R0 and the diff is declared by the session.
+            assert entry["gates"]["nan"]["ok"] and entry["gates"]["zeros"]["ok"]
+            assert entry["files"]["sha256_nan"] == row["sha256"]
+            assert int(row["n_dots"]) == int(entry["n_dots"])
+            assert entry["gates"]["nan"]["dots_on_catalogue"] == 0
+            assert float(row["pct_changed"]) > 0.0
+            assert row["sha8"] == row["sha256"][:8]
+            assert entry["gates"]["pixels_equal_intended"]
+            with rasterio.open(ROOT / "releases" / f'{row["id"]}-zeros.tif') as z:
+                a = z.read(1)
+            assert np.isfinite(a).all()
+            continue
         if axis == "CONCENTRATION":
             # this session ships its own gate report (a list of variant dicts, not `nan`/`snap`)
             assert entry["gates"]["zero_mass_on_catalogue"]

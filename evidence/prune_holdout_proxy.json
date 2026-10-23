@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "evidence_class": "PROXY",
+  "instrument": "whole-component hide-and-recover, fold-clean pruning (visible catalogue only)",
+  "not_a_score": "A PROXY. The repository's own ledger shows this instrument correlates -0.87 to +0.54 with live scores (n=12-14 files).",
+  "withheld_positive_pixels_per_fold": [
+    12138,
+    11308,
+    11834,
+    12599,
+    10958
+  ],
+  "n_folds": 5,
+  "cutoff_dti_means": {
+    "cutoff_0": 0.098608,
+    "cutoff_1": 0.100682,
+    "cutoff_2": 0.100751,
+    "cutoff_3": 0.099069,
+    "cutoff_4": 0.094796,
+    "cutoff_5": 0.088101
+  },
+  "paired_deltas_vs_cutoff_2": {
+    "cutoff_1_minus_cutoff_2": {
+      "mean_delta": -6.9e-05,
+      "ci95": [
+        -0.00036,
+        0.000222
+      ],
+      "wins": "2/5"
+    },
+    "cutoff_2_minus_cutoff_2": {
+      "mean_delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "wins": "0/5"
+    },
+    "cutoff_3_minus_cutoff_2": {
+      "mean_delta": -0.001682,
+      "ci95": [
+        -0.002248,
+        -0.001116
+      ],
+      "wins": "0/5"
+    },
+    "cutoff_4_minus_cutoff_2": {
+      "mean_delta": -0.005955,
+      "ci95": [
+        -0.006592,
+        -0.005318
+      ],
+      "wins": "0/5"
+    },
+    "cutoff_5_minus_cutoff_2": {
+      "mean_delta": -0.012649,
+      "ci95": [
+        -0.013919,
+        -0.01138
+      ],
+      "wins": "0/5"
+    }
+  },
+  "calibration": {
+    "0->1": {
+      "proxy_mean_delta": 0.002074,
+      "wins": "5/5"
+    },
+    "1->2": {
+      "proxy_mean_delta": 6.9e-05,
+      "wins": "3/5"
+    },
+    "0->2": {
+      "proxy_mean_delta": 0.002143,
+      "wins": "5/5"
+    },
+    "live_ladder_owner_claimed": {
+      "0->1": 0.0108,
+      "1->2": 0.007,
+      "0->2": 0.0178
+    },
+    "reading": "The proxy reproduces the DIRECTION of both scored steps (0->1 and 1->2 both positive) while compressing magnitude ~5-8x and being unable to resolve 1->2 (delta 0.00007). It is therefore usable as a sign test at cutoffs above 2, not as a magnitude estimate."
+  },
+  "folds": [
+    {
+      "seed": 0,
+      "n_hidden_components": 653,
+      "n_hidden_pixels": 12138,
+      "dti_cutoff_0": 0.100236,
+      "dti_cutoff_1": 0.102042,
+      "dti_cutoff_2": 0.101606,
+      "dti_cutoff_3": 0.099728,
+      "dti_cutoff_4": 0.095641,
+      "dti_cutoff_5": 0.089521
+    },
+    {
+      "seed": 1,
+      "n_hidden_components": 638,
+      "n_hidden_pixels": 11308,
+      "dti_cutoff_0": 0.092321,
+      "dti_cutoff_1": 0.094328,
+      "dti_cutoff_2": 0.094655,
+      "dti_cutoff_3": 0.093934,
+      "dti_cutoff_4": 0.089585,
+      "dti_cutoff_5": 0.08389
+    },
+    {
+      "seed": 2,
+      "n_hidden_components": 616,
+      "n_hidden_pixels": 11834,
+      "dti_cutoff_0": 0.103423,
+      "dti_cutoff_1": 0.105987,
+      "dti_cutoff_2": 0.106291,
+      "dti_cutoff_3": 0.104895,
+      "dti_cutoff_4": 0.100812,
+      "dti_cutoff_5": 0.093665
+    },
+    {
+      "seed": 3,
+      "n_hidden_components": 650,
+      "n_hidden_pixels": 12599,
+      "dti_cutoff_0": 0.099672,
+      "dti_cutoff_1": 0.101615,
+      "dti_cutoff_2": 0.101511,
+      "dti_cutoff_3": 0.099112,
+      "dti_cutoff_4": 0.095188,
+      "dti_cutoff_5": 0.088482
+    },
+    {
+      "seed": 4,
+      "n_hidden_components": 599,
+      "n_hidden_pixels": 10958,
+      "dti_cutoff_0": 0.097388,
+      "dti_cutoff_1": 0.099438,
+      "dti_cutoff_2": 0.099691,
+      "dti_cutoff_3": 0.097677,
+      "dti_cutoff_4": 0.092752,
+      "dti_cutoff_5": 0.084949
+    }
+  ]
+}

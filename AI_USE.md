@@ -228,17 +228,37 @@ touched; it did **not** modify `vendor/gems57` (no private evaluator or writer f
 
 ---
 
+## MASS session (2026-10-23, `arena/eb7e09d3`)
+
+**The agent chose the axis** — instructed not to prompt for one. MASS was the only axis with no
+prior ledger row (PRUNE, SNAP, CONCENTRATION and RELIEF were already built by other sessions).
+
+**AI wrote:** `src/gems85/mass.py`, `scripts/build_mass_variants.py`, `scripts/mass_holdout_proxy.py`,
+the MASS tests in `tests/test_lineage.py`, `evidence/mechanism_cards_mass.json`, the MASS block in
+`SLOT_PLAN.md` / `docs/SUBMIT.md`, IR-V2-08…11 and the CURRENT STATE row.
+
+**AI decided, recorded rather than hidden:** rebuild the parent's missing ranking structurally
+instead of using its literal raster-order one; relax minimum separation to 2.2 px for the add arm
+because the field is saturated; enforce the ≥3 px rule on added mass only.
+
+**AI did not:** submit, log in, scrape, fetch drivendata.org, contact dropbox.com, read credentials,
+or probe labels. Every arm is a mass edit of the incumbent's own dots; the only holdout is the
+published catalogue with whole components withheld and every arm rebuilt fold-clean (IR-V2-11).
+
+**Kept in the record:** the first proxy run reported +0.19-equivalent nonsense for the add arm because
+the shipped parents had been pruned against the hidden truth. IR-V2-11 keeps those wrong numbers so a
+later session can recognise the artefact.
 ## Session 2026-10-23 (PR #40, branch `arena/fb7ddb5a`) — SNAP reserve axis
 
 **AI wrote:** `src/gems85/snap_axis.py` (offset set, nodata-aware edge field, kernel-credit accounting,
 constrained snapping loop), `scripts/gemsdoe85_snap_axis_session.py`, `scripts/restore_axis_inputs.py`
 (six pinned inputs, 9/9 hash-verified), `tests/test_snap_axis.py` (9 contract tests), the three SNAP rows
 in `ledger/submissions.csv`, the SNAP reserve row in the README CURRENT STATE block, the addendum in
-`SLOT_PLAN.md`, the reserve section of `docs/SUBMIT.md`, and IR-V2-31…35. The mechanism cards, the choice
+`SLOT_PLAN.md`, the reserve section of `docs/SUBMIT.md`, and IR-V2-36…40. The mechanism cards, the choice
 of SNAP (the human did not answer the axis question) and the predictions are AI-authored models, not
 measurements of the live metric.
 
-**AI decided without the human:** the axis (IR-V2-32), the 2.0 px anti-pile-up floor, `margin = 0.05`,
+**AI decided without the human:** the axis (IR-V2-37), the 2.0 px anti-pile-up floor, `margin = 0.05`,
 the "never move closer to the catalogue" rule, and the reading that the SGMC-minus-catalogue proxy is the
 least mass-confounded local instrument.
 

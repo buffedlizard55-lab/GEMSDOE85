@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "evidence_class": "PROXY",
+  "instrument": "whole-component hide-and-recover, fold-clean rebuilds, 5 folds, 20 % components",
+  "not_a_score": "A PROXY. Ledger correlation with live is -0.87 to +0.54 (n=12-14 files).",
+  "n_folds": 5,
+  "means": {
+    "d15": 0.094602,
+    "d28": 0.098608,
+    "p1f": 0.100682,
+    "r0f": 0.100751,
+    "mass-m10e": 0.097969,
+    "mass-m10u": 0.096041,
+    "mass-p10": 0.102328
+  },
+  "anchors": {
+    "mass_d15_to_d28": {
+      "proxy": {
+        "proxy_mean_delta": 0.004006,
+        "ci95": [
+          0.003427,
+          0.004585
+        ],
+        "wins": "5/5"
+      },
+      "live": 0.012300000000000005,
+      "note": "pure thinning by 15,979 dots; the MASS calibration anchor"
+    },
+    "prune_d28_to_p1": {
+      "proxy": {
+        "proxy_mean_delta": 0.002074,
+        "ci95": [
+          0.001821,
+          0.002327
+        ],
+        "wins": "5/5"
+      },
+      "live": 0.010799999999999976,
+      "note": "catalogue prune, fold-clean rebuild of the p1 rung"
+    },
+    "prune_p1_to_r0": {
+      "proxy": {
+        "proxy_mean_delta": 6.9e-05,
+        "ci95": [
+          -0.000222,
+          0.00036
+        ],
+        "wins": "3/5"
+      },
+      "live": 0.007000000000000006,
+      "note": "catalogue prune, fold-clean rebuild of the R0 rung"
+    },
+    "prune_d28_to_r0": {
+      "proxy": {
+        "proxy_mean_delta": 0.002143,
+        "ci95": [
+          0.001647,
+          0.002638
+        ],
+        "wins": "5/5"
+      },
+      "live": 0.017799999999999983,
+      "note": "both scored prune steps combined"
+    }
+  },
+  "stock_r0_dots": 37654,
+  "fold_clean_r0_dots": [
+    38901,
+    38764,
+    38921,
+    38931,
+    38774
+  ],
+  "mass_anchor_scale": 3.07,
+  "variants_vs_r0": {
+    "mass-m10e": {
+      "proxy_mean_delta": -0.002782,
+      "ci95": [
+        -0.003049,
+        -0.002514
+      ],
+      "wins": "0/5",
+      "live_scaled_by_mass_anchor": -0.0085
+    },
+    "mass-m10u": {
+      "proxy_mean_delta": -0.004709,
+      "ci95": [
+        -0.00535,
+        -0.004069
+      ],
+      "wins": "0/5",
+      "live_scaled_by_mass_anchor": -0.0145
+    },
+    "mass-p10": {
+      "proxy_mean_delta": 0.001577,
+      "ci95": [
+        0.00142,
+        0.001735
+      ],
+      "wins": "5/5",
+      "live_scaled_by_mass_anchor": 0.0048
+    }
+  },
+  "reading": "The mass anchor measures how many proxy units one live unit is worth on a pure mass change; it is used only to put the three deltas on a live-ish scale, and the result stays a MODEL until a receipt exists.",
+  "folds": [
+    {
+      "seed": 0,
+      "n_hidden_components": 653,
+      "n_hidden_pixels": 12138,
+      "n_fold_clean_r0": 38901,
+      "r0f": 0.101606,
+      "d28": 0.100236,
+      "p1f": 0.102042,
+      "d15": 0.097038,
+      "mass-m10e": 0.099018,
+      "mass-m10u": 0.096196,
+      "mass-p10": 0.103481
+    },
+    {
+      "seed": 1,
+      "n_hidden_components": 638,
+      "n_hidden_pixels": 11308,
+      "n_fold_clean_r0": 38764,
+      "r0f": 0.094655,
+      "d28": 0.092321,
+      "p1f": 0.094328,
+      "d15": 0.088387,
+      "mass-m10e": 0.091524,
+      "mass-m10u": 0.090542,
+      "mass-p10": 0.096254
+    },
+    {
+      "seed": 2,
+      "n_hidden_components": 616,
+      "n_hidden_pixels": 11834,
+      "n_fold_clean_r0": 38921,
+      "r0f": 0.106291,
+      "d28": 0.103423,
+      "p1f": 0.105987,
+      "d15": 0.099548,
+      "mass-m10e": 0.103494,
+      "mass-m10u": 0.101802,
+      "mass-p10": 0.107699
+    },
+    {
+      "seed": 3,
+      "n_hidden_components": 650,
+      "n_hidden_pixels": 12599,
+      "n_fold_clean_r0": 38931,
+      "r0f": 0.101511,
+      "d28": 0.099672,
+      "p1f": 0.101615,
+      "d15": 0.095688,
+      "mass-m10e": 0.09913,
+      "mass-m10u": 0.097529,
+      "mass-p10": 0.103003
+    },
+    {
+      "seed": 4,
+      "n_hidden_components": 599,
+      "n_hidden_pixels": 10958,
+      "n_fold_clean_r0": 38774,
+      "r0f": 0.099691,
+      "d28": 0.097388,
+      "p1f": 0.099438,
+      "d15": 0.092349,
+      "mass-m10e": 0.09668,
+      "mass-m10u": 0.094138,
+      "mass-p10": 0.101203
+    }
+  ]
+}

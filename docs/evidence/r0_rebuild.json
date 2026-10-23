@@ -1,0 +1,63 @@
+{
+  "conclusion": "PASS: incumbent rebuilt pixel-exactly from its pinned parent",
+  "generated_by": "scripts/rebuild_r0.py",
+  "ladder": {
+    "cutoff3_dots": 35483,
+    "d28_dots": 44090,
+    "incumbent_dots": 37654,
+    "incumbent_dots_within_3px": 1611,
+    "min_distance_of_incumbent_dots_px": 2.2361,
+    "prune1_dots": 40199,
+    "prune1_equals_d28_minus_cutoff1": true,
+    "r0_equals_d28_minus_cutoff2": true,
+    "r0_equals_prune1_minus_cutoff2": true
+  },
+  "pins": {
+    "d28": {
+      "bytes": 1603424,
+      "declares": "registry/data_manifest.json#scored_d28_unscored",
+      "ok": true,
+      "path": "work/ref/d28-nan.tif",
+      "pin": "91eae1ca42ec845eaa8c2ba32da49806e24751743459b8a10017c479bbe639b8",
+      "sha256": "91eae1ca42ec845eaa8c2ba32da49806e24751743459b8a10017c479bbe639b8"
+    },
+    "h19_5": {
+      "bytes": 1712322,
+      "declares": "registry/data_manifest.json#scored_h19_5",
+      "ok": true,
+      "path": "work/ref/h19-5-nan.tif",
+      "pin": "ec1f9b56b83ce33cad781ceb9f104b18fb4f2ff785263a4e89616af4aabdee8d",
+      "sha256": "ec1f9b56b83ce33cad781ceb9f104b18fb4f2ff785263a4e89616af4aabdee8d"
+    },
+    "prune1": {
+      "bytes": 199214,
+      "declares": "registry/scored_artifacts.json",
+      "ok": true,
+      "path": "work/ref/h27-4-nan.tif",
+      "pin": "07b6db440535404bb41ec8ddc797713e200d308e3da35937393efde5eb84bc40",
+      "sha256": "07b6db440535404bb41ec8ddc797713e200d308e3da35937393efde5eb84bc40"
+    },
+    "r0": {
+      "bytes": 219065,
+      "declares": "registry/scored_artifacts.json",
+      "ok": true,
+      "path": "work/ref/h33-zeros.tif",
+      "pin": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
+      "sha256": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9"
+    }
+  },
+  "rebuild": {
+    "n_differing_pixels": 0,
+    "n_dots": 37654,
+    "parent": "d28 (44,090 dots)",
+    "pixel_identical_to_pinned_incumbent": true,
+    "rule": "remove dots with Euclidean distance to catalogue <= 2.0 px"
+  },
+  "schema_version": 1,
+  "serialisation": {
+    "byte_identical": false,
+    "note": "Pixel-identical re-serialisation; bytes differ because the incumbent was written with DEFLATE predictor=3 by an unavailable compression stack (IR-V2-01). Never upload the re-serialisation: same pixels, new hash, no new information.",
+    "pinned_sha256": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
+    "reserialised_sha256": "5b426ec2015ca89327c1c29ffa2cc64b091e6e4f6aafa8969f97d7e2d68f516a"
+  }
+}

@@ -271,6 +271,34 @@ spatial-cluster bootstrap (157 clusters, 1,000 draws, seed 520810): R0 `0.00401`
 
 ---
 
+# MASS session (2026-10-23, `arena/eb7e09d3`) — three files, none a priority
+
+All three are 10.0 % mass changes from `h33-h33-2-b2`, both twins present, 0 dots on the catalogue.
+Predictions are MODEL on PROXY and all sit inside the ±0.01 no-evidence band, so **none of these
+should displace the CONCENTRATION or PRUNE/RELIEF slots** unless the operator wants the
+mass-ceiling result for the record.
+
+| file (primary = NaN outside) | fallback twin | dots | prediction | SHA-256 (primary) |
+|---|---|---|---|---|
+| `h33-2-b2-mass-m10e-20261023-1238b3ab.tif` | `…-1238b3ab-zeros.tif` | 33,889 | −0.008 | `1238b3ab…` |
+| `h33-2-b2-mass-m10u-20261023-288aaa03.tif` | `…-288aaa03-zeros.tif` | 33,889 | −0.014 | `288aaa03…` |
+| `h33-2-b2-mass-p10-20261023-3cdf5014.tif` | `…-3cdf5014-zeros.tif` | 41,419 | **+0.005** | `3cdf5014…` |
+
+**If exactly one is uploaded, upload `mass-p10`** — it is the only file in the inventory whose
+predicted sign is positive outside the PRUNE/RELIEF rungs, and its falsifier is the sharpest in the
+project (≥ 0.2878 ⇒ the field was mass-starved; ≤ 0.2728 ⇒ mass is closed from above).
+
+Name (≤140): `GEMSDOE85 MASS+10 h33-2-b2 41419 dots add 3765 d>300m sep2.2 UNSCORED`
+Note (≤140): `parent h33-2-b2 37654; +10% mass at d>=300m, largest structure first; predicted +0.005; ledger row mass-p10`
+
+**Do not upload `mass-m10e` and `mass-m10u` both** — they differ only in ranking, and the pair is
+already informative as a pair only if the operator wants the ranking result; uploading one alone
+buys nothing that `prune3` did not already test.
+
+**Format note.** Brief §4.4 (≥3 px from the catalogue) is enforced on the mass each file *adds*;
+the 2,171 dots inherited from R0 at 200–300 m are kept, because deleting them is `prune3`'s
+experiment (IR-V2-10). The all-finite `-zeros` twin passes `vendor/gems57/gates.py` unchanged; the
+NaN primary passes the spec-level gate in `src/gems85/lineage.py`.
 ## Reserve only — SNAP-axis arms (PR #40, built 2026-10-23, gated, predicted ≈ 0.000)
 
 Not slots. They exist to falsify "R0's dots are 1–2 px off" (cards in
@@ -287,4 +315,4 @@ All three: `EPSG:32611` · 3730×3292 · 1 band · `float32` · transform `100,0
 values ⊆ {0,1} inside the footprint · no NaN/Inf inside · NaN outside (primary) or `nodata=None`
 all-finite (twin) · **0 dots on the catalogue** · no dot moved closer to the catalogue · count equals
 the parent · re-read from disk after writing. **Disclosed exception:** the parent's 2,171 flank dots at
-2–3 px are inherited unchanged (min 2.236 px), because re-pruning them is PRUNE rung 3 (IR-V2-34).
+2–3 px are inherited unchanged (min 2.236 px), because re-pruning them is PRUNE rung 3 (IR-V2-39).
