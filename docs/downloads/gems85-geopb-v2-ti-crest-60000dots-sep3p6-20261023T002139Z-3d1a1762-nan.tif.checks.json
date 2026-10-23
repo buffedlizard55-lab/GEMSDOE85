@@ -1,0 +1,33 @@
+{
+  "path": "/home/user/GEMSDOE85/docs/downloads/gems85-geopb-v2-ti-crest-60000dots-sep3p6-20261023T002139Z-3d1a1762-nan.tif",
+  "sha256": "917c8240f2af827a9a056b07449d3bdfb6fff56cccaf28ca1ae902b29fa9d086",
+  "bytes": 368320,
+  "mode": "nan",
+  "passed": true,
+  "checks": {
+    "file_exists": true,
+    "single_band": true,
+    "dtype_float32": true,
+    "shape_3730x3292": true,
+    "crs_epsg_32611": true,
+    "transform_matches_template": true,
+    "resolution_100m": true,
+    "no_nan_inside_footprint": true,
+    "no_inf_inside_footprint": true,
+    "values_in_0_1_inside_footprint": true,
+    "outside_footprint_is_nan": true,
+    "has_positive_predictions": true,
+    "no_prediction_outside_footprint": true,
+    "zero_mass_within_2px_of_catalogue": true
+  },
+  "stats": {
+    "emitting_pixels": 60000,
+    "prediction_mass": 60000.0,
+    "min_inside": 0.0,
+    "max_inside": 1.0,
+    "unique_values_inside": 2,
+    "footprint_pixels": 5167373,
+    "on_catalogue_pixels": 0,
+    "nodata_tag": null
+  }
+}

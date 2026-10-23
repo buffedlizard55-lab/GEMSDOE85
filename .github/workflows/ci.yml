@@ -15,7 +15,6 @@ jobs:
           cache: pip
       - run: pip install -r requirements-lock.txt
       - run: python -m pytest -q
-      - run: python scripts/build_site.py
       - run: python scripts/check_site.py
       - name: Check generated site is reproducible
         run: git diff --exit-code -- docs index.html

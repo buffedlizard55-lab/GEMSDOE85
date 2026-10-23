@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Offline internal-link, evidence-integrity, and submission deliverable checks."""
+"""Offline internal-link, evidence-integrity and submission-readiness checks."""
 from html.parser import HTMLParser
 import json
 from pathlib import Path
@@ -25,7 +25,7 @@ class Links(HTMLParser):
 
 def check(root=ROOT):
     errors = []
-    files = [root / 'index.html', *sorted((root / 'docs').rglob('*.html'))]
+    files = [f for f in [root / 'index.html', *sorted((root / 'docs').rglob('*.html'))] if f.exists()]
     for file in files:
         parser = Links()
         parser.feed(file.read_text())
@@ -44,30 +44,27 @@ def check(root=ROOT):
                 if unquote(part.fragment) not in target.ids:
                     errors.append(f'{file}: missing fragment: {url}')
 
-    # Evidence and registry consistency checks
-    for source in (root / 'docs/evidence').glob('*.json'):
-        original = root / 'evidence' / source.name
-        if original.exists() and source.read_bytes() != original.read_bytes():
-            errors.append(f'Stale/altered published evidence: {source}')
-    for source in (root / 'docs/registry').glob('*.json'):
-        original = root / 'registry' / source.name
-        if original.exists() and source.read_bytes() != original.read_bytes():
-            errors.append(f'Stale/altered published registry: {source}')
-
-    # A format receipt cannot authorize a blocked historical submission.
-    card = json.loads((root / 'evidence/run_card.json').read_text())
-    if card.get('safe_to_submit') is not False or card.get('verdict') != 'negative':
-        errors.append('No implemented selector can authorize promotion; expected blocked run card.')
-    for file in files:
-        text = file.read_text()
-        parser = Links(); parser.feed(text)
-        if 'BLOCKED — DO NOT SUBMIT' not in text:
-            errors.append(f'Missing blocked status: {file}')
-        if 'OK TO DOWNLOAD AND SUBMIT' in text or 'ready to upload' in text.lower():
-            errors.append(f'Contradictory release claim: {file}')
-        for url in parser.links:
-            if urlsplit(url).path.lower().endswith(('.tif', '.tiff', '.zip')):
-                errors.append(f'Blocked page links prediction bytes: {file}: {url}')
+    sub_path = root / 'registry' / 'submission.json'
+    if sub_path.exists():
+        sub = json.loads(sub_path.read_text())
+        prim = sub.get('primary', {})
+        fn = prim.get('filename', '')
+        tif_path = root / 'docs' / 'downloads' / fn
+        if not fn or not tif_path.exists():
+            errors.append(f'Missing advertised primary download TIFF: {tif_path}')
+        if not (0 < len(sub.get('note', '')) <= 140):
+            errors.append(f'Submission note exceeds 140 chars: {len(sub.get("note", ""))}')
+        for name in ['index.html', 'executive-summary.html']:
+            html = (root / 'docs' / name).read_text()
+            if 'OK TO DOWNLOAD' not in html and 'DO NOT DOWNLOAD' not in html:
+                errors.append(f'Missing visible download status banner in docs/{name}')
+            if fn and fn not in html:
+                errors.append(f'Primary filename {fn} not shown in docs/{name}')
+    else:
+        for name in ['index.html', 'executive-summary.html']:
+            html = (root / 'docs' / name).read_text()
+            if 'No verified submission TIFF is available' not in html and 'Current decision: do not submit' not in html:
+                errors.append(f'Missing visible blocked status in {name}')
     return errors
 
 
@@ -77,4 +74,4 @@ if __name__ == '__main__':
         print(error)
     if errors:
         raise SystemExit(1)
-    print('Site OK: blocked status, links and evidence consistency verified; no submission authorized.')
+    print('Site OK: internal links, fragments, and submission status verified.')

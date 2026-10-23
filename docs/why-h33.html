@@ -1,10 +1,44 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1"><title>Historical page — not submission cleared · GEMSDOE85</title>
-<style>body{margin:0;background:#101722;color:#e6edf3;font:17px/1.65 system-ui}main{max-width:960px;margin:auto;padding:32px 22px}a{color:#92c9ff}nav{display:flex;gap:24px;flex-wrap:wrap}.status{border:2px solid #e9ac60;background:#302619;padding:24px;border-radius:12px;margin:24px 0}h1{line-height:1.2}code,pre{overflow-wrap:anywhere;white-space:pre-wrap}table{border-collapse:collapse}td,th{border:1px solid #637083;padding:12px;text-align:left}footer{margin-top:40px;border-top:1px solid #637083;padding-top:16px}</style></head><body><main>
-<nav><a href="index.html">Status</a><a href="executive-summary.html">How to submit</a><a href="method.html">Research</a><a href="data.html">Sources</a></nav>
-<h1>Historical page — not submission cleared</h1><section class="status"><h2>BLOCKED — DO NOT SUBMIT</h2>
-<p>No new unique submission TIFF was generated in this review. Historical files are not approved for submission.
-Format validity alone does not establish uniqueness, scientific improvement, or eligibility.</p><ul><li>Automated release selector is not implemented; historical format PASS is not submission clearance.</li><li>Literal any-raster overlap gate: saturated prior blocks every nonempty allowed candidate.</li><li>No explicit assigned single-method paragraph.</li><li>Pinned transformed cache unavailable; no comparable current-best shared holdout receipt.</li><li>No authenticated organizer score receipts or account-specific remaining quota.</li><li>Current run card does not clear submission.</li><li>No explicit single-method lane assignment.</li><li>Pinned transformed feature cache is unavailable.</li></ul></section>
-<p>This historical public URL is superseded. Use the navigation above for current evidence. Prior research remains in Git history and repository research files.</p><footer>Review date: 2026-10-23. No weekly submission slot used. No human inspection is a release gate.
-<a href="https://github.com/buffedlizard55-lab/GEMSDOE85">Repository and historical artifacts</a>.
-AI assistance must be disclosed as required by the competition rules.</footer></main></body></html>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Evidence-first GEMS fault-discovery review. No verified submission is available; see automated preflight and scientific blockers.">
+<title>H33 analysis · GEMSDOE85</title><link rel="stylesheet" href="style.css"></head>
+<body><a class="skip" href="#main">Skip to content</a><header><div class="brand"><a href="index.html">GEMS<span>DOE85</span></a><small>FAULT DISCOVERY / RESEARCH LOG</small></div><nav aria-label="Main navigation"><a href="index.html">Overview</a><a href="executive-summary.html">How to submit</a><a href="hypotheses.html">Research</a><a href="why-h33.html" aria-current="page">H33 analysis</a><a href="sources.html">Sources</a><a href="review.html">Review</a></nav></header>
+<main id="main"><article class="prose"><h1>H33: what the bytes and metric establish—and what they do not</h1>
+<h2>Evidence boundary</h2>
+<p>The brief associates H33-2-B2 with <strong>0.2778 (OWNER-REPORTED, not submission-receipt verified)</strong>. That is not a new measurement and is <strong>not labeled ORGANIZER-CONFIRMED</strong> here. The <a href="https://buffedlizard55-lab.github.io/GEMSDOE32/docs/index.html">source page</a> describes the file as unscored; a later owner report could be real, but the authenticated receipt is absent. No projection is a score, and no previous model-derived “live mirror” statistic is substituted for the strict HOLDOUT-DTI requested in this run.</p>
+<h2>Artifact forensics</h2>
+<p>The primary was downloaded privately for education, hash checked, reopened with Rasterio and tested against the restored reference. See <a href="evidence/h33_learning_audit.json"><code>evidence/h33_learning_audit.json</code></a> and <a href="registry/learning_manifest.json"><code>registry/learning_manifest.json</code></a> for measured data and immutable artifact provenance.</p>
+<p><strong>ARTIFACT-MEASUREMENT, not model performance:</strong></p>
+<ul>
+<li>SHA-256: <code>c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9</code>.</li>
+<li>The single float32 band matches the mirror grid: EPSG:32611, shape (height, width) = (3730, 3292), affine (100, 0, 243350, 0, -100, 4508550).</li>
+<li>Positive support: 37,654 pixels; zero positives on mapped catalogue pixels; zero at Euclidean distance at most two pixels from the catalogue.</li>
+<li>The local format validator reports finite values in [0,1], zero positive mass outside the footprint, and no nodata tag. This is not organizer upload acceptance.</li>
+</ul>
+<p>The <a href="https://github.com/buffedlizard55-lab/GEMSDOE32/blob/780a5a534269c79adfe6d1d7d5aadead161332aa/scripts/run_h33_validation.py">GEMSDOE32 builder</a> explicitly constructs H33-2-B2 as a flank-deletion sweep of an existing sparse base. Its source describes deleting dots within the catalogue-distance collar; that is <strong>not</strong> the same thing as a new geothermal detector, a PINN, or the separately named H33 multiphysics hypothesis union. Reusing this file with a new filename would violate this run's uniqueness requirement.</p>
+<h2>Metric explanation</h2>
+<p>From the <a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/#performance-metric">organizer formula</a>, let:</p>
+<ul>
+<li><code>T</code> be the sum, over ground-truth pixels, of the <strong>maximum</strong> predicted-confidence × triangular-distance weight;</li>
+<li><code>F</code> be weighted false-positive prediction mass;</li>
+<li><code>N</code> be the number of truth pixels, so weighted false-negative mass is <code>N − T</code>.</li>
+</ul>
+<p>The metric constants are alpha = 0.2, beta = 0.8 and a 300 m support radius. Then, ignoring only the tiny stabilizing epsilon in the displayed algebra,</p>
+<p><code>DTI = T / [0.2 T + 0.2 F + 0.8 N]</code>.</p>
+<p>For a proposed change <code>(ΔT, ΔF)</code>, cross-multiplication gives the exact improvement condition (with positive denominators):</p>
+<p><code>ΔT × (D − 0.2 T) &gt; 0.2 T × ΔF</code>, where <code>D</code> is the old denominator (including epsilon if used).</p>
+<p>Thus:</p>
+<ul>
+<li>Removing redundant predictions that do not change any truth pixel's maximum coverage leaves <code>T</code> unchanged and can reduce <code>F</code>; that improves DTI whenever <code>T &gt; 0</code> and weighted false-positive mass actually falls.</li>
+<li>A sparse set spaced on the scale of the scoring kernel can avoid paying for many redundant pixels. This explains a plausible benefit of thinning a broad detector field.</li>
+<li>Deleting near-catalogue dots might remove redundant or already-mapped-looking structure. But an unknown fault can join a mapped fault, form a secondary strand, or fall inside that collar. Therefore a collar deletion can also reduce <code>T</code> and worsen DTI. Distance from a known fault is <strong>not</strong> proof of a false positive.</li>
+<li>A lower dot count alone is not evidence of improvement. Equal-size candidate comparisons must hold the physical domain, hidden segments and masks fixed; compare the pooled ratio, not an average of ratios.</li>
+</ul>
+<p>The organizer also says to submit predictions for <strong>all faults</strong> and describes rescoring on expanded labels in the final round. Zeroing the mapped catalogue or widening a collar is a modeling/round-objective choice, not an official file-format requirement. A rule useful against new-fault truth could lose recall under expanded truth. The local holdout mask is prescribed by this prompt; its implementation is not proof of undisclosed live-scorer behavior.</p>
+<p>This arithmetic explains a <em>mechanism by which</em> H33's design could help. It cannot establish exactly why its owner-reported result occurred, how much of the reported gain came from thinning versus location choice, whether the reported artifact matches an uploaded file, or what the private/final result would be. Those require hidden truth or a matched organizer ablation and receipts. Any categorical geological explanation of the reported increment without that evidence would overclaim.</p>
+<h2>Can a unique candidate exceed it?</h2>
+<p>There is no mathematical ceiling at the owner's reported value. Better incremental truth coverage per unit false-positive mass could improve DTI. The public leaderboard supports that stronger performance is possible for some models, not that our untested model will achieve it. No numerical forecast is made.</p>
+<p>The most defensible path is a distinct, physically motivated detector for concealed faults, calibrated on a leakage-screened, whole-component spatial holdout, then a separately checked emission rule. The <a href="hypotheses.html">research shortlist</a> defines falsifiable candidates and non-fault mimics. We cannot implement the top candidate yet: no lane assignment/cache was supplied and the literal overlap rule is saturated by an existing dense prior. The correct result today is <strong>negative preflight</strong>, not an artificially “unique” TIFF or an unsupported higher-score promise.</p>
+<h2>Portal range error</h2>
+<p>The organizer requires in-footprint confidence values in [0,1]. Passing through feature nodata sentinels, infinities, NaNs inside the footprint, or unnormalized logits violates a valid export policy. The shared writer rejects these values <strong>before</strong> serializing; it does not silently clip or fill them. It reopens the written TIFF, compares grid metadata and validates a one-TIFF ZIP.</p>
+<p>The organizer's public format description permits null/NaN outside bounds. The observed error text does <strong>not</strong> prove NaN or a particular nodata tag caused the user's failure. The template's all-finite, no-nodata, zero-outside export is a conservative local policy, not an assertion of organizer acceptance or a reinterpretation of the rules. Local tests alone never earn a competition score.</p></article></main><footer><strong>Evidence before emission.</strong><span>Maximize P(Win) · Own the Outcome</span><p>Fault predictions are not proof of a geothermal resource. Local validation is not organizer acceptance.</p><a href="https://github.com/buffedlizard55-lab/GEMSDOE85">Repository &amp; reproducibility</a> · <a href="evidence/run_card.json">Machine-readable run card</a></footer></body></html>

@@ -45,20 +45,11 @@ from scipy import ndimage as ndi
 
 from . import grid
 
-# Candidate strike orientations, expressed as integer *normal* offsets.  Each (dy, dx) is the
-# direction across which the two half-windows are compared; the trace runs perpendicular to it.
-# Offsets are integers so the operator is an exact array shift.
-#
-# NORMALS_R3: 8 strikes over 180 deg (azimuth spacing ~22.5 deg, measured normal azimuths
-# 0/18.4/45/71.6/90/108.4/135/161.6 deg).  Radius ~3 px matches the 300 m kernel support.
-# NORMALS_R16: 16 strikes over 180 deg (spacing ~11 deg).  Retired persistence term (null
-# result in evidence/experiments.json: L = 1/15/25 px are statistically indistinguishable) and
-# spends the parameter budget on orientation resolution instead -- a coarse 8-strike grid
-# samples a fault's strike off-angle and attenuates the step statistic.
+# Eight candidate strike orientations, expressed as integer *normal* offsets at radius ~3 px.
+# Each (dy, dx) is the direction across which the two half-windows are compared; the trace runs
+# perpendicular to it.  Offsets are integers so the operator is an exact array shift.
 NORMALS_R3 = [(3, 0), (3, 1), (2, 2), (1, 3), (0, 3), (-1, 3), (-2, 2), (-3, 1)]
 NORMALS_R6 = [(6, 0), (6, 2), (4, 4), (2, 6), (0, 6), (-2, 6), (-4, 4), (-6, 2)]
-NORMALS_R16 = [(5, 0), (5, 1), (5, 2), (4, 3), (3, 3), (3, 4), (2, 5), (1, 5),
-               (0, 5), (-1, 5), (-2, 5), (-3, 4), (-3, 3), (-4, 3), (-5, 2), (-5, 1)]
 
 # Three independent physics domains.  (source, key) where source is "feat" (training_features.tif
 # band name), "rad" (geodawn_rad_u8 band index) or "lidar" (lidar_scarp_features_u8 band index).

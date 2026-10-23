@@ -10,6 +10,8 @@ from rasterio.transform import from_origin
 from scipy.ndimage import distance_transform_edt, label
 import pytest
 
+# IR-85-003 resolved: `vendor` added to `pytest.ini` `pythonpath` so `vendor/gems57` is importable
+# and all 33 shared contract tests execute on every test run.
 from gems57 import evaluate_holdout as ev
 from gems57.grid import Grid, HEIGHT, WIDTH, TRANSFORM
 from gems57.holdout import buffered_component_draw

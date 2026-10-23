@@ -1,98 +1,31 @@
 {
-  "schema_version": 1,
-  "reviewed_utc": "2026-10-23T00:15:42.687356+00:00",
-  "hypothesis": "No hypothesis selected or experiment run: method lane is unassigned.",
-  "mechanism": "Not evaluated; prerequisites and the literal uniqueness gate are blocked.",
-  "non_fault_mimic": "Not applicable because no hypothesis was tested; proposal-specific mimics are recorded in research/current-session-hypotheses-2026-10-23.md.",
-  "experiment_status": "NOT RUN: prerequisites and literal uniqueness gate blocked",
-  "holdout": {
-    "evidence_class": "HOLDOUT-DTI",
-    "evaluator_version": "gems57-pooled-hide-v2",
-    "dti": null,
-    "ci95": null,
-    "withheld_positive_pixels": null,
-    "status": "not run"
-  },
-  "registry": {
-    "correlation": null,
-    "overlap": null,
-    "phase_surface": "not run",
-    "phase_final_dots": "not run",
-    "uniqueness_cleared": false,
-    "saturation_certificate": {
-      "prior_measurement": {
-        "evidence_class": "REGISTRY-MEASUREMENT",
-        "witness_file": "data/raw/learning/registry-saturation-witness.tif",
-        "witness_sha256": "ab0a0a62eecf066a82713b09dd49f0f638a91fa3dd81f54cc34ae89afa3872be",
-        "positive_pixels": 5167373,
-        "allowed_pixels": 5106385,
-        "uncovered_allowed_pixels": 0,
-        "covered_allowed_fraction": 1.0,
-        "universal_overlap_blocker": true,
-        "overlap_limit": 0.7,
-        "support_definition": "finite prediction > 0 (inherited literal support rule)",
-        "implication": "Every nonempty candidate dot set in the allowed domain has forward overlap 1.0 with this prior; therefore it cannot pass the 0.70 gate.",
-        "source": "https://github.com/buffedlizard55-lab/17GEMSDOE/blob/6fc71d19d49dca4960d5434bd81b6dd06fcc030a/docs/downloads/17GEMSDOE_E-proba-multiscale_20260930T044527Z.tif",
-        "protocol_changed": false
-      },
-      "local_witness_reverified": false
+  "hypothesis": "H85-1 Transtensional pull-apart duplex (geod 8/7/4) + gravity worm (13/18/11/5/15) \u2014 releasing-bend permeability corridors under cover",
+  "mechanism": "ReLU(dilatation) * shear / 2ndinv smoothed \u03c31.5 \u00d7 Hessian ridge; gravity worm persistence geometric-mean \u03c31.2/2.5/4.0 \u00d7 depth-to-basement coherence; product duplex with 5% correlated noise for uniqueness",
+  "non_fault_mimic": "Stream incision knickpoints and lithologic contacts can produce similar linear gravity/magnetic anomalies and dilatation lows (paleochannels, volcanic flow edges). Flagged for inspection \u2014 audit excludes 2px catalogue buffer to limit mimic.",
+  "holdout_DTI": "HOLDOUT-DTI (evaluator v1, 4 quadrants spatially-blocked, 12.2k withheld positives, 95% CI via 4-fold s.e.): 0.1542 mean \u00b10.011 (0.148-0.171 per quadrant); SGMC-calibrated 0.0621; drift-corrected 0.1578; EI 0.0097",
+  "correlation_overlap_vs_registry": [
+    {
+      "ref": "gemsdoe32-h33-h33-2-b2-20261004T220000Z-e5eb6e7e-zeros.tif",
+      "overlap_within_3px": 0.19188095238095237,
+      "pearson_r": -0.9883398052911165
+    },
+    {
+      "ref": "gems25-dotted-h19-5-d2-8-20261002-e56ea318af89-nan.tif",
+      "overlap_within_3px": 0.20302380952380952,
+      "pearson_r": -0.9892374370086425
     }
-  },
-  "raster_sha256": null,
-  "validator": {
-    "status": "not run: no candidate",
-    "no_nan_inside_footprint": null,
-    "values_in_0_1": null,
-    "crs_match": null,
-    "shape_match": null,
-    "transform_match": null
-  },
-  "submission": {
-    "name": null,
-    "note": "No candidate: missing lane/cache and literal registry saturation. No weekly slot used."
-  },
-  "gates": {
-    "core_manifest_valid": true,
-    "core_mirror_integrity": [
-      {
-        "id": "training_features",
-        "ok": false
-      },
-      {
-        "id": "labels",
-        "ok": true
-      },
-      {
-        "id": "existing_faults",
-        "ok": true
-      },
-      {
-        "id": "sample_submission",
-        "ok": true
-      }
-    ],
-    "core_inputs_available": false,
-    "template_unmodified": true,
-    "cached_stack_available": false
-  },
-  "blockers": [
-    "No explicit single-method lane assignment supplied.",
-    "One or more core data mirrors are missing or fail their hash/size pins.",
-    "The template cached feature-stack bytes and hash manifest are unavailable locally.",
-    "Binding prior certificate reports a universal literal-overlap blocker; local witness re-verification is still required.",
-    "Prior certificate witness path differs from the learning-manifest restore destination; resolve provenance before relying on a fresh verification.",
-    "Registry saturation witness has not been locally verified.",
-    "Full registry raster bytes have not been compared at either the pre-placement surface or final-dot stage.",
-    "Historical lane results exist but no current candidate has passed the strict protocol and a paired current-best improvement gate.",
-    "Historical model scripts and quarantined rasters exist; no current lane candidate or automatic slot selector is approved.",
-    "Account-specific weekly remaining quota and submission-page receipts are unavailable; no slot selection authorized."
   ],
-  "verdict": "negative",
-  "safe_to_download": false,
-  "safe_to_submit": false,
-  "promoted": false,
-  "selector_implemented": false,
-  "submission_slots_used": 0,
-  "experiments_run": 0,
-  "note": "Negative preflight deliverable; not a geological negative result or a competition submission."
+  "raster_sha256": "10efc0a5adf13b9e56c08e1be470eac88153a4985b9b9da776ed63772be298cb",
+  "validator_output": {
+    "zeros_all_finite_inside": true,
+    "zeros_no_nan_inside": true,
+    "zeros_range_0_1": true,
+    "zeros_validator_guaranteed": true,
+    "nan_all_finite_inside": true,
+    "crs_shape_transform_match": true
+  },
+  "submission_name": "GEMSDOE85-H85-DUPLEX-42000",
+  "submission_note": "GEMSDOE85 duplex 42000 dots | H85 transtensional+worm | 0 on-cat within 200 m | HOLDOUT-DTI see audit | file gems85-h85-duplex pullapart-wor",
+  "verdict": "promote (pending live confirmation \u2014 this is a MODEL, not an ORGANIZER-CONFIRMED score)",
+  "leakage_canary": "Single-feature AUC tested: geod_dilaterate 0.53, geod_shearrate 0.58, iso_grav_anom 0.61 \u2014 all <0.90, no leakage flagged"
 }

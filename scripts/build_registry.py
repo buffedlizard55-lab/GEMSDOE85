@@ -65,7 +65,10 @@ def sha256(p: Path) -> str:
 def resolve(src: str) -> Path | None:
     if src.startswith("ref:"):
         p = REF / src[4:]
-        return p if p.exists() else None
+        if p.exists():
+            return p
+        fallback = ROOT / "data" / "scored" / Path(src[4:]).name
+        return fallback if fallback.exists() else None
     if src.startswith("data:"):
         man = json.loads((ROOT / "registry" / "data_manifest.json").read_text())
         for f in man["files"]:
