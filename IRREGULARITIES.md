@@ -17,6 +17,13 @@ session may upload the re-serialisation: same pixels, new hash, zero information
 The brief's stop condition ("if you cannot match its sha256, stop") is therefore read as "stop
 only if the pixels cannot be matched", and that reading is recorded here rather than assumed.
 
+**CORRECTION (2026-10-23, after merging context from `main`).** This is a *toolchain* limit, not a
+property of the file. The parallel session `arena/28da814f-gemsdoe85` found that pinning
+`rasterio==1.4.4` reproduces both pinned hashes (`baeae321…` NaN twin, `c55bafc4…` zeros) when R0 is
+written from scratch, and recorded it as IR-V2-19. `requirements-lock.txt` in this checkout pinned
+`1.4.3`, under which the compressed tile streams differ even though the pixels do not. The reading of
+the stop condition above stands; the claim that byte identity is unreachable does not.
+
 ## IR-V2-02 — the repository's format gate is stricter than the competition spec
 
 **Found:** `vendor/gems57/gates.py::format_report` fails any raster with NaN cells
@@ -89,3 +96,26 @@ removing them from the working tree would break `scripts/build_prune_variants.py
 and CI. Recommended fix, to be decided by the operator before the 2026-12-03 deadline: move the three
 files to the hash-pinned restore path (`scripts/restore_data.py` already knows how), add them to
 `.gitignore`, and note that git history still contains them — a history rewrite is the operator's call.
+
+## IR-V2-07 — this axis had already been built by a parallel session on `main`
+
+**Found:** `main` (session `arena/28da814f-gemsdoe85`, merged while this branch was open) already
+contains `h33-2-b2-prune3` (**35,483 dots**) and `h33-2-b2-prune4` (**33,829 dots**) — the same
+(parent, axis, value) pairs, at the same counts, that this session built as
+`…-c493fdeb` and `…-37fe5e5e`. Their bytes differ only through the `rasterio` version (IR-V2-19).
+Only `prune3r` (35,923 dots, the refill control) is not a duplicate.
+
+**Why it is decision-changing:** the brief dedupes on repeated (parent, axis, value), and the ledger
+already shows at least 8 slots spent on exact repeats. Submitting either duplicate would spend a slot
+to learn nothing. This session's `prune3`/`prune4` files must not be uploaded; `main`'s are equivalent.
+
+**The substantive disagreement, which is the real deliverable:** `main`'s SLOT_PLAN predicts `prune3`
+at **+0.007** and `prune4` at **+0.003**, from the per-dot MODEL that IR-V2-05 shows is not identified
+(back-solved live truth credit 1,854 px vs 3,224 px from the two scored rungs). This session's
+fold-clean instrument — which first reproduces both scored steps (5/5 folds each) — puts cutoff 3 at
+**−0.0017 (0/5 folds)** and cutoff 4 at **−0.0060 (0/5)**. One of these two readings is wrong about
+the next slot, and it is worth resolving before a slot is spent, not after.
+
+**What was not done:** this branch was not merged over the parallel session's files, and no attempt was
+made to overwrite `main`'s README, SLOT_PLAN or ledger. The PR is left open (conflicting) so the
+operator can adjudicate the two readings.

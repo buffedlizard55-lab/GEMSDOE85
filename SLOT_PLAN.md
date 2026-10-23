@@ -1,3 +1,9 @@
+> **SUPERSEDED FOR SLOT CHOICE (2026-10-23).** A parallel session (`arena/28da814f`) landed its own
+> `SLOT_PLAN.md` on `main` while this branch was open, and it already ranks `prune3`/`prune4` as slot
+> candidates at +0.007/+0.003. The ranking below is not merged over it. What survives from this file is
+> the *evidence*: the fold-clean instrument in `evidence/prune_holdout_proxy.json` contradicts those
+> positive predictions. Adjudicate the two readings (IR-V2-07) before spending a slot.
+
 # SLOT_PLAN — next 3 slots, in order
 
 Entity quota: 3 scored submissions per rolling week + one final file. Deadline **2026-12-03**
