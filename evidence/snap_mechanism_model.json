@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "kind": "MODEL",
+  "note": "projection, never a score. Parent 0.2778 is CLAIM (no receipt); T, M, F, K are the repo's own back-solve of that claim, so every number here inherits it.",
+  "inputs": {
+    "n_dots": 37654,
+    "T": 5470.0,
+    "M_credited": 2188.0,
+    "F_uncredited": 35466.0,
+    "K_truth": 14400.0,
+    "credited_dot_share": 0.0581,
+    "mean_self_credit_of_credited_dot": 1.0,
+    "alpha": 0.2,
+    "beta": 0.8,
+    "kernel_px": 3.0,
+    "model_baseline_dti": 0.27756,
+    "claimed_live": 0.2778
+  },
+  "chance_uncredited_dot_lands_on_truth": 0.00042343,
+  "variants": {
+    "snapd2t20": {
+      "mean_displacement_px": 0.1355,
+      "n_moved": 2757,
+      "pct_of_all_dots_moved": 7.322,
+      "n_credited_dots_moved": 160.2,
+      "loss_per_moved_credited_dot_random": 0.0288,
+      "delta_T_best_case": 0.0,
+      "delta_T_random_case": -4.6,
+      "dti_best_case": 0.0,
+      "dti_random_case": -0.00022,
+      "predicted": {
+        "low": 0.0,
+        "high": 0.008,
+        "text": "few dots move (only where TMI-HG and gravity-HG both say the parent dot is badly placed)"
+      }
+    },
+    "snapd2t10": {
+      "mean_displacement_px": 0.3654,
+      "n_moved": 7218,
+      "pct_of_all_dots_moved": 19.169,
+      "n_credited_dots_moved": 419.4,
+      "loss_per_moved_credited_dot_random": 0.0775,
+      "delta_T_best_case": 0.0,
+      "delta_T_random_case": -32.5,
+      "dti_best_case": 0.0,
+      "dti_random_case": -0.00156,
+      "predicted": {
+        "low": 0.0,
+        "high": 0.012,
+        "text": "moderate number of dots move"
+      }
+    },
+    "snapd2t00": {
+      "mean_displacement_px": 1.7642,
+      "n_moved": 37100,
+      "pct_of_all_dots_moved": 98.529,
+      "n_credited_dots_moved": 2155.8,
+      "loss_per_moved_credited_dot_random": 0.3744,
+      "delta_T_best_case": 0.0,
+      "delta_T_random_case": -807.1,
+      "dti_best_case": 0.0,
+      "dti_random_case": -0.039,
+      "predicted": {
+        "low": -0.015,
+        "high": 0.015,
+        "text": "every dot moves to the local argmax: replaces the parent's own localisation with a ~0.57-AUC field, sign unknown"
+      }
+    },
+    "prune3": {
+      "mean_displacement_px": 0.0757,
+      "n_moved": 1611,
+      "pct_of_all_dots_moved": 4.278,
+      "n_credited_dots_moved": 93.6,
+      "loss_per_moved_credited_dot_random": 0.0161,
+      "delta_T_best_case": 0.0,
+      "delta_T_random_case": -1.5,
+      "dti_best_case": 0.0,
+      "dti_random_case": -7e-05,
+      "predicted": {
+        "low": 0.0,
+        "high": 0.005,
+        "text": "control: 3 px exclusion only, no snapping"
+      }
+    }
+  },
+  "reading": "A snap of this parent is a bet that the edge field knows the local strike better than the parent's own field, because the parent's credited dots already sit on truth and cannot gain self-credit. The measured evidence for that skill is absent: canary AUC 0.499 (iso_grav_anom_hg) and 0.525 (tmi_hg) against withheld catalogue positives, and SGMC agreement falling with every increase in the moved fraction. Best case (all moves along strike) is exactly zero for all three variants."
+}

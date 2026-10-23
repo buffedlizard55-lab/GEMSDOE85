@@ -1,0 +1,534 @@
+{
+  "schema_version": 1,
+  "session": "arena/59608071-gemsdoe85",
+  "axis": "SNAP",
+  "built_utc": "20261023",
+  "git_sha": "e99071162fda9ecb5e841c00d044de9fefff33e7",
+  "alpha": 0.2,
+  "beta": 0.8,
+  "kernel_px": 3.0,
+  "evaluator": "gems85-holdout-v1.0.0",
+  "catalogue_clear_px": 3.0,
+  "snap_max_px": 2.0,
+  "parent_rebuild": {
+    "recipe": "H27-4-solo-d28 support minus dots with d(catalogue) <= 2.0 px",
+    "d28_sha256": "07b6db440535404bb41ec8ddc797713e200d308e3da35937393efde5eb84bc40",
+    "parent_sha256": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
+    "n_dots": 37654,
+    "pixel_identical": true,
+    "container_sha256_identical": false,
+    "note": "decoded pixels are identical cell-for-cell and the count matches; the container sha256 differs because the pinned file was encoded by another GDAL/zlib build (re-encoding the identical pixels here yields a different byte stream). IR-86-001."
+  },
+  "eligibility": {
+    "n_footprint": 5167373,
+    "n_eligible": 4761049,
+    "parent_dots_eligible": 36043,
+    "parent_dots_ineligible": 1611,
+    "pct_parent_dots_ineligible": 4.278,
+    "parent_min_dist_catalogue_px": 2.2361
+  },
+  "scarp_channel_diagnostic": {
+    "note": "report only; not used to build any variant",
+    "frac_parent_dots_whose_argmax_changes_if_scarp_added": 0.676
+  },
+  "report_only": {
+    "note": "REPORT ONLY, never a gate. The catalogue hide-and-recover proxy is expected to be near-zero and anti-correlated with live score for this lineage: the parent's whole design is to stay away from the catalogue while the proxy's truth IS the catalogue.",
+    "holdout_proxy": {
+      "parent_h33-2-b2": {
+        "pooled_holdout_dti": 0.004789,
+        "ci95": [
+          0.004468,
+          0.005109
+        ],
+        "n_withheld_positives": 60988,
+        "tp_w": 378.0,
+        "fp_w": 150337.693,
+        "fn_w": 60610.0
+      },
+      "snapd2t20": {
+        "pooled_holdout_dti": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_withheld_positives": 60988,
+        "tp_w": 0.0,
+        "fp_w": 150616.0,
+        "fn_w": 60988.0
+      },
+      "snapd2t10": {
+        "pooled_holdout_dti": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_withheld_positives": 60988,
+        "tp_w": 0.0,
+        "fp_w": 150616.0,
+        "fn_w": 60988.0
+      },
+      "snapd2t00": {
+        "pooled_holdout_dti": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_withheld_positives": 60988,
+        "tp_w": 0.0,
+        "fp_w": 150616.0,
+        "fn_w": 60988.0
+      },
+      "prune3": {
+        "pooled_holdout_dti": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_withheld_positives": 60988,
+        "tp_w": 0.0,
+        "fp_w": 150616.0,
+        "fn_w": 60988.0
+      }
+    },
+    "n_withheld_positives": 60988,
+    "leakage_canary_auc": {
+      "tmi_hg": 0.52549,
+      "iso_grav_anom_hg": 0.49937,
+      "det_elev_slope": 0.55745
+    },
+    "sgmc_control": {
+      "n_sgmc_px": 83593,
+      "parent_h33-2-b2": {
+        "mean_dist_px": 23.3034,
+        "frac_within_3px": 0.15496,
+        "frac_within_1px": 0.06573
+      },
+      "snapd2t20": {
+        "mean_dist_px": 23.3149,
+        "frac_within_3px": 0.15148,
+        "frac_within_1px": 0.06281
+      },
+      "snapd2t10": {
+        "mean_dist_px": 23.3163,
+        "frac_within_3px": 0.1505,
+        "frac_within_1px": 0.06196
+      },
+      "snapd2t00": {
+        "mean_dist_px": 23.3171,
+        "frac_within_3px": 0.14785,
+        "frac_within_1px": 0.06037
+      },
+      "prune3": {
+        "mean_dist_px": 23.3156,
+        "frac_within_3px": 0.15186,
+        "frac_within_1px": 0.06286
+      }
+    }
+  },
+  "variants": [
+    {
+      "id": "h33-h33-2-b2-snapd2t20-20261023-f9c328a5",
+      "slug": "h33-h33-2-b2-snapd2t20-20261023",
+      "value": "snapd2t20",
+      "tau": 0.2,
+      "zeros": {
+        "path": "releases/h33-h33-2-b2-snapd2t20-20261023-f9c328a5-zeros.tif",
+        "sha256": "f9c328a5ba6fb954ae295939ea1e0487a6f40742fa01df88115085034372adbf",
+        "bytes": 150586,
+        "meta": {
+          "bands": 1,
+          "dtype": "float32",
+          "crs": "EPSG:32611",
+          "shape": [
+            3730,
+            3292
+          ],
+          "transform": [
+            100.0,
+            0.0,
+            243350.0,
+            0.0,
+            -100.0,
+            4508550.0
+          ]
+        },
+        "n_positive": 37654,
+        "min_inside": 0.0,
+        "max_inside": 1.0,
+        "reread_ok": true
+      },
+      "nan": {
+        "path": "releases/h33-h33-2-b2-snapd2t20-20261023-40c1ec13-nan.tif",
+        "sha256": "40c1ec13c895ec53ff2f9aaba97ac1b36b5518db9dd223517edc533017fab566",
+        "bytes": 222650,
+        "meta": {
+          "bands": 1,
+          "dtype": "float32",
+          "crs": "EPSG:32611",
+          "shape": [
+            3730,
+            3292
+          ],
+          "transform": [
+            100.0,
+            0.0,
+            243350.0,
+            0.0,
+            -100.0,
+            4508550.0
+          ]
+        },
+        "n_positive": 37654,
+        "min_inside": 0.0,
+        "max_inside": 1.0,
+        "reread_ok": true
+      },
+      "format_report": {
+        "ok": true,
+        "problems": []
+      },
+      "local_validate": {
+        "all_checks_passed": true,
+        "problems": []
+      },
+      "nan_format_ok": false,
+      "nan_local_ok": false,
+      "stats": {
+        "n_dots": 37654,
+        "n_moved": 2757,
+        "pct_moved": 7.322,
+        "pct_dots_moved_incl_forced": 7.322,
+        "n_dots_changed_vs_parent": 2757,
+        "n_moved_because_forced": 1611,
+        "n_needed_wider_seek": 30,
+        "n_duplicate_placement": 0,
+        "n_refilled_beyond_d": 30,
+        "max_refill_px": 10.0,
+        "snap_cap_applies_to_pct": 99.92,
+        "mean_displacement_px": 0.1355,
+        "median_displacement_px": 0.0,
+        "max_displacement_px": 10.0,
+        "n_unique_targets": 37654,
+        "jaccard_vs_parent": 0.863552,
+        "n_voxels_changed": 5514,
+        "mean_edge_rank_before": 0.5306,
+        "mean_edge_rank_after": 0.53974,
+        "block_cv_10km_parent": 0.63526,
+        "block_cv_10km_variant": 0.63557,
+        "mean_dy_dx": [
+          -0.0002,
+          -0.0088
+        ]
+      },
+      "predicted": {
+        "low": 0.0,
+        "high": 0.008,
+        "text": "few dots move (only where TMI-HG and gravity-HG both say the parent dot is badly placed)"
+      }
+    },
+    {
+      "id": "h33-h33-2-b2-snapd2t10-20261023-fbd6ef8e",
+      "slug": "h33-h33-2-b2-snapd2t10-20261023",
+      "value": "snapd2t10",
+      "tau": 0.1,
+      "zeros": {
+        "path": "releases/h33-h33-2-b2-snapd2t10-20261023-fbd6ef8e-zeros.tif",
+        "sha256": "fbd6ef8e6c5acd40782eeda2fb02a8aececb9d42b7bb3c3fddd16273fc0ea87f",
+        "bytes": 151216,
+        "meta": {
+          "bands": 1,
+          "dtype": "float32",
+          "crs": "EPSG:32611",
+          "shape": [
+            3730,
+            3292
+          ],
+          "transform": [
+            100.0,
+            0.0,
+            243350.0,
+            0.0,
+            -100.0,
+            4508550.0
+          ]
+        },
+        "n_positive": 37654,
+        "min_inside": 0.0,
+        "max_inside": 1.0,
+        "reread_ok": true
+      },
+      "nan": {
+        "path": "releases/h33-h33-2-b2-snapd2t10-20261023-f2a101db-nan.tif",
+        "sha256": "f2a101dbb1922558f6e91a64bc7f6077d3079a0d7affdc5cb1d40789d64a59b1",
+        "bytes": 223280,
+        "meta": {
+          "bands": 1,
+          "dtype": "float32",
+          "crs": "EPSG:32611",
+          "shape": [
+            3730,
+            3292
+          ],
+          "transform": [
+            100.0,
+            0.0,
+            243350.0,
+            0.0,
+            -100.0,
+            4508550.0
+          ]
+        },
+        "n_positive": 37654,
+        "min_inside": 0.0,
+        "max_inside": 1.0,
+        "reread_ok": true
+      },
+      "format_report": {
+        "ok": true,
+        "problems": []
+      },
+      "local_validate": {
+        "all_checks_passed": true,
+        "problems": []
+      },
+      "nan_format_ok": false,
+      "nan_local_ok": false,
+      "stats": {
+        "n_dots": 37654,
+        "n_moved": 7218,
+        "pct_moved": 19.169,
+        "pct_dots_moved_incl_forced": 19.169,
+        "n_dots_changed_vs_parent": 7218,
+        "n_moved_because_forced": 1611,
+        "n_needed_wider_seek": 30,
+        "n_duplicate_placement": 0,
+        "n_refilled_beyond_d": 30,
+        "max_refill_px": 10.0,
+        "snap_cap_applies_to_pct": 99.92,
+        "mean_displacement_px": 0.3654,
+        "median_displacement_px": 0.0,
+        "max_displacement_px": 10.0,
+        "n_unique_targets": 37654,
+        "jaccard_vs_parent": 0.678285,
+        "n_voxels_changed": 14436,
+        "mean_edge_rank_before": 0.5306,
+        "mean_edge_rank_after": 0.55589,
+        "block_cv_10km_parent": 0.63526,
+        "block_cv_10km_variant": 0.63555,
+        "mean_dy_dx": [
+          0.0066,
+          -0.02
+        ]
+      },
+      "predicted": {
+        "low": 0.0,
+        "high": 0.012,
+        "text": "moderate number of dots move"
+      }
+    },
+    {
+      "id": "h33-h33-2-b2-snapd2t00-20261023-2df068e1",
+      "slug": "h33-h33-2-b2-snapd2t00-20261023",
+      "value": "snapd2t00",
+      "tau": 0.0,
+      "zeros": {
+        "path": "releases/h33-h33-2-b2-snapd2t00-20261023-2df068e1-zeros.tif",
+        "sha256": "2df068e11c35a9407a94e80052dd48253cf883a154c5f60495203b57f5562278",
+        "bytes": 152238,
+        "meta": {
+          "bands": 1,
+          "dtype": "float32",
+          "crs": "EPSG:32611",
+          "shape": [
+            3730,
+            3292
+          ],
+          "transform": [
+            100.0,
+            0.0,
+            243350.0,
+            0.0,
+            -100.0,
+            4508550.0
+          ]
+        },
+        "n_positive": 37654,
+        "min_inside": 0.0,
+        "max_inside": 1.0,
+        "reread_ok": true
+      },
+      "nan": {
+        "path": "releases/h33-h33-2-b2-snapd2t00-20261023-b62ab84f-nan.tif",
+        "sha256": "b62ab84f2375bc4e24c73228d7a3b60b4ac73928a4552b19216181903363c6a8",
+        "bytes": 224266,
+        "meta": {
+          "bands": 1,
+          "dtype": "float32",
+          "crs": "EPSG:32611",
+          "shape": [
+            3730,
+            3292
+          ],
+          "transform": [
+            100.0,
+            0.0,
+            243350.0,
+            0.0,
+            -100.0,
+            4508550.0
+          ]
+        },
+        "n_positive": 37654,
+        "min_inside": 0.0,
+        "max_inside": 1.0,
+        "reread_ok": true
+      },
+      "format_report": {
+        "ok": true,
+        "problems": []
+      },
+      "local_validate": {
+        "all_checks_passed": true,
+        "problems": []
+      },
+      "nan_format_ok": false,
+      "nan_local_ok": false,
+      "stats": {
+        "n_dots": 37654,
+        "n_moved": 37100,
+        "pct_moved": 98.529,
+        "pct_dots_moved_incl_forced": 98.529,
+        "n_dots_changed_vs_parent": 37100,
+        "n_moved_because_forced": 1611,
+        "n_needed_wider_seek": 34,
+        "n_duplicate_placement": 0,
+        "n_refilled_beyond_d": 34,
+        "max_refill_px": 10.0,
+        "snap_cap_applies_to_pct": 99.91,
+        "mean_displacement_px": 1.7642,
+        "median_displacement_px": 2.0,
+        "max_displacement_px": 10.0,
+        "n_unique_targets": 37654,
+        "jaccard_vs_parent": 0.007411,
+        "n_voxels_changed": 74200,
+        "mean_edge_rank_before": 0.5306,
+        "mean_edge_rank_after": 0.58446,
+        "block_cv_10km_parent": 0.63526,
+        "block_cv_10km_variant": 0.6358,
+        "mean_dy_dx": [
+          -0.014,
+          -0.0859
+        ]
+      },
+      "predicted": {
+        "low": -0.015,
+        "high": 0.015,
+        "text": "every dot moves to the local argmax: replaces the parent's own localisation with a ~0.57-AUC field, sign unknown"
+      }
+    },
+    {
+      "id": "h33-h33-2-b2-prune3-20261023-175fefcf",
+      "slug": "h33-h33-2-b2-prune3-20261023",
+      "value": "prune3",
+      "tau": null,
+      "zeros": {
+        "path": "releases/h33-h33-2-b2-prune3-20261023-175fefcf-zeros.tif",
+        "sha256": "175fefcf0d4b0990c9723948e154356c41bae465c8ad815ed8c2166dc10d6ba5",
+        "bytes": 150352,
+        "meta": {
+          "bands": 1,
+          "dtype": "float32",
+          "crs": "EPSG:32611",
+          "shape": [
+            3730,
+            3292
+          ],
+          "transform": [
+            100.0,
+            0.0,
+            243350.0,
+            0.0,
+            -100.0,
+            4508550.0
+          ]
+        },
+        "n_positive": 37654,
+        "min_inside": 0.0,
+        "max_inside": 1.0,
+        "reread_ok": true
+      },
+      "nan": {
+        "path": "releases/h33-h33-2-b2-prune3-20261023-b2415895-nan.tif",
+        "sha256": "b2415895826363052c8af79966f5452941da1bc3835529172da3f75d7a63179b",
+        "bytes": 222392,
+        "meta": {
+          "bands": 1,
+          "dtype": "float32",
+          "crs": "EPSG:32611",
+          "shape": [
+            3730,
+            3292
+          ],
+          "transform": [
+            100.0,
+            0.0,
+            243350.0,
+            0.0,
+            -100.0,
+            4508550.0
+          ]
+        },
+        "n_positive": 37654,
+        "min_inside": 0.0,
+        "max_inside": 1.0,
+        "reread_ok": true
+      },
+      "format_report": {
+        "ok": true,
+        "problems": []
+      },
+      "local_validate": {
+        "all_checks_passed": true,
+        "problems": []
+      },
+      "nan_format_ok": false,
+      "nan_local_ok": false,
+      "stats": {
+        "n_dots": 37654,
+        "n_moved": 1611,
+        "pct_moved": 4.278,
+        "pct_dots_moved_incl_forced": 4.278,
+        "n_dots_changed_vs_parent": 1611,
+        "n_moved_because_forced": 1611,
+        "n_needed_wider_seek": 30,
+        "n_duplicate_placement": 0,
+        "n_refilled_beyond_d": 30,
+        "max_refill_px": 10.0,
+        "snap_cap_applies_to_pct": 99.92,
+        "mean_displacement_px": 0.0757,
+        "median_displacement_px": 0.0,
+        "max_displacement_px": 10.0,
+        "n_unique_targets": 37654,
+        "jaccard_vs_parent": 0.917942,
+        "n_voxels_changed": 3222,
+        "mean_edge_rank_before": 0.5306,
+        "mean_edge_rank_after": 0.53181,
+        "block_cv_10km_parent": 0.63526,
+        "block_cv_10km_variant": 0.63529,
+        "mean_dy_dx": [
+          -0.0033,
+          -0.0073
+        ]
+      },
+      "predicted": {
+        "low": 0.0,
+        "high": 0.005,
+        "text": "control: 3 px exclusion only, no snapping"
+      }
+    }
+  ],
+  "parent_support_stats": {
+    "n_dots": 37654,
+    "block_cv_10km_parent": 0.63526
+  }
+}
