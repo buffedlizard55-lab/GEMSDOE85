@@ -114,6 +114,9 @@ def test_r0_rebuild_is_pixel_identical_to_pinned_parent(tmp_path):
     assert RL.sha256_file(RL.PATHS["r0_zeros"]) == RL.PINS["r0_zeros"]
     assert RL.sha256_file(RL.PATHS["r0_nan"]) == RL.PINS["r0_nan"]
     reb_nan, reb_zeros = write_pair(L.r0, tmp_path, "rebuilt_r0")
+    # byte-exact under the PINNED writer environment (requirements-lock.txt -> rasterio 1.4.4,
+    # GDAL 3.10.3).  A 1.4.3/GDAL 3.9.3 environment silently produces different, still
+    # pixel-identical bytes -- the pin is load-bearing (IR-V2-31).
     assert RL.sha256_file(reb_nan) == RL.PINS["r0_nan"]
     assert RL.sha256_file(reb_zeros) == RL.PINS["r0_zeros"]
     # R0 carries no mass on the catalogue and stays outside 2 px of it
@@ -147,28 +150,61 @@ def test_shipped_releases_pass_their_own_gates_and_match_the_ledger():
                 ROOT / "evidence" / "session_rung_receipt.json",
                 ROOT / "evidence" / "session_snap_receipt.json",
                 ROOT / "evidence" / "session_relief_receipt.json",
-                ROOT / "evidence" / "session_prune_refill_receipt.json"]
+                ROOT / "evidence" / "session_prune_refill_receipt.json",
+                ROOT / "evidence" / "session_snap_axis_receipt.json",
+                ROOT / "evidence" / "mass_session.json"]
+    conc = ROOT / "evidence" / "axis_concentration_build.json"
     if not ledger.is_file():
         pytest.skip("session outputs not built")
     rows = list(csv.DictReader(ledger.open()))
     assert len(rows) >= 3
     assert all(r["parent"] == "h33-h33-2-b2" for r in rows)
-    assert all(r["axis"] in {"PRUNE", "SNAP", "RELIEF"} for r in rows)
+    assert all(r["axis"] in {"PRUNE", "SNAP", "RELIEF", "CONCENTRATION", "MASS"} for r in rows)
     assert all(r["status"] == "BUILT" and r["receipt"] == "N" for r in rows)
     assert len({r["sha256"] for r in rows}) == len(rows), "duplicate sha256 in the ledger"
     variants = {}
     for path in receipts:
         if path.is_file():
             variants.update(json.loads(path.read_text())["variants"])
+    if conc.is_file():                       # CONCENTRATION ships a list, not a mapping
+        for v in json.loads(conc.read_text())["variants"]:
+            variants[v["id"]] = v
+    import rasterio
     dist_cat = RL.catalogue_distance()
     parent_min = float(dist_cat[RL.rebuild(verify_against_pinned_files=False).r0].min())
     for row in rows:
         axis = row["axis"]
         stem = row["id"].rsplit("-", 2)[0]
-        entry = variants.get(stem) or variants[stem.rsplit("-", 1)[-1]]
+        entry = variants.get(stem) or variants.get(stem.rsplit("-", 1)[-1])
+        if entry is None:
+            entry = next((v for k, v in variants.items() if k in row["id"]), None)
         tif = ROOT / "releases" / f'{row["id"]}.tif'
         assert tif.is_file(), tif
         assert RL.sha256_file(tif) == row["sha256"]
+        if axis == "MASS":
+            # MASS ships `files`/`gates` per variant (no `nan`/`snap` pair); counts move, the
+            # catalogue floor is unchanged from R0 and the diff is declared by the session.
+            assert entry["gates"]["nan"]["ok"] and entry["gates"]["zeros"]["ok"]
+            assert entry["files"]["sha256_nan"] == row["sha256"]
+            assert int(row["n_dots"]) == int(entry["n_dots"])
+            assert entry["gates"]["nan"]["dots_on_catalogue"] == 0
+            assert float(row["pct_changed"]) > 0.0
+            assert row["sha8"] == row["sha256"][:8]
+            assert entry["gates"]["pixels_equal_intended"]
+            with rasterio.open(ROOT / "releases" / f'{row["id"]}-zeros.tif') as z:
+                a = z.read(1)
+            assert np.isfinite(a).all()
+            continue
+        if axis == "CONCENTRATION":
+            # this session ships its own gate report (a list of variant dicts, not `nan`/`snap`)
+            assert entry["gates"]["zero_mass_on_catalogue"]
+            assert entry["gates"]["n_dots_held"]
+            assert entry["sha256_nan"] == row["sha256"]
+            assert int(row["n_dots"]) == entry["n_dots"]
+            with rasterio.open(ROOT / "releases" / f'{row["id"]}-zeros.tif') as z:
+                a = z.read(1)
+            assert np.isfinite(a).all()
+            continue
         assert entry["all_gates_passed"], entry["nan"]["checks"]
         assert entry["nan"]["sha256"] == row["sha256"]
         assert int(row["n_dots"]) == entry["nan"]["positive_pixels"]
@@ -189,7 +225,6 @@ def test_shipped_releases_pass_their_own_gates_and_match_the_ledger():
             assert entry["nan"]["min_distance_to_catalogue_px"] >= parent_min - 1e-9
             assert entry["nan"]["positive_pixels"] == entry["snap"]["pair"]["parent_dots"]
         # the zeros twin must be all-finite and pixel-identical
-        import rasterio
         with rasterio.open(ROOT / "releases" / f'{row["id"]}-zeros.tif') as z:
             a = z.read(1)
         assert np.isfinite(a).all()

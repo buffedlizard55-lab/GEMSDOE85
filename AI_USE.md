@@ -248,3 +248,21 @@ published catalogue with whole components withheld and every arm rebuilt fold-cl
 **Kept in the record:** the first proxy run reported +0.19-equivalent nonsense for the add arm because
 the shipped parents had been pruned against the hidden truth. IR-V2-11 keeps those wrong numbers so a
 later session can recognise the artefact.
+## Session 2026-10-23 (PR #40, branch `arena/fb7ddb5a`) — SNAP reserve axis
+
+**AI wrote:** `src/gems85/snap_axis.py` (offset set, nodata-aware edge field, kernel-credit accounting,
+constrained snapping loop), `scripts/gemsdoe85_snap_axis_session.py`, `scripts/restore_axis_inputs.py`
+(six pinned inputs, 9/9 hash-verified), `tests/test_snap_axis.py` (9 contract tests), the three SNAP rows
+in `ledger/submissions.csv`, the SNAP reserve row in the README CURRENT STATE block, the addendum in
+`SLOT_PLAN.md`, the reserve section of `docs/SUBMIT.md`, and IR-V2-36…40. The mechanism cards, the choice
+of SNAP (the human did not answer the axis question) and the predictions are AI-authored models, not
+measurements of the live metric.
+
+**AI decided without the human:** the axis (IR-V2-37), the 2.0 px anti-pile-up floor, `margin = 0.05`,
+the "never move closer to the catalogue" rule, and the reading that the SGMC-minus-catalogue proxy is the
+least mass-confounded local instrument.
+
+**Only the human can:** read `TOP_PUBLIC` and the remaining slots from the account page; decide whether a
+spare slot is worth spending on a predicted-null SNAP receipt; upload and paste the submission-page
+receipts back into `ledger/submissions.csv`. No file here is endorsed for upload by the AI, and none was
+submitted.

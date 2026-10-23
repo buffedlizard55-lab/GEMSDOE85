@@ -299,3 +299,20 @@ buys nothing that `prune3` did not already test.
 the 2,171 dots inherited from R0 at 200–300 m are kept, because deleting them is `prune3`'s
 experiment (IR-V2-10). The all-finite `-zeros` twin passes `vendor/gems57/gates.py` unchanged; the
 NaN primary passes the spec-level gate in `src/gems85/lineage.py`.
+## Reserve only — SNAP-axis arms (PR #40, built 2026-10-23, gated, predicted ≈ 0.000)
+
+Not slots. They exist to falsify "R0's dots are 1–2 px off" (cards in
+`evidence/session_snap_axis_receipt.json → mechanism_cards`). Upload one only if a slot would otherwise
+expire unused; see `SLOT_PLAN.md` addendum.
+
+| arm | file (fallback `-zeros` twin) | sha256 (nan) | dots / moved | note (≤ 140 chars) |
+|---|---|---|---|---|
+| gravity edge | `releases/h33-2-b2-snapgrav2-20261023-5b98feb8.tif` | `5b98feb843557d0995bce3b2800efb49e3821b2faa50e19148ccf5fee766923e` | 37,654 / 2,603 (6.9 %) | `R0 SNAP 2603 dots (6.9%) <=2px onto gravity-hg edge, count fixed; pred -0.000 MODEL; UNSCORED` |
+| magnetic edge | `releases/h33-2-b2-snapmag2-20261023-e4183b96.tif` | `e4183b962731b497f09dcbd41333b2eec59014835744ce269a9a4e95d0cdafd3` | 37,654 / 9,213 (24.5 %) | `R0 SNAP 9213 dots (24.5%) <=2px onto magnetic-hg edge, count fixed; pred -0.000 MODEL; UNSCORED` |
+| scarp edge | `releases/h33-2-b2-snaptop2-20261023-29de4fa6.tif` | `29de4fa666b9803905f8ae7d05ea79a058b87495ff0fd39a1df31c3e4a915110` | 37,654 / 19,768 (52.5 %) | `R0 SNAP 19768 dots (52.5%) <=2px onto det-elev scarp edge, count fixed; pred +0.000 MODEL; UNSCORED` |
+
+All three: `EPSG:32611` · 3730×3292 · 1 band · `float32` · transform `100,0,243350,0,-100,4508550` ·
+values ⊆ {0,1} inside the footprint · no NaN/Inf inside · NaN outside (primary) or `nodata=None`
+all-finite (twin) · **0 dots on the catalogue** · no dot moved closer to the catalogue · count equals
+the parent · re-read from disk after writing. **Disclosed exception:** the parent's 2,171 flank dots at
+2–3 px are inherited unchanged (min 2.236 px), because re-pruning them is PRUNE rung 3 (IR-V2-39).

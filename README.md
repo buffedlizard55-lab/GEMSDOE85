@@ -1,5 +1,3 @@
-# GEMSDOE85 — Lane H85-HJCD: Hydrothermal-Juxtaposition & Fault-Valve Conduit Discovery
-
 <!-- CURRENT STATE — update this block only for session status. -->
 ## CURRENT STATE (2026-10-23, after PRUNE, PRUNE-rungs, SNAP, verification, RELIEF and the CONCENTRATION sessions `arena/28da814f` / `arena/3dd0b94c` / `arena/c4de5673`)
 
@@ -10,6 +8,7 @@
 | **TOP_PUBLIC** | **UNFILLED** — the human reads it off the leaderboard *with a date*; no other target number is valid |
 | **slots left this week** | **3 free** (human-stated in PRUNE session `arena/85dc0b4a`, 2026-10-23); total unknown — verify on the account page before uploading (3/week rolling ceiling; +1 blind final) |
 | **reserve PRUNE & SNAP** | `PRUNE`: `prune4-…-2880b0e9` (+0.003), `prune5-…-7ebfc408` (−0.003), `r2p25-…-3908de12` (+0.003). `SNAP` (ranked below PRUNE + RELIEF; inside ±0.01 no-evidence band): `snap-free-lidar2-…-ac3fc128` (−0.004), `snap-ridge-lidar2-…-6913d029` (+0.001), `snap-ridge-tmi2-…-de094d8e` (0.000) |
+| **SNAP-axis arms (PR #40, `arena/fb7ddb5a`)** | free-window ≤ 2 px repositioning, count held at 37,654, `d_cat > 2 px` inherited from R0 and never tightened by a move: `snapgrav2-…-5b98feb8` (2,603 moved, 6.9 %, −0.0002 MODEL) · `snapmag2-…-e4183b96` (9,213, 24.5 %, −0.0004) · `snaptop2-…-29de4fa6` (19,768, 52.5 %, +0.0001) — **reserve only**; they exist to falsify "we are 1–2 px off", and the receipt also records that add-mass arms have only 794 free parent-ridge cells (`evidence/session_snap_axis_receipt.json`) |
 | **every prediction** | MODEL (`|Δ| < 0.01` live is no evidence). Hide-and-recover and SGMC are PROXY, never gates |
 | **human must supply** | AXIS/slot confirmation, dated `TOP_PUBLIC`, rolling-week/total slots remaining, score receipts for every upload, deadline/timezone confirmation, redistribution decision (IR-V2-10) |
 | **MASS variants (2026-10-23, session `arena/eb7e09d3`, AXIS = MASS — chosen by the agent; the only axis with no prior ledger row)** | `…-mass-m10e-…-1238b3ab` (−0.008 MODEL: −3,765 dots, smallest bridged structure first) · `…-mass-m10u-…-288aaa03` (−0.014: −3,765 uniformly, seed 20261023) · `…-mass-p10-…-3cdf5014` (**+0.005**: +3,765 dots, largest structure first, all at d ≥ 3.16 px). All inside the ±0.01 no-evidence band. **Mass is hard-capped at +14.3 %** (only 5,383 cells free at d > 2 px). Cards: `evidence/mechanism_cards_mass.json` |

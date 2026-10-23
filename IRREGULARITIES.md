@@ -541,3 +541,49 @@ the instrument must reproduce a known ladder step before any prediction is taken
 `d28 → R0` gives **+0.002143 (5/5)**, matching the PRUNE session's +0.00214 exactly. Any later
 session using this instrument must run the same anchor check first; a proxy that cannot reproduce a
 known step is not evidence, however tight its confidence interval looks.
+## IR-V2-36 (PR #40, `arena/fb7ddb5a`) — the pinned writer environment reproduces the parent byte-for-byte
+Under `requirements-lock.txt` (rasterio **1.4.4** / GDAL **3.10.3**) the R0 re-emit is **byte-identical**
+to both pinned parent files (`baeae321…` nan, `c55bafc4…` zeros); the check now runs every time the
+builder does and records its verdict in `evidence/session_snap_axis_receipt.json → parent_rebuild`
+(`reemit_byte_identical: true`, with the rasterio/GDAL versions). This session first ran on rasterio
+1.4.3 / GDAL 3.9.3, where the same array, profile and creation options produced *different, still
+pixel-identical* bytes, and an earlier draft of this item wrongly concluded that byte identity was
+unattainable. Consequence: **the lock is load-bearing** — the three SNAP TIFFs were re-emitted under
+1.4.4 so the hashes in `ledger/submissions.csv` are reproducible, and no release byte should be produced
+outside the lock.
+
+## IR-V2-37 — an axis was assigned to a *parallel* session after this one asked and got no answer
+This session asked the human which §5 axis to build; the question was skipped. Main now records that the
+human assigned **CONCENTRATION** on 2026-10-23 (session `arena/c4de5673`) and **PRUNE** in session
+`arena/85dc0b4a`. Decision: this session keeps its already-built, gated **SNAP** arms as *reserve* only
+and does **not** claim an axis. The three arms are distinct `(AXIS, value)` pairs from the SNAP arms
+already on main (`snap-ridge-lidar2`, `snap-ridge-tmi2`, `snap-free-lidar2`): different target fields
+(gravity / magnetic / detrended-elevation instead of LiDAR scarp / TMI), a `min_sep = 2.0 px`
+anti-pile-up floor, and a hard "never move closer to the catalogue" rule. No slot is spent by building a
+file, and the human may ignore them.
+
+## IR-V2-38 — `scripts/restore_data.py` cannot restore 19 of its own manifest entries
+`restore()` rejects any `dest` containing `/` unless the entry carries `_subdirs`, which is set only for
+the geothermal and learning manifests; every `external/…` and `scored/…` entry of
+`registry/data_manifest.json` therefore fails with `dest must be a single local filename`. Decision: do
+**not** edit the shared restorer mid-session; `scripts/restore_axis_inputs.py` restores exactly the six
+files this session reads, each cross-checked against `data_manifest.json` / `scored_artifacts.json` /
+`r0_lineage.PINS` and verified by SHA-256 (9/9, `evidence/axis_inputs_receipt.json`). The shared bug is
+left for its owner with this note.
+
+## IR-V2-39 — SNAP cannot satisfy the `>= 3 px` catalogue rule without becoming two axes
+R0 carries 2,171 dots at 2 < d_cat ≤ 3 px (min 2.236 px; IR-V2-03). SNAP keeps the parent's `> 2 px`
+exclusion, forbids any move that ends closer to the catalogue, and does not re-prune the inherited flank
+dots, because that re-prune *is* PRUNE rung 3. Consequence: the three SNAP files fail hard constraint §4
+numerically (2.236 px) in exactly the way R0 does, and are disclosed as such in `docs/SUBMIT.md` and in
+the receipt (which records `parent_dots_within_3px = 2171`). Only the PRUNE and RELIEF files meet the
+rule. If strict compliance is required for every upload, the SNAP arms cannot be spent.
+
+## IR-V2-40 — a capacity measurement on the *on-skeleton* pool does not bound the RELIEF/CONCENTRATION arms
+Measured here: after a 2.8 px exclusion around R0, only **794** free parent-ridge cells remain (283 in
+the high-relief tercile) against the ≥ 3,766 dots a 10 % count-holding move needs. The RELIEF session
+(PR #34) and the CONCENTRATION session (`arena/c4de5673`) nevertheless moved 3,765–7,531 dots, because
+they place destinations **off** the parent skeleton (with their own `> 3 px` catalogue rule and reported
+block-density CV). Both statements are true; they answer different questions. Consequence for the
+reader: the 794-cell number bounds *add-mass from the parent's own ridge*, not mass relocation in
+general, and must not be quoted as a bound on those arms.
