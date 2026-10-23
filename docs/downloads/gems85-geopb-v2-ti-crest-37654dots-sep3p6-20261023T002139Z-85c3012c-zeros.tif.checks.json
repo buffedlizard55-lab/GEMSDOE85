@@ -1,7 +1,7 @@
 {
-  "path": "/home/user/GEMSDOE85/docs/downloads/gems85-geopb-crest-37654dots-sep4-20261022T222707Z-60029d07-zeros.tif",
-  "sha256": "a211e7c6e2cdb6665537b19d4902824d12bd1951185f6c66c1df86a843a5281e",
-  "bytes": 301369,
+  "path": "/home/user/GEMSDOE85/docs/downloads/gems85-geopb-v2-ti-crest-37654dots-sep3p6-20261023T002139Z-85c3012c-zeros.tif",
+  "sha256": "4863a84da34b255c56aca9e73ef0df34082f5f9a28db7852cda9fe630e66141c",
+  "bytes": 275304,
   "mode": "zeros",
   "passed": true,
   "checks": {

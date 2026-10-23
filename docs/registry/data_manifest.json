@@ -260,6 +260,61 @@
       "sha256": "33003374335d84bf885f2d8f5e9dd4c57044c8ec58fa6a0d7fa581e8bc41c11d",
       "bytes": 1635084,
       "provenance": "owner-supplied scored-artifact mirror (GEMSDOE27 primary candidate manifest, generated_utc 2026-10-03T00:32:37Z); UNSCORED on the leaderboard; added 2026-10-04 because scripts/run_pipeline.py required it and it was absent from this manifest, which made the documented reproduce command abort (IR-32-MANIFEST-01)"
+    },
+    {
+      "id": "scored_gems32_h33_2_b2",
+      "repo": "buffedlizard55-lab/GEMSDOE32",
+      "ref": "780a5a534269c79adfe6d1d7d5aadead161332aa",
+      "path": "docs/downloads/gemsdoe32-h33-h33-2-b2-20261004T220000Z-e5eb6e7e-zeros.tif",
+      "dest": "scored/gemsdoe32-h33-h33-2-b2-20261004T220000Z-e5eb6e7e-zeros.tif",
+      "group": "scored",
+      "sha256": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
+      "bytes": 219065,
+      "provenance": "owner-supplied scored-artifact mirror (GEMSDOE32 h33-2-b2, owner-reported 0.2778); added so build_registry.py and duplicate_check work on a clean checkout without /home/user/ref"
+    },
+    {
+      "id": "scored_gems31_h27_4_solo_d28",
+      "repo": "buffedlizard55-lab/GEMSDOE31",
+      "ref": "cf13282fcd86290f1539f0a86446c8ba7205a79b",
+      "path": "docs/downloads/gemsdoe31-h27-4-solo-d28-20261004-8acb75e1-nan.tif",
+      "dest": "scored/gemsdoe31-h27-4-solo-d28-20261004-8acb75e1-nan.tif",
+      "group": "scored",
+      "sha256": "07b6db440535404bb41ec8ddc797713e200d308e3da35937393efde5eb84bc40",
+      "bytes": 199214,
+      "provenance": "owner-supplied scored-artifact mirror (GEMSDOE31 h27-4-solo-d28, owner-reported 0.2708)"
+    },
+    {
+      "id": "scored_gems30_d28_poisson300m",
+      "repo": "buffedlizard55-lab/GEMSDOE30",
+      "ref": "3d5bec2af5f29291617f97c9e2dfe443be6f55c3",
+      "path": "docs/downloads/gemsdoe30-d28-poisson300m-offcat-44090-20261003T233156Z-91eae1ca.tif",
+      "dest": "scored/gemsdoe30-d28-poisson300m-offcat-44090-20261003T233156Z-91eae1ca.tif",
+      "group": "scored",
+      "sha256": "8cf893ead5667df21d3288a9968c35fd5385c425b029d82ee71d311715b129fd",
+      "bytes": 806758,
+      "provenance": "owner-supplied scored-artifact mirror (GEMSDOE30 d28-poisson300m-offcat-44090, owner-reported 0.2600)"
+    },
+    {
+      "id": "scored_gems49_gate_ortho",
+      "repo": "buffedlizard55-lab/GEMSDOE49",
+      "ref": "8ab48f22d02d8be3b8e01d843ed7dc7967b87c44",
+      "path": "docs/downloads/gems49-gate_ortho_w0.25-40k-20261006T213721Z-zeros.tif",
+      "dest": "scored/gems49-gate_ortho_w0.25-40k-20261006T213721Z-zeros.tif",
+      "group": "scored",
+      "sha256": "3722e26fbf9129874be1fb8c687825803952c57ef1154ed0a21029596bc412f1",
+      "bytes": 230827,
+      "provenance": "owner-supplied scored-artifact mirror (GEMSDOE49 gate_ortho w0.25 40k, owner-reported 0.2376)"
+    },
+    {
+      "id": "scored_gems63_cvarlw_thin",
+      "repo": "buffedlizard55-lab/GEMSDOE63",
+      "ref": "4195d91809a0c33871fe7013c90dde74d6571294",
+      "path": "docs/downloads/gemsdoe63-cvarlw-thin-s3p17-54864-20261011T220606Z-c58f60c4-zeros.tif",
+      "dest": "scored/gemsdoe63-cvarlw-thin-s3p17-54864-20261011T220606Z-c58f60c4-zeros.tif",
+      "group": "scored",
+      "sha256": "46a0f0fa2f63e6e6b4a5fe4520e999b925cf3ff954a01b10b36b735c1b0649c8",
+      "bytes": 330275,
+      "provenance": "owner-supplied scored-artifact mirror (GEMSDOE63 cvarlw-thin s3.17 54,864, owner-reported 0.2303)"
     }
   ]
 }

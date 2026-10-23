@@ -33,9 +33,10 @@
         "Re-check original request and explicitly mark unique new TIFF, valid holdout comparison and organizer scoring as unmet",
         "Retain the standing prompt and score ledger as unverified owner context in README",
         "Run final full suite, site/evidence checks, syntax compilation, whitespace checks and byte-identical rebuild test",
-        "Reconcile concurrently merged main changes, preserve their research/cards/tests, and rerun all checks"
+        "Reconcile concurrently merged main changes, preserve their research/cards/tests, and rerun all checks",
+        "Preserve Session-6 scientific bytes/receipts as historical evidence without its unauthorized overlap exemption; retain safety tests and atomic restoration API"
       ],
-      "verification": "Combined post-reconciliation suite: 111 tests passed; 32 historical TIFFs diagnosed, 16 conservative format PASS, zero cleared. Byte-identical rebuilds and a clean indexed checkout checked. Upstream release-regression tests retained."
+      "verification": "Combined post-reconciliation suite: 114 tests passed; 38 historical TIFFs diagnosed, 19 conservative format PASS, zero cleared. Byte-identical rebuilds and clean indexed checkouts checked. Upstream safety tests and Session-6 geometry contracts retained."
     }
   ],
   "experiments_run": 0,

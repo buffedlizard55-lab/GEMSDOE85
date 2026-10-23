@@ -1,8 +1,8 @@
 {
-  "path": "/home/user/GEMSDOE85/docs/downloads/gems85-geopb-crest-60000dots-sep4-20261022T222707Z-cbb4e82c-zeros.tif",
-  "sha256": "2bdae85a89b2ce6f953fcbcda06a49c036776e0939a3bc1a62a0b1305d28aecc",
-  "bytes": 363090,
-  "mode": "zeros",
+  "path": "/home/user/GEMSDOE85/docs/downloads/gems85-geopb-v2-ti-crest-72000dots-sep3p6-20261023T002139Z-7c15023c-nan.tif",
+  "sha256": "ab86e163a4c24ea1d63eec7b5801d665956045fe4e10943942aff337024763c6",
+  "bytes": 393126,
+  "mode": "nan",
   "passed": true,
   "checks": {
     "file_exists": true,
@@ -15,17 +15,14 @@
     "no_nan_inside_footprint": true,
     "no_inf_inside_footprint": true,
     "values_in_0_1_inside_footprint": true,
-    "all_finite_whole_raster": true,
-    "values_in_0_1_whole_raster": true,
-    "outside_footprint_is_zero": true,
-    "no_nodata_tag": true,
+    "outside_footprint_is_nan": true,
     "has_positive_predictions": true,
     "no_prediction_outside_footprint": true,
     "zero_mass_within_2px_of_catalogue": true
   },
   "stats": {
-    "emitting_pixels": 60000,
-    "prediction_mass": 60000.0,
+    "emitting_pixels": 72000,
+    "prediction_mass": 72000.0,
     "min_inside": 0.0,
     "max_inside": 1.0,
     "unique_values_inside": 2,

@@ -1,0 +1,168 @@
+{
+  "n_registry_rasters": 17,
+  "max_abs_spearman": 0.16361956400910876,
+  "max_dot_overlap_3px": 0.9970833333333333,
+  "max_overlap_lift_over_chance": 1.9968792778859645,
+  "thresholds": {
+    "spearman": 0.9,
+    "dot_overlap_3px": 0.7,
+    "overlap_lift_over_chance": 1.5
+  },
+  "irregularity": "IR-85-002 -- raw 70% overlap rule is unconditionally true against a space-filling registry raster; chance-corrected lift added.",
+  "is_duplicate": false,
+  "comparisons": [
+    {
+      "file": "gemsdoe32-h33-h33-2-b2-20261004T220000Z-e5eb6e7e-zeros.tif",
+      "owner_reported_live_dti": 0.2778,
+      "spearman_surface": 0.07101875839787354,
+      "dot_overlap_3px": 0.3012361111111111,
+      "chance_coverage_3px": 0.15085344139081888,
+      "overlap_lift_over_chance": 1.9968792778859645,
+      "duplicate": false
+    },
+    {
+      "file": "gemsdoe31-h27-4-solo-d28-20261004-8acb75e1-nan.tif",
+      "owner_reported_live_dti": 0.2708,
+      "spearman_surface": 0.0752314949302044,
+      "dot_overlap_3px": 0.30525,
+      "chance_coverage_3px": 0.1600641176861047,
+      "overlap_lift_over_chance": 1.9070482779820366,
+      "duplicate": false
+    },
+    {
+      "file": "gemsdoe30-d28-poisson300m-offcat-44090-20261003T233156Z-91eae1ca.tif",
+      "owner_reported_live_dti": 0.26,
+      "spearman_surface": 0.08117492840447156,
+      "dot_overlap_3px": 0.30775,
+      "chance_coverage_3px": 0.17191094972242182,
+      "overlap_lift_over_chance": 1.7901710187565856,
+      "duplicate": false
+    },
+    {
+      "file": "gems24-h25-1-dotted-h19-5-d2-8-20261002-e56ea318af89-nan.tif",
+      "owner_reported_live_dti": 0.26,
+      "spearman_surface": 0.08117492840447156,
+      "dot_overlap_3px": 0.30775,
+      "chance_coverage_3px": 0.17191094972242182,
+      "overlap_lift_over_chance": 1.7901710187565856,
+      "duplicate": false
+    },
+    {
+      "file": "gems24-h25-1-dotted-h19-5-d1-5-20261002-989f59505db1-nan.tif",
+      "owner_reported_live_dti": 0.2477,
+      "spearman_surface": 0.09771948753200636,
+      "dot_overlap_3px": 0.32081944444444443,
+      "chance_coverage_3px": 0.18079283225731915,
+      "overlap_lift_over_chance": 1.7745141797868842,
+      "duplicate": false
+    },
+    {
+      "file": "gems19-h19-5-powerlaw-budget-multiline-corroborated-20260930-e27054cf-nan.tif",
+      "owner_reported_live_dti": 0.1922,
+      "spearman_surface": 0.1417578347038513,
+      "dot_overlap_3px": 0.3405138888888889,
+      "chance_coverage_3px": 0.19609480484571173,
+      "overlap_lift_over_chance": 1.736475829417341,
+      "duplicate": false
+    },
+    {
+      "file": "gems19-h19-4-multiline-corroborated-openness-thermal-pop-20260930-691e4dfa-nan.tif",
+      "owner_reported_live_dti": 0.1894,
+      "spearman_surface": 0.14143094078759963,
+      "dot_overlap_3px": 0.3505138888888889,
+      "chance_coverage_3px": 0.20359048979046027,
+      "overlap_lift_over_chance": 1.7216614059411388,
+      "duplicate": false
+    },
+    {
+      "file": "gems16-h16-1-topo-geophys-baseline-ridges-20260930-df20f65e-nan.tif",
+      "owner_reported_live_dti": 0.1855,
+      "spearman_surface": 0.1434276368988873,
+      "dot_overlap_3px": 0.36119444444444443,
+      "chance_coverage_3px": 0.2086464437539152,
+      "overlap_lift_over_chance": 1.731131563739709,
+      "duplicate": false
+    },
+    {
+      "file": "gems27-topo-gap-closure-t-v2-on-d1-5-20261002-5512495c6bd1-nan.tif",
+      "owner_reported_live_dti": 0.2449,
+      "spearman_surface": 0.09741105432641196,
+      "dot_overlap_3px": 0.325875,
+      "chance_coverage_3px": 0.1852153889413441,
+      "overlap_lift_over_chance": 1.7594380351580907,
+      "duplicate": false
+    },
+    {
+      "file": "gems49-gate_ortho_w0.25-40k-20261006T213721Z-zeros.tif",
+      "owner_reported_live_dti": 0.2376,
+      "spearman_surface": 0.03647106399585435,
+      "dot_overlap_3px": 0.22540277777777779,
+      "chance_coverage_3px": 0.1532471141525878,
+      "overlap_lift_over_chance": 1.47084517071783,
+      "duplicate": false
+    },
+    {
+      "file": "gemsdoe63-cvarlw-thin-s3p17-54864-20261011T220606Z-c58f60c4-zeros.tif",
+      "owner_reported_live_dti": 0.2303,
+      "spearman_surface": 0.0686789114166448,
+      "dot_overlap_3px": 0.45852777777777776,
+      "chance_coverage_3px": 0.2506685698903485,
+      "overlap_lift_over_chance": 1.8292192674109655,
+      "duplicate": false
+    },
+    {
+      "file": "gems10-h28-dotted-ridge-20260928T020256236880Z-6452ae1d00.tif",
+      "owner_reported_live_dti": 0.1839,
+      "spearman_surface": 0.08211645080758229,
+      "dot_overlap_3px": 0.39776388888888886,
+      "chance_coverage_3px": 0.27203532626733157,
+      "overlap_lift_over_chance": 1.4621773368433875,
+      "duplicate": false
+    },
+    {
+      "file": "8GEMSDOE_Hedge-v2_submission.tif",
+      "owner_reported_live_dti": 0.1563,
+      "spearman_surface": 0.16361956400910876,
+      "dot_overlap_3px": 0.4118611111111111,
+      "chance_coverage_3px": 0.2835643952933144,
+      "overlap_lift_over_chance": 1.4524429651511386,
+      "duplicate": false
+    },
+    {
+      "file": "gemsdoe-ens12-adopted-7f00890a.tif",
+      "owner_reported_live_dti": 0.1563,
+      "spearman_surface": 0.1366163246562779,
+      "dot_overlap_3px": 0.40381944444444445,
+      "chance_coverage_3px": 0.2429211129136604,
+      "overlap_lift_over_chance": 1.662348075064068,
+      "duplicate": false
+    },
+    {
+      "file": "gems10-h25-ctx-ridge-20260927T232947704150Z-6452ae1d00.tif",
+      "owner_reported_live_dti": 0.128,
+      "spearman_surface": 0.14509916726555067,
+      "dot_overlap_3px": 0.371875,
+      "chance_coverage_3px": 0.263110481863802,
+      "overlap_lift_over_chance": 1.4133796470811053,
+      "duplicate": false
+    },
+    {
+      "file": "13gems_20261001_r13-lattice-s5_v2_nan-outside.tif",
+      "owner_reported_live_dti": 0.0904,
+      "spearman_surface": -0.0020154478142121878,
+      "dot_overlap_3px": 0.9970833333333333,
+      "chance_coverage_3px": 0.9987132726822701,
+      "overlap_lift_over_chance": 0.9983679606614627,
+      "duplicate": false
+    },
+    {
+      "file": "gemsdoe9-PLACEHOLDER-2314b599.tif",
+      "owner_reported_live_dti": 0.0107,
+      "spearman_surface": 0.015749921531209334,
+      "dot_overlap_3px": 0.06591666666666667,
+      "chance_coverage_3px": 0.06288998297587575,
+      "overlap_lift_over_chance": 1.0481266419161208,
+      "duplicate": false
+    }
+  ]
+}
