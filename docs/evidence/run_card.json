@@ -33,6 +33,9 @@
       "evidence_class": "REGISTRY-MEASUREMENT",
       "source_file": "evidence/saturation_certificate.json",
       "witness_file": "data/raw/learning/registry-saturation-witness.tif",
+      "manifest_restore_path": "data/learning/registry-saturation-witness.tif",
+      "witness_path_matches_manifest": false,
+      "witness_path_mismatch": true,
       "witness_sha256": "ab0a0a62eecf066a82713b09dd49f0f638a91fa3dd81f54cc34ae89afa3872be",
       "positive_pixels": 5167373,
       "allowed_pixels": 5106385,
@@ -41,7 +44,7 @@
       "overlap_limit": 0.7,
       "support_definition": "finite prediction > 0 (inherited literal support rule)",
       "universal_overlap_blocker": true,
-      "status": "recorded certificate; witness not locally revalidated",
+      "status": "recorded certificate; witness path differs from learning-manifest restore destination",
       "local_revalidation": false
     }
   },
@@ -117,6 +120,7 @@
     "No explicit single-method paragraph is assigned; research proposals are not lane assignments.",
     "Core inputs are unavailable or fail pinned size/hash checks: training_features.",
     "The pinned transformed feature-stack cache is unavailable; raw competition rasters are not a substitute.",
+    "The saturation certificate witness path differs from the pinned learning-manifest restore path; preserve the certificate and resolve provenance before attempting revalidation.",
     "The binding literal registry-saturation certificate blocks every nonempty candidate in the allowed domain; the 70% overlap rule is not waived.",
     "Pre-placement surface correlation and final-dot overlap were not run because no candidate was authorized or generated.",
     "No comparable same-evaluator current-best holdout receipt is available for a paired promotion test.",

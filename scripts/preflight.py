@@ -90,10 +90,21 @@ def _recorded_saturation(root: Path, template_intact: bool) -> dict:
         return {"status": "missing certificate", "universal_overlap_blocker": None,
                 "evidence_class": "REGISTRY-MEASUREMENT"}
 
+    witness_name = cert.get("witness_file")
+    manifest = _read_json(root / "registry/learning_manifest.json", {}) or {}
+    witness_id = Path(str(witness_name)).name if witness_name else None
+    manifest_entry = next((entry for entry in manifest.get("files", [])
+                           if entry.get("id") == witness_id), None)
+    manifest_path = (root / "data/learning" / str(manifest_entry.get("dest"))) if manifest_entry else None
+    manifest_relative = manifest_path.relative_to(root).as_posix() if manifest_path else None
+    witness_path_matches_manifest = bool(witness_name and manifest_relative == Path(witness_name).as_posix())
     result = {
         "evidence_class": cert.get("evidence_class", "REGISTRY-MEASUREMENT"),
         "source_file": str(path.relative_to(root)),
-        "witness_file": cert.get("witness_file"),
+        "witness_file": witness_name,
+        "manifest_restore_path": manifest_relative,
+        "witness_path_matches_manifest": witness_path_matches_manifest,
+        "witness_path_mismatch": bool(witness_name and manifest_entry and not witness_path_matches_manifest),
         "witness_sha256": cert.get("witness_sha256"),
         "positive_pixels": cert.get("positive_pixels"),
         "allowed_pixels": cert.get("allowed_pixels"),
@@ -106,12 +117,10 @@ def _recorded_saturation(root: Path, template_intact: bool) -> dict:
         "local_revalidation": False,
     }
 
-    witness_name = cert.get("witness_file")
     witness = root / witness_name if witness_name else None
-    if witness and witness.is_file() and template_intact:
-        manifest = _read_json(root / "registry/learning_manifest.json", {}) or {}
-        manifest_entry = next((e for e in manifest.get("files", [])
-                               if e.get("id") == witness.name), None)
+    if result["witness_path_mismatch"]:
+        result["status"] = "recorded certificate; witness path differs from learning-manifest restore destination"
+    elif witness and witness.is_file() and template_intact:
         if manifest_entry and sha256_file(witness) == manifest_entry.get("sha256") == cert.get("witness_sha256"):
             try:
                 from gems57.grid import load_grid
@@ -160,6 +169,8 @@ def review(root: Path = ROOT) -> dict:
 
     saturation = _recorded_saturation(root, template_intact)
     saturation_blocked = saturation.get("universal_overlap_blocker") is True
+    if saturation.get("witness_path_mismatch"):
+        blockers.append("The saturation certificate witness path differs from the pinned learning-manifest restore path; preserve the certificate and resolve provenance before attempting revalidation.")
     if saturation_blocked:
         blockers.append("The binding literal registry-saturation certificate blocks every nonempty candidate in the allowed domain; the 70% overlap rule is not waived.")
     elif saturation.get("universal_overlap_blocker") is None:

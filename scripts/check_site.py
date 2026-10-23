@@ -134,6 +134,9 @@ def check(root: Path = ROOT) -> list[str]:
             errors.append("Current preflight must not claim a competition slot was used")
         if card.get("holdout_dti", {}).get("value") is not None or card.get("holdout_dti", {}).get("ci95") is not None:
             errors.append("Current blocked run card must not publish a candidate HOLDOUT-DTI value or CI")
+        saturation = card.get("correlation_overlap_vs_registry", {}).get("saturation_certificate", {})
+        if saturation.get("witness_path_mismatch") is not True or saturation.get("local_revalidation") is not False:
+            errors.append("Current preflight must disclose the saturation-witness path mismatch and lack of local revalidation")
         note = str(card.get("submission_note", ""))
         if len(note) > 140:
             errors.append(f"Blocked run-card note exceeds 140 characters: {len(note)}")

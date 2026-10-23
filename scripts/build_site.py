@@ -228,6 +228,14 @@ def _review(card: dict) -> str:
         sat_text = (f"{100 * float(sat_value):.1f}% ({sat.get('uncovered_allowed_pixels')} uncovered of "
                     f"{sat.get('allowed_pixels')} allowed cells)")
     sat_status = html.escape(str(sat.get("status", "certificate unavailable")))
+    if sat.get("witness_path_mismatch"):
+        witness_notice = (
+            " Recorded witness path " + html.escape(str(sat.get("witness_file"))) +
+            " differs from learning-manifest restore path " + html.escape(str(sat.get("manifest_restore_path"))) +
+            "; the witness was not locally revalidated."
+        )
+    else:
+        witness_notice = ""
     holdout = card.get("holdout_dti", {})
     body = f'''
 <h1>Repository review and decision record — 2026-10-23</h1>
@@ -238,7 +246,7 @@ def _review(card: dict) -> str:
 <tr><td>Lane</td><td><code>registry/lane.json</code> is <strong>unassigned</strong>; the referenced method paragraph was not supplied. No lane is inferred from prior research.</td></tr>
 <tr><td>Core inputs</td><td>Owner-mirror manifest results are shown below. Raw mirror consistency, where established historically, is not organizer authentication.</td></tr>
 <tr><td>Transformed cache</td><td><strong>Unavailable.</strong> The pinned cache manifest is empty; raw <code>training_features.tif</code> is not present in this checkout and is not an acceptable substitute. No private cache was rebuilt.</td></tr>
-<tr><td>Literal uniqueness</td><td><strong>{html.escape(sat_text)}.</strong> The binding certificate labels this REGISTRY-MEASUREMENT; witness status: {sat_status}. Under the recorded positive-support rule and the allowed domain, the certificate says the literal &gt;70% stop blocks every nonempty candidate. Correlation/overlap were not measured for a new candidate.</td></tr>
+<tr><td>Literal uniqueness</td><td><strong>{html.escape(sat_text)}.</strong> The binding certificate labels this REGISTRY-MEASUREMENT; witness status: {sat_status}.{witness_notice} Under the recorded positive-support rule and the allowed domain, the certificate says the literal &gt;70% stop blocks every nonempty candidate. Correlation/overlap were not measured for a new candidate.</td></tr>
 <tr><td>Holdout</td><td><strong>HOLDOUT-DTI: NOT RUN.</strong> Evaluator identity: <code>{html.escape(str(holdout.get('evaluator_version')))}</code>; withheld positive count and 95% CI: unavailable for a current candidate.</td></tr>
 <tr><td>Format</td><td><strong>NOT RUN.</strong> No candidate bytes exist; no SHA-256, validation receipt, or submission name is assigned.</td></tr>
 <tr><td>Weekly selector</td><td>No slot selected or used. Account-specific cap/remaining quota was not accessed; a separate selector must handle it after all research gates pass.</td></tr>

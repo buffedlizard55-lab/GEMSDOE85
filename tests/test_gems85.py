@@ -87,6 +87,11 @@ def test_current_run_card_and_registry_are_negative():
     assert card["holdout_dti"]["n_withheld_positives"] is None
     assert card["correlation_overlap_vs_registry"]["max_abs_spearman_surface"] is None
     assert card["correlation_overlap_vs_registry"]["max_dot_overlap_within_3px"] is None
+    saturation = card["correlation_overlap_vs_registry"]["saturation_certificate"]
+    assert saturation["witness_file"] == "data/raw/learning/registry-saturation-witness.tif"
+    assert saturation["manifest_restore_path"] == "data/learning/registry-saturation-witness.tif"
+    assert saturation["witness_path_mismatch"] is True
+    assert saturation["local_revalidation"] is False
     assert card["validator_output"]["status"].startswith("NOT RUN")
     assert card["budget"]["experiments_run"] == 0
     assert card["budget"]["experiment_limit"] == 3

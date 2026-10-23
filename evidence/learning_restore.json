@@ -3,15 +3,22 @@
   "files": [
     {
       "id": "h33-b2.tif",
-      "status": "restored",
+      "path": "data/learning/h33-b2.tif",
       "sha256": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
-      "bytes": 219065
+      "bytes": 219065,
+      "status": "not present locally during final review; historical restore report only"
     },
     {
       "id": "registry-saturation-witness.tif",
-      "status": "restored",
+      "path": "data/learning/registry-saturation-witness.tif",
       "sha256": "ab0a0a62eecf066a82713b09dd49f0f638a91fa3dd81f54cc34ae89afa3872be",
-      "bytes": 25065181
+      "bytes": 25065181,
+      "status": "not present locally during final review; historical restore report only"
     }
-  ]
+  ],
+  "evidence_class": "HISTORICAL-RESTORE-REPORT; current local absence preserved",
+  "certificate_witness_path": "data/raw/learning/registry-saturation-witness.tif",
+  "learning_manifest_restore_path": "data/learning/registry-saturation-witness.tif",
+  "witness_path_mismatch": true,
+  "local_witness_reverified": false
 }

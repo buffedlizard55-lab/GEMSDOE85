@@ -140,6 +140,13 @@
       "status": "fixed-on-branch",
       "finding": "The blocked Pages tree still contained direct raster/archive URLs embedded in machine-readable JSON, including the saturation certificate source and a public inventory copy, which were not covered by the original HTML-link checker.",
       "action_taken": "Changed the saturation-source pointer to its repository directory, removed the public inventory copy from docs while retaining the canonical registry file, and expanded scripts/check_site.py to reject direct raster/archive URLs in public HTML, JSON, Markdown, and text. Added a regression test; the rebuilt Pages tree has no TIFF/ZIP files or matching direct URLs."
+    },
+    {
+      "id": "IR-85-022",
+      "severity": "high",
+      "status": "open",
+      "finding": "The saturation certificate names data/raw/learning/registry-saturation-witness.tif, while registry/learning_manifest.json and scripts/restore_learning.py restore the same educational witness to data/learning/registry-saturation-witness.tif. The witness is absent locally, so the certificate cannot be re-opened at either path.",
+      "action_taken": "Preserved the binding certificate unchanged, recorded the path mismatch and local-revalidation=false in the current run card, and added a site/test guard. Resolve the provenance and location mismatch before any future revalidation; do not infer clearance from missing witness bytes."
     }
   ]
 }

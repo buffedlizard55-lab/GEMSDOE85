@@ -10,7 +10,7 @@
       "verification": [
         "Confirmed registry/lane.json is unassigned; no lane or method paragraph was inferred.",
         "Confirmed the transformed cache manifest is unavailable/empty and the local training_features.tif is absent; labels.tif, existing_faults.tif, and sample_submission.tif match their owner-mirror manifest sizes and hashes.",
-        "Preserved the saturation certificate as REGISTRY-MEASUREMENT (not DTI): 5,106,385 allowed cells, zero uncovered, covered fraction 1.0, universal_overlap_blocker=true; witness is not locally available for revalidation.",
+        "Preserved the saturation certificate as REGISTRY-MEASUREMENT (not DTI): 5,106,385 allowed cells, zero uncovered, covered fraction 1.0, universal_overlap_blocker=true. The certificate path (data/raw/learning/...) differs from the learning-manifest restore destination (data/learning/...); the witness is absent and not locally revalidated, and the certificate remains unchanged/binding.",
         "Kept H33 0.2778 OWNER-REPORTED / NOT RECEIPT-VERIFIED; historical artifact audit measurements are marked as prior-session evidence and not freshly re-read.",
         "Inventoried the former 42-file docs/downloads tree: 25 TIFF/ZIP artifacts and supporting files. Retained byte-identical quarantine copies and moved unique historical files/sidecars into quarantine with SHA-256 mapping."
       ],
@@ -25,7 +25,7 @@
         "Retired stale session export/run-card writers and made legacy experiment CLI entrypoints consult the preflight gate before running; direct attempts to start the session and duplex experiment runners returned exit 2 without running an experiment.",
         "Preserved vendor/gems57 unchanged; pinned shared-file verification passed.",
         "Python syntax compilation passed for scripts/*.py and scripts/duplex_lane/*.py.",
-        "Full offline pytest suite: 84 passed, 0 failed. Tests include shared metric/holdout/writer contracts, blocked-site safety, and all 42 quarantine manifest hashes; they are not geological performance evidence."
+        "Full offline pytest suite: 91 passed, 0 failed. Tests include shared metric/holdout/writer contracts, malformed/forged evidence and escaped HTML checks, blocked-site safety, the saturation-witness path mismatch, and all 42 quarantine manifest hashes; they are not geological performance evidence."
       ],
       "outcome": "The release and experiment entrypoints fail closed; the site checker and regression suite pass."
     },
