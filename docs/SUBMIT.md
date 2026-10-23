@@ -252,6 +252,14 @@ spatial-cluster bootstrap (157 clusters, 1,000 draws, seed 520810): R0 `0.00401`
 [0.00311, 0.00431] → conc20 `0.00350` [0.00297, 0.00414]. This instrument correlates
 −0.87…+0.54 with live scores in the family record and is **never** called a score.
 
+
+## Count-held PRUNE control — only after a `prune3` receipt (session `arena/85dc0b4a`; AXIS=PRUNE human-assigned there)
+
+- **File:** `releases/h33-2-b2-prune3fill20-20261023-12a3b132.tif` (fallback `…-12a3b132-zeros.tif`, identical pixels)
+- **sha256:** `12a3b132083c6fe3f625b8b67de4ef4538bb481aa654faefaa3f039bcae1975f` · 37,654 dots (count held; −2,171 flank +2,171 refill @2.0 px floor)
+- **Note (113/140):** `R0 h33-2-b2 PRUNE rung3+refill@2px: drop 2171 flank, refill 2171 support, 37654 kept; pred +0.002 MODEL; UNSCORED`
+- **Format receipt:** `evidence/session_prune_refill_receipt.json → variants["h33-2-b2-prune3fill20"]` — same grid/CRS/encoding as the ladder, 0 positive px on the catalogue, min distance to catalogue 3.16 px, all gates PASS; builder `scripts/build_prune_variants.py`. Spend only to disambiguate a `prune3` receipt (mass vs position); it does not displace the CONCENTRATION next-3 above unless the human reorders (IR-V2-29).
+
 ## After the human submits
 
 1. Copy the receipt score and the date into `ledger/submissions.csv`

@@ -221,3 +221,7 @@ touched; it did **not** modify `vendor/gems57` (no private evaluator or writer f
 - Human decides slot order (`prune3` → `reliefp2r10` → conditional Slot 3, vs pure-`PRUNE`), supplies
   dated `TOP_PUBLIC` and remaining slot counts, uploads from their single registered account, records
   live `receipt_score` + `date`, and reviews competition redistribution/AI-disclosure rules.
+
+## 2026-10-23 — arena/85dc0b4a-gemsdoe85 (AXIS=PRUNE applied; union-merged with ladder/SNAP/RELIEF/CONCENTRATION sessions)
+- Human assigned AXIS=PRUNE in this session, stated 3 slots free this week and no prior R0-variant submission; a parallel session assigned CONCENTRATION — both recorded (IR-V2-29), ordering left to the human.
+- AI verified the R0 recipe content-exactly (byte-exact under the merged 1.4.4 lock), reproduced tracked `prune3`/`r2p85` byte-for-byte (deduped), built the novel count-held `prune3fill20` (`12a3b132…`) with upstream-schema receipt, seeded `ledger/lineage_claims.csv`, computed report-only proxies, and union-merged docs/ledger. No slot used; nothing submitted; no credentials or drivendata.org/dropbox access. AI wrote the `v2-prune` scripts/tests/evidence and the IR-V2-29/30 records.

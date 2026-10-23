@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "session": "arena/85dc0b4a-gemsdoe85 (PRUNE applied session; refill arm)",
+  "git_sha_at_build": "72caf958a1d6887f29a17f7542e97bc4f6735086",
+  "builder": "scripts/build_prune_variants.py",
+  "note": "Count-held refill control for rung-3 prune. Pure arms prune3/r2p85 were independently reproduced byte-identically (see IR-V2-21); their receipts remain evidence/session_prune_receipt.json + session_rung_receipt.json.",
+  "variants": {
+    "h33-2-b2-prune3fill20": {
+      "id": "h33-2-b2-prune3fill20-20261023-12a3b132",
+      "parent": "h33-h33-2-b2 (R0, GEMSDOE32 e5eb6e7e)",
+      "parent_nan_sha256": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
+      "parent_zeros_sha256": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
+      "axis": "PRUNE",
+      "value": "rung-3 prune + count-held refill @2.0px floor",
+      "note": "Drop 2<d_cat<=3px flank dots (2171), refill 2171 H19-5-support dots (d1.5-thinning tier) at d_cat>3px, >2.0px floor; count held 37654. Parent-spacing (2.8px) refill infeasible: 611 pool px (IR-V2-09).",
+      "submission_note": "R0 h33-2-b2 PRUNE rung3+refill@2px: drop 2171 flank, refill 2171 support, 37654 kept; pred +0.002 MODEL; UNSCORED",
+      "stats": {
+        "parent_dots": 37654,
+        "variant_dots": 37654,
+        "dots_removed": 2171,
+        "dots_added": 2171,
+        "unchanged": 35483,
+        "pct_changed": 11.531,
+        "refill_diagnostics": {
+          "needed": 2171,
+          "accepted": 2171,
+          "pool_at_parent_spacing_gt2p8_px": 611,
+          "pool_at_refill_spacing_gt2p0_px": 4871,
+          "pool_no_spacing": 61481,
+          "accepted_by_tier": {
+            "tier0": 2171,
+            "tier1": 0,
+            "tier2": 0
+          },
+          "refill_min_dist_to_kept_px": 2.23606797749979,
+          "refill_variant_min_mutual_nn_px": 2.23606797749979,
+          "parent_min_mutual_nn_px": 2.8284271247461903
+        }
+      },
+      "nan": {
+        "mode": "nan",
+        "filename": "h33-2-b2-prune3fill20-20261023-12a3b132.tif",
+        "bytes": 354508,
+        "sha256": "12a3b132083c6fe3f625b8b67de4ef4538bb481aa654faefaa3f039bcae1975f",
+        "sha8": "12a3b132",
+        "crs": "EPSG:32611",
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "shape": [
+          3730,
+          3292
+        ],
+        "dtype": "float32",
+        "nodata": "nan",
+        "positive_pixels": 37654,
+        "emitted_mass": 37654.0,
+        "min": 0.0,
+        "max": 1.0,
+        "on_catalogue_px": 0,
+        "within_2px_catalogue_px": 0,
+        "within_3px_catalogue_px": 0,
+        "min_distance_to_catalogue_px": 3.1622776601683795,
+        "checks": {
+          "single_band": true,
+          "dtype_float32": true,
+          "shape_matches_sample": true,
+          "crs_matches_sample": true,
+          "transform_matches_sample": true,
+          "footprint_pixels_match_sample": true,
+          "no_nan_inside_footprint": true,
+          "values_in_0_1_inside_footprint": true,
+          "binary_values_only": true,
+          "zero_mass_on_catalogue": true,
+          "min_distance_to_catalogue_px_gt_3": true,
+          "nodata_is_nan": true
+        },
+        "all_checks_passed": true
+      },
+      "zeros": {
+        "mode": "zeros",
+        "filename": "h33-2-b2-prune3fill20-20261023-12a3b132-zeros.tif",
+        "bytes": 218074,
+        "sha256": "21057e760b573d11d431581d0472d1aebc5b014e1f0924ae624746917e9b1db4",
+        "sha8": "21057e76",
+        "crs": "EPSG:32611",
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "shape": [
+          3730,
+          3292
+        ],
+        "dtype": "float32",
+        "nodata": null,
+        "positive_pixels": 37654,
+        "emitted_mass": 37654.0,
+        "min": 0.0,
+        "max": 1.0,
+        "on_catalogue_px": 0,
+        "within_2px_catalogue_px": 0,
+        "within_3px_catalogue_px": 0,
+        "min_distance_to_catalogue_px": 3.1622776601683795,
+        "checks": {
+          "single_band": true,
+          "dtype_float32": true,
+          "shape_matches_sample": true,
+          "crs_matches_sample": true,
+          "transform_matches_sample": true,
+          "footprint_pixels_match_sample": true,
+          "no_nan_inside_footprint": true,
+          "values_in_0_1_inside_footprint": true,
+          "binary_values_only": true,
+          "zero_mass_on_catalogue": true,
+          "min_distance_to_catalogue_px_gt_3": true,
+          "outside_footprint_all_zero": true
+        },
+        "all_checks_passed": true
+      },
+      "all_gates_passed": true
+    }
+  }
+}

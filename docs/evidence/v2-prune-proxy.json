@@ -1,0 +1,501 @@
+{
+  "evidence_label": "PROXY",
+  "note": "Report only, never a gate. Hide-and-recover correlated -0.87..+0.54 with live scores (brief section 3). Static pruned files are penalized by construction; fold-equivalent rules are the interpretable comparison.",
+  "evaluator": "gems85-holdout-v1.0.0 (src/gems85/holdout.py), folds=4, seed=20261022",
+  "fold_equivalent_rules": {
+    "fold_eq_prune_gt1px_h27_rule": {
+      "evaluator_version": "gems85-holdout-v1.0.0",
+      "pooled_holdout_dti": 0.11464072733801013,
+      "ci95": [
+        0.10613033373421772,
+        0.12315112094180254
+      ],
+      "n_withheld_positives": 60988,
+      "tp_w": 9498.79813730125,
+      "fp_w": 160834.69873043534,
+      "fn_w": 51489.20186269875,
+      "folds": [
+        {
+          "name": "fold0",
+          "dti": 0.12151942346609793,
+          "tp_w": 2571.316307117252,
+          "fp_w": 40235.256208107465,
+          "fn_w": 13176.683692882747,
+          "n_truth": 15748,
+          "pred_pixels": 41295
+        },
+        {
+          "name": "fold1",
+          "dti": 0.11472138006710059,
+          "tp_w": 2593.8431359555807,
+          "fp_w": 40243.840124411436,
+          "fn_w": 14959.15686404442,
+          "n_truth": 17553,
+          "pred_pixels": 41328
+        },
+        {
+          "name": "fold2",
+          "dti": 0.10221003284999874,
+          "tp_w": 2004.0162171228951,
+          "fp_w": 40162.206121106174,
+          "fn_w": 11962.983782877105,
+          "n_truth": 13967,
+          "pred_pixels": 41021
+        },
+        {
+          "name": "fold3",
+          "dti": 0.11958676984084063,
+          "tp_w": 2329.622477105522,
+          "fp_w": 40193.396276810265,
+          "fn_w": 11390.377522894478,
+          "n_truth": 13720,
+          "pred_pixels": 41158
+        }
+      ]
+    },
+    "fold_eq_prune_gt2px_R0_rule": {
+      "evaluator_version": "gems85-holdout-v1.0.0",
+      "pooled_holdout_dti": 0.11677361873696913,
+      "ci95": [
+        0.10815952779086413,
+        0.12538770968307414
+      ],
+      "n_withheld_positives": 60988,
+      "tp_w": 9498.79813730125,
+      "fp_w": 153267.69873043534,
+      "fn_w": 51489.20186269875,
+      "folds": [
+        {
+          "name": "fold0",
+          "dti": 0.12371069925452713,
+          "tp_w": 2571.316307117252,
+          "fp_w": 38361.256208107465,
+          "fn_w": 13176.683692882747,
+          "n_truth": 15748,
+          "pred_pixels": 39421
+        },
+        {
+          "name": "fold1",
+          "dti": 0.11666669034986359,
+          "tp_w": 2593.8431359555807,
+          "fp_w": 38358.840124411436,
+          "fn_w": 14959.15686404442,
+          "n_truth": 17553,
+          "pred_pixels": 39443
+        },
+        {
+          "name": "fold2",
+          "dti": 0.10424855027910175,
+          "tp_w": 2004.0162171228951,
+          "fp_w": 38245.20612110618,
+          "fn_w": 11962.983782877105,
+          "n_truth": 13967,
+          "pred_pixels": 39104
+        },
+        {
+          "name": "fold3",
+          "dti": 0.12195441513532099,
+          "tp_w": 2329.622477105522,
+          "fp_w": 38302.396276810265,
+          "fn_w": 11390.377522894478,
+          "n_truth": 13720,
+          "pred_pixels": 39267
+        }
+      ]
+    },
+    "fold_eq_prune_gt3px": {
+      "evaluator_version": "gems85-holdout-v1.0.0",
+      "pooled_holdout_dti": 0.11867311928212848,
+      "ci95": [
+        0.10997492428780188,
+        0.1273713142764551
+      ],
+      "n_withheld_positives": 60988,
+      "tp_w": 9498.79813730125,
+      "fp_w": 146757.69873043534,
+      "fn_w": 51489.20186269875,
+      "folds": [
+        {
+          "name": "fold0",
+          "dti": 0.12562914303711467,
+          "tp_w": 2571.316307117252,
+          "fp_w": 36774.256208107465,
+          "fn_w": 13176.683692882747,
+          "n_truth": 15748,
+          "pred_pixels": 37834
+        },
+        {
+          "name": "fold1",
+          "dti": 0.11837148308493674,
+          "tp_w": 2593.8431359555807,
+          "fp_w": 36757.84012441144,
+          "fn_w": 14959.15686404442,
+          "n_truth": 17553,
+          "pred_pixels": 37842
+        },
+        {
+          "name": "fold2",
+          "dti": 0.1060873627419309,
+          "tp_w": 2004.0162171228951,
+          "fp_w": 36579.206121106174,
+          "fn_w": 11962.983782877105,
+          "n_truth": 13967,
+          "pred_pixels": 37438
+        },
+        {
+          "name": "fold3",
+          "dti": 0.12410618455986486,
+          "tp_w": 2329.622477105522,
+          "fp_w": 36646.39627681027,
+          "fn_w": 11390.377522894478,
+          "n_truth": 13720,
+          "pred_pixels": 37611
+        }
+      ]
+    },
+    "fold_eq_prune_ge3px": {
+      "evaluator_version": "gems85-holdout-v1.0.0",
+      "pooled_holdout_dti": 0.11817821054723816,
+      "ci95": [
+        0.10950283528613035,
+        0.126853585808346
+      ],
+      "n_withheld_positives": 60988,
+      "tp_w": 9498.79813730125,
+      "fp_w": 148433.69873043534,
+      "fn_w": 51489.20186269875,
+      "folds": [
+        {
+          "name": "fold0",
+          "dti": 0.1251327087510136,
+          "tp_w": 2571.316307117252,
+          "fp_w": 37180.256208107465,
+          "fn_w": 13176.683692882747,
+          "n_truth": 15748,
+          "pred_pixels": 38240
+        },
+        {
+          "name": "fold1",
+          "dti": 0.1179194521888812,
+          "tp_w": 2593.8431359555807,
+          "fp_w": 37177.840124411436,
+          "fn_w": 14959.15686404442,
+          "n_truth": 17553,
+          "pred_pixels": 38262
+        },
+        {
+          "name": "fold2",
+          "dti": 0.10561214220664664,
+          "tp_w": 2004.0162171228951,
+          "fp_w": 37004.206121106174,
+          "fn_w": 11962.983782877105,
+          "n_truth": 13967,
+          "pred_pixels": 37863
+        },
+        {
+          "name": "fold3",
+          "dti": 0.12354673866995977,
+          "tp_w": 2329.622477105522,
+          "fp_w": 37071.39627681027,
+          "fn_w": 11390.377522894478,
+          "n_truth": 13720,
+          "pred_pixels": 38036
+        }
+      ]
+    },
+    "fold_eq_prune_gt3px_refill": {
+      "evaluator_version": "gems85-holdout-v1.0.0",
+      "pooled_holdout_dti": 0.11905626884675705,
+      "ci95": [
+        0.11067202087137216,
+        0.1274405168221419
+      ],
+      "n_withheld_positives": 60988,
+      "tp_w": 9685.232082590157,
+      "fp_w": 153112.96160340874,
+      "fn_w": 51302.76791740984,
+      "folds": [
+        {
+          "name": "fold0",
+          "dti": 0.12521510791792193,
+          "tp_w": 2602.660598366037,
+          "fp_w": 38332.91817559757,
+          "fn_w": 13145.339401633963,
+          "n_truth": 15748,
+          "pred_pixels": 39421
+        },
+        {
+          "name": "fold1",
+          "dti": 0.11879785113072767,
+          "tp_w": 2641.355349707415,
+          "fp_w": 38316.80995912513,
+          "fn_w": 14911.644650292585,
+          "n_truth": 17553,
+          "pred_pixels": 39443
+        },
+        {
+          "name": "fold2",
+          "dti": 0.10690487556003564,
+          "tp_w": 2055.344440615026,
+          "fp_w": 38206.248800470865,
+          "fn_w": 11911.655559384973,
+          "n_truth": 13967,
+          "pred_pixels": 39104
+        },
+        {
+          "name": "fold3",
+          "dti": 0.12488485922453457,
+          "tp_w": 2385.87169390168,
+          "fp_w": 38256.98466821517,
+          "fn_w": 11334.12830609832,
+          "n_truth": 13720,
+          "pred_pixels": 39267
+        }
+      ]
+    }
+  },
+  "static_rasters_for_contrast": {
+    "R0_parent_static": {
+      "evaluator_version": "gems85-holdout-v1.0.0",
+      "pooled_holdout_dti": 0.004788837591147052,
+      "ci95": [
+        0.004468372403251951,
+        0.005109302779042153
+      ],
+      "n_withheld_positives": 60988,
+      "tp_w": 377.99989677106385,
+      "fp_w": 150337.69302087807,
+      "fn_w": 60610.00010322894,
+      "folds": [
+        {
+          "name": "fold0",
+          "dti": 0.005042690010028758,
+          "tp_w": 101.53295575091171,
+          "fp_w": 37579.873052734496,
+          "fn_w": 15646.467044249088,
+          "n_truth": 15748,
+          "pred_pixels": 37654
+        },
+        {
+          "name": "fold1",
+          "dti": 0.004844462147781468,
+          "tp_w": 104.53692349325591,
+          "fp_w": 37576.6824931646,
+          "fn_w": 17448.463076506745,
+          "n_truth": 17553,
+          "pred_pixels": 37654
+        },
+        {
+          "name": "fold2",
+          "dti": 0.004307041193994793,
+          "tp_w": 80.57866434520416,
+          "fp_w": 37594.36731159894,
+          "fn_w": 13886.421335654795,
+          "n_truth": 13967,
+          "pred_pixels": 37654
+        },
+        {
+          "name": "fold3",
+          "dti": 0.00493481024057658,
+          "tp_w": 91.35135318169208,
+          "fp_w": 37586.770163380046,
+          "fn_w": 13628.648646818308,
+          "n_truth": 13720,
+          "pred_pixels": 37654
+        }
+      ]
+    },
+    "pruneD3pure_static": {
+      "evaluator_version": "gems85-holdout-v1.0.0",
+      "pooled_holdout_dti": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "n_withheld_positives": 60988,
+      "tp_w": 0.0,
+      "fp_w": 141932.0,
+      "fn_w": 60988.0,
+      "folds": [
+        {
+          "name": "fold0",
+          "dti": 0.0,
+          "tp_w": 0.0,
+          "fp_w": 35483.0,
+          "fn_w": 15748.0,
+          "n_truth": 15748,
+          "pred_pixels": 35483
+        },
+        {
+          "name": "fold1",
+          "dti": 0.0,
+          "tp_w": 0.0,
+          "fp_w": 35483.0,
+          "fn_w": 17553.0,
+          "n_truth": 17553,
+          "pred_pixels": 35483
+        },
+        {
+          "name": "fold2",
+          "dti": 0.0,
+          "tp_w": 0.0,
+          "fp_w": 35483.0,
+          "fn_w": 13967.0,
+          "n_truth": 13967,
+          "pred_pixels": 35483
+        },
+        {
+          "name": "fold3",
+          "dti": 0.0,
+          "tp_w": 0.0,
+          "fp_w": 35483.0,
+          "fn_w": 13720.0,
+          "n_truth": 13720,
+          "pred_pixels": 35483
+        }
+      ]
+    },
+    "pruneD3ge_static": {
+      "evaluator_version": "gems85-holdout-v1.0.0",
+      "pooled_holdout_dti": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "n_withheld_positives": 60988,
+      "tp_w": 0.0,
+      "fp_w": 144172.0,
+      "fn_w": 60988.0,
+      "folds": [
+        {
+          "name": "fold0",
+          "dti": 0.0,
+          "tp_w": 0.0,
+          "fp_w": 36043.0,
+          "fn_w": 15748.0,
+          "n_truth": 15748,
+          "pred_pixels": 36043
+        },
+        {
+          "name": "fold1",
+          "dti": 0.0,
+          "tp_w": 0.0,
+          "fp_w": 36043.0,
+          "fn_w": 17553.0,
+          "n_truth": 17553,
+          "pred_pixels": 36043
+        },
+        {
+          "name": "fold2",
+          "dti": 0.0,
+          "tp_w": 0.0,
+          "fp_w": 36043.0,
+          "fn_w": 13967.0,
+          "n_truth": 13967,
+          "pred_pixels": 36043
+        },
+        {
+          "name": "fold3",
+          "dti": 0.0,
+          "tp_w": 0.0,
+          "fp_w": 36043.0,
+          "fn_w": 13720.0,
+          "n_truth": 13720,
+          "pred_pixels": 36043
+        }
+      ]
+    },
+    "pruneD3refill_static": {
+      "evaluator_version": "gems85-holdout-v1.0.0",
+      "pooled_holdout_dti": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "n_withheld_positives": 60988,
+      "tp_w": 0.0,
+      "fp_w": 150616.0,
+      "fn_w": 60988.0,
+      "folds": [
+        {
+          "name": "fold0",
+          "dti": 0.0,
+          "tp_w": 0.0,
+          "fp_w": 37654.0,
+          "fn_w": 15748.0,
+          "n_truth": 15748,
+          "pred_pixels": 37654
+        },
+        {
+          "name": "fold1",
+          "dti": 0.0,
+          "tp_w": 0.0,
+          "fp_w": 37654.0,
+          "fn_w": 17553.0,
+          "n_truth": 17553,
+          "pred_pixels": 37654
+        },
+        {
+          "name": "fold2",
+          "dti": 0.0,
+          "tp_w": 0.0,
+          "fp_w": 37654.0,
+          "fn_w": 13967.0,
+          "n_truth": 13967,
+          "pred_pixels": 37654
+        },
+        {
+          "name": "fold3",
+          "dti": 0.0,
+          "tp_w": 0.0,
+          "fp_w": 37654.0,
+          "fn_w": 13720.0,
+          "n_truth": 13720,
+          "pred_pixels": 37654
+        }
+      ]
+    }
+  },
+  "sgmc_control": {
+    "truth_pixels_off_catalogue_gt3px": 62122,
+    "dti": {
+      "R0_parent_static": {
+        "dti": 0.09538611460482532,
+        "tp_w": 5517.63670255971,
+        "fp_w": 35220.77352594685,
+        "fn_w": 56604.363297440286,
+        "n_truth": 62122,
+        "pred_mass": 37654.0,
+        "pred_pixels": 37654
+      },
+      "pruneD3pure_static": {
+        "dti": 0.09369415658974158,
+        "tp_w": 5378.53534887867,
+        "fp_w": 33159.65415137226,
+        "fn_w": 56743.46465112133,
+        "n_truth": 62122,
+        "pred_mass": 35483.0,
+        "pred_pixels": 35483
+      },
+      "pruneD3ge_static": {
+        "dti": 0.09417172067769179,
+        "tp_w": 5416.738546509234,
+        "fp_w": 33694.26185024137,
+        "fn_w": 56705.26145349076,
+        "n_truth": 62122,
+        "pred_mass": 36043.0,
+        "pred_pixels": 36043
+      },
+      "pruneD3refill_static": {
+        "dti": 0.09618604410339945,
+        "tp_w": 5564.339996837703,
+        "fp_w": 35196.482361220216,
+        "fn_w": 56557.660003162295,
+        "n_truth": 62122,
+        "pred_mass": 37654.0,
+        "pred_pixels": 37654
+      }
+    }
+  },
+  "leakage_canary": "NOT APPLICABLE: no feature/model trained this session; variants are deterministic edits of pinned dot masks"
+}

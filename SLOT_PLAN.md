@@ -170,3 +170,7 @@ zeros twins are the proven-submittable encoding. See `docs/SUBMIT.md`.
 4. **CROSS-PHYSICS STRIKE AGREEMENT & PERSISTENCE.** Retain basin/piedmont ridges only where `tmi_hg`
    and `iso_grav_anom_hg` strikes agree within 20° over ≥ 1.5 km open traces (vs closed playa/caldera
    rims). *Confounder:* linear basalt dikes and pluvial shorelines. *Falsifier:* live Δ ≤ 0 vs parent.
+
+## Addendum — session `arena/85dc0b4a` (2026-10-23): parallel PRUNE assignment + count-held control
+
+In that session the human assigned **AXIS = PRUNE**, stated **3 slots free this week** and that **no R0 variant has been submitted in any session**. A parallel session assigned CONCENTRATION (above). Both stand; **the human orders the two programmes before spending** — this addendum does not displace the next-3 table. New tracked file: **`h33-2-b2-prune3fill20-20261023-12a3b132.tif`** (37,654; rung-3 prune + 2,171 refills @2.0 px; +0.002 MODEL) — a mass-vs-position control to spend only after a `prune3` receipt (≥ +0.01 above it ⇒ mass/spacing pays; ≤ −0.01 ⇒ 2.8 px packing load-bearing). Cards: `evidence/v2-prune-mechanism-cards.md`; receipt `evidence/session_prune_refill_receipt.json`. See IR-V2-29/30.

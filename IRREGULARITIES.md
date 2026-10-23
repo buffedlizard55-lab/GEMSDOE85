@@ -456,3 +456,13 @@ measures pure live `RELIEF` above the `d_cat > 3 px` collar, and choose Slot 3 c
 (`IR-V2-04`, `IR-V2-10`). **Decision:** add zero competition rasters in `arena/3dd0b94c-gemsdoe85`
 (only ~218–356 KB derived binary submissions in `releases/`) and flag the pre-existing tracked files for
 human review against DrivenData redistribution rules before any public release.
+
+---
+
+# Session `arena/85dc0b4a` — AXIS=PRUNE applied (2026-10-23), merged by union
+
+## IR-V2-29 — Two parallel human AXIS assignments coexist (PRUNE vs CONCENTRATION)
+The human assigned **PRUNE** in this session (with: 3 slots free this week; no R0 variant submitted in any session; TOP_PUBLIC still unfilled) and **CONCENTRATION** in session `arena/c4de5673`. The CURRENT STATE next-3 table follows CONCENTRATION; the PRUNE ladder + new count-held control are the gated backup programme. Neither assignment cancels the other on the record available here: the human must order them before spending slots. Do not treat either session's slot order as overriding the other.
+
+## IR-V2-30 — Independent duplicate builds deduped; refill novelties and ledger split
+This session's `prune3`/`r2p85` reproduce the tracked upstream files byte-for-byte under the 1.4.4 lock (`fb308615…`/`acce3907…`); no duplicate ledger rows were added. Its new build `prune3fill20` (`12a3b132…`, 37,654 dots) refills the H19-5 support at a **2.0 px floor** (2.8 px refill impossible: 611 pool px — IR-V2-09; cf. IR-V2-18); all refills are d1.5-thinning selections, a lineage proxy — no continuous parent ranking is pinned (cf. IR-V2-21 concentration numbering), so MASS-by-parent-ranking remains blocked. The five lineage CLAIMs live in `ledger/lineage_claims.csv`, not `submissions.csv` (schema tests require BUILT-variant rows only there); neither file is a complete submission history.

@@ -1,0 +1,62 @@
+{
+  "session": "arena/85dc0b4a-gemsdoe85",
+  "date": "2026-10-23",
+  "axis": "PRUNE (human-assigned)",
+  "verdict": "Merged with parallel ladder/SNAP sessions. New: count-held refill 12a3b132 + lineage ledger + human PRUNE/slot confirmation. prune3/r2p85 independently reproduced byte-identically (deduped, upstream rows/files canonical). Nothing submitted; 0 slots used.",
+  "parent": {
+    "id": "h33-h33-2-b2",
+    "score": 0.2778,
+    "label": "CLAIM",
+    "rebuild": "byte-identical upstream (IR-V2-07/19); this session content-exact under 1.4.3, byte-exact under merged 1.4.4 lock"
+  },
+  "human_decisions": {
+    "axis": "PRUNE",
+    "slots_free_this_week": 3,
+    "prior_r0_variant_submitted": false,
+    "top_public": null
+  },
+  "variants_this_session": {
+    "prune3": {
+      "id": "h33-2-b2-prune3-20261023-fb308615",
+      "n_dots": 35483,
+      "pct_changed": 5.766,
+      "sha256_nan": "fb308615161ad8f62b063d90972a4c36e7c66e7c58beb3316c81497cfe65261e",
+      "sha256_zeros": "a438e92b79dfb7f9f1763c40ffb2d42dd60e45697dfc06fc49efae067d3c1a22",
+      "status": "DUPLICATE-REPRODUCTION of tracked upstream row"
+    },
+    "r2p85": {
+      "id": "h33-2-b2-r2p85-20261023-acce3907",
+      "n_dots": 36043,
+      "pct_changed": 4.278,
+      "sha256_nan": "acce390710c0d1fcf066947712c52cec45f8c0dcc2fb53bb1b254fbff959fcd7",
+      "sha256_zeros": "6ff3861845856a00af22c489472ae27d8a37366fbcf503bf5a0091c673b140fc",
+      "status": "DUPLICATE-REPRODUCTION of tracked upstream row"
+    },
+    "prune3fill20": {
+      "id": "h33-2-b2-prune3fill20-20261023-12a3b132",
+      "n_dots": 37654,
+      "pct_changed": 11.531,
+      "sha256_nan": "12a3b132083c6fe3f625b8b67de4ef4538bb481aa654faefaa3f039bcae1975f",
+      "sha256_zeros": "21057e760b573d11d431581d0472d1aebc5b014e1f0924ae624746917e9b1db4",
+      "status": "NEW tracked row (count-held control)"
+    }
+  },
+  "predicted_changes_MODEL": {
+    "prune3": "+0.006 (upstream +0.007)",
+    "r2p85": "+0.0045 (upstream +0.005)",
+    "prune3fill20": "+0.002 (-0.008..+0.010)"
+  },
+  "evidence": [
+    "evidence/v2-prune-builds.json",
+    "evidence/session_prune_refill_receipt.json",
+    "evidence/v2-prune-proxy.json (PROXY, report-only)",
+    "evidence/v2-prune-mechanism-cards.md",
+    "ledger/lineage_claims.csv"
+  ],
+  "human_must_supply": [
+    "dated TOP_PUBLIC",
+    "receipts after any upload",
+    "rolling slot usage",
+    "deadline/timezone confirmation"
+  ]
+}
