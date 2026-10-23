@@ -1,0 +1,355 @@
+#EventID|Time|Latitude|Longitude|Depth/km|Author|Catalog|Contributor|ContributorID|MagType|Magnitude|MagAuthor|EventLocationName
+ci10068818|1980-01-06T10:25:35.380|38.7535|-117.7046667|6|ci|ci|ci|ci10068818|mh|3.46|ci|84km ENE of Hawthorne, NV
+ci10070350|1980-01-30T21:05:42.850|38.3731667|-118.2595|6|ci|ci|ci|ci10070350|ml|3.03|ci|36km ESE of Hawthorne, NV
+usp00016z1|1980-04-30T07:23:57.300|38.65|-118.45|5|b|us|us|usp00016z1|ml|3.4|brk|20 km NE of Hawthorne, Nevada
+ci3328445|1980-04-30T07:37:55.480|38.3953333|-118.0413333|6|ci|ci|ci|ci3328445|ml|2.91|ci|53km ESE of Hawthorne, NV
+ci12333875|1980-05-26T05:31:32.200|38.1378333|-118.224|6|ci|ci|ci|ci12333875|ml|3.22|ci|55km SE of Hawthorne, NV
+ci9728570|1980-05-27T16:43:56.430|38.534|-118.1956667|6|ci|ci|ci|ci9728570|ml|3.02|ci|37km E of Hawthorne, NV
+ci9732354|1980-06-29T10:30:53.500|38.2631667|-118.6988333|6|ci|ci|ci|ci9732354|mh|2.93|ci|30km SSW of Hawthorne, NV
+ci3305276|1980-07-26T18:08:27.610|38.058|-118.6346667|6|ci|ci|ci|ci3305276|ml|2.98|ci|52km S of Hawthorne, NV
+usp00019pc|1980-09-04T13:39:09.500|38.089|-118.572|5|b|us|us|usp00019pc|mb|4|us|31 km NNW of Benton, California
+ci3303465|1980-09-04T13:47:30.820|38.5|-118.5|6|ci|ci|ci|ci3303465|ml|3.14|ci|11km ESE of Hawthorne, NV
+usp00019pd|1980-09-04T21:03:33.900|38.057|-118.518|20|b|us|us|usp00019pd|mb|4.9|us|26 km N of Benton, California
+usp00019pe|1980-09-04T22:31:39.500|38.067|-118.5|5|p|us|us|usp00019pe|ml|3|pas|27 km N of Benton, California
+ci9735102|1980-09-04T23:26:47.880|38.1695|-117.9743333|6|ci|ci|ci|ci9735102|ml|2.92|ci|66km W of Tonopah, NV
+ci3303507|1980-09-05T13:39:17.320|38.3551667|-117.9875|6|ci|ci|ci|ci3303507|ml|3.07|ci|58km ESE of Hawthorne, NV
+usp00019pn|1980-09-05T15:52:56.000|38.069|-118.548|14|b|us|us|usp00019pn|ml|3.7|brk|28 km NNW of Benton, California
+ci12340179|1980-09-05T15:53:23.670|38.25|-118.25|6|ci|ci|ci|ci12340179|ml|3.15|ci|45km SE of Hawthorne, NV
+usp00019pv|1980-09-06T05:31:03.300|38.075|-118.577|5|b|us|us|usp00019pv|ml|4|brk|29 km NNW of Benton, California
+usp00019pw|1980-09-06T07:27:52.100|38.068|-118.572|5|b|us|us|usp00019pw|mb|4.1|us|28 km NNW of Benton, California
+ci3303555|1980-09-07T01:52:42.920|38.2|-118.4|6|ci|ci|ci|ci3303555|mh|2.61|ci|41km SSE of Hawthorne, NV
+ci9735246|1980-09-07T04:42:49.240|38.0983333|-118.1393333|6|ci|ci|ci|ci9735246|mh|3.03|ci|64km SE of Hawthorne, NV
+ci9735270|1980-09-07T05:48:42.940|38.105|-117.5631667|6|ci|ci|ci|ci9735270|ml|2.83|ci|29km W of Tonopah, NV
+ci9735274|1980-09-07T05:49:57.610|38.3606667|-117.9975|6|ci|ci|ci|ci9735274|ml|2.92|ci|58km ESE of Hawthorne, NV
+usp00019q7|1980-09-07T06:00:11.200|38.066|-118.533|5|us|us|us|usp00019q7|ml|3|pas|27 km N of Benton, California
+usp00019q8|1980-09-07T06:48:10.500|38.077|-118.603|5|b|us|us|usp00019q8|ml|4.5|pas|30 km NNW of Benton, California
+usp00019q9|1980-09-07T06:48:30.200|38.078|-118.603|5|b|us|us|usp00019q9|mb|4.7|us|30 km NNW of Benton, California
+ci3303565|1980-09-07T07:00:17.670|38.1381667|-117.5836667|6|ci|ci|ci|ci3303565|mh|3.08|ci|32km WNW of Tonopah, NV
+ci12340195|1980-09-07T08:35:42.360|38.1361667|-117.5456667|6|ci|ci|ci|ci12340195|ml|3.01|ci|29km WNW of Tonopah, NV
+usp00019qb|1980-09-07T10:08:55.100|38.073|-118.608|5|b|us|us|usp00019qb|ml|3.7|brk|30 km NNW of Benton, California
+usp00019qc|1980-09-07T11:02:01.800|38.102|-118.534|5|us|us|us|usp00019qc|ml|3.3|pas|31 km N of Benton, California
+ci9735354|1980-09-07T11:10:44.730|38.1958333|-117.8833333|6|ci|ci|ci|ci9735354|ml|2.85|ci|59km WNW of Tonopah, NV
+usp00019qd|1980-09-07T11:58:02.200|38.055|-118.608|3|b|us|us|usp00019qd|ml|3.8|brk|28 km NNW of Benton, California
+usp00019qh|1980-09-07T16:04:04.500|38.056|-118.612|5|b|us|us|usp00019qh|ml|3.7|brk|28 km NNW of Benton, California
+ci3303603|1980-09-07T16:48:56.720|38.2993333|-117.9871667|6|ci|ci|ci|ci3303603|ml|2.95|ci|61km ESE of Hawthorne, NV
+usp00019qj|1980-09-07T16:57:34.500|38.088|-118.603|5|b|us|us|usp00019qj|ml|3.9|brk|31 km NNW of Benton, California
+ci9735394|1980-09-07T16:58:35.850|38.137|-118.0315|6|ci|ci|ci|ci9735394|ml|3.72|ci|67km SE of Hawthorne, NV
+ci9735398|1980-09-07T17:31:25.860|38.2333333|-118.003|6|ci|ci|ci|ci9735398|mh|2.92|ci|63km ESE of Hawthorne, NV
+ci3303606|1980-09-07T18:35:40.920|38.2283333|-118.583|6|ci|ci|ci|ci3303606|ml|2.99|ci|33km S of Hawthorne, NV
+usp00019qk|1980-09-07T18:37:00.900|38.062|-118.598|5|b|us|us|usp00019qk|ml|3.6|brk|28 km NNW of Benton, California
+ci3303607|1980-09-07T19:15:04.600|38.25|-118.25|6|ci|ci|ci|ci3303607|ml|2.8|ci|45km SE of Hawthorne, NV
+usp00019qn|1980-09-07T22:14:29.800|38.08|-118.597|5|b|us|us|usp00019qn|ml|3.5|brk|30 km NNW of Benton, California
+usp00019qp|1980-09-07T22:23:12.300|38.067|-118.533|5|p|us|us|usp00019qp|ml|3.2|pas|27 km N of Benton, California
+usp00019qr|1980-09-07T23:22:32.400|38.107|-118.498|5|us|us|us|usp00019qr|ml|3|pas|32 km N of Benton, California
+usp00019qs|1980-09-08T01:15:48.000|38.118|-118.505|5|us|us|us|usp00019qs|ml|3|pas|33 km N of Benton, California
+ci3303615|1980-09-08T02:18:06.620|38.2393333|-118.0885|6|ci|ci|ci|ci3303615|ml|2.83|ci|56km SE of Hawthorne, NV
+ci3303620|1980-09-08T04:34:14.650|38.2658333|-117.9631667|6|ci|ci|ci|ci3303620|ml|2.76|ci|64km ESE of Hawthorne, NV
+usp00019r0|1980-09-08T08:19:26.600|38.069|-118.588|5|b|us|us|usp00019r0|ml|3.5|brk|29 km NNW of Benton, California
+ci3303626|1980-09-08T08:29:39.180|38.1495|-118.0273333|6|ci|ci|ci|ci3303626|mh|2.82|ci|67km SE of Hawthorne, NV
+usp00019r1|1980-09-08T11:13:04.300|38.067|-118.567|1|p|us|us|usp00019r1|ml|3|pas|28 km NNW of Benton, California
+ci12340207|1980-09-08T13:51:31.590|38.5871667|-118.2451667|6|ci|ci|ci|ci12340207|mh|2.77|ci|34km ENE of Hawthorne, NV
+usp00019r6|1980-09-08T18:17:12.900|38.082|-118.533|3|p|us|us|usp00019r6|ml|3|pas|29 km N of Benton, California
+usp00019r9|1980-09-08T21:58:53.200|38.067|-118.517|5|p|us|us|usp00019r9|ml|3|pas|27 km N of Benton, California
+ci3303671|1980-09-09T02:33:51.120|38.1738333|-117.8843333|6|ci|ci|ci|ci3303671|mh|2.75|ci|58km WNW of Tonopah, NV
+usp00019rh|1980-09-09T12:09:38.600|38.118|-118.488|5|us|us|us|usp00019rh|ml|3|pas|33 km N of Benton, California
+usp00019s4|1980-09-10T23:49:41.300|38.055|-118.597|5|b|us|us|usp00019s4|ml|3.4|brk|28 km NNW of Benton, California
+usp00019s6|1980-09-11T04:16:49.600|38.076|-118.59|4|b|us|us|usp00019s6|ml|3.7|brk|30 km NNW of Benton, California
+usp00019s9|1980-09-11T09:54:26.800|38.056|-118.593|5|b|us|us|usp00019s9|ml|3.5|brk|28 km NNW of Benton, California
+ci3303760|1980-09-11T10:20:32.600|38.2183333|-117.93|6|ci|ci|ci|ci3303760|ml|2.92|ci|63km WNW of Tonopah, NV
+ci3303769|1980-09-11T14:30:20.140|38.1775|-118.0688333|6|ci|ci|ci|ci3303769|ml|2.9|ci|62km SE of Hawthorne, NV
+ci3303907|1980-09-16T00:52:18.770|38.2193333|-118.4746667|6|ci|ci|ci|ci3303907|ml|3.05|ci|36km SSE of Hawthorne, NV
+usp00019u5|1980-09-16T04:19:44.000|38.05|-118.567|2|p|us|us|usp00019u5|ml|3.3|pas|26 km NNW of Benton, California
+ci9735906|1980-09-16T15:17:47.920|38.0888333|-117.9713333|6|ci|ci|ci|ci9735906|ml|2.9|ci|65km W of Tonopah, NV
+ci3303941|1980-09-16T18:39:50.670|38.1611667|-118.4221667|6|ci|ci|ci|ci3303941|ml|2.87|ci|44km SSE of Hawthorne, NV
+ci3304925|1980-09-17T05:46:55.680|38.1648333|-118.1266667|6|ci|ci|ci|ci3304925|ml|2.87|ci|59km SE of Hawthorne, NV
+usp00019uw|1980-09-17T10:46:42.600|38.062|-118.605|5|b|us|us|usp00019uw|ml|3.5|brk|29 km NNW of Benton, California
+usp00019v5|1980-09-18T06:06:40.400|38.073|-118.603|5|b|us|us|usp00019v5|ml|3.6|brk|30 km NNW of Benton, California
+usp00019vr|1980-09-19T20:05:36.200|38.1|-118.583|4|p|us|us|usp00019vr|ml|3|pas|32 km NNW of Benton, California
+usp00019ww|1980-09-21T15:15:55.600|38.053|-118.602|5|b|us|us|usp00019ww|ml|3.8|brk|28 km NNW of Benton, California
+ci9736230|1980-09-21T19:01:22.060|38.1666667|-118.1818333|6|ci|ci|ci|ci9736230|ml|2.64|ci|55km SE of Hawthorne, NV
+usp00019y1|1980-09-23T10:55:12.600|38.066|-118.564|5|us|us|us|usp00019y1|ml|3|pas|28 km NNW of Benton, California
+ci9736518|1980-09-26T13:40:57.810|38.2|-118.45|6|ci|ci|ci|ci9736518|mh|2.63|ci|39km SSE of Hawthorne, NV
+ci9736958|1980-10-02T02:21:13.520|38.0866667|-118.6151667|6|ci|ci|ci|ci9736958|ml|2.88|ci|49km S of Hawthorne, NV
+ci9737010|1980-10-02T23:16:18.380|38.0688333|-118.6725|6|ci|ci|ci|ci9737010|ml|2.81|ci|51km S of Hawthorne, NV
+ci3303053|1980-10-17T01:12:17.010|38.0925|-117.4268333|6|ci|ci|ci|ci3303053|mh|2.74|ci|17km W of Tonopah, NV
+usp0001aas|1980-10-19T02:54:34.100|38.099|-118.533|5|us|us|us|usp0001aas|ml|3.2|pas|31 km N of Benton, California
+ci3299416|1980-11-07T17:50:15.340|38.0595|-117.437|6|ci|ci|ci|ci3299416|mh|2.69|ci|18km W of Tonopah, NV
+ci3299503|1980-11-11T10:18:03.860|38.0563333|-118.6615|6|ci|ci|ci|ci3299503|ml|4.38|ci|52km S of Hawthorne, NV
+ci3299506|1980-11-11T11:37:54.730|38.0978333|-118.7366667|6|ci|ci|ci|ci3299506|mh|2.71|ci|48km SSW of Hawthorne, NV
+ci9739694|1980-11-13T05:30:56.810|38.156|-117.5458333|6|ci|ci|ci|ci9739694|mh|2.8|ci|29km WNW of Tonopah, NV
+ci9740106|1980-11-17T22:15:24.620|38.1691667|-118.216|6|ci|ci|ci|ci9740106|mh|2.7|ci|53km SE of Hawthorne, NV
+usp0001ava|1980-11-17T22:59:46.100|38.118|-118.673|5|b|us|us|usp0001ava|ml|3.5|brk|37 km NNW of Benton, California
+ci9740118|1980-11-18T03:01:17.430|38.1186667|-118.0186667|6|ci|ci|ci|ci9740118|ml|2.83|ci|69km W of Tonopah, NV
+usp0001bbz|1980-12-19T16:57:45.200|38.483|-118.417|5|p|us|us|usp0001bbz|ml|3.7|pas|18 km ESE of Hawthorne, Nevada
+ci9742550|1980-12-28T19:44:36.830|38.1218333|-118.371|6|ci|ci|ci|ci9742550|ml|2.69|ci|50km SSE of Hawthorne, NV
+ci9742554|1980-12-28T20:29:31.580|38.0698333|-118.3856667|6|ci|ci|ci|ci9742554|ml|2.66|ci|55km SSE of Hawthorne, NV
+ci9742558|1980-12-28T20:55:01.250|38.0803333|-118.49|6|ci|ci|ci|ci9742558|mh|2.9|ci|51km SSE of Hawthorne, NV
+usp0001bgr|1980-12-28T22:58:08.700|38.142|-118.265|23|b|us|us|usp0001bgr|mb|4.6|us|30 km SSW of Mina, Nevada
+usp0001bgs|1980-12-28T23:00:38.500|38.217|-118.367|5|p|us|us|usp0001bgs|ml|4.3|brk|29 km SW of Mina, Nevada
+ci9742570|1980-12-28T23:03:33.780|38.0571667|-118.1103333|6|ci|ci|ci|ci9742570|mh|2.79|ci|69km SE of Hawthorne, NV
+usp0001bgt|1980-12-28T23:05:38.800|38.17|-118.375|5|b|us|us|usp0001bgt|ml|4|brk|33 km SW of Mina, Nevada
+ci9742614|1980-12-29T00:11:59.590|38.24|-118.497|2.97|ci|ci|ci|ci9742614|mh|3|ci|34km SSE of Hawthorne, NV
+usp0001bh3|1980-12-29T12:24:54.700|38.167|-118.427|5|b|us|us|usp0001bh3|ml|3.6|brk|37 km SW of Mina, Nevada
+ci3301422|1980-12-29T14:07:00.630|38.5|-118.5|6|ci|ci|ci|ci3301422|mh|3.07|ci|11km ESE of Hawthorne, NV
+ci3301458|1980-12-30T04:14:34.110|38.2318333|-118.4743333|6|ci|ci|ci|ci3301458|ml|2.74|ci|35km SSE of Hawthorne, NV
+ci9742902|1980-12-31T12:29:12.250|38.2345|-118.0615|6|ci|ci|ci|ci9742902|mh|3.14|ci|59km ESE of Hawthorne, NV
+ci3301569|1981-01-01T07:18:06.880|38.2166667|-118.4381667|4.209|ci|ci|ci|ci3301569|mh|2.78|ci|38km SSE of Hawthorne, NV
+usp0001bje|1981-01-01T18:22:22.400|38.053|-118.57|5|b|us|us|usp0001bje|ml|4.2|brk|27 km NNW of Benton, California
+ci12250027|1981-01-03T03:29:40.200|38.1196667|-118.3938333|3.742|ci|ci|ci|ci12250027|mh|2.62|ci|49km SSE of Hawthorne, NV
+ci12250143|1981-01-06T19:10:22.040|38.3093333|-118.3818333|3.599|ci|ci|ci|ci12250143|ml|2.9|ci|32km SE of Hawthorne, NV
+ci12250343|1981-01-10T05:29:14.920|38.2053333|-118.2685|3.629|ci|ci|ci|ci12250343|ml|2.73|ci|47km SE of Hawthorne, NV
+ci3301829|1981-01-11T00:06:45.080|38.4431667|-118.5126667|4.209|ci|ci|ci|ci3301829|mh|2.71|ci|13km SE of Hawthorne, NV
+usp0001bpc|1981-01-11T18:25:38.100|38.152|-118.348|5|us|us|us|usp0001bpc|ml|3.4|brk|33 km SW of Mina, Nevada
+ci3315663|1981-01-12T11:40:15.200|38.344|-118.565|4.209|ci|ci|ci|ci3315663|mh|3.04|ci|21km SSE of Hawthorne, NV
+ci3315772|1981-01-15T00:57:52.050|38.317|-118.3745|4.209|ci|ci|ci|ci3315772|mh|2.6|ci|32km SE of Hawthorne, NV
+ci3315780|1981-01-15T06:34:14.310|38.3168333|-118.5638333|4.209|ci|ci|ci|ci3315780|mh|2.7|ci|24km SSE of Hawthorne, NV
+ci3315785|1981-01-15T12:25:38.530|38.3041667|-118.4708333|4.209|ci|ci|ci|ci3315785|ml|3.11|ci|28km SSE of Hawthorne, NV
+ci12250583|1981-01-16T07:46:47.750|38.5036667|-118.2955|3.599|ci|ci|ci|ci12250583|mh|2.65|ci|29km E of Hawthorne, NV
+ci3315841|1981-01-16T17:30:36.990|38.2351667|-118.3658333|4.209|ci|ci|ci|ci3315841|mh|2.86|ci|39km SE of Hawthorne, NV
+ci12250775|1981-01-22T05:14:58.190|38.209|-118.3851667|3.904|ci|ci|ci|ci12250775|mh|2.77|ci|41km SSE of Hawthorne, NV
+ci3316178|1981-01-23T02:32:46.290|38.2666667|-118.3206667|4.209|ci|ci|ci|ci3316178|mh|2.95|ci|39km SE of Hawthorne, NV
+usp0001bvs|1981-01-24T16:14:18.700|38.233|-118.433|5|p|us|us|usp0001bvs|ml|3|pas|33 km WSW of Mina, Nevada
+ci12253691|1981-01-28T20:06:16.560|38.2535|-118.368|3.599|ci|ci|ci|ci12253691|mh|2.96|ci|38km SE of Hawthorne, NV
+usp0001bxs|1981-01-28T20:08:50.500|38.168|-118.355|18|b|us|us|usp0001bxs|mb|4.5|us|32 km SW of Mina, Nevada
+ci3301930|1981-01-29T07:23:36.640|38.2823333|-118.4001667|4.209|ci|ci|ci|ci3301930|mh|2.75|ci|33km SE of Hawthorne, NV
+ci12254055|1981-02-03T02:50:13.490|38.2221667|-118.5651667|3.599|ci|ci|ci|ci12254055|mh|2.73|ci|34km S of Hawthorne, NV
+ci12254711|1981-02-12T22:33:38.090|38.089|-117.5133333|4.073|ci|ci|ci|ci12254711|mh|2.73|ci|25km W of Tonopah, NV
+ci12254767|1981-02-13T21:11:35.550|38.19|-118.3046667|3.812|ci|ci|ci|ci12254767|mh|2.65|ci|46km SE of Hawthorne, NV
+ci531194|1981-03-05T06:19:07.780|38.4138333|-118.7655|-2.311|ci|ci|ci|ci531194|mh|3|ci|18km SW of Hawthorne, NV
+ci12262431|1981-03-22T15:31:49.890|38.216|-118.3525|3.904|ci|ci|ci|ci12262431|mh|2.63|ci|42km SE of Hawthorne, NV
+usp0001cud|1981-03-23T08:52:30.700|38.193|-118.367|5|brk|us|us|usp0001cud|ml|3.5|brk|31 km SW of Mina, Nevada
+ci12262527|1981-03-23T11:40:46.290|38.2285|-118.3948333|3.904|ci|ci|ci|ci12262527|mh|2.85|ci|38km SSE of Hawthorne, NV
+ci12262575|1981-03-23T19:06:07.540|38.263|-118.4346667|3.599|ci|ci|ci|ci12262575|mh|2.65|ci|34km SSE of Hawthorne, NV
+ci516383|1981-04-03T18:39:54.440|38.186|-118.382|3.904|ci|ci|ci|ci516383|mc|2.63|ci|43km SSE of Hawthorne, NV
+usp0001d39|1981-04-11T04:13:24.100|38.053|-118.602|5|brk|us|us|usp0001d39|ml|3.7|brk|28 km NNW of Benton, California
+ci514560|1981-04-17T02:27:05.550|38.1313333|-118.0531667|3.812|ci|ci|ci|ci514560|mh|2.69|ci|66km SE of Hawthorne, NV
+ci514561|1981-04-17T02:33:02.490|38.1328333|-118.0671667|3.812|ci|ci|ci|ci514561|mh|2.65|ci|65km SE of Hawthorne, NV
+usp0001d73|1981-04-18T00:35:40.800|38.063|-118.607|5|brk|us|us|usp0001d73|ml|3.7|brk|29 km NNW of Benton, California
+ci515158|1981-05-01T01:31:06.450|38.386|-118.127|3.599|ci|ci|ci|ci515158|mc|3.16|ci|46km ESE of Hawthorne, NV
+ci516077|1981-05-15T21:52:17.600|38.586|-117.875|3.599|ci|ci|ci|ci516077|mc|2.61|ci|65km E of Hawthorne, NV
+ci518023|1981-06-20T14:27:22.820|38.189|-118.234|-1.268|ci|ci|ci|ci518023|mc|2.64|ci|50km SE of Hawthorne, NV
+ci518252|1981-06-25T01:11:27.220|38.298|-118.41|3.599|ci|ci|ci|ci518252|mc|2.68|ci|31km SE of Hawthorne, NV
+usp0001fu9|1981-09-12T18:12:58.600|38.06|-118.59|16|brk|us|us|usp0001fu9|ml|4.3|brk|California-Nevada border region
+ci522922|1981-09-13T00:36:22.130|38.218|-118.532|3.599|ci|ci|ci|ci522922|mc|2.71|ci|35km SSE of Hawthorne, NV
+usp0001h7b|1981-12-01T16:18:50.000|38.62|-118.188|11|brk|us|us|usp0001h7b|ml|4.5|brk|26 km NNW of Mina, Nevada
+ci102460|1981-12-01T16:28:20.550|38.669|-118.143|3.599|ci|ci|ci|ci102460|mc|3.07|ci|45km ENE of Hawthorne, NV
+ci102461|1981-12-01T16:31:29.850|38.638|-118.17|3.599|ci|ci|ci|ci102461|mc|2.61|ci|41km ENE of Hawthorne, NV
+usp0001h9u|1981-12-07T07:47:51.600|38.668|-118.223|6|brk|us|us|usp0001h9u|ml|4.1|brk|32 km NNW of Mina, Nevada
+usp0001hcx|1981-12-13T01:20:01.000|38.668|-118.238|5|brk|us|us|usp0001hcx|ml|3.7|brk|32 km NNW of Mina, Nevada
+usp0001hh0|1981-12-19T20:56:52.900|38.633|-118.21|17|brk|us|us|usp0001hh0|ml|4.4|brk|28 km NNW of Mina, Nevada
+usp0001jcd|1982-01-28T22:48:44.640|38.62|-118.208|5|us|us|us|usp0001jcd|ml|3.8|brk|26 km NNW of Mina, Nevada
+usp0001jce|1982-01-28T22:50:43.620|38.622|-118.09|5|us|us|us|usp0001jce|ml|4.3|brk|25 km N of Mina, Nevada
+usp0001jcf|1982-01-28T22:51:02.060|38.543|-118.066|5|us|us|us|usp0001jcf|ml|4.5|brk|California-Nevada border region
+usp0001jcg|1982-01-28T22:59:03.560|38.61|-118.178|5|us|us|us|usp0001jcg|ml|3.7|brk|25 km NNW of Mina, Nevada
+ci529871|1982-04-30T19:33:26.220|38.095|-118.341|3.812|ci|ci|ci|ci529871|mc|3.38|ci|54km SSE of Hawthorne, NV
+ci530852|1982-05-17T01:01:15.530|38.358|-118.342|3.599|ci|ci|ci|ci530852|mc|3.13|ci|31km SE of Hawthorne, NV
+ci531620|1982-05-21T08:48:52.340|38.678|-117.475|3.599|ci|ci|ci|ci531620|mc|3.02|ci|71km NNW of Tonopah, NV
+ci531555|1982-05-28T03:25:58.520|38.109|-118.588|4.209|ci|ci|ci|ci531555|mc|3.56|ci|46km S of Hawthorne, NV
+ci532222|1982-06-08T12:52:55.220|38.284|-118.722|3.599|ci|ci|ci|ci532222|mc|2.94|ci|28km SSW of Hawthorne, NV
+ci505386|1982-07-15T12:49:16.530|38.205|-118.393|3.904|ci|ci|ci|ci505386|mc|3.12|ci|41km SSE of Hawthorne, NV
+ci505657|1982-07-23T17:48:30.470|38.05|-118.498|3.904|ci|ci|ci|ci505657|mc|3.23|ci|54km SSE of Hawthorne, NV
+ci506914|1982-08-25T08:52:11.880|38.1|-118.688|3.599|ci|ci|ci|ci506914|mc|3.02|ci|48km S of Hawthorne, NV
+usp0001p9v|1982-08-28T08:26:55.320|38.726|-118.717|5|us|us|us|usp0001p9v|ml|3.6|brk|9 km NNE of Walker Lake, Nevada
+usp0001pan|1982-08-29T21:08:04.000|38.165|-118.432|5|brk|us|us|usp0001pan|ml|4|brk|37 km SW of Mina, Nevada
+usp0001pb2|1982-08-30T09:52:23.200|38.173|-118.438|5|brk|us|us|usp0001pb2|ml|3.6|pas|37 km SW of Mina, Nevada
+usp0001pcm|1982-09-02T22:51:06.220|38.083|-117.918|5|us|us|us|usp0001pcm|ml|3.2|pas|37 km SSE of Mina, Nevada
+ci511561|1982-10-16T12:54:00.870|38.792|-118.332|3.629|ci|ci|ci|ci511561|mc|3.93|ci|39km NE of Hawthorne, NV
+ci509398|1982-10-23T13:35:02.050|38.71|-118.764|3.599|ci|ci|ci|ci509398|mc|3.14|ci|24km NNW of Hawthorne, NV
+ci512599|1982-11-04T01:15:50.600|38.764|-118.763|3.599|ci|ci|ci|ci512599|mc|2.88|ci|29km NNW of Hawthorne, NV
+ci503303|1982-11-05T01:36:45.840|38.34|-118.187|3.599|ci|ci|ci|ci503303|mc|2.66|ci|43km ESE of Hawthorne, NV
+ci512490|1982-11-29T05:50:05.260|38.378|-118.139|3.599|ci|ci|ci|ci512490|mc|2.88|ci|45km ESE of Hawthorne, NV
+ci500935|1983-01-01T01:32:35.610|38.198|-118.488|3.599|ci|ci|ci|ci500935|ml|2.89|ci|38km SSE of Hawthorne, NV
+nc1088379|1983-02-24T18:12:31.130|38.0583333|-118.7236667|-0.528|nc|nc|nc|nc1088379|ml|3.4|nc|34 km NW of Benton, California
+ci1108762|1983-05-29T18:16:37.780|38.1363333|-118.418|5.881|ci|ci|ci|ci1108762|ml|2.79|ci|47km SSE of Hawthorne, NV
+usp0001wu8|1983-07-15T22:03:10.300|38.515|-118.253|13|brk|us|us|usp0001wu8|ml|4.6|brk|18 km NW of Mina, Nevada
+ci10361|1983-07-15T22:09:44.310|38.4565|-118.1561667|4.803|ci|ci|ci|ci10361|mh|3.16|ci|41km E of Hawthorne, NV
+usp0002533|1984-06-17T20:23:24.060|38.247|-117.851|6.2|us|us|us|usp0002533|ml|3.8|brk|27 km SE of Mina, Nevada
+usp00026hc|1984-08-19T02:22:34.270|38.356|-118.062|5|us|us|us|usp00026hc|mb|3.8|us|5 km SE of Mina, Nevada
+usp00028tk|1984-11-05T11:21:15.170|38.251|-117.852|5|us|us|us|usp00028tk|ml|3.7|brk|27 km SE of Mina, Nevada
+nc49034|1985-06-05T17:37:49.890|38.0523333|-118.74|1.412|nc|nc|nc|nc49034|md|2.62|nc|34 km NW of Benton, California
+ci69045|1985-07-25T13:45:10.960|38.128|-118.607|5.881|ci|ci|ci|ci69045|mc|2.77|ci|44km S of Hawthorne, NV
+ci118625|1985-09-18T10:58:09.750|38.573|-118.598|5.572|ci|ci|ci|ci118625|mc|2.63|ci|6km NNE of Hawthorne, NV
+usp0002srv|1986-04-08T12:26:40.200|38.263|-118.618|3|brk|us|us|usp0002srv|ml|3.6|brk|29 km S of Hawthorne, Nevada
+ci126498|1986-06-13T05:25:12.650|38.1|-118.322|5.881|ci|ci|ci|ci126498|mc|2.95|ci|54km SSE of Hawthorne, NV
+usp0003495|1987-04-18T20:07:20.390|38.524|-117.757|5|us|us|us|usp0003495|ml|3.4|us|34 km ENE of Mina, Nevada
+usp00034z3|1987-05-13T10:10:42.600|38.3|-118.665|6|brk|us|us|usp00034z3|ml|3.4|brk|25 km S of Hawthorne, Nevada
+usp000357e|1987-05-23T21:01:57.390|38.499|-117.809|5|us|us|us|usp000357e|ml|3|us|28 km ENE of Mina, Nevada
+usp000370g|1987-07-28T09:05:07.710|38.364|-118.073|5|us|us|us|usp000370g|ml|3.3|us|4 km SE of Mina, Nevada
+usp000370w|1987-07-28T18:55:11.100|38.383|-118.117|14|brk|us|us|usp000370w|mb|4.3|us|1 km SW of Mina, Nevada
+usp0003716|1987-07-29T03:52:32.500|38.367|-118.17|12|brk|us|us|usp0003716|mb|4.4|us|California-Nevada border region
+usp000371t|1987-07-29T21:41:15.530|38.374|-118.049|5|us|us|us|usp000371t|ml|2.9|us|5 km ESE of Mina, Nevada
+usp000372d|1987-07-30T12:13:59.170|38.382|-118.045|5|us|us|us|usp000372d|ml|2.8|mm4|5 km E of Mina, Nevada
+usp000376w|1987-08-03T09:48:03.700|38.39|-118.06|18|brk|us|us|usp000376w|mb|3.9|us|4 km E of Mina, Nevada
+usp00037az|1987-08-07T11:47:48.910|38.332|-118.073|5|us|us|us|usp00037az|ml|2.9|us|7 km SSE of Mina, Nevada
+usp00038br|1987-09-13T02:18:04.470|38.178|-117.843|5|us|us|us|usp00038br|ml|2.6|us|33 km SE of Mina, Nevada
+ci744464|1988-02-28T14:08:41.780|38.284|-118.716|3.614|ci|ci|ci|ci744464|mh|3.07|ci|28km SSW of Hawthorne, NV
+usp0003m33|1988-09-19T02:56:31.770|38.461|-118.342|9|ren|us|us|usp0003m33|mb|4.5|us|21 km WNW of Mina, Nevada
+usp0003m37|1988-09-19T03:22:16.490|38.458|-118.347|9.8|ren|us|us|usp0003m37|md|3|ren|22 km WNW of Mina, Nevada
+usp0003m3r|1988-09-19T21:01:45.510|38.462|-118.349|7.3|ren|us|us|usp0003m3r|ml|3.1|us|22 km WNW of Mina, Nevada
+usp0003m5g|1988-09-21T18:29:55.720|38.459|-118.343|9.1|ren|us|us|usp0003m5g|md|3.2|ren|21 km WNW of Mina, Nevada
+usp0003m66|1988-09-22T10:52:55.010|38.462|-118.341|11.9|ren|us|us|usp0003m66|md|3|ren|21 km WNW of Mina, Nevada
+usp0003mns|1988-10-09T08:00:31.010|38.459|-118.343|9.1|ren|us|us|usp0003mns|md|3.5|ren|21 km WNW of Mina, Nevada
+usp0003myc|1988-10-18T22:03:05.660|38.326|-118.114|9.1|ren|us|us|usp0003myc|md|3.2|ren|7 km S of Mina, Nevada
+usp0003n7j|1988-10-26T05:23:25.500|38.446|-118.354|5.1|ren|us|us|usp0003n7j|md|3.2|ren|22 km WNW of Mina, Nevada
+usp0003n82|1988-10-26T14:14:26.150|38.454|-118.358|8.2|ren|us|us|usp0003n82|ml|4|brk|22 km WNW of Mina, Nevada
+usp0003n8u|1988-10-27T08:02:32.890|38.46|-118.341|11.9|ren|us|us|usp0003n8u|mb|3.9|us|21 km WNW of Mina, Nevada
+usp0003p4j|1988-11-23T20:11:22.570|38.573|-117.739|5|us|us|us|usp0003p4j|md|3|ren|36 km SSE of Gabbs, Nevada
+usp0003r7c|1989-01-25T09:30:56.930|38.459|-118.328|6.9|ren|us|us|usp0003r7c|md|3.5|ren|20 km WNW of Mina, Nevada
+usp0003u61|1989-04-20T12:45:52.770|38.494|-117.806|4|us|us|us|usp0003u61|mb|4.3|us|28 km ENE of Mina, Nevada
+usp0003u7y|1989-04-22T15:15:45.730|38.153|-117.811|7.9|us|us|us|usp0003u7y|ml|3.2|us|37 km SE of Mina, Nevada
+usp0003u7z|1989-04-22T15:23:13.310|38.145|-117.818|8.5|us|us|us|usp0003u7z|ml|2.9|us|37 km SE of Mina, Nevada
+usp0003wmm|1989-06-25T06:52:12.710|38.426|-118.404|5|us|us|us|usp0003wmm|mb|3.7|us|22 km ESE of Hawthorne, Nevada
+usp000425j|1989-11-18T09:18:10.480|38.273|-118.64|5|us|us|us|usp000425j|ml|2.6|brk|27 km S of Hawthorne, Nevada
+usp00042c7|1989-11-24T04:36:22.590|38.446|-118.662|5|us|us|us|usp00042c7|ml|2.9|brk|9 km SSW of Hawthorne, Nevada
+usp00043u4|1990-01-01T23:17:18.100|38.313|-118.67|11|brk|us|us|usp00043u4|ml|3.1|brk|23 km S of Hawthorne, Nevada
+usp0004700|1990-03-24T08:16:41.000|38.475|-118.202|6|brk|us|us|usp0004700|mb|3.9|us|12 km NW of Mina, Nevada
+usp00047g2|1990-04-05T10:15:54.380|38.443|-118.35|5|us|us|us|usp00047g2|ml|3.4|us|California-Nevada border region
+usp0004azn|1990-06-25T06:43:34.700|38.385|-118.332|22|brk|us|us|usp0004azn|ml|3.7|brk|19 km W of Mina, Nevada
+usp0004bsq|1990-07-13T10:39:41.500|38.378|-118.348|5|brk|us|us|usp0004bsq|ml|3.2|brk|20 km W of Mina, Nevada
+usp0004fnk|1990-10-12T08:50:11.800|38.347|-118.108|15|brk|us|us|usp0004fnk|ml|2.8|brk|4 km S of Mina, Nevada
+ci2007421|1990-11-13T03:30:37.350|38.463|-118.205|3.599|ci|ci|ci|ci2007421|mc|2.61|ci|37km E of Hawthorne, NV
+ci2010295|1991-01-12T05:44:04.880|38.144|-117.81|4.208|ci|ci|ci|ci2010295|mc|2.94|ci|51km W of Tonopah, NV
+usp0004n5g|1991-02-20T04:13:29.000|38.525|-118.277|4|brk|us|us|usp0004n5g|ml|3|brk|20 km NW of Mina, Nevada
+usp0004n9k|1991-02-22T19:58:50.310|38.38|-118.382|3.9|nc|us|us|usp0004n9k|md|3.3|gm$|23 km W of Mina, Nevada
+usp0004phw|1991-03-26T05:22:40.910|38.316|-118.325|5|us|us|us|usp0004phw|ml|2.7|gs$|20 km WSW of Mina, Nevada
+usp0004pmy|1991-03-27T18:20:02.140|38.516|-118.39|5|us|us|us|usp0004pmy|ml|2.6|gs$|20 km E of Hawthorne, Nevada
+usp0004v98|1991-08-12T21:11:50.800|38.227|-118.758|8|brk|us|us|usp0004v98|mb|4.4|us|35 km SSW of Hawthorne, Nevada
+usp0004v99|1991-08-12T21:22:02.370|38.212|-118.743|2.5|nc|us|us|usp0004v99|md|3|gm$|36 km SSW of Hawthorne, Nevada
+ci2026383|1991-08-12T21:56:25.080|38.276|-118.766|3.599|ci|ci|ci|ci2026383|mc|2.68|ci|30km SSW of Hawthorne, NV
+ci2026386|1991-08-12T22:19:05.210|38.28|-118.774|3.599|ci|ci|ci|ci2026386|mc|2.63|ci|30km SSW of Hawthorne, NV
+ci2026428|1991-08-13T02:38:34.220|38.262|-118.762|3.599|ci|ci|ci|ci2026428|mc|2.97|ci|32km SSW of Hawthorne, NV
+ci2026467|1991-08-13T06:11:06.350|38.273|-118.769|3.599|ci|ci|ci|ci2026467|mc|2.96|ci|31km SSW of Hawthorne, NV
+ci2026538|1991-08-13T14:39:05.410|38.281|-118.75|3.599|ci|ci|ci|ci2026538|mc|2.85|ci|29km SSW of Hawthorne, NV
+ci2026554|1991-08-13T15:44:54.040|38.27|-118.76|3.599|ci|ci|ci|ci2026554|mc|2.9|ci|31km SSW of Hawthorne, NV
+ci2026564|1991-08-13T16:33:33.230|38.279|-118.737|3.599|ci|ci|ci|ci2026564|mc|2.62|ci|29km SSW of Hawthorne, NV
+ci2026592|1991-08-13T19:02:24.670|38.285|-118.761|3.599|ci|ci|ci|ci2026592|mc|3.16|ci|29km SSW of Hawthorne, NV
+usp0004vas|1991-08-13T23:17:40.100|38.23|-118.773|14|brk|us|us|usp0004vas|ml|3.2|brk|35 km SSW of Hawthorne, Nevada
+usp0004wqu|1991-09-17T10:34:53.610|38.199|-118.75|4.6|nc|us|us|usp0004wqu|md|2.6|gm$|37 km SSW of Hawthorne, Nevada
+usp0004xfk|1991-10-06T10:14:50.800|38.631|-118.68|5|us|us|us|usp0004xfk|ml|2.9|gs$|6 km ESE of Walker Lake, Nevada
+usp0004ys9|1991-11-03T22:21:30.000|38.228|-118.747|11|brk|us|us|usp0004ys9|ml|3.7|brk|34 km SSW of Hawthorne, Nevada
+usp0004ysa|1991-11-03T22:38:29.500|38.233|-118.762|10|brk|us|us|usp0004ysa|ml|3.5|brk|34 km SSW of Hawthorne, Nevada
+usp0004ysb|1991-11-03T22:45:43.600|38.233|-118.765|6|brk|us|us|usp0004ysb|ml|3.3|brk|34 km SSW of Hawthorne, Nevada
+usp0004yse|1991-11-04T00:45:16.900|38.232|-118.758|8|brk|us|us|usp0004yse|ml|3.1|brk|34 km SSW of Hawthorne, Nevada
+usp0004ysg|1991-11-04T00:50:35.600|38.243|-118.757|5|brk|us|us|usp0004ysg|ml|3|brk|33 km SSW of Hawthorne, Nevada
+usp0004yt1|1991-11-04T07:03:57.370|38.22|-118.748|5.1|nc|us|us|usp0004yt1|md|2.8|gm$|35 km SSW of Hawthorne, Nevada
+ci2033574|1991-11-04T10:52:07.480|38.285|-118.727|3.599|ci|ci|ci|ci2033574|mc|2.77|ci|28km SSW of Hawthorne, NV
+usp000509r|1991-12-11T14:16:26.270|38.205|-118.756|5|nc|us|us|usp000509r|md|2.6|gm$|37 km SSW of Hawthorne, Nevada
+usp00055cr|1992-04-06T02:40:53.000|38.452|-118.415|3|brk|us|us|usp00055cr|ml|3|brk|19 km ESE of Hawthorne, Nevada
+usp00055vf|1992-04-16T00:14:34.740|38.455|-118.265|5|us|us|us|usp00055vf|md|3|gm$|15 km WNW of Mina, Nevada
+ci2056763|1992-06-26T05:34:55.260|38.341|-118.472|4.208|ci|ci|ci|ci2056763|mc|2.63|ci|24km SSE of Hawthorne, Nevada
+usp00059sq|1992-06-28T12:34:00.370|38.341|-118.354|2.9|nc|us|us|usp00059sq|md|4.1|gm$|22 km WSW of Mina, Nevada
+usp0005a35|1992-07-02T01:12:00.610|38.464|-118.264|5.1|nc|us|us|usp0005a35|md|3.2|gm$|15 km WNW of Mina, Nevada
+usp0005a58|1992-07-02T18:04:32.140|38.475|-118.153|5|us|us|us|usp0005a58|md|3|gm$|10 km NNW of Mina, Nevada
+nc304945|1992-07-23T08:11:17.750|38.0583333|-118.764|2.761|nc|nc|nc|nc304945|md|3|nc|33 km ENE of Lee Vining, California
+ci3065967|1992-09-23T03:27:27.360|38.547|-118.132|3.599|ci|ci|ci|ci3065967|md|2.9|ci|43km E of Hawthorne, Nevada
+usp0005fbq|1992-10-15T01:49:36.430|38.717|-118.677|5|us|us|us|usp0005fbq|md|3.4|gm$|10 km NE of Walker Lake, Nevada
+ci3070658|1992-10-15T02:35:18.090|38.75|-118.742|2.409|ci|ci|ci|ci3070658|md|2.6|ci|27km NNW of Hawthorne, Nevada
+ci3070663|1992-10-15T03:08:16.600|38.731|-118.743|-0.651|ci|ci|ci|ci3070663|md|2.8|ci|25km NNW of Hawthorne, Nevada
+ci3072153|1992-10-22T15:51:55.320|38.61|-118.755|-0.731|ci|ci|ci|ci3072153|md|2.89|ci|15km NW of Hawthorne, Nevada
+usp0005u62|1993-06-07T15:23:22.410|38.455|-118.267|10|us|us|us|usp0005u62|ml|3.1|gs$|15 km WNW of Mina, Nevada
+usp0005wty|1993-07-17T16:28:27.890|38.48|-118.334|8.4|nc|us|us|usp0005wty|md|2.7|gm$|22 km WNW of Mina, Nevada
+usp0005yph|1993-08-16T19:01:04.380|38.444|-118.339|8|nc|us|us|usp0005yph|md|2.9|gm$|20 km WNW of Mina, Nevada
+usp00062w4|1993-10-29T11:53:33.020|38.163|-118.197|5|us|us|us|usp00062w4|ml|4.1|brk|26 km SSW of Mina, Nevada
+usp00066yv|1994-01-19T13:02:18.040|38.47|-117.902|5|us|us|us|usp00066yv|mb|2.9|us|20 km ENE of Mina, Nevada
+ci3168194|1994-05-19T09:24:58.520|38.4376667|-118.0085|4.712|ci|ci|ci|ci3168194|mh|2.8|ci|54km E of Hawthorne, Nevada
+usp0006sh2|1995-02-07T04:08:26.450|38.47|-118.341|0|nc|us|us|usp0006sh2|md|2.8|gm$|22 km WNW of Mina, Nevada
+usp0006x34|1995-05-08T18:19:45.330|38.681|-118.434|8.9|nc|us|us|usp0006x34|ml|3.8|brk|24 km NE of Hawthorne, Nevada
+usp00073t6|1995-09-22T14:47:21.290|38.743|-118.579|19.5|nc|us|us|usp00073t6|mb|4.4|us|18 km NE of Walker Lake, Nevada
+usp000761m|1995-10-31T06:57:49.920|38.264|-118.676|5|us|us|us|usp000761m|md|2.8|gm$|29 km S of Hawthorne, Nevada
+usp00076hs|1995-11-09T13:04:02.100|38.365|-118.267|5|brk|us|us|usp00076hs|ml|3|brk|14 km WSW of Mina, Nevada
+usp0007h9k|1996-05-11T22:41:20.720|38.406|-118.332|4.3|nc|us|us|usp0007h9k|md|2.8|nc|19 km W of Mina, Nevada
+usp0007kn9|1996-07-03T06:17:53.070|38.194|-118.158|5|us|us|us|usp0007kn9|md|3|nc|22 km S of Mina, Nevada
+usp0007n69|1996-08-06T06:29:32.420|38.794|-118.706|5|us|us|us|usp0007n69|ml|3.5|brk|16 km NNE of Walker Lake, Nevada
+ci7043253|1996-09-16T14:54:19.870|38.546|-118.484|3.629|ci|ci|ci|ci7043253|mc|2.61|ci|12km E of Hawthorne, Nevada
+usp0007tp7|1996-11-28T10:08:48.160|38.114|-118.264|5|us|us|us|usp0007tp7|ml|2.9|us|33 km SSW of Mina, Nevada
+nc501240|1997-04-14T08:57:22.020|38.0835|-118.7281667|0.54|nc|nc|nc|nc501240|md|3.18|nc|36 km NW of Benton, California
+nc30131473|1997-04-14T11:20:53.630|38.0721667|-118.7305|8.172|nc|nc|nc|nc30131473|md|4.04|nc|35 km NW of Benton, California
+nc30132055|1997-04-20T23:11:45.420|38.0788333|-118.7253333|6.12|nc|nc|nc|nc30132055|md|3.02|nc|36 km NW of Benton, California
+usp00086j4|1997-08-21T15:35:33.610|38.588|-118.496|10|us|us|us|usp00086j4|mwr|3.9|brk|13 km ENE of Hawthorne, Nevada
+usp00086j8|1997-08-21T16:11:24.580|38.571|-118.503|10|us|us|us|usp00086j8|mwr|4.5|brk|11 km ENE of Hawthorne, Nevada
+usp00086ja|1997-08-21T16:36:47.290|38.563|-118.489|10|us|us|us|usp00086ja|mwr|4.4|brk|12 km ENE of Hawthorne, Nevada
+usp00089mf|1997-10-26T09:12:36.510|38.274|-118.382|5|nc|us|us|usp00089mf|md|2.9|nc|27 km WSW of Mina, Nevada
+usp0008ghy|1998-02-25T00:50:37.000|38.239|-118.389|11|ren|us|us|usp0008ghy|ml|4.3|brk|29 km SW of Mina, Nevada
+usp0008kwg|1998-04-24T16:17:27.000|38.47|-118.41|6.7|ren|us|us|usp0008kwg|mb|4.2|us|19 km ESE of Hawthorne, Nevada
+usp0008kwq|1998-04-24T17:25:33.000|38.47|-118.42|11.7|ren|us|us|usp0008kwq|ml|3.3|us|18 km ESE of Hawthorne, Nevada
+usp0008qcc|1998-06-23T20:59:24.000|38.46|-118.39|7|ren|us|us|usp0008qcc|ml|3.2|brk|California-Nevada border region
+usp0008tmn|1998-08-21T06:54:38.000|38.24|-118.38|11.1|ren|us|us|usp0008tmn|ml|3.8|us|29 km SW of Mina, Nevada
+usp0008udt|1998-09-04T14:52:22.000|38.79|-117.97|15.7|ren|us|us|usp0008udt|ml|3.4|us|9 km SSW of Gabbs, Nevada
+usp0008wrs|1998-10-19T11:34:25.000|38.24|-118.39|14|ren|us|us|usp0008wrs|ml|2.7|us|29 km SW of Mina, Nevada
+usp0008wrt|1998-10-19T11:53:17.000|38.23|-118.39|9.6|ren|us|us|usp0008wrt|ml|3.1|us|30 km SW of Mina, Nevada
+usp0008wru|1998-10-19T12:29:08.000|38.23|-118.4|12.2|ren|us|us|usp0008wru|ml|2.8|us|31 km SW of Mina, Nevada
+ci9073022|1998-12-06T10:35:59.190|38.267|-118.34|3.629|ci|ci|ci|ci9073022|mh|2.8|ci|38km SE of Hawthorne, Nevada
+usp0008zdr|1998-12-10T10:11:05.000|38.23|-118.39|9.9|ren|us|us|usp0008zdr|ml|3.1|us|30 km SW of Mina, Nevada
+usp00090u8|1999-01-09T02:48:34.000|38.48|-118.4|10.3|ren|us|us|usp00090u8|ml|3.5|us|20 km ESE of Hawthorne, Nevada
+usp0009a7a|1999-06-20T09:58:37.000|38.23|-118.39|10.5|ren|us|us|usp0009a7a|ml|3.3|us|30 km SW of Mina, Nevada
+usp0009b2a|1999-07-04T10:40:05.000|38.49|-117.86|10.7|ren|us|us|usp0009b2a|ml|3.5|us|24 km ENE of Mina, Nevada
+usp0009dth|1999-08-30T03:24:53.000|38.37|-118.68|13.8|ren|us|us|usp0009dth|ml|2.8|us|17 km SSW of Hawthorne, Nevada
+usp0009her|1999-11-12T15:50:54.000|38.13|-118.41|10.6|ren|us|us|usp0009her|ml|3.5|us|35 km N of Benton, California
+usp0009hpn|1999-11-16T01:31:04.000|38.13|-118.4|10.9|ren|us|us|usp0009hpn|ml|3.2|us|35 km N of Benton, California
+usp0009jc4|1999-12-01T13:54:29.000|38.57|-118.4|14.5|ren|us|us|usp0009jc4|ml|2.8|us|20 km ENE of Hawthorne, NV
+usp0009jnb|1999-12-09T11:06:44.000|38.14|-118.41|11.4|ren|us|us|usp0009jnb|ml|3.5|us|36 km N of Benton, California
+nc21078437|2000-01-19T11:11:02.810|38.0551667|-118.7286667|8.528|nc|nc|nc|nc21078437|md|3.22|nc|34 km NW of Benton, California
+nc21078702|2000-01-20T10:04:55.930|38.0563333|-118.7283333|7.988|nc|nc|nc|nc21078702|md|2.99|nc|34 km NW of Benton, California
+nn00001318|2000-01-20T13:14:14.933|38.0614|-118.7587|5.7|nn|nn|nn|nn00001318|ml|3.1|nn|33 km ENE of Lee Vining, California
+nc21078968|2000-01-21T10:18:33.940|38.0543333|-118.7293333|8.948|nc|nc|nc|nc21078968|md|2.86|nc|34 km NW of Benton, California
+nn00002754|2000-02-15T00:18:55.587|38.4808|-118.4042|10|nn|nn|nn|nn00002754|ml|2.6|nn|19 km ESE of Hawthorne, Nevada
+nn00006037|2000-04-16T08:28:06.736|38.5368|-118.5343|8.6|nn|nn|nn|nn00006037|ml|3.1|nn|7 km E of Hawthorne, Nevada
+nc21092442|2000-04-17T00:04:12.850|38.0768333|-118.7576667|11.729|nc|nc|nc|nc21092442|md|2.62|nc|34 km E of Mono City, California
+nn00007307|2000-05-06T11:04:55.927|38.2451|-118.4062|8|nn|nn|nn|nn00007307|ml|2.9|nn|30 km WSW of Mina, Nevada
+nn00007311|2000-05-06T11:20:30.348|38.2465|-118.4022|7.4|nn|nn|nn|nn00007311|ml|3|nn|30 km WSW of Mina, Nevada
+nn00007752|2000-05-11T11:31:18.424|38.2442|-118.4077|8.7|nn|nn|nn|nn00007752|ml|3.2|nn|30 km WSW of Mina, Nevada
+nn00008802|2000-05-24T20:38:28.438|38.0799|-118.6893|3.2|nn|nn|nn|nn00008802|ml|2.6|nn|34 km NNW of Benton, California
+usp0009usd|2000-06-18T05:31:23.060|38.318|-117.859|5|us|us|us|usp0009usd|ml|3.2|us|23 km ESE of Mina, Nevada
+nn00012513|2000-07-21T09:25:21.675|38.1569|-118.1637|5.7|nn|nn|nn|nn00012513|ml|2.8|nn|26 km S of Mina, Nevada
+nn00012523|2000-07-21T12:35:44.220|38.1577|-118.1604|7.2|nn|nn|nn|nn00012523|ml|2.9|nn|26 km S of Mina, Nevada
+nn00016107|2000-09-15T00:21:16.853|38.5865|-117.8772|6.6|nn|nn|nn|nn00016107|ml|2.8|nn|29 km NE of Mina, Nevada
+nn00022026|2001-01-01T01:47:49.803|38.5147|-118.5154|12.7|nn|nn|nn|nn00022026|ml|2.7|nn|9 km E of Hawthorne, Nevada
+nn00024383|2001-02-17T22:54:19.482|38.251|-118.2891|12.7|nn|nn|nn|nn00024383|ml|3.7|nn|22 km SW of Mina, Nevada
+nn00025490|2001-03-07T14:22:36.544|38.2331|-118.7505|11.7|nn|nn|nn|nn00025490|ml|2.7|nn|34 km SSW of Hawthorne, Nevada
+nn00025451|2001-03-07T14:43:56.634|38.237|-118.7492|13.5|nn|nn|nn|nn00025451|ml|3.3|nn|33 km SSW of Hawthorne, Nevada
+nn00025455|2001-03-07T14:59:44.732|38.2364|-118.7495|13.5|nn|nn|nn|nn00025455|ml|2.8|nn|33 km SSW of Hawthorne, Nevada
+nn00025491|2001-03-07T19:55:53.560|38.5585|-118.3992|10.3|nn|nn|nn|nn00025491|ml|3|nn|20 km E of Hawthorne, Nevada
+nn00025492|2001-03-07T19:56:25.105|38.2315|-118.7455|11.1|nn|nn|nn|nn00025492|ml|3.1|nn|34 km SSW of Hawthorne, Nevada
+nn00028438|2001-04-24T04:20:21.739|38.3194|-118.4019|13.3|nn|nn|nn|nn00028438|ml|3|nn|26 km WSW of Mina, Nevada
+nn00028658|2001-04-27T19:37:02.817|38.326|-118.7055|7.5|nn|nn|nn|nn00028658|ml|3.1|nn|23 km SSW of Hawthorne, Nevada
+nn00029061|2001-05-06T00:38:53.369|38.706|-117.9346|12.2|nn|nn|nn|nn00029061|ml|3.4|nn|18 km S of Gabbs, Nevada
+nn00029062|2001-05-06T00:50:43.153|38.7151|-117.9821|0|nn|nn|nn|nn00029062|ml|2.8|nn|17 km SSW of Gabbs, Nevada
+nn00030816|2001-06-08T04:18:24.043|38.7699|-117.9643|9.6|nn|nn|nn|nn00030816|ml|2.6|nn|Nevada
+nn00031016|2001-06-13T21:55:47.803|38.5916|-118.2245|10.1|nn|nn|nn|nn00031016|ml|2.8|nn|24 km NNW of Mina, Nevada
+nn00036185|2001-08-31T15:43:36.092|38.377|-118.1641|9.9|nn|nn|nn|nn00036185|ml|3.6|nn|5 km WSW of Mina, Nevada
+nn00410239|2001-08-31T15:45:02.252|38.3707|-118.1622|8.8|nn|nn|nn|nn00410239|ml|3.6|nn|5 km WSW of Mina, Nevada
+nn00044837|2002-02-21T08:19:14.202|38.0827|-118.2051|8.4|nn|nn|nn|nn00044837|ml|2.8|nn|35 km SSW of Mina, Nevada
+nn00045192|2002-02-27T16:14:24.671|38.0733|-118.1896|4.3|nn|nn|nn|nn00045192|ml|2.9|nn|35 km SSW of Mina, Nevada
+nn00046365|2002-03-24T02:55:15.349|38.5086|-118.2753|10.9|nn|nn|nn|nn00046365|ml|2.7|nn|19 km NW of Mina, Nevada
+nn00049719|2002-06-12T07:56:56.882|38.5243|-118.5104|4.5|nn|nn|nn|nn00049719|ml|2.6|nn|9 km E of Hawthorne, Nevada
+nn00050753|2002-06-18T22:49:12.981|38.5256|-118.5016|8.3|nn|nn|nn|nn00050753|ml|2.6|nn|10 km E of Hawthorne, Nevada
+nn00051128|2002-06-23T04:22:59.630|38.4566|-118.3409|11.8|nn|nn|nn|nn00051128|ml|2.6|nn|21 km WNW of Mina, Nevada
+nc21232135|2002-06-24T18:51:32.060|38.0701667|-118.7371667|3.262|nc|nc|nc|nc21232135|ml|3.2|nc|35 km E of Mono City, California
+nn00380026|2002-10-28T12:48:17.348|38.3805|-118.0105|7.2|nn|nn|nn|nn00380026|ml|3.6|nn|8 km E of Mina, Nevada
+nn00059114|2002-11-14T01:00:32.654|38.2799|-118.5679|7.4|nn|nn|nn|nn00059114|ml|2.8|nn|27 km S of Hawthorne, Nevada
+nn00060303|2002-12-07T12:50:09.070|38.3742|-118.1604|8.9|nn|nn|nn|nn00060303|ml|2.9|nn|California-Nevada border region
+nn00060420|2002-12-10T00:11:12.646|38.7921|-117.9644|6.4|nn|nn|nn|nn00060420|ml|2.8|nn|9 km SSW of Gabbs, Nevada
+nn00068011|2003-05-29T18:33:02.077|38.2599|-117.9076|8.7|nn|nn|nn|nn00068011|mb|3.8|nn|22 km SE of Mina, Nevada
+nn00068024|2003-05-29T22:52:14.296|38.2536|-117.9116|5.5|nn|nn|nn|nn00068024|mb|4|nn|22 km SE of Mina, Nevada
+nn00068057|2003-05-30T00:47:53.468|38.2609|-117.9097|7.4|nn|nn|nn|nn00068057|ml|2.6|nn|22 km SE of Mina, Nevada
+nn00068135|2003-05-30T01:50:36.542|38.2558|-117.9083|0|nn|nn|nn|nn00068135|ml|2.6|nn|23 km SE of Mina, Nevada
+nn00068091|2003-05-30T08:10:07.652|38.2615|-117.9082|6.5|nn|nn|nn|nn00068091|ml|2.6|nn|22 km SE of Mina, Nevada
+nn00068096|2003-05-30T09:56:20.260|38.263|-117.9075|7.3|nn|nn|nn|nn00068096|ml|2.6|nn|22 km SE of Mina, Nevada
+nn00068187|2003-05-31T13:50:41.476|38.2595|-117.9106|8.6|nn|nn|nn|nn00068187|ml|3.4|nn|22 km SE of Mina, Nevada
+nn00068197|2003-05-31T22:00:42.382|38.2584|-117.9034|6.9|nn|nn|nn|nn00068197|ml|2.8|nn|23 km SE of Mina, Nevada
+nn00068216|2003-06-01T00:15:06.960|38.5294|-118.4307|9.9|nn|nn|nn|nn00068216|ml|2.8|nn|16 km E of Hawthorne, Nevada
+nn00068236|2003-06-01T21:00:23.994|38.2452|-117.9243|4.2|nn|nn|nn|nn00068236|ml|3.8|nn|22 km SE of Mina, Nevada
+nn00069949|2003-07-21T11:23:44.539|38.5767|-118.2619|6.5|nn|nn|nn|nn00069949|ml|2.6|nn|24 km NNW of Mina, Nevada
+usp000c9tv|2003-10-07T05:20:33.180|38.117|-118.289|9|ren|us|us|usp000c9tv|ml|3.8|ren|34 km SSW of Mina, Nevada
+nc21312704|2003-10-14T20:50:59.820|38.0523333|-118.7368333|6.875|nc|nc|nc|nc21312704|md|2.81|nc|34 km NW of Benton, California
+nn00075644|2003-11-15T20:11:59.230|38.2215|-117.8737|8.8|nn|nn|nn|nn00075644|mb|4.2|nn|27 km SE of Mina, Nevada
+nn00075646|2003-11-15T20:42:18.817|38.2257|-117.8672|7.4|nn|nn|nn|nn00075646|ml|3.4|nn|27 km SE of Mina, Nevada
+nn00075648|2003-11-15T20:55:54.538|38.2186|-117.8704|10.4|nn|nn|nn|nn00075648|ml|2.6|nn|28 km SE of Mina, Nevada
+nn00075650|2003-11-15T21:19:36.644|38.2199|-117.8708|7.1|nn|nn|nn|nn00075650|mb|4.3|nn|28 km SE of Mina, Nevada
+nn00075705|2003-11-16T06:08:29.076|38.2287|-117.8657|10.7|nn|nn|nn|nn00075705|ml|3.5|nn|27 km SE of Mina, Nevada
+nn00075865|2003-11-18T06:59:34.830|38.2257|-117.8748|9.1|nn|nn|nn|nn00075865|ml|4.2|nn|27 km SE of Mina, Nevada
+nn00075869|2003-11-18T07:53:53.372|38.223|-117.8726|5.9|nn|nn|nn|nn00075869|ml|3|nn|Nevada
+nn00075883|2003-11-18T13:18:29.975|38.2247|-117.8748|7.7|nn|nn|nn|nn00075883|ml|2.9|nn|27 km SE of Mina, Nevada
+nn00075900|2003-11-18T21:40:21.119|38.2196|-117.8741|5.2|nn|nn|nn|nn00075900|ml|2.7|nn|27 km SE of Mina, Nevada
+nn00076903|2003-12-03T02:35:07.816|38.2224|-117.8732|6.2|nn|nn|nn|nn00076903|ml|2.7|nn|27 km SE of Mina, Nevada
+nn00101010|2004-01-20T17:21:20.450|38.2215|-117.8724|5.4|nn|nn|nn|nn00101010|ml|2.8|nn|

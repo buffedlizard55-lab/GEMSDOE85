@@ -1,0 +1,274 @@
+#EventID|Time|Latitude|Longitude|Depth/km|Author|Catalog|Contributor|ContributorID|MagType|Magnitude|MagAuthor|EventLocationName
+ci3323118|1950-09-28T11:03:21.910|37.4561667|-118.3468333|6|ci|ci|ci|ci3323118|ml|3.95|ci|10km NE of Dixon Lane-Meadow Creek, CA
+ushis1718|1950-10-17T03:54:33.000|39.6|-116.69||us|ushis|us|ushis1718|ml|4.5|brk|34 km ENE of Austin, Nevada
+ushis1719|1950-10-23T08:12:46.000|39.5|-117.5||us|ushis|us|ushis1719|ml|4.5|brk|37 km W of Austin, Nevada
+ushis1728|1951-01-22T15:14:53.000|39.08|-119.95||us|ushis|us|ushis1728|ml|4.8|brk|1 km SW of Glenbrook, Nevada
+ci3322632|1951-01-26T06:28:01.140|37.6611667|-118.1646667|6|ci|ci|ci|ci3322632|ml|3.45|ci|38km NE of Dixon Lane-Meadow Creek, CA
+ci3322515|1951-06-05T12:29:06.780|37.6215|-118.442|6|ci|ci|ci|ci3322515|ml|3.45|ci|26km N of Dixon Lane-Meadow Creek, CA
+ci3322381|1951-09-05T17:02:24.290|37.7936667|-118.5468333|6|ci|ci|ci|ci3322381|ml|3.04|ci|42km ENE of Mammoth Lakes, CA
+ci3322386|1951-09-09T18:48:31.470|38.6711667|-118.8385|6|ci|ci|ci|ci3322386|ml|4.18|ci|25km NW of Hawthorne, NV
+ci3322261|1951-09-30T05:31:21.100|38|-118.5|6|ci|ci|ci|ci3322261|ml|3.13|ci|58km NE of Mammoth Lakes, CA
+ci3322263|1951-10-01T18:19:59.060|38.2225|-118.4928333|6|ci|ci|ci|ci3322263|ml|3.97|ci|36km SSE of Hawthorne, NV
+ci3322232|1951-11-28T04:59:52.790|37.9421667|-118.3478333|6|ci|ci|ci|ci3322232|ml|3.91|ci|62km N of Dixon Lane-Meadow Creek, CA
+ci3322189|1951-12-28T02:49:26.970|37.665|-118.198|6|ci|ci|ci|ci3322189|ml|4.96|ci|36km NNE of Dixon Lane-Meadow Creek, CA
+ci3322036|1952-02-04T18:25:36.070|37.5501667|-118.53|6|ci|ci|ci|ci3322036|ml|3.86|ci|21km NNW of Dixon Lane-Meadow Creek, CA
+ushis1780|1952-05-09T15:31:32.000|39.42|-119.78||us|ushis|us|ushis1780|ml|5.1|brk|12 km SSE of Reno, Nevada
+ci3319483|1952-06-17T17:19:32.030|37.5456667|-118.4403333|6|ci|ci|ci|ci3319483|ml|3.1|ci|18km N of Dixon Lane-Meadow Creek, CA
+ushis1870|1952-11-13T00:55:16.000|38.5|-118.5||us|ushis|us|ushis1870|ml|4.8|brk|11 km ESE of Hawthorne, Nevada
+ushis1872|1952-11-18T04:04:08.000|39.8|-117.7||us|ushis|us|ushis1872|ml|4.6|brk|63 km WNW of Austin, Nevada
+ushis1886|1953-03-22T05:19:00.000|38.817|-119.983||us|ushis|us|ushis1886|ml|5|brk|12 km S of South Lake Tahoe, California
+ci3303131|1953-04-10T05:11:43.280|37.6976667|-118.7598333|6|ci|ci|ci|ci3303131|ml|4.16|ci|20km ENE of Mammoth Lakes, CA
+ci3300100|1953-08-13T20:41:39.210|37.7171667|-118.698|6|ci|ci|ci|ci3300100|ml|3.76|ci|26km ENE of Mammoth Lakes, CA
+ushis1903|1953-09-26T03:34:29.000|39.53|-119.98||us|ushis|us|ushis1903|ml|5.3|brk|1 km NNE of Verdi, Nevada
+ci3300219|1953-10-30T07:35:46.010|37.6031667|-118.2028333|6|ci|ci|ci|ci3300219|ml|4.03|ci|30km NE of Dixon Lane-Meadow Creek, CA
+ci3301160|1954-01-17T05:55:15.910|37.4848333|-118.395|1|ci|ci|ci|ci3301160|ml|3.12|ci|11km N of Dixon Lane-Meadow Creek, CA
+ci3299762|1954-03-25T00:59:24.720|38.8918333|-118.817|6|ci|ci|ci|ci3299762|ml|3.96|ci|32km ESE of Yerington, NV
+ci3299952|1954-06-07T10:57:21.950|37.5858333|-118.5065|6|ci|ci|ci|ci3299952|ml|3.68|ci|24km NNW of Dixon Lane-Meadow Creek, CA
+ci3299989|1954-06-19T12:45:49.840|37.5158333|-118.3865|6|ci|ci|ci|ci3299989|ml|3.18|ci|15km N of Dixon Lane-Meadow Creek, CA
+iscgem890822|1954-07-06T11:13:23.420|39.42|-118.566|10|iscgem|iscgem|us|iscgem890822|mw|6.2|iscgem|The 1954 Rainbow Mountain, Nevada Earthquake
+ushis1942|1954-07-06T11:18:04.000|39.42|-118.53||us|ushis|us|ushis1942|ml|5.5|brk|16 km E of Fallon Station, Nevada
+ushis1943|1954-07-06T11:26:55.000|39.42|-118.53||us|ushis|us|ushis1943|ml|4.8|brk|16 km E of Fallon Station, Nevada
+ushis1944|1954-07-06T11:41:00.000|39.42|-118.53||us|ushis|us|ushis1944|ml|4.5|brk|16 km E of Fallon Station, Nevada
+ushis1945|1954-07-06T11:49:00.000|39.42|-118.53||us|ushis|us|ushis1945|ml|5.7|brk|16 km E of Fallon Station, Nevada
+ushis1946|1954-07-06T12:53:59.000|39.42|-118.53||us|ushis|us|ushis1946|ml|4.5|brk|16 km E of Fallon Station, Nevada
+ushis1947|1954-07-06T13:15:11.000|39.42|-118.53||us|ushis|us|ushis1947|ml|5.2|brk|16 km E of Fallon Station, Nevada
+ushis1948|1954-07-06T13:36:01.000|39.42|-118.53||us|ushis|us|ushis1948|ml|4.5|brk|16 km E of Fallon Station, Nevada
+ushis1949|1954-07-06T14:55:15.000|39.42|-118.53||us|ushis|us|ushis1949|ml|4.5|brk|16 km E of Fallon Station, Nevada
+iscgem890827|1954-07-06T22:07:44.820|39.242|-118.599|10|iscgem|iscgem|us|iscgem890827|mw|5.9|iscgem|21 km SSE of Fallon Station, Nevada
+ushis1951|1954-07-07T06:11:08.000|39.42|-118.53||us|ushis|us|ushis1951|ml|4.6|brk|16 km E of Fallon Station, Nevada
+ushis1952|1954-07-08T02:13:55.000|39.42|-118.53||us|ushis|us|ushis1952|ml|4.8|brk|16 km E of Fallon Station, Nevada
+ushis1953|1954-07-08T04:08:19.000|39.42|-118.53||us|ushis|us|ushis1953|ml|4.5|brk|16 km E of Fallon Station, Nevada
+ushis1954|1954-07-08T12:55:10.000|39.42|-118.53||us|ushis|us|ushis1954|ml|4.7|brk|16 km E of Fallon Station, Nevada
+ushis1955|1954-07-08T19:31:57.000|39.42|-118.53||us|ushis|us|ushis1955|ml|5.3|brk|16 km E of Fallon Station, Nevada
+ushis1956|1954-07-09T08:50:03.000|39.42|-118.53||us|ushis|us|ushis1956|ml|4.9|brk|16 km E of Fallon Station, Nevada
+ushis1957|1954-07-10T01:22:20.000|39.42|-118.53||us|ushis|us|ushis1957|ml|4.6|brk|16 km E of Fallon Station, Nevada
+ushis1958|1954-07-11T07:04:00.000|39.42|-118.53||us|ushis|us|ushis1958|ml|4.6|brk|16 km E of Fallon Station, Nevada
+ushis1959|1954-07-11T09:58:12.000|39.42|-118.53||us|ushis|us|ushis1959|ml|4.6|brk|16 km E of Fallon Station, Nevada
+ushis1960|1954-07-12T10:17:06.000|39.42|-118.53||us|ushis|us|ushis1960|ml|4.5|brk|16 km E of Fallon Station, Nevada
+ushis1961|1954-07-12T16:05:25.000|39.42|-118.53||us|ushis|us|ushis1961|ml|4.6|brk|16 km E of Fallon Station, Nevada
+ci3300021|1954-07-17T22:02:37.480|38.711|-116.3483333|6|ci|ci|ci|ci3300021|ml|3.87|ci|105km NE of Tonopah, NV
+ushis1962|1954-07-20T00:11:38.000|38.2|-116.4||us|ushis|us|ushis1962|ml|5|brk|74 km E of Tonopah, Nevada
+ushis1963|1954-07-30T02:00:10.000|39.42|-118.53||us|ushis|us|ushis1963|ml|5.1|brk|16 km E of Fallon Station, Nevada
+ushis1964|1954-07-31T17:24:14.000|39.42|-118.53||us|ushis|us|ushis1964|ml|4.5|brk|16 km E of Fallon Station, Nevada
+ushis1965|1954-08-02T10:18:53.000|39.42|-118.53||us|ushis|us|ushis1965|ml|5.4|brk|16 km E of Fallon Station, Nevada
+ushis1966|1954-08-03T21:24:54.000|39.42|-118.53||us|ushis|us|ushis1966|ml|4.7|brk|16 km E of Fallon Station, Nevada
+ushis1967|1954-08-05T05:03:08.000|39.42|-118.53||us|ushis|us|ushis1967|ml|4.7|brk|16 km E of Fallon Station, Nevada
+ci3298087|1954-08-20T08:00:45.140|37.7651667|-118.3338333|6|ci|ci|ci|ci3298087|ml|4.27|ci|43km N of Dixon Lane-Meadow Creek, CA
+ci3298088|1954-08-20T11:06:31.120|37.6523333|-118.3123333|6|ci|ci|ci|ci3298088|ml|3.18|ci|31km NNE of Dixon Lane-Meadow Creek, CA
+iscgem890996|1954-08-24T05:51:35.160|39.378|-118.516|15|iscgem|iscgem|us|iscgem890996|mw|6.5|iscgem|17 km ESE of Fallon Station, Nevada
+ushis1970|1954-08-24T05:57:46.000|39.58|-118.45||us|ushis|us|ushis1970|ml|5.2|brk|29 km NE of Fallon Station, Nevada
+ushis1971|1954-08-25T02:17:13.000|39.58|-118.45||us|ushis|us|ushis1971|ml|4.8|brk|29 km NE of Fallon Station, Nevada
+ushis1972|1954-08-25T22:21:10.000|39.58|-118.45||us|ushis|us|ushis1972|ml|4.7|brk|29 km NE of Fallon Station, Nevada
+ushis1973|1954-08-26T12:56:15.000|39.58|-118.45||us|ushis|us|ushis1973|ml|4.6|brk|29 km NE of Fallon Station, Nevada
+ushis1975|1954-08-29T03:41:06.000|39.58|-118.45||us|ushis|us|ushis1975|ml|4.7|brk|29 km NE of Fallon Station, Nevada
+ushis1976|1954-08-29T03:58:05.000|39.58|-118.45||us|ushis|us|ushis1976|ml|4.8|brk|29 km NE of Fallon Station, Nevada
+iscgem891016|1954-08-31T22:20:36.890|39.813|-118.465|15|iscgem|iscgem|us|iscgem891016|mw|5.8|iscgem|40 km S of Lovelock, Nevada
+ushis1979|1954-09-09T09:21:05.000|39.58|-118.45||us|ushis|us|ushis1979|ml|4.9|brk|29 km NE of Fallon Station, Nevada
+ci3298461|1954-09-22T07:01:56.220|37.6656667|-118.5013333|6|ci|ci|ci|ci3298461|ml|3.81|ci|32km NNW of Dixon Lane-Meadow Creek, CA
+ci3298620|1954-11-26T10:37:33.430|37.5935|-118.5983333|6|ci|ci|ci|ci3298620|ml|3.48|ci|28km NW of Dixon Lane-Meadow Creek, CA
+nn19541216110700000|1954-12-16T11:07:00.000|39.2|-118|12|nn|nn|us|nn19541216110700000|mw|7.1|nn|The 1954 Fairview Peak, Nevada Earthquake
+nn19541216111100000|1954-12-16T11:11:00.000|39.67|-117.87|12|nn|nn|us|nn19541216111100000|mw|6.9|nn|The 1954 Dixie Valley, Nevada Earthquake
+ushis1987|1954-12-16T11:50:36.000|39.28|-118.12||us|ushis|us|ushis1987|ml|5|brk|48 km NNW of Gabbs, Nevada
+ushis1988|1954-12-16T11:57:30.000|39.28|-118.12||us|ushis|us|ushis1988|ml|5|brk|48 km NNW of Gabbs, Nevada
+ushis1989|1954-12-16T13:15:03.000|39.28|-118.12||us|ushis|us|ushis1989|ml|5|brk|48 km NNW of Gabbs, Nevada
+ushis1990|1954-12-16T14:16:57.000|39.28|-118.12||us|ushis|us|ushis1990|ml|5.8|brk|48 km NNW of Gabbs, Nevada
+ushis1991|1954-12-16T14:24:10.000|39.28|-118.12||us|ushis|us|ushis1991|ml|5.3|brk|48 km NNW of Gabbs, Nevada
+ushis1992|1954-12-16T15:09:42.000|39.28|-118.12||us|ushis|us|ushis1992|ml|5.1|brk|48 km NNW of Gabbs, Nevada
+ushis1993|1954-12-16T21:48:43.000|39.28|-118.12||us|ushis|us|ushis1993|ml|4.5|brk|48 km NNW of Gabbs, Nevada
+ushis1995|1954-12-17T10:15:26.000|39.28|-118.12||us|ushis|us|ushis1995|ml|4.5|brk|48 km NNW of Gabbs, Nevada
+ushis1996|1954-12-17T10:33:29.000|39.28|-118.12||us|ushis|us|ushis1996|ml|4.7|brk|48 km NNW of Gabbs, Nevada
+ushis1997|1954-12-17T20:27:06.000|39.28|-118.12||us|ushis|us|ushis1997|ml|5|brk|48 km NNW of Gabbs, Nevada
+ushis1998|1954-12-18T01:45:36.000|39.28|-118.12||us|ushis|us|ushis1998|ml|4.7|brk|48 km NNW of Gabbs, Nevada
+ushis1999|1954-12-20T17:36:47.000|39.28|-118.12||us|ushis|us|ushis1999|ml|5|brk|48 km NNW of Gabbs, Nevada
+ci3298672|1954-12-31T16:56:52.750|37.5108333|-117.9565|6|ci|ci|ci|ci3298672|ml|3.72|ci|42km ENE of Bishop, CA
+ushis2003|1955-01-01T12:13:54.000|39|-118||us|ushis|us|ushis2003|ml|5.1|brk|16 km NNW of Gabbs, Nevada
+ushis2005|1955-01-09T09:10:50.000|39|-118||us|ushis|us|ushis2005|ml|5|brk|16 km NNW of Gabbs, Nevada
+ushis2006|1955-01-11T10:21:40.000|39|-118||us|ushis|us|ushis2006|ml|4.7|brk|16 km NNW of Gabbs, Nevada
+ushis2010|1955-01-19T02:10:10.000|39.35|-118.25||us|ushis|us|ushis2010|ml|4.6|brk|40 km E of Fallon Station, Nevada
+ushis2013|1955-01-25T23:26:46.000|39|-118||us|ushis|us|ushis2013|ml|4.7|brk|16 km NNW of Gabbs, Nevada
+ushis2014|1955-02-11T16:12:32.000|39.47|-118.1||us|ushis|us|ushis2014|ml|4.7|brk|53 km E of Fallon Station, Nevada
+ushis2016|1955-02-19T23:50:07.000|39.3|-117.8||us|ushis|us|ushis2016|ml|4.8|brk|49 km NNE of Gabbs, Nevada
+ushis2019|1955-03-08T20:05:17.000|39.2|-118.55||us|ushis|us|ushis2019|ml|4.5|brk|27 km SSE of Fallon Station, Nevada
+ushis2020|1955-03-11T14:23:16.000|39.3|-118.1||us|ushis|us|ushis2020|ml|4.5|brk|50 km NNW of Gabbs, Nevada
+ushis2021|1955-03-13T08:41:04.000|39.57|-118.05||us|ushis|us|ushis2021|ml|4.6|brk|59 km ENE of Fallon Station, Nevada
+ushis2023|1955-03-14T18:23:47.000|39.42|-118.25||us|ushis|us|ushis2023|ml|4.7|brk|40 km E of Fallon Station, Nevada
+ushis2031|1955-05-08T10:38:31.000|38.933|-118.117||us|ushis|us|ushis2031|ml|4.5|brk|18 km WNW of Gabbs, Nevada
+ushis2035|1955-05-30T21:28:26.000|39.42|-118||us|ushis|us|ushis2035|ml|4.5|brk|61 km N of Gabbs, Nevada
+ushis2039|1955-06-08T12:22:11.000|38.88|-118.17||us|ushis|us|ushis2039|ml|4.5|brk|21 km W of Gabbs, Nevada
+ci3297834|1955-06-10T18:26:37.670|37.5153333|-118.497|6|ci|ci|ci|ci3297834|ml|3.97|ci|16km NNW of Dixon Lane-Meadow Creek, CA
+ushis2040|1955-06-19T19:20:00.000|38.97|-118.25||us|ushis|us|ushis2040|ml|5.2|brk|30 km WNW of Gabbs, Nevada
+ushis2041|1955-06-19T19:25:16.000|39|-118.5||us|ushis|us|ushis2041|ml|5|brk|27 km ENE of Schurz, Nevada
+ushis2054|1955-08-08T10:35:35.000|38.33|-118.67||us|ushis|us|ushis2054|ml|5.2|brk|21 km S of Hawthorne, Nevada
+ci3297975|1955-09-03T11:06:56.280|37.7218333|-119.2608333|6|ci|ci|ci|ci3297975|ml|3.25|ci|26km WNW of Mammoth Lakes, CA
+ci3297982|1955-09-11T23:24:38.680|37.6858333|-118.4195|6|ci|ci|ci|ci3297982|ml|3.02|ci|33km N of Dixon Lane-Meadow Creek, CA
+ushis2061|1955-09-29T05:40:51.000|39.22|-118.2||us|ushis|us|ushis2061|ml|4.5|brk|45 km NNW of Gabbs, Nevada
+ushis2066|1955-11-02T06:15:17.000|39.5|-118.05||us|ushis|us|ushis2066|ml|4.6|brk|58 km E of Fallon Station, Nevada
+ci3297341|1955-11-08T02:40:52.550|37.4506667|-118.7548333|6|ci|ci|ci|ci3297341|ml|4.13|ci|28km WNW of West Bishop, CA
+ushis2072|1955-12-22T12:05:07.000|38.98|-118.7||us|ushis|us|ushis2072|ml|4.8|brk|10 km ENE of Schurz, Nevada
+ushis2073|1955-12-22T12:06:54.000|38.98|-118.7||us|ushis|us|ushis2073|ml|4.6|brk|10 km ENE of Schurz, Nevada
+ushis2074|1955-12-31T13:51:04.000|39|-118.03||us|ushis|us|ushis2074|ml|4.5|brk|17 km NNW of Gabbs, Nevada
+ci3297495|1956-01-24T07:29:32.950|37.363|-118.7796667|6|ci|ci|ci|ci3297495|ml|3.26|ci|29km W of West Bishop, CA
+ci3297497|1956-01-26T21:04:14.870|37.481|-117.5785|6|ci|ci|ci|ci3297497|ml|3.44|ci|72km ENE of Big Pine, CA
+ci3297499|1956-01-31T01:37:39.660|38.7973333|-119.3786667|6|ci|ci|ci|ci3297499|ml|3.53|ci|3km WNW of Smith Valley, NV
+ushis2084|1956-03-08T07:26:20.000|39.03|-118.07||us|ushis|us|ushis2084|ml|4.6|brk|22 km NW of Gabbs, Nevada
+ci3295130|1956-04-27T22:39:31.480|38.1216667|-118.2833333|6|ci|ci|ci|ci3295130|ml|3.34|ci|54km SSE of Hawthorne, NV
+ci3295314|1956-07-04T05:57:28.320|37.7963333|-119.414|6|ci|ci|ci|ci3295314|ml|4.08|ci|16km ENE of Yosemite Valley, CA
+ushis2095|1956-07-06T03:31:35.000|38.45|-118.62||us|ushis|us|ushis2095|ml|4.9|brk|California-Nevada border region
+ushis2098|1956-07-26T09:53:17.000|39.55|-118.45||us|ushis|us|ushis2098|ml|5.1|brk|27 km ENE of Fallon Station, Nevada
+ci3295369|1956-08-12T04:04:14.860|38.005|-118.7383333|6|ci|ci|ci|ci3295369|ml|3.79|ci|46km NNE of Mammoth Lakes, CA
+ci3295740|1956-11-14T13:49:23.330|37.5401667|-118.5248333|6|ci|ci|ci|ci3295740|ml|3.58|ci|20km NNW of Dixon Lane-Meadow Creek, CA
+ci3295765|1956-12-07T04:29:48.420|37.5038333|-118.7736667|6|ci|ci|ci|ci3295765|ml|3.35|ci|23km SE of Mammoth Lakes, CA
+ushis2116|1956-12-31T17:37:45.000|38.25|-118.93||us|ushis|us|ushis2116|ml|5|brk|26 km E of Bridgeport, California
+ushis2117|1956-12-31T17:39:24.000|38.28|-118.97||us|ushis|us|ushis2117|ml|5.1|brk|23 km E of Bridgeport, California
+ci3295790|1957-01-21T04:01:04.840|37.618|-118.4171667|6|ci|ci|ci|ci3295790|ml|3.6|ci|26km N of Dixon Lane-Meadow Creek, CA
+ci3295804|1957-01-25T15:07:19.780|37.7358333|-118.6083333|6|ci|ci|ci|ci3295804|ml|3.77|ci|34km ENE of Mammoth Lakes, CA
+ci3295985|1957-04-26T03:08:04.350|37.3901667|-117.9671667|6|ci|ci|ci|ci3295985|ml|3.87|ci|38km E of Bishop, CA
+ci3296058|1957-06-21T00:41:25.150|37.8048333|-119.3968333|6|ci|ci|ci|ci3296058|ml|4.5|ci|17km ENE of Yosemite Valley, CA
+ushis2263|1957-10-17T10:14:09.000|39.28|-118.43||us|ushis|us|ushis2263|ml|4.6|brk|28 km ESE of Fallon Station, Nevada
+ci3296478|1958-01-13T04:27:33.750|38.0355|-118.6398333|6|ci|ci|ci|ci3296478|ml|3.98|ci|53km NE of Mammoth Lakes, CA
+ci3296567|1958-04-02T21:54:50.200|37.7251667|-118.3466667|6|ci|ci|ci|ci3296567|ml|4.03|ci|38km N of Dixon Lane-Meadow Creek, CA
+ci3296603|1958-05-03T17:36:08.200|37.785|-118.3873333|6|ci|ci|ci|ci3296603|ml|3.87|ci|44km N of Dixon Lane-Meadow Creek, CA
+ci3296641|1958-05-31T21:17:40.480|37.582|-118.6441667|6|ci|ci|ci|ci3296641|ml|3.89|ci|30km NW of Dixon Lane-Meadow Creek, CA
+ci3296753|1958-08-22T23:42:02.090|37.5695|-118.6016667|6|ci|ci|ci|ci3296753|ml|3.96|ci|26km NW of Dixon Lane-Meadow Creek, CA
+ci3296766|1958-09-22T06:06:24.830|37.5876667|-118.8635|6|ci|ci|ci|ci3296766|ml|3.47|ci|12km ESE of Mammoth Lakes, CA
+iscgem881629|1959-03-23T07:10:26.240|39.404|-118.171|15|iscgem|iscgem|us|iscgem881629|mw|5.71|iscgem|47 km E of Fallon Station, Nevada
+ushis2373|1959-05-21T17:51:40.000|39.47|-118.12||us|ushis|us|ushis2373|ml|4.8|brk|51 km E of Fallon Station, Nevada
+ci3297076|1959-06-06T16:30:45.600|37.3593333|-118.5515|6|ci|ci|ci|ci3297076|ml|3.6|ci|8km W of West Bishop, CA
+ushis2380|1959-06-18T00:29:40.000|37.55|-118.567||us|ushis|us|ushis2380|ml|4.7|pas|8 km NE of Swall Meadows, California
+iscgem882314|1959-06-23T14:35:04.720|39.027|-118.931|15|iscgem|iscgem|us|iscgem882314|mw|5.54|iscgem|13 km NW of Schurz, Nevada
+iscgem882316|1959-06-23T15:04:38.240|39.105|-119.119|15|iscgem|iscgem|us|iscgem882316|mw|5.38|iscgem|13 km NNE of Yerington, Nevada
+ci3297154|1959-08-04T07:36:58.290|37.5005|-118.4168333|6|ci|ci|ci|ci3297154|ml|5.17|ci|13km N of Dixon Lane-Meadow Creek, CA
+ci3297156|1959-08-04T07:40:32.720|37.4131667|-118.5408333|6|ci|ci|ci|ci3297156|ml|4.09|ci|10km NW of West Bishop, CA
+ci3297159|1959-08-04T19:12:35.890|37.4783333|-118.4528333|6|ci|ci|ci|ci3297159|ml|3.83|ci|11km NNW of Dixon Lane-Meadow Creek, CA
+ci3297188|1959-08-28T01:52:39.880|38.1663333|-118.0663333|6|ci|ci|ci|ci3297188|ml|4.08|ci|63km SE of Hawthorne, NV
+ci3297194|1959-09-10T18:22:08.490|37.6728333|-118.6751667|6|ci|ci|ci|ci3297194|ml|3.49|ci|27km E of Mammoth Lakes, CA
+ci3297240|1959-10-28T00:23:09.400|38.1016667|-118.2376667|6|ci|ci|ci|ci3297240|ml|3.83|ci|58km SE of Hawthorne, NV
+ci3297241|1959-10-28T04:07:30.260|38.1386667|-118.2231667|6|ci|ci|ci|ci3297241|ml|3.83|ci|55km SE of Hawthorne, NV
+ci3297242|1959-10-28T12:54:38.220|38.0978333|-118.3485|6|ci|ci|ci|ci3297242|ml|3.86|ci|53km SSE of Hawthorne, NV
+ushis2434|1960-01-26T04:17:36.000|38|-116.5||us|ushis|us|ushis2434|ml|4.9|brk|64 km E of Tonopah, Nevada
+ushis2443|1960-06-05T07:47:07.000|37.517|-118.733|16|us|ushis|us|ushis2443|mw|4.91|th|4 km SSW of Aspen Springs, California
+ci10086566|1960-09-08T18:41:35.870|37.7056667|-118.4123333|6|ci|ci|ci|ci10086566|mh|4|ci|36km N of Dixon Lane-Meadow Creek, CA
+ci3347781|1960-12-01T05:39:55.620|37.571|-118.803|6|ci|ci|ci|ci3347781|ml|3.52|ci|17km ESE of Mammoth Lakes, CA
+ci10086622|1961-02-02T00:04:12.960|37.7695|-118.198|6|ci|ci|ci|ci10086622|mh|5.3|ci|47km NNE of Dixon Lane-Meadow Creek, CA
+ci10086626|1961-02-02T00:07:43.390|37.4853333|-118.4973333|6|ci|ci|ci|ci10086626|mh|5.1|ci|13km NNW of Dixon Lane-Meadow Creek, CA
+ci3344848|1961-05-12T13:59:18.430|37.7655|-118.6623333|6|ci|ci|ci|ci3344848|ml|3.76|ci|31km ENE of Mammoth Lakes, CA
+ci3344849|1961-05-12T15:29:28.020|37.7818333|-118.6813333|6|ci|ci|ci|ci3344849|ml|3.89|ci|31km ENE of Mammoth Lakes, CA
+ushis2502|1961-07-04T11:09:11.000|40.13|-118.6||us|ushis|us|ushis2502|ml|5|brk|12 km WSW of Lovelock, Nevada
+ushis2505|1961-08-04T16:56:09.100|39.2|-117.4|12|us|ushis|us|ushis2505|ml|4.5|brk|28 km W of Kingston, Nevada
+ci3344726|1961-10-01T17:16:38.370|37.662|-117.7251667|6|ci|ci|ci|ci3344726|ml|3.8|ci|63km SW of Tonopah, NV
+ci3344730|1961-10-02T07:03:58.450|37.635|-117.7711667|6|ci|ci|ci|ci3344730|ml|3.13|ci|63km ENE of Bishop, CA
+ci3344732|1961-10-02T12:49:34.360|37.6218333|-117.7901667|6|ci|ci|ci|ci3344732|ml|3.1|ci|60km ENE of Bishop, CA
+ci3344733|1961-10-02T16:22:25.980|37.6135|-117.6656667|6|ci|ci|ci|ci3344733|ml|3.48|ci|64km SW of Tonopah, NV
+ci3344744|1961-10-03T02:59:16.130|37.4816667|-118.5666667|6|ci|ci|ci|ci3344744|ml|3.78|ci|17km NW of West Bishop, CA
+ci3344510|1962-01-15T23:17:21.410|37.5423333|-118.3045|6|ci|ci|ci|ci3344510|ml|3.94|ci|20km NNE of Dixon Lane-Meadow Creek, CA
+ushis2544|1962-04-13T15:38:51.900|38.222|-119.455|6|us|ushis|us|ushis2544|ml|5.1|brk|19 km W of Bridgeport, California
+ushis2547|1962-04-25T08:48:58.200|38.5|-118.1|25|us|ushis|us|ushis2547|ml|4.6|brk|12 km N of Mina, Nevada
+ushis2558|1962-07-20T09:02:10.000|39.5|-118.2|33|us|ushis|us|ushis2558|ml|4.7|brk|45 km ENE of Fallon Station, Nevada
+ci3331720|1962-08-01T02:56:43.740|37.678|-118.2008333|6|ci|ci|ci|ci3331720|ml|3.05|ci|38km NNE of Dixon Lane-Meadow Creek, CA
+ci3331721|1962-08-12T21:38:00.430|37.9493333|-118.876|6|ci|ci|ci|ci3331721|ml|3.45|ci|36km NNE of Mammoth Lakes, CA
+ci3331723|1962-09-23T21:29:41.150|37.7293333|-117.4068333|6|ci|ci|ci|ci3331723|ml|3.3|ci|41km SSW of Tonopah, NV
+ci3331548|1962-11-06T11:57:17.140|37.6356667|-118.3541667|6|ci|ci|ci|ci3331548|ml|4.08|ci|28km N of Dixon Lane-Meadow Creek, CA
+ushis2581|1962-12-15T06:34:59.800|40.7|-117.5||us|ushis|us|ushis2581|ml|4.9|brk|28 km S of Golconda, Nevada
+ci3331356|1963-05-03T01:28:05.880|37.7415|-118.7815|6|ci|ci|ci|ci3331356|ml|3.45|ci|21km NE of Mammoth Lakes, CA
+ci3331357|1963-05-03T01:54:15.850|37.722|-118.7868333|6|ci|ci|ci|ci3331357|ml|3.44|ci|19km ENE of Mammoth Lakes, CA
+ci3331358|1963-05-03T02:14:44.590|37.7061667|-118.7725|6|ci|ci|ci|ci3331358|ml|4.19|ci|20km ENE of Mammoth Lakes, CA
+ci3331359|1963-05-03T08:42:46.420|37.672|-119.01|6|ci|ci|ci|ci3331359|ml|3.82|ci|5km NW of Mammoth Lakes, CA
+ci3331360|1963-05-03T17:29:00.910|37.7333333|-118.7901667|6|ci|ci|ci|ci3331360|ml|3.76|ci|20km ENE of Mammoth Lakes, CA
+ci3331361|1963-05-03T17:37:12.130|37.6108333|-118.7581667|6|ci|ci|ci|ci3331361|ml|3.47|ci|20km E of Mammoth Lakes, CA
+ci3331362|1963-05-04T03:58:35.490|37.7035|-118.735|6|ci|ci|ci|ci3331362|ml|3.47|ci|23km ENE of Mammoth Lakes, CA
+ci3332176|1963-05-26T19:44:51.700|38.1265|-118.6298333|6|ci|ci|ci|ci3332176|ml|3.61|ci|44km S of Hawthorne, NV
+ci3332196|1963-10-26T17:00:01.120|39.2001667|-118.3803333|0.4|ci|ci|ci|ci3332196|ml|4.72|ci|46km SE of Fallon, NV
+ci3331055|1963-12-06T08:34:23.470|37.5588333|-118.2575|6|ci|ci|ci|ci3331055|ml|4.64|ci|24km NE of Dixon Lane-Meadow Creek, CA
+ci3331056|1963-12-06T10:09:32.750|37.5461667|-118.2496667|6|ci|ci|ci|ci3331056|ml|3.69|ci|23km NE of Dixon Lane-Meadow Creek, CA
+ci3331006|1964-01-27T11:56:11.280|37.6603333|-118.5741667|6|ci|ci|ci|ci3331006|ml|3.42|ci|34km NNW of Dixon Lane-Meadow Creek, CA
+ci3330978|1964-03-09T02:06:29.980|37.6565|-118.3906667|6|ci|ci|ci|ci3330978|ml|4.01|ci|30km N of Dixon Lane-Meadow Creek, CA
+ci3330980|1964-03-12T04:41:07.750|37.449|-118.5645|6|ci|ci|ci|ci3330980|ml|3.47|ci|14km NW of West Bishop, CA
+ci3330981|1964-03-14T17:42:23.960|37.6095|-118.467|6|ci|ci|ci|ci3330981|ml|3.71|ci|25km N of Dixon Lane-Meadow Creek, CA
+ushis2641|1964-03-22T16:30:55.200|38.8|-118.7|16|us|ushis|us|ushis2641|mb|4.5|us|17 km NNE of Walker Lake, Nevada
+ci3330847|1964-09-04T20:20:21.800|37.7666667|-118.3133333|6|ci|ci|ci|ci3330847|ml|3.91|ci|43km NNE of Dixon Lane-Meadow Creek, CA
+ushis2729|1964-10-23T13:57:10.600|38.5|-118.4|26|us|ushis|us|ushis2729|mb|5|us|19 km E of Hawthorne, Nevada
+ci3330789|1964-10-30T17:50:47.620|37.4283333|-118.003|6|ci|ci|ci|ci3330789|ml|3.66|ci|35km ENE of Bishop, CA
+ci3330793|1964-10-30T19:01:43.210|37.6056667|-118.4043333|6|ci|ci|ci|ci3330793|ml|3.42|ci|24km N of Dixon Lane-Meadow Creek, CA
+ci3330794|1964-10-30T19:03:09.120|37.7418333|-117.9471667|6|ci|ci|ci|ci3330794|ml|4.02|ci|57km NE of Dixon Lane-Meadow Creek, CA
+ci3330807|1964-10-30T19:40:25.020|37.5373333|-118.4535|6|ci|ci|ci|ci3330807|ml|3.19|ci|17km NNW of Dixon Lane-Meadow Creek, CA
+ci3330808|1964-10-30T23:02:57.330|37.6258333|-118.3578333|6|ci|ci|ci|ci3330808|ml|3.43|ci|27km N of Dixon Lane-Meadow Creek, CA
+ci3330809|1964-10-31T11:57:24.960|37.4961667|-118.3773333|6|ci|ci|ci|ci3330809|ml|3.22|ci|13km NNE of Dixon Lane-Meadow Creek, CA
+ci3336686|1964-11-01T19:01:28.200|37.5253333|-118.0033333|6|ci|ci|ci|ci3336686|ml|3.42|ci|39km ENE of Bishop, CA
+ci3336694|1964-11-01T19:02:25.590|37.5456667|-118.1975|6|ci|ci|ci|ci3336694|ml|3.79|ci|26km NE of Dixon Lane-Meadow Creek, CA
+ci3330810|1964-11-01T20:41:01.270|37.5026667|-118.1318333|6|ci|ci|ci|ci3330810|ml|3.37|ci|28km ENE of Bishop, CA
+ci3330812|1964-11-02T11:38:51.390|37.6043333|-118.5236667|6|ci|ci|ci|ci3330812|ml|4.05|ci|26km NNW of Dixon Lane-Meadow Creek, CA
+ci3330813|1964-11-03T18:58:41.370|37.5558333|-118.3585|2|ci|ci|ci|ci3330813|ml|3.52|ci|20km NNE of Dixon Lane-Meadow Creek, CA
+ci3330814|1964-11-04T11:50:27.220|37.5663333|-118.2675|6|ci|ci|ci|ci3330814|ml|3.43|ci|24km NNE of Dixon Lane-Meadow Creek, CA
+ci3330815|1964-11-04T11:53:51.150|37.5231667|-118.5045|6|ci|ci|ci|ci3330815|ml|3.32|ci|17km NNW of Dixon Lane-Meadow Creek, CA
+ci3330801|1964-11-12T20:07:24.680|37.5518333|-118.2085|6|ci|ci|ci|ci3330801|ml|3.73|ci|26km NE of Dixon Lane-Meadow Creek, CA
+ci3330816|1964-11-13T05:05:07.840|37.6573333|-118.4093333|6|ci|ci|ci|ci3330816|ml|4|ci|30km N of Dixon Lane-Meadow Creek, CA
+ci3330786|1964-11-23T23:52:30.610|37.5035|-118.2436667|6|ci|ci|ci|ci3330786|ml|3.91|ci|20km NE of Dixon Lane-Meadow Creek, CA
+ci3336701|1964-12-02T09:17:48.190|37.5903333|-117.939|6|ci|ci|ci|ci3336701|ml|3.44|ci|47km ENE of Bishop, CA
+ci3336712|1964-12-14T08:15:34.900|37.5691667|-118.2833333|6|ci|ci|ci|ci3336712|ml|3.14|ci|23km NNE of Dixon Lane-Meadow Creek, CA
+ushis2804|1965-04-13T13:14:22.100|38.9|-117.7|33|us|ushis|us|ushis2804|mb|4.6|us|19 km E of Gabbs, Nevada
+ci3330573|1965-06-03T16:26:25.180|38.49|-119.1051667|6|ci|ci|ci|ci3330573|ml|4.48|ci|39km SSE of Smith Valley, NV
+ci3338709|1965-06-03T16:31:00.980|38.5813333|-119.0341667|6|ci|ci|ci|ci3338709|ml|4.16|ci|35km SE of Smith Valley, NV
+ci3330458|1965-09-22T21:49:25.680|37.4546667|-118.4268333|6|ci|ci|ci|ci3330458|ml|4.52|ci|8km N of Dixon Lane-Meadow Creek, CA
+ci3330287|1966-02-06T05:03:23.450|38.1481667|-118.2526667|6|ci|ci|ci|ci3330287|ml|3.68|ci|53km SE of Hawthorne, NV
+ushis2884|1966-04-02T12:48:38.800|38.4|-118.2|9|us|ushis|us|ushis2884|mb|4|us|8 km W of Mina, Nevada
+ci3330247|1966-04-17T07:04:17.840|37.4885|-118.4875|6|ci|ci|ci|ci3330247|ml|4.05|ci|13km NNW of Dixon Lane-Meadow Creek, CA
+ci3330214|1966-04-29T10:01:46.910|37.4771667|-118.7153333|6|ci|ci|ci|ci3330214|ml|3.58|ci|26km WNW of West Bishop, CA
+ci3330210|1966-06-01T12:28:15.840|37.6775|-117.9325|6|ci|ci|ci|ci3330210|ml|3.35|ci|54km NE of Dixon Lane-Meadow Creek, CA
+ushis2935|1966-10-22T17:16:26.400|40.6|-116.3|32|us|ushis|us|ushis2935|mb|4.5|us|20 km SW of Carlin, Nevada
+ci3329872|1967-01-15T23:26:24.320|37.3515|-118.6131667|6|ci|ci|ci|ci3329872|ml|3.74|ci|14km W of West Bishop, CA
+ci3329873|1967-01-16T01:54:52.700|37.3961667|-118.4308333|6|ci|ci|ci|ci3329873|ml|3.63|ci|2km NW of Dixon Lane-Meadow Creek, CA
+ci3329874|1967-01-16T19:37:50.550|37.4238333|-118.5053333|6|ci|ci|ci|ci3329874|ml|3.71|ci|8km NNW of West Bishop, CA
+ci3329734|1967-03-28T12:23:59.170|37.3948333|-118.514|6|ci|ci|ci|ci3329734|ml|3.42|ci|6km NW of West Bishop, CA
+ci3329683|1967-04-28T12:57:39.920|37.4461667|-118.5078333|6|ci|ci|ci|ci3329683|ml|3.81|ci|10km NW of Dixon Lane-Meadow Creek, CA
+ci3329656|1967-05-30T18:28:15.660|38.2551667|-118.744|6|ci|ci|ci|ci3329656|ml|3.08|ci|32km SSW of Hawthorne, NV
+ci3329657|1967-06-01T00:35:44.070|37.3618333|-116.2916667|6|ci|ci|ci|ci3329657|mh|3.03|ci|65km NE of Beatty, NV
+ci3329482|1967-09-02T20:25:43.350|37.5995|-118.0523333|6|ci|ci|ci|ci3329482|ml|3.46|ci|40km NE of Dixon Lane-Meadow Creek, CA
+ci3329425|1967-11-11T05:51:51.710|37.6213333|-118.4983333|6|ci|ci|ci|ci3329425|ml|3.81|ci|27km NNW of Dixon Lane-Meadow Creek, CA
+ci3329435|1967-11-21T05:30:23.090|37.4643333|-118.2813333|6|ci|ci|ci|ci3329435|ml|4.17|ci|15km NE of Dixon Lane-Meadow Creek, CA
+ci3329440|1967-12-05T18:28:54.260|38.018|-118.1741667|6|ci|ci|ci|ci3329440|ml|3.9|ci|69km SE of Hawthorne, NV
+ci3329416|1967-12-29T22:17:09.560|37.4471667|-118.2705|6|ci|ci|ci|ci3329416|ml|3.4|ci|14km NE of Bishop, CA
+ci3357949|1968-02-06T00:41:37.340|37.9835|-118.1796667|6|ci|ci|ci|ci3357949|ml|5|ci|70km NNE of Dixon Lane-Meadow Creek, CA
+ci3357950|1968-02-06T01:19:15.560|38.0856667|-118.3376667|6|ci|ci|ci|ci3357950|ml|3.69|ci|55km SSE of Hawthorne, NV
+ci3342112|1968-02-06T03:48:10.190|38.0155|-118.118|6|ci|ci|ci|ci3342112|ml|4.28|ci|72km SE of Hawthorne, NV
+ci3357951|1968-02-06T04:00:12.540|38.05|-118.1|6|ci|ci|ci|ci3357951|mh|3.02|ci|70km SE of Hawthorne, NV
+ci3357952|1968-02-06T04:32:50.320|38.0375|-118.0615|6|ci|ci|ci|ci3357952|ml|3.42|ci|73km W of Tonopah, NV
+ci3357953|1968-02-06T06:25:36.920|37.8473333|-117.971|6|ci|ci|ci|ci3357953|ml|3.09|ci|64km NE of Dixon Lane-Meadow Creek, CA
+ci3357954|1968-02-06T07:26:34.880|38.0441667|-118.2148333|6|ci|ci|ci|ci3357954|ml|3.28|ci|64km SE of Hawthorne, NV
+ci3357995|1968-03-24T11:55:59.240|38.208|-118.0106667|6|ci|ci|ci|ci3357995|ml|3.4|ci|64km ESE of Hawthorne, NV
+ci3358195|1968-04-13T18:10:47.740|38.031|-118.622|6|ci|ci|ci|ci3358195|ml|3|ci|54km NE of Mammoth Lakes, CA
+iscgem822523|1968-05-22T13:21:56.790|38.493|-116.192|10|iscgem|iscgem|us|iscgem822523|mw|5.25|iscgem|102 km NNW of Rachel, Nevada
+ushis3006|1968-05-29T11:41:07.100|39.07|-118.05|3|us|ushis|us|ushis3006|mb|4.9|us|24 km NNW of Gabbs, Nevada
+ci3328779|1968-06-03T02:35:25.610|37.687|-116.371|6|ci|ci|ci|ci3328779|mh|3.43|ci|87km ESE of Tonopah, NV
+ci3328141|1969-01-08T11:46:45.580|37.8186667|-116.1496667|6|ci|ci|ci|ci3328141|ml|3.9|ci|99km ESE of Tonopah, NV
+ci3328146|1969-01-08T23:49:19.300|37.3936667|-116.3683333|6|ci|ci|ci|ci3328146|ml|3.89|ci|64km NNE of Beatty, NV
+ci3328156|1969-01-09T05:52:25.810|37.8296667|-116.2278333|6|ci|ci|ci|ci3328156|ml|3.92|ci|92km ESE of Tonopah, NV
+ci3327882|1969-01-11T01:27:58.900|37.3768333|-116.2493333|6|ci|ci|ci|ci3327882|ml|3.41|ci|69km NE of Beatty, NV
+ci3327367|1969-05-12T20:14:16.970|37.7695|-117.7793333|6|ci|ci|ci|ci3327367|ml|3.08|ci|58km SW of Tonopah, NV
+ci3326975|1969-08-25T08:03:32.580|37.6305|-118.6715|6|ci|ci|ci|ci3326975|ml|3.67|ci|27km E of Mammoth Lakes, CA
+ci3326978|1969-08-25T17:11:17.680|37.5136667|-118.2206667|6|ci|ci|ci|ci3326978|ml|3.74|ci|22km NE of Dixon Lane-Meadow Creek, CA
+ci3326201|1969-09-16T15:43:36.740|37.5771667|-116.146|6|ci|ci|ci|ci3326201|ml|3.93|ci|90km WNW of Alamo, NV
+ci3326207|1969-09-16T17:31:14.600|37.4368333|-116.2855|6|ci|ci|ci|ci3326207|ml|4.32|ci|72km NE of Beatty, NV
+ci3326341|1969-10-03T13:10:09.690|37.7518333|-118.8175|6|ci|ci|ci|ci3326341|ml|4.63|ci|19km NE of Mammoth Lakes, CA
+ci3342237|1969-10-27T11:17:12.380|37.5668333|-118.6181667|6|ci|ci|ci|ci3342237|mh|3.37|ci|27km NW of Dixon Lane-Meadow Creek, CA
+ci3325805|1969-12-08T02:26:19.410|37.47|-116.9926667|6|ci|ci|ci|ci3325805|ml|3.73|ci|66km NNW of Beatty, NV
+ci3324952|1970-01-01T19:49:24.730|37.4333333|-118.7435|6|ci|ci|ci|ci3324952|ml|3.69|ci|27km WNW of West Bishop, CA
+ci3324900|1970-01-14T18:44:20.840|37.5451667|-118.4078333|6|ci|ci|ci|ci3324900|mh|3|ci|18km N of Dixon Lane-Meadow Creek, CA
+ci3324915|1970-01-25T20:21:23.600|37.613|-118.6183333|6|ci|ci|ci|ci3324915|ml|3.33|ci|31km NW of Dixon Lane-Meadow Creek, CA
+ushis3097|1970-03-28T09:38:44.000|38.95|-116.4||us|ushis|us|ushis3097|mb|4.5|us|64 km ESE of Kingston, Nevada
+ci3324269|1970-04-12T06:41:20.110|37.5431667|-116.2236667|6|ci|ci|ci|ci3324269|mh|3.35|ci|85km NNE of Beatty, NV
+ci3324045|1970-07-19T11:35:32.720|37.4196667|-116.3928333|0.01|ci|ci|ci|ci3324045|mh|3.33|ci|65km NNE of Beatty, NV
+ci3324073|1970-07-30T09:57:13.150|37.6826667|-118.8125|6|ci|ci|ci|ci3324073|ml|3.09|ci|16km ENE of Mammoth Lakes, CA
+ci3324076|1970-07-30T20:16:35.800|37.3813333|-116.4238333|6|ci|ci|ci|ci3324076|ml|3.5|ci|60km NNE of Beatty, NV
+ci3323805|1970-10-08T13:30:04.100|37.8215|-119.0021667|0.01|ci|ci|ci|ci3323805|ml|3.12|ci|21km N of Mammoth Lakes, CA
+ci3323467|1971-02-01T22:16:05.480|37.3805|-119.9968333|6|ci|ci|ci|ci3323467|ml|3.7|ci|12km SSW of Mariposa, CA
+ci3323385|1971-02-20T12:57:43.500|38.0295|-118.4531667|6|ci|ci|ci|ci3323385|ml|3.73|ci|57km SSE of Hawthorne, NV
+ci3323373|1971-02-26T03:56:05.850|38.0311667|-118.3335|6|ci|ci|ci|ci3323373|ml|3.29|ci|60km SSE of Hawthorne, NV
+ci3323202|1971-03-01T05:47:49.520|37.8673333|-118.371|6|ci|ci|ci|ci3323202|ml|3.57|ci|54km N of Dixon Lane-Meadow Creek, CA
+ci3323206|1971-03-01T08:28:07.500|37.646|-118.0883333|6|ci|ci|ci|ci3323206|ml|3.76|ci|41km NE of Dixon Lane-Meadow Creek, CA
+ci3322734|1971-07-06T19:22:39.280|37.7673333|-116.5858333|6|ci|ci|ci|ci3322734|ml|4.02|ci|66km ESE of Tonopah, NV
+ci3322353|1971-07-24T02:14:39.540|38.1506667|-118.4145|6|ci|ci|ci|ci3322353|ml|3.34|ci|45km SSE of Hawthorne, NV
+ci3322157|1971-09-18T13:53:33.530|38.1036667|-118.2406667|6|ci|ci|ci|ci3322157|mh|3.3|ci|58km SE of Hawthorne, NV
+ci3321749|1971-12-07T19:52:04.840|38.4115|-118.3321667|6|ci|ci|ci|ci3321749|ml|3.68|ci|28km ESE of Hawthorne, NV
+ci3321673|1972-01-16T11:58:53.690|37.71|-118.7678333|6|ci|ci|ci|ci3321673|ml|3.45|ci|20km ENE of Mammoth Lakes, CA
+ci3321679|1972-01-22T02:57:19.340|37.5791667|-118.344|6|ci|ci|ci|ci3321679|ml|4.31|ci|22km NNE of Dixon Lane-Meadow Creek, CA
+ci12315791|1972-02-17T11:09:59

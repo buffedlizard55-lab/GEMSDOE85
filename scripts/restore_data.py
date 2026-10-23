@@ -35,6 +35,9 @@ def sha256_file(path: Path) -> str:
     return h.hexdigest()
 
 
+sha256 = sha256_file
+
+
 def gh_raw(repo: str, ref: str, path: str, out_fh) -> None:
     """Stream one file from GitHub using the authenticated gh CLI (raw media type)."""
     subprocess.run(

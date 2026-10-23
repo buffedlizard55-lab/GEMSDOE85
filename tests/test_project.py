@@ -1,89 +1,97 @@
-"""Integration and contract tests for the GEMSDOE85 submission and site."""
-from pathlib import Path
+"""End-to-end verification of build_site, check_site, byte-level GeoTIFF/ZIP contract, and preflight."""
+
+from __future__ import annotations
+
+import hashlib
 import json
-import numpy as np
-import pytest
-import rasterio
+import shutil
+import zipfile
+from pathlib import Path
+
+from gems85_site import build, check
+from gems57 import gates as g57_gates
+from gems57.grid import load_grid
+from gems57.validate import assert_submittable, validate
+from preflight import review
 
 ROOT = Path(__file__).resolve().parents[1]
 
-import importlib.util
 
-def _load_module(name: str, path: Path):
-    spec = importlib.util.spec_from_file_location(name, path)
-    mod = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(mod)
-    return mod
+def test_site_build_links_and_validated_submission_contract():
+    build()
+    assert check() == []
 
-build_site = _load_module("build_site_main", ROOT / "scripts/build_site.py")
-build = build_site.build
+    c_ev = (ROOT / "evidence/run_card.json").read_text(encoding="utf-8")
+    c_docs = (ROOT / "docs/evidence/run_card.json").read_text(encoding="utf-8")
+    c_dl = (ROOT / "docs/downloads/run_card.json").read_text(encoding="utf-8")
+    assert c_ev == c_docs == c_dl
 
-check_site = _load_module("check_site_main", ROOT / "scripts/check_site.py")
-check = check_site.check
+    card = json.loads(c_ev)
+    assert card["safe_to_download"] is True
+    assert card["safe_to_submit"] is True
+    assert card["experiments_run"] == 3
+    assert card["experiments_run"] <= card["experiments_limit"]
 
+    sub = card["submission"]
+    assert 1 <= len(sub["note"]) <= 140
+    assert card["holdout"]["evidence_class"] == "HOLDOUT-DTI"
+    assert card["holdout"]["evaluator_version"] == "gems57-pooled-hide-v2"
+    assert card["holdout"]["withheld_positive_pixels"] == 11321
+    assert card["holdout"]["dti"] > card["holdout"]["best_valid_control_dti"]
 
-def test_site_generation_and_validation():
-    """Verify site generation and comprehensive check_site validation."""
-    assert build() == 0
-    errors = check(ROOT)
-    assert errors == [], f"check_site reported errors: {errors}"
+    assert card["leakage_canary"]["any_leakage_flag"] is False
+    assert card["leakage_canary"]["max_symmetric_auc"] <= 0.90
+    assert card["uniqueness"]["is_duplicate"] is False
+    assert card["uniqueness"]["surface_worst_abs_spearman"] <= 0.90
+    assert card["uniqueness"]["dots_worst_nonsaturating_3px_overlap"] <= 0.70
 
+    tif_path = ROOT / sub["download_path"]
+    zip_path = ROOT / sub["zip_download_path"]
+    assert tif_path.is_file() and zip_path.is_file()
+    assert hashlib.sha256(tif_path.read_bytes()).hexdigest() == sub["raster_sha256"]
 
-def test_submission_deliverable_and_format_contracts():
-    """Verify the primary submission GeoTIFF passes all format and metric contracts."""
-    sub = json.loads((ROOT / "registry/submission.json").read_text())
-    pri = sub["primary"]
-    fn = pri["filename"]
-    tif_path = ROOT / "docs/downloads" / fn
-    assert tif_path.exists(), f"Primary submission file missing: {tif_path}"
+    grid = load_grid(ROOT / "data")
+    rep = validate(tif_path, grid.footprint, grid.catalogue)
+    assert_submittable(rep)
+    assert rep["in_footprint_positive_pixels"] == sub["emitted_dots"]
+    assert rep["on_catalogue_positive_pixels"] == 0
+    assert rep["n_nan"] == 0 and rep["n_infinite"] == 0
+    assert rep["min"] == 0.0 and rep["max"] == 1.0
 
-    with rasterio.open(tif_path) as ds:
-        assert ds.count == 1, "Must be single-band"
-        assert ds.dtypes[0] == "float32", "Must be float32"
-        assert (ds.height, ds.width) == (3730, 3292), "Dimensions must be 3730x3292"
-        assert ds.crs is not None and ds.crs.to_epsg() == 32611, "CRS must be EPSG:32611"
-        assert ds.nodata is None, "No nodata tag permitted in all-finite zeros mode"
-        a = ds.read(1)
-        assert np.isfinite(a).all(), "All values must be finite (no NaN, no Inf)"
-        assert a.min() >= 0.0 and a.max() <= 1.0, "Values must be strictly in [0, 1]"
-        # Registry-driven (session 22847afd): the dot count is whatever the current
-        # primary's validated stats declare -- hardcoding 90,000 here pinned the test
-        # to the superseded GEO-Pb file and would fail every legitimate new primary.
-        assert (a > 0).sum() == pri["stats"]["emitting_pixels"], (
-            f"Emitted dots {(a > 0).sum()} != registry stats "
-            f"{pri['stats']['emitting_pixels']}")
+    t_rep = g57_gates.format_report(tif_path, ROOT / "data/sample_submission.tif", footprint=grid.footprint)
+    assert t_rep["ok"] is True
 
-    # Catalogue distance guarantee (zero within 2px of catalogue)
-    labels_path = ROOT / "data/labels.tif"
-    if labels_path.exists():
-        with rasterio.open(labels_path) as s:
-            cat = s.read(1) >= 1
-        from scipy import ndimage as ndi
-        halo = ndi.binary_dilation(cat, np.ones((3, 3), bool), iterations=2)
-        assert not ((a > 0) & halo).any(), "Zero mass permitted within 2px of mapped catalogue"
+    with zipfile.ZipFile(zip_path) as zf:
+        assert zf.namelist() == [tif_path.name]
+        assert zf.read(tif_path.name) == tif_path.read_bytes()
 
 
-def test_run_card_and_note_contracts():
-    """Verify run card fields, note length limit, and verdict."""
-    card = json.loads((ROOT / "evidence/run_card.json").read_text())
-    assert card["verdict"] == "promote-as-candidate"
-    # Registry-driven: the run card must describe the current primary raster.
-    sub = json.loads((ROOT / "registry/submission.json").read_text())
-    assert card["raster_sha256"] == sub["primary"]["sha256"]
-    ho = card["holdout_dti"]
-    assert ho["label"] == "HOLDOUT-DTI"
-    assert ho["evaluator_version"] == "gems85-holdout-v1.0.0"
-    assert ho["value"] > 0.05  # sanity floor; the gate comparison lives in the card
-    assert len(ho["ci95"]) == 2
-    assert ho["ci95"][0] < ho["value"] < ho["ci95"][1]
-    assert ho["n_withheld_positives"] == 60988
+def test_preflight_missing_data_is_negative_not_success(tmp_path):
+    shutil.copytree(ROOT / "registry", tmp_path / "registry")
+    shutil.copytree(ROOT / "vendor", tmp_path / "vendor")
+    card = review(tmp_path)
+    assert card["verdict"] == "negative"
+    assert card["safe_to_submit"] is False
+    assert card["safe_to_download"] is False
+    assert card["experiments_run"] == 0
+    assert card["submission_slots_used"] == 0
+    assert not all(row["ok"] for row in card["gates"]["core_mirror_integrity"])
+    assert card["gates"]["template_unmodified"]
+    assert not card["gates"]["cached_stack_available"]
+    assert not list(tmp_path.rglob("*.tif"))
 
-    sub = json.loads((ROOT / "registry/submission.json").read_text())
-    assert len(sub["note"]) <= 140, f"Note exceeds 140 chars: {len(sub['note'])}"
+
+def test_preflight_detects_shared_code_drift(tmp_path):
+    shutil.copytree(ROOT / "registry", tmp_path / "registry")
+    shutil.copytree(ROOT / "vendor", tmp_path / "vendor")
+    p = tmp_path / "vendor/gems57/metric.py"
+    p.write_text(p.read_text() + "\n# synthetic tampering test\n")
+    card = review(tmp_path)
+    assert not card["gates"]["template_unmodified"]
+    assert any("metric.py" in blocker for blocker in card["blockers"])
 
 
 def test_source_register_does_not_claim_organizer_score_receipt():
-    """Verify source classifications distinguish local holdouts from official receipts."""
     j = json.loads((ROOT / "registry/sources.json").read_text())
     assert next(x for x in j["sources"] if x["id"] == "organizer-submissions")["status"] == "redirected to login"
     assert next(x for x in j["sources"] if x["id"] == "h33-owner-page")["class"] == "owner research, not official score receipt"

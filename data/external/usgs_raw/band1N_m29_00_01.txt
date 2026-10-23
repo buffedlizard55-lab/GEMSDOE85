@@ -1,0 +1,139 @@
+#EventID|Time|Latitude|Longitude|Depth/km|Author|Catalog|Contributor|ContributorID|MagType|Magnitude|MagAuthor|EventLocationName
+ci10069606|1980-01-18T06:07:59.260|37.8298333|-117.7566667|6|ci|ci|ci|ci10069606|ml|2.94|ci|53km WSW of Tonopah, NV
+ci10071222|1980-02-17T00:38:05.830|37.8031667|-117.88|6|ci|ci|ci|ci10071222|ml|2.92|ci|64km WSW of Tonopah, NV
+ci9726858|1980-05-25T16:59:47.690|37.8113333|-118.5711667|6|ci|ci|ci|ci9726858|ml|4.05|ci|41km ENE of Mammoth Lakes, CA
+ci9726898|1980-05-25T17:12:39.640|37.7766667|-117.7941667|6|ci|ci|ci|ci9726898|ml|3.76|ci|59km WSW of Tonopah, NV
+ci9727018|1980-05-25T18:00:57.960|37.8716667|-118.4906667|6|ci|ci|ci|ci9727018|ml|3.3|ci|50km ENE of Mammoth Lakes, CA
+ci3308015|1980-05-25T18:08:13.950|37.7513333|-118.497|6|ci|ci|ci|ci3308015|ml|2.94|ci|41km N of Dixon Lane-Meadow Creek, CA
+ci3308016|1980-05-25T18:10:05.170|37.7603333|-118.6395|6|ci|ci|ci|ci3308016|ml|2.92|ci|33km ENE of Mammoth Lakes, CA
+ci9727046|1980-05-25T18:14:51.880|37.92|-117.8176667|6|ci|ci|ci|ci9727046|ml|3.16|ci|54km WSW of Tonopah, NV
+ci12333487|1980-05-25T19:10:56.400|37.827|-118.5995|6|ci|ci|ci|ci12333487|ml|3.03|ci|40km ENE of Mammoth Lakes, CA
+ci3308031|1980-05-25T19:22:56.870|37.7726667|-118.5405|6|ci|ci|ci|ci3308031|ml|3.32|ci|41km ENE of Mammoth Lakes, CA
+ci3308055|1980-05-25T20:56:13.780|37.8438333|-118.2601667|6|ci|ci|ci|ci3308055|ml|3.05|ci|53km NNE of Dixon Lane-Meadow Creek, CA
+ci12333727|1980-05-25T21:16:10.780|37.761|-117.8478333|6|ci|ci|ci|ci12333727|ml|3.07|ci|64km WSW of Tonopah, NV
+ci9727434|1980-05-26T00:18:07.230|37.7836667|-118.567|6|ci|ci|ci|ci9727434|ml|3.06|ci|40km ENE of Mammoth Lakes, CA
+ci12333803|1980-05-26T00:44:47.840|37.75|-118.5221667|6|ci|ci|ci|ci12333803|ml|2.94|ci|42km NNW of Dixon Lane-Meadow Creek, CA
+usp00017h2|1980-05-26T03:31:08.200|37.783|-118.617|5|p|us|us|usp00017h2|ml|3.2|pas|13 km WSW of Benton, California
+ci9727590|1980-05-26T04:17:21.220|37.786|-117.9226667|6|ci|ci|ci|ci9727590|ml|2.93|ci|62km NE of Dixon Lane-Meadow Creek, CA
+ci9727630|1980-05-26T04:59:14.580|37.834|-118.5863333|6|ci|ci|ci|ci9727630|ml|2.93|ci|41km ENE of Mammoth Lakes, CA
+ci9727762|1980-05-26T09:30:13.760|37.7756667|-118.3796667|6|ci|ci|ci|ci9727762|ml|2.93|ci|43km N of Dixon Lane-Meadow Creek, CA
+ci3308183|1980-05-26T14:24:25.540|37.8606667|-118.5365|6|ci|ci|ci|ci3308183|ml|3.32|ci|46km ENE of Mammoth Lakes, CA
+ci9728102|1980-05-26T22:45:09.960|37.8315|-118.6485|6|ci|ci|ci|ci9728102|ml|2.91|ci|36km NE of Mammoth Lakes, CA
+ci9728434|1980-05-27T11:32:48.440|37.7575|-118.4971667|6|ci|ci|ci|ci9728434|ml|3.51|ci|42km N of Dixon Lane-Meadow Creek, CA
+ci9728446|1980-05-27T12:24:48.340|37.7695|-118.5331667|6|ci|ci|ci|ci9728446|ml|3.09|ci|42km ENE of Mammoth Lakes, CA
+ci3308294|1980-05-27T17:07:19.450|37.7523333|-118.3285|6|ci|ci|ci|ci3308294|ml|2.99|ci|41km N of Dixon Lane-Meadow Creek, CA
+ci9729338|1980-05-30T06:05:07.390|37.818|-118.4941667|6|ci|ci|ci|ci9729338|ml|2.97|ci|47km ENE of Mammoth Lakes, CA
+ci3307696|1980-06-03T17:34:08.220|37.8508333|-118.6198333|6|ci|ci|ci|ci3307696|ml|3.46|ci|40km NE of Mammoth Lakes, CA
+ci3305276|1980-07-26T18:08:27.610|38.058|-118.6346667|6|ci|ci|ci|ci3305276|ml|2.98|ci|52km S of Hawthorne, NV
+usp00019pd|1980-09-04T21:03:33.900|38.057|-118.518|20|b|us|us|usp00019pd|mb|4.9|us|26 km N of Benton, California
+usp00019px|1980-09-06T07:57:38.400|38.049|-118.533|5|p|us|us|usp00019px|ml|3|pas|25 km N of Benton, California
+usp00019q4|1980-09-07T01:30:42.700|38.048|-118.558|14|b|us|us|usp00019q4|mb|4.4|us|26 km NNW of Benton, California
+usp00019q5|1980-09-07T04:36:38.300|38.033|-118.578|15|b|us|us|usp00019q5|ms|5|us|25 km NNW of Benton, California
+usp00019q6|1980-09-07T04:40:06.800|38.033|-118.578|15|b|us|us|usp00019q6|ml|3.9|brk|25 km NNW of Benton, California
+usp00019qd|1980-09-07T11:58:02.200|38.055|-118.608|3|b|us|us|usp00019qd|ml|3.8|brk|28 km NNW of Benton, California
+usp00019qh|1980-09-07T16:04:04.500|38.056|-118.612|5|b|us|us|usp00019qh|ml|3.7|brk|28 km NNW of Benton, California
+usp00019qu|1980-09-08T04:26:19.900|38.028|-118.582|13|b|us|us|usp00019qu|ml|4.6|brk|24 km NNW of Benton, California
+usp00019rx|1980-09-10T10:29:08.800|37.932|-118.35|3|p|us|us|usp00019rx|ml|3|pas|16 km NE of Benton, California
+usp00019s4|1980-09-10T23:49:41.300|38.055|-118.597|5|b|us|us|usp00019s4|ml|3.4|brk|28 km NNW of Benton, California
+usp00019s9|1980-09-11T09:54:26.800|38.056|-118.593|5|b|us|us|usp00019s9|ml|3.5|brk|28 km NNW of Benton, California
+usp00019tz|1980-09-15T15:08:42.400|38.033|-118.568|5|b|us|us|usp00019tz|ml|3.8|brk|25 km NNW of Benton, California
+usp00019u0|1980-09-15T16:07:38.500|38.045|-118.55|5|us|us|us|usp00019u0|ml|3|pas|25 km NNW of Benton, California
+usp00019u5|1980-09-16T04:19:44.000|38.05|-118.567|2|p|us|us|usp00019u5|ml|3.3|pas|26 km NNW of Benton, California
+usp00019u7|1980-09-16T04:24:41.100|38.012|-118.557|14|b|us|us|usp00019u7|mb|4.2|us|22 km NNW of Benton, California
+usp00019u9|1980-09-16T06:15:09.300|37.966|-118.417|3|p|us|us|usp00019u9|ml|3|pas|17 km NNE of Benton, California
+usp00019v2|1980-09-17T21:37:52.500|38.042|-118.597|5|b|us|us|usp00019v2|ml|3.5|brk|26 km NNW of Benton, California
+usp00019va|1980-09-18T19:02:28.000|38.047|-118.595|5|b|us|us|usp00019va|ml|3.4|brk|27 km NNW of Benton, California
+usp00019vs|1980-09-19T20:56:58.600|38.044|-118.583|5|b|us|us|usp00019vs|ml|3.6|brk|26 km NNW of Benton, California
+usp00019vy|1980-09-20T01:35:42.500|38.044|-118.615|5|b|us|us|usp00019vy|ml|3.6|brk|27 km NNW of Benton, California
+usp00019ww|1980-09-21T15:15:55.600|38.053|-118.602|5|b|us|us|usp00019ww|ml|3.8|brk|28 km NNW of Benton, California
+usp0001ac4|1980-10-21T21:31:45.700|38.022|-118.572|14|b|us|us|usp0001ac4|ml|3.6|brk|24 km NNW of Benton, California
+usp0001arx|1980-11-11T10:19:02.900|38.008|-118.6|5|b|us|us|usp0001arx|ml|4.8|brk|23 km NNW of Benton, California
+usp0001ary|1980-11-11T10:33:51.200|38.033|-118.593|9|b|us|us|usp0001ary|ml|4|brk|25 km NNW of Benton, California
+ci9742538|1980-12-28T18:41:21.850|37.9823333|-118.0688333|6|ci|ci|ci|ci9742538|ml|2.9|ci|73km NNE of Dixon Lane-Meadow Creek, CA
+ci9742806|1980-12-30T09:39:28.140|37.9945|-117.9598333|6|ci|ci|ci|ci9742806|mh|2.94|ci|64km W of Tonopah, NV
+usp0001bje|1981-01-01T18:22:22.400|38.053|-118.57|5|b|us|us|usp0001bje|ml|4.2|brk|27 km NNW of Benton, California
+ci12253879|1981-01-31T12:05:09.700|37.979|-118.0548333|3.834|ci|ci|ci|ci12253879|mh|2.9|ci|73km W of Tonopah, NV
+usp0001d39|1981-04-11T04:13:24.100|38.053|-118.602|5|brk|us|us|usp0001d39|ml|3.7|brk|28 km NNW of Benton, California
+nc1062419|1981-04-11T21:21:31.960|37.9223333|-118.4848333|1.395|nc|nc|nc|nc1062419|md|3.28|nc|11 km N of Benton, California
+usp0001dem|1981-04-28T22:54:50.000|38.047|-118.575|6|brk|us|us|usp0001dem|mb|4.2|us|26 km NNW of Benton, California
+nc1063372|1981-05-07T01:02:37.460|37.9241667|-118.5345|8.555|nc|nc|nc|nc1063372|ml|4.5|nc|12 km NNW of Benton, California
+nc1063373|1981-05-07T02:18:27.700|37.9243333|-118.535|8.625|nc|nc|nc|nc1063373|ml|3.6|nc|12 km NNW of Benton, California
+usp0001fet|1981-08-23T04:32:29.800|37.95|-117.567|6|pas|us|us|usp0001fet|ml|3|pas|22 km NNE of Silver Peak, Nevada
+usp0001fu9|1981-09-12T18:12:58.600|38.06|-118.59|16|brk|us|us|usp0001fu9|ml|4.3|brk|California-Nevada border region
+usp0001krd|1982-04-15T21:52:08.600|38.035|-118.502|20|brk|us|us|usp0001krd|mb|4.5|us|24 km N of Benton, California
+ci505657|1982-07-23T17:48:30.470|38.05|-118.498|3.904|ci|ci|ci|ci505657|mc|3.23|ci|54km SSE of Hawthorne, NV
+ci505658|1982-07-23T17:52:05.960|37.99|-118.543|4.209|ci|ci|ci|ci505658|md|3.05|ci|55km NE of Mammoth Lakes, CA
+usp0001psv|1982-09-24T07:40:24.300|37.852|-118.123|5|brk|us|us|usp0001psv|mb|5|us|21 km NNW of Dyer, Nevada
+ci508159|1982-09-24T08:03:30.240|37.889|-118.139|4.165|ci|ci|ci|ci508159|mc|3.59|ci|61km NNE of Dixon Lane-Meadow Creek, CA
+ci508166|1982-09-24T08:27:30.880|37.866|-118.154|4.006|ci|ci|ci|ci508166|mc|3.01|ci|58km NNE of Dixon Lane-Meadow Creek, CA
+ci508174|1982-09-24T08:56:20.220|37.894|-118.14|4.165|ci|ci|ci|ci508174|ml|2.9|ci|61km NNE of Dixon Lane-Meadow Creek, CA
+ci508178|1982-09-24T09:08:11.330|37.904|-118.127|4.165|ci|ci|ci|ci508178|mc|3.28|ci|63km NNE of Dixon Lane-Meadow Creek, CA
+usp0001py9|1982-10-01T01:33:35.150|37.926|-118.174|5|us|us|us|usp0001py9|ml|4|pas|29 km ENE of Benton, California
+usp0001pzp|1982-10-02T09:33:05.900|37.872|-118.285|5|brk|us|us|usp0001pzp|ml|4|pas|17 km ENE of Benton, California
+ci509571|1982-10-02T09:33:06.350|37.88|-118.137|4.329|ci|ci|ci|ci509571|ml|3.93|ci|60km NNE of Dixon Lane-Meadow Creek, CA
+usp0001q0k|1982-10-04T02:23:59.000|37.862|-118.088|5|brk|us|us|usp0001q0k|ml|4|pas|21 km N of Dyer, Nevada
+ci511498|1982-10-15T14:40:53.810|37.906|-118.123|4.307|ci|ci|ci|ci511498|mc|3.14|ci|63km NNE of Dixon Lane-Meadow Creek, CA
+usp0001qv0|1982-11-12T05:26:47.580|37.972|-118.128|5|us|us|us|usp0001qv0|ml|3.9|brk|34 km N of Dyer, Nevada
+usp0001rub|1982-12-28T19:06:24.000|38.03|-118.35|18|brk|us|us|usp0001rub|mb|4.7|us|25 km NNE of Benton, California
+ci12323259|1983-01-07T02:20:45.580|37.8801667|-118.5126667|4.803|ci|ci|ci|ci12323259|ml|3.6|ci|49km ENE of Mammoth Lakes, CA
+ci502548|1983-01-17T23:20:25.870|37.8775|-118.2166667|4.803|ci|ci|ci|ci502548|mh|3.18|ci|57km NNE of Dixon Lane-Meadow Creek, CA
+ci28312|1984-01-02T09:29:43.050|38.043|-118.202|5.881|ci|ci|ci|ci28312|ml|3.2|ci|65km SE of Hawthorne, NV
+nc13241|1984-04-01T06:37:38.390|37.9343333|-118.6008333|7.535|nc|nc|nc|nc13241|ml|3.14|nc|16 km NW of Benton, California
+nc1120304|1984-09-17T19:11:57.160|37.796|-118.5548333|12.275|nc|nc|nc|nc1120304|md|2.93|nc|7 km WSW of Benton, California
+usp00044a8|1990-01-15T05:29:03.450|37.988|-118.21|5|us|us|us|usp00044a8|mb|4.4|us|30 km NE of Benton, California
+usp0004whh|1991-09-11T16:49:25.590|37.939|-118.067|2.3|nc|us|us|usp0004whh|md|2.9|gm$|30 km N of Dyer, Nevada
+usp0005f5u|1992-10-10T17:54:52.200|37.993|-118.58|8|brk|us|us|usp0005f5u|ml|4.1|gs$|21 km NNW of Benton, California
+nc322994|1992-11-06T08:40:14.930|37.9911667|-118.5751667|2.024|nc|nc|nc|nc322994|md|2.94|nc|20 km NNW of Benton, California
+usp0005y5k|1993-08-09T05:32:30.290|37.853|-118.254|2.6|nc|us|us|usp0005y5k|md|3|gm$|19 km E of Benton, California
+usp0006f51|1994-07-03T23:42:38.460|37.905|-118.206|5|us|us|us|usp0006f51|ml|3.6|brk|25 km ENE of Benton, California
+usp0006rrb|1995-01-22T19:54:48.480|37.844|-118.182|3.7|nc|us|us|usp0006rrb|md|2.9|gm$|22 km NNW of Dyer, Nevada
+usp0006stt|1995-02-12T17:53:50.920|37.931|-118.486|4.5|nc|us|us|usp0006stt|ml|3.8|brk|12 km N of Benton, California
+usp0006su8|1995-02-13T00:55:39.730|37.926|-118.487|4.6|nc|us|us|usp0006su8|ml|3.1|brk|11 km N of Benton, California
+usp0007pwc|1996-09-13T04:42:53.280|37.924|-118.179|1.4|nc|us|us|usp0007pwc|ml|3.1|brk|28 km ENE of Benton, California
+usp0007r3p|1996-10-08T14:01:47.440|37.942|-118.147|2.8|nc|us|us|usp0007r3p|ml|4.2|us|31 km NNW of Dyer, Nevada
+usp00089sc|1997-10-30T03:36:40.920|37.855|-118.203|1.5|nc|us|us|usp00089sc|ml|3.3|brk|24 km NNW of Dyer, Nevada
+usp00089sr|1997-10-30T06:35:58.530|37.845|-118.231|1.4|nc|us|us|usp00089sr|ml|3.5|brk|21 km E of Benton, California
+usp00089x6|1997-11-02T08:34:22.320|37.831|-118.238|1.4|nc|us|us|usp00089x6|mwr|4.2|brk|21 km E of Benton, California
+usp00089x7|1997-11-02T08:38:53.170|37.851|-118.219|0.1|nc|us|us|usp00089x7|ml|2.9|us|22 km E of Benton, California
+usp00089x8|1997-11-02T08:51:54.230|37.801|-118.143|5|us|us|us|usp00089x8|mwc|5.4|hrv|16 km NNW of Dyer, Nevada
+usp00089x9|1997-11-02T09:01:24.680|37.848|-118.224|6|nc|us|us|usp00089x9|ml|3|us|22 km E of Benton, California
+usp00089xb|1997-11-02T09:14:53.830|37.834|-118.232|0.1|nc|us|us|usp00089xb|mw|3.9|brk|21 km E of Benton, California
+usp00089xd|1997-11-02T09:20:36.940|37.848|-118.231|1.3|nc|us|us|usp00089xd|ml|3|us|21 km E of Benton, California
+usp00089xe|1997-11-02T09:21:22.200|37.848|-118.223|5.1|nc|us|us|usp00089xe|ml|3.1|us|22 km E of Benton, California
+usp00089xg|1997-11-02T09:44:06.960|37.844|-118.22|2.2|nc|us|us|usp00089xg|ml|3.3|us|22 km E of Benton, California
+usp00089xh|1997-11-02T09:52:05.320|37.827|-118.256|1.8|nc|us|us|usp00089xh|ml|3.3|brk|19 km E of Benton, California
+usp00089xm|1997-11-02T11:02:02.230|37.82|-118.251|6.8|nc|us|us|usp00089xm|ml|2.9|us|19 km E of Benton, California
+usp00089xn|1997-11-02T11:09:28.930|37.84|-118.163|5|us|us|us|usp00089xn|ml|3.6|us|20 km NNW of Dyer, Nevada
+usp00089xp|1997-11-02T11:15:12.340|37.87|-118.265|5|us|us|us|usp00089xp|ml|2.9|us|19 km ENE of Benton, California
+usp00089xv|1997-11-02T11:55:45.000|37.85|-118.221|2.4|nc|us|us|usp00089xv|ml|3.2|us|22 km E of Benton, California
+usp00089y1|1997-11-02T12:56:05.750|37.812|-118.268|8|nc|us|us|usp00089y1|ml|3.4|brk|18 km E of Benton, California
+usp00089y4|1997-11-02T13:27:21.430|37.844|-118.227|1.4|nc|us|us|usp00089y4|ml|3.1|us|22 km E of Benton, California
+usp00089y5|1997-11-02T13:36:04.400|37.851|-118.217|0.8|nc|us|us|usp00089y5|ml|3.3|us|23 km E of Benton, California
+usp00089yd|1997-11-02T15:03:04.290|37.854|-118.161|5|us|us|us|usp00089yd|mwr|4.6|brk|22 km NNW of Dyer, Nevada
+usp00089yg|1997-11-02T15:14:55.010|37.876|-118.194|5|us|us|us|usp00089yg|ml|2.9|us|25 km ENE of Benton, California
+usp00089yj|1997-11-02T15:28:16.220|37.831|-118.237|3.8|nc|us|us|usp00089yj|ml|3.5|us|21 km E of Benton, California
+usp00089yn|1997-11-02T15:39:33.230|37.84|-118.235|3.9|nc|us|us|usp00089yn|ml|2.9|us|21 km E of Benton, California
+usp00089yr|1997-11-02T16:22:53.270|37.835|-118.273|6.3|nc|us|us|usp00089yr|mwr|4.2|brk|18 km E of Benton, California
+usp00089ys|1997-11-02T16:36:09.150|37.844|-118.231|3.8|nc|us|us|usp00089ys|ml|3|us|21 km E of Benton, California
+usp00089yu|1997-11-02T17:22:46.470|37.853|-118.201|5|nc|us|us|usp00089yu|ml|2.9|us|23 km NNW of Dyer, Nevada
+usp00089yw|1997-11-02T17:44:06.880|37.812|-118.274|7.7|nc|us|us|usp00089yw|ml|3|us|17 km E of Benton, California
+usp00089yx|1997-11-02T17:49:49.920|37.859|-118.17|7.4|nc|us|us|usp00089yx|ml|3.5|us|23 km NNW of Dyer, Nevada
+usp00089yy|1997-11-02T17:54:04.890|37.85|-118.216|1.5|nc|us|us|usp00089yy|mwr|3.8|brk|23 km E of Benton, California
+usp00089z0|1997-11-02T18:20:37.640|37.862|-118.186|5|us|us|us|usp00089z0|ml|3|us|24 km NNW of Dyer, Nevada
+usp00089z1|1997-11-02T18:24:44.920|37.848|-118.208|1.5|nc|us|us|usp00089z1|md|2.9|nc|23 km NNW of Dyer, Nevada
+usp00089z2|1997-11-02T18:34:33.820|37.852|-118.208|1.4|nc|us|us|usp00089z2|ml|3.1|us|23 km E of Benton, California
+usp00089z4|1997-11-02T19:01:40.890|37.853|-118.206|1.4|nc|us|us|usp00089z4|ml|3.4|us|23 km NNW of Dyer, Nevada
+usp00089z5|1997-11-02T19:04:45.900|37.868|-118.21|1.9|nc|us|us|usp00089z5|ml|3.5|us|24 km ENE of Benton, California
+usp00089z7|1997-11-02T19:18:37.380|37.843|-118.228|3.4|nc|us|us|usp00089z7|ml|3.2|us|22 km E of Benton, California
+usp00089z8|1997-11-02T19:19:59.700|37.856|-118.212|1.4|nc|us|us|usp00089z8|ml|3.1|us|23 km E of Benton, California
+usp00089z9|1997-11-02T19:35:54.690|37.818|-118.267|1.5|nc|us|us|usp00089z9|ml|3.6|brk|18 km E of Benton, California
+usp00089za|1997-11-02T19:49:38.590|37.853|-118.203|1.6|nc|us|us|usp00089za|ml|2.9|us|23 km NNW of Dyer, Nevada
+usp00089zb|1997-11-02T19:52:34.530|37.871|-118.223|0.2|nc|us|us|usp00089zb|ml|2.9|us|23 km ENE of Benton, California
+usp00089zc|1997-11-02T20:10:39.930|37.836|-118.23|6.1|nc|us|us|usp00089zc|ml|3.2|us|21 km E of Benton, California
+usp00089ze|1997-11-02T20:44:55.630|37.869|-118.225|1.2|nc|us|us|usp00089ze|ml|2.9|us|22 km ENE of Benton, California
+usp00089zf|1997-11-02T20:53:25.100|37.842|-118.228|6.2|nc|us|us|usp00089zf|ml|3.4|us|22 km E of Benton, California
+usp00089zh|1997-11-02T21:02:53.710|37.79|-118.226|0.6|nc|us|us|usp00089zh|ml|2.9|us|19 km NW of Dyer, Nevada
+usp00089zj|1997-11-02T21:21:49.640|37.87|-118.174|1.4|nc|us|us|usp00089zj|ml|3.5|us|24 km NNW of Dyer, Nevada
+ci9029535|1997-11-02T21:22:12.600|37.834|-118.168|3.918|ci|ci|ci|ci9029535|mc|3.02|ci|54km NNE of Dixon Lane-Meadow Creek, California
+usp00089zp|1997-11-02T22:29:45.500|37.848|-118.228|1.4|nc|us|us|usp00089zp|mwr|3.8|brk|22 km E of Benton, California
+usp00089zr|199
