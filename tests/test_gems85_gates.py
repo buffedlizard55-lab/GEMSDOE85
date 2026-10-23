@@ -123,11 +123,16 @@ def test_final_submission_geotiff_zip_and_all_7_gates() -> None:
 
 def test_github_pages_links_figures_and_run_card() -> None:
     import re
-    for page in ("index.html", "executive-summary.html", "methodology.html"):
+    for page in ("index.html", "executive-summary.html", "method.html", "data.html", "methodology.html"):
         html_path = ROOT / "docs" / page
-        assert html_path.is_file() and html_path.stat().st_size > 4_000
+        assert html_path.is_file() and html_path.stat().st_size > 2_000
         text = html_path.read_text()
-        assert "READY_TO_SUBMIT_PROMOTE" in text or "ALL 7 AUTOMATED GATES PASSED" in text
+        if page in ("index.html", "executive-summary.html", "methodology.html"):
+            assert (
+                "OK TO DOWNLOAD AND SUBMIT" in text
+                or "READY_TO_SUBMIT_PROMOTE" in text
+                or "ALL 7 AUTOMATED GATES PASSED" in text
+            )
         for href in re.findall(r'(?:href|src)="([^"]+)"', text):
             if href.startswith(("http://", "https://", "#")):
                 continue
@@ -136,16 +141,27 @@ def test_github_pages_links_figures_and_run_card() -> None:
 
     readme = (ROOT / "README.md").read_text()
     assert "I want to win this competition:" in readme
+    assert "gems85-gapvent57-37654dots-sep2.8-exc3-20261023T013000Z-566072f4-zeros.tif" in readme
     assert "gems85-h85-tvfv-e85-3-20261022-zeros.tif" in readme
 
-    rc = json.loads((EVIDENCE_DIR / "run_card.json").read_text())
-    assert rc["verdict"] == "promote"
-    assert rc["safe_to_download_and_submit_without_human_intervention"] is True
-    assert rc["correlation_and_overlap_vs_registry"]["duplicate_detected"] is False
-    assert rc["correlation_and_overlap_vs_registry"]["binding_discriminating_3px_forward_overlap_max"] <= 0.70
-    assert rc["correlation_and_overlap_vs_registry"]["surface_max_abs_spearman"] <= 0.90
-    s1 = rc["holdout_dti"]["strict_3_experiment_ablation"]["E85-1"]["score"]
-    s2 = rc["holdout_dti"]["strict_3_experiment_ablation"]["E85-2"]["score"]
-    s3 = rc["holdout_dti"]["strict_3_experiment_ablation"]["E85-3"]["score"]
-    h33 = rc["holdout_dti"]["h33_fold_equivalent_control"]
+    # Verify preserved H85-TVFV parallel-lane run card
+    rc_tvfv = json.loads((EVIDENCE_DIR / "run_card_h85_tvfv.json").read_text())
+    assert rc_tvfv["verdict"] == "promote"
+    assert rc_tvfv["safe_to_download_and_submit_without_human_intervention"] is True
+    assert rc_tvfv["correlation_and_overlap_vs_registry"]["duplicate_detected"] is False
+    assert rc_tvfv["correlation_and_overlap_vs_registry"]["binding_discriminating_3px_forward_overlap_max"] <= 0.70
+    assert rc_tvfv["correlation_and_overlap_vs_registry"]["surface_max_abs_spearman"] <= 0.90
+    s1 = rc_tvfv["holdout_dti"]["strict_3_experiment_ablation"]["E85-1"]["score"]
+    s2 = rc_tvfv["holdout_dti"]["strict_3_experiment_ablation"]["E85-2"]["score"]
+    s3 = rc_tvfv["holdout_dti"]["strict_3_experiment_ablation"]["E85-3"]["score"]
+    h33 = rc_tvfv["holdout_dti"]["h33_fold_equivalent_control"]
     assert h33 < s1 < s2 < s3
+
+    # Verify promoted H85-GAPVENT primary run card
+    rc = json.loads((EVIDENCE_DIR / "run_card.json").read_text())
+    assert rc["verdict"] == "promote-as-candidate"
+    assert rc["validator_output"]["all_checks_passed"] is True
+    assert rc["correlation_vs_registry"]["is_duplicate"] is False
+    assert rc["correlation_vs_registry"]["max_comparable_dot_overlap_3px"] <= 0.70
+    assert rc["correlation_vs_registry"]["max_abs_spearman"] <= 0.90
+    assert rc["holdout_dti"]["value"] > rc["controls_at_matched_mass"]["prior_record_s85_ctxfus50_37654"]

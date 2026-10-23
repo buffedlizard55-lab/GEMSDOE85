@@ -1,0 +1,123 @@
+{
+  "checked_date_utc": "2026-10-22",
+  "method": "Pages read with the web fetch tool during this session; short claim-level excerpts recorded here. These are retrieval notes, not signed server receipts or archived page hashes.",
+  "sources": [
+    {
+      "id": "organizer-task",
+      "class": "official organizer",
+      "url": "https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/",
+      "status": "read, both chunks",
+      "excerpt": "develop models and algorithms that provide accurate information about the presence of structures ... namely, geological faults",
+      "supports": "Fault detection objective; expert-created new-fault test labels; 300 m triangular kernel; alpha 0.2, beta 0.8; single float32 layer, reference grid and [0,1] values.",
+      "limits": "Does not disclose hidden labels or show a score for our artifacts. Does not prove geothermal reservoir productivity. Public spec permits null/NaN outside bounds."
+    },
+    {
+      "id": "official-rules",
+      "class": "official rules",
+      "url": "https://docs.nlr.gov/docs/fy26osti/96647.pdf",
+      "status": "title/contents and submission section read, not all eligibility/legal sections",
+      "excerpt": "You can make multiple submissions, subject to the limits specified on the competition website (three submissions per week).",
+      "supports": "Section 3.2: single-layer 100 m GeoTIFF, account registration, submission limits, disclosure of generative-AI use, and reproducible finalist code assets.",
+      "limits": "No account-specific remaining quota or eligibility decision was checked. Consult current rules; not legal advice."
+    },
+    {
+      "id": "official-reference",
+      "class": "organizer-linked reference code",
+      "url": "https://github.com/drivendataorg/gems-prize-reference-solution/tree/aebe92f7c8a990f0e3443451b7a825d9afd6336b",
+      "status": "README and notebook inspected at commit",
+      "excerpt": "Fault Detection Using U-Net with Monte Carlo Cross-Validation",
+      "supports": "Baseline architecture, patch-based splits, GPU and CPU environment options, organizer data placement instructions.",
+      "limits": "Reference notebook not executed here; neither its patch split nor Tversky training loss replaces the requested strict hide-and-recover evaluator."
+    },
+    {
+      "id": "usgs-geodawn",
+      "class": "official USGS data release",
+      "url": "https://www.usgs.gov/data/geodawn-airborne-magnetic-and-radiometric-surveys-northwestern-great-basin-nevada-and",
+      "status": "release description read",
+      "excerpt": "variable terrain clearance should be considered when modeling and interpreting these data",
+      "supports": "DOI 10.5066/P93LGLVQ; magnetic and radiometric processing; overlapping survey areas with different flight specifications; flight paths and grid products; CC0 marking.",
+      "limits": "Release availability is not evidence of a candidate's predictive skill. No newly downloaded USGS grid was used in a model."
+    },
+    {
+      "id": "ingenious-gdr",
+      "class": "DOE Geothermal Data Repository",
+      "url": "https://gdr.openei.org/submissions/1391",
+      "status": "catalogue/resource listing read",
+      "excerpt": "These datasets may be redistributed with attribution",
+      "supports": "DOI 10.15121/1881483; CC BY 4.0 listing; links to heat flow, magnetotelluric conductance, quaternary faults, thermal probes, well/spring chemistry and other regional datasets.",
+      "limits": "Resource listing checked, not all ZIP contents/download accessibility. No external-data-dependent hypothesis is claimed viable from this listing alone. Catalogue overlap may prevent fault compilations from supplying new labels."
+    },
+    {
+      "id": "ingenious-project",
+      "class": "primary research project",
+      "url": "https://gbcge.org/current-projects/ingenious/",
+      "status": "project description and publication listing read",
+      "excerpt": "accelerate discoveries of new, commercially viable hidden geothermal systems",
+      "supports": "Project goals, collaboration context, and links to regional geophysical/thermal/geodetic releases.",
+      "limits": "Publication titles are not a full-text literature review. They do not validate our untested geological shortlist."
+    },
+    {
+      "id": "leaderboard",
+      "class": "PUBLIC-LEADERBOARD-OBSERVATION",
+      "url": "https://www.drivendata.org/competitions/306/competition-doe-gems/leaderboard/",
+      "status": "public leading rows read",
+      "excerpt": "xiaofanhu ... 0.4413",
+      "supports": "The retrieved public page displays 0.4413 in its first ranked row.",
+      "limits": "Not a submission-page receipt for this team, not a private/final score, not a continuously live feed, not labeled ORGANIZER-CONFIRMED under the prompt's receipt-only policy."
+    },
+    {
+      "id": "organizer-data",
+      "class": "official organizer access check",
+      "url": "https://www.drivendata.org/competitions/306/competition-doe-gems/data/",
+      "status": "redirected to login",
+      "excerpt": "Login",
+      "supports": "No authenticated download session available to the fetch request.",
+      "limits": "Public GitHub mirrors restored separately; their hashes prove consistency, not official-origin authentication."
+    },
+    {
+      "id": "organizer-submissions",
+      "class": "official organizer access check",
+      "url": "https://www.drivendata.org/competitions/306/competition-doe-gems/submissions/",
+      "status": "redirected to login",
+      "excerpt": "Login",
+      "supports": "No submission-page receipt or account quota accessible in this session.",
+      "limits": "No slot was spent; do not infer the team's remaining quota."
+    },
+    {
+      "id": "h33-owner-page",
+      "class": "owner research, not official score receipt",
+      "url": "https://buffedlizard55-lab.github.io/GEMSDOE32/docs/index.html",
+      "status": "primary download and methodology text read",
+      "excerpt": "NO ORGANISER SCORE EXISTS for this or any artifact in this repository.",
+      "supports": "Owner's claimed H33 genealogy, near-catalogue deletion and dot-placement description; primary file source. Artifact bytes were audited separately.",
+      "limits": "Historic statement conflicts with later owner-reported scores. Does not establish whether the file was later scored. A sibling's ORGANIZER-CONFIRMED label without a receipt is not imported."
+    },
+    {
+      "id": "usgs-3dep-10m",
+      "class": "official USGS public-domain elevation dataset",
+      "url": "https://www.usgs.gov/3d-elevation-program",
+      "status": "SHA-256-verified derived 100 m rasters restored from pinned template commit 60GEMSDOE@b99591eede63c6d45c8a896255b8cd34824fa00b",
+      "excerpt": "1/3 arc-second (~10 m) seamless DEM (USGS_Seamless_DEM_13.vrt) and 18 1x1-degree 3DEP tiles (n38w117..n41w121)",
+      "supports": "100% footprint coverage across the 24.63% non-LiDAR gap: sub-100m slope_p90, steep_frac, slope_std, relief_local, curv_prof_absmax, aspect_coherence, hs_lineament, zmean_m, and fluvial chi/ksn knickpoints.",
+      "limits": "10 m horizontal resolution cannot resolve sub-meter Holocene scarps (<0.5 m throw) that 1 m LiDAR captures where available."
+    },
+    {
+      "id": "ingenious-2m-probes-paleo",
+      "class": "DOE Geothermal Data Repository (GDR 1391)",
+      "url": "https://gdr.openei.org/submissions/1391",
+      "status": "SHA-256-verified ZIP archives restored and parsed in-project (2m_temperature_probe_INGENIOUS_regional_data.zip, paleo_geothermal_regional.zip)",
+      "excerpt": "DOI 10.15121/1881483 (CC BY 4.0): 2,782 in-footprint 2 m temperature probe stations (464 positive anomalies) and 281 Quaternary paleogeothermal deposits (195 non-tufa hydrothermal vents, 86 lacustrine tufas)",
+      "supports": "Direct shallow conductive thermal anomalies (F2mDAB >= 2 C, T2m >= 25 C) and Quaternary sinter/travertine/explosion-crater upflow corridors over blind Great Basin geothermal faults.",
+      "limits": "2 m probe surveys are spatially clustered around targeted geothermal prospects; raw radial proximity causes spatial overfitting unless encoded as translation-invariant strike corridors."
+    },
+    {
+      "id": "faulds-hinz-2015",
+      "class": "peer-reviewed Great Basin structural geology reference",
+      "url": "https://gbcge.org/current-projects/ingenious/",
+      "status": "structural synthesis cited by DOE INGENIOUS",
+      "excerpt": "Structural controls of geothermal activity in the Great Basin region: ~39% of systems are blind (no surface hot springs or mapped Quaternary scarps), preferentially hosted in step-overs, relay ramps, fault terminations, and intersections.",
+      "supports": "Physical mechanism for blind geothermal Radon strike corridors, Andersonian 60-deg normal-fault up-dip gravity back-projection, and shallow hydrothermal magnetite destruction.",
+      "limits": "Conceptual structural framework; predictive gain must be verified empirically on spatially-blocked holdout."
+    }
+  ]
+}

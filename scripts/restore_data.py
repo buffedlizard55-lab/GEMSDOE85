@@ -1,83 +1,130 @@
 #!/usr/bin/env python3
-"""Restore SHA-256-pinned competition mirrors listed in registry/data_manifest.json.
+"""Restore + SHA-256 verify every competition / external / historical file in registry/data_manifest.json.
 
-Mirrors are owner-supplied public GitHub blobs (DrivenData files are login-walled).
-Integrity-pinned, NOT organizer-authenticated. Fails closed on any hash mismatch.
-Adapted from GEMSDOE32 scripts/restore_data.py (same manifest schema).
+Every byte is fetched from a GitHub mirror pinned by commit SHA and verified against a SHA-256
+recorded in the manifest.  Nothing here is organizer-authenticated: the manifest's `provenance`
+field states, per file, where the bytes originally came from and what that does and does not prove.
+
+Usage:
+    python scripts/restore_data.py                 # core group only
+    python scripts/restore_data.py --groups core external scored
+    python scripts/restore_data.py --list
 """
+
 from __future__ import annotations
-import argparse, hashlib, json, shutil, subprocess, sys
+
+import argparse
+import hashlib
+import json
+import shutil
+import subprocess
+import sys
+import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+MANIFEST = ROOT / "registry" / "data_manifest.json"
+DATA = ROOT / "data"
 
-def sha256_file(p: Path) -> str:
+
+def sha256_file(path: Path) -> str:
     h = hashlib.sha256()
-    with p.open("rb") as f:
-        for chunk in iter(lambda: f.read(1 << 20), b""):
+    with path.open("rb") as fh:
+        for chunk in iter(lambda: fh.read(1 << 20), b""):
             h.update(chunk)
     return h.hexdigest()
 
-def fetch(repo: str, ref: str, path: str, dest: Path) -> None:
-    dest.parent.mkdir(parents=True, exist_ok=True)
-    tmp = dest.with_suffix(dest.suffix + ".partial")
-    try:
-        with tmp.open("wb") as out:
-            subprocess.run(["gh", "api", f"repos/{repo}/contents/{path}?ref={ref}",
-                            "-H", "Accept: application/vnd.github.raw"],
-                           stdout=out, check=True)
-        tmp.replace(dest)
-    finally:
-        tmp.unlink(missing_ok=True)
 
-def restore_entry(entry: dict, root: Path) -> dict:
-    dest = root / entry["dest"]
-    if dest.exists() and sha256_file(dest) == entry["sha256"]:
-        return {"id": entry["id"], "dest": entry["dest"], "status": "present",
-                "bytes": dest.stat().st_size, "sha256": entry["sha256"]}
-    if "parts" in entry:
-        tmp = dest.with_suffix(".assembling")
-        tmp.parent.mkdir(parents=True, exist_ok=True)
-        with tmp.open("wb") as out:
-            for part in entry["parts"]:
-                p = root / "raw_parts" / Path(part).name
-                fetch(entry["repo"], entry["ref"], part, p)
-                with p.open("rb") as src:
-                    shutil.copyfileobj(src, out, 1 << 20)
-                p.unlink()
-        got = sha256_file(tmp)
-        if got != entry["sha256"]:
-            tmp.unlink(missing_ok=True)
-            raise SystemExit(f"HASH MISMATCH {entry['id']}: {got} != {entry['sha256']}")
-        tmp.replace(dest)
-    else:
-        fetch(entry["repo"], entry["ref"], entry["path"], dest)
-        got = sha256_file(dest)
-        if got != entry["sha256"]:
-            dest.unlink(missing_ok=True)
-            raise SystemExit(f"HASH MISMATCH {entry['id']}: {got} != {entry['sha256']}")
-    return {"id": entry["id"], "dest": entry["dest"], "status": "restored",
-            "bytes": dest.stat().st_size, "sha256": entry["sha256"]}
+def gh_raw(repo: str, ref: str, path: str, out_fh) -> None:
+    """Stream one file from GitHub using the authenticated gh CLI (raw media type)."""
+    subprocess.run(
+        ["gh", "api", f"repos/{repo}/contents/{path}?ref={ref}",
+         "-H", "Accept: application/vnd.github.raw"],
+        stdout=out_fh, check=True,
+    )
 
-def main() -> None:
+
+sha256 = sha256_file
+
+def restore(entry, directory=None, force=False):
+    directory = DATA if directory is None else directory
+    directory = Path(directory)
+    directory.mkdir(parents=True, exist_ok=True)
+    relative = Path(entry['dest'])
+    if relative.is_absolute() or '..' in relative.parts or relative.name != str(relative):
+        raise ValueError('Manifest destination must be a single local filename')
+    dest = directory / relative
+    if not force and dest.is_file() and dest.stat().st_size == entry['bytes'] and sha256(dest) == entry['sha256']:
+        return dict(id=entry['id'], path=str(dest.relative_to(ROOT)), sha256=entry['sha256'], bytes=dest.stat().st_size, status='cached')
+    # Staging is on the same filesystem. A failed fetch never publishes corrupt data.
+    with tempfile.TemporaryDirectory(dir=directory) as tmp:
+        assembled = Path(tmp) / 'assembled'
+        with assembled.open('wb') as output:
+            for part in entry.get('parts', [entry.get('path')]):
+                if not part:
+                    raise ValueError('manifest entry lacks a path')
+                fragment = Path(tmp) / 'fragment'
+                with fragment.open('wb') as stream:
+                    subprocess.run(['gh', 'api', f"repos/{entry['repo']}/contents/{part}?ref={entry['ref']}",
+                                    '-H', 'Accept: application/vnd.github.raw'], stdout=stream, check=True, timeout=300)
+                with fragment.open('rb') as stream:
+                    for chunk in iter(lambda: stream.read(1 << 20), b''):
+                        output.write(chunk)
+                fragment.unlink()
+        if assembled.stat().st_size != entry['bytes'] or sha256(assembled) != entry['sha256']:
+            raise ValueError(f"Size/hash mismatch for {entry['id']}; not restored")
+        assembled.replace(dest)
+    return dict(id=entry['id'], path=str(dest.relative_to(ROOT)), sha256=entry['sha256'], bytes=dest.stat().st_size, status='restored')
+
+
+def restore_grouped(entry, base_dir=None, force=False):
+    """Restore an entry from registry/data_manifest.json, allowing a single group subdirectory."""
+    base_dir = DATA if base_dir is None else Path(base_dir)
+    rel = Path(entry['dest'])
+    if rel.is_absolute() or '..' in rel.parts:
+        raise ValueError('Manifest destination must not escape target directory')
+    if len(rel.parts) == 1:
+        return restore(entry, directory=base_dir, force=force)
+    if len(rel.parts) == 2 and rel.parts[0] in ('external', 'scored', 'registry_rasters', 'learning'):
+        sub_entry = dict(entry, dest=rel.parts[1])
+        return restore(sub_entry, directory=base_dir / rel.parts[0], force=force)
+    raise ValueError('Manifest destination must be a single local filename or approved group/filename')
+
+
+def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--ids", default="all", help="comma-separated manifest ids or 'all'")
-    ap.add_argument("--manifest", default=str(ROOT / "registry" / "data_manifest.json"))
-    ap.add_argument("--target-dir", default=str(ROOT / "data" / "raw"))
+    ap.add_argument("--groups", nargs="*", default=["core"],
+                    help="manifest groups to restore (core, external, scored). 'all' for everything.")
+    ap.add_argument("--force", action="store_true")
+    ap.add_argument("--list", action="store_true")
     args = ap.parse_args()
-    man = json.loads(Path(args.manifest).read_text())
-    root = Path(args.target_dir); root.mkdir(parents=True, exist_ok=True)
-    want = None if args.ids == "all" else set(args.ids.split(","))
-    results = []
-    for e in man["files"]:
-        if want is None or e["id"] in want:
-            r = restore_entry(e, root); results.append(r)
-            print(f"{r['status']:>8}  {e['dest']:60s} sha256={r['sha256'][:12]}…", flush=True)
-    receipt = {"schema_version": 1, "verified_files_count": len(results),
-               "storage_root": str(root), "files": results}
-    (ROOT / "data").mkdir(parents=True, exist_ok=True)
-    (ROOT / "data" / "restore_receipt.json").write_text(json.dumps(receipt, indent=2) + "\n")
-    print(f"Verified {len(results)} files -> data/restore_receipt.json")
+
+    manifest = json.loads(MANIFEST.read_text())
+    files = manifest["files"]
+    if args.list:
+        for f in files:
+            print(f"{f['id']:46s} {f.get('group',''):9s} {f.get('bytes',0)/1e6:8.1f} MB  -> data/{f['dest']}")
+        return 0
+
+    groups = set(args.groups)
+    sel = files if "all" in groups else [f for f in files if f.get("group") in groups]
+    receipts = []
+    for entry in sel:
+        try:
+            r = restore_grouped(entry, force=args.force)
+        except Exception as exc:  # noqa: BLE001 - we want the id attached to every failure
+            r = {"id": entry["id"], "status": "FAILED", "error": str(exc)}
+            print(f"[FAIL] {entry['id']}: {exc}", file=sys.stderr)
+        else:
+            print(f"[{r['status']:8s}] {r['id']:46s} {r['bytes']/1e6:8.1f} MB  {r['sha256'][:16]}")
+        receipts.append(r)
+
+    out = ROOT / "registry" / "restore_receipt.json"
+    out.write_text(json.dumps({"groups": sorted(groups), "files": receipts}, indent=2) + "\n")
+    bad = [r for r in receipts if r["status"] == "FAILED"]
+    print(f"\n{len(receipts)-len(bad)}/{len(receipts)} verified -> {out.relative_to(ROOT)}")
+    return 1 if bad else 0
+
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

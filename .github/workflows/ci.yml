@@ -1,4 +1,4 @@
-name: GEMSDOE85 Automated Validation & Uniqueness Gates
+name: GEMSDOE85 Automated Validation, Site & Uniqueness Gates
 on:
   push:
   pull_request:
@@ -15,3 +15,6 @@ jobs:
           cache: pip
       - run: pip install -r requirements.txt
       - run: python -m pytest -v
+      - run: python scripts/build_site.py
+      - run: python scripts/check_site.py
+      - run: git diff --exit-code -- docs index.html

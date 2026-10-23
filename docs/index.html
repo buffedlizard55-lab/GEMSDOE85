@@ -1,291 +1,278 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GEMSDOE85 — Validated DOE GEMS Submission & Automated Gate Portal</title>
-  <style>
-    :root {
-      --bg: #070d19; --panel: #0f172a; --panel2: #131f37; --border: #1e293b;
-      --text: #e2e8f0; --muted: #94a3b8; --green: #10b981; --green-bg: rgba(16,185,129,0.13);
-      --cyan: #38bdf8; --amber: #f59e0b; --red: #ef4444; --mono: ui-monospace, SFMono-Regular, Menlo, monospace;
-    }
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-           background: var(--bg); color: var(--text); line-height: 1.62; }
-    a { color: var(--cyan); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .nav { position: sticky; top: 0; z-index: 50; background: rgba(7,13,25,0.92); backdrop-filter: blur(10px);
-           border-bottom: 1px solid var(--border); padding: 0.85rem 1.5rem; display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
-    .nav .brand { font-weight: 800; letter-spacing: 0.03em; color: #f8fafc; font-size: 1.05rem; }
-    .wrap { max-width: 1180px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
-    .banner { border-radius: 14px; padding: 1.6rem 1.8rem; margin-bottom: 1.8rem; border: 2px solid var(--green);
-              background: linear-gradient(135deg, rgba(16,185,129,0.16), rgba(15,23,42,0.96)); }
-    .banner.fail { border-color: var(--red); background: rgba(239,68,68,0.14); }
-    .badge { display: inline-block; padding: 0.25rem 0.7rem; border-radius: 999px; font-size: 0.78rem;
-             font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
-    .badge.pass { background: var(--green-bg); color: #34d399; border: 1px solid rgba(52,211,153,0.4); }
-    .badge.live { background: rgba(245,158,11,0.15); color: #fbbf24; border: 1px solid rgba(251,191,36,0.4); }
-    .badge.holdout { background: rgba(56,189,248,0.15); color: #38bdf8; border: 1px solid rgba(56,189,248,0.4); }
-    .btn-row { display: flex; gap: 0.9rem; flex-wrap: wrap; margin-top: 1.2rem; }
-    .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 1.35rem; border-radius: 10px;
-           font-weight: 700; font-size: 0.96rem; cursor: pointer; border: none; transition: transform 0.1s; }
-    .btn:hover { transform: translateY(-1px); text-decoration: none; }
-    .btn-primary { background: var(--green); color: #04130d; }
-    .btn-secondary { background: #1e293b; color: #f8fafc; border: 1px solid #334155; }
-    .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(235px, 1fr)); gap: 1rem; margin: 1.4rem 0; }
-    .card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem 1.35rem; margin-bottom: 1.3rem; }
-    .kpi-val { font-size: 1.65rem; font-weight: 800; color: #f8fafc; margin: 0.25rem 0; font-family: var(--mono); }
-    .kpi-sub { font-size: 0.83rem; color: var(--muted); }
-    h1 { font-size: 1.95rem; margin: 0.3rem 0 0.6rem; color: #f8fafc; }
-    h2 { font-size: 1.35rem; margin: 2rem 0 0.8rem; color: #f8fafc; border-bottom: 1px solid var(--border); padding-bottom: 0.45rem; }
-    h3 { font-size: 1.08rem; color: #e2e8f0; margin-top: 1.2rem; }
-    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin: 0.8rem 0; }
-    th, td { text-align: left; padding: 0.65rem 0.75rem; border-bottom: 1px solid var(--border); vertical-align: top; }
-    th { color: #cbd5e1; background: var(--panel2); font-weight: 700; }
-    code, pre { font-family: var(--mono); font-size: 0.85rem; }
-    pre { background: #050914; border: 1px solid var(--border); border-radius: 10px; padding: 1rem; overflow-x: auto; color: #cbd5e1; }
-    img.fig { width: 100%; border-radius: 10px; border: 1px solid var(--border); margin: 0.6rem 0; }
-    .copy-box { background: #060b16; border: 1px solid #334155; border-radius: 8px; padding: 0.65rem 0.85rem;
-                display: flex; justify-content: space-between; align-items: center; gap: 0.8rem; margin: 0.45rem 0; font-family: var(--mono); font-size: 0.84rem; word-break: break-all; }
-    </style>
-</head>
-<body>
-  
-    <nav class="nav">
-      <span class="brand">⚡ GEMSDOE85 · Lane H85-TVFV</span>
-      <a href="index.html"> Submission Portal & Gate Dashboard</a>
-      <a href="executive-summary.html"> PhD Executive Summary</a>
-      <a href="methodology.html"> Mathematical & Geophysical Architecture</a>
-      <a href="evidence/run_card.json"> Raw JSON Run Card</a>
-    </nav>
-    
-  <main class="wrap">
-    <section class="banner ok">
-      <span class="badge pass">Automated Pre-Submission Verdict: PROMOTE</span>
-      <span class="badge holdout">Evaluator: gems57-pooled-hide-v2 (K = 22,663)</span>
-      <h1>✅ ALL 7 AUTOMATED GATES PASSED — SAFE FOR IMMEDIATE DRIVENDATA SUBMISSION (ZERO HUMAN INSPECTION REQUIRED)</h1>
-      <p style="margin:0.4rem 0;color:#cbd5e1;">
-        <strong>Lane <code>H85-TVFV</code> (E85-3):</strong> 100% zero-leakage Out-of-Quadrant synthesis fixing the newly discovered
-        <strong>90° structure-tensor orientation rotation in 1m 3DEP LiDAR Band 11 (<code>IR-85-LIDAR-NORMAL-90DEG</code>)</strong>, fused with 100%-coverage 10m 3DEP DEMs,
-        signed 3D hanging-wall basement/gravity dipoles, OOF Terzaghi–Morris 3D stress criticality, 1,546 USGS borehole convective heat-flow residuals,
-        GDR #1391 silica cooling disequilibrium, 12-azimuth steerable curvilinear propagation, and exact fractional Dinkelbach 300 m decoding.
-      </p>
-      <div class="btn-row">
-        <a class="btn btn-primary" href="downloads/gems85-h85-tvfv-e85-3-20261022-zeros.tif" download>⬇️ Download Direct GeoTIFF (gems85-h85-tvfv-e85-3-20261022-zeros.tif · 174.1 KB)</a>
-        <a class="btn btn-secondary" href="downloads/gems85-h85-tvfv-e85-3-20261022-zeros.zip" download>📦 Download Single-TIFF ZIP (gems85-h85-tvfv-e85-3-20261022-zeros.zip · 142.3 KB)</a>
-        <a class="btn btn-secondary" href="executive-summary.html">📄 Read Executive Summary</a>
-      </div>
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GEMSDOE85 — H85-GAPVENT Submission</title><style>
+:root{--bg:#0d1117;--panel:#161b22;--line:#30363d;--fg:#e6edf3;--mut:#9198a1;
+--acc:#2f81f7;--ok:#3fb950;--warn:#d29922;--bad:#f85149}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px 80px}
+header{border-bottom:1px solid var(--line);background:#010409;position:sticky;top:0;z-index:9}
+header .wrap{padding:14px 20px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+header b{font-size:17px}
+nav a{color:var(--mut);font-size:14px;margin-right:16px}
+nav a.on{color:var(--fg);font-weight:600}
+h1{font-size:32px;line-height:1.25;margin:34px 0 8px}
+h2{font-size:22px;margin:40px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+h3{font-size:17px;margin:26px 0 8px}
+p,li{color:#c9d1d9}
+.sub{color:var(--mut);font-size:15px;margin-top:0}
+.hero{background:linear-gradient(180deg,#132033,#0d1117);border:1px solid #1f4b8f;
+border-radius:14px;padding:26px;margin:24px 0}
+.dl{display:inline-flex;align-items:center;gap:12px;background:var(--acc);color:#fff;
+font-size:19px;font-weight:700;padding:16px 26px;border-radius:10px;margin:6px 10px 6px 0}
+.dl:hover{background:#1f6feb;text-decoration:none}
+.dl2{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);
+color:var(--fg);padding:13px 18px;border-radius:10px;font-size:14px;margin:6px 8px 6px 0}
+.dl2:hover{border-color:var(--acc);text-decoration:none}
+code,kbd{background:#1f242c;border:1px solid var(--line);border-radius:5px;
+padding:1px 6px;font-size:13px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+pre{background:#161b22;border:1px solid var(--line);border-radius:10px;padding:14px;
+overflow-x:auto;font-size:13px}
+pre code{background:none;border:none;padding:0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:14px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+th{background:#1c2128;font-weight:600}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:16px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px;margin:18px 0}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
+.kpi .v{font-size:27px;font-weight:700;font-variant-numeric:tabular-nums}
+.kpi .l{color:var(--mut);font-size:12.5px;text-transform:uppercase;letter-spacing:.5px}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;
+border:1px solid;letter-spacing:.4px}
+.t-ok{color:var(--ok);border-color:var(--ok)}.t-warn{color:var(--warn);border-color:var(--warn)}
+.t-bad{color:var(--bad);border-color:var(--bad)}.t-mut{color:var(--mut);border-color:var(--line)}
+.note{border-left:3px solid var(--warn);background:#1c1a12;padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0}
+.good{border-left:3px solid var(--ok);background:#0f1f14;padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0}
+ol.steps{counter-reset:s;list-style:none;padding:0}
+ol.steps>li{counter-increment:s;position:relative;padding:14px 0 14px 52px;border-bottom:1px solid var(--line)}
+ol.steps>li::before{content:counter(s);position:absolute;left:0;top:12px;width:32px;height:32px;
+border-radius:50%;background:var(--acc);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+footer{color:var(--mut);font-size:13px;border-top:1px solid var(--line);margin-top:50px;padding-top:18px}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;word-break:break-all}
+</style></head><body>
+<header><div class="wrap"><b>GEMSDOE85</b><nav><a href="index.html" class="on">Submission</a><a href="executive-summary.html" class="">How to submit</a><a href="method.html" class="">Method &amp; evidence</a><a href="data.html" class="">Data &amp; sources</a></nav></div></header>
+<div class="wrap">
+<h1>One file. Download it, upload it, done.</h1>
+<p class="sub">An auditable, fully automated concealed-fault &amp; blind-geothermal submission for the
+<a href="https://www.drivendata.org/competitions/306/competition-doe-gems/">DOE GEMS Prize
+Challenge (DrivenData #306)</a>. Generated, uniqueness-checked, and 17-check validated entirely in
+code — zero human intervention.</p>
 
-      <div style="margin-top:1.25rem;">
-        <div style="font-size:0.82rem;color:#94a3b8;">Unique Competition Submission Name (copy & paste into DrivenData portal):</div>
-        <div class="copy-box"><span id="sub-name">gems85-h85-tvfv-e85-3-20261022-zeros</span><button class="btn btn-secondary" style="padding:0.35rem 0.75rem;font-size:0.8rem;" onclick="copyTxt('sub-name', this)">Copy Name</button></div>
-        <div style="font-size:0.82rem;color:#94a3b8;">Competition Submission Note (92 / 140 chars max):</div>
-        <div class="copy-box"><span id="sub-note">GEMSDOE85 E85-3: 90deg-fixed 1m/10m scarp + 3D dipole + OOF Terzaghi valve + Dinkelbach 300m</span><button class="btn btn-secondary" style="padding:0.35rem 0.75rem;font-size:0.8rem;" onclick="copyTxt('sub-note', this)">Copy Note</button></div>
-        <div style="font-size:0.82rem;color:#94a3b8;">GeoTIFF SHA-256 Digest (verified unique across 2,516 historical SHA-256 digests & 234 rasters):</div>
-        <div class="copy-box"><span id="sub-sha">0098a5c2d529c449ef58bc1b5280c232e3f8edeb5b22c7d80e9556298bd05354</span><button class="btn btn-secondary" style="padding:0.35rem 0.75rem;font-size:0.8rem;" onclick="copyTxt('sub-sha', this)">Copy SHA-256</button></div>
-      </div>
-    </section>
+<div class="hero">
+  <div style="font-size:13px;color:#9198a1;text-transform:uppercase;letter-spacing:.7px;
+  font-weight:700;margin-bottom:10px">⬇ Primary Submission File — Ready to Upload (H85-GAPVENT (E2_poisson_sep28_exc3))</div>
+  <a class="dl" href="downloads/gems85-gapvent57-37654dots-sep2.8-exc3-20261023T013000Z-566072f4-zeros.tif">⬇ Download the GeoTIFF
+  (271 KB)</a>
+  <div style="margin-top:14px"><a class="dl2" href="downloads/gems85-gapvent57-37654dots-sep2.8-exc3-20261023T013000Z-566072f4-zeros.zip">⬇ zipped primary · 185 KB</a><a class="dl2" href="downloads/gems85-gapvent57-37654dots-sep2.8-exc3-20261023T013000Z-566072f4-nan.tif">⬇ NaN-outside twin (alternate format) · 314 KB</a><a class="dl2" href="downloads/gems85-gapvent57-60000dots-sep2.8-exc3-20261023T013000Z-0afe14c5-zeros.tif">⬇ alt-60k (60,000 dots, HOLDOUT-DTI 0.14949) · 315 KB</a><a class="dl2" href="downloads/gems85-orthofuse92-37654dots-sep2.8-exc3-20261023T013000Z-81d897df-zeros.tif">⬇ alt-orthofuse92 (37,654 dots, HOLDOUT-DTI 0.14177) · 271 KB</a><a class="dl2" href="downloads/gems85-s85-ctxfus50-37654dots-sep4-20261022T232600Z-4f38c2b3-zeros.tif">⬇ Superseded S85-CTXFUS50 primary (37,654 dots, HOLDOUT-DTI 0.08082) · 268 KB</a><a class="dl2" href="downloads/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.tif">⬇ Superseded H85-1 GEO-Pb crest (90,000 dots, HOLDOUT-DTI 0.09838) · 428 KB</a><a class="dl2" href="downloads/gems85-geopb-crest-37654dots-sep4-20261022T222707Z-60029d07-zeros.tif">⬇ Superseded H85-1 GEO-Pb crest (37,654 dots, HOLDOUT-DTI 0.07475) · 294 KB</a><a class="dl2" href="downloads/gems85-h85-tvfv-e85-3-20261022-zeros.tif">⬇ parallel-lane H85-TVFV (56,442 dots) · 174 KB</a></div>
+  <div style="margin-top:16px">
+    <span class="tag t-ok">
+    ALL 17 CHECKS PASS — OK TO DOWNLOAD AND SUBMIT</span>
+  </div>
+  <table style="margin-top:16px">
+    <tr><th>file</th><td class="mono">gems85-gapvent57-37654dots-sep2.8-exc3-20261023T013000Z-566072f4-zeros.tif</td></tr>
+    <tr><th>sha256</th><td class="mono">9fcb1f21a63b3f709faa81f7f56e4ea40cf958a6ad3ecd060f8ec0181a33e028</td></tr>
+    <tr><th>format</th><td>single-band float32 GeoTIFF · EPSG:32611 · 3730 × 3292 ·
+        100 m · all values finite and in [0, 1] · no nodata tag</td></tr>
+    <tr><th>emitting pixels</th><td class="n">37,654</td></tr>
+    <tr><th>pixels within 300 m (3 px) of catalogue</th>
+        <td class="n">0 (0 on catalogue, 0 within 300 m halo)</td></tr>
+    <tr><th>HOLDOUT-DTI (gems85-holdout-v1.0.0)</th>
+        <td class="n"><b>0.14232</b> · 95% CI [0.13858, 0.14607] · 4/4 folds won</td></tr>
+  </table>
+</div>
 
-    <div class="grid-4">
-      <div class="card">
-        <span class="badge holdout">HOLDOUT-DTI (gems57-pooled-hide-v2)</span>
-        <div class="kpi-val">0.103681</div>
-        <div class="kpi-sub">95% CI [0.087994, 0.119987] · K = 22,663 withheld px (beats H33 fold-control 0.097493 by <strong>+0.006188</strong>)</div>
-      </div>
-      <div class="card">
-        <span class="badge live">ORGANIZER-CONFIRMED BENCHMARKS</span>
-        <div class="kpi-val">0.2778 → 0.4413</div>
-        <div class="kpi-sub">Best prior repo <code>GEMSDOE32 H33 = 0.2778</code> · Top-5 prize cutoff <code>0.3539</code> · Global #1 <code>xiaofanhu = 0.4413</code></div>
-      </div>
-      <div class="card">
-        <span class="badge pass">UNIQUENESS CLEARANCE</span>
-        <div class="kpi-val">0.6951 ≤ 0.70</div>
-        <div class="kpi-sub">Max 3-px dot overlap across discriminating priors · Surface |ρ| = 0.1553 ≤ 0.90 across 234 rasters</div>
-      </div>
-      <div class="card">
-        <span class="badge pass">FORMAT & LEAKAGE SAFETY</span>
-        <div class="kpi-val">0 NaN · [0.0, 1.0]</div>
-        <div class="kpi-sub">All 12,279,160 cells strictly finite float32 · 61 features canary max AUC = 0.60183 ≤ 0.90 · 56,442 dots</div>
-      </div>
-    </div>
+<div class="card">
+  <h3 style="margin-top:0">Paste this into the “Note” box on the DrivenData submission form</h3>
+  <pre><code>H85-GAPVENT 57ch 10m-3DEP+chi+vent+tilt k300, 37654 dots sep2.8 exc3, HOLDOUT-DTI 0.1423 (UNSCORED)</code></pre>
+  <p class="sub" style="margin-bottom:0">99 / 140 characters ·
+  <a href="executive-summary.html">Step-by-step upload instructions →</a></p>
+</div>
 
-    <h2>1. Seven Automated Pre-Submission Quality, Range & Uniqueness Gates</h2>
-    <div class="card">
-      <table>
-        <thead><tr><th>Automated Gate</th><th>Status</th><th>Measured Empirical Verification Detail</th></tr></thead>
-        <tbody><tr><td><code>G1_geotiff_grid_crs_dtype</code></td><td><span class='badge pass'>PASS</span></td><td>EPSG:32611, 3730x3292, float32, outside_fp_zero=True, failed_checks=[]</td></tr>
-<tr><td><code>G2_strict_0_1_range_zero_nan</code></td><td><span class='badge pass'>PASS</span></td><td>in_min=0.000000, in_max=1.000000, in_nan=0</td></tr>
-<tr><td><code>G3_single_feature_leakage_canary</code></td><td><span class='badge pass'>PASS</span></td><td>checked=61 features, max_sym_AUC=0.60183 <= 0.90</td></tr>
-<tr><td><code>G4_surface_rank_uniqueness_le_0p90</code></td><td><span class='badge pass'>PASS</span></td><td>surface max |Spearman rho|=0.15526 vs repo::GEMSDOE76::gems76-geophys-cataloguefree-rank-gate1-20261021; dot-raster max |rho|=0.04177 (<= 0.90)</td></tr>
-<tr><td><code>G5_dot_3px_uniqueness_le_0p70_and_sha256</code></td><td><span class='badge pass'>PASS</span></td><td>binding_discriminating_3px_max=0.69510 vs /tmp/ref/GEMSDOE77/docs/downloads/gems85-h85-edti-collar35-skel-r33-20261021-d97b248e-zeros.tif (<= 0.70 across 227 priors; 5 space-filling halos >=70% documented per IR-H85-01); bidir_max=0.69510 vs repo::GEMSDOE77::gems85-h85-edti-collar35-skel-r33-20261021-d97b248e-zeros; unique_sha256=True against 2516 hashes</td></tr>
-<tr><td><code>G6_anti_collar_seam_and_slope_hygiene</code></td><td><span class='badge pass'>PASS</span></td><td>dead_dots=0, detached_gt12px=0.6652, seam_ratio=0.8555, steep_gt15deg=0.1688</td></tr>
-<tr><td><code>G7_holdout_dti_beats_h33_and_positive</code></td><td><span class='badge pass'>PASS</span></td><td>E85_winner_HOLDOUT_DTI=0.103681 > H33_HOLDOUT_DTI=0.097493 (+0.006188)</td></tr>
-</tbody>
-      </table>
-    </div>
+<div class="good"><b>Why this file is safe to upload (zero portal range errors).</b> Prior uploads
+with NaN outside the footprint triggered <code>Predicted values must be in range [0, 1]</code>
+because IEEE-754 <code>NaN &le; 1</code> evaluates to <code>False</code>. This primary GeoTIFF is
+<b>all-finite</b>: exact <code>0.0</code> outside the footprint, binary <code>{0.0, 1.0}</code>
+inside, no nodata tag, verified by both <code>src/gems85/submission.py::validate</code> (17 checks)
+and the immutable shared gate <code>vendor/gems57/gates.py::format_report</code>.</div>
 
-    <h2>2. Strictly Pre-Registered 3-Experiment Campaign (<code>E85-1 → E85-2 → E85-3</code>)</h2>
-    <div class="card">
-      <table>
-        <thead><tr><th>Experiment</th><th>Architecture & Hypothesis Tested</th><th>Pooled Score & 95% Spatial Bootstrap CI</th><th>Seed 20 / Seed 30</th></tr></thead>
-        <tbody><tr><td><strong>E85-1</strong></td><td>Stage-1 61-Channel H85-TVFV Dual-Expert Slope-Deconfounded LOQO + Greedy 2.8px Disk</td><td><span class='badge holdout'>HOLDOUT-DTI</span> <code>0.098374</code><br><small>95% CI [0.082612, 0.115252] (K=22,663)</small></td><td><code>0.095272</code> / <code>0.101534</code></td></tr>
-<tr><td><strong>E85-2</strong></td><td>E85-1 + Stage-2 Out-of-Quadrant 12-Azimuth Multi-Scale Steerable Curvilinear Propagation (100% Zero-Catalogue Features) + Greedy 2.8px Disk</td><td><span class='badge holdout'>HOLDOUT-DTI</span> <code>0.101960</code><br><small>95% CI [0.087586, 0.117414] (K=22,663)</small></td><td><code>0.101246</code> / <code>0.102675</code></td></tr>
-<tr><td><strong>E85-3</strong> 🏆 <strong>PROMOTED WINNER</strong></td><td>E85-2 + Exact Fractional Dinkelbach 300 m Expected-DTI Solver (Minoux CELF + Exact O(29x29) Prune & 1-Swap Coordinate Ascent)</td><td><span class='badge holdout'>HOLDOUT-DTI</span> <code>0.103681</code><br><small>95% CI [0.087994, 0.119987] (K=22,663)</small></td><td><code>0.102618</code> / <code>0.104706</code></td></tr>
-</tbody>
-      </table>
-      <img class="fig" src="figures/ablation_and_canary.png" alt="3-Experiment Ablation and 61-Feature Leakage Canary">
-    </div>
+<h2>Session update 2026-10-23 (<code>arena/7ded4c0a-gemsdoe85</code>) — <code>H85-GAPVENT</code> (+76.1% Holdout DTI)</h2>
+<div class="good"><b>What changed and why.</b> Direct pixel audit revealed that <b>24.63%</b> of the
+competition footprint (<code>1,272,605</code> pixels) has zero 1 m LiDAR coverage, and prior PU
+classifiers learned to suppress unmapped quadrangles (<code>IR-85-023</code>).
+<b>H85-GAPVENT</b> bridges that gap with 100%-coverage USGS 3DEP 10 m scarp curvature &amp; 1.5 km
+persistence, 10 m fluvial &chi;/&Delta;k<sub>sn</sub> knickpoints, DOE GDR 1391 non-tufa
+hydrothermal vents + 2 m thermal-probe 2.5 km Radon corridors, Miller-Singh magnetic tilt contacts,
+Andersonian 60&deg; up-dip gravity back-projection, and 1,335 m Lake Lahontan / volcanic-mesa
+deconfounders, trained on continuous 300 m kernel credit with surveyed-corridor PU sampling and
+emitted with exact 300 m (<code>exclude_px=3</code>) catalogue halo removal. At matched
+<code>37,654</code> dots on <code>gems85-holdout-v1.0.0</code>, <code>HOLDOUT-DTI</code> rose from
+<code>0.07475</code> (GEO-Pb) and <code>0.08082</code> (S85-CTXFUS50) to <b><code>0.14232</code></b>
+(winning 4/4 spatially-blocked folds; deep unmapped basin ROC-AUC = <code>0.7184</code>).</div>
 
-    <h2>3. Statewide Nevada Posterior & Dixie Valley / Stillwater Play-Fairway Inspection</h2>
-    <div class="card">
-      <img class="fig" src="figures/nevada_posterior_and_dinkelbach_zoom.png" alt="Statewide Posterior and Dixie Valley Zoom">
-      <img class="fig" src="figures/uniqueness_and_structural_hygiene.png" alt="Uniqueness Audit and Structural Regime Hygiene">
-    </div>
+<h2>Diagnostic preview (400 m max-pooled, automated — not a human approval step)</h2>
+<div class="card">
+<img src="downloads/preview_gapvent57_vs_h33_catalogue.png" alt="Preview map: H85-GAPVENT dots vs H33 and catalogue"
+     style="max-width:560px;width:100%;border:1px solid #30363d;border-radius:8px">
+<p class="sub" style="margin-bottom:0"><b style="color:#3cc8ff">Cyan</b> = <code>H85-GAPVENT</code>
+dots · <b style="color:#f0aa28">amber</b> = <code>h33-h33-2-b2</code> (0.2778 OWNER-REPORT) dots ·
+<b style="color:#78ff8c">green</b> = both within the same 400 m cell · grey = USGS/INGENIOUS mapped
+catalogue (0 dots within 300 m). Full-resolution 3-px overlap vs <code>h33</code>:
+<b>54.3%</b> (uniqueness gate &le; 70.0%; max comparable-budget registry overlap 65.6%,
+max |Spearman &rho;| = 0.202).</p>
+</div>
 
-    <h2>4. Complete Machine-Verified JSON Run Card</h2>
-    <pre>{
-  "schema_version": "gems85-run-card-v1",
-  "project": "GEMSDOE85",
-  "branch": "arena/a7db677d-gemsdoe85",
-  "date_utc": "2026-10-22",
-  "lane_id": "H85-TVFV",
-  "hypothesis": "H85-TVFV (Terzaghi-Vector Fault-Valve & 90deg-Corrected Multi-Scale Curvilinear Dipole Synthesis): Unmapped Quaternary geothermal faults in Western Nevada are jointly localized by (1) fixing the newly discovered 90-degree structure-tensor normal rotation in 1m 3DEP LiDAR Band 11 (`IR-85-LIDAR-NORMAL-90DEG`) with empirical Bayes cross-seam & slope de-confounding across 100%-coverage 10m 3DEP DEMs, (2) signed 3D hanging-wall basement/gravity dipole concordance + Gallardo-Meju coupling + FFT upward continuation, (3) out-of-quadrant Terzaghi-Morris 3D dilation criticality coupled with 1,546 USGS borehole convective heat-flow residuals (`hf_resid > 0`), upslope-projected GDR #1391 silica cooling disequilibrium, 2m thermal probes, and paleo-sinter vents, (4) pure zero-catalogue 12-azimuth multi-scale steerable curvilinear propagation (0.7/1.7/3.5 km), and (5) exact fractional Dinkelbach 300 m submodular optimization + 1-swap ascent.",
-  "mechanism": "Normal faults dipping into Basin-and-Range hanging walls produce contour-parallel scarp normals aligned with Shmin (~N108E), positive downward basement steps (+grad(h_base).u_dip > 0), negative hanging-wall density steps (-grad(g_iso).u_dip > 0), and high effective dilation tendency maintaining permeable Sibson fault-valve upflow plumes; Dinkelbach + Minoux CELF + O(29x29) 1-swap decoding maps posterior probabilities to variable-density binary dots directly maximizing pooled DTI (alpha=0.2, beta=0.8, R=300 m) outside d_cat <= 2 px.",
-  "named_non_fault_mimic": "Pleistocene Lake Lahontan wave-cut shorelines (~1,330 m elevation contour), incised alluvial-fan distributary gullies, Cenozoic basalt flow margins, and flat-playa highway embankments (mitigated via 3D subsurface gravity/basement dipole concordance, cross-profile canyon suppression, FFT depth persistence, and valley-floor berm flagging).",
-  "holdout_dti": {
-    "label": "HOLDOUT-DTI",
-    "evaluator_version": "gems57-pooled-hide-v2",
-    "withheld_positive_pixels": 22663,
-    "score": 0.103681,
-    "ci95": [
-      0.087994,
-      0.119987
+<h2>Format validation — all 17 checks verified on the written GeoTIFF bytes</h2>
+<table><tr><th>check</th><th>result</th></tr><tr><td>file exists</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>single band</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>dtype float32</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>shape 3730x3292</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>crs epsg 32611</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>transform matches template</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>resolution 100m</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>no nan inside footprint</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>no inf inside footprint</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>values in 0 1 inside footprint</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>all finite whole raster</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>values in 0 1 whole raster</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>outside footprint is zero</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>no nodata tag</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>has positive predictions</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>no prediction outside footprint</td><td><span class="tag t-ok">PASS</span></td></tr><tr><td>zero mass within 2px of catalogue</td><td><span class="tag t-ok">PASS</span></td></tr></table>
+
+<h2>Metric &amp; provenance discipline</h2>
+<div class="note"><b>No number on this site is an organizer score for this file.</b> Every local
+measurement is a <b>HOLDOUT-DTI</b> computed on 4 spatially-blocked segment folds
+(<code>60,988</code> withheld positives). Historical leaderboard numbers (e.g. <code>0.2778</code>
+for <code>h33-h33-2-b2</code>) are <b>OWNER-REPORT</b> or <b>PUBLIC-LEADERBOARD-OBSERVATION</b>
+(<code>0.4413</code>). Promotion to a live weekly DrivenData slot is a separate operator decision.</div>
+
+
+<h2>Run card</h2>
+<div class="grid">
+  <div class="kpi"><div class="l">Holdout DTI (pooled)</div>
+    <div class="v">0.14232</div>
+    <div class="l" style="text-transform:none">95% CI
+      [0.13858, 0.14607]</div></div>
+  <div class="kpi"><div class="l">Withheld positives</div>
+    <div class="v">60,988</div>
+    <div class="l" style="text-transform:none">4 spatially-blocked folds</div></div>
+  <div class="kpi"><div class="l">vs prior record (0.08082)</div>
+    <div class="v">+0.06151</div>
+    <div class="l" style="text-transform:none">matched 37,654-dot budget</div></div>
+  <div class="kpi"><div class="l">Verdict</div>
+    <div class="v" style="font-size:21px">promote-as-candidate</div>
+    <div class="l" style="text-transform:none">pre-registered gate</div></div>
+</div>
+<pre><code>{
+  &quot;run_id&quot;: &quot;gems85-7ded4c0a-20261023T013000Z&quot;,
+  &quot;session_branch&quot;: &quot;arena/7ded4c0a-gemsdoe85&quot;,
+  &quot;hypothesis&quot;: &quot;H85-GAPVENT + H85-VOLCDECONF: 57-channel catalogue-free multi-physics stack (seamless 10 m USGS 3DEP scarp curvature &amp; 1.5 km persistence closing the 24.63% non-LiDAR gap, explicit LiDAR validity indicator + unused 1 m LiDAR scarp bands, 10 m fluvial chi/ksn knickpoints, DOE GDR 1391 non-tufa hydrothermal paleo-vent + 2 m temperature probe + geothermometer 2.5 km Radon strike corridors, shallow hydrothermal demagnetization TMI-TMI_up150, Miller-Singh magnetic tilt contact, Andersonian 60-deg up-dip gravity back-projection, and Lake Lahontan 1335 m shoreline / volcanic-mesa deconfounders), trained via continuous 300 m kernel-target regression (Poisson + L2 ensemble) with surveyed-corridor PU negative sampling (IR-85-023) and emitted at 37,654 binary dots with sep_px=2.8 and 3-px (300 m) catalogue halo exclusion.&quot;,
+  &quot;mechanism&quot;: &quot;Concealed Basin-and-Range faults missing from the USGS/INGENIOUS catalogue fall into three physical classes: (1) subtle piedmont scarps inside the 24.63% non-LiDAR gap (captured by relief-normalized 10 m 3DEP profile curvature + 1.5 km strike persistence and fluvial delta-ksn knickpoints), (2) blind basin-floor geothermal conduits with zero surface scarp (captured by aligned 2 m probe F2mDAB&gt;=2 C, sinter/explosion-crater vents, shallow magnetite destruction, and 60-deg up-dip basement gravity edges), and (3) non-tectonic Lake Lahontan 1335 m shorelines and volcanic mesa rims (explicitly down-weighted via orthometric-elevation and mag/gravity ratio deconfounders).&quot;,
+  &quot;named_non_fault_process_that_could_mimic_it&quot;: &quot;Erosional volcanic mesa caprock margins, incised axial fluvial terrace bluffs, and pluvial Lake Lahontan wave-cut shorelines (~1,335 m ASL). Mitigated via explicit gv_mimic_lahontan (1335 m contour gated by low basement gravity slope), gv_mimic_volc_mesa (elevated magnetic/gravity ratio), and Tufa exclusion from hydrothermal paleo-vents; residual bedrock strike ridges remain the main irreducible mimic.&quot;,
+  &quot;holdout_dti&quot;: {
+    &quot;label&quot;: &quot;HOLDOUT-DTI&quot;,
+    &quot;evaluator_version&quot;: &quot;gems85-holdout-v1.0.0&quot;,
+    &quot;value&quot;: 0.14232488062018855,
+    &quot;ci95&quot;: [
+      0.1385770562001967,
+      0.1460727050401804
     ],
-    "h33_fold_equivalent_control": 0.097493,
-    "paired_delta_vs_h33": 0.006188,
-    "paired_delta_ci95": [
-      -0.003757,
-      0.015655
+    &quot;per_fold&quot;: [
+      0.14664687353744857,
+      0.13937625943854992,
+      0.14447798448615587,
+      0.13887990311337595
     ],
-    "strict_3_experiment_ablation": {
-      "E85-1": {
-        "label": "HOLDOUT-DTI",
-        "score": 0.098374,
-        "ci95": [
-          0.082612,
-          0.115252
-        ],
-        "withheld_positive_pixels": 22663
-      },
-      "E85-2": {
-        "label": "HOLDOUT-DTI",
-        "score": 0.10196,
-        "ci95": [
-          0.087586,
-          0.117414
-        ],
-        "withheld_positive_pixels": 22663
-      },
-      "E85-3": {
-        "label": "HOLDOUT-DTI",
-        "score": 0.103681,
-        "ci95": [
-          0.087994,
-          0.119987
-        ],
-        "withheld_positive_pixels": 22663
-      }
-    }
+    &quot;n_withheld_positives&quot;: 60988,
+    &quot;oof_roc_auc&quot;: 0.6842140897697088,
+    &quot;non_lidar_gap_roc_auc&quot;: 0.6801,
+    &quot;deep_unmapped_basin_roc_auc_gt_45px&quot;: 0.7184,
+    &quot;protocol&quot;: &quot;hide-and-recover; whole fault segments withheld by 20 km spatial block with a 5 px buffer; model retrained per fold strictly from fold.visible; visible faults masked pixel-exactly in evaluator; pooled DTI, alpha 0.2, beta 0.8, 300 m triangular kernel&quot;
   },
-  "organizer_confirmed_reference_anchors": {
-    "leaderboard_rank_1_xiaofanhu": {
-      "label": "ORGANIZER-CONFIRMED",
-      "score": 0.4413
-    },
-    "leaderboard_rank_5_cutoff": {
-      "label": "ORGANIZER-CONFIRMED",
-      "score": 0.3539
-    },
-    "gemsdoe32_h33_best_prior": {
-      "label": "ORGANIZER-CONFIRMED",
-      "score": 0.2778
-    },
-    "gemsdoe63_cvarlw": {
-      "label": "ORGANIZER-CONFIRMED",
-      "score": 0.2683
-    },
-    "gemsdoe24_d28": {
-      "label": "ORGANIZER-CONFIRMED",
-      "score": 0.26
-    },
-    "gemsdoe70_p8": {
-      "label": "ORGANIZER-CONFIRMED",
-      "score": 0.2478
-    },
-    "gemsdoe49_gallardo": {
-      "label": "ORGANIZER-CONFIRMED",
-      "score": 0.2376
-    }
+  &quot;controls_at_matched_mass&quot;: {
+    &quot;uniform_random&quot;: 0.04571,
+    &quot;derivative_control_sato_det_elev&quot;: 0.01325,
+    &quot;geopb_crest_37654&quot;: 0.0747509441972475,
+    &quot;prior_record_s85_ctxfus50_37654&quot;: 0.08081805013412194,
+    &quot;control_budget_used&quot;: 37654
   },
-  "correlation_and_overlap_vs_registry": {
-    "reference_rasters_audited": 234,
-    "historical_sha256_hashes_checked": 2516,
-    "surface_max_abs_spearman": 0.15526,
-    "dot_raster_max_abs_spearman": 0.04177,
-    "binding_discriminating_3px_forward_overlap_max": 0.6951,
-    "binding_worst_against": "/tmp/ref/GEMSDOE77/docs/downloads/gems85-h85-edti-collar35-skel-r33-20261021-d97b248e-zeros.tif",
-    "rho_threshold": 0.9,
-    "dot_overlap_threshold": 0.7,
-    "duplicate_detected": false
+  &quot;vs_random_delta&quot;: 0.09661488062018855,
+  &quot;vs_prior_record_delta&quot;: 0.061506830486066616,
+  &quot;vs_geopb_crest_delta&quot;: 0.06757393642294106,
+  &quot;leakage_canary&quot;: {
+    &quot;n_channels_tested&quot;: 57,
+    &quot;max_channel_name&quot;: &quot;gv_dem10_line_s15&quot;,
+    &quot;max_channel_auc&quot;: 0.5941632224320768,
+    &quot;oof_surface_auc&quot;: 0.6842140897697088,
+    &quot;threshold&quot;: 0.9,
+    &quot;verdict&quot;: &quot;clean&quot;
   },
-  "leakage_canary": {
-    "features_checked": 61,
-    "max_symmetric_auc": 0.60183,
-    "top_feature": "d3_hw_triple_concordance",
-    "threshold": 0.9,
-    "passed": true
+  &quot;correlation_vs_registry&quot;: {
+    &quot;n_registry_rasters&quot;: 17,
+    &quot;max_abs_spearman&quot;: 0.20151318182395303,
+    &quot;max_comparable_dot_overlap_3px&quot;: 0.6562914962553779,
+    &quot;max_all_rasters_dot_overlap_3px&quot;: 0.994476018484092,
+    &quot;h33_02778_dot_overlap_3px&quot;: 0.5425983959207521,
+    &quot;h33_02778_spearman_surface&quot;: 0.08916670330734347,
+    &quot;thresholds&quot;: {
+      &quot;spearman&quot;: 0.9,
+      &quot;comparable_dot_overlap_3px&quot;: 0.7,
+      &quot;comparable_max_dots&quot;: 65000
+    },
+    &quot;dense_prior_disclosure&quot;: &quot;IR-85-002 / IR-85-07 -- space-filling priors (e.g. 206,895-dot r13-lattice-s5 and 5.17M-px continuous rasters) cover 99-100% of the footprint within 3 px by construction. Both raw all-raster overlap and comparable-budget (&lt;=65k) raw overlap are reported.&quot;,
+    &quot;is_duplicate&quot;: false,
+    &quot;overlap_vs_h85_tvfv_3px&quot;: 0.488341,
+    &quot;spearman_vs_h85_tvfv_surface&quot;: 0.0656
   },
-  "raster_sha256": "0098a5c2d529c449ef58bc1b5280c232e3f8edeb5b22c7d80e9556298bd05354",
-  "zip_sha256": "5dfb6673dd4af0d43d4d043e0781981fbb1e68083f40b273b5b8d2faa78325ea",
-  "validator_output": {
-    "all_7_automated_gates_passed": true,
-    "all_local_format_checks_passed": true,
-    "crs": "EPSG:32611",
-    "shape": [
-      3730,
-      3292
-    ],
-    "dtype": "float32",
-    "min": 0.0,
-    "max": 1.0,
-    "n_nan": 0,
-    "n_infinite": 0,
-    "emitted_positive_dots": 56442,
-    "dead_zone_dots_le_2px": 0,
-    "detached_discovery_frac_gt_12px": 0.66518,
-    "gap_to_lidar_seam_density_ratio": 0.8555,
-    "mountain_steep_slope_frac_gt_15deg": 0.16876
+  &quot;raster_sha256&quot;: &quot;9fcb1f21a63b3f709faa81f7f56e4ea40cf958a6ad3ecd060f8ec0181a33e028&quot;,
+  &quot;validator_output&quot;: {
+    &quot;all_checks_passed&quot;: true,
+    &quot;gems57_shared_gate_passed&quot;: true,
+    &quot;zero_mass_within_3px_of_catalogue&quot;: true,
+    &quot;checks&quot;: {
+      &quot;file_exists&quot;: true,
+      &quot;single_band&quot;: true,
+      &quot;dtype_float32&quot;: true,
+      &quot;shape_3730x3292&quot;: true,
+      &quot;crs_epsg_32611&quot;: true,
+      &quot;transform_matches_template&quot;: true,
+      &quot;resolution_100m&quot;: true,
+      &quot;no_nan_inside_footprint&quot;: true,
+      &quot;no_inf_inside_footprint&quot;: true,
+      &quot;values_in_0_1_inside_footprint&quot;: true,
+      &quot;all_finite_whole_raster&quot;: true,
+      &quot;values_in_0_1_whole_raster&quot;: true,
+      &quot;outside_footprint_is_zero&quot;: true,
+      &quot;no_nodata_tag&quot;: true,
+      &quot;has_positive_predictions&quot;: true,
+      &quot;no_prediction_outside_footprint&quot;: true,
+      &quot;zero_mass_within_2px_of_catalogue&quot;: true
+    },
+    &quot;no_nan_inside_footprint&quot;: true,
+    &quot;values_in_0_1&quot;: true,
+    &quot;crs_shape_transform_match&quot;: true,
+    &quot;safe_to_submit&quot;: true
   },
-  "submission_filename": "gems85-h85-tvfv-e85-3-20261022-zeros.tif",
-  "submission_zip": "gems85-h85-tvfv-e85-3-20261022-zeros.zip",
-  "submission_name": "gems85-h85-tvfv-e85-3-20261022-zeros",
-  "submission_note": "GEMSDOE85 E85-3: 90deg-fixed 1m/10m scarp + 3D dipole + OOF Terzaghi valve + Dinkelbach 300m",
-  "submission_note_chars": 92,
-  "safe_to_download_and_submit_without_human_intervention": true,
-  "verdict": "promote"
-}</pre>
-  </main>
-  
-    <script>
-      function copyTxt(id, btn) {
-        const t = document.getElementById(id).innerText;
-        navigator.clipboard.writeText(t);
-        const old = btn.innerText;
-        btn.innerText = "Copied!";
-        setTimeout(() => { btn.innerText = old; }, 1400);
-      }
-    </script>
-    
-</body>
-</html>
+  &quot;submission_name&quot;: &quot;gems85-gapvent57-37654dots-sep2.8-exc3-20261023T013000Z-566072f4-zeros.tif&quot;,
+  &quot;submission_note&quot;: &quot;H85-GAPVENT 57ch 10m-3DEP+chi+vent+tilt k300, 37654 dots sep2.8 exc3, HOLDOUT-DTI 0.1423 (UNSCORED)&quot;,
+  &quot;preregistered_gate&quot;: {
+    &quot;beats_prior_record_008082&quot;: true,
+    &quot;wins_4_of_4_folds&quot;: true,
+    &quot;beats_derivative_control&quot;: true,
+    &quot;beats_uniform_random&quot;: true,
+    &quot;leakage_canary_clean&quot;: true,
+    &quot;non_duplicate_of_registry&quot;: true
+  },
+  &quot;verdict&quot;: &quot;promote-as-candidate&quot;,
+  &quot;verdict_caveat&quot;: &quot;&#x27;promote-as-candidate&#x27; means the file cleared this repository&#x27;s pre-registered holdout, canary, uniqueness, and 17-check format gates and is ready for the separate selector step. Every metric above is a HOLDOUT-DTI on withheld catalogue segments, NOT an ORGANIZER-CONFIRMED live leaderboard score.&quot;,
+  &quot;budget&quot;: {
+    &quot;experiments_run&quot;: 3,
+    &quot;limit&quot;: 3,
+    &quot;note&quot;: &quot;Strictly 3 pre-registered experiments executed: E1 H85-GAPVENT (+0.05217 @37,654), E2 H85-SUBMOD300 vs Poisson-disk + 3-px boundary exclusion (+0.06151 @37,654, WINNER), E3 H85-ORTHOFUSE cross-mechanism ensemble (+0.06095 @37,654).&quot;
+  },
+  &quot;negativ</code></pre>
+
+<h2>Navigation &amp; historical lanes</h2>
+<p><a href="executive-summary.html">How to submit →</a> 5-step DrivenData upload walkthrough &amp; rules summary.<br>
+<a href="method.html">Method &amp; evidence →</a> 5 ranked hypotheses, 57-channel leakage canaries, E1–E3 holdout results, and fleet uniqueness audit.<br>
+<a href="data.html">Data &amp; sources →</a> 28 SHA-256-verified inputs and official public links.</p>
+
+<p>Earlier lanes in this repository remain preserved and downloadable for provenance:
+<code>S85-CTXFUS50</code> (<code>0.08082 HOLDOUT-DTI</code>), <code>H85-1 GEO-Pb</code>
+(<code>0.07475</code> @ 37,654 / <code>0.09838</code> @ 90,000), and the separate
+<a href="duplex-lane/index.html">transtensional pull-apart + gravity worm duplex lane</a>
+(<a href="duplex-lane/executive-summary.html">executive summary</a>; note its different fold geometry is not directly comparable to <code>gems85-holdout-v1.0.0</code>).</p>
+
+<footer>Built 2026-10-23 01:30 UTC by <code>scripts/build_site.py</code> from <code>registry/</code> and
+<code>evidence/</code>. Every number on this site is generated from a measurement file; none is
+typed by hand. Repository:
+<a href="https://github.com/buffedlizard55-lab/GEMSDOE85">buffedlizard55-lab/GEMSDOE85</a>.
+</footer></div></body></html>
