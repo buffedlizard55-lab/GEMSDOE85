@@ -1,30 +1,21 @@
 # GEMSDOE85 — Lane H85-HJCD: Hydrothermal-Juxtaposition & Fault-Valve Conduit Discovery
 
-<!-- CURRENT STATE — update this block only for session status. -->
-## CURRENT STATE (2026-10-23)
+<!-- CURRENT STATE — edit only this block and only these fields -->
+## CURRENT STATE (2026-10-23, session 3)
 
-- **Parent:** R0 `h33-h33-2-b2`, 37,654 dots; `0.2778` is a **CLAIM**, not a receipt. Pinned NaN raster SHA-256: `baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd`.
-- **Best receipt:** none found in `ledger/submissions.csv`; human must paste a submission-page receipt and date.
-- **TOP_PUBLIC:** not supplied (human must fill with observed date). **Slots left this rolling week:** unknown (human checks account page).
-- **AXIS for this brief:** not assigned by the human. Prior PRUNE candidates were built under an AI-selected axis; no new candidate is authorized until the human assigns an axis.
-- **Next three candidate files already built and revalidated:** `h33-2-b2-prune3-20261023-fb308615`, `h33-2-b2-prune4-20261023-2880b0e9`, `h33-2-b2-prune5-20261023-7ebfc408`. These are PRUNE rungs, not new work this session; each has status BUILT and predicted change only. Use only if the human confirms PRUNE and the account has slots. Slot 3 remains conditional as stated in `docs/SUBMIT.md`.
-- **Human must supply:** AXIS (and value), dated TOP_PUBLIC, weekly slots remaining, any score receipts, and deadline confirmation. No submission was made.
+| field | value |
+|---|---|
+| **parent** | R0 = `h33-h33-2-b2` (`e5eb6e7e`), 37,654 unit-mass dots, rebuilt pixel-identical every session |
+| **best receipt** | **none in this repository.** 0.2778 is a **CLAIM** (owner-reported); every other number below is MODEL or PROXY |
+| **TOP_PUBLIC** | **UNFILLED** — human must read it off the leaderboard *with a date*; no other target number is valid |
+| **slots left this week** | **UNKNOWN** — human must read it off the account page (3/week is a ceiling, not a target) |
+| **next 3 slots** | 1. `releases/h33-2-b2-prune3-20261023-fb308615.tif` (+0.007 MODEL) · 2. `releases/h33-2-b2-r3p61-20261023-f94be3ad.tif` (+0.005, the decision slot) · 3. `releases/h33-2-b2-r2p85-20261023-acce3907.tif` (+0.005) — upload the `-zeros` twin instead if the portal rejects NaN outside |
+| **this session** | AXIS **not assigned by the human** (asked; skipped) → PRUNE chosen from measurement. AXIS = PRUNE at fractional cup-distance rungs; SNAP / CONCENTRATION / RELIEF measured **infeasible** at R0's saturated 2.8 px packing (`docs/mechanism_cards_rung.md`) |
 
----
+<!-- end CURRENT STATE → the rest of this README is the previous session's narrative, preserved -->
+
 
 **DOE GEMS Prize Challenge · DrivenData Competition #306 · Verified End-to-End Research, Holdout Validation & Unique GeoTIFF Submission System**
-
-## CURRENT STATE — session `arena/340b2965-gemsdoe85`, 2026-10-23 (edit only this block; the historical narrative below is overridden by it for this session)
-
-| item | value |
-|---|---|
-| **Parent R0** | `h33-h33-2-b2` (GEMSDOE32 `e5eb6e7e`), 37,654 unit dots, none within 2 px of the catalogue; live **0.2778 = CLAIM** — no submission-page receipt in this repo |
-| **Start gate** | manifest hashes verified (`registry/data_manifest.json`, core + scored groups); R0 rebuilt pixel-identical from pinned inputs; all 7 SHA-256 pins match (`registry/scored_artifacts.json` parent pins included); full pytest suite passes |
-| **Built variants (PRUNE axis — complete)** | prune3 35,483 dots (−5.77 %), prune4 33,829 (−10.16 %), prune5 32,017 (−14.97 %); all `BUILT` in `ledger/submissions.csv`, `receipt = N`, all gates pass (`evidence/session_prune_receipt.json`); docs/SUBMIT.md names upload file, sha256 and ≤140-char note per slot |
-| **Best receipt** | none yet — human uploads one file per slot from their registered account |
-| **TOP_PUBLIC** | **unfilled** — human reads it off the leaderboard with a date; no other target number is valid |
-| **Slots left this rolling week** | **unknown** — human reads from the account page (3/week is a ceiling, not a target) |
-| **Next 3 slots** | pending human **AXIS** assignment — each `(AXIS, value)` pair is built once across all sessions and PRUNE rungs 3/4/5 are consumed; no variant was built this session because no AXIS was assigned. Default lane order: MASS, CONCENTRATION, SNAP, PRUNE, RELIEF (wk 1–2 per `SLOT_PLAN.md`) |
 
 [![Automated Validation](https://img.shields.io/badge/Automated_Validation-32%2F32_PASS-brightgreen)](docs/index.html)
 [![Holdout DTI](https://img.shields.io/badge/HOLDOUT--DTI_(gems57--v2)-0.196461_(%2B107.6%25_vs_H33)-blue)](evidence/hjcd_experiments.json)

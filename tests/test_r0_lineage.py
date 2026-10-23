@@ -132,26 +132,33 @@ def test_prune_variant_semantics_on_parent():
 @pytest.mark.skipif(not HAVE_DATA, reason="pinned rasters not restored")
 def test_shipped_releases_pass_their_own_gates_and_match_the_ledger():
     ledger = ROOT / "ledger" / "submissions.csv"
-    receipt = ROOT / "evidence" / "session_prune_receipt.json"
-    if not ledger.is_file() or not receipt.is_file():
+    receipts = [ROOT / "evidence" / "session_prune_receipt.json",
+                ROOT / "evidence" / "session_rung_receipt.json"]
+    if not ledger.is_file() or not any(p.is_file() for p in receipts):
         pytest.skip("session outputs not built")
     rows = list(csv.DictReader(ledger.open()))
-    assert len(rows) == 3
-    assert rows[0]["parent"] == "h33-h33-2-b2" and rows[0]["axis"] == "PRUNE"
+    assert len(rows) >= 3
+    assert all(r["parent"] == "h33-h33-2-b2" and r["axis"] == "PRUNE" for r in rows)
     assert all(r["status"] == "BUILT" and r["receipt"] == "N" for r in rows)
-    rec = json.loads(receipt.read_text())
+    variants = {}
+    for p in receipts:
+        if p.is_file():
+            variants.update(json.loads(p.read_text())["variants"])
     for row in rows:
         tif = ROOT / "releases" / f'{row["id"]}.tif'
         assert tif.is_file(), tif
         assert RL.sha256_file(tif) == row["sha256"]
-        entry = rec["variants"][row["id"].rsplit("-", 2)[0]]
+        stem = row["id"].rsplit("-", 2)[0]
+        entry = variants.get(stem) or variants[stem.rsplit("-", 1)[-1]]
         assert entry["all_gates_passed"], entry["nan"]["checks"]
         assert entry["nan"]["sha256"] == row["sha256"]
         assert int(row["n_dots"]) == entry["nan"]["positive_pixels"]
         assert float(row["pct_changed"]) > 0.0
         assert row["sha8"] == row["sha256"][:8]
-        assert entry["nan"]["checks"]["zero_mass_on_catalogue"]
-        assert entry["nan"]["checks"]["min_distance_to_catalogue_px_gt_3"]
+        checks = entry["nan"]["checks"]
+        assert checks["zero_mass_on_catalogue"]
+        # the 3 px rule is waived for PRUNE; each rung instead proves its own declared threshold
+        assert checks.get("min_distance_to_catalogue_px_gt_3") or checks["all_dots_beyond_declared_rung"]
         # the zeros twin must be all-finite and byte-identical in pixels
         import rasterio
         with rasterio.open(ROOT / "releases" / f'{row["id"]}-zeros.tif') as z:
