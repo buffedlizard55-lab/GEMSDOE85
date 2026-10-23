@@ -16,6 +16,22 @@ A self-driving, fully auditable pipeline that restores 28 SHA-256-pinned public 
 | **Fleet Uniqueness Gate (`17` rasters)** | **PASS (`is_duplicate = false`)** — max `|Spearman ρ| = 0.2015` (`<= 0.90`); max comparable-budget (`<= 65k`) 3-px dot overlap = **`65.63%`** (`<= 70.0%`); overlap vs `h33-h33-2-b2` (`0.2778` `OWNER-REPORT`) = **`54.26%`** |
 | **Verdict** | `promote-as-candidate` — cleared pre-registered holdout, canary, uniqueness, and format gates (`0` live weekly submission slots spent; **UNSCORED** on DrivenData) |
 
+## CURRENT STATE — session `arena/c4de5673-gemsdoe85` (2026-10-23)
+
+*Everything outside this block is the previous session's record and is left untouched.*
+
+| Field | Value |
+|---|---|
+| **Parent (incumbent)** | `h33-h33-2-b2-20261004T220000Z-e5eb6e7e-zeros.tif` — 37,654 unit-mass 1-px dots, sha256 `c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9`; owner-reported live DTI **0.2778 = CLAIM** (no DrivenData receipt exists in this repository) |
+| **Parent rebuild (gate)** | Recipe re-derived from the control rasters and **verified pixel-exact**: *R0 = `h27-4-solo-d28` (40,199 dots) minus every dot with Euclidean catalogue distance ≤ 2 px (2,545 removed)*. The rebuilt raster's own sha256 differs from the pinned one only in GeoTIFF byte layout. See `evidence/axis_concentration_build.json → parent_rebuild` |
+| **Best receipt** | **None.** No file in this repository has a DrivenData receipt; the highest owner-reported value in the family record is 0.2778 (CLAIM) and the 0.2600 / 0.2708 / 0.2477 / 0.1922 values are likewise CLAIM |
+| **TOP_PUBLIC** | **UNKNOWN — human to fill with a dated leaderboard read.** The 2026-10-22 brief quotes 0.3195 (a 2026-10-03 snapshot) and 0.4413 (undated); neither is a target until the human pastes a dated value. The DrivenData page was **not** fetched (its terms ban automated access) |
+| **Slots left this week** | **UNKNOWN — human to fill** (3 scored submissions per rolling week for the one entity; one final file) |
+| **Axis this session** | **CONCENTRATION** (human-assigned) — move 10 % / 15 % / 20 % of R0's dots from the lowest-prior 0.8 km blocks into the highest-prior ones; count held at 37,654; zero catalogue mass |
+| **Variants built** | `conc10` `f89e4659…` · `conc15` `45bfb93b…` · `conc20` `a93e0b41…` — all format gates PASS, dot count held, 0 dots on the catalogue, new dots > 3 px from the catalogue, block-density CV 0.551 → **0.767 / 0.786 / 0.782** (0.8 km, occupied blocks) |
+| **Next 3 slots** | 1) `…-conc10-…-f89e4659-zeros.tif` 2) `…-conc15-…-45bfb93b-zeros.tif` 3) `…-conc20-…-a93e0b41-zeros.tif` — a dose series of one axis, so the *slope* of live score against dose is the measurement. Details, predicted changes and falsifiers: `SLOT_PLAN.md`, `docs/MECHANISM_CARDS.md` |
+| **Deadlines** | rolling 3 scored submissions/week; one final file; **2026-12-03** (to be confirmed on the competition page — not fetched) |
+
 ```bash
 python3 -m venv .venv && .venv/bin/pip install -r requirements-lock.txt
 .venv/bin/python scripts/restore_data.py --groups core external scored   # 28/28 SHA-256 verified
