@@ -1,259 +1,195 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Validated Submission &amp; Overview — DOE GEMS #306 (GEMSDOE85)</title>
-  <link rel="stylesheet" href="docs/assets/site.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GEMSDOE85 — Promoted Validated Submission (Lane H85-HJCD)</title>
+<style>
+:root{--bg:#0b1017;--panel:#141b24;--panel2:#1a2330;--line:#2d3748;--fg:#e6edf3;--mut:#94a3b8;
+--acc:#38bdf8;--acc-solid:#0284c7;--ok:#22c55e;--ok-bg:#0c2918;--warn:#eab308;--bad:#ef4444}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1100px;margin:0 auto;padding:0 22px 84px}
+header{border-bottom:1px solid var(--line);background:#06090f;position:sticky;top:0;z-index:20}
+header .wrap{padding:14px 22px;display:flex;gap:18px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.brand{font-weight:800;font-size:17px;letter-spacing:.3px;color:#fff}
+nav{display:flex;flex-wrap:wrap;gap:16px}
+nav a{color:var(--mut);font-size:14px;font-weight:500}
+nav a.on{color:#fff;font-weight:700;border-bottom:2px solid var(--acc);padding-bottom:2px}
+h1{font-size:31px;line-height:1.24;margin:30px 0 10px}
+h2{font-size:22px;margin:38px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+h3{font-size:17px;margin:24px 0 8px}
+p,li{color:#cbd5e1}
+.hero{background:linear-gradient(145deg,#0f2a1d 0%,#111c2b 65%,#0d1420 100%);
+border:2px solid var(--ok);border-radius:16px;padding:26px 28px;margin:24px 0;
+box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.badge-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.badge-pass{display:inline-flex;align-items:center;gap:8px;background:var(--ok);color:#04130a;
+font-weight:800;font-size:13px;padding:5px 12px;border-radius:999px;letter-spacing:.4px;text-transform:uppercase}
+.badge-meta{display:inline-flex;align-items:center;border:1px solid var(--line);background:var(--panel2);
+color:var(--fg);font-size:12.5px;font-weight:600;padding:4px 11px;border-radius:999px}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0 14px}
+.dl-primary{display:inline-flex;align-items:center;gap:10px;background:var(--ok);color:#04130a;
+font-size:18px;font-weight:800;padding:15px 24px;border-radius:11px;text-decoration:none}
+.dl-primary:hover{filter:brightness(1.08);text-decoration:none}
+.dl-secondary{display:inline-flex;align-items:center;gap:8px;background:var(--panel2);
+border:1px solid var(--acc);color:var(--fg);font-size:15px;font-weight:700;padding:14px 20px;border-radius:11px}
+.dl-secondary:hover{background:#223042;text-decoration:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px;margin:18px 0}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
+.kpi .v{font-size:25px;font-weight:800;color:#fff;font-variant-numeric:tabular-nums}
+.kpi .l{color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+.kpi .s{color:#86efac;font-size:12.5px;margin-top:4px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:16px 0}
+.good{border-left:4px solid var(--ok);background:var(--ok-bg);padding:13px 16px;border-radius:0 10px 10px 0;margin:16px 0}
+.note{border-left:4px solid var(--warn);background:#221c0c;padding:13px 16px;border-radius:0 10px 10px 0;margin:16px 0}
+code{background:#1e293b;border:1px solid var(--line);border-radius:5px;padding:1px 6px;
+font-size:13px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#f1f5f9}
+pre{background:#0f172a;border:1px solid var(--line);border-radius:10px;padding:14px;overflow-x:auto;font-size:13px}
+pre code{background:none;border:none;padding:0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:14px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+th{background:#1a2433;font-weight:700;color:#f8fafc}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;border:1px solid}
+.t-ok{color:#4ade80;border-color:#22c55e;background:#0c2918}
+.t-info{color:#7dd3fc;border-color:#38bdf8;background:#0c2233}
+.t-warn{color:#fde047;border-color:#eab308;background:#26200b}
+ol.steps{counter-reset:s;list-style:none;padding:0}
+ol.steps>li{counter-increment:s;position:relative;padding:14px 0 14px 50px;border-bottom:1px solid var(--line)}
+ol.steps>li::before{content:counter(s);position:absolute;left:0;top:14px;width:32px;height:32px;
+border-radius:50%;background:var(--acc-solid);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
+footer{color:var(--mut);font-size:13px;border-top:1px solid var(--line);margin-top:52px;padding-top:18px}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;word-break:break-all}
+</style>
 </head>
 <body>
-<header class="topbar">
-  <div class="topbar-inner">
-    <div class="brand">
-      <span>DOE GEMS #306 · GEMSDOE85</span>
-      <span class="badge-pill">PASS — OK TO DOWNLOAD AND SUBMIT</span>
-    </div>
-    <nav class="nav"><a href="docs/index.html" class="active">Download & Verdict</a>
-<a href="docs/executive-summary.html" class="">Executive Summary & Submit Guide</a>
-<a href="docs/research.html" class="">Why 0.2778 Worked & Hypotheses</a>
-<a href="docs/methodology.html" class="">Dinkelbach-300 & 86-Ch Physics</a>
-<a href="docs/validation.html" class="">Byte Audit, Canary & Pass 1–3</a></nav>
+<header>
+  <div class="wrap">
+    <span class="brand">GEMSDOE85 · Lane H85-HJCD · OK TO DOWNLOAD AND SUBMIT</span>
+    <nav><a href="docs/index.html" class="on">Submission &amp; Results</a><a href="docs/executive-summary.html" class="">Executive Summary &amp; How to Submit</a><a href="docs/method.html" class="">PhD Analysis &amp; Hypotheses</a><a href="docs/data.html" class="">Verified Sources &amp; Irregularities</a><a href="docs/knowledge.html" class="">Geothermal Vent Knowledge Base</a></nav>
   </div>
 </header>
-<main class="container">
-<section class="verdict-hero">
-  <div class="verdict-kicker">✓ AUTOMATED VALIDATION VERDICT: PASS (15/15 BYTE CHECKS) — SAFE TO DOWNLOAD &amp; SUBMIT</div>
-  <h1>Unique Multi-Physics Blind Geothermal Conduit Submission Ready</h1>
-  <p class="verdict-sub">
-    <strong>Zero manual inspection required.</strong> Unmodified <code>vendor/gems57/submission_writer.py</code> &amp;
-    <code>validate.py</code> verified single-band <code>float32</code>, <code>EPSG:32611</code>, <code>3730 × 3292</code> @ <code>100 m</code>,
-    strictly finite <code>[0.0, 1.0]</code> (<strong>0 NaN, 0 Inf, 0 out-of-range pixels</strong> — permanently eliminating
-    <em>“Predicted values must be in range [0, 1]”</em>), <strong>0</strong> dots within <code>200 m</code> of mapped faults,
-    <strong>0/86</strong> leakage flags, <strong>UNIQUE</strong> across the entire sibling fleet (<code>45.32%</code> 3-px overlap vs
-    <code>GEMSDOE32 h33-2-b2</code>), and <strong>+108.3% higher pooled holdout DTI</strong> than the best valid fleet control.
+<div class="wrap">
+
+<section class="hero" id="top-download">
+  <div class="badge-row">
+    <span class="badge-pass">✓ SAFE TO DOWNLOAD &amp; SUBMIT · OK TO DOWNLOAD AND SUBMIT · VERDICT: PROMOTE</span>
+    <span class="badge-meta">Automated Validation: 17/17 (gems85) + 15/15 (gems57) PASS</span>
+    <span class="badge-meta">Zero Human Inspection</span>
+  </div>
+  <h1 style="margin-top:8px">Validated Unique Submission GeoTIFF — Ready for DrivenData Upload</h1>
+  <p style="margin:6px 0 14px">
+    <strong>Lane H85-HJCD (Hydrothermal-Juxtaposition &amp; Fault-Valve Conduit Discovery)</strong> passed
+    all <strong>32 automated format, finite-range <code>[0, 1]</code>, CRS/geotransform, leakage-canary, and
+    236-raster uniqueness checks</strong> and more than doubled the fold-proper <code>0.2778</code> live-champion
+    rule on whole-segment spatial block holdout.
   </p>
-
-  <div class="cta-row">
-    <a class="btn btn-primary" href="docs/downloads/gems85-h85-conduit-dink300-37511dots-20261023T044652Z-da545b82-zeros.tif" download="gems85-h85-conduit-dink300-37511dots-20261023T044652Z-da545b82-zeros.tif">
-      ⬇ Download Validated .TIF (131 KB · 37,511 dots)
+  <div class="btn-row">
+    <a class="dl-primary" href="docs/downloads/gemsdoe85-hjcd-ventbridge-submod-zeros.tif" download>
+      ⬇ Download Validated .TIF (107.7 KB)
     </a>
-    <a class="btn btn-secondary" href="docs/downloads/gems85-h85-conduit-dink300-37511dots-20261023T044652Z-da545b82-zeros.zip" download="gems85-h85-conduit-dink300-37511dots-20261023T044652Z-da545b82-zeros.zip">
-      ⬇ Download Single-TIFF .ZIP (Z-da545b82-zeros.zip)
+    <a class="dl-secondary" href="docs/downloads/gemsdoe85-hjcd-ventbridge-submod-zeros.zip" download>
+      ⬇ Download .ZIP Archive (71.1 KB)
     </a>
-    <a class="btn btn-outline" href="docs/executive-summary.html">
-      Executive Summary &amp; Step-by-Step Submit Guide →
+    <a class="dl-secondary" href="docs/downloads/run_card.json" download>
+      ⬇ JSON Run Card
     </a>
-    <button class="btn btn-outline" type="button"
-      onclick="verifyTifInBrowser('docs/downloads/gems85-h85-conduit-dink300-37511dots-20261023T044652Z-da545b82-zeros.tif', '8b8340f89e7599e7d1b3c5d2eba8e2911a2ae44a82bb5842482d2db6898ab509', 134430)">
-      ⚡ Verify .TIF Bytes Live in Browser
-    </button>
-    <a class="btn btn-outline" href="docs/evidence/run_card.json">JSON Run Card</a>
+    <a class="dl-secondary" href="docs/executive-summary.html">
+      Step-by-Step Upload Instructions →
+    </a>
   </div>
-
-  <pre id="browser-verify-output" style="display:none; margin-top:12px;"></pre>
-
-  <div class="note-box">
-    <div style="display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap;">
-      <span><strong>DrivenData Submission Note</strong> (<code>107 / 140</code> chars — click to copy verbatim):</span>
-      <button class="btn btn-outline" style="padding:5px 12px; font-size:0.82rem;" type="button" onclick="copyText('sub-note', this)">Copy Note</button>
-    </div>
-    <code id="sub-note" style="display:block; margin-top:6px; padding:8px 10px;">H85 multi-physics conduit+ComCat26+2mF2mDAB Dinkelbach300 37511dots; gems57-v2 HOLDOUT-DTI=0.1914 (n=11321)</code>
-    <div style="margin-top:8px; font-size:0.83rem; color:#475569;">
-      <strong>File:</strong> <code>gems85-h85-conduit-dink300-37511dots-20261023T044652Z-da545b82-zeros.tif</code> &nbsp;|&nbsp;
-      <strong>SHA-256:</strong> <code>8b8340f89e7599e7d1b3c5d2eba8e2911a2ae44a82bb5842482d2db6898ab509</code> &nbsp;|&nbsp;
-      <strong>Weekly Slot Governance:</strong> Live portal cap is <strong>3 submissions / 7 days</strong>; promote this candidate via the
-      <a href="docs/executive-summary.html">Executive Summary selector checklist</a>.
-    </div>
-  </div>
-</section>
-
-<section class="kpi-grid">
-  <div class="kpi">
-    <div class="kpi-label">Winning Holdout Score</div>
-    <div class="kpi-val">0.1914</div>
-    <div class="kpi-sub"><span class="tag tag-holdout">HOLDOUT-DTI</span> <code>gems57-pooled-hide-v2</code><br>95% CI <code>[0.1661, 0.2213]</code> (n=11,321)</div>
-  </div>
-  <div class="kpi">
-    <div class="kpi-label">Gain vs Best Valid Control</div>
-    <div class="kpi-val" style="color:var(--pass);">+0.0995 (+108.3%)</div>
-    <div class="kpi-sub">Beats <code>CTRL_d28</code> (<code>0.0919</code>) on 1,000/1,000 cluster draws<br>Paired Δ 95% CI <code>[+0.0792, +0.1203]</code></div>
-  </div>
-  <div class="kpi">
-    <div class="kpi-label">Uniqueness &amp; Novelty</div>
-    <div class="kpi-val">54.7% New</div>
-    <div class="kpi-sub"><code>45.32%</code> 3-px overlap vs <code>h33-2-b2</code> (≤70% gate)<br>Surface max <code>|ρ| = 0.0991</code> (≤0.90 gate)</div>
-  </div>
-  <div class="kpi">
-    <div class="kpi-label">Byte &amp; Leakage Gates</div>
-    <div class="kpi-val">15/15 PASS</div>
-    <div class="kpi-sub">Range <code>[0.0, 1.0]</code> · <code>0 NaN</code> · <code>EPSG:32611</code><br>Canary: <code>0/86</code> channels &gt; 0.90 (max <code>0.7830</code>)</div>
-  </div>
-</section>
-
-<section class="card">
-  <h2>Side-by-Side Score Ledger: Strict Separation of Local Holdout vs Historical Organizer Receipts</h2>
-  <p>
-    Per the parallel-run protocol, every score is explicitly tagged either <span class="tag tag-holdout">HOLDOUT-DTI</span>
-    (measured locally on unmodified <code>gems57-pooled-hide-v2</code> across <code>11,321</code> withheld whole-component fault pixels with a
-    <code>300 m</code> spatial buffer and 1,000 spatial-cluster bootstrap draws) or <span class="tag tag-org">ORGANIZER-CONFIRMED</span>
-    (historical DrivenData submission receipt from sibling repositories / public leaderboard snapshot). No live-score projection is ever made.
-  </p>
-  <div class="table-wrap">
+  <div class="card" style="margin:14px 0 0;background:#0b131e">
     <table>
-      <thead>
-        <tr>
-          <th>Candidate / Control Artifact</th>
-          <th>Dots</th>
-          <th>Evidence Class &amp; Score</th>
-          <th>95% Cluster CI</th>
-          <th>TP<sub>w</sub> / FP<sub>w</sub></th>
-          <th>Technical Interpretation</th>
-        </tr>
-      </thead>
       <tbody>
-        <tr class="highlight-row">
-          <td><strong>H85-Conduit E3 (Primary Deliverable)</strong><br><code>gems85-h85-conduit-dink300-37511dots-20261…</code></td>
-          <td>37,513<br>(31,512 CV)</td>
-          <td><span class="tag tag-holdout">HOLDOUT-DTI</span> <strong>0.191400</strong></td>
-          <td><code>[0.1661, 0.2213]</code></td>
-          <td><strong>2,879.3</strong> / <strong>27,053.2</strong></td>
-          <td><strong>WINNER:</strong> 86-ch multi-physics + ComCat 1900–2026 + 2 m F2mDAB + Diverse LGBM+HGB + Stage-2 8-azimuth crest + Dinkelbach-300.</td>
-        </tr>
-        <tr>
-          <td><strong>H85-Conduit E2 (Ablation Step 2)</strong><br>+17 Blind Hydrothermal &amp; Sub-km ComCat Channels</td>
-          <td>33,141 (CV)</td>
-          <td><span class="tag tag-holdout">HOLDOUT-DTI</span> <strong>0.187017</strong></td>
-          <td><code>[0.1621, 0.2140]</code></td>
-          <td>2,891.0 / 29,116.8</td>
-          <td>Adds 3,977 sub-km ComCat hypocenters, 2 m F2mDAB thermal probes, siliceous sinter vs tufa: +0.0115 DTI in SE &amp; +0.0059 in SW.</td>
-        </tr>
-        <tr>
-          <td><strong>H85-Conduit E1 (Ablation Step 1)</strong><br>60-Ch Structural + Fold-Safe Network + Dinkelbach-300</td>
-          <td>32,900 (CV)</td>
-          <td><span class="tag tag-holdout">HOLDOUT-DTI</span> <strong>0.182981</strong></td>
-          <td><code>[0.1594, 0.2088]</code></td>
-          <td>2,819.0 / 28,927.3</td>
-          <td>Sharp 1-px centerline target + fold-safe fault-tip bridges + 1 m LiDAR / 3DEP + exact Dinkelbach-300 doubles control (+99.1%).</td>
-        </tr>
-        <tr>
-          <td><strong>CTRL_d28 (GEMSDOE24 d2-8 — Primary Valid Bar)</strong></td>
-          <td>44,090</td>
-          <td><span class="tag tag-holdout">HOLDOUT-DTI</span> <strong>0.091888</strong><br><span class="tag tag-org">ORGANIZER-CONFIRMED</span> <strong>0.2600</strong></td>
-          <td><code>[0.0796, 0.1045]</code></td>
-          <td>1,605.9 / 40,492.5</td>
-          <td>Highest valid unpruned sibling control on <code>gems57-pooled-hide-v2</code>. H85-Conduit captures +79.3% more TP<sub>w</sub> with −33.2% less FP<sub>w</sub>.</td>
-        </tr>
-        <tr>
-          <td><strong>CTRL_gems81_poisson (GEMSDOE81 Control)</strong></td>
-          <td>44,090</td>
-          <td><span class="tag tag-holdout">HOLDOUT-DTI</span> <strong>0.091841</strong></td>
-          <td><code>[0.0871, 0.0961]</code></td>
-          <td>1,592.2 / 39,805.4</td>
-          <td>Isotropic Poisson-disc dotted field; beaten by +0.0996 HOLDOUT-DTI.</td>
-        </tr>
-        <tr>
-          <td><strong>CTRL_d15 (GEMSDOE24 d1-5 Control)</strong></td>
-          <td>60,069</td>
-          <td><span class="tag tag-holdout">HOLDOUT-DTI</span> <strong>0.088808</strong></td>
-          <td><code>[0.0767, 0.1014]</code></td>
-          <td>1,816.5 / 55,172.1</td>
-          <td>Over-dense 60k dotted emission; excess false positives depress DTI despite higher raw TP<sub>w</sub>.</td>
-        </tr>
-        <tr>
-          <td><strong>CTRL_h19_5 (19GEMSDOE Continuous Ridge Parent)</strong></td>
-          <td>121,131</td>
-          <td><span class="tag tag-holdout">HOLDOUT-DTI</span> <strong>0.065423</strong><br><span class="tag tag-org">ORGANIZER-CONFIRMED</span> <strong>0.1922</strong></td>
-          <td><code>[0.0557, 0.0754]</code></td>
-          <td>2,075.6 / 111,271.2</td>
-          <td>121k continuous pixels pay redundant FP<sub>w</sub> across every 300 m kernel disk; illustrates why discrete spacing works.</td>
-        </tr>
-        <tr>
-          <td><strong>GEMSDOE32 h33-h33-2-b2 (Historical Fleet #1)</strong></td>
-          <td>37,654</td>
-          <td><span class="tag tag-org">ORGANIZER-CONFIRMED</span> <strong>0.2778</strong><br><span class="tag tag-holdout">HOLDOUT-DTI</span> <code>0.003699*</code></td>
-          <td><code>[0.0030, 0.0044]*</code></td>
-          <td>59.7* / 35,299.2</td>
-          <td><em>*Static export pruned ≤200 m around full <code>existing_faults.tif</code>, erasing withheld segments (IR-85-08).</em> Live mechanics explained in <a href="docs/research.html">Research</a>.</td>
-        </tr>
-        <tr>
-          <td><strong>Public Leaderboard High (<code>xiaofanhu</code>, 2026-10-22)</strong></td>
-          <td>Unpublished</td>
-          <td><span class="tag tag-org">ORGANIZER-CONFIRMED</span> <strong>0.4413</strong></td>
-          <td>—</td>
-          <td>—</td>
-          <td>Top external benchmark (#2 <code>cfld__</code> 0.3904, #3 <code>Batik Shirt Brothers</code> 0.3894, earlier milestone 0.3195).</td>
-        </tr>
+        <tr><th>Submission Name</th><td class="mono"><strong>gemsdoe85-hjcd-ventbridge-submod-zeros.tif</strong></td></tr>
+        <tr><th>Submission Note (110 / 140 chars)</th><td class="mono">H85-HJCD: GDR1391 2m-T + sinter vents + 3DEP chi + GEO-Pb-16 + submodular 300m Dinkelbach emitter (B=2, zeros)</td></tr>
+        <tr><th>GeoTIFF File &amp; SHA-256</th><td class="mono">gemsdoe85-hjcd-ventbridge-submod-zeros.tif (110,277 bytes)<br>sha256: 61ef04376a55169786b96423114394db85b7aaadf3d298d3c75b7b90022da109</td></tr>
+        <tr><th>ZIP Archive &amp; SHA-256</th><td class="mono">gemsdoe85-hjcd-ventbridge-submod-zeros.zip (72,791 bytes)<br>sha256: c7d9b605917795e5bc1b7dbe7e09248aff7c811ddffaa7ef6f37a039e9e19520</td></tr>
+        <tr><th>Grid &amp; Value Range</th><td><code>EPSG:32611</code> · <code>3730 × 3292</code> · <code>100 m</code> · <code>float32</code> · <code>nodata=None</code> · <strong>0 NaNs anywhere</strong> · values strictly in <code>[0.0, 1.0]</code> (fixes prior portal error) · <strong>21,334</strong> emitted fault pixels · <strong>0</strong> pixels on <code>existing_faults.tif</code> (<code>B=2</code> 200 m halo excluded)</td></tr>
       </tbody>
     </table>
   </div>
-  <figure>
-    <img src="docs/assets/fig3_ablation_and_controls.svg" alt="Strict 3-Experiment Pre-Registered Holdout DTI Ladder vs Fleet Controls">
-    <figcaption>
-      <strong>Figure 1.</strong> Strict 3-experiment causal progression (<code>E1: 0.1830 → E2: 0.1870 → E3: 0.1914</code>) versus 8 sibling and baseline controls on unmodified <code>gems57-pooled-hide-v2</code> (<code>11,321</code> withheld positive pixels; error bars show 95% 1,000-draw physical cluster bootstrap CIs).
-    </figcaption>
-  </figure>
 </section>
 
-<section class="card">
-  <h2>Cartographic Discovery Atlas: Great Basin Blind Geothermal &amp; Seismic Conduits</h2>
-  <div class="two-col">
-    <figure style="margin:0;">
-      <img src="docs/assets/fig1_nevada_conduit_atlas.png" alt="Great Basin Full Footprint H85-Conduit Emission Atlas">
-      <figcaption>
-        <strong>Figure 2.</strong> Full <code>329.2 × 373.0 km</code> study area (<code>EPSG:32611</code>) displaying mapped faults (blue), core ridges corroborated with <code>h33-2-b2</code> (teal, 45.3%), <strong>20,512 brand-new blind fault discoveries &gt;300 m outside <code>h33-2-b2</code></strong> (gold, 54.7%), and 1900–2026 USGS ComCat hypocenters (red).
-      </figcaption>
-    </figure>
-    <figure style="margin:0;">
-      <img src="docs/assets/fig2_zoom_blind_discoveries.png" alt="Four Sub-Basin Zoom Comparisons">
-      <figcaption>
-        <strong>Figure 3.</strong> <code>34 × 34 km</code> pixel-level zooms showing how <code>h33-2-b2</code> (violet) chases non-tectonic volcanic mesa rims in barren ranges while <code>H85-Conduit E3</code> (gold) locks onto unmapped active seismic swarms (2020 Monte Cristo <code>Mw 6.5</code>, Fish Lake / Huntoon) and range-front step-overs.
-      </figcaption>
-    </figure>
+<div class="grid">
+  <div class="kpi">
+    <div class="v">0.196461</div>
+    <div class="l">Primary HOLDOUT-DTI (<code>gems57-pooled-hide-v2</code>)</div>
+    <div class="s">95% CI [0.1762, 0.2167] · n=11,321</div>
   </div>
-</section>
+  <div class="kpi">
+    <div class="v">+0.101848</div>
+    <div class="l">Paired Gain vs Fold-Proper <code>H33-2-B2</code></div>
+    <div class="s">+107.6% relative (0.196461 vs 0.094613)</div>
+  </div>
+  <div class="kpi">
+    <div class="v">0.6402 &le; 0.70</div>
+    <div class="l">3-px Overlap vs 227 Fault Rasters</div>
+    <div class="s">Surface |&rho;|=0.4195 &le; 0.90 · 0 duplicates</div>
+  </div>
+  <div class="kpi">
+    <div class="v">0.75985 &le; 0.90</div>
+    <div class="l">Max Single-Feature Holdout AUC</div>
+    <div class="s">All 112 channels passed canary gate</div>
+  </div>
+</div>
 
-<footer class="footer">
-  <strong>GEMSDOE85 · Lane H85-Conduit</strong> — Zero-Human-Gate Multi-Physics Hidden Geothermal Conduit &amp; Exact Submodular Dinkelbach-300 Pipeline.<br>
-  Shared evaluator: <code>vendor/gems57/evaluate_holdout.py</code> (<code>gems57-pooled-hide-v2</code>, unmodified SHA-256 <code>ad86640b...</code>).
-  Every score is strictly labelled <code>HOLDOUT-DTI</code> or <code>ORGANIZER-CONFIRMED</code>.
+<h2 id="leaderboard-context">1. Verified Leaderboard Context vs Local Spatially-Blocked Holdout</h2>
+<div class="note">
+  <strong>Strict Score Discipline:</strong> Live organizer scores (<code>ORGANIZER-CONFIRMED</code>) and local
+  hide-and-recover scores (<code>HOLDOUT-DTI</code>) measure different fault populations (private hidden faults vs
+  20% withheld whole connected components of <code>labels.tif</code>) and are never mixed on the same scale.
+</div>
+<table>
+  <thead>
+    <tr><th>Entry / Artifact</th><th>Score Label &amp; Provenance</th><th class="n">Score</th><th>Scientific Interpretation</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>xiaofanhu</code> (#1 Public Leaderboard, 27 subs)</td><td><span class="tag t-warn">ORGANIZER-CONFIRMED</span> Live DrivenData LB (verified 2026-10-22)</td><td class="n"><strong>0.4413</strong></td><td>Current overall competition high across 49+ teams</td></tr>
+    <tr><td><code>cfld__</code> (#2) &amp; <code>Batik Shirt Brothers</code> (#3)</td><td><span class="tag t-warn">ORGANIZER-CONFIRMED</span> Live DrivenData LB (verified 2026-10-22)</td><td class="n">0.3904</td><td>Tied #2/#3 public leaderboard</td></tr>
+    <tr><td>Brief mid-competition reference snapshot</td><td><span class="tag t-warn">ORGANIZER-CONFIRMED</span> Quoted in project brief</td><td class="n">0.3195</td><td>Earlier leaderboard milestone noted in brief</td></tr>
+    <tr><td><code>GEMSDOE32</code> <code>h33-h33-2-b2-20261004T220000Z-e5eb6e7e-zeros.tif</code></td><td><span class="tag t-warn">ORGANIZER-CONFIRMED</span> Best scored GEMSDOE receipt</td><td class="n"><strong>0.2778</strong></td><td>Binary <code>d=2.8 px</code> Poisson-thinned multi-physics ridge + <code>B=2</code> (200 m) catalogue halo pruning (up from <code>0.2600</code> for unpruned <code>d2.8</code>)</td></tr>
+    <tr><td><strong><code>GEMSDOE85</code> <code>H85-HJCD</code> (<code>EXP-3</code>, This Repo)</strong></td><td><span class="tag t-info">HOLDOUT-DTI</span> <code>gems57-pooled-hide-v2</code> (n=11,321)</td><td class="n"><strong>0.196461</strong></td><td><strong>+0.101848 (+107.6%) paired gain</strong> over fold-proper <code>H33-2-B2</code> (<code>0.094613</code>) at matched ~37k dot budget</td></tr>
+  </tbody>
+</table>
+
+<h2 id="holdout-results">2. Preregistered Holdout Experiments Across All 4 Evaluators (3 / 3 Budget Used)</h2>
+<table>
+  <thead>
+    <tr><th>Arm</th><th>Evaluator &amp; Label</th><th class="n">Withheld Positives</th><th class="n">Emitted Dots</th><th class="n">Pooled DTI</th><th class="n">95% Spatial Block CI</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>EXP-3: H85-HJCD + Submodular 300 m Dinkelbach Emitter (PROMOTED)</strong></td><td><span class="tag t-info">HOLDOUT-DTI</span> <code>gems57-pooled-hide-v2</code></td><td class="n">11,321</td><td class="n">37,288</td><td class="n"><strong>0.196461</strong></td><td class="n">[0.176165, 0.216681]</td></tr><tr><td>EXP-2: H85-HJCD Coupled Surface + Poisson d=2.8 NMS</td><td><span class="tag t-info">HOLDOUT-DTI</span> <code>gems57-pooled-hide-v2</code></td><td class="n">11,321</td><td class="n">37,656</td><td class="n">0.189467</td><td class="n">[0.170401, 0.208486]</td></tr><tr><td>EXP-1: Pure Blind Geothermal + 3DEP + GEO-Pb-16 (0 fault input at test time)</td><td><span class="tag t-info">HOLDOUT-DTI</span> <code>gems57-pooled-hide-v2</code></td><td class="n">11,321</td><td class="n">37,656</td><td class="n">0.104076</td><td class="n">[0.085370, 0.123821]</td></tr><tr><td>CTRL: Fold-Proper H33-2-B2 Rule (re-run of 0.2778 live champion)</td><td><span class="tag t-info">HOLDOUT-DTI</span> <code>gems57-pooled-hide-v2</code></td><td class="n">11,321</td><td class="n">35,212</td><td class="n">0.094613</td><td class="n">[0.081745, 0.108250]</td></tr><tr><td>CTRL: Static d2.8 Dotted Ridge (0.2600 live receipt)</td><td><span class="tag t-info">HOLDOUT-DTI</span> <code>gems57-pooled-hide-v2</code></td><td class="n">11,321</td><td class="n">41,194</td><td class="n">0.091888</td><td class="n">[0.079758, 0.105006]</td></tr><tr><td>CTRL: Prior GEMSDOE85 8-Strike GEO-Pb Crest (90k budget)</td><td><span class="tag t-info">HOLDOUT-DTI</span> <code>gems57-pooled-hide-v2</code></td><td class="n">11,321</td><td class="n">81,732</td><td class="n">0.080532</td><td class="n">[0.068220, 0.092656]</td></tr><tr><td>CTRL: Prior GEMSDOE85 8-Strike GEO-Pb Crest (37,654 budget)</td><td><span class="tag t-info">HOLDOUT-DTI</span> <code>gems57-pooled-hide-v2</code></td><td class="n">11,321</td><td class="n">32,006</td><td class="n">0.061047</td><td class="n">[0.049937, 0.071701]</td></tr>
+    <tr><td><strong>EXP-1: Pure Blind Geothermal + GEO-Pb-16</strong></td><td><span class="tag t-info">HOLDOUT-DTI</span> <code>gems85-holdout-v1.0.0</code></td><td class="n">60,988</td><td class="n">168,000 (4 folds)</td><td class="n"><strong>0.131399</strong></td><td class="n">[0.111939, 0.150859] (beats CTRL_d28 0.111529 &amp; geopb8 0.094943)</td></tr>
+    <tr><td><strong>EXP-3: H85-HJCD Submodular Dinkelbach</strong></td><td><span class="tag t-info">HOLDOUT-DTI</span> <code>gems85-pooled-hide-v1</code></td><td class="n">24,440</td><td class="n">77,940</td><td class="n"><strong>0.180935</strong></td><td class="n">[0.161305, 0.204034] (+76.9% vs CTRL_d28 0.102305; prior E1=0.098366)</td></tr>
+    <tr><td><strong>EXP-3: H85-HJCD Detached Splays (&ge;400 m)</strong></td><td><span class="tag t-info">HOLDOUT-DTI</span> <code>gems57-detached-400m-v2</code></td><td class="n">11,307</td><td class="n">—</td><td class="n"><strong>0.228042</strong></td><td class="n">2.21× CTRL_d28 (0.103363) on strictly detached unmapped splays</td></tr>
+  </tbody>
+</table>
+
+<h2 id="uniqueness">3. Two-Stage 236-Raster Fleet Uniqueness Audit (0 Duplicates)</h2>
+<p>9 of 236 prior rasters across historical repos are continuous surfaces or regular 5-6 px lattices (e.g. 17GEMSDOE_E-proba-multiscale with 100.00% positive pixels; 13gems_r13-lattice-s5 with 99.87% 3-px dilated footprint coverage) where even uniform random points have &gt;= 0.74-1.00 overlap by pigeonhole geometry. Across ALL genuine fault-prediction rasters across the entire 88-repo fleet, forward 3-px overlap is strictly &lt;= 0.640 (&lt; 0.70) and |Spearman rho| is &lt;&lt; 0.90 on both surface and dots (0 duplicates).</p>
+<table>
+  <thead>
+    <tr><th>Closest Real-Fault Fleet Raster (Out of 227 Non-Saturating Priors)</th><th class="n">Their Dots</th><th class="n">Surface Spearman &rho;</th><th class="n">Dots Spearman &rho;</th><th class="n">3-px Forward Overlap (&le; 0.70 Gate)</th></tr>
+  </thead>
+  <tbody><tr><td class="mono">gems10-h25-ctx-ridge-20260927T232947704150Z-6452ae1d00.tif</td><td class="n">174,232</td><td class="n">0.09763</td><td class="n">0.02285</td><td class="n">0.64020</td></tr><tr><td class="mono">GEMSDOE24__gems10-h25-ctx-ridge-20260927T232947704150Z-6452ae1d00.tif</td><td class="n">174,232</td><td class="n">0.09763</td><td class="n">0.02285</td><td class="n">0.64020</td></tr><tr><td class="mono">gems10-h28-dotted-ridge-20260928T020256236880Z-6452ae1d00.tif</td><td class="n">69,281</td><td class="n">0.06084</td><td class="n">0.01398</td><td class="n">0.63954</td></tr><tr><td class="mono">GEMSDOE24__gems10-h28-dotted-ridge-20260928T020256236880Z-6452ae1d00.tif</td><td class="n">69,281</td><td class="n">0.06084</td><td class="n">0.01398</td><td class="n">0.63954</td></tr><tr><td class="mono">GEMSDOE83__gems83-h83-gvcd-dink300-37654dots-20261021-1a373694-zeros.tif</td><td class="n">37,654</td><td class="n">0.08296</td><td class="n">0.02739</td><td class="n">0.60261</td></tr><tr><td class="mono">GEMSDOE86__gems86-gmc-linepost-90568d-20261022T222859Z-900ceac1-zeros.tif</td><td class="n">90,568</td><td class="n">0.11909</td><td class="n">0.02182</td><td class="n">0.59750</td></tr></tbody>
+</table>
+
+<h2 id="validator">4. Automated Programmatic Validation Receipt (32 / 32 Checks PASS)</h2>
+<table>
+  <thead><tr><th>Automated Check</th><th>Result</th></tr></thead>
+  <tbody><tr><td><code>gems85.file_exists</code></td><td><span class="tag t-ok">PASS</span></td></tr><tr><td><code>gems85.single_band</code></td><td><span class="tag t-ok">PASS</span></td></tr><tr><td><code>gems85.dtype_float32</code></td><td><span class="tag t-ok">PASS</span></td></tr><tr><td><code>gems85.shape_3730x3292</code></td><td><span class="tag t-ok">PASS</span></td></tr><tr><td><code>gems85.crs_epsg_32611</code></td><td><span class="tag t-ok">PASS</span></td></tr><tr><td><code>gems85.transform_matches_template</code></td><td><span class="tag t-ok">PASS</span></td></tr><tr><td><code>gems85.resolution_100m</code></td><td><span class="tag t-ok">PASS</span></td></tr><tr><td><code>gems85.no_nan_inside_footprint</code></td><td><span class="tag t-ok">PASS</span></td></tr><tr><td><code>gems85.no_inf_inside_footprint</code></td><td><span class="tag t-ok">PASS</span></td></tr><tr><td><code>gems85.values_in_0_1_inside_footprint</code></td><td><span class="tag t-ok">PASS</span></td></tr><tr><td><code>gems85.all_finite_whole_raster</code></td><td><span class="tag t-ok">PASS</span></td></tr><tr><td><code>gems85.values_in_0_1_whole_raster</code></td><td><span class="tag t-ok">PASS</span></td></tr><tr><td><code>gems85.outside_footprint_is_zero</code></td><td><span class="tag t-ok">PASS</span></td></tr><tr><td><code>gems85.no_nodata_tag</code></td><td><span class="tag t-ok">PASS</span></td></tr><tr><td><code>gems85.has_positive_predictions</code></td><td><span class="tag t-ok">PASS</span></td></tr><tr><td><code>gems85.no_prediction_outside_footprint</code></td><td><span class="tag t-ok">PASS</span></td></tr><tr><td><code>gems85.zero_mass_within_2px_of_catalogue</code></td><td><span class="tag t-ok">PASS</span></td></tr><tr><td><code>gems57.single_band</code></td><td><span class="tag t-ok">PASS</span></td></tr><tr><td><code>gems57.dtype_float32</code></td><td><span class="tag t-ok">PASS</span></td></tr><tr><td><code>gems57.dimensions_3730x3292</code></td><td><span class="tag t-ok">PASS</span></td></tr><tr><td><code>gems57.crs_epsg_32611</code></td><td><span class="tag t-ok">PASS</span></td></tr><tr><td><code>gems57.transform_matches_sample_submission</code></td><td><span class="tag t-ok">PASS</span></td></tr><tr><td><code>gems57.no_nan_anywhere</code></td><td><span class="tag t-ok">PASS</span></td></tr><tr><td><code>gems57.no_inf_anywhere</code></td><td><span class="tag t-ok">PASS</span></td></tr><tr><td><code>gems57.no_sentinel_values</code></td><td><span class="tag t-ok">PASS</span></td></tr><tr><td><code>gems57.range_0_1_guaranteed</code></td><td><span class="tag t-ok">PASS</span></td></tr><tr><td><code>gems57.min_ge_0</code></td><td><span class="tag t-ok">PASS</span></td></tr><tr><td><code>gems57.max_le_1</code></td><td><span class="tag t-ok">PASS</span></td></tr><tr><td><code>gems57.in_footprint_all_finite</code></td><td><span class="tag t-ok">PASS</span></td></tr><tr><td><code>gems57.in_footprint_range_0_1</code></td><td><span class="tag t-ok">PASS</span></td></tr><tr><td><code>gems57.outside_footprint_zero</code></td><td><span class="tag t-ok">PASS</span></td></tr><tr><td><code>gems57.zero_dots_on_mapped_catalogue</code></td><td><span class="tag t-ok">PASS</span></td></tr></tbody>
+</table>
+
+<footer>
+  Generated deterministically from machine-verified JSON receipts in <code>evidence/</code> and
+  <code>registry/</code> (timestamp <code>2026-10-23T05:13:48.882696+00:00</code>). Every score is explicitly
+  tagged <code>HOLDOUT-DTI</code> or <code>ORGANIZER-CONFIRMED</code>. Repository:
+  <a href="https://github.com/buffedlizard55-lab/GEMSDOE85">buffedlizard55-lab/GEMSDOE85</a>.
 </footer>
-</main>
-<script>
-async function copyText(id, btn) {
-  const txt = document.getElementById(id).innerText.trim();
-  await navigator.clipboard.writeText(txt);
-  const old = btn.innerText;
-  btn.innerText = "Copied!";
-  setTimeout(() => { btn.innerText = old; }, 1800);
-}
-
-async function verifyTifInBrowser(url, expectedSha, expectedBytes) {
-  const out = document.getElementById("browser-verify-output");
-  out.style.display = "block";
-  out.textContent = "Fetching " + url + " and running WebCrypto SHA-256 + TIFF binary IFD check...";
-  try {
-    const res = await fetch(url);
-    if (!res.ok) throw new Error("HTTP " + res.status);
-    const buf = await res.arrayBuffer();
-    const u8 = new Uint8Array(buf);
-    const hashBuf = await crypto.subtle.digest("SHA-256", buf);
-    const hex = Array.from(new Uint8Array(hashBuf)).map(b => b.toString(16).padStart(2, "0")).join("");
-    const le = (u8[0] === 0x49 && u8[1] === 0x49 && u8[2] === 42 && u8[3] === 0);
-    const ok = (buf.byteLength === expectedBytes) && (hex === expectedSha) && le;
-    out.textContent = [
-      ok ? "BROWSER LIVE BYTE VERIFICATION: PASS (100% EXACT MATCH)" : "MISMATCH DETECTED",
-      "  TIFF Byte Order : " + (le ? "II* (IEEE Little-Endian Classic GeoTIFF, magic 0x002A)" : "Unexpected header"),
-      "  Exact File Size : " + buf.byteLength.toLocaleString() + " bytes (expected " + expectedBytes.toLocaleString() + ")",
-      "  Computed SHA256 : " + hex,
-      "  Pinned SHA256   : " + expectedSha,
-      "  Portal Status   : EPSG:32611 | 3730x3292 | float32 | [0.0, 1.0] | 0 NaN | 0 Inf | SAFE TO UPLOAD"
-    ].join("\n");
-  } catch (err) {
-    out.textContent = "Note: Open via HTTP server or GitHub Pages to run live fetch verification (" + err.message + "). Local CLI check: sha256sum " + url;
-  }
-}
-
-
-</script>
+</div>
 </body>
 </html>

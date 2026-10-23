@@ -93,9 +93,89 @@ Every experiment in this session (`E1 -> E2 -> E3`) stays strictly inside this s
 
 ## 3. Pre-Registered 3-Experiment Ladder (`<= 3` Experiments Total)
 
-1. **`E1` (`H2 + H3 + H4`: Structural-Geophysical + Fold-Safe Network Continuation + Dual-Expectation Submodular Dinkelbach Selector):**
-   - Evaluates sharp `1 px` OOF `LightGBM` probability/proximity models on core + 1 m LiDAR + 10 m 3DEP + $\chi$ knickpoints + flight-line-notched GeoDAWN + SGMC + fold-safe visible-fault network features, emitted via exact submodular Dinkelbach selection on `gems57-pooled-hide-v2`.
-2. **`E2` (`+ H1`: Adding Newly Assembled Blind Hydrothermal & `1900–2026` Sub-km Seismotectonic Conduit Stack):**
-   - Identical learner hyperparameters, identical folds, and identical Dinkelbach selector, adding `usgs_comcat_geodawn.csv` (`3,977` events), `2m_temperature_probe` (`2,782` probes `F2mDAB`), `Paleo_geothermal` (`195` siliceous vents vs `86` tufa), and `gdr_wellspring` geothermometry — isolating the exact causal `HOLDOUT-DTI` delta of blind hydrothermal-seismic conduit physics.
-3. **`E3` (`+ H5`: Full Multi-Physics Stack + `GEO-Pb` Juxtaposition Crests + Hydrothermal Alteration Coupling + Diverse OOF `LightGBM + HistGradientBoosting` Ensemble & Anisotropic Along-Strike Kernel Refinement):**
-   - Full `H1..H5` feature set trained with diverse out-of-fold learners (`LightGBM` + `HistGradientBoosting`) and along-strike ridge continuity weighting inside the submodular Dinkelbach selector. Best holdout arm on `gems57-pooled-hide-v2` (provided it beats every valid control and clears leakage + uniqueness gates) generates the final unique submission `.tif` + `.zip` via unmodified `vendor/gems57/submission_writer.py`.
+**[MEASURED, `evidence/instrument_calibration.json`]**
+
+| artifact | live [OWNER-REPORT] | this repo's hide-and-recover holdout |
+|---|---:|---:|
+| `h33-h33-2-b2` (the family's best) | **0.2778** | **0.00479** |
+| `h27-4-solo-d28` | 0.2708 | 0.03452 |
+| `gate_ortho_w0.25-40k` | 0.2376 | **0.00000** |
+| `dotted-h19-5-d2-8` | 0.2600 | 0.11153 |
+| `Hedge-v2` | 0.1563 | 0.31769 |
+
+The ordering is inverted, and the cause is mechanical rather than scientific. The three artifacts
+at the top were built with a **hard exclusion of every pixel within 2–3 px of the *full* catalogue**.
+A hide-and-recover holdout then hides some catalogue segments and asks the artifact to find them —
+but the artifact has already deleted every dot near them. Its score is forced to ≈ 0 **by its own
+success condition**. `Hedge-v2`, which emits 60,988 dots directly on the catalogue, is rewarded
+for exactly the behaviour the live scorer punishes.
+
+**Consequence, and the fix applied here:** a hide-and-recover holdout can only be used to evaluate
+a **rule**, re-executed per fold with only that fold's *visible* catalogue — never a finished
+raster. `src/gems85/holdout.py::score_folds` takes a callable and rebuilds per fold for exactly
+this reason; `score_static` exists only for the duplicate check and carries this warning. Every
+sibling repository that reported a Spearman ρ between a static-artifact holdout and the live board
+was measuring this artifact, not an instrument. Logged as **IR-85-001**.
+
+---
+
+# Appendix — hypotheses from the duplex lane (arena/29a39923)
+
+# Five candidate geological hypotheses (Lane H85) — ranked before any results
+
+Evidence classes: **[OFFICIAL]** organizer/USGS source · **[MEASURED]** computed in
+this checkout from sha256-pinned bytes · **[ORGANIZER-CONFIRMED]** score copied
+from the brief's submission-page receipts · **[CLAIM]** unverified report.
+
+Fleet context that constrains novelty: the registry in the brief contains ~60 scored
+files. The organizer-confirmed leaders are all emissions of one multi-physics ridge
+family (H19-5 → d1.5 0.2477 → d2.8 0.2600 → h33-2-b2 0.2778). Pure single-physics
+novelties scored far lower (lidar-scarp dotted 0.0430–0.1461, HGB top-k 0.0286–0.0424,
+hydro-conduit fusion 0.0558, Radon piedmont 0.0669–0.1627, Euler threads 0.0355–0.0984).
+In the template repo (GEMSDOE32, `evidence/h33_holdout.json`) the label-free
+orientation/drainage/scarp surfaces scored catalogue-holdout DTI 0.019–0.034 against
+the d2.8 control's 0.098 — **[MEASURED]** there. Any new candidate must therefore be
+judged against the control on the same instrument, which is what this repo does.
+
+| rank | id | layers (official band names) | physical signature | why it should catch a catalogue-missing fault | differs from prior fleet code | non-fault mimic (named) | cost | data |
+|---:|---|---|---|---|---|---|---|---|
+| 1 | **H85-A fold-proper supervised detector** | all 19 official bands + template derived channels (curvature, Hessian ridges, relief, top-hat, potential-field edges, structure-tensor coherence/strike) + LiDAR scarp u8 (12) + GeoDAWN rad u8 (4) + extensions u8 (4) | HistGradientBoosting probability that a pixel lies on a fault trace, trained per spatial fold on *visible* faults only, with **no catalogue-derived channel** (no distance-to-catalogue, the fleet's known AUC-1.0 leak); emitted by metric-exact max-coverage greedy | The catalogue is demonstrably incomplete (official problem statement: expert-labelled new faults exist). A detector trained on what mapped faults *look like* across all physics generalises to unmapped traces with the same expression; fold-proper training + whole-segment holdout measures exactly that transfer | Prior HGB files (6GEMSDOE 0.0286, GEMSDOE43 0.0424) used top-k/threshold emission; no fleet file combines fold-proper segment-blocked training, support-confined max-coverage emission, and the ≤2 px catalogue-halo prune at the 37,654-dot operating point | Young alluvial / cultural lineaments (roads, canals, field boundaries) that share multi-physics line expression with faults | ~15 min CPU | none (all hash-pinned in-repo mirrors) |
+| 2 | **H85-B multi-physics orientation consensus** | `det_elev`, `rtp`, `tmi`, `iso_grav_anom`, `cond_surf` | Both-polarity Hessian line response per physics × orientation order parameter R = \|mean w·e^{2iθ}\|; a pixel scores only if independent physics agree a line exists *and* agree on strike | Single-dataset mapping under-represents faults that are weak in every field but *coherently oriented* in several | Template H33-A implemented this surface but it was never emitted alone at the winner's operating point with halo prune, and never scored by an organizer; this is its first protocol-holdout emission test here | Lithologic contact trains / shorelines straight in several fields at once | ~2 min CPU | none |
+| 3 | **H85-C strain-gated lineament** | `geod_dilaterate`, `geod_2ndinv`, `geod_shearrate` (gate) × Hessian lines of `det_elev`, `rtp` | Line geometry re-weighted by a smooth geodetic-strain gate (0.30 + 0.70·(0.5·dilatation⁺ + 0.3·second-invariant + 0.2·shear), robust-normalised) | Catalogue faults include fossil structures; a *currently extending* blind fault should sit where dilatation is locally high AND a line exists. The strain bands are too smooth to locate a fault (fleet-measured: seismic/strain bands are ~constant at 300 m) — here they only re-rank line geometry | No fleet lane uses the geodetic strain tensor invariants as a *gate* on line emission (sarnnpu/wing-crack lanes model tilt/wing geometry, not a dilatation gate) | Basin-range range fronts inside a broad regional dilatation high (gate promotes a whole front) | ~1 min CPU | none |
+| 4 | **H85-D collinear thermal-spring chains** | GDR 1391 wellspring points (in-footprint CSV, hash-pinned): thermalclass, temp_c, geothermometers; `row/col` | Directional point-process line support: for each pixel, max over 16 orientations of thermally-weighted spring density along a 2 km line; require ≥3 collinear warm/hot points | Geothermal upflow rises along permeable fault conduits; aligned warm springs are a *direct* vent indicator that raster-only detectors ignore, and blind faults under playa cover may show springs without any scarp | GEMSDOE71 fused springs into a multi-modal stack (0.0558 ORGANIZER-CONFIRMED) but no lane emits *pure collinear spring-chain* support; would need the point table only | Spring lines along valley floors / playa margins / irrigation-well alignments along roads | ~10 min CPU | present (GDR 1391 mirror, sha256-pinned) — **not run: budget = 3 experiments** |
+| 5 | **H85-E volcanic-vent alignment** | GDR volcanic vents CSV (672 B in-footprint extract) + `det_elev` | Vent-point collinearity (as H85-D) intersected with topographic line response | Monogenetic vent alignments mark deep crustal fractures that feed geothermal systems | No fleet lane uses vent alignments | Vent chains along a single eruptive fissure that is not a through-going fault | ~10 min CPU | present but sparse (tens of points) — **not run: sparse + budget** |
+
+**Decision rule (declared in advance):** promote the best experiment only if its
+pooled HOLDOUT-DTI (`gems85-pooled-hide-v1`, 24,885 withheld positives across
+8 cells) beats the best registry control scored on the identical holdout *and*
+the uniqueness gate passes. Otherwise the verdict is **negative** and the file is
+labelled DO NOT SUBMIT — a negative result is a deliverable.
+
+**External-data candidates considered and rejected as not-ready:** sub-km USGS
+FDSN seismicity lineaments — source is free/official
+(https://earthquake.usgs.gov/fdsnws/event/1/query) but egress from this sandbox
+is restricted to github/pypi hosts (verified in the template repo; re-verified
+here by the restore path using only `gh api`), so it is named, not proposed as viable.
+
+---
+
+# Session `arena/41c29ae2-gemsdoe85` — Five Pre-Implementation Hypotheses (`H85-HJCD`)
+
+**Preregistered BEFORE any model code modification or holdout execution (2026-10-22 UTC).**
+
+Why prior `GEMSDOE85` lanes stalled at `0.09838` (`GEO-Pb`, 90k dots; `0.07475` @ 37,654) and
+`0.09837` (`E1_supervised_hgb` on `gems85-pooled-hide-v1`, losing to `CTRL_d28 = 0.102305`):
+1. **Metric-target mismatch (`pixel binary` vs `300 m triangular kernel`):** Prior supervised learners trained on 1-pixel binary rasterized traces (`y(x) in {0,1}`, positive rate `1.18%`), mislabeling ~85% of the true `300 m` scoring halo (`k(100 m) = 0.667`, `k(141 m) = 0.529`) as negative class `0` right where dipping (~60 deg) normal-fault gravity/magnetic/MT offsets peak down-dip in the hanging wall.
+2. **Unused geothermal-vent & shallow-probe discovery datasets:** `GEO-Pb` had `AUC = 0.5034` (`p = 0.213`, statistically indistinguishable from coin flip) at geothermal vents because hydrothermal smectite/illite argillic alteration and magnetite destruction erase crisp fresh-rock magnetic steps while creating **direct fluid-conduit anomalies** in temperature, silica/cation geothermometry, 2-m shallow temperature probes, and siliceous sinter / tufa mounds.
+3. **Coarse strike quantization (`8` strikes = `22.5 deg`) & discarded active-tectonic bands:** `GEO-Pb` discarded `training_features.tif` seismicity (`deq_n100a15`, `ieq_n100a15`) and GPS strain (`geod_2ndinv`, `geod_shearrate`, `geod_dilaterate`) and coarsely quantized Basin & Range (`N15-30E`) and Walker Lane (`N35-50W`) fault strikes into `22.5 deg` steps.
+
+### Five Candidate Hypotheses Ranked by Expected DTI Gain vs Implementation Cost
+
+| Rank | ID | Exact Free Official Data Layers Used | Targeted Physical / Geothermal Signature & Transform | Why It Captures Unmapped Hidden Faults Specifically | Difference From ALL Existing Repo & Fleet Methods | Non-Fault Mimic Process | Expected Gain / Cost | Status |
+|---:|---|---|---|---|---|---|---|---|
+| **1** | **`H85-HJCD-1`** | `training_features.tif` (all 19 official bands incl. unlocked geodetic strain `[4,7,8]` & seismicity `[10,16]`), `lidar_scarp_features_u8.tif` (12 bands, USGS 3DEP 1 m), `geodawn_rad_u8.tif` (4 bands, DOI `10.5066/P93LGLVQ`), `geodawn_extensions_u8.tif` (`ThK`, `UK`, `UTh`, `TMI_up150`) | **16-Azimuth Covariance-Whitened Hotelling Step Juxtaposition (`GEO-Pb-16`, `r=300 m` & `r=600 m`) + Exact `300 m` Kernel-Expectation Regression** (`K_G(x) = max_{g in G}(1 - d(x,g)/300 m)_+`) + shallow magnetic residual (`TMI - TMI_up150`) + transtensional dilatation-shear invariant | Concealed intrabasin/pediment faults offset basement density, cover thickness, and shallow volcanic sheets 100–300 m into the hanging wall without surface scarps; regressing onto `K_G(x)` matches the exact `300 m` Tversky credit surface instead of penalizing off-trace down-dip offset | Upgrades `GEMSDOE85`'s unique `GEO-Pb` Hotelling step operator to `16` orientations (`11.25 deg`), unlocks the 5 discarded active-tectonic bands, and replaces pixel classification with `300 m` kernel-target regression | Unfaulted depositional contacts (pinch-outs, pluton margins) and 400 m E–W GeoDAWN flight-line leveling corrugations | **High gain / Low-Medium cost (~2 min CPU)** — **TESTED IN `EXP-1`, `EXP-2`, `EXP-3`** | **Implemented** |
+| **2** | **`H85-HJCD-2`** | **Official DOE GDR 1391 (`https://gdr.openei.org/submissions/1391`, CC BY 4.0):** (a) `paleo_geothermal_regional.zip` (`281` in-footprint sinters, silicified fault sands/breccias, tufas, explosion craters — **measured `2.73x` fault lift within `300 m`**), (b) `2m_temperature_probe_INGENIOUS_regional_data.zip` (`2,782` in-footprint UNR/GBCGE shallow 2-m probes with background-subtracted `F2mDAB`), (c) `gdr_wellspring_in_footprint.csv` (`temp_c`, quartz/chalcedony/Na-K-Ca geothermometers); plus **USGS 3DEP 10 m** `dem10_chi_100m_i16.tif` (`step_max`, `ksn_max`) & `topo_10m_derived_100m_u8.tif` (`curv_prof_absmax`, `aspect_coherence`, `dem_mean`) | **Multi-Observable Blind Hydrothermal Conduit & Fluvial Disequilibrium Coupling:** multi-scale kernel plumes of boiling silica sinter (`>175 C`), shallow 2-m `F2mDAB` thermal anomalies, geothermometry excess, conductive clay-cap (`cond_surf`), and 10 m cross-divide `Delta chi` / Lahontan bench (`~1,335 m`) coupled multiplicatively with oriented `GEO-Pb-16` / scarp structure | Across the Great Basin (`619` hot/warm sites `>3 km` from any mapped fault; `456` hot 2-m probes at median `2.6 km`), fluids cannot cross `10^-17 m^2` basin clay without a permeable (`10^-13 to 10^-11 m^2`) fault-valve conduit — directly pinpointing unmapped blind faults beneath dry playas and fans | **First model in GEMSDOE85 or sibling fleet** to combine UNR/GBCGE 2-m temperature probe surveys + paleo-sinter/tufa fault deposits + cross-divide `Delta chi` + `GEO-Pb-16` juxtaposition | Lateral shallow aquifer outflow plumes (`1–3 km` down hydraulic gradient from upflow fault) & Lake Lahontan wave-cut tufa benches | **High gain / Low cost (~30 s CPU, verified in-sandbox via `60GEMSDOE` mirror of GDR 1391)** — **TESTED IN `EXP-1`, `EXP-2`, `EXP-3`** | **Implemented** |
+| **3** | **`H85-HJCD-3`** | Strictly per-fold **`fold.visible` fault mask ONLY** (withheld segments + `300 m` buffer stripped BEFORE any computation; zero full-catalogue leakage) + coupled `H85-HJCD-1/2` hydrothermal & geophysical channels | **Fold-Proper Crack-Tip Stress Projection, En-Echelon Relay Bridges & Submodular `300 m` Dinkelbach Tversky Point-Process Emission** (`Delta TP_300m - lambda_FP * Delta FP_300m` with live coverage map `C_S` and explicit fleet-overlap constraint `<= 0.65 < 0.70`) | `>75%` of Great Basin geothermal systems sit in unmapped fault step-overs, horse splays, and alluvial tip continuations (Faulds & Hinz 2015), where photogeologic traces artificially terminate at bedrock-alluvium contacts; submodular `300 m` coverage eliminates redundant dot overlap | Combines fold-clean fracture-tip/relay fields with `GEO-Pb-16` + 2-m thermal probe / sinter conduits AND explicitly enforces `< 0.70` overlap across all `227` non-saturating fleet rasters | Erosional range-front sinuosity or unfaulted pediment embayments between independent fault segments | **Very High gain / Medium cost (~4 min CPU)** — **TESTED IN `EXP-2` (NMS ablation) & `EXP-3` (Submodular Dinkelbach)** | **Implemented** |
+| **4** | **`H85-HJCD-4`** | `training_features.tif` (`tmi`, `tmi_vg`, `mag_anom`), `geodawn_extensions_u8.tif` (`TMI_up150`), `gdr_volcanic_vents_in_footprint.csv` | **GeoDAWN `400 m` Flight-Line Corrugation & Volcanic Flow-Margin Mimic Decoupling:** separate shallow residual (`TMI - TMI_up150`) from deep `TMI_up150` and volcanic-vent proximity so single-sensor magnetic spikes along `400 m` E–W flight lines or basalt flow margins are downweighted unless corroborated by gravity/topographic/thermal structure | Prevents false positives over unfaulted Tertiary lava mesas and `400 m` survey leveling artifacts, preserving mass budget for true concealed faults | Explicitly addresses the verified GeoDAWN Area 2 `400 m` E–W line-spacing artifact (`DOI: 10.5066/P93LGLVQ`) | Dike-fed fault-controlled basalt fissures (rare true positive coincidence where a fault also erupted basalt) | **Moderate gain / Low cost** — shallow residual & volcanic confounder channels folded into `EXP-1..3`; raw flight-line microleveling deferred (raw XYZ blocked) | **Partially folded into `EXP-1..3`** |
+| **5** | **`H85-HJCD-5`** | Copernicus Sentinel-1 InSAR time-series (`https://dataspace.copernicus.eu/`) + USGS ANSS / NSL waveform-relocated hypocenters (`https://earthquake.usgs.gov/fdsnws/event/1/query`) | **Sub-km InSAR Phase-Gradient Creep & Relocated Microseismic Fault-Plane Tomography** | Directly images aseismic slip/poroelastic geothermal deformation and blind seismogenic planes (e.g. Monte Cristo Range sequence) beneath featureless playas | Independent dynamic crust measurements at `<100 m` scale | Pumping-induced agricultural/mining subsidence bowls around playa wells | **High potential gain / Blocked in sandbox** (verified egress allowlist permits `github.com`, `pypi.org`, `npmjs.org` only) | **Documented next step (`[BLOCKED]` in sandbox)** |
+

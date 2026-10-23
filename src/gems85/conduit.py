@@ -30,13 +30,25 @@ import gc
 import struct
 from pathlib import Path
 
-import lightgbm as lgb
 import numpy as np
-import pandas as pd
 import rasterio
-from pyproj import Transformer
 from scipy import ndimage as ndi
 from sklearn.ensemble import HistGradientBoostingClassifier
+
+try:
+    import lightgbm as lgb
+except ModuleNotFoundError:  # pragma: no cover
+    lgb = None  # type: ignore[assignment]
+
+try:
+    import pandas as pd
+except ModuleNotFoundError:  # pragma: no cover
+    pd = None  # type: ignore[assignment]
+
+try:
+    from pyproj import Transformer
+except ModuleNotFoundError:  # pragma: no cover
+    Transformer = None  # type: ignore[assignment,misc]
 
 from . import geopb
 

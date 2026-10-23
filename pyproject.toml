@@ -18,5 +18,5 @@ dependencies = [
 ]
 
 [tool.pytest.ini_options]
-pythonpath = ["src", "vendor", "scripts"]
+pythonpath = ["src", "vendor", "scripts/duplex_lane", "scripts", "."]
 testpaths = ["tests"]

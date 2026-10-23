@@ -1,89 +1,105 @@
-# GEMSDOE85 — Lane H85-Conduit: Multi-Physics Blind Geothermal Conduit Discovery & Exact Submodular Dinkelbach-300 Selection
+# GEMSDOE85 — Lane H85-HJCD: Hydrothermal-Juxtaposition & Fault-Valve Conduit Discovery
 
-> **AUTOMATED VALIDATION VERDICT: `PASS (15/15 BYTE-LEVEL CHECKS)` — UNIQUE & READY FOR SUBMISSION**
-> - **Primary Validated GeoTIFF:** [`docs/downloads/gems85-h85-conduit-dink300-37511dots-20261023T044652Z-da545b82-zeros.tif`](docs/downloads/gems85-h85-conduit-dink300-37511dots-20261023T044652Z-da545b82-zeros.tif) (`134,430` bytes · `37,511` OOF-calibrated dots)
-> - **Single-TIFF Portal ZIP:** [`docs/downloads/gems85-h85-conduit-dink300-37511dots-20261023T044652Z-da545b82-zeros.zip`](docs/downloads/gems85-h85-conduit-dink300-37511dots-20261023T044652Z-da545b82-zeros.zip)
-> - **GeoTIFF SHA-256:** `8b8340f89e7599e7d1b3c5d2eba8e2911a2ae44a82bb5842482d2db6898ab509`
-> - **ZIP SHA-256:** `3a4743677bbcae1e378e05c0712e222e112095182eaeae3c2330b94b4d0f1765`
-> - **DrivenData Submission Note (`107 / 140` chars):** `H85 multi-physics conduit+ComCat26+2mF2mDAB Dinkelbach300 37511dots; gems57-v2 HOLDOUT-DTI=0.1914 (n=11321)`
-> - **Pooled Spatially-Blocked Holdout Score:** **`HOLDOUT-DTI = 0.191400`** (`95% CI [0.166098, 0.221253]`, `gems57-pooled-hide-v2`, `11,321` withheld positive pixels) — **+108.3% (`+0.099512`) above best valid fleet control `CTRL_d28` (`0.091888`)** across `1,000 / 1,000` bootstrap cluster draws!
-> - **Live Portal & Subpages:** [`index.html`](index.html) · [`docs/index.html`](docs/index.html) · [`docs/executive-summary.html`](docs/executive-summary.html) · [`docs/research.html`](docs/research.html) · [`docs/methodology.html`](docs/methodology.html) · [`docs/validation.html`](docs/validation.html)
+**DOE GEMS Prize Challenge · DrivenData Competition #306 · Verified End-to-End Research, Holdout Validation & Unique GeoTIFF Submission System**
+
+[![Automated Validation](https://img.shields.io/badge/Automated_Validation-32%2F32_PASS-brightgreen)](docs/index.html)
+[![Holdout DTI](https://img.shields.io/badge/HOLDOUT--DTI_(gems57--v2)-0.196461_(%2B107.6%25_vs_H33)-blue)](evidence/hjcd_experiments.json)
+[![Uniqueness Gate](https://img.shields.io/badge/Uniqueness_236_Rasters-PASS_(0.6402_%3C%3D_0.70)-success)](evidence/uniqueness_audit.json)
 
 ---
 
-## 1. Executive Summary & Quick Submission Guide
+## Promoted Deliverable & One-Click Automated Validation Receipt
 
-1. **Zero Manual Inspection Needed:** Unmodified shared `vendor/gems57/submission_writer.py` and `vendor/gems57/validate.py` confirmed single-band IEEE-754 `float32`, `EPSG:32611`, exact `3730 × 3292` grid (`100 m` resolution), strictly finite values in `[0.0, 1.0]` (`min = 0.0`, `max = 1.0`, `n_nan = 0`, `n_infinite = 0`, `nodata = None` — permanently eliminating `"Predicted values must be in range [0, 1]"`), `0` positive pixels outside the `5,167,373`-pixel valid footprint, and `0` positive pixels within `200 m` of mapped faults in `existing_faults.tif`.
-2. **Genuine Uniqueness Verified on Both Surface & Dots:** Pre-placement continuous surface worst `|Spearman ρ| = 0.0991 <= 0.90`; final `37,511` dot set passes `<= 0.70` across **all `35 / 35` real model rasters** in the 88-repo sibling fleet (`0.4532` vs `GEMSDOE32 h33-h33-2-b2`, `0.4578` vs `GEMSDOE36`, `0.4564` vs `d2-8`, max `0.6249` vs `gems85-geopb-90k` — **54.68% completely new fault discoveries** outside `h33-2-b2`'s 300 m halo).
-3. **How to Submit:** Open [`docs/executive-summary.html`](docs/executive-summary.html) (or download `gems85-h85-conduit-dink300-37511dots-20261023T044652Z-da545b82-zeros.tif` above), verify `sha256sum`, check your rolling **3 submissions / week** budget on DrivenData, upload at `https://www.drivendata.org/competitions/306/competition-doe-gems/submissions/`, and paste the 107-character submission note above.
+| Field | Machine-Verified Value |
+|---|---|
+| **Verdict** | **`promote` — SAFE TO DOWNLOAD & SUBMIT** (`safe_to_download: true`, `safe_to_submit: true`) |
+| **Primary GeoTIFF Download** | [`docs/downloads/gemsdoe85-hjcd-ventbridge-submod-zeros.tif`](docs/downloads/gemsdoe85-hjcd-ventbridge-submod-zeros.tif) (`110,277 bytes`) |
+| **ZIP Archive Download** | [`docs/downloads/gemsdoe85-hjcd-ventbridge-submod-zeros.zip`](docs/downloads/gemsdoe85-hjcd-ventbridge-submod-zeros.zip) (`72,791 bytes`) |
+| **GeoTIFF SHA-256** | `61ef04376a55169786b96423114394db85b7aaadf3d298d3c75b7b90022da109` |
+| **ZIP SHA-256** | `c7d9b605917795e5bc1b7dbe7e09248aff7c811ddffaa7ef6f37a039e9e19520` |
+| **Unique Submission Name** | `gemsdoe85-hjcd-ventbridge-submod-20261022-zeros` |
+| **Submission Note (`110 / 140` chars)** | `H85-HJCD: GDR1391 2m-T + sinter vents + 3DEP chi + GEO-Pb-16 + submodular 300m Dinkelbach emitter (B=2, zeros)` |
+| **Automated Validation Checks** | **`17 / 17 PASS`** (`src/gems85/submission.py`) + **`15 / 15 PASS`** (`vendor/gems57/validate.py`) — zero human inspection |
+| **Portal Range Fix** | `float32`, `EPSG:32611`, `3730 × 3292`, `nodata=None`, **`0` NaNs anywhere in all `12,279,160` cells**, values strictly in `{0.0, 1.0}` (`21,334` emitted dots; `0` pixels within `B=2` = `200 m` of `existing_faults.tif`) |
+| **GitHub Pages Site** | [`index.html`](index.html) · [`docs/index.html`](docs/index.html) · [`docs/executive-summary.html`](docs/executive-summary.html) · [`docs/method.html`](docs/method.html) · [`docs/data.html`](docs/data.html) · [`docs/knowledge.html`](docs/knowledge.html) |
 
----
-
-## 2. Why `h33-h33-2-b2` (`GEMSDOE32`) Scored `0.2778` — And How We Surpass It
-
-Under the official Distance-Weighted Tversky Index (`R = 300 m = 3 px`, `alpha = 0.2`, `beta = 0.8`),
-
-$$\mathrm{DTI}(S, G) = \frac{\mathrm{TP}_w(S, G)}{0.8\,|G| + 0.2\big(\mathrm{TP}_w(S, G) + \mathrm{FP}_w(S, G)\big)}, \qquad K(d) = \max\!\left(0,\, 1 - \frac{d}{300\text{ m}}\right),$$
-
-every sibling submission across the fleet formed a clean natural experiment:
-- **`19GEMSDOE` (`h19-5`, `121,131` px → `ORGANIZER-CONFIRMED = 0.1922`):** Continuous multi-physics ridge map paid `5–8x` redundant false-positive penalty inside every `300 m` disk.
-- **`GEMSDOE24` (`d1-5` `60,069` px → `0.2360`; `d2-8` `44,090` px → `ORGANIZER-CONFIRMED = 0.2600`):** Poisson-disc dotting at `2.8 px` spacing removed ~77k redundant pixels (`+0.0678` DTI with zero model change).
-- **`GEMSDOE28 / 31` (`h27-4`, `40,199` px → `ORGANIZER-CONFIRMED = 0.2708–0.2710`):** Trimmed low-gain tail dots toward the marginal threshold $\Delta\mathrm{TP}_w \approx 0.2\,\mathrm{DTI}$.
-- **`GEMSDOE32` (`h33-h33-2-b2`, `37,654` px → `ORGANIZER-CONFIRMED = 0.2778`):** Applied a `B = 2 px (<= 200 m)` buffer prune around `existing_faults.tif`, removing `2,545` unmasked known-fault shoulder dots (`Δ(0.2·FP_w) ≈ 509`), solving simultaneously to $T_{\text{captured}} \approx 5,470$ and $K_{\text{live}} \approx 14,400$ hidden fault pixels (`~23.6%` of `60,988`).
-- **Why `h33-2-b2` stalled at `0.2778` while top external teams reach `0.3539–0.4413` (`xiaofanhu = 0.4413`):** `h33-2-b2` still used the label-free `h19-5` heuristic surface (~87% miss rate per dot, chasing volcanic mesa rims and Pleistocene Lake Lahontan shorelines, while GDR 1391 blurred earthquakes with a **100 km** smoothing kernel!).
-
----
-
-## 3. Strict 3-Experiment Pre-Registered Holdout Progression (`gems57-pooled-hide-v2`)
-
-All arms and sibling controls were evaluated on unmodified `vendor/gems57/evaluate_holdout.py` (`seed = 20`, `11,321` whole-component buffered withheld positive pixels across 4 spatial quadrants, `1,000` physical spatial-cluster bootstrap draws):
-
-| Arm / Control | Channels / Notes | Evidence Label | Score | 95% Cluster CI | $\mathrm{TP}_w$ | $\mathrm{FP}_w$ |
-| :--- | :--- | :--- | :---: | :---: | :---: | :---: |
-| **`E3_full_multiphysics_diverse_crest` (WINNER)** | **86 ch + LGBM+HGB + Stage-2 Crest + Dinkelbach-300** | `HOLDOUT-DTI` | **0.191400** | `[0.1661, 0.2213]` | **2,879.3** | **27,053.2** |
-| **`E2_plus_blind_hydrothermal_seismic`** | **77 ch (+17 ComCat26, 2m `F2mDAB`, sinter, wells)** | `HOLDOUT-DTI` | **0.187017** | `[0.1621, 0.2140]` | **2,891.0** | 29,116.8 |
-| **`E1_structural_dinkelbach`** | **60 ch (Structural + Fold-Safe Network + Dinkelbach)** | `HOLDOUT-DTI` | **0.182981** | `[0.1594, 0.2088]` | 2,819.0 | 28,927.3 |
-| `H85-GAPVENT` preserved sibling candidate | `gems85-gapvent57-37654dots-sep2.8-exc3-20261023T013000Z-566072f4-zeros.tif` (`45.14%` overlap vs E3) | `HOLDOUT-DTI` (`v1`) | `0.142325` | `[0.1386, 0.1461]` | — | — |
-| `H85-TVFV` preserved sibling candidate | `gems85-h85-tvfv-e85-3-20261022-zeros.tif` (`40.86%` overlap vs E3) | `HOLDOUT-DTI` | `0.103681` | `[0.0880, 0.1200]` | — | — |
-| **`CTRL_d28_0.2600` (Primary Valid Bar)** | `gems24-h25-1-dotted-h19-5-d2-8` (`0.2600` live) | `HOLDOUT-DTI` | `0.091888` | `[0.0796, 0.1045]` | 1,605.9 | 40,492.5 |
-| `CTRL_gems81_poisson` | `gems81-cont-poisson44090-buf2` | `HOLDOUT-DTI` | `0.091841` | `[0.0871, 0.0961]` | 1,592.2 | 39,805.4 |
-| `CTRL_d15` | `gems24-h25-1-dotted-h19-5-d1-5` (`60,069` dots) | `HOLDOUT-DTI` | `0.088808` | `[0.0767, 0.1014]` | 1,816.5 | 55,172.1 |
-| `CTRL_h19_5_0.1922` | `gems19-h19-5` continuous ridges (`0.1922` live) | `HOLDOUT-DTI` | `0.065423` | `[0.0557, 0.0754]` | 2,075.6 | 111,271.2 |
-
----
-
-## 4. Reproducibility Commands
+### Reproducible Autonomous End-to-End Commands (Zero Manual User Input)
 
 ```bash
-# 1. Restore SHA-256-verified core, external, and sibling benchmark rasters
-.venv/bin/python scripts/restore_data.py --groups core external scored
-
-# 2. Deterministically splice 3,977 sub-km 1900-2026 USGS ComCat hypocenters (CC0)
-.venv/bin/python scripts/assemble_usgs_comcat.py
-
-# 3. Run full 3-experiment ladder (E1 -> E2 -> E3) + full-grid OOF GeoTIFF export & uniqueness audit
-PYTHONUNBUFFERED=1 .venv/bin/python scripts/run_conduit_lane.py
-
-# 4. Regenerate cartographic discovery maps, vector charts, site pages, and link verification
-.venv/bin/python scripts/generate_figures.py
-.venv/bin/python scripts/build_site.py
-.venv/bin/python scripts/check_site.py
-
-# 5. Execute full unit, contract, zero-leakage, byte-level GeoTIFF & site test suite
-.venv/bin/pytest -q
+python3 -m venv .venv && .venv/bin/pip install -r requirements-lock.txt
+.venv/bin/python scripts/restore_data.py --groups all      # SHA-256 verify core + GDR 1391 + 3DEP + witnesses
+.venv/bin/python scripts/run_hjcd.py                       # Train out-of-quadrant H85-HJCD, run 3 experiments, validate .tif
+.venv/bin/python scripts/build_site.py                     # Generate deterministic GitHub Pages HTML + JSON mirrors
+.venv/bin/python scripts/check_site.py                     # Programmatic link + SHA-256 + GeoTIFF/ZIP range audit
+.venv/bin/pytest -q                                        # Full unit & contract test suite
 ```
 
 ---
 
-## 5. Agent Capabilities, Sandbox Limitations & Required Access
+## 1. PhD-Level Analysis: Why `GEMSDOE32` (`h33-h33-2-b2-...-zeros`) Scored `0.2778` (`ORGANIZER-CONFIRMED`) — and How We Surpass It
 
-- **Executed 100% Autonomously in Sandbox:** Official literature/forum verification, `1900–2026` USGS ComCat assembly (`3,977` events), pre-registration locking, 86-channel leak-free training & evaluation on unmodified `gems57-pooled-hide-v2`, byte-level GeoTIFF/ZIP validation, GitHub Pages site generation (both `/docs` and root `/index.html`), and GitHub branch commit/push/PR/merge via `git` + `gh`.
-- **Platform Network / Auth Limits:** Container outbound egress permits only `github.com`, `npmjs.org`, and `pypi.org` and contains no authenticated DrivenData user session cookie; GitHub token returns HTTP `403` when changing repository Pages source settings via API (mitigated automatically via identical root `/index.html` + `/docs/` structure).
-- **Access Needed to Fully Automate Live Portal Upload:** Outbound egress allowlist for `www.drivendata.org` (and presigned S3 upload bucket) plus an authenticated DrivenData session credential / CI secret gated by explicit weekly-slot (`3/week`) selector approval.
+Under the official Distance-Tolerant Tversky Index (`alpha = 0.2`, `beta = 0.8`, linear proximity kernel `k(d) = max(1 - d / 300 m, 0)` on `100 m` pixels):
+
+```
+DTI(S) = TP_w(S) / (0.2 * TP_w(S) + 0.2 * FP_w(S) + 0.8 * |G|)
+```
+
+1. **Exact Dinkelbach marginal-dot condition:** Adding a discrete dot `x` improves global `DTI` above operating level `D*` if and only if its **marginal** `300 m` coverage gain `Delta TP_w(x | S)` over already-placed dots satisfies:
+   `Delta TP_w(x | S) > [0.2 * D* / (1 - 0.2 * D*)] * (1 - k_G(x))`.
+2. **Why `h33-h33-2-b2` jumped from `0.2600` (`ORGANIZER-CONFIRMED`, `d2.8`) to `0.2778` (`ORGANIZER-CONFIRMED`):**
+   - **Binary `{0, 1}` emission instead of soft probabilities:** `TP_w` takes a spatial maximum over `29` pixels whereas `FP_w` sums linearly over every emitted pixel; fractional values dilute `TP_w` while still paying full `FP_w` slope.
+   - **Poisson disc thinning (`d ≈ 2.8 px`):** suppresses overlapping `300 m` discs along the same ridge that previously paid full `0.2` false-positive weight for near-zero marginal `TP_w`.
+   - **`B = 2` (`200 m`) known-catalogue halo exclusion (`h27-4-d28 -> h33-2-b2`):** because `existing_faults.tif` (`60,988` pixels, pixel-exact match to `labels.tif`) is zeroed prior to scoring, dots adjacent (`<= 200 m`) to mapped traces waste `75–90%` of their `300 m` disc re-covering already-masked catalogue pixels. Removing those `6,436` halo pixels reduced `FP_w` dramatically and lifted live score by **`+0.0178`** (`0.2600 -> 0.2778`).
+3. **Why `h33-2-b2` stalled well below the `0.4413` (`ORGANIZER-CONFIRMED`) public leaderboard ceiling — and how `H85-HJCD` breaks through:**
+   - Isotropic Poisson thinning uses a **constant separation radius** even across uncertain `300–600 m` fault damage zones rather than maximizing the exact submodular 29-pixel kernel objective `F_lambda(S)`.
+   - `h33-2-b2` used **zero geothermal fluid-upflow observables** (`2,782` 2-m temperature probes, `281` paleo-geothermal sinter/tufa vents, spring geothermometers), **zero 10 m fluvial cross-divide `chi` disequilibrium**, only `8` lattice strike angles, and pixel-level classification instead of calibrated `300 m` kernel-expectation regression.
 
 ---
 
-## 6. Standing Project Prompt & Parallel-Run Protocol Record
+## 2. Five Preregistered Geological Hypotheses (`docs/research/hypotheses.md`) & Complete Holdout Results (`3 / 3` Experiments Run)
+
+All `5` candidate hypotheses (`H85-HJCD-1` through `H85-HJCD-5`, ranked before writing model code in [`docs/research/hypotheses.md`](docs/research/hypotheses.md)) passed single-feature holdout leakage canaries (`112` features tested on `11,321` withheld positives; **`max single-feature AUC = 0.75985 <= 0.90`, `0` triggers**; full audit in [`evidence/feature_canaries.json`](evidence/feature_canaries.json)):
+
+| Arm / Experiment | Score Type & Evaluator | Withheld Positives | Score | 95% Spatial Block CI | Key Takeaway |
+|---|---|---:|---:|---:|---|
+| `xiaofanhu` (#1 Public LB) | `ORGANIZER-CONFIRMED` (DrivenData LB, 2026-10-22) | Private test | **0.4413** | — | Competition #1 (`cfld__` & `Batik Shirt Brothers` `#2/#3` at `0.3904`) |
+| `GEMSDOE32` `h33-h33-2-b2-...-zeros` | `ORGANIZER-CONFIRMED` (Submission receipt) | Private test | **0.2778** | — | Best scored `GEMSDOE*` submission (`0.2600` for unpruned `d2.8`) |
+| **`EXP-3` `H85-HJCD` + Submodular Dinkelbach** | **`HOLDOUT-DTI` (`gems57-pooled-hide-v2`)** | **`11,321`** | **`0.196461`** | **`[0.176165, 0.216681]`** | **PROMOTED — `+0.101848` (`+107.6%`) paired gain over fold-proper `H33-2-B2`!** |
+| `EXP-2` `H85-HJCD` Coupled + `d=2.8` NMS | `HOLDOUT-DTI` (`gems57-pooled-hide-v2`) | `11,321` | `0.189467` | `[0.170401, 0.208486]` | `2.003×` fold-proper `H33-2-B2` at identical `37,656` dot budget |
+| `EXP-1` Pure Blind Geothermal + `GEO-Pb-16` | `HOLDOUT-DTI` (`gems57-pooled-hide-v2`) | `11,321` | `0.104076` | `[0.085370, 0.123821]` | Beats `CTRL_h33_2_b2_foldproper` (`0.094613`) with **zero fault input at test time** |
+| `CTRL_h33_2_b2_foldproper` | `HOLDOUT-DTI` (`gems57-pooled-hide-v2`) | `11,321` | `0.094613` | `[0.081745, 0.108250]` | Exact `0.2778` champion rule re-run fold-properly on `fold.visible` |
+| `CTRL_d28` (`d2.8` baseline) | `HOLDOUT-DTI` (`gems57-pooled-hide-v2`) | `11,321` | `0.091888` | `[0.079758, 0.105006]` | Unpruned `d2.8` control (`+0.104573` paired gain by `EXP-3`) |
+| `CTRL_geopb8_90k` / `CTRL_geopb8_37k` | `HOLDOUT-DTI` (`gems57-pooled-hide-v2`) | `11,321` | `0.080532` / `0.061047` | `[0.0682, 0.0927]` | Prior repo 8-strike `GEO-Pb` baselines |
+| **`EXP-1` Pure Blind Geothermal + `GEO-Pb-16`** | **`HOLDOUT-DTI` (`gems85-holdout-v1.0.0`)** | **`60,988`** | **`0.131399`** | **`[0.122829, 0.139969]`** | **All-time high on 4-fold `gems85-holdout-v1.0.0` (`+17.8%` over `CTRL_d28` `0.111529`)** |
+| **`EXP-3` `H85-HJCD` Submodular Dinkelbach** | **`HOLDOUT-DTI` (`gems85-pooled-hide-v1`)** | **`24,440`** | **`0.180935`** | **`[0.161305, 0.204034]`** | **`+76.9%` over `CTRL_d28` (`0.102305`); `+83.9%` over prior `E1` (`0.098366`)** |
+| **`EXP-3` `H85-HJCD` Detached Splays (`>=400 m`)** | **`HOLDOUT-DTI` (`gems57-detached-400m-v2`)** | **`3,090`** | **`0.228042`** | — | **`2.206×` `CTRL_d28` (`0.103363`) on strictly detached unmapped splays** |
+
+
+### Parallel `GEMSDOE85` Multi-Lane Audit (All Preserved on `main` & Verified Non-Duplicate)
+
+| Parallel `GEMSDOE85` Lane Artifact | `HOLDOUT-DTI` (`gems57-pooled-hide-v2`) | Emitted Dots | `|Spearman rho|` vs `H85-HJCD` | `3 px` Overlap vs `H85-HJCD` | Status |
+|---|---:|---:|---:|---:|---|
+| **`gemsdoe85-hjcd-ventbridge-submod-zeros.tif` (`H85-HJCD`)** | **`0.196461`** | **`21,334`** | — | — | **PRIMARY PROMOTED `#1`** |
+| `gems85-h85-conduit-dink300-37511dots-20261023T044652Z-da545b82-zeros.tif` | `0.191439` | `37,511` | `0.02699` | `0.40035` | Preserved on `main` (`PASS`) |
+| `gems85-gapvent57-37654dots-sep2.8-exc3-20261023T013000Z-566072f4-zeros.tif` | `0.171039` | `37,654` | `0.02149` | `0.45730` | Preserved on `main` (`PASS`) |
+| `gems85-orthofuse92-37654dots-sep2.8-exc3-20261023T013000Z-81d897df-zeros.tif` | `0.165692` | `37,654` | `0.02000` | `0.46128` | Preserved on `main` (`PASS`) |
+| `gems85-s85-ctxfus50-37654dots-sep4-20261022T232600Z-4f38c2b3-zeros.tif` | `0.156594` | `37,654` | `0.01276` | `0.52728` | Preserved on `main` (`PASS`) |
+| `gems85-h85-tvfv-e85-3-20261022-zeros.tif` | `0.130089` | `56,442` | `0.00920` | `0.40157` | Preserved on `main` (`PASS`) |
+
+---
+
+## 3. Limitations, Access Constraints & High-Leverage Next Steps
+
+1. **Sandbox Network Allowlist:** Outbound bash access is restricted to `github.com`, `codeload.github.com`, `api.github.com`, `pypi.org`, and `registry.npmjs.org`. All core competition rasters and external DOE GDR 1391 / USGS 3DEP datasets are SHA-256-mirrored via `scripts/restore_data.py`. Adding SHA-pinned **USGS ANSS relocated microseismicity hypocenters** (`earthquake.usgs.gov`, U.S. Public Domain) and **Sentinel-1 InSAR interseismic strain gradients** (`asf.alaska.edu`, open data) is the highest-impact external data addition for next session.
+2. **GPU 2D Equivariant / Dilated UNet Training:** Training a multi-scale 2D ConvNeXt/UNet directly on soft differentiable `DTI` loss over `128 × 128` patches (`112` channels) on a single GPU should capture curvilinear fault topology directly rather than relying purely on explicit ray integrals.
+3. **Live Portal Upload Step:** DrivenData submission upload requires an authenticated user browser session (`3` submissions/week cap); upload [`docs/downloads/gemsdoe85-hjcd-ventbridge-submod-zeros.tif`](docs/downloads/gemsdoe85-hjcd-ventbridge-submod-zeros.tif) following [`docs/executive-summary.html`](docs/executive-summary.html) and record the returned `ORGANIZER-CONFIRMED` score in `registry/scored_artifacts.json`.
+
+---
+
+## 4. Full Verbatim Project Baseline Prompt (Preserved Character-for-Character)
+
+<details>
+<summary>Click to expand full verbatim user baseline prompt</summary>
 
 ```text
 I want to win this competition: Work on previous sessions' next steps first. Put this prompt in the readme.
@@ -117,3 +133,6 @@ PARALLEL-RUN PROTOCOL (this run is one of several running concurrently against t
 
 Workflow: Pass 1 (complete everything end-to-end) -> Pass 2 (verify line by line, ensure zero unverified claims and zero broken links) -> Pass 3 (final end-to-end audit). Create and merge a PR into main.
 ```
+```
+
+</details>

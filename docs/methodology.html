@@ -1,178 +1,536 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dinkelbach-300 &amp; 86-Channel Physics — DOE GEMS #306 (GEMSDOE85)</title>
-  <link rel="stylesheet" href="assets/site.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PhD Analysis of 0.2778 &amp; Preregistered Hypotheses — GEMSDOE85</title>
+<style>
+:root{--bg:#0b1017;--panel:#141b24;--panel2:#1a2330;--line:#2d3748;--fg:#e6edf3;--mut:#94a3b8;
+--acc:#38bdf8;--acc-solid:#0284c7;--ok:#22c55e;--ok-bg:#0c2918;--warn:#eab308;--bad:#ef4444}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1100px;margin:0 auto;padding:0 22px 84px}
+header{border-bottom:1px solid var(--line);background:#06090f;position:sticky;top:0;z-index:20}
+header .wrap{padding:14px 22px;display:flex;gap:18px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.brand{font-weight:800;font-size:17px;letter-spacing:.3px;color:#fff}
+nav{display:flex;flex-wrap:wrap;gap:16px}
+nav a{color:var(--mut);font-size:14px;font-weight:500}
+nav a.on{color:#fff;font-weight:700;border-bottom:2px solid var(--acc);padding-bottom:2px}
+h1{font-size:31px;line-height:1.24;margin:30px 0 10px}
+h2{font-size:22px;margin:38px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+h3{font-size:17px;margin:24px 0 8px}
+p,li{color:#cbd5e1}
+.hero{background:linear-gradient(145deg,#0f2a1d 0%,#111c2b 65%,#0d1420 100%);
+border:2px solid var(--ok);border-radius:16px;padding:26px 28px;margin:24px 0;
+box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.badge-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.badge-pass{display:inline-flex;align-items:center;gap:8px;background:var(--ok);color:#04130a;
+font-weight:800;font-size:13px;padding:5px 12px;border-radius:999px;letter-spacing:.4px;text-transform:uppercase}
+.badge-meta{display:inline-flex;align-items:center;border:1px solid var(--line);background:var(--panel2);
+color:var(--fg);font-size:12.5px;font-weight:600;padding:4px 11px;border-radius:999px}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0 14px}
+.dl-primary{display:inline-flex;align-items:center;gap:10px;background:var(--ok);color:#04130a;
+font-size:18px;font-weight:800;padding:15px 24px;border-radius:11px;text-decoration:none}
+.dl-primary:hover{filter:brightness(1.08);text-decoration:none}
+.dl-secondary{display:inline-flex;align-items:center;gap:8px;background:var(--panel2);
+border:1px solid var(--acc);color:var(--fg);font-size:15px;font-weight:700;padding:14px 20px;border-radius:11px}
+.dl-secondary:hover{background:#223042;text-decoration:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px;margin:18px 0}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
+.kpi .v{font-size:25px;font-weight:800;color:#fff;font-variant-numeric:tabular-nums}
+.kpi .l{color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+.kpi .s{color:#86efac;font-size:12.5px;margin-top:4px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:16px 0}
+.good{border-left:4px solid var(--ok);background:var(--ok-bg);padding:13px 16px;border-radius:0 10px 10px 0;margin:16px 0}
+.note{border-left:4px solid var(--warn);background:#221c0c;padding:13px 16px;border-radius:0 10px 10px 0;margin:16px 0}
+code{background:#1e293b;border:1px solid var(--line);border-radius:5px;padding:1px 6px;
+font-size:13px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#f1f5f9}
+pre{background:#0f172a;border:1px solid var(--line);border-radius:10px;padding:14px;overflow-x:auto;font-size:13px}
+pre code{background:none;border:none;padding:0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:14px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+th{background:#1a2433;font-weight:700;color:#f8fafc}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;border:1px solid}
+.t-ok{color:#4ade80;border-color:#22c55e;background:#0c2918}
+.t-info{color:#7dd3fc;border-color:#38bdf8;background:#0c2233}
+.t-warn{color:#fde047;border-color:#eab308;background:#26200b}
+ol.steps{counter-reset:s;list-style:none;padding:0}
+ol.steps>li{counter-increment:s;position:relative;padding:14px 0 14px 50px;border-bottom:1px solid var(--line)}
+ol.steps>li::before{content:counter(s);position:absolute;left:0;top:14px;width:32px;height:32px;
+border-radius:50%;background:var(--acc-solid);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
+footer{color:var(--mut);font-size:13px;border-top:1px solid var(--line);margin-top:52px;padding-top:18px}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;word-break:break-all}
+</style>
 </head>
 <body>
-<header class="topbar">
-  <div class="topbar-inner">
-    <div class="brand">
-      <span>DOE GEMS #306 · GEMSDOE85</span>
-      <span class="badge-pill">PASS — OK TO DOWNLOAD AND SUBMIT</span>
-    </div>
-    <nav class="nav"><a href="index.html" class="">Download & Verdict</a>
-<a href="executive-summary.html" class="">Executive Summary & Submit Guide</a>
-<a href="research.html" class="">Why 0.2778 Worked & Hypotheses</a>
-<a href="methodology.html" class="active">Dinkelbach-300 & 86-Ch Physics</a>
-<a href="validation.html" class="">Byte Audit, Canary & Pass 1–3</a></nav>
+<header>
+  <div class="wrap">
+    <span class="brand">GEMSDOE85 · Lane H85-HJCD · OK TO DOWNLOAD AND SUBMIT</span>
+    <nav><a href="index.html" class="">Submission &amp; Results</a><a href="executive-summary.html" class="">Executive Summary &amp; How to Submit</a><a href="method.html" class="on">PhD Analysis &amp; Hypotheses</a><a href="data.html" class="">Verified Sources &amp; Irregularities</a><a href="knowledge.html" class="">Geothermal Vent Knowledge Base</a></nav>
   </div>
 </header>
-<main class="container">
-<section class="card">
-  <h2>1. Exact Dual-Expectation Submodular Dinkelbach-300 Mathematical Formulation</h2>
-  <p>
-    Under the official competition metric (<code>R = 300 m = 3 px</code>, <code>α = 0.2</code>, <code>β = 0.8</code>),
-    for binary dot set <code>S ⊆ Ω_allow</code> and hidden fault set <code>G</code>:
-  </p>
-  <pre>TP_w(S) = sum_{v in G} max_{u in S} K(||u - v||_2),     FP_w(S) = sum_{u in S} (1 - max_{v in G} K(||u - v||_2))
-DTI(S)  = TP_w(S) / (0.8 * |G| + 0.2 * TP_w(S) + 0.2 * FP_w(S))</pre>
-  <p>
-    In <code>src/gems85/dinkelbach.py</code>, we define the calibrated posterior centerline probability <code>p̂(v) ∈ [0, 1]</code>
-    (fit strictly out-of-fold via isotonic regression + Saerens et al. Bayes prior shift to unseen ratio <code>0.24</code>)
-    and exact lower-envelope proximity dual:
-  </p>
-  <pre>q̂(u) = max_{||δ||_2 &lt; 3} [ p̂(u + δ) * (1 - ||δ||_2 / 3) ]  ∈ [0, 1]
+<div class="wrap">
+<div class="card"><h1>Pre-Registered Untried Geological Hypotheses &amp; Single-Lane Experimental Protocol (<code>GEMSDOE85</code>)</h1>
+<p><strong>Branch:</strong> <code>arena/348a7290-gemsdoe85</code> · <strong>Locked Date:</strong> <code>2026-10-22</code> (locked <strong>before</strong> opening <code>existing_faults.tif</code> / <code>labels.tif</code> pixels)<br />
+<strong>Shared Evaluator Pin:</strong> <code>vendor/gems57/evaluate_holdout.py</code> (<code>VERSION = "gems57-pooled-hide-v2"</code>, <code>buffered_component_draw</code> with whole 8-connected components, <code>DOMAIN_ERODE = 12 px = 1.2 km</code>, <code>buffer_px = 3</code>, pixel-exact <code>masked_known</code>, pooled <code>DTI</code> with <code>alpha = 0.2</code>, <code>beta = 0.8</code>, <code>R = 300 m</code>)<br />
+<strong>Shared Writer &amp; Uniqueness Pin:</strong> <code>vendor/gems57/submission_writer.py</code> &amp; <code>vendor/gems57/uniqueness.py</code> (unmodified)<br />
+<strong>Experiment Cap:</strong> Strictly <strong><code>&lt;= 3</code> experiments</strong> (<code>E1</code>, <code>E2</code>, <code>E3</code>) within a <strong>single coherent method lane</strong></p>
+<hr />
+<h2>1. Declared Single Method Lane (<code>Lane H85-Conduit</code>)</h2>
+<p><strong>Method Lane:</strong> <em>Fold-safe out-of-fold multi-physics hidden geothermal fault-conduit probability &amp; proximity estimation (<code>1 px</code> crest targets against stratified near-flank + basin negatives), coupled with Bayes prior-shift calibration and exact submodular 29-offset Dinkelbach fractional <code>DTI</code> dot selection.</em></p>
+<p>Every experiment in this session (<code>E1 -&gt; E2 -&gt; E3</code>) stays strictly inside this single lane and shares the identical unmodified evaluator (<code>gems57-pooled-hide-v2</code>), identical <code>buffered_component_draw</code> folds, identical <code>B = 2 px</code> (<code>&lt;= 200 m</code>) fold-visible halo rule, and per-feature single-channel leakage canary (<code>AUC &lt;= 0.90</code>).</p>
+<hr />
+<h2>2. Five Pre-Registered Untried Geological Hypotheses Ranked by Expected <code>DTI</code> Gain vs Cost</h2>
+<h3>Rank 1 — <code>H1</code>: Sub-Kilometer Brittle-Conduit Seismicity (<code>1900–2026</code> USGS ComCat) + Shallow <code>2 m</code> Conductive Thermal Plume (<code>F2mDAB</code>) &amp; Siliceous Paleo-Vent Alignment (<strong>NEW EXTERNAL DATA ON DISK — NEVER TRIED IN ANY PRIOR REPO</strong>)</h3>
+<ul>
+<li><strong>Specific Layers Used:</strong></li>
+<li><code>data/external/usgs_comcat_geodawn.csv</code> (<code>3,977</code> deduplicated USGS ComCat events <code>1900–2026-10-20</code>, <code>100.000000%</code> valid GeoDAWN pixel coverage; <code>541</code> post-2021 events absent from GDR 1391);</li>
+<li><code>data/external/.../2m_temperature_probe_n83geo.dbf</code> (<code>2,782</code> inside-footprint GBCGE shallow probes with seasonal/elevation-corrected <code>F2mDAB</code> up to <code>+54.7 °C</code> and <code>T2m</code>);</li>
+<li><code>data/external/paleo_geothermal_regional/Paleo_geothermal_final.csv</code> (<code>281</code> inside-footprint deposits separated into <code>195</code> high-enthalpy siliceous sinter / silica-cemented sand / explosion crater / alteration conduits vs <code>86</code> pluvial tufa mounds);</li>
+<li><code>data/external/gdr_wellspring_in_footprint.csv</code> (<code>temp_c</code>, quartz/chalcedony/Na-K-Ca cation geothermometers — strictly excluding <code>dist_known_fault_px</code>) + <code>cond_surf</code> (Band 17) + <code>geod_shearrate</code>/<code>geod_dilaterate</code> (Bands 7–8).</li>
+<li><strong>Physical Signature &amp; Mathematical Transform:</strong></li>
+<li>Multi-scale radial &amp; moment-weighted kernel densities (<code>sigma = 300 m, 1.0 km, 3.0 km, 8.0 km</code>) of shallow brittle hypocenters (<code>depth_km &lt;= 12 km</code>), post-2021 unmapped swarm density (<code>year &gt;= 2022</code>), local swarm clustering count within <code>2.5 km</code>, IDW/Gaussian-interpolated <code>2 m</code> conductive anomaly <code>F2mDAB_pos = max(0, F2mDAB)</code> + survey-density confidence weight, high-enthalpy siliceous paleo-vent kernel density (<code>sinter + silica-cemented sand + explosion craters + silicified breccia + acid-sulfate</code>), and thermal-conductivity upflow coupling (<code>F2mDAB_pos * cond_surf</code>).</li>
+<li><strong>Why It Catches Hidden Faults Missing from USGS/INGENIOUS:</strong></li>
+<li>Over 75% of Great Basin geothermal systems occur on concealed faults beneath Holocene playa clays and young alluvial fans where surface scarps were erased or never breached the surface. GDR 1391 blurred pre-2022 seismicity across <code>100 km</code> (<code>deq_n100a15</code>, <code>ieq_n100a15</code>), destroying sub-kilometer fault localization and missing all <code>2022–2026</code> blind ruptures (<code>2024</code> Gillis Range, <code>2024</code> Parker Butte <code>Mwr 5.71</code>, <code>2025–2026</code> Hot Creek, <code>2025–2026</code> Smoke Creek, <code>2026</code> SE Silver Springs <code>Mwr 5.68</code>). Meanwhile, GBCGE's <code>2 m</code> temperature probes and paleo-sinter mapping explicitly targeted concealed geothermal upflow zones in Gabbs Valley, Hawthorne, Astor Pass, Desert Queen, Desert Peak, Dixie/Fairview, Granite Springs Valley, Fallon, Columbus Marsh, Silver Peak, Blue Wing, and Rhodes Marsh where newly mapped INGENIOUS blind faults reside.</li>
+<li><strong>Named Non-Fault Mimic Processes &amp; Anti-Mimic Suppression:</strong></li>
+<li><em>Pleistocene Lake Lahontan wave-agitated shoreline tufa mounds (<code>Tufa</code>, ~1,330 m elevation)</em> that precipitate along pluvial strandlines without fault conduits $\to$ separated explicitly from siliceous/explosion paleo-vents into an independent channel coupled with <code>det_elev</code> / shoreline elevation bands;</li>
+<li><em>Lateral outflow thermal plumes in shallow alluvial aquifers</em> where hot water migrates down-gradient away from the range-front fault $\to$ disambiguated by requiring coincidence with basement/magnetic step gradients or shallow microseismicity rather than unconditioned thermal halos;</li>
+<li><em>Quarry blasts / geothermal injection microseismicity</em> $\to$ depth-stratified (<code>depth &lt;= 3 km</code> vs <code>3–12 km</code> brittle seismogenic zone) and moment-weighted.</li>
+<li><strong>Difference from All Prior Fleet Implementations (<code>GEMSDOE1</code>–<code>GEMSDOE88</code>):</strong></li>
+<li>Zero prior repositories in the entire fleet parsed <code>usgs_comcat_geodawn.csv</code>, <code>2m_temperature_probe_n83geo.dbf</code>, or <code>Paleo_geothermal_final.csv</code>.</li>
+<li><strong>Expected <code>DTI</code> Gain vs Compute Cost:</strong> <strong>Highest (<code>Rank 1</code>)</strong> — <code>~4 s</code> CPU rasterization cost on 2 vCPU; directly illuminates basin-interior blind fault segments where scarp detectors score near zero.</li>
+</ul>
+<hr />
+<h3>Rank 2 — <code>H2</code>: Sharp <code>1 px</code> Trace Crest Learning + Flight-Line-Notched (<code>090°</code> De-Aliased) Multi-Scale Structural &amp; Geomorphometric Feature Stack</h3>
+<ul>
+<li><strong>Specific Layers Used:</strong></li>
+<li><code>data/training_features.tif</code> (all 19 geophysical bands), <code>data/external/lidar_scarp_features_u8.tif</code> (12 bands including 1 m LiDAR <code>ex_max</code>, <code>step_max</code>, <code>downface_max</code>, <code>upface_max</code>, <code>coh100</code>, <code>strike</code>), <code>data/external/topo_10m_derived_100m_u8.tif</code> (9 bands from 10 m 3DEP DEM covering 100% of non-LiDAR areas), <code>data/external/dem10_chi_100m_u8.tif</code> (<code>chan_n</code>, <code>knick_n</code>, <code>raised_n</code>), and <code>data/external/derived_sgmc_faults_100m_u8.tif</code> (pre-Quaternary bedrock faults).</li>
+<li><strong>Physical Signature &amp; Mathematical Transform:</strong></li>
+<li><strong>1-Pixel Crest vs Near-Flank Contrast Training:</strong> Train out-of-fold gradient boosters strictly on <strong>exact <code>1 px</code> fault centerline positives (<code>y = 1</code>)</strong> against <strong>explicit near-flank negatives (<code>2 &lt;= d &lt;= 8 px</code>, <code>y = 0</code>) + basin negatives (<code>d &gt; 8 px</code>, <code>y = 0</code>)</strong>, eliminating the <code>3x3</code> positive dilation + <code>10 px</code> blind-zone defect of <code>scripts/run_supervised.py</code>.</li>
+<li><strong>GeoDAWN <code>090°</code> Flight-Line De-Aliasing:</strong> Compute directional North–South vs East–West gradient anisotropy ratios (<code>|d/dx| - |d/dy|</code> across <code>rtp</code>, <code>tmi</code>, <code>rad_K</code>, <code>rad_TC</code>) and tectonic strike favorability (<code>sin(strike)</code> weighting NNW–NNE Great Basin extension fabric vs <code>090°</code> E–W survey line azimuth).</li>
+<li><strong>10 m 3DEP Drainage Knickpoint ($\chi$) &amp; Bedrock Fault Continuity:</strong> Cross-correlate <code>dem10_chi</code> <code>knick_n</code> / <code>raised_n</code> river profile steps and <code>topo_10m</code> <code>curv_prof_absmax</code> / <code>aspect_coherence</code> with <code>SGMC</code> bedrock fault distance so reactivated range-front/intrabasin bedrock faults without 1 m LiDAR coverage are sharply localized.</li>
+<li><strong>Why It Catches Hidden Faults Missing from USGS/INGENIOUS:</strong></li>
+<li>Legacy USGS Qfaults miss low-throw piedmont scarps outside 1 m LiDAR polygons, mislocate range-front traces by <code>100–400 m</code> (Hermant et al., 2025), and omit pre-Quaternary <code>SGMC</code> bedrock faults whose subtle Holocene reactivation is expressed only as aligned <code>10 m</code> stream knickpoints (<code>knick_n</code>) and <code>topo_10m</code> profile curvature breaks.</li>
+<li><strong>Named Non-Fault Mimic Processes &amp; Anti-Mimic Suppression:</strong></li>
+<li><em>GeoDAWN <code>090°</code> airborne traverse micro-leveling seams (<code>200–400 m</code> spacing)</em> $\to$ suppressed explicitly by <code>E-W</code> directional gradient ratio channels so trees penalize single-domain <code>090°</code> magnetic/radiometric stripes;</li>
+<li><em>Incised dendritic fan channels (<code>chan_n</code> high without <code>raised_n</code> block uplift or magnetic/gravity step)</em> $\to$ separated cleanly using simultaneous <code>chan_n</code> vs <code>raised_n</code> + <code>iso_grav_anom_hg</code>.</li>
+<li><strong>Difference from Prior Implementations:</strong> Fixes <code>run_supervised.py</code>'s <code>3x3</code> positive dilation, adds <code>10 m</code> 3DEP + $\chi$ knickpoints + <code>SGMC</code> bedrock faults + explicit <code>090°</code> flight-line de-aliasing features.</li>
+<li><strong>Expected <code>DTI</code> Gain vs Compute Cost:</strong> <strong>Very High (<code>Rank 2</code>)</strong> — <code>~25 s</code> feature build + <code>~35 s</code> 4-fold OOF training.</li>
+</ul>
+<hr />
+<h3>Rank 3 — <code>H3</code>: Exact Dual-Expectation <code>(p_hat, q_hat)</code> Bayes-Calibrated Submodular Dinkelbach <code>300 m</code> Dot Selection</h3>
+<ul>
+<li><strong>Specific Layers / Inputs Used:</strong> Out-of-fold calibrated trace crest probability $\hat{p}(x) = \mathbb{P}(x \in G \mid \mathcal{F})$ mapped via exact Bayes prior shift to unseen target density $\pi_{\text{target}}$, paired with OOF-calibrated 300 m max-kernel proximity $\hat{q}(x) = \mathbb{E}[\max_{v \in G} K(x, v) \mid \mathcal{F}] \in [0, 1]$ and <code>B = 2 px</code> (<code>&lt;= 200 m</code>) fold-visible halo pruning.</li>
+<li><strong>Physical / Mathematical Signature:</strong></li>
+<li>Maximizes the exact global fractional <code>DTI</code> expectation $\widehat{\mathrm{DTI}}(S) = \widehat{T}(S) / (0.8\,P_{\text{tot}} + 0.2\,\widehat{T}(S) + 0.2\,\widehat{F}(S))$ via Minoux lazy-greedy submodular updates over all 29 kernel offsets $K(\delta) &gt; 0$, halting automatically at the exact unimodal Dinkelbach optimum $t^\star = \arg\max_t \widehat{\mathrm{DTI}}(S_t)$ where $\Delta\widehat{T}(u \mid S) = \frac{0.2\,\tau\,(1 - \hat{q}(u))}{1 - 0.2\,\tau}$.</li>
+<li><strong>Why It Improves Hidden-Fault Recovery Under <code>DTI</code>:</strong></li>
+<li>Automatically places dots every <code>~3.0 px</code> (<code>300 m</code>) along linear fault crests, tightens spacing to <code>2.0 px</code> on high-certainty fault junctions/stepovers, widens spacing to <code>3.5–4.0 px</code> on lower-probability tips, suppresses isolated <code>1 px</code> speckle blobs whose <code>29-cell</code> integral $\Delta\widehat{T}$ is small even if peak $\hat{p}$ is moderate, and chooses total dot budget without arbitrary magic constants.</li>
+<li><strong>Named Mimic / Failure Mode &amp; Mitigation:</strong> Over-confident uncalibrated tree probabilities inflating $\widehat{q}(u)$ $\to$ mitigated via out-of-fold isotonic calibration against held-out fold segments before Bayes prior scaling.</li>
+<li><strong>Difference from Prior Implementations:</strong> Fixes <code>src/gems85/emitter.py</code>'s <code>sum_delta p * k &gt; 1</code> bug (<code>3x</code> over-estimation of <code>q_hat</code> on 1 px lines) and replaces isotropic <code>d = 2.8</code> Poisson thinning.</li>
+<li><strong>Expected <code>DTI</code> Gain vs Compute Cost:</strong> <strong>High (<code>Rank 3</code>)</strong> — <code>~2.5 s</code> per full-footprint emission pass.</li>
+</ul>
+<hr />
+<h3>Rank 4 — <code>H4</code>: Fold-Safe Structural Tip Propagation, En-Echelon Stepover &amp; Relay-Ramp Continuation Field</h3>
+<ul>
+<li><strong>Specific Layers Used:</strong> Fold-visible fault mask <code>visible_faults</code> (<code>fold['visible']</code> on holdout; <code>grid.catalogue</code> on full inference) combined with local strike vectors, <code>iso_grav_anom_hg</code>, <code>rtp</code>, and <code>topo_10m</code>.</li>
+<li><strong>Physical Signature &amp; Mathematical Transform:</strong></li>
+<li>Extract skeleton endpoints (tips) and local tangent unit vectors $(t_y, t_x)$ strictly from <code>visible_faults</code> (never seeing withheld components or the <code>3 px</code> buffer!). Propagate an anisotropic forward-cone tip field along $(t_y, t_x)$ over <code>0.4–5.0 km</code> plus multi-scale fault-corridor density (<code>sigma = 8, 20, 45 px</code>) capturing <code>0.5–4.5 km</code> synthetic/antithetic en-echelon relay ramps and horsetail splays (Faulds &amp; Hinz, 2015), while hard-masking <code>d &lt;= 2 px</code> around <code>visible_faults</code>.</li>
+<li><strong>Why It Catches Hidden Faults Missing from USGS/INGENIOUS:</strong></li>
+<li>Normal faults grow by segment linkage across <code>0.5–4 km</code> relay ramps and horse-tail tip splays whose displacement tapers below field-mapping thresholds (Hermant et al., 2025).</li>
+<li><strong>Named Non-Fault Mimic Process:</strong> Artificial truncation of mapped traces at quadrangle boundaries or playa edges where the fault actually steps across an aseismic sediment-filled graben $\to$ gated by requiring multi-physics geophysical/thermal corroboration rather than blind straight-line extrapolation.</li>
+<li><strong>Difference from Prior Implementations:</strong> Strictly fold-safe inside <code>gems57-pooled-hide-v2</code> (recomputed independently for each fold's <code>visible</code> mask, verified by per-feature leakage canary <code>AUC &lt;= 0.90</code>).</li>
+<li><strong>Expected <code>DTI</code> Gain vs Compute Cost:</strong> <strong>Moderate-High (<code>Rank 4</code>)</strong> — <code>~2 s</code> per unique visible mask.</li>
+</ul>
+<hr />
+<h3>Rank 5 — <code>H5</code>: Hydrothermal Magnetite-Destruction + Potassic Alteration Coupled Juxtaposition (<code>GEO-Pb</code> + <code>K/Th</code> vs <code>TMI</code> Trough)</h3>
+<ul>
+<li><strong>Specific Layers Used:</strong> <code>GEO-Pb</code> across-strike covariance-whitened 10-band step crests (<code>src/gems85/geopb.py</code> <code>geopb_r3_L15</code>, <code>geopb_r6_L25</code>, <code>geopb_crest</code>) fused with hydrothermal magnetite-destruction / adularia-sericite alteration contrast (<code>rad_K / Th</code> high (<code>ext_ThK</code> inverted / <code>rad_K - rad_Th</code>) coincident with local high-pass <code>rtp</code> trough + high MT <code>cond_surf</code>).</li>
+<li><strong>Why It Catches Hidden Faults Missing from USGS/INGENIOUS:</strong> Upwelling boiling fluids oxidize titanomagnetite to non-magnetic pyrite/hematite (<code>rtp</code> trough along the fault damage zone!) while precipitating potassium feldspar / illite (<code>K</code> enrichment relative to immobile <code>Th</code>) and smectite clay caps (<code>cond_surf</code> high) across concealed basement steps (<code>GEO-Pb</code>).</li>
+<li><strong>Named Non-Fault Mimic Process:</strong> Potassium-rich rhyolite ash-flow tuff contacts and evaporitic potash playas (<code>rad_K</code> high across broad closed basins) $\to$ suppressed by across-strike <code>1.5–2.5 km</code> linear persistence and multi-model diversity (<code>LightGBM</code> + <code>HistGradientBoosting</code>).</li>
+<li><strong>Expected <code>DTI</code> Gain vs Compute Cost:</strong> <strong>Moderate (<code>Rank 5</code>)</strong> — leverages fast cached <code>GEO-Pb</code> step crests + <code>~15 s</code> diverse GBDT ensemble.</li>
+</ul>
+<hr />
+<h2>3. Pre-Registered 3-Experiment Ladder (<code>&lt;= 3</code> Experiments Total)</h2>
+<p><strong>[MEASURED, <code>evidence/instrument_calibration.json</code>]</strong></p>
+<table>
+<thead>
+<tr>
+<th>artifact</th>
+<th style="text-align: right;">live [OWNER-REPORT]</th>
+<th style="text-align: right;">this repo's hide-and-recover holdout</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>h33-h33-2-b2</code> (the family's best)</td>
+<td style="text-align: right;"><strong>0.2778</strong></td>
+<td style="text-align: right;"><strong>0.00479</strong></td>
+</tr>
+<tr>
+<td><code>h27-4-solo-d28</code></td>
+<td style="text-align: right;">0.2708</td>
+<td style="text-align: right;">0.03452</td>
+</tr>
+<tr>
+<td><code>gate_ortho_w0.25-40k</code></td>
+<td style="text-align: right;">0.2376</td>
+<td style="text-align: right;"><strong>0.00000</strong></td>
+</tr>
+<tr>
+<td><code>dotted-h19-5-d2-8</code></td>
+<td style="text-align: right;">0.2600</td>
+<td style="text-align: right;">0.11153</td>
+</tr>
+<tr>
+<td><code>Hedge-v2</code></td>
+<td style="text-align: right;">0.1563</td>
+<td style="text-align: right;">0.31769</td>
+</tr>
+</tbody>
+</table>
+<p>The ordering is inverted, and the cause is mechanical rather than scientific. The three artifacts
+at the top were built with a <strong>hard exclusion of every pixel within 2–3 px of the <em>full</em> catalogue</strong>.
+A hide-and-recover holdout then hides some catalogue segments and asks the artifact to find them —
+but the artifact has already deleted every dot near them. Its score is forced to ≈ 0 <strong>by its own
+success condition</strong>. <code>Hedge-v2</code>, which emits 60,988 dots directly on the catalogue, is rewarded
+for exactly the behaviour the live scorer punishes.</p>
+<p><strong>Consequence, and the fix applied here:</strong> a hide-and-recover holdout can only be used to evaluate
+a <strong>rule</strong>, re-executed per fold with only that fold's <em>visible</em> catalogue — never a finished
+raster. <code>src/gems85/holdout.py::score_folds</code> takes a callable and rebuilds per fold for exactly
+this reason; <code>score_static</code> exists only for the duplicate check and carries this warning. Every
+sibling repository that reported a Spearman ρ between a static-artifact holdout and the live board
+was measuring this artifact, not an instrument. Logged as <strong>IR-85-001</strong>.</p>
+<hr />
+<h1>Appendix — hypotheses from the duplex lane (arena/29a39923)</h1>
+<h1>Five candidate geological hypotheses (Lane H85) — ranked before any results</h1>
+<p>Evidence classes: <strong>[OFFICIAL]</strong> organizer/USGS source · <strong>[MEASURED]</strong> computed in
+this checkout from sha256-pinned bytes · <strong>[ORGANIZER-CONFIRMED]</strong> score copied
+from the brief's submission-page receipts · <strong>[CLAIM]</strong> unverified report.</p>
+<p>Fleet context that constrains novelty: the registry in the brief contains ~60 scored
+files. The organizer-confirmed leaders are all emissions of one multi-physics ridge
+family (H19-5 → d1.5 0.2477 → d2.8 0.2600 → h33-2-b2 0.2778). Pure single-physics
+novelties scored far lower (lidar-scarp dotted 0.0430–0.1461, HGB top-k 0.0286–0.0424,
+hydro-conduit fusion 0.0558, Radon piedmont 0.0669–0.1627, Euler threads 0.0355–0.0984).
+In the template repo (GEMSDOE32, <code>evidence/h33_holdout.json</code>) the label-free
+orientation/drainage/scarp surfaces scored catalogue-holdout DTI 0.019–0.034 against
+the d2.8 control's 0.098 — <strong>[MEASURED]</strong> there. Any new candidate must therefore be
+judged against the control on the same instrument, which is what this repo does.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">rank</th>
+<th>id</th>
+<th>layers (official band names)</th>
+<th>physical signature</th>
+<th>why it should catch a catalogue-missing fault</th>
+<th>differs from prior fleet code</th>
+<th>non-fault mimic (named)</th>
+<th>cost</th>
+<th>data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td><strong>H85-A fold-proper supervised detector</strong></td>
+<td>all 19 official bands + template derived channels (curvature, Hessian ridges, relief, top-hat, potential-field edges, structure-tensor coherence/strike) + LiDAR scarp u8 (12) + GeoDAWN rad u8 (4) + extensions u8 (4)</td>
+<td>HistGradientBoosting probability that a pixel lies on a fault trace, trained per spatial fold on <em>visible</em> faults only, with <strong>no catalogue-derived channel</strong> (no distance-to-catalogue, the fleet's known AUC-1.0 leak); emitted by metric-exact max-coverage greedy</td>
+<td>The catalogue is demonstrably incomplete (official problem statement: expert-labelled new faults exist). A detector trained on what mapped faults <em>look like</em> across all physics generalises to unmapped traces with the same expression; fold-proper training + whole-segment holdout measures exactly that transfer</td>
+<td>Prior HGB files (6GEMSDOE 0.0286, GEMSDOE43 0.0424) used top-k/threshold emission; no fleet file combines fold-proper segment-blocked training, support-confined max-coverage emission, and the ≤2 px catalogue-halo prune at the 37,654-dot operating point</td>
+<td>Young alluvial / cultural lineaments (roads, canals, field boundaries) that share multi-physics line expression with faults</td>
+<td>~15 min CPU</td>
+<td>none (all hash-pinned in-repo mirrors)</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td><strong>H85-B multi-physics orientation consensus</strong></td>
+<td><code>det_elev</code>, <code>rtp</code>, <code>tmi</code>, <code>iso_grav_anom</code>, <code>cond_surf</code></td>
+<td>Both-polarity Hessian line response per physics × orientation order parameter R = |mean w·e^{2iθ}|; a pixel scores only if independent physics agree a line exists <em>and</em> agree on strike</td>
+<td>Single-dataset mapping under-represents faults that are weak in every field but <em>coherently oriented</em> in several</td>
+<td>Template H33-A implemented this surface but it was never emitted alone at the winner's operating point with halo prune, and never scored by an organizer; this is its first protocol-holdout emission test here</td>
+<td>Lithologic contact trains / shorelines straight in several fields at once</td>
+<td>~2 min CPU</td>
+<td>none</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td><strong>H85-C strain-gated lineament</strong></td>
+<td><code>geod_dilaterate</code>, <code>geod_2ndinv</code>, <code>geod_shearrate</code> (gate) × Hessian lines of <code>det_elev</code>, <code>rtp</code></td>
+<td>Line geometry re-weighted by a smooth geodetic-strain gate (0.30 + 0.70·(0.5·dilatation⁺ + 0.3·second-invariant + 0.2·shear), robust-normalised)</td>
+<td>Catalogue faults include fossil structures; a <em>currently extending</em> blind fault should sit where dilatation is locally high AND a line exists. The strain bands are too smooth to locate a fault (fleet-measured: seismic/strain bands are ~constant at 300 m) — here they only re-rank line geometry</td>
+<td>No fleet lane uses the geodetic strain tensor invariants as a <em>gate</em> on line emission (sarnnpu/wing-crack lanes model tilt/wing geometry, not a dilatation gate)</td>
+<td>Basin-range range fronts inside a broad regional dilatation high (gate promotes a whole front)</td>
+<td>~1 min CPU</td>
+<td>none</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td><strong>H85-D collinear thermal-spring chains</strong></td>
+<td>GDR 1391 wellspring points (in-footprint CSV, hash-pinned): thermalclass, temp_c, geothermometers; <code>row/col</code></td>
+<td>Directional point-process line support: for each pixel, max over 16 orientations of thermally-weighted spring density along a 2 km line; require ≥3 collinear warm/hot points</td>
+<td>Geothermal upflow rises along permeable fault conduits; aligned warm springs are a <em>direct</em> vent indicator that raster-only detectors ignore, and blind faults under playa cover may show springs without any scarp</td>
+<td>GEMSDOE71 fused springs into a multi-modal stack (0.0558 ORGANIZER-CONFIRMED) but no lane emits <em>pure collinear spring-chain</em> support; would need the point table only</td>
+<td>Spring lines along valley floors / playa margins / irrigation-well alignments along roads</td>
+<td>~10 min CPU</td>
+<td>present (GDR 1391 mirror, sha256-pinned) — <strong>not run: budget = 3 experiments</strong></td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td><strong>H85-E volcanic-vent alignment</strong></td>
+<td>GDR volcanic vents CSV (672 B in-footprint extract) + <code>det_elev</code></td>
+<td>Vent-point collinearity (as H85-D) intersected with topographic line response</td>
+<td>Monogenetic vent alignments mark deep crustal fractures that feed geothermal systems</td>
+<td>No fleet lane uses vent alignments</td>
+<td>Vent chains along a single eruptive fissure that is not a through-going fault</td>
+<td>~10 min CPU</td>
+<td>present but sparse (tens of points) — <strong>not run: sparse + budget</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Decision rule (declared in advance):</strong> promote the best experiment only if its
+pooled HOLDOUT-DTI (<code>gems85-pooled-hide-v1</code>, 24,885 withheld positives across
+8 cells) beats the best registry control scored on the identical holdout <em>and</em>
+the uniqueness gate passes. Otherwise the verdict is <strong>negative</strong> and the file is
+labelled DO NOT SUBMIT — a negative result is a deliverable.</p>
+<p><strong>External-data candidates considered and rejected as not-ready:</strong> sub-km USGS
+FDSN seismicity lineaments — source is free/official
+(https://earthquake.usgs.gov/fdsnws/event/1/query) but egress from this sandbox
+is restricted to github/pypi hosts (verified in the template repo; re-verified
+here by the restore path using only <code>gh api</code>), so it is named, not proposed as viable.</p>
+<hr />
+<h1>Session <code>arena/41c29ae2-gemsdoe85</code> — Five Pre-Implementation Hypotheses (<code>H85-HJCD</code>)</h1>
+<p><strong>Preregistered BEFORE any model code modification or holdout execution (2026-10-22 UTC).</strong></p>
+<p>Why prior <code>GEMSDOE85</code> lanes stalled at <code>0.09838</code> (<code>GEO-Pb</code>, 90k dots; <code>0.07475</code> @ 37,654) and
+<code>0.09837</code> (<code>E1_supervised_hgb</code> on <code>gems85-pooled-hide-v1</code>, losing to <code>CTRL_d28 = 0.102305</code>):
+1. <strong>Metric-target mismatch (<code>pixel binary</code> vs <code>300 m triangular kernel</code>):</strong> Prior supervised learners trained on 1-pixel binary rasterized traces (<code>y(x) in {0,1}</code>, positive rate <code>1.18%</code>), mislabeling ~85% of the true <code>300 m</code> scoring halo (<code>k(100 m) = 0.667</code>, <code>k(141 m) = 0.529</code>) as negative class <code>0</code> right where dipping (~60 deg) normal-fault gravity/magnetic/MT offsets peak down-dip in the hanging wall.
+2. <strong>Unused geothermal-vent &amp; shallow-probe discovery datasets:</strong> <code>GEO-Pb</code> had <code>AUC = 0.5034</code> (<code>p = 0.213</code>, statistically indistinguishable from coin flip) at geothermal vents because hydrothermal smectite/illite argillic alteration and magnetite destruction erase crisp fresh-rock magnetic steps while creating <strong>direct fluid-conduit anomalies</strong> in temperature, silica/cation geothermometry, 2-m shallow temperature probes, and siliceous sinter / tufa mounds.
+3. <strong>Coarse strike quantization (<code>8</code> strikes = <code>22.5 deg</code>) &amp; discarded active-tectonic bands:</strong> <code>GEO-Pb</code> discarded <code>training_features.tif</code> seismicity (<code>deq_n100a15</code>, <code>ieq_n100a15</code>) and GPS strain (<code>geod_2ndinv</code>, <code>geod_shearrate</code>, <code>geod_dilaterate</code>) and coarsely quantized Basin &amp; Range (<code>N15-30E</code>) and Walker Lane (<code>N35-50W</code>) fault strikes into <code>22.5 deg</code> steps.</p>
+<h3>Five Candidate Hypotheses Ranked by Expected DTI Gain vs Implementation Cost</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Rank</th>
+<th>ID</th>
+<th>Exact Free Official Data Layers Used</th>
+<th>Targeted Physical / Geothermal Signature &amp; Transform</th>
+<th>Why It Captures Unmapped Hidden Faults Specifically</th>
+<th>Difference From ALL Existing Repo &amp; Fleet Methods</th>
+<th>Non-Fault Mimic Process</th>
+<th>Expected Gain / Cost</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;"><strong>1</strong></td>
+<td><strong><code>H85-HJCD-1</code></strong></td>
+<td><code>training_features.tif</code> (all 19 official bands incl. unlocked geodetic strain <code>[4,7,8]</code> &amp; seismicity <code>[10,16]</code>), <code>lidar_scarp_features_u8.tif</code> (12 bands, USGS 3DEP 1 m), <code>geodawn_rad_u8.tif</code> (4 bands, DOI <code>10.5066/P93LGLVQ</code>), <code>geodawn_extensions_u8.tif</code> (<code>ThK</code>, <code>UK</code>, <code>UTh</code>, <code>TMI_up150</code>)</td>
+<td><strong>16-Azimuth Covariance-Whitened Hotelling Step Juxtaposition (<code>GEO-Pb-16</code>, <code>r=300 m</code> &amp; <code>r=600 m</code>) + Exact <code>300 m</code> Kernel-Expectation Regression</strong> (<code>K_G(x) = max_{g in G}(1 - d(x,g)/300 m)_+</code>) + shallow magnetic residual (<code>TMI - TMI_up150</code>) + transtensional dilatation-shear invariant</td>
+<td>Concealed intrabasin/pediment faults offset basement density, cover thickness, and shallow volcanic sheets 100–300 m into the hanging wall without surface scarps; regressing onto <code>K_G(x)</code> matches the exact <code>300 m</code> Tversky credit surface instead of penalizing off-trace down-dip offset</td>
+<td>Upgrades <code>GEMSDOE85</code>'s unique <code>GEO-Pb</code> Hotelling step operator to <code>16</code> orientations (<code>11.25 deg</code>), unlocks the 5 discarded active-tectonic bands, and replaces pixel classification with <code>300 m</code> kernel-target regression</td>
+<td>Unfaulted depositional contacts (pinch-outs, pluton margins) and 400 m E–W GeoDAWN flight-line leveling corrugations</td>
+<td><strong>High gain / Low-Medium cost (~2 min CPU)</strong> — <strong>TESTED IN <code>EXP-1</code>, <code>EXP-2</code>, <code>EXP-3</code></strong></td>
+<td><strong>Implemented</strong></td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>2</strong></td>
+<td><strong><code>H85-HJCD-2</code></strong></td>
+<td><strong>Official DOE GDR 1391 (<code>https://gdr.openei.org/submissions/1391</code>, CC BY 4.0):</strong> (a) <code>paleo_geothermal_regional.zip</code> (<code>281</code> in-footprint sinters, silicified fault sands/breccias, tufas, explosion craters — <strong>measured <code>2.73x</code> fault lift within <code>300 m</code></strong>), (b) <code>2m_temperature_probe_INGENIOUS_regional_data.zip</code> (<code>2,782</code> in-footprint UNR/GBCGE shallow 2-m probes with background-subtracted <code>F2mDAB</code>), (c) <code>gdr_wellspring_in_footprint.csv</code> (<code>temp_c</code>, quartz/chalcedony/Na-K-Ca geothermometers); plus <strong>USGS 3DEP 10 m</strong> <code>dem10_chi_100m_i16.tif</code> (<code>step_max</code>, <code>ksn_max</code>) &amp; <code>topo_10m_derived_100m_u8.tif</code> (<code>curv_prof_absmax</code>, <code>aspect_coherence</code>, <code>dem_mean</code>)</td>
+<td><strong>Multi-Observable Blind Hydrothermal Conduit &amp; Fluvial Disequilibrium Coupling:</strong> multi-scale kernel plumes of boiling silica sinter (<code>&gt;175 C</code>), shallow 2-m <code>F2mDAB</code> thermal anomalies, geothermometry excess, conductive clay-cap (<code>cond_surf</code>), and 10 m cross-divide <code>Delta chi</code> / Lahontan bench (<code>~1,335 m</code>) coupled multiplicatively with oriented <code>GEO-Pb-16</code> / scarp structure</td>
+<td>Across the Great Basin (<code>619</code> hot/warm sites <code>&gt;3 km</code> from any mapped fault; <code>456</code> hot 2-m probes at median <code>2.6 km</code>), fluids cannot cross <code>10^-17 m^2</code> basin clay without a permeable (<code>10^-13 to 10^-11 m^2</code>) fault-valve conduit — directly pinpointing unmapped blind faults beneath dry playas and fans</td>
+<td><strong>First model in GEMSDOE85 or sibling fleet</strong> to combine UNR/GBCGE 2-m temperature probe surveys + paleo-sinter/tufa fault deposits + cross-divide <code>Delta chi</code> + <code>GEO-Pb-16</code> juxtaposition</td>
+<td>Lateral shallow aquifer outflow plumes (<code>1–3 km</code> down hydraulic gradient from upflow fault) &amp; Lake Lahontan wave-cut tufa benches</td>
+<td><strong>High gain / Low cost (~30 s CPU, verified in-sandbox via <code>60GEMSDOE</code> mirror of GDR 1391)</strong> — <strong>TESTED IN <code>EXP-1</code>, <code>EXP-2</code>, <code>EXP-3</code></strong></td>
+<td><strong>Implemented</strong></td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>3</strong></td>
+<td><strong><code>H85-HJCD-3</code></strong></td>
+<td>Strictly per-fold <strong><code>fold.visible</code> fault mask ONLY</strong> (withheld segments + <code>300 m</code> buffer stripped BEFORE any computation; zero full-catalogue leakage) + coupled <code>H85-HJCD-1/2</code> hydrothermal &amp; geophysical channels</td>
+<td><strong>Fold-Proper Crack-Tip Stress Projection, En-Echelon Relay Bridges &amp; Submodular <code>300 m</code> Dinkelbach Tversky Point-Process Emission</strong> (<code>Delta TP_300m - lambda_FP * Delta FP_300m</code> with live coverage map <code>C_S</code> and explicit fleet-overlap constraint <code>&lt;= 0.65 &lt; 0.70</code>)</td>
+<td><code>&gt;75%</code> of Great Basin geothermal systems sit in unmapped fault step-overs, horse splays, and alluvial tip continuations (Faulds &amp; Hinz 2015), where photogeologic traces artificially terminate at bedrock-alluvium contacts; submodular <code>300 m</code> coverage eliminates redundant dot overlap</td>
+<td>Combines fold-clean fracture-tip/relay fields with <code>GEO-Pb-16</code> + 2-m thermal probe / sinter conduits AND explicitly enforces <code>&lt; 0.70</code> overlap across all <code>227</code> non-saturating fleet rasters</td>
+<td>Erosional range-front sinuosity or unfaulted pediment embayments between independent fault segments</td>
+<td><strong>Very High gain / Medium cost (~4 min CPU)</strong> — <strong>TESTED IN <code>EXP-2</code> (NMS ablation) &amp; <code>EXP-3</code> (Submodular Dinkelbach)</strong></td>
+<td><strong>Implemented</strong></td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>4</strong></td>
+<td><strong><code>H85-HJCD-4</code></strong></td>
+<td><code>training_features.tif</code> (<code>tmi</code>, <code>tmi_vg</code>, <code>mag_anom</code>), <code>geodawn_extensions_u8.tif</code> (<code>TMI_up150</code>), <code>gdr_volcanic_vents_in_footprint.csv</code></td>
+<td><strong>GeoDAWN <code>400 m</code> Flight-Line Corrugation &amp; Volcanic Flow-Margin Mimic Decoupling:</strong> separate shallow residual (<code>TMI - TMI_up150</code>) from deep <code>TMI_up150</code> and volcanic-vent proximity so single-sensor magnetic spikes along <code>400 m</code> E–W flight lines or basalt flow margins are downweighted unless corroborated by gravity/topographic/thermal structure</td>
+<td>Prevents false positives over unfaulted Tertiary lava mesas and <code>400 m</code> survey leveling artifacts, preserving mass budget for true concealed faults</td>
+<td>Explicitly addresses the verified GeoDAWN Area 2 <code>400 m</code> E–W line-spacing artifact (<code>DOI: 10.5066/P93LGLVQ</code>)</td>
+<td>Dike-fed fault-controlled basalt fissures (rare true positive coincidence where a fault also erupted basalt)</td>
+<td><strong>Moderate gain / Low cost</strong> — shallow residual &amp; volcanic confounder channels folded into <code>EXP-1..3</code>; raw flight-line microleveling deferred (raw XYZ blocked)</td>
+<td><strong>Partially folded into <code>EXP-1..3</code></strong></td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>5</strong></td>
+<td><strong><code>H85-HJCD-5</code></strong></td>
+<td>Copernicus Sentinel-1 InSAR time-series (<code>https://dataspace.copernicus.eu/</code>) + USGS ANSS / NSL waveform-relocated hypocenters (<code>https://earthquake.usgs.gov/fdsnws/event/1/query</code>)</td>
+<td><strong>Sub-km InSAR Phase-Gradient Creep &amp; Relocated Microseismic Fault-Plane Tomography</strong></td>
+<td>Directly images aseismic slip/poroelastic geothermal deformation and blind seismogenic planes (e.g. Monte Cristo Range sequence) beneath featureless playas</td>
+<td>Independent dynamic crust measurements at <code>&lt;100 m</code> scale</td>
+<td>Pumping-induced agricultural/mining subsidence bowls around playa wells</td>
+<td><strong>High potential gain / Blocked in sandbox</strong> (verified egress allowlist permits <code>github.com</code>, <code>pypi.org</code>, <code>npmjs.org</code> only)</td>
+<td><strong>Documented next step (<code>[BLOCKED]</code> in sandbox)</strong></td>
+</tr>
+</tbody>
+</table>
+<hr style='border-color:#2d3748;margin:28px 0'>
+<h1>The metric, reduced — and what it says about every design choice in this repo</h1>
+<p>All formulas are transcribed from the official problem description and verified in
+<code>tests/test_metric.py</code> (11 tests, including an O(N²) brute-force transcription at 1e-9 and the
+organisers' own worked example).</p>
+<p><strong>Source:</strong> <a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/">https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/</a></p>
+<hr />
+<h2>1. The published definitions</h2>
+<pre><code>k(d) = (1 - d/R)_+ ,  R = 300 m  (= 3 pixels at the competition's 100 m resolution)
 
-g_τ(u | S) = (1 - 0.2*τ) * sum_{||v - u||_2 &lt; 3} p̂(v) * max(0, K(||v - u||_2) - c_S(v))  -  0.2*τ * (1 - q̂(u))</pre>
-  <ul>
-    <li><strong>Theorem 1 (Monotone Submodularity):</strong> Because <code>v ↦ max(0, K(||v − u||) − c_S(v))</code> is non-increasing in <code>S</code> for every cell in the exact 25-offset disk <code>{||δ||_2 &lt; 3}</code>, <code>g_τ(u | S)</code> is strictly diminishing-returns submodular, permitting an exact 1D-padded Minoux lazy-heap solver (<code>greedy_submodular_prefix</code>, bit-for-bit verified against brute force in <code>tests/test_conduit_dinkelbach.py</code>).</li>
-    <li><strong>Out-of-Fold Density Self-Calibration:</strong> On each quadrant's training region, inner 4-component OOF prefixes evaluate all candidate budgets in <code>25 ms</code> against withheld inner fault components, automatically choosing per-quadrant dot density without a single hand-tuned magic number — landing at <strong><code>37,513</code> total dots</strong> on the full footprint (<code>NW: 5,692</code>, <code>NE: 7,376</code>, <code>SW: 12,484</code>, <code>SE: 11,961</code>), matching the analytically inverted live optimum (~37.5k)!</li>
-  </ul>
-</section>
+TP_w = sum_{g in G}        max_{x : d(x,g) &lt;= R}  p(x) k(d(x,g))
+FP_w = sum_{x : p(x) &gt; 0}  p(x) [ 1 - max_{g in G} k(d(x,g)) ]
+FN_w = sum_{g in G}      [ 1 - max_{x : d(x,g) &lt;= R} p(x) k(d(x,g)) ]
 
-<section class="card">
-  <h2>2. Pre-Registered 3-Experiment Per-Quadrant &amp; Pooled Holdout Results</h2>
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>Experiment Arm</th>
-          <th>Pooled HOLDOUT-DTI</th>
-          <th>Mean Fold AUC</th>
-          <th>NW Quadrant</th>
-          <th>NE Quadrant</th>
-          <th>SW Quadrant</th>
-          <th>SE Quadrant</th>
-          <th>CV Dots</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="">
-              <td><strong>E1_structural_dinkelbach</strong><br><small>60 ch · Stage-2=False</small></td>
-              <td><strong>0.182981</strong></td>
-              <td>0.82378</td>
-              <td>0.1875 (AUC 0.841)</td>
-              <td>0.2371 (AUC 0.890)</td>
-              <td>0.1174 (AUC 0.749)</td>
-              <td>0.2134 (AUC 0.816)</td>
-              <td>32,900</td>
-            </tr><tr class="">
-              <td><strong>E2_plus_blind_hydrothermal_seismic</strong><br><small>77 ch · Stage-2=False</small></td>
-              <td><strong>0.187017</strong></td>
-              <td>0.82576</td>
-              <td>0.1784 (AUC 0.834)</td>
-              <td>0.2426 (AUC 0.894)</td>
-              <td>0.1233 (AUC 0.759)</td>
-              <td>0.2249 (AUC 0.816)</td>
-              <td>33,141</td>
-            </tr><tr class="highlight-row">
-              <td><strong>E3_full_multiphysics_diverse_crest</strong><br><small>86 ch · Stage-2=True</small></td>
-              <td><strong>0.191400</strong></td>
-              <td>0.82975</td>
-              <td>0.1943 (AUC 0.853)</td>
-              <td>0.2444 (AUC 0.890)</td>
-              <td>0.1247 (AUC 0.754)</td>
-              <td>0.2245 (AUC 0.822)</td>
-              <td>31,512</td>
-            </tr>
-      </tbody>
-    </table>
-  </div>
-  <p><strong>Top Split-Gain Channels in Winning E3 Model:</strong> <code>net_belt_6km</code> (2,971), <code>tf_ieq_100km</code> (2,623), <code>tf_geod_dilaterate</code> (2,585), <code>sgmc_dist_log</code> (2,536), <code>tf_iso_grav</code> (2,505), <code>tf_det_elev</code> (2,443), <code>tf_deq_100km</code> (2,383), <code>tf_cond_surf</code> (2,247), <code>tf_depth_base</code> (2,218), <code>tf_geod_shearrate</code> (2,199), <code>net_log_dist</code> (2,124), <code>tf_geod_2ndinv</code> (2,072), <code>topo10_dem_mean</code> (2,040), <code>well_temp_anom_s20</code> (1,964), <code>tf_iso_grav_hg</code> (1,962), <code>eq_density_s30</code> (1,911), <code>tf_mag_anom</code> (1,828), <code>topo_lineament_s3</code> (1,774).</p>
-</section>
-
-<section class="card">
-  <h2>3. Complete 86-Channel Multi-Physics Feature Architecture</h2>
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>Block</th>
-          <th>Ch</th>
-          <th>Physical Domain &amp; Zero-Leakage Construction</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>A. Structural &amp; Mimic Core</strong></td>
-          <td>52</td>
-          <td>All 19 <code>test_features.tif</code> geophysical bands + 2D FFT <code>090°</code> flight-line notched magnetics (<code>mag_notch_ew</code>, <code>mag_ew_corrug</code>) + Bouguer/magnetic multi-scale step &amp; curvature + 1 m LiDAR scarp contrast &amp; strain-favored extension strike + 10 m USGS 3DEP slope/relief/curvatures + footwall knickpoints + SGMC contact distance + Lake Lahontan <code>1,332 m</code> / <code>1,280 m</code> highstand shoreline mimic shield.</td>
-        </tr>
-        <tr>
-          <td><strong>B. Fold-Safe Visible Network</strong></td>
-          <td>8</td>
-          <td>Recomputed <strong>strictly inside each fold from <code>fold['visible']</code> only</strong> (verified byte-invariant to hidden truth in unit tests): log distance, tip proximity (<code>1.2 km</code> &amp; <code>3.0 km</code>), anisotropic strike-projected relay bridges across alluvial washes, and self-core-masked DoG rings.</td>
-        </tr>
-        <tr>
-          <td><strong>C. Blind Hydrothermal &amp; ComCat26</strong></td>
-          <td>17</td>
-          <td>Sub-km <code>1900–2026</code> USGS ComCat epicentral &amp; moment-weighted densities (<code>300 m</code>, <code>1 km</code>, <code>3 km</code>), shallow brittle upper-crust events (<code>≤12 km</code>), 8-azimuth seismic lineament bridges, GBCGE <code>2 m</code> probe temperature anomaly (<code>F2mDAB</code>), siliceous sinter vs carbonate tufa indicators, and GDR spring/well thermal anomalies.</td>
-        </tr>
-        <tr>
-          <td><strong>D. GEO-Pb Step Crest + Stage-2 Head</strong></td>
-          <td>9 + 10</td>
-          <td>Across-strike Hotelling multi-physics step crests, potassic K/magnetite-destruction alteration index, diverse <code>0.62·LightGBM + 0.38·HistGradientBoosting</code> Stage-1 ensemble, plus Stage-2 8-azimuth spatial crest skeletonizer sharpening halos onto 1-pixel fault centerlines.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<footer class="footer">
-  <strong>GEMSDOE85 · Lane H85-Conduit</strong> — Zero-Human-Gate Multi-Physics Hidden Geothermal Conduit &amp; Exact Submodular Dinkelbach-300 Pipeline.<br>
-  Shared evaluator: <code>vendor/gems57/evaluate_holdout.py</code> (<code>gems57-pooled-hide-v2</code>, unmodified SHA-256 <code>ad86640b...</code>).
-  Every score is strictly labelled <code>HOLDOUT-DTI</code> or <code>ORGANIZER-CONFIRMED</code>.
+DTI  = TP_w / (TP_w + alpha*FP_w + beta*FN_w + eps) ,   alpha = 0.2, beta = 0.8
+</code></pre>
+<p>Organisers' worked example: <code>TP_w = 3.00, FP_w = 1.89, FN_w = 2.00</code> →
+<code>3.00 / (3.00 + 0.2·1.89 + 0.8·2.00) = 0.6027</code> → published as <strong>0.60</strong>.
+<code>tests/test_metric.py::test_published_worked_example_combination</code> ✔</p>
+<p><strong>Implementation note.</strong> Both maxima are grey-scale morphological dilations with the same
+non-flat structuring element — the 29-pixel disc of radius 3 weighted by <code>k</code>. So the metric is
+computed <em>exactly</em>, in O(29·N), with no approximation. <code>kernel_offsets()</code> returns exactly 29
+offsets and <code>k(0)=1</code>, <code>k(3)=0</code>; both asserted in the tests.</p>
+<hr />
+<h2>2. Two exact identities</h2>
+<p>Writing <code>T = TP_w</code>, <code>F = FP_w</code>, <code>K = |G|</code>, <code>S = Σ_x p(x)</code>, <code>M = Σ_x p(x)·max_g k(d(x,g))</code>:</p>
+<table>
+<thead>
+<tr>
+<th>identity</th>
+<th>why</th>
+<th>test</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FN_w = K − T</code></td>
+<td>each FN term is <code>1 −</code> the same max that TP sums</td>
+<td><code>test_fn_identity_equals_K_minus_TP</code></td>
+</tr>
+<tr>
+<td><code>FP_w = S − M</code></td>
+<td>regroup the FP sum by prediction pixel</td>
+<td><code>test_fp_identity_equals_S_minus_M</code></td>
+</tr>
+</tbody>
+</table>
+<p>Substituting the first gives the <strong>design equation</strong>:</p>
+<pre><code>            T                                       1           alpha·F     beta·K
+DTI = -------------------------            &lt;=&gt;   ------- = alpha + ------- + -------
+      alpha·(T + F) + beta·K                       DTI              T           T
+</code></pre>
+<p><code>K</code> is common to every submission in a round, so <strong>ranking on the leaderboard is ranking by
+<code>T / (alpha·F + beta·K)</code> and by nothing else</strong> — not by pixel count, not by visual plausibility.</p>
+<hr />
+<h2>3. Binary predictions are optimal (why this repo ships dots, not a heat map)</h2>
+<p>Hold every pixel but <code>x</code> fixed. <code>T</code> is affine in <code>p(x)</code> on each linear piece of the <code>max</code>, and
+<code>F</code> is exactly affine in <code>p(x)</code>. A ratio of two affine functions is monotone on an interval, so
+its maximum over <code>p(x) ∈ [0,1]</code> is at an endpoint: <strong>0 or 1</strong>. Graded confidence is therefore
+weakly dominated, pixel by pixel.</p>
+<p><em>Also verified empirically:</em> <code>test_scaling_monotonicity</code> shows <code>DTI(λp)</code> is strictly increasing
+in <code>λ</code>, so there is never a reason to scale a prediction down.</p>
+<hr />
+<h2>4. The marginal rule (the only emission rule used here)</h2>
+<p>Adding mass at <code>x</code> which captures <code>t</code> of new truth-weight and wastes <code>f = 1 − k(x,G)</code>:</p>
+<pre><code>new DTI &gt; old DTI   &lt;=&gt;   t &gt; [ alpha·DTI / (1 − alpha·DTI) ] · f
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">DTI level</th>
+<th style="text-align: right;">bar on <code>t</code> per unit wasted mass</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0.08 (this repo's holdout scale)</td>
+<td style="text-align: right;">0.0163</td>
+</tr>
+<tr>
+<td style="text-align: right;">0.26</td>
+<td style="text-align: right;">0.0549</td>
+</tr>
+<tr>
+<td style="text-align: right;">0.2778</td>
+<td style="text-align: right;">0.0588</td>
+</tr>
+<tr>
+<td style="text-align: right;">0.4413 (current leader)</td>
+<td style="text-align: right;">0.0969</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Consequence that matters.</strong> The bar rises with the score you already have, so <strong>the optimal
+emitted mass is a function of the achieved DTI, and a budget tuned on a low-scoring proxy does
+not transfer to a high-scoring live board.</strong> This repo measures budget behaviour on the holdout
+but never imports the holdout's optimum directly — see <code>docs/research/budget.md</code>.</p>
+<hr />
+<h2>5. What the group's own live data says about the hidden truth set</h2>
+<p>The one <em>controlled</em> two-point experiment on the live scorer in the whole family record
+[OWNER-REPORT]: the same raster, with the 2,545 dots lying within 200 m of the mapped catalogue
+deleted.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: right;">dots</th>
+<th style="text-align: right;">live DW-Tversky</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>h27-4-solo-d28</code></td>
+<td style="text-align: right;">40,199</td>
+<td style="text-align: right;">0.2708</td>
+</tr>
+<tr>
+<td><code>h33-2-b2</code> (same file, catalogue-proximal dots deleted)</td>
+<td style="text-align: right;">37,654</td>
+<td style="text-align: right;"><strong>0.2778</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Deleted dots sat on mapped faults, so they can have carried no credit for <em>new</em> faults: <code>T</code> is
+unchanged and only <code>S</code> moves. Then <code>D₁ − D₂ = alpha·2545 = 509</code> and <code>D_i = T/DTI_i</code>, giving</p>
+<pre><code>T = 509 / (1/0.2708 − 1/0.2778) = 5,470
+D₂ = 5,470 / 0.2778 = 19,690
+K  = (D₂ − 0.2·(T + S − M)) / 0.8   ≈ 14,400      (M ≈ T/2.5 for thin dots on line truth)
+F  = S − M ≈ 35,400
+</code></pre>
+<p>So the best artifact in the family's history <strong>captures 5,470 of ≈14,400 units of hidden truth
+weight (38 %) and wastes 94 % of its dots</strong>, and the denominator is 8,187 FP-tax against 11,520
+<code>beta·K</code>. Reproduced by <code>scripts/solve_truth_scale.py</code>.</p>
+<p>Two readings follow, and they set this session's whole agenda:</p>
+<ol>
+<li><strong>Catalogue-proximal mass is measurably negative live.</strong> That single deletion was worth
+   +0.0070. Every emission in this repo therefore hard-excludes a 2-pixel halo around the
+   catalogue, and the submission validator <em>checks</em> it.</li>
+<li><strong>The emission lever is spent.</strong> Fitting the family's own thinning cascade
+   (121,131 → 0.1922; 60,069 → 0.2477; 44,090 → 0.2600) to <code>T(n) = c·n^γ</code> gives γ = 0.229 and an
+   optimum near 20,000 px worth <strong>DTI ≈ 0.280</strong> — three thousandths above what the family already
+   has. Only a field with higher credit <em>per emitted pixel</em> can move this project, which is why
+   the lane chosen this session changes the detector statistic rather than the emission rule.</li>
+</ol></div>
+<footer>
+  Generated deterministically from machine-verified JSON receipts in <code>evidence/</code> and
+  <code>registry/</code> (timestamp <code>2026-10-23T05:13:48.882696+00:00</code>). Every score is explicitly
+  tagged <code>HOLDOUT-DTI</code> or <code>ORGANIZER-CONFIRMED</code>. Repository:
+  <a href="https://github.com/buffedlizard55-lab/GEMSDOE85">buffedlizard55-lab/GEMSDOE85</a>.
 </footer>
-</main>
-<script>
-async function copyText(id, btn) {
-  const txt = document.getElementById(id).innerText.trim();
-  await navigator.clipboard.writeText(txt);
-  const old = btn.innerText;
-  btn.innerText = "Copied!";
-  setTimeout(() => { btn.innerText = old; }, 1800);
-}
-
-async function verifyTifInBrowser(url, expectedSha, expectedBytes) {
-  const out = document.getElementById("browser-verify-output");
-  out.style.display = "block";
-  out.textContent = "Fetching " + url + " and running WebCrypto SHA-256 + TIFF binary IFD check...";
-  try {
-    const res = await fetch(url);
-    if (!res.ok) throw new Error("HTTP " + res.status);
-    const buf = await res.arrayBuffer();
-    const u8 = new Uint8Array(buf);
-    const hashBuf = await crypto.subtle.digest("SHA-256", buf);
-    const hex = Array.from(new Uint8Array(hashBuf)).map(b => b.toString(16).padStart(2, "0")).join("");
-    const le = (u8[0] === 0x49 && u8[1] === 0x49 && u8[2] === 42 && u8[3] === 0);
-    const ok = (buf.byteLength === expectedBytes) && (hex === expectedSha) && le;
-    out.textContent = [
-      ok ? "BROWSER LIVE BYTE VERIFICATION: PASS (100% EXACT MATCH)" : "MISMATCH DETECTED",
-      "  TIFF Byte Order : " + (le ? "II* (IEEE Little-Endian Classic GeoTIFF, magic 0x002A)" : "Unexpected header"),
-      "  Exact File Size : " + buf.byteLength.toLocaleString() + " bytes (expected " + expectedBytes.toLocaleString() + ")",
-      "  Computed SHA256 : " + hex,
-      "  Pinned SHA256   : " + expectedSha,
-      "  Portal Status   : EPSG:32611 | 3730x3292 | float32 | [0.0, 1.0] | 0 NaN | 0 Inf | SAFE TO UPLOAD"
-    ].join("\n");
-  } catch (err) {
-    out.textContent = "Note: Open via HTTP server or GitHub Pages to run live fetch verification (" + err.message + "). Local CLI check: sha256sum " + url;
-  }
-}
-
-
-</script>
+</div>
 </body>
 </html>
