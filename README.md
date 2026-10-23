@@ -1,5 +1,19 @@
 # GEMSDOE85 — H85-GAPVENT: 57-Channel 10 m 3DEP + Fluvial χ + Blind Geothermal Vent Kernel Regressor
 
+<!-- CURRENT STATE — the only block this session edits. Everything below is unchanged. -->
+## CURRENT STATE (session `arena/59608071-gemsdoe85`, 2026-10-23)
+
+| field | value |
+|---|---|
+| **Parent (R0)** | `h33-h33-2-b2` (GEMSDOE32) — 37,654 unit dots, 0 on the catalogue, min 2.236 px from it. Rebuilt from its recipe **pixel-exactly** this session (IR-86-001). |
+| **Best receipt** | **none.** 0.2778 is a CLAIM (owner-reported); no submission-page receipt exists in this repository (IR-86-004). |
+| **TOP_PUBLIC** | **unfilled by the human** (asked 2026-10-23, not supplied). The 0.4413 cited in §6 below is a leaderboard high noted on 2026-10-22 and is *not* this session's target. |
+| **Slots left** | **3 of 3 this week, 0 used** (human, 2026-10-23). |
+| **Next 3 slots** | 1) `releases/h33-h33-2-b2-prune3-20261023-175fefcf-zeros.tif` (control: ≥3 px exclusion only) · 2) `releases/h33-h33-2-b2-snapd2t20-20261023-f9c328a5-zeros.tif` (SNAP τ 0.20, 7.32 % moved) · 3) reserved — `snapd2t00` only if slot 2 is ≥ +0.010, else CONCENTRATION. Details and decision rules: [`SLOT_PLAN.md`](SLOT_PLAN.md), upload sheet: [`docs/SUBMIT.md`](docs/SUBMIT.md). |
+| **This session's verdict** | SNAP has a **non-positive expectation** on this parent: its credited dots already sit on truth (k̄ = 1.00 from the parent's own back-solve), so a ≤2 px move can only lose credit. The catalogue hide-and-recover proxy is *adversarial* here (parent 0.004789, variants 0.000000) and was not used to choose anything. |
+
+<!-- END CURRENT STATE -->
+
 **DOE GEMS Prize · DrivenData competition #306 · current primary: session `arena/7ded4c0a-gemsdoe85` (2026-10-23 UTC)**
 
 A self-driving, fully auditable pipeline that restores 28 SHA-256-pinned public datasets and 17 historical control rasters, pre-registers 5 ranked concealed-fault hypotheses, trains a 57-channel multi-physics continuous 300 m kernel-target regressor (`H85-GAPVENT`) with Positive-Unlabeled surveyed-corridor debiasing (`IR-85-023`), validates on a 4-fold spatially-blocked hide-and-recover holdout (`gems85-holdout-v1.0.0`, `60,988` withheld positives), verifies uniqueness against all 17 fleet registry rasters, validates the written GeoTIFF against 17 format checks + `vendor/gems57/gates.py` **with zero human intervention**, and publishes a GitHub Pages site (`docs/`) with one-click download at the very top.
