@@ -94,3 +94,19 @@ The prune ladder, the 100–400 m USGS-vs-imagery offset argument and the live n
 0.2778 come from the owner's earlier sessions and the brief. This session's own contributions are the
 fractional-rung decomposition of the 2–3 px ring, and the measurement that SNAP, CONCENTRATION and
 RELIEF cannot be built on this parent at its 2.8 px packing rung.
+
+## Concurrent sessions merged to `main` during this PR (preserved verbatim)
+
+## 2026-10-23 — arena/30dcc7f0-gemsdoe85 (current verification turn)
+
+- AI read the local manifest, ledger, slot plan, and existing R0 recipe; restored only the hash-pinned
+  H19-5, d2.8/solo, R0, labels, and sample-template inputs from their GitHub mirrors into ignored
+  `data/` storage. No competition-site or leaderboard page was accessed.
+- AI installed the locked Python dependencies, verified the relevant manifest and lineage hashes,
+  rebuilt R0 (37,654 dots) and matched both pinned R0 SHA-256 values exactly, re-read/validated all
+  three existing PRUNE release pairs, and ran the targeted metric/lineage tests (31 passed).
+- AI did not build another raster: the PRUNE axis was selected by the earlier AI session, not assigned
+  by the human in this brief, and all three corresponding axis/value experiments already exist in the
+  ledger. AI added the README CURRENT STATE block and recorded this decision in IRREGULARITIES.md.
+- Human has not supplied an AXIS, dated TOP_PUBLIC, slot availability, or receipt in this turn. No
+  competition submission was made; no slot use is claimed.

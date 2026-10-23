@@ -1,9 +1,11 @@
-# SLOT_PLAN — 3 scored submissions per rolling week, ONE entity, deadline 2026-12-03 (provisional)
+# SLOT_PLAN — provisional, human authorization required
 
 Parent for every slot: **R0 = `h33-h33-2-b2`** (`e5eb6e7e`, 37,654 dots, live **0.2778 CLAIM** —
 owner-reported, no receipt here). `TOP_PUBLIC` is **unfilled** (human reads it off the leaderboard with
 a date; no other target number is valid). Slots left this rolling week: **unknown** — 3/week is a
 ceiling, not a target. Every file below is BUILT and gated; none is scored.
+**AXIS was not assigned by the human this session** (asked; skipped). PRUNE was chosen from the
+measurements in IR-V3-02; confirm or overrule before spending a slot.
 
 ## The ladder now has five measured rungs plus three finer ones
 
@@ -19,7 +21,7 @@ ceiling, not a target. Every file below is BUILT and gated; none is scored.
 Two live/CLAIM rungs already anchor the curve: `≤1 px` gave **+0.0108** and `≤2 px` gave **+0.0070**
 (owner-reported, no receipts in this repository). Everything below is relative to that anchor.
 
-## Next 3 slots, in order
+## Next three candidate slots (only if human confirms AXIS = PRUNE and quota permits)
 
 | # | upload | change vs R0 | what the result changes | prediction |
 |---|---|---|---|---|
@@ -34,7 +36,7 @@ A live change under 0.01 is **no evidence** (public chunks only; private chunks 
 expert-expanded labels may differ). Only a submission-page receipt counts, and only the human can
 produce one.
 
-## Calendar (deadline provisional, human must confirm)
+## Calendar and decision gates
 
 - **wk 1 (Oct 23–29):** slots 1–3 above.
 - **wk 2 (Oct 30–Nov 5):** if the shadow extends past 3 px, sweep 4.5 / 5 / 6 px at fine spacing;
@@ -47,7 +49,7 @@ produce one.
   41 calendar days from Oct 23 to Dec 3, not six full weeks. Quota per
   https://docs.nlr.gov/docs/fy26osti/96647.pdf (not fetched this session).
 
-## Better axes for later sessions — proposed, NOT built, NOT assigned
+## Better axes for later human assignment (not built)
 
 1. **SNAP-AFTER-REPACK.** The pure SNAP of the brief is impossible on R0 (0 movable dots at any
    separation floor ≥ 2.2 px — measured). The testable version re-thins the parent's own 121k-px

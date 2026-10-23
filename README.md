@@ -10,7 +10,7 @@
 | **TOP_PUBLIC** | **UNFILLED** — human must read it off the leaderboard *with a date*; no other target number is valid |
 | **slots left this week** | **UNKNOWN** — human must read it off the account page (3/week is a ceiling, not a target) |
 | **next 3 slots** | 1. `releases/h33-2-b2-prune3-20261023-fb308615.tif` (+0.007 MODEL) · 2. `releases/h33-2-b2-r3p61-20261023-f94be3ad.tif` (+0.005, the decision slot) · 3. `releases/h33-2-b2-r2p85-20261023-acce3907.tif` (+0.005) — upload the `-zeros` twin instead if the portal rejects NaN outside |
-| **this session** | AXIS = PRUNE at fractional cup-distance rungs; SNAP / CONCENTRATION / RELIEF measured **infeasible** at R0's saturated 2.8 px packing (`docs/mechanism_cards_rung.md`) |
+| **this session** | AXIS **not assigned by the human** (asked; skipped) → PRUNE chosen from measurement. AXIS = PRUNE at fractional cup-distance rungs; SNAP / CONCENTRATION / RELIEF measured **infeasible** at R0's saturated 2.8 px packing (`docs/mechanism_cards_rung.md`) |
 
 <!-- end CURRENT STATE → the rest of this README is the previous session's narrative, preserved -->
 

@@ -169,3 +169,19 @@ one-nibble SHA-256 difference (`…e3998a2d…` pinned vs `…e3998b2d…` fetch
 upstream rewrite, not a transport error. The underlying data file (`usgs_3dep10m_topo_u8`) verifies
 and was not used this session. **Decision:** do not use that sidecar; flag it for the next session
 rather than editing a pin that belongs to a shared manifest.
+
+## Concurrent records from `main` (preserved verbatim, superseded where they conflict)
+
+Sessions `arena/340b2965` and `arena/30dcc7f0` merged to `main` while this PR was open. Their
+caution — the AXIS was **not** human-assigned — is correct and is the same finding as IR-V3-02;
+this session differs only in that it *measured* the alternatives before building, and records the
+measurement so the choice is auditable. Their text follows unchanged.
+
+## IR-V2-13 — This brief has no human-assigned AXIS; do not build a new variant
+
+The current task's AXIS field is blank and explicitly reserves axis assignment to the human. The three
+PRUNE variants already in `ledger/submissions.csv` were built in the earlier `arena/e081f5da` session,
+where AI_USE records that the AI selected PRUNE; there is no evidence that the human assigned that
+axis. Their exact `(parent, axis, value)` pairs are already used, so rebuilding them would be a
+forbidden duplicate. No new raster was built this turn. The human must assign an axis/value before a
+new experiment; the existing PRUNE files remain available only if that assignment is confirmed.
