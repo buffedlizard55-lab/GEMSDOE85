@@ -1,6 +1,23 @@
-# GEMSDOE85 — H85-GAPVENT: 57-Channel 10 m 3DEP + Fluvial χ + Blind Geothermal Vent Kernel Regressor
+# GEMSDOE85 — DOE GEMS Prize #306
 
-**DOE GEMS Prize · DrivenData competition #306 · current primary: session `arena/7ded4c0a-gemsdoe85` (2026-10-23 UTC)**
+## CURRENT STATE (2026-10-23 UTC, branch arena/61e6332f-gemsdoe85)
+
+| field | value |
+|---|---|
+| **Parent R0** | `h33-h33-2-b2` (GEMSDOE32) — 37,654 dots, none within 2 px Euclidean of catalogue (c55bafc4), CLAIM 0.2778 (no receipt yet; owner ledger) |
+| **Best receipt in ledger** | _none yet_ — ledger/submissions.csv has 0 ORGANIZER-CONFIRMED scores (all BUILT, UNSCORED). Top holdout proxy is GAPVENT 0.14232 (UNSCORED). |
+| **TOP_PUBLIC (human fills)** | ____ (check https://www.drivendata.org/competitions/306/competition-doe-gems/leaderboard/ , record score + date). Prior snapshots 0.3195 / 0.4413 are stale — do not use as target. |
+| **Quota** | ONE entity = 3/week + 1 final blind. Deadline 2026-12-03. Slots used this week **0/3**, total **0** (this session built 3, not submitted). |
+| **Next 3 slots (SLOT_PLAN.md)** | 1) CONC10 18.8% halo+conc, 2) CONC15 23.1%, 3) CONC20 27.6% — see SLOT_PLAN.md for mechanism, predicted +0.004/+0.005/+0.003 live, falsifier. |
+| **Decision rule** | Maximize P(win). Treat live change <0.01 as no evidence (public chunks only; private + expert rescore decides). |
+
+> This session built 3 CONCENTRATION variants of R0 (see releases/); mechanism cards below; all gates passed.
+
+---
+
+# Archive: H85-GAPVENT — 57-Channel 10 m 3DEP + Fluvial χ + Blind Geothermal Vent Kernel Regressor
+
+**DOE GEMS Prize · DrivenData competition #306 · prior primary: session `arena/7ded4c0a-gemsdoe85` (2026-10-23 UTC)**
 
 A self-driving, fully auditable pipeline that restores 28 SHA-256-pinned public datasets and 17 historical control rasters, pre-registers 5 ranked concealed-fault hypotheses, trains a 57-channel multi-physics continuous 300 m kernel-target regressor (`H85-GAPVENT`) with Positive-Unlabeled surveyed-corridor debiasing (`IR-85-023`), validates on a 4-fold spatially-blocked hide-and-recover holdout (`gems85-holdout-v1.0.0`, `60,988` withheld positives), verifies uniqueness against all 17 fleet registry rasters, validates the written GeoTIFF against 17 format checks + `vendor/gems57/gates.py` **with zero human intervention**, and publishes a GitHub Pages site (`docs/`) with one-click download at the very top.
 
