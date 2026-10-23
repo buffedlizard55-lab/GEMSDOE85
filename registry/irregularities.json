@@ -112,6 +112,20 @@
       "status": "acknowledged",
       "finding": "Raw 3px dot overlap of the session primary vs this repo's own superseded 90,000-dot GEO-Pb file is 0.79 (chance coverage 0.44, lift 1.81, exact pixel overlap 0.26). Vs every comparable-budget (<=60k) own-repo file overlap <=0.41; vs the 17-raster registry max comparable overlap 0.42 (h33 winner: 0.379, Spearman 0.065).",
       "action_taken": "Disclosed in evidence/duplicate_check_ownrepo_session.json and the run card. Dense-file raw overlap is the IR-85-002 artifact; candidate is a distinct field and dot set, not a rename."
+    },
+    {
+      "id": "IR-85-018",
+      "severity": "critical",
+      "status": "fixed-on-branch",
+      "finding": "Current site entry pages and README promoted historical TIFFs as OK TO DOWNLOAD AND SUBMIT while the lane was unassigned, the transformed cache was unavailable, and the binding literal saturation certificate blocked all nonempty candidates. Old tests also asserted this unsafe PASS state.",
+      "action_taken": "Fail-closed website and checker now require an assigned lane, available pinned cache, no binding saturation blocker, and an explicitly authorizing current run card. Historical prediction links are deactivated in published pages; existing bytes remain preserved for audit. Current preflight card is negative; no new TIFF, experiment, or submission slot was used."
+    },
+    {
+      "id": "IR-85-019",
+      "severity": "high",
+      "status": "open",
+      "finding": "The prior saturation certificate names witness data/raw/learning/registry-saturation-witness.tif, while registry/learning_manifest.json and scripts/restore_learning.py target data/learning/registry-saturation-witness.tif. The actual witness is absent locally, so the prior measurement is binding by AGENTS.md but was not freshly re-opened in this review.",
+      "action_taken": "Preflight now preserves the prior certificate, marks local re-verification false, reports the path mismatch, and blocks submission. Resolve the manifest/certificate provenance before any future attempt to verify or change the saturation result."
     }
   ]
 }

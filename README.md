@@ -8,7 +8,7 @@ No chance-corrected exemption is authorized by the standing prompt. No method la
 
 - **Current executive summary:** [submission status](docs/index.html) · [how to submit](docs/executive-summary.html).
 - **Authoritative current card:** [evidence/run_card.json](evidence/run_card.json) (negative preflight; no current HOLDOUT-DTI).
-- **Research and three-pass review:** [2026-10-23 review](research/session-20261023-review.md).
+- **Research and three-pass review:** [2026-10-23 review](research/session-20261023-review.md) · [supplementary ranked hypotheses and official-source review](research/current-session-hypotheses-2026-10-23.md).
 - Historical TIFFs remain solely for reproducibility; they are not unique-cleared submission deliverables.
 - H33's reported result has no authenticated receipt here; a higher score is not established.
 - The standing brief and full quoted prompt remain below; read them at every session start.
@@ -24,8 +24,7 @@ python -m venv .venv
 ```
 
 A green CI verifies contracts and honest blocked presentation; **it does not authorize a submission**.
-Official non-GitHub sources cannot be re-fetched under this environment's outbound allowlist.
-Mirrored data hashes establish consistency, not organizer authentication. No weekly slot used.
+This review fetched official USGS 3DEP and GDR-1391 documentation pages for hypothesis provenance, but downloaded no external raster dataset and obtained no DrivenData account receipt. Shell-based outbound data access is restricted; mirrored hashes establish consistency, not organizer authentication. No weekly slot used.
 
 ---
 

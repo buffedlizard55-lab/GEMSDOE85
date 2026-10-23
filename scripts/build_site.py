@@ -73,7 +73,8 @@ sentinels, infinities, or in-footprint NaNs must all be checked. Use a conservat
     research = '''<h2>Research and evidence boundaries</h2><p>The task is fault discovery, not direct proof of geothermal vents, reservoir productivity, or usable heat.</p>
 <p>The ranked hypothesis review, layers, physical signatures, mimics and validation plan are in the
 <a href="https://github.com/buffedlizard55-lab/GEMSDOE85/blob/arena/e35c6a93-gemsdoe85/research/session-20261023-review.md">session research record</a>.
-No hypothesis was selected as a lane or evaluated this session. No current HOLDOUT-DTI or organizer-confirmed score is reported.</p>'''
+No hypothesis was selected as a lane or evaluated this session. No current HOLDOUT-DTI or organizer-confirmed score is reported.</p>
+<p>Supplementary candidate set and source review (proposals only): <a href="research/current-session-hypotheses-2026-10-23.md">geochemical, wavelet-phase, conductive-termination, and conditional drainage hypotheses</a>.</p>'''
     sources = '''<h2>Official sources for review</h2><p>Non-GitHub official hosts cannot be independently re-fetched from this sandbox's outbound allowlist.
 These are source links, not claims of fresh verification. Owner mirrors prove pinned-byte consistency, not organizer authentication.</p><ul>
 <li><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/">Organizer problem description and metric</a></li>
