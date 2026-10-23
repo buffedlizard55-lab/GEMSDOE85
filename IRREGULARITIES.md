@@ -22,3 +22,18 @@ The deadline is provisional until the human checks https://www.drivendata.org/co
 
 ## IR-V2-06 — Shared byte integrity check exposes a pre-existing mismatch
 12/13 files match `registry/template_pin.json`; `vendor/gems57/uniqueness.py` does not (expected `1c5094b814277ae801ccea6a47cf744429cffcdc10f9cc79f229d5fc44a8df95`, actual `6364b26ada45c405d9f76402d218c2344d1af7265fc7fbdcea7113a489e96a32`). No vendor file was edited and no uniqueness code was used as a gate. Treat the old shared-tool integrity claim as unverified until an upstream fix/verified repin; do not silently fork or change thresholds. This does not invalidate the independently checked input hashes or metric-algebra tests.
+
+---
+
+# Addendum — PRUNE session (arena/85dc0b4a), 2026-10-23
+
+Resolutions (human decisions recorded 2026-10-23): AXIS=PRUNE assigned; content-exact rebuild accepted as clearing the start gate; untouched dots keep parent >2 px exclusions (moot for the ≤3 px arms built); human states 3 slots free this week and no R0 variant previously built/submitted. IR-V2-01/02/03 are therefore *partially* resolved as follows; IR-V2-04 (public-repo rasters, terms unchecked) and IR-V2-06 (pre-existing vendor pin mismatch, unused as a gate) stand unchanged. TOP_PUBLIC (value+date), total slot usage, receipts, and deadline confirmation are still missing.
+
+## IR-V2-07 — rebuild is content-exact, not byte-exact (decision made, residual risk noted)
+Applying the recorded GEMSDOE32 recipe (audit description + removal rebuilt R1-flankB2 at commit `780a5a53`, https://github.com/buffedlizard55-lab/GEMSDOE32) to pinned h27-4 bytes reproduces R0's 37,654-dot mask exactly (array equality; writer content digest `e5eb6e7e` matches R0's filename tag; `h27-4 == d2.8 & d>1` also exact). Re-encoded GeoTIFF bytes differ (204,802 vs 219,065 B; identical profile/tags/values) — GDAL/zlib version drift, so the brief's file-sha256 match is not claimed. All variant hashes are reproducible only under the recorded encoder env (rasterio 1.4.3/GDAL 3.9.3); mask content digests are the version-independent identity (`docs/SUBMIT.md`).
+
+## IR-V2-08 — Brief's PRUNE refill is infeasible at parent geometry; ≤1 px arm already exists
+"Refill to hold the count" cannot be done at the parent's >2.8 px spacing inside the H19-5 support: only **611** pool pixels exist (need 2,171). The built refill uses >2.0 px (realized min 2.24 px) and d1.5-thinning selection order — a declared spacing/ranking confounder, not a pure count control (see mechanism cards). The ≤1 px arm is pinned `h27-4` itself (CLAIM 0.2708); it was not rebuilt (exact repeat). The parent's continuous ranking field exists in no pinned file (H19-5/H19-4 are binary), so MASS and ranking-based refills remain blocked until it is recovered and verified against the d2.8 dot set.
+
+## IR-V2-09 — Ledger seeded from CLAIMs; still not a complete cross-session history
+`ledger/submissions.csv` now holds the 5 hash-verified lineage artifacts (scores copied from `registry/scored_artifacts.json`, label CLAIM, receipt N) + 3 BUILT rows. The other 12 registry artifacts and any non-lineage session submissions are not transcribed; dedupe of new builds was checked against all 17 registry SHA-256s + human's no-prior-R0-variant statement, not against a complete submission-page history. Supply `ledger/raw_paste.txt`/receipts to close this.

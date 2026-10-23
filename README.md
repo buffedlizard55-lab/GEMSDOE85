@@ -1,20 +1,20 @@
 # GEMSDOE85 — H85-GAPVENT: 57-Channel 10 m 3DEP + Fluvial χ + Blind Geothermal Vent Kernel Regressor
 
 <!-- CURRENT STATE START -->
-## CURRENT STATE — v2 / 2026-10-23 / BLOCKED
+## CURRENT STATE — v2 / 2026-10-23 / PRUNE VARIANTS BUILT, AWAITING HUMAN SLOTS
 
-This block supersedes historical recommendations below for the current session. No site redesign or prior candidate promotion.
+This block supersedes historical recommendations below. No site redesign or prior candidate (incl. H85-GAPVENT) is promoted by this session.
 
 | Field | Current state |
 |---|---|
-| Parent | R0 `h33-h33-2-b2`; 37,654 unit dots; restored SHA-256 `c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9`; **not recipe-rebuilt** |
-| Best receipt | None in ledger; 0.2778 is **CLAIM**, not RECEIPT |
-| TOP_PUBLIC | Unknown; human must supply value and observation date |
-| Slots left | Unknown weekly / total; zero used by this session |
-| AXIS | Unassigned; no variants built |
-| Next 3 slots | Conditional MASS −10%, CONCENTRATION 10%, SNAP radius 2 px; proposals only, blocked on rebuild/history/assignment and exclusion clarification |
+| Parent | R0 `h33-h33-2-b2`; 37,654 unit dots; **content-exact rebuild verified** (`R0 == h27-4 & d_cat>2px`, digest `e5eb6e7e`; file SHA-256 `c55bafc4…ab6fa9` restored+verified; encoder byte-identity not claimed — human approved content-exact gate 2026-10-23) |
+| Best receipt | None in ledger; parent 0.2778 is **CLAIM**, not RECEIPT |
+| TOP_PUBLIC | Not supplied (value + date needed); no other target number is valid |
+| Slots left | 3 this week (human, 2026-10-23); total usage unknown; agent used 0, submitted nothing |
+| AXIS (human-assigned) | **PRUNE** — 3 variants BUILT + format-validated (local `releases/`, git-ignored; regenerate per `docs/SUBMIT.md`) |
+| Next 3 slots | 1) `pruneD3pure` 35,483 dots, predicted +0.006 (MODEL) · 2) `pruneD3refill` 37,654, +0.002 (MODEL) · 3) `pruneD3ge` 36,043, +0.0045 (MODEL), conditional — see [SLOT_PLAN.md](SLOT_PLAN.md) |
 
-Input audit: 3/28 main-manifest entries verified, 25 missing; pinned R0 separately restored and verified. R0 includes 1,611 dots <3 px from the catalogue, requiring resolution before a non-PRUNE edit. The header-only ledger is incomplete, not evidence that no experiments exist. See [IRREGULARITIES.md](IRREGULARITIES.md), [SLOT_PLAN.md](SLOT_PLAN.md), [AI_USE.md](AI_USE.md) and [docs/SUBMIT.md](docs/SUBMIT.md). Deadline 2026-12-03 is provisional pending human confirmation. Never supply credentials; no login, scraping or submission automation is authorized.
+Mechanism cards: `evidence/v2-prune-mechanism-cards.md`; builds/validator receipts: `evidence/v2-prune-builds.json`; report-only PROXY: `evidence/v2-prune-proxy.json` (never a gate). Ledger seeded with the 5 hash-verified lineage CLAIMs + 3 BUILT rows (`ledger/submissions.csv`); human confirmed no R0 variant was previously built/submitted in any session. Deadline 2026-12-03 provisional pending human confirmation. Never supply credentials; no login, scraping or submission automation.
 <!-- CURRENT STATE END -->
 
 **DOE GEMS Prize · DrivenData competition #306 · current primary: session `arena/7ded4c0a-gemsdoe85` (2026-10-23 UTC)**
