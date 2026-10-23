@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Geothermal Vent Discovery Knowledge Base — GEMSDOE85</title>
+<style>
+:root{--bg:#0b1017;--panel:#141b24;--panel2:#1a2330;--line:#2d3748;--fg:#e6edf3;--mut:#94a3b8;
+--acc:#38bdf8;--acc-solid:#0284c7;--ok:#22c55e;--ok-bg:#0c2918;--warn:#eab308;--bad:#ef4444}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1100px;margin:0 auto;padding:0 22px 84px}
+header{border-bottom:1px solid var(--line);background:#06090f;position:sticky;top:0;z-index:20}
+header .wrap{padding:14px 22px;display:flex;gap:18px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.brand{font-weight:800;font-size:17px;letter-spacing:.3px;color:#fff}
+nav{display:flex;flex-wrap:wrap;gap:16px}
+nav a{color:var(--mut);font-size:14px;font-weight:500}
+nav a.on{color:#fff;font-weight:700;border-bottom:2px solid var(--acc);padding-bottom:2px}
+h1{font-size:31px;line-height:1.24;margin:30px 0 10px}
+h2{font-size:22px;margin:38px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+h3{font-size:17px;margin:24px 0 8px}
+p,li{color:#cbd5e1}
+.hero{background:linear-gradient(145deg,#0f2a1d 0%,#111c2b 65%,#0d1420 100%);
+border:2px solid var(--ok);border-radius:16px;padding:26px 28px;margin:24px 0;
+box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.badge-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.badge-pass{display:inline-flex;align-items:center;gap:8px;background:var(--ok);color:#04130a;
+font-weight:800;font-size:13px;padding:5px 12px;border-radius:999px;letter-spacing:.4px;text-transform:uppercase}
+.badge-meta{display:inline-flex;align-items:center;border:1px solid var(--line);background:var(--panel2);
+color:var(--fg);font-size:12.5px;font-weight:600;padding:4px 11px;border-radius:999px}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0 14px}
+.dl-primary{display:inline-flex;align-items:center;gap:10px;background:var(--ok);color:#04130a;
+font-size:18px;font-weight:800;padding:15px 24px;border-radius:11px;text-decoration:none}
+.dl-primary:hover{filter:brightness(1.08);text-decoration:none}
+.dl-secondary{display:inline-flex;align-items:center;gap:8px;background:var(--panel2);
+border:1px solid var(--acc);color:var(--fg);font-size:15px;font-weight:700;padding:14px 20px;border-radius:11px}
+.dl-secondary:hover{background:#223042;text-decoration:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px;margin:18px 0}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
+.kpi .v{font-size:25px;font-weight:800;color:#fff;font-variant-numeric:tabular-nums}
+.kpi .l{color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+.kpi .s{color:#86efac;font-size:12.5px;margin-top:4px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:16px 0}
+.good{border-left:4px solid var(--ok);background:var(--ok-bg);padding:13px 16px;border-radius:0 10px 10px 0;margin:16px 0}
+.note{border-left:4px solid var(--warn);background:#221c0c;padding:13px 16px;border-radius:0 10px 10px 0;margin:16px 0}
+code{background:#1e293b;border:1px solid var(--line);border-radius:5px;padding:1px 6px;
+font-size:13px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#f1f5f9}
+pre{background:#0f172a;border:1px solid var(--line);border-radius:10px;padding:14px;overflow-x:auto;font-size:13px}
+pre code{background:none;border:none;padding:0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:14px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+th{background:#1a2433;font-weight:700;color:#f8fafc}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;border:1px solid}
+.t-ok{color:#4ade80;border-color:#22c55e;background:#0c2918}
+.t-info{color:#7dd3fc;border-color:#38bdf8;background:#0c2233}
+.t-warn{color:#fde047;border-color:#eab308;background:#26200b}
+ol.steps{counter-reset:s;list-style:none;padding:0}
+ol.steps>li{counter-increment:s;position:relative;padding:14px 0 14px 50px;border-bottom:1px solid var(--line)}
+ol.steps>li::before{content:counter(s);position:absolute;left:0;top:14px;width:32px;height:32px;
+border-radius:50%;background:var(--acc-solid);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
+footer{color:var(--mut);font-size:13px;border-top:1px solid var(--line);margin-top:52px;padding-top:18px}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;word-break:break-all}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <span class="brand">GEMSDOE85 · Lane H85-HJCD · OK TO DOWNLOAD AND SUBMIT</span>
+    <nav><a href="index.html" class="">Submission &amp; Results</a><a href="executive-summary.html" class="">Executive Summary &amp; How to Submit</a><a href="method.html" class="">PhD Analysis &amp; Hypotheses</a><a href="data.html" class="">Verified Sources &amp; Irregularities</a><a href="knowledge.html" class="on">Geothermal Vent Knowledge Base</a></nav>
+  </div>
+</header>
+<div class="wrap">
+<div class="card"><h1>Geothermal Vent &amp; Blind-Fault Conduit Discovery in the Great Basin — Reusable Scientific Knowledge Base</h1>
+<p><strong>Scope.</strong> What is physically established about hidden geothermal upflow and unmapped fault permeability in the northwestern Great Basin (DOE GEMS study area, EPSG:32611, <code>3730 × 3292</code> at <code>100 m</code>), what is <strong>directly measured in this repository</strong>, and how those physical signatures translate into positive holdout DTI gains under the competition's <code>300 m</code> (<code>3 px</code>) triangular Tversky kernel (<code>alpha = 0.2</code>, <code>beta = 0.8</code>).</p>
+<p><strong>Source discipline.</strong> Every statement carries an explicit provenance tag:
+- <code>[MEASURED-HERE]</code> — computed directly from SHA-256-pinned data on disk in <code>/home/user/GEMSDOE85</code> with pure stdlib + <code>numpy</code>/<code>scipy</code>/<code>rasterio</code> (zero external <code>pandas</code> dependency).
+- <code>[VERIFIED-OFFICIAL]</code> — verified directly line-by-line during this session from official agency pages/documents (<code>drivendata.org</code>, <code>docs.nlr.gov/docs/fy26osti/96647.pdf</code>, <code>gdr.openei.org/submissions/1391</code>, <code>usgs.gov</code> GeoDAWN).
+- <code>[PUBLISHED]</code> — peer-reviewed structural geology / Great Basin geothermal literature (Faulds &amp; Hinz 2015; Sibson 1990; Whipple et al. 2017; Willett et al. 2014).</p>
+<hr />
+<h2>1. Why Geothermal Upflow Targets Unmapped Fault Conduits Rather Than Mapped Main Scarps</h2>
+<p>Great Basin hydrothermal systems rarely possess shallow magmatic chambers (<code>only 21 Quaternary volcanic vents</code> lie inside the entire <code>51,674 km²</code> survey footprint <code>[MEASURED-HERE]</code>). Instead, meteoric fluids circulate to <code>3–6 km</code> depth within high-heat-flow crust and ascend narrowly where <strong>fault-valve permeability</strong> (<code>Sibson 1990</code>) stays propped open against active WNW–ESE Basin-and-Range extension (<code>Faulds &amp; Hinz 2015</code>) <code>[PUBLISHED]</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Structural setting</th>
+<th>Why permeability stays open (<code>[PUBLISHED]</code>)</th>
+<th>Why standard USGS QFFD / INGENIOUS maps miss it (<code>[PUBLISHED] + [MEASURED-HERE]</code>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dilational relay ramps / en-échelon step-overs</strong></td>
+<td>Displacement transfers across <code>1–8 km</code> step-overs via dense secondary normal faults &amp; tensile vein networks instead of a single tall master scarp</td>
+<td>Individual relay splays have <code>&lt; 0.5–1.5 m</code> throw across unconsolidated fan gravel or playa silt, falling below 1:24,000 aerial-photo scarp mapping thresholds</td>
+</tr>
+<tr>
+<td><strong>Horsetail fault tips &amp; terminations</strong></td>
+<td>Crack-tip tensile stress quadrants (<code>sigma_xx</code> dilatation) maintain open vertical fracture pipes</td>
+<td>Throw decays continuously to zero toward fault terminations, burying the outer <code>1–4 km</code> tip damage zone beneath Holocene alluvium</td>
+</tr>
+<tr>
+<td><strong>Silica-sealed fossil fault-valve conduits</strong></td>
+<td>Episodic co-seismic boiling precipitates opal-A -&gt; chalcedony sinters &amp; silicified fault breccias at the surface outlet, shifting active upflow into adjacent splays</td>
+<td>Once sealed, surface scarp relief erodes while indurated siliceous sinter/tufa mounds persist for <code>10^4–10^5 yr</code> directly over the buried conduit</td>
+</tr>
+<tr>
+<td><strong>Blind basin-floor outflows (<code>2-m</code> temperature probes)</strong></td>
+<td>Upwelling thermal water rises along buried intrabasin faults to the water table, generating shallow conductive anomalies (<code>F2mDAB &gt;= +2 °C</code>)</td>
+<td>Zero surface topographic break across active playa / alluvial-flat evaporites</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>2. Empirical Measurements Across All Four Public Geothermal &amp; 3DEP Layers in <code>GEMSDOE85</code> <code>[MEASURED-HERE]</code></h2>
+<h3>2.1 Exact Public Catalogue Inventory (<code>existing_faults.tif</code> vs <code>labels.tif</code>)</h3>
+<p>Direct full-array comparison (<code>src/gems85/hjcd.py</code>, resolving <code>IR-85-010</code>):
+- Grid shape: <strong><code>3730 × 3292</code></strong> (<code>12,279,160</code> total cells; <strong><code>5,167,373</code></strong> finite in-footprint cells = <code>51,673.73 km²</code>).
+- <code>existing_faults.tif == 1</code>: <strong><code>60,988</code> pixels</strong> (<code>1.1803%</code> of footprint).
+- <code>labels.tif == 1</code>: <strong><code>60,988</code> pixels</strong> — <strong>pixel-for-pixel identical</strong> (<code>np.array_equal(existing_faults == 1, labels == 1) == True</code>). Every withheld segment in Phase 1 test and Phase 2 expert update is scored strictly outside <code>existing_faults.tif == 1</code>.</p>
+<h3>2.2 Finding A — Paleo-Geothermal Sinter &amp; Tufa Deposits (<code>paleo_geothermal_regional.zip</code>, DOE GDR 1391, CC-BY 4.0)</h3>
+<p>Parsed pure-stdlib from <code>data/external/paleo_geothermal_regional.zip</code> (<code>src/gems85/hydrothermal.py</code>):
+- <strong>Regional records:</strong> <code>709</code> deposits; <strong>in-footprint records:</strong> <strong><code>281</code> deposits</strong> (<code>86</code> tufa, <code>73</code> silica-cemented sand, <code>50</code> siliceous sinter, <code>36</code> travertine, <code>13</code> hydrothermal alteration, <code>10</code> phreatic explosion craters, <code>5</code> native sulfur, <code>2</code> silicified fault breccia, <code>6</code> undifferentiated).
+- <strong>Direct 300 m scoring-kernel enrichment:</strong> <strong><code>8.90%</code></strong> of paleo-vents fall within the exact <strong><code>300 m</code> (<code>3 px</code>)</strong> competition scoring kernel of an already-mapped fault versus <strong><code>3.26%</code></strong> for uniform random in-footprint cells — a <strong><code>2.73×</code> empirical lift right at the scoring radius</strong>, rising to <strong><code>24.56%</code></strong> within <code>1 km</code> (<code>~2.0×</code> lift).
+- <strong>Crucial unmapped discovery target:</strong> <strong><code>256 of 281</code> (<code>91.1%</code>)</strong> sit <strong>outside <code>300 m</code></strong> of any mapped fault in <code>existing_faults.tif</code>. Because siliceous sinter (<code>SiO2</code> precipitation requiring reservoir temperatures <code>&gt; 175 °C</code>) cannot form without a deep bedrock fault conduit reaching the surface, non-Lahontan sinter/breccia mounds outside mapped scarps directly pinpoint unmapped hydrothermal fault outlets.
+- <strong>Physical non-fault mimic controlled in features:</strong> Pleistocene <strong>Lake Lahontan (<code>~1,335 m</code> highstand)</strong> shoreline wave-cut tufa benches (<code>lahontan_1335m_prox = exp(-((elev - 1335)/32)^2)</code> explicitly included so gradient-boosted trees down-weight shoreline tufas relative to high-elevation siliceous sinters!).</p>
+<h3>2.3 Finding B — UNR / GBCGE Shallow 2-Metre Temperature Probe Surveys (<code>2m_temperature_probe_INGENIOUS_regional_data.zip</code>, DOE GDR 1391, CC-BY 4.0)</h3>
+<ul>
+<li><strong>Regional stations:</strong> <code>3,800</code> probes across hidden-system prospect grids; <strong>in-footprint stations:</strong> <strong><code>2,782</code> stations</strong>, of which <strong><code>456</code> stations</strong> record background-detrended shallow temperature anomalies <strong><code>F2mDAB &gt;= +2.0 °C</code></strong> (<code>max &gt; +25 °C</code>).</li>
+<li>Crucially, <code>probe2m_survey_dens_s10</code> is paired alongside <code>probe2m_dab_s5</code> and <code>probe2m_dab_s15</code> so the learner distinguishes <strong>true positive thermal anomalies within a survey grid</strong> from <strong>survey selection bias</strong> (cold background stations inside the exact same survey grid yield explicit negative contrast).</li>
+</ul>
+<h3>2.4 Finding C — Thermal Well/Spring Geothermometry (<code>gdr_wellspring_in_footprint.csv</code>, <code>dist_known_fault_px</code> Banned)</h3>
+<ul>
+<li><strong>Records parsed:</strong> <code>27,092</code> fluid analyses (<code>2,060</code> unique hot/warm cells inside footprint; <code>619</code> hot/warm sites sit <code>&gt; 3 km</code> from any mapped fault, up to <code>296.5 °C</code> cation geothermometer temperature).</li>
+<li><strong>Leakage prevention (<code>BANNED_COLUMNS</code>):</strong> Both <code>gdr_wellspring_in_footprint.csv</code> and <code>gdr_volcanic_vents_in_footprint.csv</code> carry a pre-joined <code>dist_known_fault_px</code> column in their upstream CSV schema. <code>src/gems85/hydrothermal.py</code> hard-bans <code>BANNED_COLUMNS = {"dist_known_fault_px"}</code> in code and enforces this with automated unit tests (<code>tests/test_hjcd.py</code>) plus single-feature holdout AUC canaries (<code>max AUC = 0.75985 &lt;= 0.90</code> across all <code>112</code> features).</li>
+<li><strong>Orthogonality to 8-strike <code>GEO-Pb</code>:</strong> Pure <code>GEO-Pb-8</code> achieves Mann–Whitney <code>AUC = 0.5034</code> (<code>p = 0.213</code>) on hot/warm spring locations — statistically orthogonal to hydrothermal fluid flow — confirming that geothermal upflow brings genuinely independent fault information unseen by potential-field step filters alone.</li>
+</ul>
+<h3>2.5 Finding D — 12/16-Strike <code>GEO-Pb-16</code> + USGS 3DEP <code>10 m</code> Cross-Divide $\chi$ &amp; Asymmetric Piedmont Hinges</h3>
+<ul>
+<li>On an integer lattice, radius <code>r = 3 px</code> realizes only <code>8</code> distinct step orientations (<code>22.5°</code> strike gaps), aliasing NNE/NNW Walker Lane vs Humboldt structural trends. Adding exact lattice rings <code>NORMALS_R4_12</code> (<code>12</code> unique orientations at <code>r = 4</code>) and <code>NORMALS_R6_16</code> (<code>16</code> unique orientations at <code>r = 6</code>) raises blind topographic step <code>AUC</code> on withheld faults from <code>~0.562</code> to <strong><code>0.60067</code></strong>, and asymmetric piedmont hinge inflection reaches <strong><code>0.61936</code></strong> without touching a single fault pixel.</li>
+<li><strong>Measured blind holdout breakthrough:</strong> Even with <strong>zero fault catalogue input at test time</strong>, <code>EXP1_hjcd_blind_phys_nms</code> beats both <code>CTRL_d28</code> and fold-proper <code>H33-2-B2</code> (<code>0.2778</code> live winner rule):</li>
+<li><code>gems57-pooled-hide-v2</code> (<code>11,321</code> withheld positives): <strong><code>HOLDOUT-DTI = 0.104076</code></strong> vs <code>CTRL_h33_2_b2_foldproper = 0.094613</code> and <code>CTRL_d28 = 0.091888</code>.</li>
+<li><code>gems85-holdout-v1.0.0</code> (<code>60,988</code> positives across 4 spatial folds): <strong><code>HOLDOUT-DTI = 0.131399</code></strong> vs <code>CTRL_d28 = 0.111529</code> (<code>+17.8%</code>) and <code>CTRL_geopb8_90k = 0.094943</code> (<code>+38.4%</code>).</li>
+<li>When coupled with strictly fold-visible fracture continuation and opposing half-beam geometric-mean relay bridges (<code>sqrt(B^+ * B^-)</code>), <code>EXP3_hjcd_submod_dinkelbach</code> reaches <strong><code>HOLDOUT-DTI = 0.196461</code></strong> (<code>95% CI [0.176165, 0.216681]</code>), <strong>more than doubling <code>H33-2-B2</code> (<code>+0.101848</code>, <code>+107.6%</code>)</strong> at virtually identical dot budget (<code>37,288</code> vs <code>35,212</code> / <code>37,656</code> dots).</li>
+</ul>
+<hr />
+<h2>3. Verified Official Data &amp; Competition Sources <code>[VERIFIED-OFFICIAL]</code></h2>
+<table>
+<thead>
+<tr>
+<th>Official source</th>
+<th>Verified URL / DOI</th>
+<th>License / Competition Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DrivenData Competition #306 — DOE GEMS</td>
+<td><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/">https://www.drivendata.org/competitions/306/competition-doe-gems/</a></td>
+<td>Active (<code>#1 xiaofanhu 0.4413</code>, <code>#2 cfld__ 0.3904</code>, <code>#3 Batik Shirt Brothers 0.3904</code>, <code>#4 BrandenKMurray 0.3713</code>, <code>#5 No Fault of Our Own 0.3539</code>, verified <code>2026-10-22</code>)</td>
+</tr>
+<tr>
+<td>DrivenData #306 Problem Description &amp; Exact DTI Formula</td>
+<td><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/">https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/</a></td>
+<td><code>EPSG:32611</code>, <code>100 m</code>, <code>float32 in [0, 1]</code>, <code>alpha=0.2, beta=0.8, R=300 m</code></td>
+</tr>
+<tr>
+<td>Official DOE / NLR Complete Prize Rules (OSTI #96647)</td>
+<td><a href="https://docs.nlr.gov/docs/fy26osti/96647.pdf">https://docs.nlr.gov/docs/fy26osti/96647.pdf</a></td>
+<td><code>$50K</code> Phase 1 + <code>$250K</code> Phase 2; <code>3</code> subs/week; external public data &amp; generative AI allowed with disclosure</td>
+</tr>
+<tr>
+<td>DOE GDR Submission 1391 — INGENIOUS Great Basin Regional Compilation</td>
+<td><a href="https://gdr.openei.org/submissions/1391">https://gdr.openei.org/submissions/1391</a> (<code>DOI: 10.15121/1881483</code>)</td>
+<td><strong>CC BY 4.0</strong> (free open public license; attribution included)</td>
+</tr>
+<tr>
+<td>USGS GeoDAWN Airborne Magnetic &amp; Radiometric Survey (Glen &amp; Earney 2024)</td>
+<td><a href="https://www.usgs.gov/data/geodawn-airborne-magnetic-and-radiometric-surveys-northwestern-great-basin-nevada-and">https://www.usgs.gov/data/geodawn-airborne-magnetic-and-radiometric-surveys-northwestern-great-basin-nevada-and</a> (<code>DOI: 10.5066/P93LGLVQ</code>)</td>
+<td><strong>CC0 1.0 Public Domain</strong> (<code>200 m</code> E–W lines Area 1; <code>400 m</code> E–W lines Area 2)</td>
+</tr>
+<tr>
+<td>USGS 3D Elevation Program (3DEP) <code>1/3</code> arc-second (<code>~10 m</code>) DEM</td>
+<td><a href="https://www.usgs.gov/3d-elevation-program">https://www.usgs.gov/3d-elevation-program</a></td>
+<td><strong>U.S. Public Domain</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>4. Pure-Stdlib + NumPy/SciPy Reproducibility Snippet (Zero <code>pandas</code> Dependency — Fixes <code>IR-85-014</code>)</h2>
+<pre><code class="language-python">import sys
+from pathlib import Path
+import numpy as np
+from scipy import ndimage as ndi
+sys.path.insert(0, &quot;src&quot;)
+from gems85 import grid, hydrothermal
+
+fp, cat = grid.footprint(), grid.catalogue()
+assert int(cat.sum()) == 60_988  # exact mapped fault count in both labels.tif &amp; existing_faults.tif
+
+paleo_f, paleo_stats = hydrothermal.load_paleo_geothermal_fields(Path(&quot;data/external&quot;), fp)
+probe_f, probe_stats = hydrothermal.load_2m_probe_fields(Path(&quot;data/external&quot;), fp)
+spring_f, spring_stats = hydrothermal.load_wellspring_and_volcanic_fields(Path(&quot;data/external&quot;), fp)
+
+print(&quot;Paleo-vents in footprint:&quot;, paleo_stats)     # 281 sites (86 tufa, 50 sinter, ...)
+print(&quot;2-m probes in footprint :&quot;, probe_stats)     # 2,782 probes, 456 &gt;= +2.0 C
+print(&quot;Hot/warm spring cells   :&quot;, spring_stats)    # 2,060 hot/warm cells, dist_known_fault_px banned
+</code></pre></div>
+<footer>
+  Generated deterministically from machine-verified JSON receipts in <code>evidence/</code> and
+  <code>registry/</code> (timestamp <code>2026-10-23T05:13:48.882696+00:00</code>). Every score is explicitly
+  tagged <code>HOLDOUT-DTI</code> or <code>ORGANIZER-CONFIRMED</code>. Repository:
+  <a href="https://github.com/buffedlizard55-lab/GEMSDOE85">buffedlizard55-lab/GEMSDOE85</a>.
+</footer>
+</div>
+</body>
+</html>

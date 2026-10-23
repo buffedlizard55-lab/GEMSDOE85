@@ -1,0 +1,242 @@
+{
+  "generated_utc": "2026-10-23T05:13:48.882696+00:00",
+  "tif_path": "docs/downloads/gemsdoe85-hjcd-ventbridge-submod-zeros.tif",
+  "zip_path": "docs/downloads/gemsdoe85-hjcd-ventbridge-submod-zeros.zip",
+  "tif_bytes": 110277,
+  "zip_bytes": 72791,
+  "tif_sha256": "61ef04376a55169786b96423114394db85b7aaadf3d298d3c75b7b90022da109",
+  "zip_sha256": "c7d9b605917795e5bc1b7dbe7e09248aff7c811ddffaa7ef6f37a039e9e19520",
+  "submission_name": "gemsdoe85-hjcd-ventbridge-submod-20261022-zeros",
+  "submission_note": "H85-HJCD: GDR1391 2m-T + sinter vents + 3DEP chi + GEO-Pb-16 + submodular 300m Dinkelbach emitter (B=2, zeros)",
+  "note_length": 110,
+  "gems85_validator": {
+    "path": "/home/user/GEMSDOE85/docs/downloads/gemsdoe85-hjcd-ventbridge-submod-zeros.tif",
+    "sha256": "61ef04376a55169786b96423114394db85b7aaadf3d298d3c75b7b90022da109",
+    "bytes": 110277,
+    "mode": "zeros",
+    "passed": true,
+    "checks": {
+      "file_exists": true,
+      "single_band": true,
+      "dtype_float32": true,
+      "shape_3730x3292": true,
+      "crs_epsg_32611": true,
+      "transform_matches_template": true,
+      "resolution_100m": true,
+      "no_nan_inside_footprint": true,
+      "no_inf_inside_footprint": true,
+      "values_in_0_1_inside_footprint": true,
+      "all_finite_whole_raster": true,
+      "values_in_0_1_whole_raster": true,
+      "outside_footprint_is_zero": true,
+      "no_nodata_tag": true,
+      "has_positive_predictions": true,
+      "no_prediction_outside_footprint": true,
+      "zero_mass_within_2px_of_catalogue": true
+    },
+    "stats": {
+      "emitting_pixels": 21334,
+      "prediction_mass": 21334.0,
+      "min_inside": 0.0,
+      "max_inside": 1.0,
+      "unique_values_inside": 2,
+      "footprint_pixels": 5167373,
+      "on_catalogue_pixels": 0,
+      "nodata_tag": null
+    }
+  },
+  "gems57_validator": {
+    "file": "/home/user/GEMSDOE85/docs/downloads/gemsdoe85-hjcd-ventbridge-submod-zeros.tif",
+    "bytes": 110277,
+    "sha256": "61ef04376a55169786b96423114394db85b7aaadf3d298d3c75b7b90022da109",
+    "meta": {
+      "crs": "EPSG:32611",
+      "shape": [
+        3730,
+        3292
+      ],
+      "dtype": "float32",
+      "count": 1,
+      "nodata": null,
+      "transform": [
+        100.0,
+        0.0,
+        243350.0,
+        0.0,
+        -100.0,
+        4508550.0
+      ],
+      "profile_compress": "deflate"
+    },
+    "band_description": [
+      null
+    ],
+    "n_finite": 12279160,
+    "n_nan": 0,
+    "n_infinite": 0,
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.0017374152084812522,
+    "emitted_positive_pixels": 21334,
+    "checks": {
+      "single_band": true,
+      "dtype_float32": true,
+      "dimensions_3730x3292": true,
+      "crs_epsg_32611": true,
+      "transform_matches_sample_submission": true,
+      "no_nan_anywhere": true,
+      "no_inf_anywhere": true,
+      "no_sentinel_values": true,
+      "range_0_1_guaranteed": true,
+      "min_ge_0": true,
+      "max_le_1": true,
+      "in_footprint_all_finite": true,
+      "in_footprint_range_0_1": true,
+      "outside_footprint_zero": true,
+      "zero_dots_on_mapped_catalogue": true
+    },
+    "all_checks_passed": true,
+    "validation_class": "local format/range preflight; not organizer acceptance or uniqueness clearance",
+    "on_catalogue_positive_pixels": 0,
+    "in_footprint_positive_pixels": 21334,
+    "footprint_fraction": 0.004128596871176128
+  },
+  "write_receipt": {
+    "file": "gemsdoe85-hjcd-ventbridge-submod-zeros.tif",
+    "sha256": "61ef04376a55169786b96423114394db85b7aaadf3d298d3c75b7b90022da109",
+    "bytes": 110277,
+    "submission_name": "gemsdoe85-hjcd-ventbridge-submod-20261022-zeros",
+    "note": "H85-HJCD: GDR1391 2m-T + sinter vents + 3DEP chi + GEO-Pb-16 + submodular 300m Dinkelbach emitter (B=2, zeros)",
+    "note_chars": 110,
+    "validator": {
+      "file": "/home/user/GEMSDOE85/submissions/gemsdoe85-hjcd-ventbridge-submod-zeros.tif",
+      "bytes": 110277,
+      "sha256": "61ef04376a55169786b96423114394db85b7aaadf3d298d3c75b7b90022da109",
+      "meta": {
+        "crs": "EPSG:32611",
+        "shape": [
+          3730,
+          3292
+        ],
+        "dtype": "float32",
+        "count": 1,
+        "nodata": null,
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "profile_compress": "deflate"
+      },
+      "band_description": [
+        null
+      ],
+      "n_finite": 12279160,
+      "n_nan": 0,
+      "n_infinite": 0,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.0017374152084812522,
+      "emitted_positive_pixels": 21334,
+      "checks": {
+        "single_band": true,
+        "dtype_float32": true,
+        "dimensions_3730x3292": true,
+        "crs_epsg_32611": true,
+        "transform_matches_sample_submission": true,
+        "no_nan_anywhere": true,
+        "no_inf_anywhere": true,
+        "no_sentinel_values": true,
+        "range_0_1_guaranteed": true,
+        "min_ge_0": true,
+        "max_le_1": true,
+        "in_footprint_all_finite": true,
+        "in_footprint_range_0_1": true,
+        "outside_footprint_zero": true,
+        "zero_dots_on_mapped_catalogue": true
+      },
+      "all_checks_passed": true,
+      "validation_class": "local format/range preflight; not organizer acceptance or uniqueness clearance",
+      "on_catalogue_positive_pixels": 0,
+      "in_footprint_positive_pixels": 21334,
+      "footprint_fraction": 0.004128596871176128
+    },
+    "template_report": {
+      "path": "/home/user/GEMSDOE85/submissions/gemsdoe85-hjcd-ventbridge-submod-zeros.tif",
+      "bytes": 110277,
+      "sha256": "61ef04376a55169786b96423114394db85b7aaadf3d298d3c75b7b90022da109",
+      "bands": 1,
+      "dtype": "float32",
+      "crs": "EPSG:32611",
+      "width": 3292,
+      "height": 3730,
+      "bounds": [
+        243350.0,
+        4135550.0,
+        572550.0,
+        4508550.0
+      ],
+      "ref_bounds": [
+        243350.0,
+        4135550.0,
+        572550.0,
+        4508550.0
+      ],
+      "transform": [
+        100.0,
+        0.0,
+        243350.0,
+        0.0,
+        -100.0,
+        4508550.0
+      ],
+      "nodata": null,
+      "blocksize": [
+        256,
+        256
+      ],
+      "fixture_grid": false,
+      "has_validity_mask": false,
+      "nan_pixels": 0,
+      "infinity_pixels": 0,
+      "n_nan": 0,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.0017374152084812522,
+      "n_nonzero": 21334,
+      "mass": 21334.0,
+      "mass_outside_footprint": 0,
+      "problems": [],
+      "ok": true,
+      "validation_class": "local on-disk template/range check; not organizer upload acceptance"
+    },
+    "zip_file": "gemsdoe85-hjcd-ventbridge-submod-zeros.zip",
+    "zip_sha256": "c7d9b605917795e5bc1b7dbe7e09248aff7c811ddffaa7ef6f37a039e9e19520",
+    "approved_for_weekly_slot": false,
+    "promoted": false,
+    "submission_slots_used": 0,
+    "status": "locally validated within separately recorded inventory scope; not organizer acceptance or slot approval",
+    "metadata": {
+      "lane_id": "H85-HJCD",
+      "selected_loqo_lambdas": [
+        0.028,
+        0.035,
+        0.035,
+        0.035
+      ],
+      "mean_lambda": 0.03325,
+      "emit_meta": {
+        "n_dots": 21334,
+        "fp_lambda": 0.03325,
+        "expected_tp": 1397.572,
+        "expected_fp": 20480.663,
+        "heap_recomputations": 392824,
+        "dispersion_skipped": 123412,
+        "max_discriminating_overlap_during_emit": 0.6402
+      }
+    }
+  }
+}

@@ -1,0 +1,136 @@
+#EventID|Time|Latitude|Longitude|Depth/km|Author|Catalog|Contributor|ContributorID|MagType|Magnitude|MagAuthor|EventLocationName
+nc1051510|1980-03-13T18:12:28.660|38.8136667|-119.8435|8.314|nc|nc|nc|nc1051510|md|2.94|nc|4 km W of Mesa Vista, California
+nc1051511|1980-03-13T18:20:21.360|38.8135|-119.8023333|2.823|nc|nc|nc|nc1051511|md|2.84|nc|0 km NW of Mesa Vista, California
+nc1051700|1980-03-22T14:11:55.440|38.8003333|-119.7928333|3.296|nc|nc|nc|nc1051700|md|3.57|nc|0 km SSE of Mesa Vista, California
+nc1051701|1980-03-22T14:12:55.370|38.8033333|-119.7958333|14.324|nc|nc|nc|nc1051701|ml|3.6|nc|0 km S of Mesa Vista, California
+nc1060492|1981-02-18T01:35:43.960|38.806|-119.805|2.127|nc|nc|nc|nc1060492|md|2.87|nc|0 km W of Mesa Vista, California
+usp0001deu|1981-04-29T11:55:52.800|39.273|-119.768|10|brk|us|us|usp0001deu|ml|4.2|brk|10 km WSW of Virginia City, Nevada
+nc1065835|1981-07-22T18:52:06.500|39.3063333|-120.001|3.932|nc|nc|nc|nc1065835|md|2.86|nc|6 km NNW of Incline Village, Nevada
+usp0001gt8|1981-11-04T11:47:18.860|39.418|-119.719|2|ren|us|us|usp0001gt8|ml|3.3|brk|13 km SSE of Sparks, Nevada
+nc1071565|1982-01-26T14:27:46.440|38.8008333|-119.8046667|4.718|nc|nc|nc|nc1071565|md|2.77|nc|1 km SW of Mesa Vista, California
+ci3094656|1983-01-07T01:53:46.060|39.015|-119.989|4.803|ci|ci|ci|ci3094656|mh|3.33|ci|8km WNW of Kingsbury, NV
+nc1089513|1983-03-23T16:48:24.440|38.8166667|-119.8231667|2.297|nc|nc|nc|nc1089513|ml|3|nc|California-Nevada border region
+usp0001wzf|1983-07-21T04:49:15.820|39.415|-119.819|5|us|us|us|usp0001wzf|ml|3.2|us|12 km S of Reno, Nevada
+nc2877|1984-01-23T20:52:00.880|38.8198333|-119.924|7.079|nc|nc|nc|nc2877|md|2.71|nc|10 km WNW of Alpine Village, California
+nc4299|1984-02-01T21:41:17.010|38.8181667|-119.8426667|1|nc|nc|nc|nc4299|md|2.62|nc|4 km WNW of Mesa Vista, California
+usp0002vg5|1986-06-28T02:06:29.800|39.533|-119.77|13|brk|us|us|usp0002vg5|md|3.9|ren|1 km W of Sparks, Nevada
+usp0002wza|1986-08-08T14:06:09.160|39.596|-119.741|5|us|us|us|usp0002wza|ml|2.7|us|3 km E of Sun Valley, Nevada
+usp0002xhp|1986-08-25T17:06:36.900|39.638|-119.803|5|ren|us|us|usp0002xhp|ml|2.8|us|3 km NE of Golden Valley, Nevada
+nc98880|1987-04-19T04:52:24.620|38.812|-119.8023333|-1.222|nc|nc|nc|nc98880|md|3.07|nc|0 km NW of Mesa Vista, California
+usp00035a6|1987-05-28T02:19:10.290|39.411|-119.851|5|us|us|us|usp00035a6|md|2.6|ren|13 km SSE of Mogul, Nevada
+usp00035a7|1987-05-28T02:19:57.270|39.443|-119.868|5|us|us|us|usp00035a7|md|3.3|ren|9 km SSE of Mogul, Nevada
+nc107525|1987-10-22T02:39:22.480|38.8126667|-119.7966667|-0.468|nc|nc|nc|nc107525|md|2.79|nc|0 km N of Mesa Vista, California
+usp0003f28|1988-04-15T20:33:05.000|39.18|-119.697|22|brk|us|us|usp0003f28|ml|3.4|brk|6 km ENE of Carson City, Nevada
+usp0003wtv|1989-06-30T17:08:46.050|39.533|-119.817|5|us|us|us|usp0003wtv|ml|2.6|brk|0 km NW of Reno, Nevada
+usp000446x|1990-01-13T11:16:54.880|39.346|-119.753|5|us|us|us|usp000446x|ml|2.8|brk|9 km WNW of Virginia City, Nevada
+nc165215|1990-10-12T09:53:05.480|38.8295|-119.838|2.196|nc|nc|nc|nc165215|md|2.71|nc|4 km NW of Mesa Vista, California
+nc200917|1990-11-26T05:50:17.610|38.8401667|-119.8006667|-0.39|nc|nc|nc|nc200917|md|2.93|nc|3 km N of Mesa Vista, California
+usp0004k3m|1991-01-02T12:07:46.920|39.207|-119.728|6.6|ren|us|us|usp0004k3m|ml|3.5|brk|5 km NE of Carson City, Nevada
+usp0004k3q|1991-01-02T12:26:37.740|39.212|-119.734|7.8|ren|us|us|usp0004k3q|ml|3.4|brk|6 km NNE of Carson City, Nevada
+usp0004k3r|1991-01-02T12:46:40.440|39.211|-119.738|6|ren|us|us|usp0004k3r|ml|3.4|brk|5 km NNE of Carson City, Nevada
+usp0004k3z|1991-01-02T16:29:43.470|39.207|-119.732|3.2|ren|us|us|usp0004k3z|ml|3.8|brk|5 km NNE of Carson City, Nevada
+usp0004k4a|1991-01-02T23:16:35.550|39.212|-119.733|5.8|ren|us|us|usp0004k4a|mb|4.4|us|6 km NNE of Carson City, Nevada
+usp0004k4e|1991-01-02T23:44:34.340|39.216|-119.724|10|ren|us|us|usp0004k4e|ml|3.5|brk|6 km NNE of Carson City, Nevada
+usp0004k4r|1991-01-03T02:08:51.920|39.222|-119.741|7.1|ren|us|us|usp0004k4r|ml|4|brk|6 km NNE of Carson City, Nevada
+usp0004k4s|1991-01-03T02:21:59.240|39.218|-119.731|6.7|ren|us|us|usp0004k4s|md|2.6|ren|6 km NNE of Carson City, Nevada
+usp0004m4h|1991-01-25T09:38:02.550|39.209|-119.766|5|us|us|us|usp0004m4h|ml|2.6|us|5 km N of Carson City, Nevada
+usp0004zm7|1991-11-25T02:02:19.780|39.209|-119.695|5|us|us|us|usp0004zm7|md|2.9|ren|8 km NE of Carson City, Nevada
+usp00054s0|1992-03-24T11:38:53.970|39.459|-119.9|5|us|us|us|usp00054s0|ml|3.5|brk|6 km SSE of Mogul, Nevada
+usp0005yns|1993-08-16T10:29:10.500|38.852|-119.725|9|brk|us|us|usp0005yns|ml|3.8|gs$|4 km SSE of Gardnerville Ranchos, Nevada
+usp0005ynv|1993-08-16T11:06:06.700|38.845|-119.722|6|brk|us|us|usp0005ynv|ml|3.4|brk|5 km SSE of Gardnerville Ranchos, Nevada
+usp00069ch|1994-03-07T16:49:12.900|38.838|-119.701|3|brk|us|us|usp00069ch|ml|4|brk|5 km WSW of Carter Springs, Nevada
+usp0006e2s|1994-06-11T01:48:55.550|38.884|-119.767|1.7|nc|us|us|usp0006e2s|md|2.9|gm$|2 km WSW of Gardnerville Ranchos, Nevada
+nc30056317|1994-09-01T13:29:49.400|38.9511667|-119.9338333|-0.561|nc|nc|nc|nc30056317|md|2.94|nc|1 km SSE of Stateline, Nevada
+nc1216160|1994-09-12T14:10:10.050|38.8083333|-119.7636667|4.389|nc|nc|nc|nc1216160|md|2.79|nc|2 km E of Mesa Vista, California
+nc1216163|1994-09-12T14:32:11.220|38.8105|-119.8825|11.896|nc|nc|nc|nc1216163|md|2.88|nc|6 km NW of Alpine Village, California
+usp0006ja5|1994-09-12T15:00:31.420|38.801|-119.712|12.9|nc|us|us|usp0006ja5|ml|3.5|gs$|7 km E of Mesa Vista, California
+nc1216174|1994-09-12T16:30:22.780|38.805|-119.7521667|-0.902|nc|nc|nc|nc1216174|md|3.62|nc|3 km E of Mesa Vista, California
+usp0006jah|1994-09-12T17:14:02.750|38.805|-119.701|8|nc|us|us|usp0006jah|ml|4|gs$|8 km SW of Carter Springs, Nevada
+usp0006jba|1994-09-12T23:36:35.160|38.83|-119.722|5.9|nc|us|us|usp0006jba|ml|2.6|gs$|6 km SSE of Gardnerville Ranchos, Nevada
+usp0006jc4|1994-09-13T05:13:07.690|38.821|-119.69|4.1|nc|nc|us|usp0006jc4|md|3.1|gm/|6 km SW of Carter Springs, Nevada
+usp0006jce|1994-09-13T07:05:47.270|38.804|-119.709|0|nc|us|us|usp0006jce|ml|3.5|gs$|7 km E of Mesa Vista, California
+nc1216215|1994-09-13T15:58:52.490|38.8008333|-119.7253333|-0.881|nc|nc|nc|nc1216215|md|3.23|nc|6 km E of Mesa Vista, California
+usp0006jeq|1994-09-14T05:51:29.180|38.807|-119.745|6.9|nc|us|us|usp0006jeq|md|3.4|gm/|4 km E of Mesa Vista, California
+nc1216233|1994-09-14T09:26:39.370|38.8136667|-119.7383333|4.802|nc|nc|nc|nc1216233|md|2.86|nc|5 km E of Mesa Vista, California
+nc1216282|1994-09-15T23:52:09.630|38.8285|-119.784|-0.861|nc|nc|nc|nc1216282|md|2.88|nc|2 km NNE of Mesa Vista, California
+nc1216300|1994-09-16T19:17:17.440|38.802|-119.7191667|-0.703|nc|nc|nc|nc1216300|md|2.76|nc|6 km E of Mesa Vista, California
+usp0006jk9|1994-09-17T09:20:50.610|38.816|-119.729|5|us|us|us|usp0006jk9|ml|2.6|gs$|5 km E of Mesa Vista, California
+usp0006jne|1994-09-18T11:13:49.990|38.918|-119.703|5|us|us|us|usp0006jne|md|2.9|gm$|2 km S of East Valley, Nevada
+nc1216336|1994-09-18T16:21:03.440|38.8223333|-119.921|4.086|nc|nc|nc|nc1216336|md|2.8|nc|10 km WNW of Alpine Village, California
+nc1216346|1994-09-19T11:12:43.040|38.8036667|-119.9276667|3.47|nc|nc|nc|nc1216346|md|2.76|nc|10 km WNW of Alpine Village, California
+nc1216358|1994-09-20T01:37:27.290|38.8355|-119.8396667|-0.523|nc|nc|nc|nc1216358|md|2.74|nc|4 km NW of Mesa Vista, California
+usp0006jx6|1994-09-23T22:03:15.000|38.901|-119.693|5|us|us|us|usp0006jx6|ml|3.8|gs/|4 km ENE of Gardnerville Ranchos, Nevada
+nc1216426|1994-09-24T02:16:38.730|38.8046667|-119.7238333|0.078|nc|nc|nc|nc1216426|md|2.96|nc|6 km E of Mesa Vista, California
+nc30059225|1994-09-29T13:32:46.090|38.833|-119.7918333|-0.63|nc|nc|nc|nc30059225|md|3.2|nc|2 km N of Mesa Vista, California
+nc1216509|1994-09-29T14:31:49.970|38.8208333|-119.8046667|-0.94|nc|nc|nc|nc1216509|md|2.89|nc|1 km NNW of Mesa Vista, California
+nc30059363|1994-09-30T16:06:55.950|38.8288333|-119.79|-0.94|nc|nc|nc|nc30059363|md|3.41|nc|2 km NNE of Mesa Vista, California
+nc30059386|1994-10-01T00:26:18.850|38.811|-119.8071667|-0.8|nc|nc|nc|nc30059386|md|3.2|nc|1 km WNW of Mesa Vista, California
+nc30059387|1994-10-01T00:30:08.460|38.8361667|-119.784|-0.91|nc|nc|nc|nc30059387|md|2.81|nc|3 km NNE of Mesa Vista, California
+usp0006ky6|1994-10-11T03:33:25.490|38.842|-119.769|3.4|nc|us|us|usp0006ky6|md|2.9|gm$|4 km NNE of Mesa Vista, California
+nc30060270|1994-10-11T05:46:33.990|38.8058333|-119.815|-0.718|nc|nc|nc|nc30060270|md|2.77|nc|1 km W of Mesa Vista, California
+nc30060506|1994-10-14T09:52:13.060|38.801|-119.7735|-0.847|nc|nc|nc|nc30060506|md|2.7|nc|2 km ESE of Mesa Vista, California
+nc30061382|1994-10-25T21:36:40.890|38.8046667|-119.7385|-0.92|nc|nc|nc|nc30061382|md|2.94|nc|5 km E of Mesa Vista, California
+usp0006nwa|1994-11-18T20:50:59.150|39.168|-119.733|6.4|nc|us|us|usp0006nwa|ml|4.4|brk|3 km E of Carson City, Nevada
+usp0006nwb|1994-11-18T21:12:43.290|39.171|-119.711|6.3|nc|us|us|usp0006nwb|ml|3.4|brk|4 km E of Carson City, Nevada
+nc30063321|1994-11-25T15:09:15.410|38.84|-119.7866667|0.34|nc|nc|nc|nc30063321|md|2.62|nc|3 km NNE of Mesa Vista, California
+nc1217799|1994-12-05T07:08:28.470|38.8048333|-119.9843333|3.551|nc|nc|nc|nc1217799|md|2.61|nc|13 km NE of Kirkwood, California
+nc30064361|1994-12-14T19:07:27.040|38.8203333|-119.7546667|-0.85|nc|nc|nc|nc30064361|md|2.82|nc|3 km ENE of Mesa Vista, California
+nc30070510|1995-03-25T18:07:29.990|38.8351667|-119.7951667|-0.87|nc|nc|nc|nc30070510|md|2.68|nc|3 km N of Mesa Vista, California
+usp0006z9a|1995-06-17T13:19:46.970|38.834|-119.742|1.8|nc|us|us|usp0006z9a|ml|3.1|gs$|5 km ENE of Mesa Vista, California
+nc30083877|1995-09-14T13:45:39.070|38.8298333|-119.8263333|-0.694|nc|nc|nc|nc30083877|md|2.65|nc|3 km NW of Mesa Vista, California
+usp0007fur|1996-04-06T23:08:13.760|39.417|-119.965|9|nc|us|us|usp0007fur|md|2.9|nc|5 km ENE of Floriston, California
+usp0007fv8|1996-04-07T06:12:24.240|39.413|-119.965|9|nc|us|us|usp0007fv8|md|2.8|nc|Nevada
+nc30105785|1996-05-09T14:03:57.700|39.0631667|-120.007|-1.426|nc|nc|nc|nc30105785|md|2.62|nc|5 km WNW of Lakeridge, Nevada
+usp0007t1x|1996-11-15T11:21:10.300|39.316|-119.935|14.9|nc|us|us|usp0007t1x|md|2.8|nc|7 km NNE of Incline Village, Nevada
+usp00081k0|1997-05-01T12:51:56.890|39.379|-119.761|3|nc|us|us|usp00081k0|md|2.8|nc|12 km NW of Virginia City, Nevada
+nc30176293|1998-05-30T10:23:51.760|39.633|-120.005|-1.335|nc|nc|nc|nc30176293|md|2.82|nc|5 km SSW of Cold Springs, Nevada
+usp0008z4q|1998-12-04T00:57:35.000|39.32|-119.98|11.4|ren|us|us|usp0008z4q|ml|3.6|brk|7 km N of Incline Village, Nevada
+nc21099303|2000-05-22T05:53:58.790|38.9493333|-119.9866667|2.758|nc|nc|nc|nc21099303|md|2.8|nc|1 km N of South Lake Tahoe, California
+nn00030298|2001-05-29T06:21:08.617|39.3079|-119.9797|9.3|nn|nn|nn|nn00030298|ml|2.6|nn|Nevada
+nn00032442|2001-07-07T07:33:54.192|39.3118|-119.9707|9.5|nn|nn|nn|nn00032442|ml|3.6|nn|6 km N of Incline Village, Nevada
+usp000aj3x|2001-07-07T07:39:52.650|39.301|-119.977|8.7|ren|us|us|usp000aj3x|md|3.2|nc|5 km N of Incline Village, Nevada
+nn00038991|2001-10-30T04:43:18.733|39.3057|-119.9713|6.5|nn|nn|nn|nn00038991|ml|2.6|nn|6 km N of Incline Village, Nevada
+nn00104454|2004-04-10T13:57:49.554|39.5118|-119.7503|4.9|nn|nn|nn|nn00104454|ml|2.7|nn|2 km S of Sparks, Nevada
+nc21368407|2004-06-03T08:54:46.230|39.3335|-120.0083333|2.991|nc|nc|nc|nc21368407|mw|4.2|nc|6 km S of Floriston, California
+nn00178631|2006-03-23T00:13:56.158|39.3452|-119.9815|6|nn|nn|nn|nn00178631|ml|3.2|nn|6 km SSE of Floriston, California
+nn00185054|2006-06-25T12:32:27.031|39.3462|-119.9845|7.2|nn|nn|nn|nn00185054|ml|2.6|nn|6 km SSE of Floriston, California
+nn00208650|2006-11-21T07:20:47.501|39.3737|-119.9655|0|nn|nn|nn|nn00208650|ml|2.8|nn|5 km ESE of Floriston, California
+nn00231198|2008-01-28T22:18:34.593|39.3087|-119.9713|11.2|nn|nn|nn|nn00231198|ml|3.5|nn|6 km N of Incline Village, Nevada
+nn00237524|2008-03-08T10:07:00.399|39.5229|-119.9321|1.5|nn|nn|nn|nn00237524|ml|3.2|nn|1 km NNW of Mogul, Nevada
+nn00238353|2008-03-15T15:38:35.890|39.5256|-119.9371|0.9|nn|nn|nn|nn00238353|ml|2.6|nn|1 km NW of Mogul, Nevada
+nn00239115|2008-03-24T19:16:14.290|39.5245|-119.9334|1.9|nn|nn|nn|nn00239115|ml|3|nn|1 km NNW of Mogul, Nevada
+nn00239462|2008-03-27T03:42:14.344|39.5315|-119.9366|1.7|nn|nn|nn|nn00239462|ml|3|nn|2 km NNW of Mogul, Nevada
+nn00240039|2008-04-02T00:07:46.317|39.5209|-119.9342|2.1|nn|nn|nn|nn00240039|ml|2.8|nn|1 km NW of Mogul, Nevada
+nn00241185|2008-04-15T00:27:50.830|39.5343|-119.9323|2.6|nn|nn|nn|nn00241185|ml|3|nn|2 km NNW of Mogul, Nevada
+nn00241152|2008-04-15T14:59:37.330|39.5317|-119.9347|2.2|nn|nn|nn|nn00241152|ml|3.3|nn|2 km NNW of Mogul, Nevada
+nn00518396|2008-04-15T14:59:46.819|39.5399|-119.9075|2|nn|nn|nn|nn00518396|ml|2.7|nn|3 km NNE of Mogul, Nevada
+nn00518397|2008-04-15T14:59:58.758|39.5503|-119.9197|3.1|nn|nn|nn|nn00518397|ml|2.7|nn|4 km N of Mogul, Nevada
+nn00241158|2008-04-15T15:20:20.984|39.5349|-119.9375|2.3|nn|nn|nn|nn00241158|ml|2.7|nn|2 km NNW of Mogul, Nevada
+nn00241226|2008-04-15T21:26:35.295|39.5329|-119.9331|1.9|nn|nn|nn|nn00241226|ml|3|nn|2 km NNW of Mogul, Nevada
+nn00241404|2008-04-15T21:32:31.818|39.5283|-119.9308|1.9|nn|nn|nn|nn00241404|mw|3.5|nn|1 km NNW of Mogul, Nevada
+nn00241238|2008-04-15T21:33:57.644|39.5358|-119.9339|1.7|nn|nn|nn|nn00241238|mw|3.3|nn|2 km NNW of Mogul, Nevada
+nn00522707|2008-04-16T00:53:52.450|39.5283|-119.94|2|nn|nn|nn|nn00522707|ml|2.8|nn|2 km NW of Mogul, Nevada
+nn00241743|2008-04-21T00:10:13.224|39.5247|-119.9302|2.9|nn|nn|nn|nn00241743|ml|2.7|nn|1 km NNW of Mogul, Nevada
+nn00241813|2008-04-21T19:14:10.399|39.516|-119.9235|2.3|nn|nn|nn|nn00241813|ml|3|nn|0 km NE of Mogul, Nevada
+nn00242035|2008-04-23T06:21:09.396|39.5142|-119.9232|1.6|nn|nn|nn|nn00242035|ml|2.7|nn|0 km E of Mogul, Nevada
+nn00242157|2008-04-24T22:47:04.170|39.528|-119.9283|2.2|nn|nn|nn|nn00242157|mw|3.6|nn|1 km N of Mogul, Nevada
+nn00242158|2008-04-24T22:51:06.799|39.5272|-119.9331|2.1|nn|nn|nn|nn00242158|ml|2.9|nn|1 km NNW of Mogul, Nevada
+nn00487664|2008-04-24T22:54:37.825|39.5326|-119.937|2.5|nn|nn|nn|nn00487664|ml|3.1|nn|2 km NNW of Mogul, Nevada
+nn00242164|2008-04-24T22:55:48.953|39.5297|-119.9332|2.9|nn|nn|nn|nn00242164|ml|4.1|nn|2 km NNW of Mogul, NV
+nn00487790|2008-04-24T22:56:28.013|39.521|-119.9463|3.6|nn|nn|nn|nn00487790|ml|2.9|nn|1 km WNW of Mogul, Nevada
+nn00385016|2008-04-24T23:00:21.849|39.5292|-119.9477|2.5|nn|nn|nn|nn00385016|ml|3|nn|2 km NW of Mogul, Nevada
+nn00250426|2008-04-24T23:08:41.808|39.5176|-119.925|2.7|nn|nn|nn|nn00250426|ml|2.8|nn|0 km NNE of Mogul, Nevada
+nn00242187|2008-04-24T23:51:48.593|39.5165|-119.9256|3.6|nn|nn|nn|nn00242187|ml|3|nn|0 km N of Mogul, Nevada
+nn00242215|2008-04-25T01:00:33.451|39.5246|-119.9283|1.6|nn|nn|nn|nn00242215|ml|3.1|nn|1 km N of Mogul, Nevada
+nn00242296|2008-04-25T08:42:58.205|39.5165|-119.9246|2.5|nn|nn|nn|nn00242296|ml|3.2|nn|0 km NNE of Mogul, Nevada
+nn00251646|2008-04-25T12:42:17.872|39.5255|-119.9315|2.8|nn|nn|nn|nn00251646|ml|2.9|nn|1 km NNW of Mogul, Nevada
+nn00242382|2008-04-25T17:30:10.090|39.5277|-119.9299|1.9|nn|nn|nn|nn00242382|ml|3.2|nn|1 km NNW of Mogul, Nevada
+nn00242405|2008-04-25T18:38:03.025|39.5262|-119.9275|1.3|nn|nn|nn|nn00242405|ml|2.6|nn|1 km N of Mogul, Nevada
+nn00242477|2008-04-26T01:13:20.999|39.5246|-119.9283|0.9|nn|nn|nn|nn00242477|mw|3.5|nn|1 km N of Mogul, Nevada
+nn00242495|2008-04-26T02:40:54.989|39.5276|-119.9293|0.9|nn|nn|nn|nn00242495|ml|2.6|nn|1 km N of Mogul, Nevada
+nn00242527|2008-04-26T06:39:59.648|39.5212|-119.9279|2.8|nn|nn|nn|nn00242527|mw|4.8|nn|0 km N of Mogul, Nevada
+nn00385392|2008-04-26T06:40:10.453|39.5231|-119.9393|2.8|nn|nn|nn|nn00385392|ml|5.1|nn|1 km NW of Mogul, Nevada
+nn00278754|2008-04-26T06:41:03.685|39.5267|-119.9235|0.8|nn|nn|nn|nn00278754|ml|3.2|nn|1 km N of Mogul, Nevada
+nn00278756|2008-04-26T06:41:36.130|39.5126|-119.9262|4|nn|nn|nn|nn00278756|ml|3|nn|0 km S of Mogul, Nevada
+nn00278758|2008-04-26T06:41:41.008|39.522|-119.9334|2.7|nn|nn|nn|nn00278758|ml|3.5|nn|1 km NW of Mogul, Nevada
+nn00278760|2008-04-26T06:41:44.617|39.5249|-119.

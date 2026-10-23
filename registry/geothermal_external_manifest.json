@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "description": "Official public DOE GDR Submission 1391 (CC BY 4.0) & USGS 3DEP 10 m (Public Domain) geothermal-vent, shallow temperature probe, and fluvial tectonic geomorphology datasets pinned to immutable GitHub commit 02563d07fb85d2f4d35887503d380d34d4017197 in buffedlizard55-lab/60GEMSDOE.",
+  "upstream_sources": [
+    {
+      "name": "INGENIOUS - Great Basin Regional Dataset Compilation (2m temperature probes & paleo-geothermal sinters/tufas)",
+      "url": "https://gdr.openei.org/submissions/1391",
+      "doi": "https://doi.org/10.15121/1881483",
+      "license": "CC BY 4.0"
+    },
+    {
+      "name": "USGS 3D Elevation Program (3DEP) 1/3 arc-second DEM derivatives",
+      "url": "https://www.usgs.gov/3d-elevation-program",
+      "license": "U.S. Public Domain"
+    }
+  ],
+  "files": [
+    {
+      "id": "gdr1391_2m_temperature_probes",
+      "group": "external",
+      "repo": "buffedlizard55-lab/60GEMSDOE",
+      "ref": "02563d07fb85d2f4d35887503d380d34d4017197",
+      "path": "data/external/2m_temperature_probe_INGENIOUS_regional_data.zip",
+      "dest": "external/2m_temperature_probe_INGENIOUS_regional_data.zip",
+      "bytes": 1080530,
+      "sha256": "1301f70d230058e616ea5d34d1c7a32fabf7d49198172f376c59c89bd652eca3"
+    },
+    {
+      "id": "gdr1391_paleo_geothermal",
+      "group": "external",
+      "repo": "buffedlizard55-lab/60GEMSDOE",
+      "ref": "02563d07fb85d2f4d35887503d380d34d4017197",
+      "path": "data/external/paleo_geothermal_regional.zip",
+      "dest": "external/paleo_geothermal_regional.zip",
+      "bytes": 84008,
+      "sha256": "faffcf697f32dbbf6cbb317cd1effb3e305538ce38eb239d72d0c6fa071e91ca"
+    },
+    {
+      "id": "usgs_3dep10m_chi_manifest",
+      "group": "external",
+      "repo": "buffedlizard55-lab/60GEMSDOE",
+      "ref": "02563d07fb85d2f4d35887503d380d34d4017197",
+      "path": "data/external/dem10_chi_100m.manifest.json",
+      "dest": "external/dem10_chi_100m.manifest.json",
+      "bytes": 60085,
+      "sha256": "187a961ef5da45278c84b25d16296a5f3458da37abff45046d31ed58b9f5af86"
+    },
+    {
+      "id": "usgs_3dep10m_chi_i16",
+      "group": "external",
+      "repo": "buffedlizard55-lab/60GEMSDOE",
+      "ref": "02563d07fb85d2f4d35887503d380d34d4017197",
+      "path": "data/external/dem10_chi_100m_i16.tif",
+      "dest": "external/dem10_chi_100m_i16.tif",
+      "bytes": 12777098,
+      "sha256": "8897ba9c30ef1cd7ad5f23c16c6dfd7bb070e7e757f36fd9486eb45edfd973a5"
+    },
+    {
+      "id": "usgs_3dep10m_chi_sig_i32",
+      "group": "external",
+      "repo": "buffedlizard55-lab/60GEMSDOE",
+      "ref": "02563d07fb85d2f4d35887503d380d34d4017197",
+      "path": "data/external/dem10_chi_100m_sig_i32.tif",
+      "dest": "external/dem10_chi_100m_sig_i32.tif",
+      "bytes": 2804587,
+      "sha256": "0ba7816bc082b8a71ebcb26596b5e330abb63231be94abad4e447eb316ffb95c"
+    },
+    {
+      "id": "usgs_3dep10m_topo_manifest",
+      "group": "external",
+      "repo": "buffedlizard55-lab/60GEMSDOE",
+      "ref": "02563d07fb85d2f4d35887503d380d34d4017197",
+      "path": "data/external/topo_10m_derived_100m_u8.manifest.json",
+      "dest": "external/topo_10m_derived_100m_u8.manifest.json",
+      "bytes": 2720,
+      "sha256": "181d5527ba7ed2990031918a8b6c9d5d94e3998a2daf656de0c33322ca94120a"
+    },
+    {
+      "id": "usgs_3dep10m_topo_u8",
+      "group": "external",
+      "repo": "buffedlizard55-lab/60GEMSDOE",
+      "ref": "02563d07fb85d2f4d35887503d380d34d4017197",
+      "path": "data/external/topo_10m_derived_100m_u8.tif",
+      "dest": "external/topo_10m_derived_100m_u8.tif",
+      "bytes": 32523329,
+      "sha256": "a6398d9950965dec6aae6ccecdaa6ced48645d133eab222cbdd11def9bdabfa4"
+    }
+  ]
+}

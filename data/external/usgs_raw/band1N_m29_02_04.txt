@@ -1,0 +1,141 @@
+7-11-02T22:58:04.960|37.845|-118.225|3.3|nc|us|us|usp00089zr|ml|3.1|us|22 km E of Benton, California
+usp00089zt|1997-11-03T00:05:38.950|37.856|-118.195|0.7|nc|us|us|usp00089zt|ml|3.4|us|23 km NNW of Dyer, Nevada
+usp0008a03|1997-11-03T03:10:55.450|37.829|-118.229|0.7|nc|us|us|usp0008a03|ml|3|us|21 km E of Benton, California
+usp0008a07|1997-11-03T03:19:54.310|37.811|-118.257|2.7|nc|us|us|usp0008a07|ml|2.9|us|19 km E of Benton, California
+usp0008a0h|1997-11-03T06:21:15.990|37.796|-118.288|10.2|nc|us|us|usp0008a0h|ml|3.2|us|16 km E of Benton, California
+usp0008a0z|1997-11-03T11:13:51.400|37.867|-118.194|2.4|nc|us|us|usp0008a0z|ml|2.9|us|24 km NNW of Dyer, Nevada
+usp0008a1r|1997-11-03T22:58:49.290|37.804|-118.285|4.9|nc|us|us|usp0008a1r|ml|2.9|us|16 km E of Benton, California
+usp0008a3q|1997-11-05T05:08:08.880|37.825|-118.244|3.4|nc|us|us|usp0008a3q|ml|2.9|us|20 km E of Benton, California
+usp0008a40|1997-11-05T08:52:13.020|37.834|-118.222|0.3|nc|us|us|usp0008a40|ml|3|us|22 km E of Benton, California
+usp0008a45|1997-11-05T10:05:36.760|37.812|-118.265|2.8|nc|us|us|usp0008a45|ml|3.3|us|18 km E of Benton, California
+usp0008a7s|1997-11-07T08:58:28.260|37.863|-118.216|1.7|nc|us|us|usp0008a7s|ml|3.5|us|23 km ENE of Benton, California
+usp0008ad2|1997-11-10T01:35:43.750|37.862|-118.21|0.7|nc|us|us|usp0008ad2|ml|3.8|brk|23 km ENE of Benton, California
+usp0008ad7|1997-11-10T04:26:37.060|37.844|-118.226|0.3|nc|us|us|usp0008ad7|ml|3.2|us|22 km E of Benton, California
+usp0008ad9|1997-11-10T05:04:01.600|37.832|-118.2|5|us|us|us|usp0008ad9|ml|2.9|us|21 km NNW of Dyer, Nevada
+usp0008adb|1997-11-10T05:40:01.810|37.847|-118.18|5|us|us|us|usp0008adb|ml|3.3|us|22 km NNW of Dyer, Nevada
+usp0008age|1997-11-11T20:33:52.500|37.891|-118.15|5|us|us|us|usp0008age|ml|3.5|brk|25 km NNW of Dyer, Nevada
+usp0008agf|1997-11-11T20:48:07.140|37.896|-118.211|5|us|us|us|usp0008agf|ml|3.3|brk|24 km ENE of Benton, California
+usp0008bca|1997-11-26T13:28:07.120|37.868|-118.197|5|us|us|us|usp0008bca|ml|3.4|brk|25 km NNW of Dyer, Nevada
+usp0008bn9|1997-12-02T15:31:25.970|37.894|-118.165|5|us|us|us|usp0008bn9|ml|3.1|us|26 km NNW of Dyer, Nevada
+usp0008dz2|1998-01-09T03:17:42.770|37.867|-118.188|0.1|nc|us|us|usp0008dz2|ml|3.3|us|24 km NNW of Dyer, Nevada
+usp0008gfm|1998-02-23T13:43:13.520|37.889|-118.185|5|us|us|us|usp0008gfm|ml|3|us|26 km NNW of Dyer, Nevada
+usp0008hre|1998-03-20T10:43:04.540|37.854|-118.197|5|us|us|us|usp0008hre|mwr|4.4|brk|23 km NNW of Dyer, Nevada
+ci9048964|1998-03-30T19:18:18.890|37.928|-118.19|3.812|ci|ci|ci|ci9048964|mc|2.95|ci|63km NNE of Dixon Lane-Meadow Creek, California
+ci9050506|1998-04-14T10:38:28.900|37.892|-118.2|3.812|ci|ci|ci|ci9050506|mc|2.91|ci|59km NNE of Dixon Lane-Meadow Creek, California
+usp0008k88|1998-04-14T14:02:12.000|37.86|-118.22|6.2|ren|us|us|usp0008k88|mwr|3.6|brk|23 km ENE of Benton, California
+ci9050518|1998-04-14T14:08:18.410|37.9|-118.188|3.812|ci|ci|ci|ci9050518|mc|3.02|ci|60km NNE of Dixon Lane-Meadow Creek, California
+usp0008ks6|1998-04-22T14:20:39.000|37.86|-118.16|7|ren|us|us|usp0008ks6|mwr|3.8|brk|22 km NNW of Dyer, Nevada
+ci9059909|1998-07-09T06:13:43.960|37.862|-118.173|4.119|ci|ci|ci|ci9059909|mh|2.9|ci|57km NNE of Dixon Lane-Meadow Creek, California
+usp0009eku|1999-09-18T16:14:21.000|37.86|-117.5|2|ren|us|us|usp0009eku|ml|3|us|16 km NE of Silver Peak, Nevada
+usp0009eut|1999-09-22T03:04:19.000|37.86|-117.5|3.6|ren|us|us|usp0009eut|md|2.9|ren|16 km NE of Silver Peak, Nevada
+usp0009gkz|1999-10-25T21:56:47.000|37.88|-117.28|8.1|ren|us|us|usp0009gkz|md|3.1|ren|19 km NNW of Goldfield, Nevada
+nc21067886|1999-11-19T18:23:07.420|37.9963333|-118.654|6.626|nc|nc|nc|nc21067886|md|2.93|nc|25 km NW of Benton, California
+usp0009p8y|2000-03-04T16:13:22.000|37.85|-118.2|1.5|brk|us|us|usp0009p8y|mwr|4.1|brk|23 km NNW of Dyer, Nevada
+nn00003716|2000-03-04T16:16:50.799|37.8143|-118.2456|5.8|nn|nn|nn|nn00003716|ml|3|nn|20 km E of Benton, California
+nn00003745|2000-03-04T16:33:04.331|37.841|-118.2195|7|nn|nn|nn|nn00003745|ml|3.1|nn|22 km E of Benton, California
+nn00003721|2000-03-04T16:33:21.888|37.8319|-118.2334|0|nn|nn|nn|nn00003721|ml|3.3|nn|21 km E of Benton, California
+nn00003722|2000-03-04T16:35:57.737|37.8394|-118.2187|0.4|nn|nn|nn|nn00003722|ml|3|nn|22 km E of Benton, California
+nn00003754|2000-03-04T16:57:32.155|37.831|-118.2239|6.5|nn|nn|nn|nn00003754|ml|3.5|nn|22 km E of Benton, California
+nn00003667|2000-03-04T16:57:43.666|37.8368|-118.2159|1.3|nn|nn|nn|nn00003667|ml|3.5|nn|22 km NW of Dyer, Nevada
+nn00003679|2000-03-04T18:06:49.389|37.8285|-118.2147|6.9|nn|nn|nn|nn00003679|ml|3.4|nn|22 km NW of Dyer, Nevada
+nn00003692|2000-03-04T20:39:19.489|37.8296|-118.2298|8.3|nn|nn|nn|nn00003692|ml|3.4|nn|21 km E of Benton, California
+nn00005536|2000-04-09T02:17:14.282|37.8324|-118.2156|7.7|nn|nn|nn|nn00005536|ml|2.9|nn|22 km NW of Dyer, Nevada
+nn00008188|2000-05-17T05:45:55.935|37.8383|-118.2165|0|nn|nn|nn|nn00008188|ml|3.1|nn|22 km E of Benton, California
+nn00009643|2000-06-07T18:20:12.873|37.8471|-118.2178|6.3|nn|nn|nn|nn00009643|ml|3.2|nn|22 km E of Benton, California
+nn00010572|2000-06-22T01:56:36.589|37.8457|-118.2146|6.2|nn|nn|nn|nn00010572|ml|2.9|nn|23 km E of Benton, California
+nn00010663|2000-06-22T01:57:02.372|37.8462|-118.2285|5.6|nn|nn|nn|nn00010663|ml|2.9|nn|22 km E of Benton, California
+nn00010686|2000-06-22T02:48:11.731|37.8361|-118.2159|4.2|nn|nn|nn|nn00010686|ml|3|nn|22 km NW of Dyer, Nevada
+nn00010768|2000-06-22T05:30:43.121|37.8464|-118.217|5.8|nn|nn|nn|nn00010768|ml|3.2|nn|23 km E of Benton, California
+usp0009uyv|2000-06-22T06:32:22.000|37.83|-118.23|7.4|nc|us|us|usp0009uyv|ml|3.3|nc|21 km E of Benton, California
+nn00010911|2000-06-23T09:24:24.312|37.8361|-118.214|7.7|nn|nn|nn|nn00010911|ml|3.1|nn|22 km NW of Dyer, Nevada
+nn00010916|2000-06-23T10:42:16.377|37.8304|-118.2199|7.1|nn|nn|nn|nn00010916|ml|3.2|nn|22 km NW of Dyer, Nevada
+nn00011002|2000-06-24T19:44:29.314|37.8798|-117.5536|4.1|nn|nn|nn|nn00011002|ml|3.2|nn|15 km NNE of Silver Peak, Nevada
+nn00011981|2000-07-10T00:01:57.764|37.8591|-117.4927|2.8|nn|nn|nn|nn00011981|ml|3.1|nn|17 km NE of Silver Peak, Nevada
+nn00013494|2000-08-06T13:00:49.131|37.8185|-118.228|0|nn|nn|nn|nn00013494|ml|3.4|nn|21 km E of Benton, California
+nn00388426|2000-08-17T23:36:07.669|37.843|-118.2149|8.4|nn|nn|nn|nn00388426|mb|3.7|nn|23 km E of Benton, California
+nn00014831|2000-08-27T03:17:33.609|37.8444|-118.221|7.8|nn|nn|nn|nn00014831|ml|3|nn|22 km E of Benton, California
+nn00019642|2000-11-17T04:47:25.934|37.8461|-118.2165|7.4|nn|nn|nn|nn00019642|ml|2.9|nn|23 km E of Benton, California
+nn00022246|2001-01-05T23:25:15.532|37.9615|-117.6388|8.9|nn|nn|nn|nn00022246|ml|2.9|nn|22 km N of Silver Peak, Nevada
+nn00022441|2001-01-09T17:00:18.441|37.8597|-118.2055|7.4|nn|nn|nn|nn00022441|ml|3.3|nn|24 km E of Benton, California
+nn00024820|2001-02-23T22:12:01.243|38.0162|-118.4347|3.3|nn|nn|nn|nn00024820|ml|3.1|nn|California-Nevada border region
+nn00066121|2003-04-03T15:31:51.974|37.8804|-118.0709|6|nn|nn|nn|nn00066121|ml|3.1|nn|23 km N of Dyer, Nevada
+nn00110993|2004-08-21T13:58:01.033|37.9195|-118.2719|5|nn|nn|nn|nn00110993|ml|3.1|nn|21 km ENE of Benton, California
+nn00110994|2004-08-21T14:00:10.852|37.9112|-118.2691|0|nn|nn|nn|nn00110994|ml|3|nn|20 km ENE of Benton, California
+nc30500748|2004-09-18T23:43:41.490|38.0233333|-118.658|0.431|nc|nc|nc|nc30500748|mw|5.35|nc|27 km NW of Benton, California
+nc21396218|2004-09-18T23:47:58.520|38.0271667|-118.6463333|5.748|nc|nc|nc|nc21396218|ml|4.1|nc|27 km NNW of Benton, California
+usp000d4kw|2004-09-18T23:56:36.580|38.031|-118.637|7.6|ren|us|us|usp000d4kw|ml|2.9|ren|27 km NNW of Benton, California
+nc30500708|2004-09-18T23:58:49.500|38.0276667|-118.6565|3.766|nc|nc|nc|nc30500708|md|2.97|nc|28 km NW of Benton, California
+nc21396225|2004-09-19T00:07:37.400|38.0285|-118.639|5.829|nc|nc|nc|nc21396225|md|3.12|nc|27 km NNW of Benton, California
+nc30500731|2004-09-19T01:26:56.120|38.0301667|-118.6468333|5.325|nc|nc|nc|nc30500731|ml|3.23|nc|27 km NNW of Benton, California
+nc30500732|2004-09-19T01:27:05.960|38.0271667|-118.648|5.118|nc|nc|nc|nc30500732|ml|3.47|nc|27 km NNW of Benton, California
+nc21396524|2004-09-19T03:27:24.440|38.0255|-118.654|1.585|nc|nc|nc|nc21396524|md|3.04|nc|27 km NW of Benton, California
+nc21396459|2004-09-19T18:44:56.150|38.0278333|-118.6461667|4.539|nc|nc|nc|nc21396459|md|2.94|nc|27 km NNW of Benton, California
+nc21397068|2004-09-20T16:51:04.810|38.0276667|-118.6425|2.185|nc|nc|nc|nc21397068|mw|4.67|nc|27 km NNW of Benton, California
+nc21396892|2004-09-21T08:25:11.210|38.0225|-118.658|3.945|nc|nc|nc|nc21396892|ml|3.47|nc|27 km NW of Benton, California
+nc21401640|2004-10-01T14:12:24.930|38.0296667|-118.6383333|2.68|nc|nc|nc|nc21401640|ml|3.09|nc|27 km NNW of Benton, California
+nn00140679|2004-10-08T20:02:55.979|38.0432|-118.6254|12|nn|nn|nn|nn00140679|ml|3.1|nn|28 km NNW of Benton, California
+nc21405798|2004-10-09T03:45:48.680|37.9788333|-118.6588333|5.445|nc|nc|nc|nc21405798|mw|4.52|nc|23 km NW of Benton, California
+nc30506515|2004-10-09T03:50:30.170|37.9665|-118.6583333|5.905|nc|nc|nc|nc30506515|md|2.9|nc|22 km NW of Benton, California
+nc21406478|2004-10-10T23:20:44.950|37.9635|-118.6583333|5.675|nc|nc|nc|nc21406478|ml|3.03|nc|22 km NW of Benton, California
+nc21411486|2004-10-19T06:11:49.250|38.0236667|-118.6465|5.203|nc|nc|nc|nc21411486|ml|3.2|nc|27 km NNW of Benton, California
+nn00117550|2004-10-20T11:35:15.304|38.0408|-118.6101|6.1|nn|nn|nn|nn00117550|ml|3.8|nn|27 km NNW of Benton, California
+nn00117551|2004-10-20T12:03:11.521|38.0407|-118.6111|6.3|nn|nn|nn|nn00117551|ml|3.6|nn|27 km NNW of Benton, California
+nc21413992|2004-10-24T13:20:32.950|38.0278333|-118.6446667|5.285|nc|nc|nc|nc21413992|ml|3.25|nc|27 km NNW of Benton, California
+nn00119883|2004-11-21T21:58:34.839|38.0513|-118.6114|7.3|nn|nn|nn|nn00119883|ml|3|nn|28 km NNW of Benton, California
+nn00120347|2004-11-28T05:02:39.026|38.0382|-118.5913|8.1|nn|nn|nn|nn00120347|ml|3.3|nn|26 km NNW of Benton, California
+nn00121829|2004-12-18T06:20:58.785|38.0396|-118.5987|9.7|nn|nn|nn|nn00121829|ml|3.1|nn|26 km NNW of Benton, California
+nc21430088|2004-12-26T03:56:28.210|37.9655|-118.6598333|5.795|nc|nc|nc|nc21430088|ml|3.92|nc|22 km NW of Benton, California
+nn00127835|2004-12-27T00:53:44.085|37.9683|-118.6369|5.9|nn|nn|nn|nn00127835|ml|3.1|nn|21 km NW of Benton, California
+nn00128575|2005-02-16T07:31:59.148|38.0382|-118.5949|9.2|nn|nn|nn|nn00128575|ml|2.9|nn|26 km NNW of Benton, California
+nn00129100|2005-02-19T10:17:20.730|38.0365|-118.59|8.2|nn|nn|nn|nn00129100|ml|3.6|nn|26 km NNW of Benton, California
+nn00129505|2005-02-26T10:26:08.621|38.0364|-118.5947|8.8|nn|nn|nn|nn00129505|ml|3.4|nn|26 km NNW of Benton, California
+nn00168203|2005-11-13T23:30:35.356|38.0402|-118.6128|8.8|nn|nn|nn|nn00168203|ml|3.8|nn|27 km NNW of Benton, California
+nc21497688|2005-12-02T22:25:55.270|37.9751667|-118.6598333|4.575|nc|nc|nc|nc21497688|md|3.04|nc|23 km NW of Benton, California
+nc21508956|2006-03-11T04:15:51.390|38.0263333|-118.6496667|2.972|nc|nc|nc|nc21508956|md|2.91|nc|27 km NNW of Benton, California
+nc40194203|2007-03-06T00:12:17.190|37.9776667|-118.6548333|7.425|nc|nc|nc|nc40194203|ml|3.31|nc|23 km NW of Benton, California
+nc71273541|2009-08-30T19:21:22.170|37.9541667|-118.6211667|5.745|nc|nc|nc|nc71273541|mw|3.74|nc|19 km NW of Benton, California
+nc71272890|2009-09-08T04:28:53.830|37.9543333|-118.6203333|6.095|nc|nc|nc|nc71272890|md|2.92|nc|19 km NW of Benton, California
+nc71321296|2009-12-01T08:42:44.800|37.9533333|-118.6231667|5.465|nc|nc|nc|nc71321296|md|2.92|nc|California-Nevada border region
+nn00312171|2010-06-08T08:28:33.614|37.9083|-117.5698|10.5|nn|nn|nn|nn00312171|ml|3|nn|17 km NNE of Silver Peak, Nevada
+nc71664296|2011-10-15T11:42:29.870|37.9068333|-118.5631667|7.253|nc|nc|nc|nc71664296|mw|4.03|nc|12 km NW of Benton, California
+nc71805190|2012-07-02T03:47:03.240|37.8566667|-118.5321667|4.498|nc|nc|nc|nc71805190|ml|3.07|nc|6 km NW of Benton, California
+nc71805225|2012-07-02T05:36:48.640|37.8558333|-118.533|3.406|nc|nc|nc|nc71805225|ml|2.99|nc|6 km NW of Benton, California
+nn00402688|2013-02-13T00:10:14.393|38.0222|-118.0553|7.5|nn|nn|nn|nn00402688|ml|5.1|nn|39 km N of Dyer, Nevada
+nn00402690|2013-02-13T00:17:39.376|38.0392|-118.1083|11.4|nn|nn|nn|nn00402690|ml|2.9|nn|38 km S of Mina, Nevada
+nn00402703|2013-02-13T00:39:19.151|38.026|-118.033|8.1|nn|nn|nn|nn00402703|ml|3.3|nn|39 km N of Dyer, Nevada
+nn00402707|2013-02-13T00:44:34.249|38.0382|-118.047|9.2|nn|nn|nn|nn00402707|ml|3.1|nn|39 km S of Mina, Nevada
+nn00402727|2013-02-13T00:49:06.443|38.0347|-118.0902|7.6|nn|nn|nn|nn00402727|ml|3.5|nn|39 km S of Mina, Nevada
+nn00402779|2013-02-13T02:59:09.909|38.0328|-118.049|8.5|nn|nn|nn|nn00402779|ml|3.7|nn|40 km S of Mina, Nevada
+nn00402778|2013-02-13T03:07:32.919|38.0307|-118.0498|8.1|nn|nn|nn|nn00402778|ml|3.4|nn|40 km S of Mina, Nevada
+nn00402782|2013-02-13T03:16:45.277|38.0256|-118.0378|7.3|nn|nn|nn|nn00402782|ml|3.1|nn|39 km N of Dyer, Nevada
+nn00402815|2013-02-13T05:38:00.984|38.0221|-118.0609|6.2|nn|nn|nn|nn00402815|ml|3.5|nn|39 km N of Dyer, Nevada
+nn00402869|2013-02-13T09:53:35.813|38.0332|-118.0441|8.9|nn|nn|nn|nn00402869|ml|3.7|nn|40 km S of Mina, Nevada
+nn00402930|2013-02-13T17:05:15.176|38.0316|-118.0522|9|nn|nn|nn|nn00402930|ml|3.5|nn|40 km S of Mina, Nevada
+nn00402996|2013-02-13T22:20:16.351|38.0353|-118.0565|11.9|nn|nn|nn|nn00402996|ml|3.8|nn|39 km S of Mina, Nevada
+nn00403042|2013-02-14T02:41:52.008|38.032|-118.0504|8.4|nn|nn|nn|nn00403042|ml|3.2|nn|40 km S of Mina, Nevada
+nn00404186|2013-02-24T14:13:21.161|38.0297|-118.0623|11.4|nn|nn|nn|nn00404186|ml|3.5|nn|40 km N of Dyer, Nevada
+nn00404523|2013-02-28T15:29:25.891|38.0237|-118.0646|6.2|nn|nn|nn|nn00404523|ml|4|nn|39 km N of Dyer, Nevada
+nn00420274|2013-08-14T05:28:30.929|38.0273|-118.0882|12.1|nn|nn|nn|nn00420274|ml|3|nn|39 km N of Dyer, Nevada
+nn00426167|2013-10-11T18:29:39.922|38.0182|-118.1154|6.4|nn|nn|nn|nn00426167|ml|2.9|nn|38 km NE of Benton, California
+nn00517435|2015-11-02T23:22:43.325|37.9273|-118.1683|9.4|nn|nn|nn|nn00517435|ml|3.5|nn|29 km ENE of Benton, California
+nn00556452|2016-08-16T18:59:45.220|37.9965|-118.079|6|nn|nn|nn|nn00556452|ml|2.9|nn|California-Nevada border region
+nn00572803|2017-01-07T03:30:49.984|37.9929|-118.2282|8.4|nn|nn|nn|nn00572803|ml|2.9|nn|29 km NE of Benton, California
+nn00611343|2017-11-03T01:05:55.792|37.9615|-118.1251|2.5|nn|nn|nn|nn00611343|ml|3.3|nn|33 km N of Dyer, Nevada
+nn00683728|2019-05-01T19:30:20.515|37.9968|-118.4123|10.6|nn|nn|nn|nn00683728|ml|3.9|nn|20 km NNE of Benton, California
+us70009gxc|2020-05-15T16:07:51.265|38.0334|-117.9749|10|us|us|us|us70009gxc|ml|2.9|us|41 km SSE of Mina, Nevada
+nn00726095|2020-05-16T06:06:17.317|38.0581|-118.2364|5.9|nn|nn|nn|nn00726095|ml|3.7|nn|33 km NE of Benton, California
+nn00771068|2020-09-01T00:36:59.811|38.0039|-118.2358|6.6|nn|nn|nn|nn00771068|ml|3.4|nn|29 km NE of Benton, California
+nc73511395|2021-01-15T20:38:11.710|37.9103333|-118.5445|5.78|nc|nc|nc|nc73511395|ml|2.92|nc|41km NNE of Toms Place, CA
+nc73511455|2021-01-15T22:11:07.870|37.9106667|-118.5385|7.68|nc|nc|nc|nc73511455|mw|3.9|nc|41km NNE of Toms Place, CA
+nc73511495|2021-01-15T22:50:15.560|37.9103333|-118.5456667|7.96|nc|nc|nc|nc73511495|ml|2.92|nc|40km NNE of Toms Place, CA
+nc73511805|2021-01-16T06:52:00.740|37.9085|-118.5475|6.11|nc|nc|nc|nc73511805|ml|3|nc|40km NNE of Toms Place, CA
+nc73511800|2021-01-16T06:52:19.220|37.9118333|-118.5488333|6.27|nc|nc|nc|nc73511800|ml|2.96|nc|41km NNE of Toms Place, CA
+nc73511860|2021-01-16T07:16:02.120|37.9091667|-118.549|4.72|nc|nc|nc|nc73511860|ml|3.3|nc|40km NNE of Toms Place, CA
+nc73540280|2021-03-21T22:33:08.610|37.8966667|-118.5543333|6.15|nc|nc|nc|nc73540280|ml|3.08|nc|39km NNE of Toms Place, CA
+nn00816831|2021-07-29T14:23:29.113|38.0392|-118.6142|10.3|nn|nn|nn|nn00816831|ml|3.5|nn|27 km NNW of Benton, California
+nc73605151|2021-08-03T18:55:00.830|37.9176667|-118.5555|6.69|nc|nc|nc|nc73605151|ml|3.26|nc|41km NNE of Toms Place, CA
+nn00837174|2022-04-14T17:26:19.821|38.0016|-118.0462|5.9|nn|nn|nn|nn00837174|ml|3.3|nn|37 km N of Dyer, Nevada
+nc73760676|2022-07-19T17:00:16.920|37.9133333|-118.4551667|10.03|nc|nc|nc|nc73760676|ml|3.06|nc|44km NNE of Toms Place, CA
+nn00848686|2022-10-06T06:54:37.419|37.8699|-117.4765|0.3|nn|nn|nn|nn00848686|ml|2.9|nn|18 km NE of Silver Peak, Nevada
+nn00851705|2022-11-21T02:52:42.018|37.9964|-118.2278|5.4|nn|nn|nn|nn00851705|ml|2.9|nn|29 km NE of Benton, California
+nc75131407|2025-02-11T00:23:48.050|37.9255|-118.55866666667|7.69|nc|nc|nc|nc75131407|md|2.96|nc|42 km NNE of Toms Place, CA

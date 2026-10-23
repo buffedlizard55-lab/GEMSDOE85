@@ -1,0 +1,910 @@
+{
+  "evaluator": "gems57-pooled-hide-v2 (buffered_component_draw, whole 8-connected components, buffer_px=3, boundary_px=12)",
+  "withheld_positive_pixels": 11321,
+  "negative_sample_pixels": 250000,
+  "n_total_features_tested": 112,
+  "n_physical_features": 85,
+  "n_fold_structural_features": 27,
+  "threshold_auc": 0.9,
+  "max_directional_auc": 0.75985,
+  "n_leakage_triggers": 0,
+  "all_features_pass_canary": true,
+  "features_sorted_by_auc": [
+    {
+      "index": 102,
+      "group": "fold_visible_fracture_mechanics",
+      "feature": "beam_3p6km",
+      "raw_auc": 0.75985,
+      "directional_auc": 0.75985,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 87,
+      "group": "fold_visible_fracture_mechanics",
+      "feature": "s_perp_log",
+      "raw_auc": 0.24087,
+      "directional_auc": 0.75913,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 91,
+      "group": "fold_visible_fracture_mechanics",
+      "feature": "tip_inline_1km",
+      "raw_auc": 0.75822,
+      "directional_auc": 0.75822,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 85,
+      "group": "fold_visible_fracture_mechanics",
+      "feature": "log_d_vis",
+      "raw_auc": 0.24443,
+      "directional_auc": 0.75557,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 105,
+      "group": "fold_visible_fracture_mechanics",
+      "feature": "bridge_15km",
+      "raw_auc": 0.75457,
+      "directional_auc": 0.75457,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 95,
+      "group": "fold_visible_fracture_mechanics",
+      "feature": "vis_dens_s12",
+      "raw_auc": 0.74689,
+      "directional_auc": 0.74689,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 100,
+      "group": "fold_visible_fracture_mechanics",
+      "feature": "beam_1p4km",
+      "raw_auc": 0.73965,
+      "directional_auc": 0.73965,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 92,
+      "group": "fold_visible_fracture_mechanics",
+      "feature": "tip_inline_4km",
+      "raw_auc": 0.73727,
+      "directional_auc": 0.73727,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 104,
+      "group": "fold_visible_fracture_mechanics",
+      "feature": "beam_7p6km",
+      "raw_auc": 0.73215,
+      "directional_auc": 0.73215,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 103,
+      "group": "fold_visible_fracture_mechanics",
+      "feature": "bridge_7p2km",
+      "raw_auc": 0.73149,
+      "directional_auc": 0.73149,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 106,
+      "group": "fold_visible_fracture_mechanics",
+      "feature": "bridge_geopb16_lock",
+      "raw_auc": 0.73068,
+      "directional_auc": 0.73068,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 96,
+      "group": "fold_visible_fracture_mechanics",
+      "feature": "vis_dens_s32",
+      "raw_auc": 0.73004,
+      "directional_auc": 0.73004,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 94,
+      "group": "fold_visible_fracture_mechanics",
+      "feature": "vis_dens_s4",
+      "raw_auc": 0.72367,
+      "directional_auc": 0.72367,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 93,
+      "group": "fold_visible_fracture_mechanics",
+      "feature": "piedmont_parallel_step",
+      "raw_auc": 0.70915,
+      "directional_auc": 0.70915,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 98,
+      "group": "fold_visible_fracture_mechanics",
+      "feature": "beam100m_800m",
+      "raw_auc": 0.66032,
+      "directional_auc": 0.66032,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 101,
+      "group": "fold_visible_fracture_mechanics",
+      "feature": "bridge_2p8km",
+      "raw_auc": 0.65207,
+      "directional_auc": 0.65207,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 79,
+      "group": "physical_geothermal_geopb16",
+      "feature": "piedmont_slope_hinge",
+      "raw_auc": 0.61936,
+      "directional_auc": 0.61936,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 109,
+      "group": "fold_visible_fracture_mechanics",
+      "feature": "geopb_x_bridge",
+      "raw_auc": 0.61167,
+      "directional_auc": 0.61167,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 78,
+      "group": "physical_geothermal_geopb16",
+      "feature": "piedmont_relief_hinge",
+      "raw_auc": 0.60757,
+      "directional_auc": 0.60757,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 36,
+      "group": "physical_geothermal_geopb16",
+      "feature": "geopb16_topo_r4",
+      "raw_auc": 0.60067,
+      "directional_auc": 0.60067,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 45,
+      "group": "physical_geothermal_geopb16",
+      "feature": "lidar_relief",
+      "raw_auc": 0.59229,
+      "directional_auc": 0.59229,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 88,
+      "group": "fold_visible_fracture_mechanics",
+      "feature": "cos2_inline",
+      "raw_auc": 0.58905,
+      "directional_auc": 0.58905,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 43,
+      "group": "physical_geothermal_geopb16",
+      "feature": "lidar_lapneg_max",
+      "raw_auc": 0.58899,
+      "directional_auc": 0.58899,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 42,
+      "group": "physical_geothermal_geopb16",
+      "feature": "lidar_step_max",
+      "raw_auc": 0.58695,
+      "directional_auc": 0.58695,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 75,
+      "group": "physical_geothermal_geopb16",
+      "feature": "topo10_curv_prof",
+      "raw_auc": 0.58639,
+      "directional_auc": 0.58639,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 110,
+      "group": "fold_visible_fracture_mechanics",
+      "feature": "lidar_x_bridge",
+      "raw_auc": 0.58602,
+      "directional_auc": 0.58602,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 41,
+      "group": "physical_geothermal_geopb16",
+      "feature": "lidar_ex_max",
+      "raw_auc": 0.58408,
+      "directional_auc": 0.58408,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 86,
+      "group": "fold_visible_fracture_mechanics",
+      "feature": "s_par_log",
+      "raw_auc": 0.416,
+      "directional_auc": 0.584,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 23,
+      "group": "physical_geothermal_geopb16",
+      "feature": "grad15_det_elev",
+      "raw_auc": 0.57825,
+      "directional_auc": 0.57825,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 89,
+      "group": "fold_visible_fracture_mechanics",
+      "feature": "nearest_coh",
+      "raw_auc": 0.42253,
+      "directional_auc": 0.57747,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 77,
+      "group": "physical_geothermal_geopb16",
+      "feature": "topo10_hs_lineament",
+      "raw_auc": 0.57703,
+      "directional_auc": 0.57703,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 40,
+      "group": "physical_geothermal_geopb16",
+      "feature": "geopb16_med_r6",
+      "raw_auc": 0.57385,
+      "directional_auc": 0.57385,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 24,
+      "group": "physical_geothermal_geopb16",
+      "feature": "dog8_det_elev",
+      "raw_auc": 0.42627,
+      "directional_auc": 0.57373,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 37,
+      "group": "physical_geothermal_geopb16",
+      "feature": "geopb16_med_r4",
+      "raw_auc": 0.57284,
+      "directional_auc": 0.57284,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 73,
+      "group": "physical_geothermal_geopb16",
+      "feature": "topo10_slope_p90",
+      "raw_auc": 0.5696,
+      "directional_auc": 0.5696,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 3,
+      "group": "physical_geothermal_geopb16",
+      "feature": "tf_geod_2ndinv",
+      "raw_auc": 0.56734,
+      "directional_auc": 0.56734,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 6,
+      "group": "physical_geothermal_geopb16",
+      "feature": "tf_geod_shearrate",
+      "raw_auc": 0.56678,
+      "directional_auc": 0.56678,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 74,
+      "group": "physical_geothermal_geopb16",
+      "feature": "topo10_relief",
+      "raw_auc": 0.56654,
+      "directional_auc": 0.56654,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 18,
+      "group": "physical_geothermal_geopb16",
+      "feature": "tf_det_elev_slope",
+      "raw_auc": 0.56432,
+      "directional_auc": 0.56432,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 44,
+      "group": "physical_geothermal_geopb16",
+      "feature": "lidar_downface_max",
+      "raw_auc": 0.56149,
+      "directional_auc": 0.56149,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 99,
+      "group": "fold_visible_fracture_mechanics",
+      "feature": "bridge100m_1p6km",
+      "raw_auc": 0.55471,
+      "directional_auc": 0.55471,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 58,
+      "group": "physical_geothermal_geopb16",
+      "feature": "paleo_vent_logprox",
+      "raw_auc": 0.44652,
+      "directional_auc": 0.55348,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 108,
+      "group": "fold_visible_fracture_mechanics",
+      "feature": "hydro_x_tip",
+      "raw_auc": 0.55013,
+      "directional_auc": 0.55013,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 80,
+      "group": "physical_geothermal_geopb16",
+      "feature": "scarp_inflection_100m",
+      "raw_auc": 0.54855,
+      "directional_auc": 0.54855,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 111,
+      "group": "fold_visible_fracture_mechanics",
+      "feature": "strain_x_bridge",
+      "raw_auc": 0.54626,
+      "directional_auc": 0.54626,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 90,
+      "group": "fold_visible_fracture_mechanics",
+      "feature": "nearest_tipness",
+      "raw_auc": 0.54592,
+      "directional_auc": 0.54592,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 32,
+      "group": "physical_geothermal_geopb16",
+      "feature": "grav_basement_couple",
+      "raw_auc": 0.54405,
+      "directional_auc": 0.54405,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 39,
+      "group": "physical_geothermal_geopb16",
+      "feature": "geopb16_pot_r6",
+      "raw_auc": 0.54331,
+      "directional_auc": 0.54331,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 15,
+      "group": "physical_geothermal_geopb16",
+      "feature": "tf_ieq_n100a15",
+      "raw_auc": 0.54304,
+      "directional_auc": 0.54304,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 25,
+      "group": "physical_geothermal_geopb16",
+      "feature": "grad15_depth_to_base_surf",
+      "raw_auc": 0.54303,
+      "directional_auc": 0.54303,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 34,
+      "group": "physical_geothermal_geopb16",
+      "feature": "geopb16_pot_r4",
+      "raw_auc": 0.54175,
+      "directional_auc": 0.54175,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 12,
+      "group": "physical_geothermal_geopb16",
+      "feature": "tf_iso_grav_anom",
+      "raw_auc": 0.45902,
+      "directional_auc": 0.54098,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 9,
+      "group": "physical_geothermal_geopb16",
+      "feature": "tf_deq_n100a15",
+      "raw_auc": 0.53772,
+      "directional_auc": 0.53772,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 19,
+      "group": "physical_geothermal_geopb16",
+      "feature": "grad15_rtp",
+      "raw_auc": 0.5353,
+      "directional_auc": 0.5353,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 48,
+      "group": "physical_geothermal_geopb16",
+      "feature": "rad_K_z",
+      "raw_auc": 0.465,
+      "directional_auc": 0.535,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 97,
+      "group": "fold_visible_fracture_mechanics",
+      "feature": "vis_gap_ratio",
+      "raw_auc": 0.46583,
+      "directional_auc": 0.53417,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 47,
+      "group": "physical_geothermal_geopb16",
+      "feature": "lidar_valid",
+      "raw_auc": 0.5325,
+      "directional_auc": 0.5325,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 83,
+      "group": "physical_geothermal_geopb16",
+      "feature": "hydro_x_geopb16_med",
+      "raw_auc": 0.53131,
+      "directional_auc": 0.53131,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 33,
+      "group": "physical_geothermal_geopb16",
+      "feature": "claycap_x_seismicity",
+      "raw_auc": 0.46931,
+      "directional_auc": 0.53069,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 29,
+      "group": "physical_geothermal_geopb16",
+      "feature": "grad15_tmi",
+      "raw_auc": 0.53061,
+      "directional_auc": 0.53061,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 31,
+      "group": "physical_geothermal_geopb16",
+      "feature": "strain_transtension",
+      "raw_auc": 0.52999,
+      "directional_auc": 0.52999,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 62,
+      "group": "physical_geothermal_geopb16",
+      "feature": "probe2m_hot_logprox",
+      "raw_auc": 0.47074,
+      "directional_auc": 0.52926,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 5,
+      "group": "physical_geothermal_geopb16",
+      "feature": "tf_tc",
+      "raw_auc": 0.47106,
+      "directional_auc": 0.52894,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 51,
+      "group": "physical_geothermal_geopb16",
+      "feature": "rad_TC_z",
+      "raw_auc": 0.47108,
+      "directional_auc": 0.52892,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 2,
+      "group": "physical_geothermal_geopb16",
+      "feature": "tf_tmi_hg",
+      "raw_auc": 0.52828,
+      "directional_auc": 0.52828,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 54,
+      "group": "physical_geothermal_geopb16",
+      "feature": "rad_k_metasom",
+      "raw_auc": 0.47172,
+      "directional_auc": 0.52828,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 50,
+      "group": "physical_geothermal_geopb16",
+      "feature": "rad_U_z",
+      "raw_auc": 0.47216,
+      "directional_auc": 0.52784,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 28,
+      "group": "physical_geothermal_geopb16",
+      "feature": "dog8_cond_surf",
+      "raw_auc": 0.52726,
+      "directional_auc": 0.52726,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 71,
+      "group": "physical_geothermal_geopb16",
+      "feature": "elev_abs_z",
+      "raw_auc": 0.52714,
+      "directional_auc": 0.52714,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 21,
+      "group": "physical_geothermal_geopb16",
+      "feature": "grad15_iso_grav_anom",
+      "raw_auc": 0.52692,
+      "directional_auc": 0.52692,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 22,
+      "group": "physical_geothermal_geopb16",
+      "feature": "dog8_iso_grav_anom",
+      "raw_auc": 0.52671,
+      "directional_auc": 0.52671,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 14,
+      "group": "physical_geothermal_geopb16",
+      "feature": "tf_depth_to_base_surf",
+      "raw_auc": 0.52442,
+      "directional_auc": 0.52442,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 27,
+      "group": "physical_geothermal_geopb16",
+      "feature": "grad15_cond_surf",
+      "raw_auc": 0.52439,
+      "directional_auc": 0.52439,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 70,
+      "group": "physical_geothermal_geopb16",
+      "feature": "chi10_ksn_max",
+      "raw_auc": 0.52378,
+      "directional_auc": 0.52378,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 57,
+      "group": "physical_geothermal_geopb16",
+      "feature": "paleo_vent_s12",
+      "raw_auc": 0.4764,
+      "directional_auc": 0.5236,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 107,
+      "group": "fold_visible_fracture_mechanics",
+      "feature": "hydro_x_bridge",
+      "raw_auc": 0.52341,
+      "directional_auc": 0.52341,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 4,
+      "group": "physical_geothermal_geopb16",
+      "feature": "tf_iso_grav_anom_slope",
+      "raw_auc": 0.52306,
+      "directional_auc": 0.52306,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 16,
+      "group": "physical_geothermal_geopb16",
+      "feature": "tf_cond_surf",
+      "raw_auc": 0.47714,
+      "directional_auc": 0.52286,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 61,
+      "group": "physical_geothermal_geopb16",
+      "feature": "probe2m_survey_dens_s10",
+      "raw_auc": 0.52066,
+      "directional_auc": 0.52066,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 59,
+      "group": "physical_geothermal_geopb16",
+      "feature": "probe2m_dab_s5",
+      "raw_auc": 0.52019,
+      "directional_auc": 0.52019,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 49,
+      "group": "physical_geothermal_geopb16",
+      "feature": "rad_Th_z",
+      "raw_auc": 0.48006,
+      "directional_auc": 0.51994,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 26,
+      "group": "physical_geothermal_geopb16",
+      "feature": "dog8_depth_to_base_surf",
+      "raw_auc": 0.48152,
+      "directional_auc": 0.51848,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 1,
+      "group": "physical_geothermal_geopb16",
+      "feature": "tf_rtp",
+      "raw_auc": 0.51789,
+      "directional_auc": 0.51789,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 7,
+      "group": "physical_geothermal_geopb16",
+      "feature": "tf_geod_dilaterate",
+      "raw_auc": 0.51675,
+      "directional_auc": 0.51675,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 82,
+      "group": "physical_geothermal_geopb16",
+      "feature": "hydro_x_geopb16_pot",
+      "raw_auc": 0.51588,
+      "directional_auc": 0.51588,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 46,
+      "group": "physical_geothermal_geopb16",
+      "feature": "lidar_coh100",
+      "raw_auc": 0.4853,
+      "directional_auc": 0.5147,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 10,
+      "group": "physical_geothermal_geopb16",
+      "feature": "tf_iso_grav_anom_vg",
+      "raw_auc": 0.51432,
+      "directional_auc": 0.51432,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 8,
+      "group": "physical_geothermal_geopb16",
+      "feature": "tf_tmi_vg",
+      "raw_auc": 0.48681,
+      "directional_auc": 0.51319,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 11,
+      "group": "physical_geothermal_geopb16",
+      "feature": "tf_det_elev",
+      "raw_auc": 0.51311,
+      "directional_auc": 0.51311,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 30,
+      "group": "physical_geothermal_geopb16",
+      "feature": "dog8_tmi",
+      "raw_auc": 0.48792,
+      "directional_auc": 0.51208,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 64,
+      "group": "physical_geothermal_geopb16",
+      "feature": "spring_temp_s20",
+      "raw_auc": 0.48955,
+      "directional_auc": 0.51045,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 66,
+      "group": "physical_geothermal_geopb16",
+      "feature": "geotherm_nakca_s12",
+      "raw_auc": 0.48971,
+      "directional_auc": 0.51029,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 0,
+      "group": "physical_geothermal_geopb16",
+      "feature": "tf_mag_anom",
+      "raw_auc": 0.50962,
+      "directional_auc": 0.50962,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 13,
+      "group": "physical_geothermal_geopb16",
+      "feature": "tf_tmi",
+      "raw_auc": 0.50949,
+      "directional_auc": 0.50949,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 68,
+      "group": "physical_geothermal_geopb16",
+      "feature": "volcanic_vent_s20",
+      "raw_auc": 0.4906,
+      "directional_auc": 0.5094,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 63,
+      "group": "physical_geothermal_geopb16",
+      "feature": "spring_temp_s8",
+      "raw_auc": 0.49065,
+      "directional_auc": 0.50935,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 67,
+      "group": "physical_geothermal_geopb16",
+      "feature": "spring_hot_logprox",
+      "raw_auc": 0.49127,
+      "directional_auc": 0.50873,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 65,
+      "group": "physical_geothermal_geopb16",
+      "feature": "geotherm_sio2_s12",
+      "raw_auc": 0.50807,
+      "directional_auc": 0.50807,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 53,
+      "group": "physical_geothermal_geopb16",
+      "feature": "rad_UK_z",
+      "raw_auc": 0.5077,
+      "directional_auc": 0.5077,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 17,
+      "group": "physical_geothermal_geopb16",
+      "feature": "tf_iso_grav_anom_hg",
+      "raw_auc": 0.49352,
+      "directional_auc": 0.50648,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 76,
+      "group": "physical_geothermal_geopb16",
+      "feature": "topo10_aspect_coh",
+      "raw_auc": 0.49379,
+      "directional_auc": 0.50621,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 56,
+      "group": "physical_geothermal_geopb16",
+      "feature": "paleo_vent_s4",
+      "raw_auc": 0.49394,
+      "directional_auc": 0.50606,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 60,
+      "group": "physical_geothermal_geopb16",
+      "feature": "probe2m_dab_s15",
+      "raw_auc": 0.50559,
+      "directional_auc": 0.50559,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 20,
+      "group": "physical_geothermal_geopb16",
+      "feature": "dog8_rtp",
+      "raw_auc": 0.49505,
+      "directional_auc": 0.50495,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 81,
+      "group": "physical_geothermal_geopb16",
+      "feature": "hydro_master_index",
+      "raw_auc": 0.50484,
+      "directional_auc": 0.50484,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 52,
+      "group": "physical_geothermal_geopb16",
+      "feature": "rad_ThK_z",
+      "raw_auc": 0.50294,
+      "directional_auc": 0.50294,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 35,
+      "group": "physical_geothermal_geopb16",
+      "feature": "geopb16_rad_r4",
+      "raw_auc": 0.50178,
+      "directional_auc": 0.50178,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 69,
+      "group": "physical_geothermal_geopb16",
+      "feature": "chi10_step_max",
+      "raw_auc": 0.49834,
+      "directional_auc": 0.50166,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 55,
+      "group": "physical_geothermal_geopb16",
+      "feature": "mag_shallow_res",
+      "raw_auc": 0.50156,
+      "directional_auc": 0.50156,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 38,
+      "group": "physical_geothermal_geopb16",
+      "feature": "geopb16_crest_r4",
+      "raw_auc": 0.50131,
+      "directional_auc": 0.50131,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 84,
+      "group": "physical_geothermal_geopb16",
+      "feature": "chi10_piedmont_step",
+      "raw_auc": 0.49913,
+      "directional_auc": 0.50087,
+      "leaks_gt_090": false
+    },
+    {
+      "index": 72,
+      "group": "physical_geothermal_geopb16",
+      "feature": "lahontan_1335m_prox",
+      "raw_auc": 0.49965,
+      "directional_auc": 0.50035,
+      "leaks_gt_090": false
+    }
+  ]
+}
