@@ -1,5 +1,0 @@
-surface ready [32s] nonzero=717760
-leakage canary AUC (vs full catalogue, subsample) = 0.5030  (>0.90 would flag leakage)
-n=37654 pooled=0.07393 CI[0.06900,0.07886] [48s]
-n=60000 pooled=0.08789 CI[0.08069,0.09508] [62s]
-n=90000 pooled=0.09773 CI[0.08917,0.10630] [77s]
