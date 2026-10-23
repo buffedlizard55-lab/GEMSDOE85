@@ -14,6 +14,18 @@
 
 **DOE GEMS Prize Challenge · DrivenData Competition #306 · Verified End-to-End Research, Holdout Validation & Unique GeoTIFF Submission System**
 
+## CURRENT STATE — session `arena/340b2965-gemsdoe85`, 2026-10-23 (edit only this block; the historical narrative below is overridden by it for this session)
+
+| item | value |
+|---|---|
+| **Parent R0** | `h33-h33-2-b2` (GEMSDOE32 `e5eb6e7e`), 37,654 unit dots, none within 2 px of the catalogue; live **0.2778 = CLAIM** — no submission-page receipt in this repo |
+| **Start gate** | manifest hashes verified (`registry/data_manifest.json`, core + scored groups); R0 rebuilt pixel-identical from pinned inputs; all 7 SHA-256 pins match (`registry/scored_artifacts.json` parent pins included); full pytest suite passes |
+| **Built variants (PRUNE axis — complete)** | prune3 35,483 dots (−5.77 %), prune4 33,829 (−10.16 %), prune5 32,017 (−14.97 %); all `BUILT` in `ledger/submissions.csv`, `receipt = N`, all gates pass (`evidence/session_prune_receipt.json`); docs/SUBMIT.md names upload file, sha256 and ≤140-char note per slot |
+| **Best receipt** | none yet — human uploads one file per slot from their registered account |
+| **TOP_PUBLIC** | **unfilled** — human reads it off the leaderboard with a date; no other target number is valid |
+| **Slots left this rolling week** | **unknown** — human reads from the account page (3/week is a ceiling, not a target) |
+| **Next 3 slots** | pending human **AXIS** assignment — each `(AXIS, value)` pair is built once across all sessions and PRUNE rungs 3/4/5 are consumed; no variant was built this session because no AXIS was assigned. Default lane order: MASS, CONCENTRATION, SNAP, PRUNE, RELIEF (wk 1–2 per `SLOT_PLAN.md`) |
+
 [![Automated Validation](https://img.shields.io/badge/Automated_Validation-32%2F32_PASS-brightgreen)](docs/index.html)
 [![Holdout DTI](https://img.shields.io/badge/HOLDOUT--DTI_(gems57--v2)-0.196461_(%2B107.6%25_vs_H33)-blue)](evidence/hjcd_experiments.json)
 [![Uniqueness Gate](https://img.shields.io/badge/Uniqueness_236_Rasters-PASS_(0.6402_%3C%3D_0.70)-success)](evidence/uniqueness_audit.json)
