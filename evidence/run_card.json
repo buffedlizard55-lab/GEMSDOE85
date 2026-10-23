@@ -1,113 +1,98 @@
 {
-  "run_id": "gems85-20261022T222707Z",
-  "hypothesis": "H85-1 GEO-Pb: a fault is a JUXTAPOSITION, not a gradient. At each pixel and 8 candidate strikes, the offset difference of a covariance-whitened 10-band multi-physics stack across the candidate line (windowed Hotelling-style two-sample step), reduced by the MEDIAN of three independent physics domains so two of three must agree, times an along-strike persistence term over 1.5 km, then crest-thinned by non-maximum suppression across its own normal.",
-  "mechanism": "A fault concealed under Holocene alluvium has no scarp but still juxtaposes different basement susceptibility, cover thickness and surface geochemistry. Each band changes a little; the joint 10-vector changes a lot. A derivative operator weights the magnitude of each band's change; a whitened two-sample statistic weights how improbable the JOINT change is.",
-  "named_non_fault_process_that_could_mimic_it": "Erosional volcanic mesa and lava-flow margins: straight, long, and expressed in all three physics domains (magnetic contrast, radiometric contrast, topographic step) with no tectonic offset. Declared as the irreducible confounder; the straightness term and the two-of-three vote do NOT remove it. Secondary, partly mitigated: distal alluvial-fan margins and Lake Lahontan shorelines (lobate -- suppressed by the 1.5 km straightness term) and aeromagnetic/radiometric acquisition seams (single-domain -- suppressed by the two-of-three median; azimuth audit in evidence/experiments.json shows max single-orientation share 0.254 < 0.35).",
-  "holdout_dti": {
-    "label": "HOLDOUT-DTI",
-    "evaluator_version": "gems85-holdout-v1.0.0",
-    "value": 0.09838308302222241,
-    "ci95": [
-      0.09022123039966032,
-      0.10654493564478451
-    ],
-    "per_fold": [
-      0.10327788027153373,
-      0.10469137584536177,
-      0.08636118725538365,
-      0.09831572297936028
-    ],
-    "n_withheld_positives": 60988,
-    "protocol": "hide-and-recover; whole fault segments withheld by spatial block with a 5 px buffer; catalogue-derived features from visible faults only; visible faults masked pixel-exactly; pooled DTI, alpha 0.2, beta 0.8, 300 m triangular kernel"
+  "schema_version": 1,
+  "reviewed_utc": "2026-10-23T00:15:42.687356+00:00",
+  "hypothesis": "No hypothesis selected or experiment run: method lane is unassigned.",
+  "mechanism": "Not evaluated; prerequisites and the literal uniqueness gate are blocked.",
+  "non_fault_mimic": "Not applicable because no hypothesis was tested; proposal-specific mimics are recorded in research/current-session-hypotheses-2026-10-23.md.",
+  "experiment_status": "NOT RUN: prerequisites and literal uniqueness gate blocked",
+  "holdout": {
+    "evidence_class": "HOLDOUT-DTI",
+    "evaluator_version": "gems57-pooled-hide-v2",
+    "dti": null,
+    "ci95": null,
+    "withheld_positive_pixels": null,
+    "status": "not run"
   },
-  "controls_at_matched_mass": {
-    "uniform_random": 0.06854276785936068,
-    "derivative_control_sato_det_elev": 0.017631075061456277,
-    "control_budget_used": 60000
-  },
-  "vs_random_delta": 0.02984031516286173,
-  "geopb_ablation_37654px": {
-    "with": 0.06229918424308149,
-    "without": 0.05712739506360241,
-    "delta": 0.0051717891794790805,
-    "folds_positive": 4
-  },
-  "leakage_canary": {
-    "geopb_crest_auc": 0.5036234229684529,
-    "threshold": 0.9,
-    "verdict": "clean"
-  },
-  "correlation_vs_registry": {
-    "max_abs_spearman": 0.01165560892932136,
-    "max_dot_overlap_3px": 0.9914333333333334,
-    "thresholds": {
-      "spearman": 0.9,
-      "dot_overlap_3px": 0.7,
-      "overlap_lift_over_chance": 1.5
-    },
-    "is_duplicate": false
-  },
-  "raster_sha256": "ba33ea18936e6324037457e1ff5070d8e879b7b29a25b4ae2c0003bc509a567f",
-  "validator_output": {
-    "all_checks_passed": true,
-    "checks": {
-      "file_exists": true,
-      "single_band": true,
-      "dtype_float32": true,
-      "shape_3730x3292": true,
-      "crs_epsg_32611": true,
-      "transform_matches_template": true,
-      "resolution_100m": true,
-      "no_nan_inside_footprint": true,
-      "no_inf_inside_footprint": true,
-      "values_in_0_1_inside_footprint": true,
-      "all_finite_whole_raster": true,
-      "values_in_0_1_whole_raster": true,
-      "outside_footprint_is_zero": true,
-      "no_nodata_tag": true,
-      "has_positive_predictions": true,
-      "no_prediction_outside_footprint": true,
-      "zero_mass_within_2px_of_catalogue": true
-    },
-    "no_nan_inside_footprint": true,
-    "values_in_0_1": true,
-    "crs_shape_transform_match": true
-  },
-  "submission_name": "gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.tif",
-  "submission_note": "H85-1 GEO-Pb 2of3-physics juxtaposition crest, 90000 dots sep4px, 0 within 200m of catalogue, holdout DTI 0.0984 (UNSCORED)",
-  "preregistered_gate": {
-    "beats_derivative_control": true,
-    "beats_uniform_random": true,
-    "leakage_canary_clean": true
-  },
-  "verdict": "promote-as-candidate",
-  "verdict_caveat": "'promote-as-candidate' means the file cleared this repository's pre-registered gate and is published for the separate selector step. It is NOT a leaderboard projection. No organizer score exists for any artifact in this repository.",
-  "budget": {
-    "experiments_run": 4,
-    "limit": 3,
-    "note": "experiment 4 (the separation sweep) was a 108 s refinement of experiment 3's emission rule, not a new hypothesis; logged for transparency against the protocol's 3-experiment cap"
-  },
-  "negative_experiments_this_session": [
-    {
-      "id": 1,
-      "file": "evidence/experiment_1_thermal.json",
-      "hypothesis": "H_TM thermal-spring x GEO-Pb conjunction: score = crest * (1 + lambda*exp(-d_thermal/tau)); re-rank the fixed dot budget toward verified hot/warm springs (GDR 1391).",
-      "mechanism": "springs mark deep circulation along permeable fault conduits; 619/1839 sites are >3 km from any mapped fault.",
-      "mimic": "valley-floor/playa spring lines and road-aligned irrigation wells; mitigated by the GEO-Pb juxtaposition factor.",
-      "result": "best lambda=1.0 tau=5px: 0.09032 vs crest 0.08971 at 60k (CI overlap); 0.09917 vs 0.09838 at 90k. Leakage canary AUC 0.5093 (clean). Verdict: NEGATIVE."
-    },
-    {
-      "id": 2,
-      "file": "evidence/experiment_2_orientation.json",
-      "hypothesis": "H85-2 GEO-Pb 16 strikes, persistence retired: double strike resolution, drop the null-result persistence term.",
-      "result": "0.07258/0.08662/0.09450 vs crest 0.07475/0.08971/0.09838 at 37.654k/60k/90k -- worse everywhere. Verdict: NEGATIVE."
-    },
-    {
-      "id": 3,
-      "file": "evidence/experiment_3_emitter.json",
-      "hypothesis": "H85-3 credit-bar-gated emission (emitter.py marginal-gain theorem), hard cap 60k dots.",
-      "result": "credit bar never bound; gated 0.08765 vs plain top-n 0.08971 at 60k. Packing exhausted for this field. Verdict: NEGATIVE."
+  "registry": {
+    "correlation": null,
+    "overlap": null,
+    "phase_surface": "not run",
+    "phase_final_dots": "not run",
+    "uniqueness_cleared": false,
+    "saturation_certificate": {
+      "prior_measurement": {
+        "evidence_class": "REGISTRY-MEASUREMENT",
+        "witness_file": "data/raw/learning/registry-saturation-witness.tif",
+        "witness_sha256": "ab0a0a62eecf066a82713b09dd49f0f638a91fa3dd81f54cc34ae89afa3872be",
+        "positive_pixels": 5167373,
+        "allowed_pixels": 5106385,
+        "uncovered_allowed_pixels": 0,
+        "covered_allowed_fraction": 1.0,
+        "universal_overlap_blocker": true,
+        "overlap_limit": 0.7,
+        "support_definition": "finite prediction > 0 (inherited literal support rule)",
+        "implication": "Every nonempty candidate dot set in the allowed domain has forward overlap 1.0 with this prior; therefore it cannot pass the 0.70 gate.",
+        "source": "https://github.com/buffedlizard55-lab/17GEMSDOE/blob/6fc71d19d49dca4960d5434bd81b6dd06fcc030a/docs/downloads/17GEMSDOE_E-proba-multiscale_20260930T044527Z.tif",
+        "protocol_changed": false
+      },
+      "local_witness_reverified": false
     }
+  },
+  "raster_sha256": null,
+  "validator": {
+    "status": "not run: no candidate",
+    "no_nan_inside_footprint": null,
+    "values_in_0_1": null,
+    "crs_match": null,
+    "shape_match": null,
+    "transform_match": null
+  },
+  "submission": {
+    "name": null,
+    "note": "No candidate: missing lane/cache and literal registry saturation. No weekly slot used."
+  },
+  "gates": {
+    "core_manifest_valid": true,
+    "core_mirror_integrity": [
+      {
+        "id": "training_features",
+        "ok": false
+      },
+      {
+        "id": "labels",
+        "ok": true
+      },
+      {
+        "id": "existing_faults",
+        "ok": true
+      },
+      {
+        "id": "sample_submission",
+        "ok": true
+      }
+    ],
+    "core_inputs_available": false,
+    "template_unmodified": true,
+    "cached_stack_available": false
+  },
+  "blockers": [
+    "No explicit single-method lane assignment supplied.",
+    "One or more core data mirrors are missing or fail their hash/size pins.",
+    "The template cached feature-stack bytes and hash manifest are unavailable locally.",
+    "Binding prior certificate reports a universal literal-overlap blocker; local witness re-verification is still required.",
+    "Prior certificate witness path differs from the learning-manifest restore destination; resolve provenance before relying on a fresh verification.",
+    "Registry saturation witness has not been locally verified.",
+    "Full registry raster bytes have not been compared at either the pre-placement surface or final-dot stage.",
+    "Historical lane results exist but no current candidate has passed the strict protocol and a paired current-best improvement gate.",
+    "Historical model scripts and quarantined rasters exist; no current lane candidate or automatic slot selector is approved.",
+    "Account-specific weekly remaining quota and submission-page receipts are unavailable; no slot selection authorized."
   ],
-  "session_note": "All three holdout experiments ran negative; none beat the current holdout best (0.09838 at 90,000 dots). Per the protocol no weekly submission slot was spent on them. The published crest8 candidate remains the lane's validated, unique, format-cleared artifact (verdict promote-as-candidate, UNSCORED)."
+  "verdict": "negative",
+  "safe_to_download": false,
+  "safe_to_submit": false,
+  "promoted": false,
+  "selector_implemented": false,
+  "submission_slots_used": 0,
+  "experiments_run": 0,
+  "note": "Negative preflight deliverable; not a geological negative result or a competition submission."
 }

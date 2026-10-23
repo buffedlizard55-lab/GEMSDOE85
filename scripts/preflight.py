@@ -53,6 +53,17 @@ def review(root=ROOT):
     if not cache_ok:
         blockers.append('The template cached feature-stack bytes and hash manifest are unavailable locally.')
     witness = root / 'data/learning/registry-saturation-witness.tif'
+    # Preserve the prior binding certificate even when its witness cannot currently be
+    # re-opened. Never silently reinterpret that literal result as cleared.
+    prior_certificate_path = root / 'evidence/saturation_certificate.json'
+    prior_certificate = None
+    if prior_certificate_path.is_file():
+        prior_certificate = json.loads(prior_certificate_path.read_text())
+        if prior_certificate.get('universal_overlap_blocker'):
+            blockers.append('Binding prior certificate reports a universal literal-overlap blocker; local witness re-verification is still required.')
+        expected_witness = str(witness.relative_to(root))
+        if prior_certificate.get('witness_file') != expected_witness:
+            blockers.append('Prior certificate witness path differs from the learning-manifest restore destination; resolve provenance before relying on a fresh verification.')
     saturation = None
     grid_ok = all(any(row['id'] == name and row['ok'] for row in integrity)
                   for name in ['sample_submission', 'existing_faults'])
@@ -80,12 +91,15 @@ def review(root=ROOT):
         'Account-specific weekly remaining quota and submission-page receipts are unavailable; no slot selection authorized.'
     ])
     return dict(schema_version=1, reviewed_utc=datetime.now(timezone.utc).isoformat(),
-        hypothesis=None, mechanism=None, non_fault_mimic=None,
+        hypothesis='No hypothesis selected or experiment run: method lane is unassigned.',
+        mechanism='Not evaluated; prerequisites and the literal uniqueness gate are blocked.',
+        non_fault_mimic='Not applicable because no hypothesis was tested; proposal-specific mimics are recorded in research/current-session-hypotheses-2026-10-23.md.',
         experiment_status='NOT RUN: prerequisites and literal uniqueness gate blocked',
         holdout=dict(evidence_class='HOLDOUT-DTI', evaluator_version='gems57-pooled-hide-v2',
             dti=None, ci95=None, withheld_positive_pixels=None, status='not run'),
         registry=dict(correlation=None, overlap=None, phase_surface='not run', phase_final_dots='not run',
-            uniqueness_cleared=False, saturation_certificate=saturation),
+            uniqueness_cleared=False, saturation_certificate=(saturation if saturation is not None else
+                dict(prior_measurement=prior_certificate, local_witness_reverified=False))),
         raster_sha256=None,
         validator=dict(status='not run: no candidate', no_nan_inside_footprint=None,
             values_in_0_1=None, crs_match=None, shape_match=None, transform_match=None),

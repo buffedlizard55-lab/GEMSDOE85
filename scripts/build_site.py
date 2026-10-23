@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import html
 import json
+import math
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -77,18 +78,23 @@ def page(title: str, body: str, active: str) -> str:
     links = "".join(
         f'<a href="{h}" class="{"on" if h == active else ""}">{html.escape(t)}</a>'
         for h, t in nav)
-    sub = jload(ROOT / "registry" / "submission.json") or {}
-    built_utc = sub.get("built_utc", "20261022T222707Z")
-    if "T" in built_utc and "Z" in built_utc:
-        d_part, t_part = built_utc.split("T")
-        stamp = f"{d_part[:4]}-{d_part[4:6]}-{d_part[6:8]} {t_part[:2]}:{t_part[2:4]} UTC"
+    if submission_blockers():
+        current = jload(ROOT / "evidence" / "run_card.json") or {}
+        reviewed = str(current.get("reviewed_utc", ""))
+        stamp = reviewed[:16].replace("T", " ") + " UTC" if reviewed else "current blocked review"
     else:
-        stamp = "2026-10-22 22:27 UTC"
+        sub = jload(ROOT / "registry" / "submission.json") or {}
+        built_utc = sub.get("built_utc", "")
+        if len(built_utc) >= 13 and "T" in built_utc and "Z" in built_utc:
+            d_part, t_part = built_utc.split("T")
+            stamp = f"{d_part[:4]}-{d_part[4:6]}-{d_part[6:8]} {t_part[:2]}:{t_part[2:4]} UTC"
+        else:
+            stamp = "build time unavailable"
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(title)}</title><style>{CSS}</style></head><body>
 <header><div class="wrap"><b>GEMSDOE85</b><nav>{links}</nav></div></header>
-<div class="wrap">{body}
+<div class="wrap">{blocked_status()}{body}
 <footer>Built {stamp} by <code>scripts/build_site.py</code> from <code>registry/</code> and
 <code>evidence/</code>. Every number on this site is generated from a measurement file; none is
 typed by hand. Repository:
@@ -110,10 +116,124 @@ def fmt(x, n=4):
         return "—"
 
 
+def submission_blockers(root: Path = ROOT) -> list[str]:
+    """Fail closed: a format-valid historical raster is not an approved candidate."""
+    blockers = []
+    try:
+        lane = json.loads((root / "registry/lane.json").read_text())
+        if lane.get("status") != "assigned" or not lane.get("method_paragraph"):
+            blockers.append("No explicit method lane is assigned.")
+    except Exception:
+        blockers.append("Lane assignment is missing or unreadable.")
+    try:
+        cache = json.loads((root / "registry/cache_manifest.json").read_text())
+        rows = cache.get("cache_files", [])
+        cache_ok = (cache.get("status") == "available" and bool(rows) and all(
+            row.get("path") and row.get("sha256") and
+            (root / row["path"]).resolve().is_relative_to(root.resolve()) and
+            (root / row["path"]).is_file() for row in rows))
+        if not cache_ok:
+            blockers.append("The required hash-pinned transformed feature stack is unavailable or incomplete.")
+    except Exception:
+        blockers.append("Feature-stack cache manifest is missing or unreadable.")
+    try:
+        cert = json.loads((root / "evidence/saturation_certificate.json").read_text())
+        if cert.get("universal_overlap_blocker"):
+            blockers.append("The binding registry-saturation certificate says every non-empty candidate exceeds the literal overlap limit.")
+    except Exception:
+        blockers.append("Registry-saturation clearance is missing or unreadable.")
+    try:
+        card = json.loads((root / "evidence/run_card.json").read_text())
+        if card.get("safe_to_download") is not True or card.get("safe_to_submit") is not True:
+            blockers.append("The current run card does not authorize download or submission.")
+        if card.get("verdict") != "promote":
+            blockers.append("The current run card has not passed the explicit promotion gate.")
+        ho = card.get("holdout", card.get("holdout_dti", {})) or {}
+        if not ho.get("evaluator_version") or ho.get("dti", ho.get("value")) is None or not ho.get("ci95") or ho.get("withheld_positive_pixels", ho.get("n_withheld_positives")) is None:
+            blockers.append("A current holdout result with evaluator, positives, and confidence interval is missing.")
+        reg = card.get("registry", {}) or card.get("correlation_vs_registry", {}) or {}
+        rho = reg.get("max_abs_spearman", reg.get("surface_rank_correlation_max", reg.get("correlation")))
+        overlap = reg.get("max_dot_overlap_3px", reg.get("final_dot_overlap_max", reg.get("overlap")))
+        try:
+            rho_value = float(rho)
+            overlap_value = float(overlap)
+        except (TypeError, ValueError):
+            rho_value = overlap_value = math.inf
+        if reg.get("uniqueness_cleared") is not True or not math.isfinite(rho_value) or rho_value > 0.90 or not math.isfinite(overlap_value) or overlap_value > 0.70:
+            blockers.append("Registry correlation/overlap has not passed the literal thresholds.")
+        if reg.get("phase_surface") not in ("pass", "passed") or reg.get("phase_final_dots") not in ("pass", "passed"):
+            blockers.append("Surface-stage and final-dot-stage registry checks must both pass.")
+        canary = card.get("leakage_canary", {}) or {}
+        try:
+            canary_auc = float(canary.get("max_auc", canary.get("max_single_feature_auc", 1.0)))
+        except (TypeError, ValueError):
+            canary_auc = math.inf
+        if canary.get("verdict") not in ("clean", "pass", "passed") or not math.isfinite(canary_auc) or canary_auc > 0.90:
+            blockers.append("Per-feature leakage canaries have not been documented clean below AUC 0.90.")
+        vo = card.get("validator", card.get("validator_output", {})) or {}
+        if vo.get("all_checks_passed") is not True:
+            blockers.append("The current candidate has no passing written-byte validator report.")
+        elif not (vo.get("no_nan_inside_footprint") is True and vo.get("values_in_0_1") is True and vo.get("crs_shape_transform_match") is True):
+            blockers.append("Written-byte checks do not explicitly confirm NaN/range/grid requirements.")
+        name = card.get("submission_name") or (card.get("submission", {}) or {}).get("name")
+        note = card.get("submission_note") or (card.get("submission", {}) or {}).get("note")
+        digest = card.get("raster_sha256")
+        if not name or not note or len(note) > 140 or not isinstance(digest, str) or len(digest) != 64:
+            blockers.append("A unique candidate name, <=140-character note, and raster SHA-256 are required.")
+        for detail in card.get("blockers", []):
+            detail = str(detail)
+            category = next((word for word in ("lane", "cache", "saturation")
+                             if word in detail.lower()), None)
+            if category and any(category in existing.lower() for existing in blockers):
+                continue
+            if detail not in blockers:
+                blockers.append(detail)
+    except Exception:
+        blockers.append("A current run card authorizing download and submission is missing.")
+    return blockers
+
+
+def blocked_status(root: Path = ROOT) -> str:
+    blockers = submission_blockers(root)
+    if not blockers:
+        return ""
+    items = "".join(f"<li>{html.escape(x)}</li>" for x in blockers)
+    return ('<div class="note" role="status" aria-live="polite"><b>BLOCKED — DO NOT SUBMIT</b>'
+            '<p>Current eligibility gates are not cleared. The TIFFs kept in this repository are historical '
+            'artifacts; format validation alone does not make them unique, lane-authorized, or safe to submit.</p>'
+            f'<ul>{items}</ul><p>Do not use the old download links or notes. No competition slot has been used.</p></div>')
+
+
 # --------------------------------------------------------------------------- pages
 
 
 def build_index() -> str:
+    blockers = submission_blockers()
+    if blockers:
+        items = "".join(f"<li>{html.escape(x)}</li>" for x in blockers)
+        body = f"""
+<h1>Submission status</h1>
+<div class="hero" style="border-color:var(--bad)">
+  <span class="tag t-bad">BLOCKED — DO NOT DOWNLOAD OR SUBMIT</span>
+  <h2 style="margin-top:18px">No current submission candidate is cleared</h2>
+  <p>This project will publish a one-click TIFF only after the assigned method, required cached
+  stack, strict registry-uniqueness checks (surface and final dots), holdout gate, and byte-level
+  format validator all pass. The present blockers are:</p>
+  <ul>{items}</ul>
+  <p><b>Historical files in <code>docs/downloads/</code> are retained for audit/learning only.</b>
+  Their previous format checks are not current promotion or uniqueness approval.</p>
+</div>
+<h2>Next authorized steps</h2>
+<ol><li>Provide an explicit method paragraph/lane assignment in the session brief and
+<code>registry/lane.json</code>.</li><li>Restore the exact transformed feature-stack bytes and hash manifest; do not rebuild a private substitute.</li><li>Resolve the binding saturation witness through the shared template governance, then run the prescribed surface and final-dot uniqueness checks.</li><li>Only then run the registered holdout with per-feature leakage canaries and compare against a same-evaluator incumbent.</li></ol>
+<p>See <a href="executive-summary.html">submission instructions</a>,
+<a href="method.html">method/evidence</a>, <a href="data.html">data and source register</a>, and the
+<a href="research.html">current hypotheses and official-source review</a>.
+The competition submission form requires values in [0, 1] and matching raster geometry; those
+format checks are necessary but are not sufficient for candidate approval.</p>
+"""
+        return page("GEMSDOE85 — submission blocked", body, "index.html")
+
     sub = jload(ROOT / "registry" / "submission.json")
     if not sub:
         return page("GEMSDOE85", "<h1>No submission built yet</h1>"
@@ -281,6 +401,31 @@ def render_run_card(card: dict) -> str:
 
 
 def build_exec() -> str:
+    blockers = submission_blockers()
+    if blockers:
+        items = "".join(f"<li>{html.escape(x)}</li>" for x in blockers)
+        body = f"""
+<h1>Executive summary — submission instructions</h1>
+<div class="hero" style="border-color:var(--bad)">
+  <span class="tag t-bad">BLOCKED — DO NOT DOWNLOAD OR SUBMIT</span>
+  <h2>No file is currently approved</h2>
+  <p>There is no current TIFF cleared for a competition slot. Existing TIFFs are retained as
+  historical research artifacts and must not be treated as current submissions.</p>
+  <ul>{items}</ul>
+</div>
+<h2>When a candidate is cleared, submit it this way</h2>
+<ol class="steps"><li>Sign in and open the official
+<a href="https://www.drivendata.org/competitions/306/competition-doe-gems/submissions/">DrivenData submissions page</a>.</li>
+<li>Choose “New submission” and upload the single-band GeoTIFF or ZIP containing exactly one GeoTIFF.</li>
+<li>Paste only the candidate-specific note shown beside the cleared download.</li>
+<li>Submit only after the site explicitly states <b>OK TO DOWNLOAD AND SUBMIT</b>; save the submission-page receipt.</li></ol>
+<p>File format requirements and metric details are in the official
+<a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/">problem description</a>.
+Format PASS does not establish scientific validity, uniqueness, or score. No slot has been used.
+</p>
+"""
+        return page("How to submit — blocked", body, "executive-summary.html")
+
     sub = jload(ROOT / "registry" / "submission.json") or {}
     pri = sub.get("primary", {})
     fn = pri.get("filename", "(build the submission first)")

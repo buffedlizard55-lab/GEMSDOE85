@@ -1,28 +1,34 @@
 <!doctype html>
-<html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Research — GEMSDOE85</title><style>body{font-family:system-ui,sans-serif;max-width:900px;margin:0 auto;padding:24px;line-height:1.5}a{color:#0b5fff}pre{background:#f8fafc;padding:12px;border-radius:8px;overflow:auto}</style></head>
-<body>
-<h1>Research &amp; Knowledge Base — GEMSDOE85</h1>
-<p><a href="index.html">← Back</a></p>
-<h2>Why we focused on transtensional pull-aparts (H85-1)</h2>
-<p>Great Basin geothermal systems are <b>not randomly distributed</b> along faults — they cluster at step-overs, relay ramps, and pull-apart basins where oblique extension creates dilational permeability (Faulds et al. 2010 <em>Geothermal favorability in the Great Basin</em>, NBMG Bulletin; Faulds &amp; Hinz 2015). The USGS Quaternary catalogue records the bounding fault trace, but the <b>basin interior has no scarp</b> — so it is systematically absent from the competition labels, yet precisely where a new fault would be verified by the expert panel (Final Prize Round). Geodetic strain (dilatation + shear) images this directly.</p>
-<p><b>Verified sources:</b></p>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Research review — GEMSDOE85</title>
+<style>body{font-family:system-ui,sans-serif;max-width:980px;margin:0 auto;padding:24px;line-height:1.55;color:#182230}a{color:#075bbb}table{border-collapse:collapse;width:100%;margin:1rem 0}td,th{border:1px solid #cbd5e1;padding:.55rem;vertical-align:top;text-align:left}.blocked{padding:14px;background:#5b1616;color:white;font-weight:bold;text-align:center;border-radius:8px}.muted{color:#4b5563}</style></head>
+<body><div class="blocked" role="alert">BLOCKED — DO NOT DOWNLOAD OR SUBMIT any historical TIFF. No current lane or uniqueness clearance.</div>
+<h1>Research review and hypothesis register</h1>
+<p><a href="index.html">← Current project status</a> · <a href="executive-summary.html">How to submit after a candidate is cleared</a></p>
+
+<h2>H33 result: mechanism is plausible; causal explanation and score are unverified</h2>
+<p>The repository's byte-audit describes the H33 artifact as a sparse binary point set derived from a broader line-support surface, with a rule that removes predictions near mapped catalogue faults. A plausible explanation is metric alignment: distance-weighted credit saturates around covered truth, while additional unsupported mass increases the false-positive term. Sparsifying redundant nearby dots can therefore improve the precision/recall trade-off. This is a mechanistic explanation only; without the private evaluation labels, a submission-page receipt, and a matched ablation, this repository cannot prove that the pruning caused the reported score or predict a new score.</p>
+<p><b>Score provenance:</b> the value quoted for H33 in the standing prompt is not receipt-verified in this checkout. The README and <code>evidence/h33_learning_audit.json</code> preserve historical records for review; they are not an <code>ORGANIZER-CONFIRMED</code> receipt. The problem's metric and file requirements should be checked against the official <a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/">DrivenData problem description</a>.</p>
+
+<h2>Proposals only — not a lane assignment, experiment, or prediction</h2>
+<p>Rank order is a qualitative research-priority judgment, not a measured performance claim. No proposal was run: <code>registry/lane.json</code> is unassigned, <code>registry/cache_manifest.json</code> lacks the required transformed cache, and the binding literal overlap certificate blocks nonempty candidate support. The full definitions and mimics are in <code>research/current-session-hypotheses-2026-10-23.md</code>.</p>
+<table><thead><tr><th>Rank</th><th>Hypothesis and layers/transform</th><th>Reason a catalogue-missing fault could be found; difference from existing code</th><th>Named mimic / cost</th></tr></thead><tbody>
+<tr><td>1</td><td>H-CHEM-PLUME: measured GDR-1391 spring/well chemistry and coordinates; marked spatial point-process / anisotropic kernel. Never use fault-distance fields.</td><td>Hydrothermal discharge chemistry can evidence fluid pathways where surface fault mapping misses a concealed conduit. Unlike the repo's thermal-distance arm, this uses independent chemistry marks.</td><td>Valley springs, groundwater mixing, anthropogenic wells. Low–medium coding cost, high confounding. Exact pinned bytes must be restored.</td></tr>
+<tr><td>2</td><td>H-PHASE-LOCK: RTP/TMI, gravity, radiometric ratios; cross-scale wavelet phase congruency and orientation persistence.</td><td>Tests scale-stable boundary phase rather than GEO-Pb's two-sided step amplitude or existing gradient/ridge response; could retain concealed contacts with weak amplitudes.</td><td>Lava-flow contacts and acquisition seams. Medium cost; exact transformed cache is missing.</td></tr>
+<tr><td>3</td><td>H-CONDUCTIVE-TERMINATION: conductivity/depth-to-base and potential-field layers; multiscale termination/paired-lobe transform.</td><td>Targets offsets or terminations in a conductive corridor, not generic co-located boundaries or visible network geometry.</td><td>Basin-fill facies boundaries and clay-rich playa margins. Medium–high cost and high ambiguity.</td></tr>
+<tr><td>4</td><td>H-DRAINAGE-KINK (conditional): USGS 3DEP DEM/LiDAR; channel bearing-change, paired knickpoints, and profile residuals.</td><td>Drainage deflection may register young concealed structures before inventory update; repo's scarp/terrain channels do not encode drainage topology.</td><td>Lithologic knickpoints, dams, engineered channels. High cost; exact 1 m coverage over study area is not verified, so not currently viable.</td></tr>
+</tbody></table>
+<p>No new external dataset was fetched or represented as available in this session. Official USGS pages say 3DEP elevation products are free and downloadable via The National Map/LidarExplorer, but they direct users to coverage tools; exact footprint coverage must be checked before H-DRAINAGE-KINK can be called viable.</p>
+
+<h2>Official source links</h2>
 <ul>
-<li>Faulds, J.E. et al. — <a href="https://www.nbmg.unr.edu/">NBMG Great Basin transtension publications</a>.</li>
-<li>DOE GEMS Prize problem description explicitly lists dilatation rate, shear strain rate, second invariant as provided features — official but under-used (13/19 bands have zero derived channels in prior repo's feature stack).</li>
-<li>GeoDAWN isostatic gravity basement depth + conductivity image the subsurface contact that pull-aparts offset.</li>
+<li><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/">DOE GEMS competition problem, metric, and submission format</a></li>
+<li><a href="https://gdr.openei.org/submissions/1391">GDR 1391: geothermal well and spring data</a></li>
+<li><a href="https://www.usgs.gov/data/geodawn-airborne-magnetic-and-radiometric-surveys-northwestern-great-basin-nevada-and">USGS GeoDAWN magnetic and radiometric release</a></li>
+<li><a href="https://www.usgs.gov/3d-elevation-program/about-3dep-products-services">USGS 3DEP product description and download routes</a></li>
+<li><a href="https://www.usgs.gov/the-national-map-data-delivery/gis-data-download">USGS National Map GIS data download and LidarExplorer</a></li>
 </ul>
-<h2>Geothermal vents knowledge (condensed from official verified sources)</h2>
-<p>Stored in <code>docs/research/geothermal-vents-knowledge.md</code> (see below). Key: hydrothermal outflow requires <b>permeability + heat + fluid</b>. Faults provide permeability via damage zones at tips/step-overs; heat from thinning crust/magma; fluid from meteoric recharge. Favorability = structure × heat flow × hydrology. This repo targets <b>structure</b> via strain &amp; gravity, not temperature (H33 thermal hypotheses already falsified as addition arms, 7-25× too expensive vs τ_live).</p>
-<pre>Official sources for geothermal-vents-knowledge.md:
-- USGS GeoDAWN (DOI 10.5066/P93LGLVQ)
-- GBCGE INGENIOUS (gbcge.org/current-projects/ingenious)
-- GDR 1391 Nevada geothermal data (DOI 10.15121/1881483)
-- USGS SGMC &amp; QFaults
-- DOE Geothermal Office (energy.gov/eere/geothermal)
-</pre>
-<p>See <a href="https://github.com/buffedlizard55-lab/GEMSDOE85/blob/main/docs/research/hypotheses.md">hypotheses-round1</a> for ranked 5-candidate table (same as README).</p>
-<h2>Score ceiling analysis (from GEMSDOE32 — reproduced)</h2>
-<p>At 0.4413 leaderboard top, mean credit per dot must be ~0.20 vs 0.126 at 0.2778 (+59%). No public compilation supplies that. So beating 0.2778 requires raising credit density, not mass. Our duplex does that by selecting transtensional + worm corridors where expert would add fault, rather than adding more uniformly.</p>
-</body>
-</html>
+<p class="muted">The USGS pages establish source access and general product availability, not study-area tile coverage or the presence of any specific fault/vent. Scores from the private competition set cannot be inferred from these sources.</p>
+
+<h2>Current scientific and operational decision</h2>
+<p>Do not create or submit a TIFF until the method lane is explicitly assigned, the exact cached stack is restored and hash-verified, the shared evaluator/writer are used, each feature's leakage canary passes, strict correlation and overlap checks pass before placement and on final dots, and the registered candidate beats a same-evaluator holdout best with uncertainty reported. Current status and the negative preflight are shown on the home page and in <code>evidence/run_card.json</code>.</p>
+</body></html>
