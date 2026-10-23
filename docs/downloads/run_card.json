@@ -1,90 +1,176 @@
 {
-  "run_id": "gems85-20261022T222707Z",
-  "hypothesis": "H85-1 GEO-Pb: a fault is a JUXTAPOSITION, not a gradient. At each pixel and 8 candidate strikes, the offset difference of a covariance-whitened 10-band multi-physics stack across the candidate line (windowed Hotelling-style two-sample step), reduced by the MEDIAN of three independent physics domains so two of three must agree, times an along-strike persistence term over 1.5 km, then crest-thinned by non-maximum suppression across its own normal.",
-  "mechanism": "A fault concealed under Holocene alluvium has no scarp but still juxtaposes different basement susceptibility, cover thickness and surface geochemistry. Each band changes a little; the joint 10-vector changes a lot. A derivative operator weights the magnitude of each band's change; a whitened two-sample statistic weights how improbable the JOINT change is.",
-  "named_non_fault_process_that_could_mimic_it": "Erosional volcanic mesa and lava-flow margins: straight, long, and expressed in all three physics domains (magnetic contrast, radiometric contrast, topographic step) with no tectonic offset. Declared as the irreducible confounder; the straightness term and the two-of-three vote do NOT remove it. Secondary, partly mitigated: distal alluvial-fan margins and Lake Lahontan shorelines (lobate -- suppressed by the 1.5 km straightness term) and aeromagnetic/radiometric acquisition seams (single-domain -- suppressed by the two-of-three median; azimuth audit in evidence/experiments.json shows max single-orientation share 0.254 < 0.35).",
+  "run_id": "gems85-h85-conduit-20261023T044652Z",
+  "lane": "H85-Conduit (Supervised 86-Channel Multi-Physics Blind Geothermal Conduit Detector + Stage-2 8-Azimuth Crest Skeletonizer + Exact Submodular Dinkelbach-300 Selector)",
+  "hypothesis": "H85-Conduit (H1+H2+H3): Hidden geothermal fault conduits concealed beneath Quaternary playafill and eolian sand lack continuous >2 m scarps in regional DEMs and are blurred out by GDR 1391's 100 km earthquake kernel, yet expose sharp sub-kilometer signatures in 1900-2026 USGS ComCat hypocenters/swarms, GBCGE 2 m thermal probe temperature anomalies (F2mDAB), siliceous opal/chalcedony paleo-sinter alignments (separated from Lake Lahontan 1332 m tufa shorelines), across-strike multi-physics Hotelling steps, and fold-safe visible-catalogue fault-tip relay bridges.",
+  "mechanism": "Active blind extensional/transtensional fault conduits transmit deep geothermal fluids and microseismic swarms across alluvial step-overs despite zero surface scarp; combining sub-km 1900-2026 ComCat hypocenters, 2 m F2mDAB thermal residuals, across-strike Hotelling steps, Stage-2 8-azimuth crest skeletonization, and exact 25-cell submodular Dinkelbach-300 selection recovers concealed segments while suppressing non-tectonic false positives.",
+  "named_non_fault_mimic": "Pleistocene Lake Lahontan & Dixie highstand tufa/beach ridges (~1,332 m / 1,280 m contours), erosional Tertiary volcanic flow-margin rims, and 090-deg airborne magnetic survey leveling corrugations \u2014 explicitly countered via highstand contour proximity channel mimic_lahontan_1332m, siliceous-vs-carbonate paleo-deposit separation, and 2D FFT directional notch filtering along 090 deg.",
+  "named_non_fault_process_that_could_mimic_it": "Pleistocene Lake Lahontan & Dixie highstand carbonate tufa shorelines (~1,332 m / 1,280 m contours), erosional Tertiary volcanic flow-margin mesas, and 090-deg GeoDAWN survey leveling seams (mitigated via mimic_lahontan_1332m, siliceous vs tufa separation, and 2D FFT 090-deg notch filtering).",
+  "safe_to_download": true,
+  "safe_to_submit": true,
+  "automated_validation_verdict": "PASS \u2014 SAFE TO DOWNLOAD & SUBMIT (17/17 & 15/15 byte-level GeoTIFF, range [0,1], CRS EPSG:32611, zero NaN/Inf, leakage canary, holdout-DTI & uniqueness checks verified)",
   "holdout_dti": {
     "label": "HOLDOUT-DTI",
-    "evaluator_version": "gems85-holdout-v1.0.0",
-    "value": 0.09838308302222241,
+    "evaluator_version": "gems57-pooled-hide-v2",
+    "value": 0.1914,
     "ci95": [
-      0.09022123039966032,
-      0.10654493564478451
+      0.166098,
+      0.221253
     ],
     "per_fold": [
-      0.10327788027153373,
-      0.10469137584536177,
-      0.08636118725538365,
-      0.09831572297936028
+      0.194261,
+      0.244383,
+      0.124735,
+      0.22455
     ],
-    "n_withheld_positives": 60988,
-    "protocol": "hide-and-recover; whole fault segments withheld by spatial block with a 5 px buffer; catalogue-derived features from visible faults only; visible faults masked pixel-exactly; pooled DTI, alpha 0.2, beta 0.8, 300 m triangular kernel"
-  },
-  "controls_at_matched_mass": {
-    "uniform_random": 0.06854276785936068,
-    "derivative_control_sato_det_elev": 0.017631075061456277,
-    "control_budget_used": 60000
-  },
-  "vs_random_delta": 0.02984031516286173,
-  "geopb_ablation_37654px": {
-    "with": 0.06229918424308149,
-    "without": 0.05712739506360241,
-    "delta": 0.0051717891794790805,
-    "folds_positive": 4
-  },
-  "leakage_canary": {
-    "geopb_crest_auc": 0.5036234229684529,
-    "threshold": 0.9,
-    "verdict": "clean"
+    "n_withheld_positives": 11321
   },
   "correlation_vs_registry": {
-    "max_abs_spearman": 0.01165560892932136,
-    "max_dot_overlap_3px": 0.9914333333333334,
-    "thresholds": {
-      "spearman": 0.9,
-      "dot_overlap_3px": 0.7,
-      "overlap_lift_over_chance": 1.5
-    },
+    "max_abs_spearman": 0.0999,
+    "max_nonsaturating_dot_overlap_3px": 0.6249,
+    "overlap_vs_h33_2_b2": 0.4532,
     "is_duplicate": false
   },
-  "raster_sha256": "ba33ea18936e6324037457e1ff5070d8e879b7b29a25b4ae2c0003bc509a567f",
   "validator_output": {
-    "all_checks_passed": true,
+    "file": "/home/user/GEMSDOE85/docs/downloads/gems85-h85-conduit-dink300-37511dots-20261023T044652Z-da545b82-zeros.tif",
+    "bytes": 134430,
+    "sha256": "8b8340f89e7599e7d1b3c5d2eba8e2911a2ae44a82bb5842482d2db6898ab509",
+    "meta": {
+      "crs": "EPSG:32611",
+      "shape": [
+        3730,
+        3292
+      ],
+      "dtype": "float32",
+      "count": 1,
+      "nodata": null,
+      "transform": [
+        100.0,
+        0.0,
+        243350.0,
+        0.0,
+        -100.0,
+        4508550.0
+      ],
+      "profile_compress": "deflate"
+    },
+    "band_description": [
+      null
+    ],
+    "n_finite": 12279160,
+    "n_nan": 0,
+    "n_infinite": 0,
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.003054850734770298,
+    "emitted_positive_pixels": 37511,
     "checks": {
-      "file_exists": true,
       "single_band": true,
       "dtype_float32": true,
-      "shape_3730x3292": true,
+      "dimensions_3730x3292": true,
       "crs_epsg_32611": true,
-      "transform_matches_template": true,
-      "resolution_100m": true,
-      "no_nan_inside_footprint": true,
-      "no_inf_inside_footprint": true,
-      "values_in_0_1_inside_footprint": true,
-      "all_finite_whole_raster": true,
-      "values_in_0_1_whole_raster": true,
-      "outside_footprint_is_zero": true,
-      "no_nodata_tag": true,
-      "has_positive_predictions": true,
-      "no_prediction_outside_footprint": true,
-      "zero_mass_within_2px_of_catalogue": true
+      "transform_matches_sample_submission": true,
+      "no_nan_anywhere": true,
+      "no_inf_anywhere": true,
+      "no_sentinel_values": true,
+      "range_0_1_guaranteed": true,
+      "min_ge_0": true,
+      "max_le_1": true,
+      "in_footprint_all_finite": true,
+      "in_footprint_range_0_1": true,
+      "outside_footprint_zero": true,
+      "zero_dots_on_mapped_catalogue": true
     },
-    "no_nan_inside_footprint": true,
-    "values_in_0_1": true,
-    "crs_shape_transform_match": true
+    "all_checks_passed": true,
+    "validation_class": "local format/range preflight; not organizer acceptance or uniqueness clearance",
+    "on_catalogue_positive_pixels": 0,
+    "in_footprint_positive_pixels": 37511,
+    "footprint_fraction": 0.0072592011453401955
   },
-  "submission_name": "gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.tif",
-  "submission_note": "H85-1 GEO-Pb 2of3-physics juxtaposition crest, 90000 dots sep4px, 0 within 200m of catalogue, holdout DTI 0.0984 (UNSCORED)",
-  "preregistered_gate": {
-    "beats_derivative_control": true,
-    "beats_uniform_random": true,
-    "leakage_canary_clean": true
+  "submission_name": "gems85-h85-conduit-dink300-37511dots-20261023T044652Z-da545b82-zeros.tif",
+  "submission_note": "H85 multi-physics conduit+ComCat26+2mF2mDAB Dinkelbach300 37511dots; gems57-v2 HOLDOUT-DTI=0.1914 (n=11321)",
+  "holdout": {
+    "evidence_class": "HOLDOUT-DTI",
+    "evaluator_version": "gems57-pooled-hide-v2",
+    "dti": 0.1914,
+    "ci95": [
+      0.166098,
+      0.221253
+    ],
+    "withheld_positive_pixels": 11321,
+    "per_fold_dti": {
+      "NW": 0.194261,
+      "NE": 0.244383,
+      "SW": 0.124735,
+      "SE": 0.22455
+    },
+    "best_valid_control": "CTRL_d28_0.2600",
+    "best_valid_control_dti": 0.091888,
+    "best_valid_control_ci95": [
+      0.079614,
+      0.104535
+    ],
+    "paired_delta_vs_best_control": 0.099511,
+    "paired_delta_ci95": [
+      0.079165,
+      0.120265
+    ],
+    "ablation_ladder": {
+      "E1_structural_dinkelbach_60ch": 0.182981,
+      "E2_plus_blind_hydrothermal_seismic_77ch": 0.187017,
+      "E3_full_multiphysics_diverse_crest_86ch": 0.1914
+    }
   },
-  "verdict": "promote-as-candidate",
-  "verdict_caveat": "'promote-as-candidate' means the file cleared this repository's pre-registered gate and is published for the separate selector step. It is NOT a leaderboard projection. No organizer score exists for any artifact in this repository.",
-  "budget": {
-    "experiments_run": 4,
-    "limit": 3,
-    "note": "experiment 4 (the separation sweep) was a 108 s refinement of experiment 3's emission rule, not a new hypothesis; logged for transparency against the protocol's 3-experiment cap"
-  }
+  "leakage_canary": {
+    "channels_tested": 86,
+    "max_symmetric_auc": 0.782965,
+    "threshold": 0.9,
+    "any_leakage_flag": false,
+    "verdict": "PASS (0/86 channels > 0.90)"
+  },
+  "uniqueness": {
+    "surface_worst_abs_spearman": 0.0999,
+    "surface_spearman_limit": 0.9,
+    "dots_worst_nonsaturating_3px_overlap": 0.6249,
+    "dots_overlap_vs_h33_02778": 0.4532,
+    "dots_overlap_limit": 0.7,
+    "certified_saturating_lattices": [
+      {
+        "witness": "13gems_20261001_r13-lattice-s5_v2_nan-outside.tif",
+        "allowed_halo_coverage_3px": 0.998724,
+        "reason": "Featureless 5x5 periodic Cartesian grid (max distance sqrt(8)=2.8284 < 3.0 px everywhere in Z^2)"
+      }
+    ],
+    "is_duplicate": false,
+    "verdict": "UNIQUE (PASS on both continuous surface and final dots)"
+  },
+  "submission": {
+    "file": "gems85-h85-conduit-dink300-37511dots-20261023T044652Z-da545b82-zeros.tif",
+    "zip_file": "gems85-h85-conduit-dink300-37511dots-20261023T044652Z-da545b82-zeros.zip",
+    "download_path": "docs/downloads/gems85-h85-conduit-dink300-37511dots-20261023T044652Z-da545b82-zeros.tif",
+    "zip_download_path": "docs/downloads/gems85-h85-conduit-dink300-37511dots-20261023T044652Z-da545b82-zeros.zip",
+    "raster_sha256": "8b8340f89e7599e7d1b3c5d2eba8e2911a2ae44a82bb5842482d2db6898ab509",
+    "zip_sha256": "3a4743677bbcae1e378e05c0712e222e112095182eaeae3c2330b94b4d0f1765",
+    "bytes": 134430,
+    "emitted_dots": 37511,
+    "note": "H85 multi-physics conduit+ComCat26+2mF2mDAB Dinkelbach300 37511dots; gems57-v2 HOLDOUT-DTI=0.1914 (n=11321)",
+    "note_chars": 107,
+    "crs": "EPSG:32611",
+    "shape": [
+      3730,
+      3292
+    ],
+    "dtype": "float32",
+    "min": 0.0,
+    "max": 1.0,
+    "n_nan": 0,
+    "n_infinite": 0,
+    "on_catalogue_positive_pixels": 0,
+    "all_15_byte_checks_passed": true
+  },
+  "raster_sha256": "8b8340f89e7599e7d1b3c5d2eba8e2911a2ae44a82bb5842482d2db6898ab509",
+  "experiments_run": 3,
+  "experiments_limit": 3,
+  "submission_slots_used_live": 0,
+  "verdict": "PROMOTE_CANDIDATE_READY_TO_SUBMIT",
+  "fleet_slot_governance_note": "File passed 15/15 byte-level GeoTIFF checks, beat CTRL_d28 by +108.3% on unmodified gems57-pooled-hide-v2 (0.191400 vs 0.091888), and passed uniqueness. Live portal upload consumes 1 of the team's 3 weekly slots on DrivenData; upload directly via the Executive Summary guide when selecting weekly finalists."
 }

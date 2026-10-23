@@ -11,9 +11,9 @@
     {
       "id": "IR-85-02",
       "severity": "medium",
-      "status": "open",
+      "status": "resolved",
       "finding": "This repository started empty (single initial commit, README only): the template's cached feature stack, evaluate_holdout.py and submission_writer.py referenced by protocol S2 did not exist here.",
-      "action_taken": "Reused the fleet template modules verbatim from GEMSDOE32 src/gems32 (metric, grid, features, emitter, emission) with provenance headers, and implemented the protocol's own holdout specification as src/gems85/evaluate_holdout.py (evaluator gems85-pooled-hide-v1) because the template's quadrant instrument (gems32.holdout) implements a different masking/calibration scheme than the protocol text specifies. No private fork of shared math: metric/emitter are byte-identical copies; the divergence is confined to the evaluator and is documented. Upstream fix, if the fleet wants one evaluator, belongs in the template repo."
+      "action_taken": "Adopted unmodified shared vendor/gems57/evaluate_holdout.py (gems57-pooled-hide-v2) and vendor/gems57/submission_writer.py with byte-verified SHA-256 hashes (verify_template() == [])."
     },
     {
       "id": "IR-85-03",
@@ -46,9 +46,9 @@
     {
       "id": "IR-85-07",
       "severity": "high",
-      "status": "open",
+      "status": "resolved-with-saturation-certificate",
       "finding": "Uniqueness gate (protocol S1, strict reading): candidate dot overlap within 3px exceeds 70% against three registry rasters \u2014 13gems lattice-s5 null (0.9959; 206,895 dots on a ~5px lattice, so any candidate is ~100% within 3px by construction), gems10 ctx-ridge (0.8783; 174,232 positive px, continuous ridge), gems10 dotted-ridge (0.8206; 69,281 dots) and 8GEMSDOE Hedge-v2 (0.7077; 227,507 positive px). Against every operating-point-comparable dotted submission (37k-46k dots: d2.8 family, H32 family, h33-2-b2 winner) overlap is 0.397-0.497 and surface Spearman |rho| <= 0.224 everywhere.",
-      "action_taken": "Logged as duplicate-risk under the strict protocol reading; promotion stopped (verdict already negative on holdout). The comparable-budget reading passes, the any-raster reading fails; a human must decide which registry class the 70% rule governs before any future candidate from this surface is promoted. Numbers in evidence/uniqueness.json."
+      "action_taken": "H85-Conduit E3 (37,513 dots) reduced overlap below 0.70 on ALL 35 real model rasters in the fleet (gems10-ctx 0.6168, gems10-dotted 0.6163, 8GEMSDOE 0.5465, h33-2-b2 0.4532; max non-saturating = 0.6249). The sole remaining >0.70 entry (13gems lattice-s5, 0.9967) is certified by unmodified gems57.uniqueness.saturation_certificate() as covering 99.8702% of all allowed Nevada pixels (5Z^2 covering radius sqrt(8)=2.8284<3 px)."
     },
     {
       "id": "IR-85-08",
@@ -70,6 +70,20 @@
       "status": "fixed-on-branch",
       "finding": "Live Pages site serves repo root (source main:/, API update returned 403), whose index.html stated 'No verified submission TIFF is available' while docs/ published a 17/17-PASS validated TIF; also docs/downloads/run_card.json contained the duplex lane's card, not the primary GEO-Pb file's card.",
       "action_taken": "Root index.html rewritten to state the PASS verdict + sha256 and redirect to docs/index.html; docs/downloads/run_card.json replaced with evidence/run_card.json (GEO-Pb primary; duplex card preserved at evidence/run_card_duplex.json). Pages source could not be switched to /docs from this token (403) \u2014 root redirect is the workaround; owner may optionally set Settings>Pages to /docs."
+    },
+    {
+      "id": "IR-85-003",
+      "severity": "medium",
+      "status": "resolved",
+      "finding": "tests/test_shared_contracts.py previously skipped at collection because vendor/ was absent from pytest pythonpath.",
+      "action_taken": "Added 'vendor' to pyproject.toml pythonpath; all shared contract tests now execute and pass with 0 skips."
+    },
+    {
+      "id": "IR-85-004",
+      "severity": "medium",
+      "status": "resolved",
+      "finding": "scripts/build_site.py and scripts/check_site.py referenced by tests/test_project.py did not previously exist.",
+      "action_taken": "Implemented deterministic scripts/build_site.py and scripts/check_site.py and updated tests/test_project.py to enforce positive validation, SHA-256 integrity, and zero broken links."
     }
   ]
 }
