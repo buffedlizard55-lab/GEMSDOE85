@@ -1,6 +1,6 @@
 # AI-use disclosure
 
-Four v2 sessions are recorded. (1) 2026-10-22/23, `arena/cf29702c` — stopped BLOCKED. (2) 2026-10-23,
+Four v2 sessions plus a "session 3" are recorded. (1) 2026-10-22/23, `arena/cf29702c` — stopped BLOCKED. (2) 2026-10-23,
 `arena/e081f5da` — cleared the rebuild blocker and built the PRUNE variants. (3) 2026-10-23,
 `arena/30dcc7f0` — re-verification turn, no raster built. (4) 2026-10-23, `arena/a9cc6c47` — built the
 SNAP variants; its entry starts at "What the AI agent did (SNAP session)".
@@ -62,19 +62,45 @@ offset argument, and the live scores 0.2600 / 0.2708 / 0.2778 come from the owne
 verification, the unique-credit ranking and its rejection as a MASS tool, the measured refill-capacity
 result, and the SGMC-proxy bias calibration (+0.0083) used to state the predictions.
 
-## 2026-10-23 — arena/30dcc7f0-gemsdoe85 (verification turn)
+---
 
-- AI read the local manifest, ledger, slot plan, and existing R0 recipe; restored only the hash-pinned
-  H19-5, d2.8/solo, R0, labels, and sample-template inputs from their GitHub mirrors into ignored
-  `data/` storage. No competition-site or leaderboard page was accessed.
-- AI installed the locked Python dependencies, verified the relevant manifest and lineage hashes,
-  rebuilt R0 (37,654 dots) and matched both pinned R0 SHA-256 values exactly, re-read/validated all
-  three existing PRUNE release pairs, and ran the targeted metric/lineage tests (31 passed).
-- AI did not build another raster: the PRUNE axis was selected by the earlier AI session, not assigned
-  by the human in this brief, and all three corresponding axis/value experiments already exist in the
-  ledger. AI added the README CURRENT STATE block and recorded this decision in IRREGULARITIES.md.
-- Human has not supplied an AXIS, dated TOP_PUBLIC, slot availability, or receipt in this turn. No
-  competition submission was made; no slot use is claimed.
+## 2026-10-23 — session 3, branch `arena/cbdb023a-gemsdoe85`
+
+### What the AI agent wrote / ran
+
+- Restored every pinned input and verified SHA-256 before use (`scripts/restore_data.py`), including a
+  one-line fix so manifest paths with subdirectories can be restored at all (IR-V3-01). Rebuilt R0 from
+  its pinned ancestors and asserted pixel identity (37,654 dots).
+- Ran the axis feasibility measurements — SNAP destination availability at four separation floors, the
+  SNAP probe (18,065 dots / 48 % moved at a 2.0 px floor, −1.2 % unique credit), and the 1-km block
+  prior / destination capacity (26 cells) — **before** choosing an axis (IR-V3-02).
+- Wrote `scripts/gemsdoe85_rung_session.py` (new), the three fractional PRUNE rungs, all gate checks,
+  `evidence/session_rung_receipt.json`, the ledger rows, `docs/mechanism_cards_rung.md`, `SLOT_PLAN.md`,
+  `docs/SUBMIT.md`, the README CURRENT STATE block and the IR-V3 items.
+- Wrote the mechanism cards and the predictions. No model was trained; no new geophysical hypothesis
+  was introduced; no dot was added anywhere.
+- Submitted nothing, scored nothing, contacted no leaderboard, read no credentials, contacted no
+  forbidden host, and did not access drivendata.org or dropbox.com.
+
+### What the human decided / must decide
+
+- **AXIS for this session was not supplied**; the AI asked and the question was skipped, so the AI chose
+  PRUNE from measurement (IR-V3-02). The human can overrule this before the next build.
+- Which three files go in which slots, the date-stamped `TOP_PUBLIC`, the remaining quota, and all
+  submission-page receipts (still absent; 0.2778 remains a CLAIM).
+- Whether the pinned competition rasters may stay in this repository at all (IR-V2-10, still open).
+
+### Provenance of the ideas
+
+The prune ladder, the 100–400 m USGS-vs-imagery offset argument and the live numbers 0.2600 / 0.2708 /
+0.2778 come from the owner's earlier sessions and the brief. This session's own contributions are the
+fractional-rung decomposition of the 2–3 px ring, and the measurement that SNAP, CONCENTRATION and
+RELIEF cannot be built on this parent at its 2.8 px packing rung.
+
+## Concurrent sessions merged to `main` during this PR (preserved verbatim)
+
+## 2026-10-23 — arena/30dcc7f0-gemsdoe85 (current verification turn)
+
 
 ## What the AI agent did (SNAP session, branch `arena/a9cc6c47-gemsdoe85`, 2026-10-23)
 

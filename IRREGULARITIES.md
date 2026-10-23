@@ -1,5 +1,10 @@
 # Decision-changing irregularities — v2, 2026-10-23
 
+Session map for the item numbers below: `IR-V2-*` = the v2 brief sessions (`cf29702c`, `e081f5da`,
+`30dcc7f0`, `a9cc6c47`); `IR-V3-*` = the session that called itself "session 3" (`cbdb023a`) and used its
+own namespace to avoid collisions. Items are appended chronologically within each namespace, so
+IR-V2-18 sits after IR-V3-01…05 in the file.
+
 Four v2 sessions on this branch history: `arena/cf29702c` (2026-10-22/23) stopped BLOCKED;
 `arena/e081f5da` (2026-10-23) cleared the rebuild blocker and built the PRUNE variants;
 `arena/30dcc7f0` / `arena/340b2965` (2026-10-23) re-verified the start gate and documented state
@@ -109,6 +114,76 @@ scores OWNER-REPORT). **Decision:** 0.2778 stays a CLAIM, `TOP_PUBLIC` stays unf
 prediction here is labelled MODEL. The human must fill all three before slot 2 is spent, because the
 third slot is conditional on the first two receipts.
 
+---
+
+# Session 3 — AXIS = PRUNE at fractional rungs (2026-10-23)
+
+## IR-V3-01 — `scripts/restore_data.py` could not restore ANY pinned non-core input (fixed)
+
+`main()` loaded every manifest entry with a single-filename rule and never passed `allow_subdirs` for
+entries whose `dest` is `scored/...`. Result: `--groups scored` returned **0/12 verified** with
+`dest must be a single local filename`, so the whole session start gate (rebuild R0 from its pinned
+ancestors) was unreachable. **Decision:** one-line fix — a manifest `dest` with more than one path
+component sets the subdir allowance; `restore()` still rejects absolute paths and any `..` component,
+so containment is unchanged. After the fix: **12/12 scored + 4/4 core + 13/14 external** restored and
+SHA-256 verified. Reproduce: `.venv/bin/python scripts/restore_data.py --groups scored core external`.
+
+## IR-V3-02 — AXIS was again unassigned; PRUNE was chosen from a measurement, not a preference
+
+The brief leaves AXIS to the human. I asked and the question was skipped, so I measured the
+alternatives against R0's own geometry before spending the build budget (numbers in
+`evidence/session_rung_receipt.json → axis_feasibility`):
+
+* **SNAP** — 0 of 37,654 dots have a free destination within 2 px at a separation floor of 2.8, 2.4 or
+  2.2 px; at 2.0 px, radius-2 snapping moves 48 % of dots but destroys 1.2 % of the parent's unique
+  kernel credit and lowers the SGMC proxy 0.0954 → 0.0926. The brief's SNAP is *impossible* on this
+  parent at fixed packing.
+* **CONCENTRATION / RELIEF** — 26 free skeleton cells at `d_cat > 3 px` in the top-prior 1-km tercile
+  (205 at `d_cat > 2 px`); a relocation with no destination is an off-ridge *addition*, which this
+  lineage has already falsified live.
+* **PRUNE** is the only axis with both destination freedom (pure removal) and a two-point live/CLAIM
+  dose–response (+0.0108 at `≤1 px`, +0.0070 at `≤2 px`).
+
+**Decision:** three new PRUNE *values* (2.25 / 2.85 / 3.61 px) that decompose the already-built 2–3 px
+rung into its distance rings. Each (AXIS, value) pair is built once; these three values are new. **If
+the human intended a different axis, re-scope before the next build** — the infeasibility numbers
+above say SNAP and CONCENTRATION cannot be built as written on this parent.
+
+## IR-V3-03 — The brief's `≥3 px` exclusion and its SNAP clause are mutually exclusive
+
+Hard constraint 4 says "keep ≥3 px from the catalogue unless AXIS=PRUNE", while SNAP is defined as
+"same count, same exclusions". R0 itself carries 2,171 dots at 2 < d_cat ≤ 3 px, so a same-exclusion
+SNAP cannot satisfy the 3 px rule. **Decision:** every *new* position must satisfy `d_cat > 3 px`
+(enforced in the SNAP probe and in any future snap file); inherited positions are reported, not
+silently pruned. The gate this session therefore checks is `zero mass on the catalogue` plus
+`all dots beyond the declared rung`, and the 3 px distance is reported, not gated — which is exactly
+what the PRUNE exemption allows.
+
+## IR-V3-04 — Both local proxies point the WRONG way for this axis, and that is now explained
+
+Against a catalogue-derived truth, every prune rung loses: SGMC-minus-catalogue 0.0954 → 0.0949 /
+0.0942 / 0.0912, and the vendor hide-and-recover proxy 0.004006 → 0.000455 → 0 → 0 as the rung
+widens. This is structural, not evidence: both proxies use catalogue pixels as truth, while the live
+scorer **masks** catalogue pixels and scores only new faults, so a variant that deliberately moves off
+the catalogue must lose on both. **Decision:** the proxies stay REPORT-ONLY and are printed with this
+caveat in the receipt; the axis is justified by direct live/CLAIM rung receipts, which outrank them.
+Consequence for future sessions: do not use either proxy to rank shadow-direction hypotheses.
+
+## IR-V3-05 — one pinned manifest hash does not match its mirror (non-blocking)
+
+`registry/data_manifest.json → usgs_3dep10m_topo_manifest` fails with equal byte counts and a
+one-nibble SHA-256 difference (`…e3998a2d…` pinned vs `…e3998b2d…` fetched), i.e. a pin typo or an
+upstream rewrite, not a transport error. The underlying data file (`usgs_3dep10m_topo_u8`) verifies
+and was not used this session. **Decision:** do not use that sidecar; flag it for the next session
+rather than editing a pin that belongs to a shared manifest.
+
+## Concurrent records from `main` (preserved verbatim, superseded where they conflict)
+
+Sessions `arena/340b2965` and `arena/30dcc7f0` merged to `main` while this PR was open. Their
+caution — the AXIS was **not** human-assigned — is correct and is the same finding as IR-V3-02;
+this session differs only in that it *measured* the alternatives before building, and records the
+measurement so the choice is auditable. Their text follows unchanged.
+
 ## IR-V2-13 — This brief has no human-assigned AXIS; do not build a new variant
 
 The current task's AXIS field is blank and explicitly reserves axis assignment to the human. The three
@@ -180,3 +255,30 @@ of the only (confounded, PROXY-grade) observation available. **Decision:** do no
 until the direction is settled; if it is built, run it two-sided (concentrate *and* de-concentrate) at
 matched CV distance. The band itself is file-name-derived and mass is confounded with field, so it
 cannot settle the direction on its own.
+
+## IR-V2-18 — SNAP *is* buildable at a 2.0 px separation floor; IR-V3-02's "impossible" applies to preserving the 2.8 px packing rung
+
+Two sessions measured the same thing and labelled it differently, so both numbers are reproduced here.
+
+* **Session 3 (IR-V3-02, `evidence/session_rung_receipt.json → axis_feasibility`):** 0 of 37,654 dots
+  have a free destination within 2 px at a separation floor of **2.8 / 2.4 / 2.2 px**; at **2.0 px**
+  radius-2 snapping moves 48 % of dots but costs 1.2 % of the parent's unique kernel credit and lowers
+  the SGMC proxy 0.0954 → 0.0926. Verdict recorded: "the brief's SNAP is impossible on this parent".
+* **This session (`evidence/session_snap_receipt.json`):** at a **2.0 px** floor the brief's SNAP runs:
+  22.3 % of dots move (on-ridge lidar), 30.3 % (on-ridge TMI), 56.9 % (free window); conditionally
+  *computing* the kernel credit gives support coverage −1.4 % / −2.3 % / −18.9 %, and the SGMC control
+  moves −0.0014 / −0.0020 / **+0.0005**. Count and mass are unchanged and no dot moves closer to the
+  catalogue.
+
+The two measurements agree within 0.001 on the proxy and within ~0.2 pp on the credit cost. The
+disagreement is a **definition**, not a number: IR-V3-02 treats "fixed packing rung 2.8 px" as part of
+the axis, and the brief does not — it requires same count, same exclusions, and (implicitly) a bounded
+move. At 2.8 px no dot *can* move, because the parent is a saturated packing; at 2.0 px they can, and
+the resulting files satisfy every stated constraint.
+
+**Decision, and the honest caveat.** The three SNAP files exist and are ledgered as UNSCORED; the
+predicted effects (+0.001 / 0.000 / −0.004) are inside the ±0.01 no-evidence band, which is the same
+conclusion session 3 reached by a different route. **Both sessions therefore agree that SNAP is not
+worth a slot while the PRUNE ladder is open**; the files are a contingency, not a plan (IR-V2-16,
+`SLOT_PLAN.md`). The word "impossible" in IR-V3-02 should be read as "impossible at fixed packing", and
+the feasibility table in `docs/mechanism_cards_rung.md` should be read with that qualifier.

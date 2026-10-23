@@ -1,45 +1,51 @@
-# SUBMIT — v2, 2026-10-23 (supersedes the earlier STOP note; SNAP contingency added)
+# SUBMIT — 2026-10-23 (supersedes every earlier SUBMIT note)
 
-The earlier v2 preflight session (commit `a6004d6`) had no candidate and said STOP. This session
-built three gated candidates; the STOP applies only to files **not** listed below. Upload one file
-per slot from the human's registered account. Nothing here logs in, scrapes or submits.
+Slots 1–3 are the PRUNE ladder (session 3's choice). The SNAP contingency follows. Upload one file per
+slot, from the human's own registered account; nothing here logs in, scrapes or submits.
 
-The human submits from their own registered account. Nothing in this repository logs in, scrapes or
-submits. Upload **one file per slot**. `TOP_PUBLIC` and the remaining slot count are read by the
-human off the leaderboard/account page and written into `README.md` (CURRENT STATE block).
+Upload **one file per slot** from your own registered account. Nothing in this repository logs in,
+scrapes or submits. All three files below are built from the SHA-256-verified parent R0
+(`h33-h33-2-b2`, `e5eb6e7e`), pass every gate, and are **unscored** — every number is MODEL until you
+paste a receipt.
 
-## Slot 1 (highest expected value)
+`TOP_PUBLIC` and the remaining rolling-week slot count are read by the human off the leaderboard and
+the account page, then written into `README.md` (CURRENT STATE block). If fewer than three slots are
+left, take them in the order below.
 
-- **File:** `releases/h33-2-b2-prune3-20261023-fb308615.tif` (NaN outside the footprint, per the brief
-  and the sample submission encoding). Fallback if the portal rejects NaN outside: the identical-pixel
-  twin `releases/h33-2-b2-prune3-20261023-fb308615-zeros.tif`.
-- **sha256:** `fb308615161ad8f62b063d90972a4c36e7c66e7c58beb3316c81497cfe65261e` (346,839 B, 35,483 dots)
-- **Name / note (115 / 140 chars):**
-  `R0 h33-2-b2 PRUNE rung3: drop 2<d_cat<=3px flank dots, 37654->35483 (5.77%), no refill; pred +0.007 MODEL; UNSCORED`
-- **Format receipt** (`evidence/session_prune_receipt.json → variants["h33-2-b2-prune3"]`):
-  EPSG:32611 · 3730×3292 · 1 band · float32 · transform `100,0,243350,0,-100,4508550` ·
-  `nodata=nan` · values ⊆ {0,1} inside footprint · 0 NaN/Inf inside footprint · NaN everywhere outside ·
-  0 positive px on the catalogue · min distance to catalogue = 3.16 px · re-read from disk after writing ·
-  **14/14 checks PASS** (zeros twin: 15/15).
-- **After scoring:** paste the score and date into `ledger/submissions.csv` (`receipt_score`,
-  `receipt_date`) and mark it RECEIPT in `README.md`.
+## Slot 1 — the anchor rung
 
-## Slot 2
+- **File:** `releases/h33-2-b2-prune3-20261023-fb308615.tif`
+  (fallback if the portal rejects NaN outside the footprint: `…-fb308615-zeros.tif`, identical pixels)
+- **sha256:** `fb308615161ad8f62b063d90972a4c36e7c66e7c58beb3316c81497cfe65261e` · 35,483 dots
+- **Note (115/140):** `R0 h33-2-b2 PRUNE rung3: drop 2<d_cat<=3px flank dots, 37654->35483 (5.77%), no refill; pred +0.007 MODEL; UNSCORED`
+- **Format receipt:** `evidence/session_prune_receipt.json → variants["h33-2-b2-prune3"]` — EPSG:32611 ·
+  3730×3292 · 1 band · float32 · transform `100,0,243350,0,-100,4508550` · `nodata=nan` · values ⊆ {0,1}
+  inside the footprint · 0 NaN/Inf inside · NaN everywhere outside · 0 positive px on the catalogue ·
+  min distance to catalogue 3.16 px · re-read from disk after writing · **14/14 PASS** (zeros 15/15).
 
-- **File:** `releases/h33-2-b2-prune4-20261023-2880b0e9.tif` (fallback `…-zeros.tif`)
-- **sha256:** `2880b0e90582d4cfe03165c41201c107071d3a1a88a5717351a6943f29365e7a` (340,096 B, 33,829 dots)
-- **Note (116 / 140):**
-  `R0 h33-2-b2 PRUNE rung4: drop 2<d_cat<=4px flank dots, 37654->33829 (10.16%), no refill; pred +0.003 MODEL; UNSCORED`
-- **Format receipt:** identical grid/crs/dtype/band/encoding checks; min distance to catalogue = 4.12 px;
-  **14/14 checks PASS** (zeros twin: 15/15).
+## Slot 2 — the decision slot (brackets slot 1 from above)
 
-## Slot 3 (spend only if slots 1 and 2 both scored ≥ 0.2778)
+- **File:** `releases/h33-2-b2-r3p61-20261023-f94be3ad.tif` (fallback `…-f94be3ad-zeros.tif`)
+- **sha256:** `f94be3ada76a4c5a5f1f1273e9514e8a2ee04d0e84eec0a506c5d8e0d0cece8a` · 34,293 dots (−8.93 %)
+- **Note (122/140):** `R0 h33-2-b2 PRUNE fractional rung 3.61px: drop rings <=3.61px 37654->34293 (8.93%), no refill; pred +0.005 MODEL; UNSCORED`
+- **What it decides:** above slot 1 ⇒ the catalogue shadow extends past the 300 m kernel and the next
+  session sweeps 4–8 px; below slot 1 by ≥ 0.005 ⇒ the optimum is bracketed at 3 px and the final file
+  is chosen from the files already built.
+- **Format receipt:** `evidence/session_rung_receipt.json → variants["r3p61"]` — same grid/CRS/encoding
+  as slot 1, 0 positive px on the catalogue, min distance to catalogue 4.00 px, **12/12 PASS**
+  (zeros 14/14).
 
-- **File:** `releases/h33-2-b2-prune5-20261023-7ebfc408.tif` (fallback `…-zeros.tif`)
-- **sha256:** `7ebfc4086506e574ec9481de08f5efd0a4b4f3180081957d09e4692f14dde6e7` (332,443 B, 32,017 dots)
-- **Note (116 / 140):**
-  `R0 h33-2-b2 PRUNE rung5: drop 2<d_cat<=5px flank dots, 37654->32017 (14.97%), no refill; pred -0.003 MODEL; UNSCORED`
-- **Format receipt:** identical checks; min distance to catalogue = 5.10 px; **14/14 checks PASS** (zeros twin: 15/15).
+## Slot 3 — the low-risk file (fewer dots removed)
+
+- **File:** `releases/h33-2-b2-r2p85-20261023-acce3907.tif` (fallback `…-acce3907-zeros.tif`)
+- **sha256:** `acce390710c0d1fcf066947712c52cec45f8c0dcc2fb53bb1b254fbff959fcd7` · 36,043 dots (−4.28 %)
+- **Note (126/140):** `R0 h33-2-b2 PRUNE fractional rung 2.85px: drop sqrt5+2sqrt2 rings 37654->36043 (4.28%), no refill; pred +0.005 MODEL; UNSCORED`
+- **Format receipt:** `evidence/session_rung_receipt.json → variants["r2p85"]` — min distance to
+  catalogue 3.00 px, **12/12 PASS** (zeros 14/14).
+
+A fourth built file, `releases/h33-2-b2-r2p25-20261023-3908de12.tif` (941 dots removed, min distance
+2.83 px, +0.003 MODEL), is the cheapest possible probe of the shadow. Spend a slot on it only if one is
+otherwise unused.
 
 ## Contingency uploads — SNAP (only if a slot is free and the PRUNE ladder is closed)
 
@@ -95,8 +101,13 @@ inside 2 px of the catalogue, no dot moved *closer* to it than it already was, m
 ≥ 2.0 px, all dots inside the footprint → written → **re-read from disk** → the same 14/15 checks →
 sha256 not already in the ledger. The script is **byte-idempotent**: re-running it reproduces the same
 `sha8` filenames and refuses to add duplicate ledger rows.
+## After each score
 
-## Report-only, never gates
+1. Paste the score and the date into `ledger/submissions.csv` (`receipt_score`, `date`, `receipt=Y`)
+   and change the row's `evidence_label` to `RECEIPT`.
+2. Update `README.md` CURRENT STATE (best receipt).
+3. Do **not** submit the same geometry twice in different encodings to farm feedback — the encoding
+   twins score identically (8 slots have already been spent that way in this lineage).
 
 - **Catalogue hide-and-recover PROXY** (60,988 withheld positives): R0 = 0.00671, every variant = 0.0.
   Degenerate by construction (all mass is > 3 px from the catalogue), reported only so nobody mistakes
@@ -116,18 +127,14 @@ sha256 not already in the ledger. The script is **byte-idempotent**: re-running 
   reported but is structurally biased for these files (R0 0.00479 → 0.01350): every dot is free to
   move back toward *withheld* catalogue pixels, which the live scorer masks. It is therefore not used
   as evidence for SNAP — see IR-V2-15.
+- **Session 3's proxies (reported with the same caveat):** SGMC-minus-catalogue falls 0.0954 → 0.0949 /
+  0.0942 / 0.0912 across the fractional rungs, and the vendor hide-and-recover proxy falls 0.004006 →
+  0.000455 → 0 → 0. Both use catalogue pixels as truth while the live scorer **masks** them, so they
+  are structurally biased against any shadow-direction edit (IR-V3-04) and are never gates.
 
-## Do not
+## Gate summary for all files (re-check after download)
 
-Do not upload a file whose sha256 differs from the row in `ledger/submissions.csv`, do not upload two
-files in one slot, do not re-upload an encoding twin expecting a different score (the ledger's repeats
-scored identically), and do not read the leaderboard with anything but a human browser.
-
-## Still missing from the human (blocks slot 2 and the final choice)
-
-- A submission-page **receipt** (score + date) for each upload, pasted into `ledger/submissions.csv`
-  (`receipt_score`, `date`; set `receipt` to `Y`). Until then 0.2778 stays CLAIM.
-- `TOP_PUBLIC` with the date observed, and the remaining rolling-week quota from the account page.
-- A human-confirmed deadline/timezone: the brief's 2026-12-03 is provisional
-  (https://www.drivendata.org/competitions/306/competition-doe-gems/ — human browser only).
-- Confirmation that the pinned competition rasters may be redistributed (IR-V2-10).
+`sha256sum <file>` must equal the hash above. The `sha8` inside each filename is the first 8 hex of
+that same hash, so a truncated download is visible immediately. All files: 1 band, float32,
+EPSG:32611, 3730×3292, values in {0,1}, NaN exactly outside the sample footprint, zero mass on the
+catalogue, and no dot inside the declared prune rung.

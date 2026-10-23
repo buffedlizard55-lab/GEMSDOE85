@@ -1,97 +1,101 @@
 # SLOT_PLAN — 3 scored submissions per rolling week, ONE entity · deadline 2026-12-03 (provisional)
 
-**State (2026-10-23).** Parent R0 = `h33-h33-2-b2` (GEMSDOE32 `e5eb6e7e`, 37,654 dots, rebuilt
-pixel-identical to its pins). `0.2778` is a **CLAIM**, not a receipt. `TOP_PUBLIC` (with date), the
-incumbent receipt, the rolling-week slot count and a confirmed deadline/timezone are **all still
-missing** — the human reads them off the leaderboard/account page. The brief leaves AXIS to the human;
-no answer has been received (the question was asked and skipped, IR-V2-14). Two build sessions therefore
-exist — three PRUNE rungs and three SNAP variants — and **none of them is authorized or scored**. Every
-file below is `BUILT`, `receipt = N`.
+Parent for every slot: **R0 = `h33-h33-2-b2`** (`e5eb6e7e`, 37,654 dots, live **0.2778 CLAIM** —
+owner-reported, no receipt here). `TOP_PUBLIC` is **unfilled** (the human reads it off the leaderboard
+with a date; no other target number is valid). Slots left this rolling week: **unknown** — 3/week is a
+ceiling, not a target. Every file below is BUILT and gated; none is scored.
+**AXIS was not assigned by the human in any session** (asked each time; skipped). PRUNE was chosen from
+the measurements in IR-V3-02 and SNAP from the orthogonality argument in IR-V2-14; confirm or overrule
+before spending a slot.
 
-**The one rule that outranks the ordering below:** a live change under **0.01** is no evidence (public
-chunks only; the private chunks and the Phase-2 expert-expanded labels may differ). Do not spend a slot
-on an experiment whose predicted effect is inside that band unless it is the only way to close a branch.
+## The ladder now has five measured rungs plus three finer ones
 
-## Next 3 slots — only if the human confirms AXIS = PRUNE and the quota permits
+| dots removed | variant | d_cat threshold | file (fallback `-zeros` twin always exists) | prediction (MODEL) |
+|---:|---|---|---|---|
+| 941 | `r2p25` | ≤ 2.25 px | `releases/h33-2-b2-r2p25-20261023-3908de12.tif` | +0.003 |
+| 1,611 | `r2p85` | ≤ 2.85 px | `releases/h33-2-b2-r2p85-20261023-acce3907.tif` | +0.005 |
+| 2,171 | `prune3` | ≤ 3.0 px | `releases/h33-2-b2-prune3-20261023-fb308615.tif` | +0.007 |
+| 3,361 | `r3p61` | ≤ 3.61 px | `releases/h33-2-b2-r3p61-20261023-f94be3ad.tif` | +0.005 |
+| 3,825 | `prune4` | ≤ 4.0 px | `releases/h33-2-b2-prune4-20261023-2880b0e9.tif` | +0.003 |
+| 5,637 | `prune5` | ≤ 5.0 px | `releases/h33-2-b2-prune5-20261023-7ebfc408.tif` | −0.003 |
 
-| # | upload (fallback: the `-zeros` twin) | change vs R0 | prediction (MODEL) | what the result changes |
+Two live/CLAIM rungs already anchor the curve: `≤1 px` gave **+0.0108** and `≤2 px` gave **+0.0070**
+(owner-reported, no receipts in this repository). Everything below is relative to that anchor.
+
+## Next three candidate slots (only if human confirms AXIS = PRUNE and quota permits)
+
+| # | upload | change vs R0 | what the result changes | prediction |
 |---|---|---|---|---|
-| 1 | `releases/h33-2-b2-prune3-20261023-fb308615.tif` | drop 2,171 dots at 2 < d_cat ≤ 3 px → 35,483 (−5.77 %) | **+0.007** (+0.001…+0.012) | Δ ≥ +0.01 ⇒ the catalogue-shadow mechanism is alive and rungs 4/5 become the plan; Δ ≤ 0 ⇒ the ladder is exhausted at 2 px and the axis budget moves on |
-| 2 | `releases/h33-2-b2-prune4-20261023-2880b0e9.tif` | drop 3,825 dots at 2 < d_cat ≤ 4 px → 33,829 (−10.16 %) | **+0.003** (−0.004…+0.010) | brackets the shadow width: if prune4 ≥ prune3 the shadow is ≥ 400 m and rung 5 is worth a slot; if prune4 < prune3 but > R0 the optimum sits in (3,4) px |
-| 3 | `releases/h33-2-b2-prune5-20261023-7ebfc408.tif` | drop 5,637 dots at 2 < d_cat ≤ 5 px → 32,017 (−14.97 %) | **−0.003** (−0.012…+0.006) | spend only if 1 and 2 both scored ≥ 0.2778; a gain means the shadow exceeds the documented 100–400 m class and the next session sweeps rungs 5–8 |
+| 1 | `…-prune3-…-fb308615.tif` | −2,171 (−5.77 %) | the anchor rung: ≥ 0.2778 keeps the shadow mechanism alive; ≤ 0.2778 retires the whole axis and hands wk 2 to the geometry lanes | **+0.007** |
+| 2 | `…-r3p61-…-f94be3ad.tif` | −3,361 (−8.93 %) | **the decision slot.** Above slot 1 ⇒ the shadow extends past the kernel radius, sweep 4–8 px next; below slot 1 by ≥ 0.005 ⇒ optimum bracketed at 3 px and the final file comes from slots 1–3 | **+0.005** |
+| 3 | `…-r2p85-…-acce3907.tif` | −1,611 (−4.28 %) | how little can be pruned and keep the gain — the risk-minimising file for the final submission | **+0.005** |
 
-Each has a `-zeros.tif` encoding twin; upload **one** encoding per slot. No exact-hash or
-`(parent, axis, value)` repeat — the ledger already contains at least eight wasted exact repeats from
-earlier sessions. PRUNE's requested count-preserving refill was measured **infeasible** on the parent's
-residual ridge at the same 2.8 px rung (611/577/469 candidate pixels vs 2,171/3,825/5,637 dots removed;
-`evidence/session_prune_receipt.json → refill_capacity`, IR-V2-09): the candidates are removal-only and
-that limitation must be accepted before choosing PRUNE.
+Do **not** spend slot 3 if slots 1 and 2 are both ≤ 0.2778: keep it for a fresh axis.
+Do **not** schedule `prune4` / `prune5` / `r2p25` unless slot 2 lands *above* slot 1 (then `prune4` is
+the next rung) or the account shows more than three slots left in the week.
+A live change under 0.01 is **no evidence** (public chunks only; private chunks plus the Phase-2
+expert-expanded labels may differ). Only a submission-page receipt counts, and only the human can
+produce one.
 
-## If a slot is free and the PRUNE ladder is closed — SNAP, in this order
+## SNAP contingency — built (session `arena/a9cc6c47`), ranked **below** the ladder
 
-SNAP's predicted effect is **inside the ±0.01 no-evidence band** (+0.001 / 0.000 / −0.004). It is a
-**bound on position sensitivity**, not a bet on a gain, so it ranks below PRUNE. Spend **at most one**
-SNAP slot in a week.
+Three SNAP variants at **fixed count and fixed mass** (37,654 dots before and after, ≤2 px moves, no dot
+ever moved closer to the catalogue, minimum separation 2.0 px). Rationale: position is the only axis
+left that is orthogonal to mass. Note on IR-V3-02's "impossible" verdict: it applies to preserving the
+2.8 px packing floor, not to the brief's rule — at a **2.0 px separation floor** the snap is feasible
+and 22–57 % of dots move, with the same proxy magnitudes session 3 measured (IR-V2-18).
 
-| order | file | what it buys |
-|---|---|---|
-| 1 | `releases/snap-free-lidar2-20261023-ac3fc128.tif` (56.9 % of dots moved ≤2 px, support coverage −18.9 %) | the **largest** SNAP effect: if position within ±200 m mattered at all, it shows here. ≥ +0.01 ⇒ the ridge is misplaced relative to the scarp; ≤ −0.01 ⇒ leaving the ridge is harmful, and the on-ridge file becomes the refined test |
-| 2 | `releases/snap-ridge-lidar2-20261023-6913d029.tif` (22.3 % moved, coverage −1.4 %) | along-trace refinement only; informative mainly after #1 shows an off-ridge cost |
-| 3 | `releases/snap-ridge-tmi2-20261023-de094d8e.tif` (30.3 % moved, coverage −2.3 %) | the only variant that tests the 400 m *aeromagnetic* positional story directly; a loss demotes every magnetic-gradient axis |
+They are **not** in the next three slots because their predicted effect is inside the ±0.01 no-evidence
+band (+0.001 / 0.000 / −0.004): a receipt could not settle anything unless it moves by ≥0.01. Spend **at
+most one** SNAP slot in a week, and only if the ladder is closed or a slot would otherwise be idle.
 
-Catalogue and SGMC results are PROXY and never promotion gates. The catalogue hide-and-recover PROXY is
-**biased** for these files and is not evidence (IR-V2-15). Never schedule an exact repeat for another
-score.
+| order | file | change | what it buys |
+|---|---|---|---|
+| 1 | `releases/snap-free-lidar2-20261023-ac3fc128.tif` | 56.9 % moved, support coverage −18.9 % | largest effect: if position within ±200 m matters, it shows here. ≥ +0.01 ⇒ the ridge is misplaced vs the scarp; ≤ −0.01 ⇒ off-ridge is harmful, next take #2 |
+| 2 | `releases/snap-ridge-lidar2-20261023-6913d029.tif` | 22.3 % moved, coverage −1.4 % | along-trace refinement only; informative after #1 |
+| 3 | `releases/snap-ridge-tmi2-20261023-de094d8e.tif` | 30.3 % moved, coverage −2.3 % | the only test of the 400 m *aeromagnetic* positional story; a loss demotes magnetic-gradient axes |
 
-## Calendar (deadline provisional, human must confirm)
+## Calendar and decision gates
 
-- **wk 1 (Oct 23–29):** only the first candidate, after the human confirms axis, `TOP_PUBLIC`, quota and
-  the incumbent receipt. Keep one slot in reserve if the account shows fewer than three left.
-- **wk 2 (Oct 30–Nov 5):** if PRUNE is alive, combine the winning rung with one non-PRUNE axis at a time
-  (predicted Δ ≥ +0.005, else do not spend). If PRUNE is flat, spend one slot on `snap-free-lidar2` as
-  the position bound and keep two in reserve.
-- **wk 3 (Nov 6–12):** the best combination, one change at a time; re-validate both encodings.
-- **wk 4–5 (Nov 13–26):** confirm the winner on fresh proxies, choose the final file **and** one fallback,
-  re-validate both formats (`scripts/gemsdoe85_prune_session.py`, `scripts/gemsdoe85_snap_session.py`).
+- **wk 1 (Oct 23–29):** slots 1–3 above.
+- **wk 2 (Oct 30–Nov 5):** if the shadow extends past 3 px, sweep 4.5 / 5 / 6 px at fine spacing; if it
+  peaks at 3 px, freeze the optimum. A free slot may then go to `snap-free-lidar2` as the position
+  bound; otherwise keep it in reserve.
+- **wk 3 (Nov 6–12):** one confirmation of the best file through the other encoding only if a slot is
+  otherwise unused (a fallback test, not an experiment).
+- **wk 4–5 (Nov 13–26):** choose the final file and one fallback; re-validate both formats with
+  `scripts/gemsdoe85_rung_session.py`, `scripts/gemsdoe85_prune_session.py`,
+  `scripts/gemsdoe85_snap_session.py`.
 - **wk 6 (to Dec 3):** freeze. One blind final submission; no geometry changes after the last receipt.
-- **41 calendar days** remain from Oct 23 to Dec 3, not six full weeks. Deadline and timezone are not
-  independently confirmed; the human checks
-  https://www.drivendata.org/competitions/306/competition-doe-gems/ . Quota per
-  https://docs.nlr.gov/docs/fy26osti/96647.pdf (not fetched by this session).
+  41 calendar days from Oct 23 to Dec 3, not six full weeks. Quota per
+  https://docs.nlr.gov/docs/fy26osti/96647.pdf (not fetched this session).
 
-## Better axes — proposed, NOT built, NOT assigned
+## Better axes for later human assignment (not built)
 
-1. **MASS-UP on scarp response, off-catalogue.** Measured without labels this session: the lidar scarp
-   field scores *higher* near the known catalogue than the parent's own dots do (the catalogue
-   hide-and-recover proxy rises 0.0048 → 0.0135 for `snap-free-lidar2` purely from dots moving toward
-   mapped faults), i.e. the field is a fault-likelihood surface. The unspent question is whether adding
-   dots at its maxima where `d_cat > 5 px` pays back the 0.2 FP charge. Confounder: additions have
-   failed live before (T-v2, 1,259 dots, −0.0028). Falsifier: matched-count random additions must lose
-   by ≥ 0.01.
-2. **PRUNE-EXCHANGE.** Same count as R0, but the dots removed from the catalogue shadow are moved along
-   strike on the parent's own ridge into `d_cat > 5 px` segments at fixed mass. Mechanism: exchange
-   isolates position from mass. Confounder: it re-seeds the packing. Falsifier: a matched-count
-   random-relocation control must score worse by ≥ 0.01.
-3. **RELIEF terciles.** Shift 10–15 % of mass between basin / piedmont / range-front terciles
-   (`det_elev`), count fixed. Confounder: range-front concentration can be a survey-coverage artefact
-   (lidar footprint edge). Falsifier: the sign flips inside the lidar-covered subset.
-4. **CONCENTRATION at 1 km blocks — direction unresolved.** R0's occupied-block density CV is **0.619**
-   (10-px blocks, median 2, p95 5 dots/block), *above* the 0.51–0.59 band the brief attributes to the
-   best files; the brief's direction (toward high-prior blocks) would raise CV further. Do not build
-   until settled; then run it two-sided at matched CV distance (IR-V2-17).
-5. **Cross-physics strike agreement**, matched count/ranking strata: independent magnetic/gravity
-   boundary alignment may separate faults from lithologic contacts. Falsifier: ≥ 0.01 receipt loss
-   despite increased agreement; smaller changes are inconclusive.
-6. **Persistence versus closed edges**, matched count/relief: favour kilometre-scale open,
-   strike-consistent boundaries over closed rims. Confounder: shorelines and lava margins persist too.
-   Falsifier: no ≥ 0.01 receipt gain and no improved blind geological evidence on reviewed traces.
-7. **SPACING at matched count** on the pruned geometry: the parent's mean nearest-neighbour distance is
-   **2.828 px**, and SNAP incidentally raised it to 3.51–3.61 px at identical count — a free spacing
-   contrast already sitting in the ledger if those receipts ever exist. Lowest priority; partly
-   duplicates the PRUNE dose ladder.
+1. **SNAP-AFTER-REPACK.** Re-thin the parent's 121k-px skeleton at 2.8 px with the edge response as the
+   packing *priority* instead of raster order: same count ballpark, same exclusions, positions now
+   edge-aligned. Confounder: it re-seeds the packing, so a matched-count random-priority control must
+   lose by ≥ 0.01. Falsifier: no receipt gain despite a ≥3 % rise in mean edge response under the dots.
+   (The already-built SNAP files are the cheaper version of this idea and will report first.)
+2. **PRUNE-EXCHANGE.** Same count as R0, with the removed shadow mass moved along strike into
+   `d_cat > 5 px` segments. Measured capacity at the parent's rung is small (794 free skeleton cells in
+   the footprint), so this needs the repack of proposal 1 to be feasible.
+3. **Directional shadow.** Split the removed ring by side (east/west of the mapped trace). If the
+   USGS-vs-imagery offset is systematic rather than isotropic, one side should carry the whole gain.
+   Cheap: two more PRUNE files from the same parent, no new machinery. Falsifier: symmetric receipts
+   within ±0.003 of each other.
+4. **MASS-UP on scarp response, off-catalogue.** The lidar scarp field scores higher near mapped faults
+   than R0's own dots do (catalogue proxy 0.0048 → 0.0135 purely from dots moving toward them), i.e. it
+   is a fault-likelihood surface. Whether adding dots at its maxima where `d_cat > 5 px` pays back the
+   0.2 FP charge is untested. Confounder: additions failed live before (T-v2, −0.0028). Falsifier:
+   matched-count random additions must lose by ≥ 0.01.
+5. **RELIEF terciles** and **CONCENTRATION at 1 km blocks**: both need a direction decision first
+   (IR-V2-17: R0's block-density CV 0.619 is above the 0.51–0.59 band attributed to the best files,
+   which contradicts the brief's concentration direction).
+6. **Cross-physics strike agreement** and **persistence vs closed edges** (carried over, unchanged).
 
 ## What these sessions did *not* do, on purpose
 
-No submission of any kind; no leaderboard or competition-page access; no credentials; no combination of
-two axes in one file; no MASS/CONCENTRATION/RELIEF build; no site redesign. Builds are unspent until the
-human confirms the axis and the quota.
+No CONCENTRATION or RELIEF file, no addition of any dot, no submission, no leaderboard access, no
+credentials, no site redesign. SNAP was built but is not scheduled; PRUNE rungs beyond slot 3 stay in
+reserve.
