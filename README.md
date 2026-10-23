@@ -1,27 +1,25 @@
 # GEMSDOE85 — Lane H85-HJCD: Hydrothermal-Juxtaposition & Fault-Valve Conduit Discovery
 
-<!-- CURRENT STATE — edit only this block and only these fields -->
-## CURRENT STATE (2026-10-23, session 3)
+<!-- CURRENT STATE — update this block only for session status. -->
+## CURRENT STATE (2026-10-23, after three build sessions: PRUNE, PRUNE-rungs, SNAP)
 
 | field | value |
 |---|---|
-| **parent** | R0 = `h33-h33-2-b2` (`e5eb6e7e`), 37,654 unit-mass dots, rebuilt pixel-identical every session |
-| **best receipt** | **none in this repository.** 0.2778 is a **CLAIM** (owner-reported); every other number below is MODEL or PROXY |
-| **TOP_PUBLIC** | **UNFILLED** — human must read it off the leaderboard *with a date*; no other target number is valid |
-| **slots left this week** | **UNKNOWN** — human must read it off the account page (3/week is a ceiling, not a target) |
-| **next 3 slots** | 1. `releases/h33-2-b2-prune3-20261023-fb308615.tif` (+0.007 MODEL) · 2. `releases/h33-2-b2-r3p61-20261023-f94be3ad.tif` (+0.005, the decision slot) · 3. `releases/h33-2-b2-r2p85-20261023-acce3907.tif` (+0.005) — upload the `-zeros` twin instead if the portal rejects NaN outside |
-| **this session** | AXIS **not assigned by the human** (asked; skipped) → PRUNE chosen from measurement. AXIS = PRUNE at fractional cup-distance rungs; SNAP / CONCENTRATION / RELIEF measured **infeasible** at R0's saturated 2.8 px packing (`docs/mechanism_cards_rung.md`) |
+| **parent** | R0 = `h33-h33-2-b2` (`e5eb6e7e`), 37,654 unit-mass dots; rebuilt **pixel-identical** from the pinned chain (121,131 → 44,090 → 40,199 → 37,654; `baeae321…` / `c55bafc4…`) |
+| **best receipt** | **none in this repository.** 0.2778 is a **CLAIM** (owner-reported); every other number is MODEL or PROXY |
+| **TOP_PUBLIC** | **UNFILLED** — the human reads it off the leaderboard *with a date*; no other target number is valid |
+| **slots left this week** | **UNKNOWN** — the human reads it off the account page (3/week is a ceiling, not a target) |
+| **next 3 slots** (only if the human confirms AXIS = PRUNE and quota permits) | 1. `h33-2-b2-prune3-…-fb308615` (+0.007 MODEL) · 2. `h33-2-b2-r3p61-…-f94be3ad` (+0.005, the decision slot) · 3. `h33-2-b2-r2p85-…-acce3907` (+0.005) — fallback: the `-zeros` twin of whichever is uploaded |
+| **reserve PRUNE rungs** | `prune4-…-2880b0e9` (+0.003), `prune5-…-7ebfc408` (−0.003), `r2p25-…-3908de12` (+0.003) — do not spend unless slot 2 lands above slot 1 or the account shows spare slots |
+| **SNAP contingency** | `snap-free-lidar2-…-ac3fc128`, then `snap-ridge-lidar2-…-6913d029`, then `snap-ridge-tmi2-…-de094d8e`; count and mass fixed at 37,654, ≤2 px moves. Ranked **below** PRUNE: predicted Δ is inside the ±0.01 no-evidence band |
+| **AXIS status** | not assigned by the human in any of the three sessions (asked each time; skipped). PRUNE was chosen from a measured dose–response, SNAP from an orthogonal-mechanism argument. Both are documented in `IRREGULARITIES.md` (IR-V2-08, IR-V2-14, IR-V3-02); confirm or overrule before spending a slot |
+| **every prediction** | MODEL. Hide-and-recover and SGMC are PROXY, never gates — and both are **biased** for catalogue-derived candidates (IR-V2-15, IR-V3-04) |
+| **human must supply** | AXIS confirmation, dated TOP_PUBLIC, weekly slots remaining, score receipts for every upload, deadline/timezone confirmation, redistribution decision (IR-V2-10) |
 
-<!-- end CURRENT STATE → the rest of this README is the previous session's narrative, preserved -->
+Upload file, hash and ≤140-character note per slot: `docs/SUBMIT.md`. Ladder, decision rules and the
+calendar: `SLOT_PLAN.md`. Science: `docs/mechanism_cards_prune.md`, `docs/mechanism_cards_rung.md`,
+`docs/mechanism_cards_snap.md`. Decision-changing irregularities: `IRREGULARITIES.md`.
 
-
-**DOE GEMS Prize Challenge · DrivenData Competition #306 · Verified End-to-End Research, Holdout Validation & Unique GeoTIFF Submission System**
-
-[![Automated Validation](https://img.shields.io/badge/Automated_Validation-32%2F32_PASS-brightgreen)](docs/index.html)
-[![Holdout DTI](https://img.shields.io/badge/HOLDOUT--DTI_(gems57--v2)-0.196461_(%2B107.6%25_vs_H33)-blue)](evidence/hjcd_experiments.json)
-[![Uniqueness Gate](https://img.shields.io/badge/Uniqueness_236_Rasters-PASS_(0.6402_%3C%3D_0.70)-success)](evidence/uniqueness_audit.json)
-
----
 
 ## Promoted Deliverable & One-Click Automated Validation Receipt
 

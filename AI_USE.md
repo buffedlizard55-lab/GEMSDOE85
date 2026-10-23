@@ -1,7 +1,9 @@
 # AI-use disclosure
 
-Two v2 sessions are recorded. The first (2026-10-22/23, `arena/cf29702c`) stopped BLOCKED; the
-second (2026-10-23, `arena/e081f5da`) cleared the rebuild blocker and built the PRUNE variants.
+Four v2 sessions plus a "session 3" are recorded. (1) 2026-10-22/23, `arena/cf29702c` — stopped BLOCKED. (2) 2026-10-23,
+`arena/e081f5da` — cleared the rebuild blocker and built the PRUNE variants. (3) 2026-10-23,
+`arena/30dcc7f0` — re-verification turn, no raster built. (4) 2026-10-23, `arena/a9cc6c47` — built the
+SNAP variants; its entry starts at "What the AI agent did (SNAP session)".
 
 ## 2026-10-23 — arena/cf29702c-gemsdoe85 (kept verbatim)
 - Human supplied the v2 brief, R0 identity, evidence policy, allowed axes, quota and no-submission constraints. Human did **not** assign AXIS, provide TOP_PUBLIC, receipts or remaining quota.
@@ -99,14 +101,31 @@ RELIEF cannot be built on this parent at its 2.8 px packing rung.
 
 ## 2026-10-23 — arena/30dcc7f0-gemsdoe85 (current verification turn)
 
-- AI read the local manifest, ledger, slot plan, and existing R0 recipe; restored only the hash-pinned
-  H19-5, d2.8/solo, R0, labels, and sample-template inputs from their GitHub mirrors into ignored
-  `data/` storage. No competition-site or leaderboard page was accessed.
-- AI installed the locked Python dependencies, verified the relevant manifest and lineage hashes,
-  rebuilt R0 (37,654 dots) and matched both pinned R0 SHA-256 values exactly, re-read/validated all
-  three existing PRUNE release pairs, and ran the targeted metric/lineage tests (31 passed).
-- AI did not build another raster: the PRUNE axis was selected by the earlier AI session, not assigned
-  by the human in this brief, and all three corresponding axis/value experiments already exist in the
-  ledger. AI added the README CURRENT STATE block and recorded this decision in IRREGULARITIES.md.
-- Human has not supplied an AXIS, dated TOP_PUBLIC, slot availability, or receipt in this turn. No
-  competition submission was made; no slot use is claimed.
+
+## What the AI agent did (SNAP session, branch `arena/a9cc6c47-gemsdoe85`, 2026-10-23)
+
+- Verified all 11 SHA-256 pins it used (7 parent-lineage pins plus the lidar scarp, GeoDAWN extension,
+  SGMC and 419 MB feature-stack manifests) and rebuilt R0 pixel-identically
+  (121,131 → 44,090 → 40,199 → 37,654 dots; parent files `baeae321…` / `c55bafc4…`).
+- Wrote `src/gems85/snap85.py` (the two response fields, the deterministic snap rule with its
+  catalogue/separation/footprint constraints, the label-free support-coverage diagnostic) and
+  `tests/test_snap85.py` (10 synthetic contract tests).
+- Wrote `scripts/gemsdoe85_snap_session.py`: pin verification, parent rebuild, three SNAP variants,
+  both GeoTIFF encodings, re-read validation against the brief's gates, per-fold catalogue proxy with
+  CI, SGMC control, leakage canary, receipt JSON, and idempotent ledger append.
+- Wrote `docs/mechanism_cards_snap.md` (hypothesis / mechanism / confounder / predicted sign /
+  falsifier per variant), rewrote `SLOT_PLAN.md`, added the SNAP contingency to `docs/SUBMIT.md`,
+  consolidated the README CURRENT STATE block, and added IR-V2-14 … IR-V2-17.
+- Chose the AXIS (SNAP) **after asking the human and receiving no answer** (the question was skipped);
+  the choice, its rejected alternatives and the re-scope condition are recorded in IR-V2-14. Chose the
+  three values (on-ridge lidar, on-ridge TMI, free-window lidar) to separate "which physics" from
+  "may a dot leave the mapped trace".
+- Fetched only GitHub-hosted, SHA-256-pinned files through the repository's own restore path. No
+  leaderboard, competition page, forum, Dropbox or credentials were accessed; nothing was submitted.
+
+### What remains the human's decision (SNAP session)
+
+- Whether SNAP was the intended axis at all (IR-V2-14); if not, these three files are simply unspent.
+- Whether to spend any slot on them — `SLOT_PLAN.md` ranks them **below** the PRUNE ladder because
+  their predicted effect is inside the ±0.01 no-evidence band (IR-V2-16).
+- `TOP_PUBLIC` with date, the rolling-week slot count, and a submission-page receipt for every score.

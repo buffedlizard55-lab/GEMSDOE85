@@ -1,9 +1,16 @@
 # Decision-changing irregularities — v2, 2026-10-23
 
-Two v2 sessions on this branch history: `arena/cf29702c` (2026-10-22/23) stopped BLOCKED; this one
-(`arena/e081f5da`, 2026-10-23) cleared the rebuild blocker and built the PRUNE variants. Items
-IR-V2-01 … IR-V2-06 are the earlier session's, kept verbatim; the status line under each says what
-this session did about it. New items are IR-V2-07 … IR-V2-12. Only items that change a decision.
+Session map for the item numbers below: `IR-V2-*` = the v2 brief sessions (`cf29702c`, `e081f5da`,
+`30dcc7f0`, `a9cc6c47`); `IR-V3-*` = the session that called itself "session 3" (`cbdb023a`) and used its
+own namespace to avoid collisions. Items are appended chronologically within each namespace, so
+IR-V2-18 sits after IR-V3-01…05 in the file.
+
+Four v2 sessions on this branch history: `arena/cf29702c` (2026-10-22/23) stopped BLOCKED;
+`arena/e081f5da` (2026-10-23) cleared the rebuild blocker and built the PRUNE variants;
+`arena/30dcc7f0` / `arena/340b2965` (2026-10-23) re-verified the start gate and documented state
+without building; `arena/a9cc6c47` (2026-10-23) built the SNAP variants. Items IR-V2-01 … IR-V2-06 are
+the earliest session's, kept verbatim. New items are IR-V2-07 … IR-V2-17; the last four are the SNAP
+session's. Only items that change a decision.
 
 ## Status of the earlier blockers
 
@@ -185,3 +192,93 @@ where AI_USE records that the AI selected PRUNE; there is no evidence that the h
 axis. Their exact `(parent, axis, value)` pairs are already used, so rebuilding them would be a
 forbidden duplicate. No new raster was built this turn. The human must assign an axis/value before a
 new experiment; the existing PRUNE files remain available only if that assignment is confirmed.
+
+## IR-V2-14 — AXIS was *still* unassigned in the next session; SNAP was built anyway, and the human did not answer
+
+**Conflict with IR-V2-13, stated openly.** The session on branch `arena/a9cc6c47` ran after this item was
+written. Its brief still left AXIS blank, so the agent asked the human directly — one question with four
+axis options (SNAP / CONCENTRATION / MASS / PRUNE rungs 6–8) plus one on lidar admissibility — and the
+question was **skipped**, i.e. no assignment exists. Rather than stop with no deliverable, that session
+built the **SNAP** axis and recorded it here. The three files are **UNSCORED and unspent**, so no slot is
+at risk; if the human intended a different axis, these are simply three built-but-unused experiments and
+the re-scope must happen before the next build.
+
+Why SNAP rather than the alternatives, on measurements (no labels, no scores): it is the only remaining
+axis that changes something *orthogonal* — dot position at fixed count and fixed mass — instead of
+re-weighting the prior that already built the ridge (MASS measured negative in IR-V2-08; CONCENTRATION
+is circular and its direction is contradicted by the block-density CV, IR-V2-17). **Decision:** SNAP is
+ranked *below* the PRUNE ladder in `SLOT_PLAN.md`, because its predicted effect sits inside the ±0.01
+no-evidence band (IR-V2-16). Each `(AXIS, value)` pair is built once; SNAP's three values are consumed.
+
+## IR-V2-15 — the catalogue hide-and-recover PROXY is structurally biased for any candidate derived from a catalogue-pruned parent
+
+Measured with the repo's own fold machinery (`src/gems85/holdout.py`: 4 spatially blocked segment folds,
+5-px buffer, prediction masked on `visible`, truth = withheld, 60,988 withheld positives): R0 scores
+**0.00479**, while the three SNAP variants score 0.00781 / 0.00940 / **0.01350** — a 3× rise — even
+though the SGMC off-catalogue control moves by **≤0.002** and the label-free support coverage *falls*.
+The mechanism is not a discovery: R0's dots were deliberately pushed >2 px away from the **whole**
+catalogue, so in a fold where part of that catalogue is withheld the parent is artificially far from the
+withheld trace and *any* rule that re-approaches it — including a snap driven by an independent
+geophysical field — scores higher. The live scorer **masks** those pixels, so the proxy rewards exactly
+what earns nothing.
+
+**Decision.** The catalogue hide-and-recover proxy is reported per fold with its CI but is **not used as
+evidence** for SNAP, and the previous session's +0.0083 bias correction (calibrated on PRUNE contrasts,
+the one edit class that *does* target the catalogue shadow) is **not transferred** to this edit class.
+Predictions come from the label-free support-coverage diagnostic and the SGMC off-catalogue control.
+Anyone reusing the hide-and-recover proxy on a catalogue-derived lineage must carry this caveat.
+
+## IR-V2-16 — the brief's own SNAP definition (≤ 2 px) cannot produce a result above the brief's own evidence floor
+
+The brief caps SNAP at 2 px and also says a live change under 0.01 is no evidence. At 100 m pixels,
+2 px = 200 m while the triangular kernel has R = 300 m: a dot moved ≤2 px usually stays inside the same
+kernel neighbourhood of the truth pixel it was already serving, so the metric is close to neutral by
+construction. Measured: the largest variant moves 56.9 % of the dots and still changes the label-free
+support coverage by only 18.9 %, and the SGMC control by ≤0.002. **Decision:** SNAP is a *bound* on
+position sensitivity, not a bet on a gain — one slot at most, only if the PRUNE ladder is closed or a
+slot would otherwise go unused, and the best single spend is the **free-window** file (largest effect,
+cleanest split of "off-ridge cost" vs "on-ridge refinement"). A receipt inside ±0.01 must be entered in
+the ledger as **no evidence**, not as a null result.
+
+**Related, and still open:** R0 itself violates the brief's "≥ 3 px from the catalogue" rule (IR-V2-03:
+2,171 dots at 2.24–3.00 px). SNAP inherits that and is not allowed to fix it: its rule keeps every dot
+at least as far from the catalogue as it already was, which incidentally lowers the within-3-px count to
+1,839 / 1,786 / 1,219. The SNAP files must therefore **not** be described as §4.4-compliant either; only
+the PRUNE files are.
+
+## IR-V2-17 — CONCENTRATION's direction is contradicted by the parent's measured block-density CV
+
+R0's occupied-block density CV on 1-km (10-px) blocks is **0.619** (37,654 dots; median 2, p95 5 dots
+per occupied block), *above* the 0.51–0.59 band the brief attributes to the best files. The brief's
+CONCENTRATION moves 10–20 % of mass from low-prior to high-prior blocks, which raises CV — the opposite
+of the only (confounded, PROXY-grade) observation available. **Decision:** do not build CONCENTRATION
+until the direction is settled; if it is built, run it two-sided (concentrate *and* de-concentrate) at
+matched CV distance. The band itself is file-name-derived and mass is confounded with field, so it
+cannot settle the direction on its own.
+
+## IR-V2-18 — SNAP *is* buildable at a 2.0 px separation floor; IR-V3-02's "impossible" applies to preserving the 2.8 px packing rung
+
+Two sessions measured the same thing and labelled it differently, so both numbers are reproduced here.
+
+* **Session 3 (IR-V3-02, `evidence/session_rung_receipt.json → axis_feasibility`):** 0 of 37,654 dots
+  have a free destination within 2 px at a separation floor of **2.8 / 2.4 / 2.2 px**; at **2.0 px**
+  radius-2 snapping moves 48 % of dots but costs 1.2 % of the parent's unique kernel credit and lowers
+  the SGMC proxy 0.0954 → 0.0926. Verdict recorded: "the brief's SNAP is impossible on this parent".
+* **This session (`evidence/session_snap_receipt.json`):** at a **2.0 px** floor the brief's SNAP runs:
+  22.3 % of dots move (on-ridge lidar), 30.3 % (on-ridge TMI), 56.9 % (free window); conditionally
+  *computing* the kernel credit gives support coverage −1.4 % / −2.3 % / −18.9 %, and the SGMC control
+  moves −0.0014 / −0.0020 / **+0.0005**. Count and mass are unchanged and no dot moves closer to the
+  catalogue.
+
+The two measurements agree within 0.001 on the proxy and within ~0.2 pp on the credit cost. The
+disagreement is a **definition**, not a number: IR-V3-02 treats "fixed packing rung 2.8 px" as part of
+the axis, and the brief does not — it requires same count, same exclusions, and (implicitly) a bounded
+move. At 2.8 px no dot *can* move, because the parent is a saturated packing; at 2.0 px they can, and
+the resulting files satisfy every stated constraint.
+
+**Decision, and the honest caveat.** The three SNAP files exist and are ledgered as UNSCORED; the
+predicted effects (+0.001 / 0.000 / −0.004) are inside the ±0.01 no-evidence band, which is the same
+conclusion session 3 reached by a different route. **Both sessions therefore agree that SNAP is not
+worth a slot while the PRUNE ladder is open**; the files are a contingency, not a plan (IR-V2-16,
+`SLOT_PLAN.md`). The word "impossible" in IR-V3-02 should be read as "impossible at fixed packing", and
+the feasibility table in `docs/mechanism_cards_rung.md` should be read with that qualifier.
