@@ -121,7 +121,7 @@ def build_index() -> str:
     pri = sub["primary"]
     checks = pri["checks"]
     n_fail = sum(1 for v in checks.values() if not v)
-    card = jload(ROOT / "evidence" / "run_card.json") or {}
+    card = jload(ROOT / "evidence" / "run_card_review_20261023.json") or {}
 
     rows = "".join(
         f'<tr><td>{html.escape(k.replace("_"," "))}</td>'
@@ -130,10 +130,10 @@ def build_index() -> str:
 
     alts = "".join(
         f'<a class="dl2" href="downloads/{html.escape(a["filename"])}">⬇ {html.escape(a["role"])}'
-        f' · {a["bytes"]/1024:.0f} KB</a>' for a in sub.get("alternates", []))
+        f' · {a["bytes"]/1024:.0f} KB</a>' for a in sub.get("alternates", []) if "nan" not in a["filename"].lower())
 
     body = f"""
-<h1>One file. Download it, upload it, done.</h1>
+<h1>Candidate file — submission is currently blocked</h1>
 <p class="sub">An auditable, fully automated fault-discovery submission for the
 <a href="https://www.drivendata.org/competitions/306/competition-doe-gems/">DOE GEMS Prize
 Challenge (DrivenData #306)</a>. The file below was generated, validated and published by code —
@@ -142,13 +142,13 @@ no human inspected it, and it cannot reach this page unless all
 
 <div class="hero">
   <div style="font-size:13px;color:#9198a1;text-transform:uppercase;letter-spacing:.7px;
-  font-weight:700;margin-bottom:10px">⬇ Submission file — ready to upload</div>
+  font-weight:700;margin-bottom:10px">⬇ Candidate GeoTIFF — NOT CLEARED FOR SUBMISSION</div>
   <a class="dl" href="downloads/{html.escape(pri['filename'])}">⬇ Download the GeoTIFF
   ({pri['bytes']/1024:.0f} KB)</a>
   <div style="margin-top:14px">{alts}</div>
   <div style="margin-top:16px">
     <span class="tag {'t-ok' if n_fail == 0 else 't-bad'}">
-    {'ALL ' + str(len(checks)) + ' CHECKS PASS — OK TO DOWNLOAD AND SUBMIT'
+    {'FORMAT PASS ONLY — SUBMISSION BLOCKED (lane unassigned / uniqueness gate unresolved)'
      if n_fail == 0 else str(n_fail) + ' CHECK(S) FAILED — DO NOT SUBMIT'}</span>
   </div>
   <table style="margin-top:16px">
@@ -285,22 +285,22 @@ def build_exec() -> str:
     pri = sub.get("primary", {})
     fn = pri.get("filename", "(build the submission first)")
     note = sub.get("note", "")
-    card = jload(ROOT / "evidence" / "run_card.json") or {}
+    card = jload(ROOT / "evidence" / "run_card_review_20261023.json") or {}
     vo = card.get("validator_output", {}) or {}
-    gate = card.get("preregistered_gate", {}) or {}
-    ok = bool(vo.get("all_checks_passed")) and bool(gate.get("leakage_canary_clean"))
+    # Format validity is independent of scientific clearance; lane/uniqueness remain blocking.
+    ok = bool(vo.get("all_checks_passed"))
     ok_cls = "t-ok" if ok else "t-bad"
     ok_label = "PASS" if ok else "FAIL"
-    ok_msg = ("ALL 17 CHECKS PASS — OK TO DOWNLOAD AND SUBMIT" if ok
+    ok_msg = ("FORMAT PASS ONLY — SUBMISSION BLOCKED" if ok
               else "FAILED — DO NOT SUBMIT")
     zip_fn = fn.replace("-zeros.tif", "-zeros.zip")
     body = f"""
-<h1>Executive summary — how to put this file into the competition</h1>
-<p class="sub">Five steps. Two minutes. No geology required.</p>
+<h1>Executive summary — submission is currently blocked</h1>
+<p class="sub">The candidate file passes format checks, but must not be uploaded: the method lane is unassigned and uniqueness clearance is unresolved. This page explains the eventual submission flow; no slot should be spent now.</p>
 
 <div class="hero">
   <div style="font-size:13px;color:#9198a1;text-transform:uppercase;letter-spacing:.7px;
-  font-weight:700;margin-bottom:10px">⬇ Step 0 — download the verified GeoTIFF</div>
+  font-weight:700;margin-bottom:10px">⬇ Research artifact — candidate GeoTIFF (not cleared for submission)</div>
   <a class="dl" href="downloads/{html.escape(fn)}">⬇ Download the GeoTIFF ({pri.get('bytes', 0)/1024:.0f} KB)</a>
   <div style="margin-top:14px"><a class="dl2" href="downloads/{html.escape(zip_fn)}">⬇ zipped twin</a></div>
   <div style="margin-top:16px">
@@ -309,8 +309,9 @@ def build_exec() -> str:
   <div class="mono" style="margin-top:12px;color:#9198a1">{html.escape(fn)}</div>
 </div>
 
+<div class="note"><b>Do not upload this candidate or spend a weekly slot.</b> The steps below describe the standard competition workflow only; this artifact is blocked pending lane assignment and literal registry-uniqueness review.</div>
 <ol class="steps">
-<li><b>Sign in to DrivenData.</b> Go to the
+<li><b>When a candidate is formally cleared, sign in to DrivenData.</b> Go to the
 <a href="https://www.drivendata.org/competitions/306/competition-doe-gems/submissions/">GEMS Prize
 submissions page</a>. You must be signed in and joined to the competition; the data and
 submission pages redirect to a login otherwise.</li>
@@ -318,7 +319,7 @@ submission pages redirect to a login otherwise.</li>
 <li><b>Click “New submission”.</b> The form has exactly two inputs: <i>File to submit</i> and an
 optional <i>Note</i>.</li>
 
-<li><b>Choose the file you downloaded in step 0.</b> The form accepts a single-band GeoTIFF
+<li><b>After a future selector decision clears a candidate, choose that approved file.</b> Do not upload the research artifact linked above. The form accepts a single-band GeoTIFF
 (<code>.tif</code>) or a <code>.zip</code> containing one GeoTIFF. This file is a plain
 <code>.tif</code>; a zipped twin is also published on the
 <a href="index.html">front page</a> if you prefer that route.</li>

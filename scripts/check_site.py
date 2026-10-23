@@ -115,8 +115,12 @@ def check(root=ROOT):
         page_text = (root / 'docs' / name).read_text()
         if fn not in page_text:
             errors.append(f'Missing primary download filename in docs/{name}')
-        if 'ALL 17 CHECKS PASS — OK TO DOWNLOAD AND SUBMIT' not in page_text:
-            errors.append(f'Missing OK TO DOWNLOAD AND SUBMIT banner in docs/{name}')
+        if 'FORMAT PASS ONLY — SUBMISSION BLOCKED' not in page_text:
+            errors.append(f'Missing blocked-format-only banner in docs/{name}')
+        if 'nan.tif' in page_text.lower():
+            errors.append(f'Unsafe NaN-outside TIFF link exposed in docs/{name}')
+        if 'NOT CLEARED FOR SUBMISSION' not in page_text and name == 'index.html':
+            errors.append('Landing page does not clearly state candidate is not cleared for submission')
 
     return errors
 
@@ -127,4 +131,4 @@ if __name__ == '__main__':
         print(error)
     if errors:
         raise SystemExit(1)
-    print('Site OK: internal links, evidence integrity, primary GeoTIFF format PASS, and obvious submission download.')
+    print('Site OK: internal links, evidence integrity, candidate GeoTIFF format PASS, and explicit BLOCKED submission status.')

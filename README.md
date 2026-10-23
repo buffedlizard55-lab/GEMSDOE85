@@ -1,22 +1,21 @@
 # GEMSDOE85 — S85-CTXFUS: contextual supervised + GEO-Pb crest fusion for concealed faults
 
-**DOE GEMS Prize · DrivenData competition #306 · current primary: session `arena/22847afd`**
+**DOE GEMS Prize · DrivenData competition #306 · safety review state: BLOCKED**
 
-A self-driving, fully auditable pipeline that restores the competition data, builds a novel
-fault-discovery surface, scores it on a spatially-blocked hide-and-recover holdout, converts it
-to a dot field, validates the written GeoTIFF against 17 format checks **with no human in the
-loop**, and publishes it on a GitHub Pages site with a one-click download at the very top.
+This repository contains candidate rasters and a reproducible analysis pipeline, but the current
+candidate is **not cleared for competition upload**. `registry/lane.json` records no assigned
+method lane, and the strict 70% overlap requirement is unresolved against registry space-filling
+rasters. Format validation is necessary but does not establish uniqueness, scientific validity,
+or permission to spend a weekly submission slot.
 
 | | |
 |---|---|
-| **Site** | `docs/index.html` (GitHub Pages: Settings → Pages → `main` / `/docs`) |
-| **Submission (current primary)** | `docs/downloads/gems85-s85-ctxfus50-37654dots-sep4-20261022T232600Z-4f38c2b3-zeros.tif` · sha256 `516730c0…b7e2b` |
-| **Status** | all 17 format checks **PASS** → OK to download and submit (selector still decides the slot) |
-| **Holdout DTI** | **0.08082 @ 37,654 dots**, 95 % CI [0.07356, 0.08808], evaluator `gems85-holdout-v1.0.0`, 60,988 withheld positives — beats the previous holdout best 0.07475 (GEO-Pb crest, matched budget), 3/4 folds, CIs overlap |
-| **Duplicate check** | max \|Spearman ρ\| vs 17 registry rasters = **0.171**; dot overlap vs h33 winner = **37.9 %** (< 70 %); vs comparable-budget own-repo files ≤ 41 % → distinct (dense-file raw overlaps disclosed, IR-85-017) |
-| **Verdict** | `promote` — cleared the session's pre-registered gate. **No organizer score exists. Beating 0.2778 live is unproven.** |
-| **Superseded** | GEO-Pb crest 90,000-dot primary (holdout-tuned budget, IR-85-014) — kept in `docs/downloads/` as a labelled alternate; §2–3 below are its (still valid) science record, §3d is the current session |
-
+| **Site** | `docs/index.html` (GitHub Pages; source configuration should be confirmed in repository settings) |
+| **Candidate artifact** | `docs/downloads/gems85-s85-ctxfus50-37654dots-sep4-20261022T232600Z-4f38c2b3-zeros.tif` (candidate only; do not upload while blocked) |
+| **Format** | Archived candidate run reports 17 format checks passed; rerun `python scripts/check_submission.py <path>` before any release. |
+| **HOLDOUT-DTI** | 0.08082 (evaluator `gems85-holdout-v1.0.0`, 60,988 withheld positives, 95% CI [0.07356, 0.08808]); inherited report, not recomputed during this review. |
+| **Uniqueness / lane** | BLOCKED: lane unassigned; strict overlap-saturation/open irregularities remain. |
+| **Verdict** | `negative` for slot promotion until the lane is assigned and the literal uniqueness gate passes. No organizer-confirmed score is established here. |
 ```bash
 python -m venv .venv && .venv/bin/pip install numpy scipy rasterio pandas scikit-learn pytest
 .venv/bin/python scripts/restore_data.py --groups core external scored   # 23 files, SHA-256 verified
