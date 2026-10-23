@@ -32,9 +32,10 @@
       "work": [
         "Re-check original request and explicitly mark unique new TIFF, valid holdout comparison and organizer scoring as unmet",
         "Retain the standing prompt and score ledger as unverified owner context in README",
-        "Run final full suite, site/evidence checks, syntax compilation, whitespace checks and byte-identical rebuild test"
+        "Run final full suite, site/evidence checks, syntax compilation, whitespace checks and byte-identical rebuild test",
+        "Reconcile concurrently merged main changes, preserve their research/cards/tests, and rerun all checks"
       ],
-      "verification": "103 tests passed on final suite; 32 historical TIFFs diagnosed, 16 conservative format PASS, zero cleared for submission; repeated site build byte-identical. Clean indexed checkout with pinned learning restoration also reproduced the generated site byte-for-byte."
+      "verification": "Combined post-reconciliation suite: 111 tests passed; 32 historical TIFFs diagnosed, 16 conservative format PASS, zero cleared. Byte-identical rebuilds and a clean indexed checkout checked. Upstream release-regression tests retained."
     }
   ],
   "experiments_run": 0,

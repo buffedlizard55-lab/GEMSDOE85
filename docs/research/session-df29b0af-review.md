@@ -70,3 +70,7 @@ Free official external sources worth a future availability check are [USGS ComCa
 4. Only after the gates clear, write a genuinely new TIFF through the shared writer, publish its name/hash/note/download and let the separate selector decide any weekly slot.
 
 The agent can implement and verify code autonomously; it cannot invent permission, create authenticated organizer receipts, reach blocked official hosts, or guarantee private-label performance. That is the remaining boundary to completing the original submission request.
+
+## Parallel-main reconciliation
+
+PRs #16/#17 reached main while this branch was being reviewed. Their research, previous negative cards and seven release-regression tests were preserved. The combined portal also handles missing/malformed prerequisite files without reviving an old approval, escapes untrusted blocker text and replaces legacy published upload pages with blocked entry points. The old certificate path differs from the manifest destination, but the restored witness bytes match the SHA-256 identity; the fresh shared certificate records that verification and retains the old certificate as provenance. No rule was relaxed. An already committed conflict marker in a historical Markdown page was replaced with labeled archival sections, preserving both drafts. Final validation was repeated after reconciliation.

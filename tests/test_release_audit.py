@@ -49,7 +49,7 @@ def test_format_pass_never_promotes_and_missing_witness_blocks(fixture_repo):
     assert card['historical_artifacts'][0]['format_ok']
     assert card['historical_artifacts'][0]['safe_to_submit'] is False
     assert card['safe_to_submit'] is False
-    assert card['registry']['saturation_certificate'] is None
+    assert card['registry']['saturation_certificate']['local_witness_reverified'] is False
     assert any('witness' in b for b in card['blockers'])
 
 
@@ -176,3 +176,10 @@ def test_retired_exporter_exits_blocked_without_importing_old_model():
     assert 'BLOCKED — DO NOT SUBMIT' in result.stdout
     assert result.stderr == ''
     assert sorted((ROOT / 'docs/downloads').glob('*.tif')) == before
+
+
+def test_no_unresolved_merge_markers_in_published_text():
+    import re
+    for path in (ROOT / 'docs').rglob('*'):
+        if path.suffix in ('.md', '.html', '.json'):
+            assert not re.search(r'^(<<<<<<< |=======\s*$|>>>>>>> )', path.read_text(), re.M), path

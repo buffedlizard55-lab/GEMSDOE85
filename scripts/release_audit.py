@@ -17,7 +17,32 @@ from restore_data import sha256_file as sha
 
 def audit(root=ROOT):
     root = Path(root)
-    card = review(root)
+    evidence_error = None
+    try:
+        card = review(root)
+    except (OSError, ValueError, KeyError, TypeError, StopIteration) as exc:
+        # Missing/malformed prerequisites must render a blocked portal, not crash
+        # into an old cached approval. Never execute shared code in this path.
+        evidence_error = str(exc)
+        blockers = ['Required preflight evidence missing or malformed: ' + evidence_error]
+        try:
+            prior = json.loads((root / 'evidence/run_card.json').read_text())
+            if isinstance(prior, dict) and isinstance(prior.get('blockers'), list):
+                blockers.extend(str(x) for x in prior['blockers'])
+        except (OSError, ValueError):
+            pass
+        card = dict(hypothesis=None, mechanism=None, non_fault_mimic=None,
+            experiment_status='NOT RUN: required evidence unavailable',
+            holdout=dict(evidence_class='HOLDOUT-DTI', evaluator_version=None, dti=None,
+                         ci95=None, withheld_positive_pixels=None, status='not run'),
+            registry=dict(uniqueness_cleared=False, correlation=None, overlap=None,
+                          saturation_certificate=None, phase_surface='not run', phase_final_dots='not run'),
+            gates=dict(core_mirror_integrity=[], core_inputs_available=False,
+                       template_unmodified=False, cached_stack_available=False),
+            raster_sha256=None, validator=dict(status='not run: prerequisites unavailable'),
+            submission=dict(name=None, note='Blocked: required evidence unavailable. No candidate or slot used.'),
+            blockers=list(dict.fromkeys(blockers)), verdict='negative', safe_to_download=False, safe_to_submit=False,
+            promoted=False, experiments_run=0, submission_slots_used=0)
     # Stable input-derived report: rebuilding a site must not invent a fresh observation time.
     card.pop('reviewed_utc', None)
     card['schema_version'] = 2
@@ -25,7 +50,7 @@ def audit(root=ROOT):
     rows = []
     inputs = card['gates']['core_mirror_integrity']
     reference_ok = any(r['id'] == 'sample_submission' and r['ok'] for r in inputs)
-    intact = not verify_template(root)
+    intact = evidence_error is None and not verify_template(root)
     if intact and reference_ok:
         import numpy as np
         import rasterio

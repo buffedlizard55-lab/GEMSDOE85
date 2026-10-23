@@ -117,29 +117,50 @@
       "id": "IR-85-018",
       "severity": "critical",
       "status": "fixed-on-branch",
+      "finding": "Current site entry pages and README promoted historical TIFFs as OK TO DOWNLOAD AND SUBMIT while the lane was unassigned, the transformed cache was unavailable, and the binding literal saturation certificate blocked all nonempty candidates. Old tests also asserted this unsafe PASS state.",
+      "action_taken": "Fail-closed website and checker now require an assigned lane, available pinned cache, no binding saturation blocker, and an explicitly authorizing current run card. Historical prediction links are deactivated in published pages; existing bytes remain preserved for audit. Current preflight card is negative; no new TIFF, experiment, or submission slot was used."
+    },
+    {
+      "id": "IR-85-019",
+      "severity": "high",
+      "status": "resolved-by-fresh-hash-verified-audit",
+      "finding": "The prior saturation certificate names witness data/raw/learning/registry-saturation-witness.tif, while registry/learning_manifest.json and scripts/restore_learning.py target data/learning/registry-saturation-witness.tif. The actual witness is absent locally, so the prior measurement is binding by AGENTS.md but was not freshly re-opened in this review.",
+      "action_taken": "Preflight now preserves the prior certificate, marks local re-verification false, reports the path mismatch, and blocks submission. Resolve the manifest/certificate provenance before any future attempt to verify or change the saturation result. Follow-up arena/df29b0af: restored witness at manifest destination; exact SHA-256 matches the prior certificate identity. Fresh unchanged shared-code saturation result retains prior provenance and confirms the literal blocker."
+    },
+    {
+      "id": "IR-85-df29b0af-018",
+      "severity": "critical",
+      "status": "fixed-on-branch",
       "finding": "Merged promotion banners and tests treated format PASS / comparable-budget overlap as clearance despite unassigned lane, unavailable pinned cache and binding literal dense-prior saturation.",
       "action_taken": "Canonical release audit recomputed with unchanged shared tools; current site/root and all legacy HTML entry points now carry BLOCKED. Historical promotion cards retained, never silently rewritten into experimental negatives."
     },
     {
-      "id": "IR-85-019",
+      "id": "IR-85-df29b0af-019",
       "severity": "high",
       "status": "fixed-on-branch",
       "finding": "check_site validated neither the exact reference transform nor release governance; README/root and canonical submission registry also referred to different primaries.",
       "action_taken": "Shared on-disk validator checks all historical TIFFs with reference/hash integrity; current decision lives in evidence/run_card.json. Registry submissions remain explicitly historical, not selected."
     },
     {
-      "id": "IR-85-020",
+      "id": "IR-85-df29b0af-020",
       "severity": "high",
       "status": "acknowledged",
       "finding": "Historical literature note and README inferred feature independence from nonsignificant AUC, constant false-positive mass from constant dot count, hidden truth mass from unreceipted scores and universal external-data eligibility.",
       "action_taken": "Current research review corrects these claims and separates official reference facts, local measurements, hypotheses and unverified owner reports. Historical documents preserved and labeled."
     },
     {
-      "id": "IR-85-021",
+      "id": "IR-85-df29b0af-021",
       "severity": "high",
       "status": "fixed-on-branch",
       "finding": "Session exporter and local uniqueness CLI retained thresholded partial-registry/chance-exemption paths inconsistent with literal shared gate.",
       "action_taken": "Historical exporter retired before model imports or any field/TIFF construction; uniqueness CLI delegates only to pinned shared gate at surface and dots stages, with surface-only checks supported; no private shared-tool changes."
+    },
+    {
+      "id": "IR-85-df29b0af-022",
+      "severity": "medium",
+      "status": "fixed-on-branch",
+      "finding": "A historical docs/research Markdown page already contained committed merge-conflict markers before this session.",
+      "action_taken": "Preserved both historical drafts in labeled sections, removed marker syntax, and added a published-text regression."
     }
   ]
 }

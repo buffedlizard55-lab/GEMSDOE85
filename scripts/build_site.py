@@ -9,7 +9,6 @@ import html
 import json
 import os
 from pathlib import Path
-import re
 import shutil
 import sys
 
@@ -18,8 +17,6 @@ sys.path.insert(0, str(ROOT / 'scripts'))
 from release_audit import audit
 
 BANNER = 'BLOCKED — DO NOT SUBMIT'
-ARCHIVE_START = '<!-- current-release-status -->'
-ARCHIVE_END = '<!-- /current-release-status -->'
 STYLE = '''body{margin:0;background:#0d1117;color:#e6edf3;font:16px/1.65 system-ui,sans-serif}
 main,nav{max-width:1040px;margin:auto;padding:24px}nav{display:flex;gap:24px;flex-wrap:wrap}
 a{color:#79b8ff}h1{line-height:1.2}h2{margin-top:40px}code{overflow-wrap:anywhere}
@@ -28,6 +25,28 @@ a{color:#79b8ff}h1{line-height:1.2}h2{margin-top:40px}code{overflow-wrap:anywher
 table{border-collapse:collapse;width:100%;font-size:14px}td,th{padding:10px;border:1px solid #30363d;text-align:left;overflow-wrap:anywhere}
 .scroll{overflow:auto}small,.muted{color:#aeb9c6}pre{white-space:pre-wrap;overflow-wrap:anywhere}
 button{padding:12px}footer{border-top:1px solid #30363d;margin-top:40px;padding:20px 0}'''
+
+
+def release_blockers(root=ROOT):
+    """Compatibility preflight for merged portal tests; no selector exists."""
+    reasons = ['Automated release selector is not implemented.']
+    for relative in ('evidence/run_card.json', 'registry/lane.json', 'registry/cache_manifest.json'):
+        try:
+            value = json.loads((Path(root) / relative).read_text())
+            if not isinstance(value, dict):
+                raise ValueError('expected object')
+        except (OSError, ValueError):
+            reasons.append('Missing or malformed required evidence: ' + relative)
+            continue
+        if relative.endswith('run_card.json'):
+            reasons.extend(str(x) for x in value.get('blockers', []))
+            if value.get('safe_to_submit') is not True:
+                reasons.append('Current run card does not clear submission.')
+        elif relative.endswith('lane.json') and (value.get('status') != 'assigned' or not value.get('method_paragraph')):
+            reasons.append('No explicit method lane assigned.')
+        elif relative.endswith('cache_manifest.json') and not value.get('cache_files'):
+            reasons.append('Pinned transformed cache is unavailable.')
+    return list(dict.fromkeys(reasons))
 
 
 def esc(value):
@@ -165,6 +184,8 @@ def build(root=ROOT):
     root = Path(root)
     docs = root / 'docs'
     docs.mkdir(exist_ok=True)
+    (root / 'evidence').mkdir(exist_ok=True)
+    (docs / 'downloads').mkdir(exist_ok=True)
     card = audit(root)
     if card.get('safe_to_submit') is not False or card.get('verdict') != 'negative':
         raise RuntimeError('This review portal cannot authorize promotion; implement an independently tested selector first')
@@ -177,13 +198,16 @@ def build(root=ROOT):
     for path in sorted(docs.rglob('*.html')):
         if path.parent == docs and path.name in pages:
             continue
-        text = path.read_text()
-        text = re.sub(re.escape(ARCHIVE_START) + r'.*?' + re.escape(ARCHIVE_END), '', text, flags=re.S)
         link = Path(os.path.relpath(docs / 'index.html', path.parent)).as_posix()
-        notice = (ARCHIVE_START + f'<aside data-release-status="blocked" style="padding:24px;background:#3b240c;color:white;position:relative;z-index:9999">'
-                  f'<strong>{BANNER}</strong> — Historical page; all older approval/download claims below are superseded. '
-                  f'<a style="color:white" href="{link}">Current release decision</a></aside>' + ARCHIVE_END)
-        text = re.sub(r'(<body\b[^>]*>)', lambda m: m.group(1) + notice, text, count=1, flags=re.I)
+        # Historical content remains in Git and canonical research/evidence;
+        # these public entry points must never retain old upload instructions.
+        text = ('<!doctype html><html lang="en"><head><meta charset="utf-8">'
+                '<meta name="viewport" content="width=device-width,initial-scale=1">'
+                '<title>Historical entry — GEMSDOE85</title></head>'
+                '<body><main data-release-status="blocked">'
+                f'<h1>{BANNER}</h1><p>Historical entry point. Previous submission approvals are superseded.</p>'
+                f'<a href="{link}">Current release decision, evidence and research</a>'
+                '</main></body></html>\n')
         path.write_text(text)
     (root / 'index.html').write_text('<!doctype html><html lang="en"><head><meta charset="utf-8">'
         '<meta http-equiv="refresh" content="0; url=docs/index.html"><title>GEMSDOE85 status</title></head>'
@@ -194,7 +218,10 @@ def build(root=ROOT):
             shutil.copyfile(source, docs / group / source.name)
     shutil.copyfile(root / 'evidence/run_card.json', docs / 'downloads/run_card.json')
     for name in ('session-df29b0af-review.md', 'why-h33.md'):
-        shutil.copyfile(root / 'research' / name, docs / 'research' / name)
+        source = root / 'research' / name
+        if source.is_file():
+            (docs / 'research').mkdir(exist_ok=True)
+            shutil.copyfile(source, docs / 'research' / name)
     return 0
 
 
