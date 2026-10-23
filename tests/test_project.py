@@ -30,7 +30,7 @@ def test_site_generation_and_validation():
 
 
 def test_submission_deliverable_and_format_contracts():
-    """Verify the primary submission GeoTIFF passes all format and metric contracts."""
+    """Historical TIFF format diagnostic only; not a uniqueness/promotion test."""
     sub = json.loads((ROOT / "registry/submission.json").read_text())
     pri = sub["primary"]
     fn = pri["filename"]
@@ -66,20 +66,12 @@ def test_submission_deliverable_and_format_contracts():
 def test_run_card_and_note_contracts():
     """Verify run card fields, note length limit, and verdict."""
     card = json.loads((ROOT / "evidence/run_card.json").read_text())
-    assert card["verdict"] == "promote-as-candidate"
-    # Registry-driven: the run card must describe the current primary raster.
-    sub = json.loads((ROOT / "registry/submission.json").read_text())
-    assert card["raster_sha256"] == sub["primary"]["sha256"]
-    ho = card["holdout_dti"]
-    assert ho["label"] == "HOLDOUT-DTI"
-    assert ho["evaluator_version"] == "gems85-holdout-v1.0.0"
-    assert ho["value"] > 0.05  # sanity floor; the gate comparison lives in the card
-    assert len(ho["ci95"]) == 2
-    assert ho["ci95"][0] < ho["value"] < ho["ci95"][1]
-    assert ho["n_withheld_positives"] == 60988
-
-    sub = json.loads((ROOT / "registry/submission.json").read_text())
-    assert len(sub["note"]) <= 140, f"Note exceeds 140 chars: {len(sub['note'])}"
+    assert card["verdict"] == "negative"
+    assert card["safe_to_submit"] is False
+    assert card["raster_sha256"] is None
+    assert card["holdout"]["dti"] is None
+    assert card["experiments_run"] == 0
+    assert len(card["submission"]["note"]) <= 140
 
 
 def test_source_register_does_not_claim_organizer_score_receipt():
