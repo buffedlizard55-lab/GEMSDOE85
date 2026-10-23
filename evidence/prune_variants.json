@@ -1,0 +1,543 @@
+{
+  "session": "arena/fe618e6b-gemsdoe85",
+  "date": "20261023",
+  "axis": "PRUNE",
+  "parent": "h33-b2",
+  "generated_utc": "2026-10-23T16:21:21+00:00",
+  "git_commit": "e99071162fda9ecb5e841c00d044de9fefff33e7",
+  "pins": {
+    "catalogue": {
+      "path": "data/bridge/existing_faults.tif",
+      "sha256": "7ba308ccdc4418b31a178f4f1ef21aaa6e152e4028f2f6f64b01f7eb25ae4093",
+      "bytes": 425830
+    },
+    "sample_submission": {
+      "path": "data/bridge/sample_submission.tif",
+      "sha256": "2176d08e485aa2cd2860ce8df539db4faf4d76163b38a4dd8c30a40454d35cbc",
+      "bytes": 1599597
+    },
+    "parent_R0": {
+      "path": "data/registry_rasters/R0-h33-b2-zeros.tif",
+      "sha256": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
+      "bytes": 219065
+    },
+    "solo_d28": {
+      "path": "data/scored/solo-d28.tif",
+      "sha256": "07b6db440535404bb41ec8ddc797713e200d308e3da35937393efde5eb84bc40",
+      "bytes": 199214
+    },
+    "d28_thin": {
+      "path": "data/scored/d28.tif",
+      "sha256": "91eae1ca42ec845eaa8c2ba32da49806e24751743459b8a10017c479bbe639b8",
+      "bytes": 1603424
+    },
+    "h19_5_ridge": {
+      "path": "data/scored/h19-5.tif",
+      "sha256": "ec1f9b56b83ce33cad781ceb9f104b18fb4f2ff785263a4e89616af4aabdee8d",
+      "bytes": 1712322
+    },
+    "sgmc_faults": {
+      "path": "data/external/derived_sgmc_faults_100m_u8.tif",
+      "sha256": "643cbe992ef4ba37588fb469163ed8291e3ceb23d6c1f78a3cfaa462430c2da0",
+      "bytes": 198602
+    }
+  },
+  "parent_facts": {
+    "parent_dots": 37654,
+    "derived_dots": 37654,
+    "derived_vs_parent_xor_pixels": 0,
+    "d28_dots": 44090,
+    "solo_d28_dots": 40199,
+    "solo_minus_parent": 2545,
+    "thin_minus_solo": 3891,
+    "parent_support_rebuilt_exactly": true,
+    "raster_byte_rebuild": false,
+    "raster_byte_rebuild_note": "the dot support rebuilds bit-exactly from solo-d28 + (d_cat <= 2 px) exclusion; the container bytes do not, because the 2026-10-04 writer used tiled/deflate with a tile order this repo's writer does not reproduce. The parent is identified by its pinned sha256 and consumed byte-exactly; no dot position was approximated."
+  },
+  "predictions": {
+    "prune-x3-nofill": {
+      "point": 0.284,
+      "interval": [
+        0.282,
+        0.286
+      ],
+      "kind": "MODEL",
+      "text": "+0.0062 (0.2778 -> 0.2840)"
+    },
+    "prune-x3-pushout": {
+      "point": 0.2778,
+      "interval": [
+        0.274,
+        0.283
+      ],
+      "kind": "MODEL",
+      "text": "~0.000 vs R0 (0.274-0.283): relocated ring dots should still be pure mass"
+    },
+    "prune-x2-readd": {
+      "point": 0.2708,
+      "interval": [
+        0.268,
+        0.273
+      ],
+      "kind": "MODEL",
+      "text": "-0.0070 (0.2778 -> 0.2708): reproduces the scored solo-d28 support"
+    }
+  },
+  "variants": {
+    "prune-x3-nofill": {
+      "value": "x3-nofill",
+      "note": "delete all dots at 2 < d_cat <= 3 px",
+      "n_dots": 35483,
+      "files": {
+        "nan": "releases/h33-b2-prune-x3-nofill-20261023-2776477c.tif",
+        "zeros": "releases/h33-b2-prune-x3-nofill-20261023-89498c48-zeros.tif"
+      },
+      "receipts": {
+        "nan": {
+          "path": "releases/h33-b2-prune-x3-nofill-20261023-2776477c.tif",
+          "sha256": "2776477c129714aee56d6c381e2c78e5573184258d6b9dc4e3781a7f1f80449f",
+          "bytes": 188983,
+          "form": "nan",
+          "meta": {
+            "crs": "EPSG:32611",
+            "shape": [
+              3730,
+              3292
+            ],
+            "dtype": "float32",
+            "count": 1,
+            "nodata": NaN,
+            "transform": [
+              100.0,
+              0.0,
+              243350.0,
+              0.0,
+              -100.0,
+              4508550.0
+            ],
+            "bounds": [
+              243350.0,
+              4135550.0,
+              572550.0,
+              4508550.0
+            ]
+          },
+          "n_dots": 35483,
+          "checks": {
+            "single_band": true,
+            "dtype_float32": true,
+            "shape_matches_sample": true,
+            "crs_epsg_32611": true,
+            "transform_matches_sample": true,
+            "values_in_0_1_inside_footprint": true,
+            "no_nan_inside_footprint": true,
+            "no_positive_mass_outside_footprint": true,
+            "outside_is_nan": true,
+            "outside_is_zero": null,
+            "zero_mass_on_catalogue": true,
+            "n_dots_matches_support": true
+          }
+        },
+        "zeros": {
+          "path": "releases/h33-b2-prune-x3-nofill-20261023-89498c48-zeros.tif",
+          "sha256": "89498c488cb1cf5be5fb71c31b2b873b107f8905bbc82a84760969fbbee5297b",
+          "bytes": 144469,
+          "form": "zeros",
+          "meta": {
+            "crs": "EPSG:32611",
+            "shape": [
+              3730,
+              3292
+            ],
+            "dtype": "float32",
+            "count": 1,
+            "nodata": null,
+            "transform": [
+              100.0,
+              0.0,
+              243350.0,
+              0.0,
+              -100.0,
+              4508550.0
+            ],
+            "bounds": [
+              243350.0,
+              4135550.0,
+              572550.0,
+              4508550.0
+            ]
+          },
+          "n_dots": 35483,
+          "checks": {
+            "single_band": true,
+            "dtype_float32": true,
+            "shape_matches_sample": true,
+            "crs_epsg_32611": true,
+            "transform_matches_sample": true,
+            "values_in_0_1_inside_footprint": true,
+            "no_nan_inside_footprint": true,
+            "no_positive_mass_outside_footprint": true,
+            "outside_is_nan": null,
+            "outside_is_zero": true,
+            "zero_mass_on_catalogue": true,
+            "n_dots_matches_support": true
+          }
+        }
+      },
+      "parent_diff": {
+        "n_parent": 37654,
+        "n_variant": 35483,
+        "removed": 2171,
+        "added": 0,
+        "pct_of_parent_dots_changed": 5.76565570722898,
+        "removed_d_cat_min": 2.23606797749979,
+        "removed_d_cat_max": 3.0,
+        "added_d_cat_min": null,
+        "added_d_cat_max": null,
+        "dots_within_3px_of_catalogue": 0,
+        "dots_within_1px_of_catalogue": 0,
+        "footprint_frac_pct": 0.6866738669726378,
+        "outside_footprint": 0
+      },
+      "proxy": {
+        "dti_proxy": 0.0,
+        "n_withheld_positives": 11321,
+        "tp_w": 0.0,
+        "fp_w": 35483.0,
+        "fn_w": 11321.0,
+        "ci95_block_drop": [
+          0.0,
+          0.0
+        ],
+        "blocks": 565
+      },
+      "refill": null,
+      "prediction": {
+        "point": 0.284,
+        "interval": [
+          0.282,
+          0.286
+        ],
+        "kind": "MODEL",
+        "text": "+0.0062 (0.2778 -> 0.2840)"
+      }
+    },
+    "prune-x3-pushout": {
+      "value": "x3-pushout",
+      "note": "delete ring, re-place each ring dot just outside 3 px (count held)",
+      "n_dots": 37645,
+      "files": {
+        "nan": "releases/h33-b2-prune-x3-pushout-20261023-cdcc6c30.tif",
+        "zeros": "releases/h33-b2-prune-x3-pushout-20261023-ab917ea0-zeros.tif"
+      },
+      "receipts": {
+        "nan": {
+          "path": "releases/h33-b2-prune-x3-pushout-20261023-cdcc6c30.tif",
+          "sha256": "cdcc6c303a124f4f9666211fad172c4ff371c35e81ce4b3b1e21da216106bdfa",
+          "bytes": 193698,
+          "form": "nan",
+          "meta": {
+            "crs": "EPSG:32611",
+            "shape": [
+              3730,
+              3292
+            ],
+            "dtype": "float32",
+            "count": 1,
+            "nodata": NaN,
+            "transform": [
+              100.0,
+              0.0,
+              243350.0,
+              0.0,
+              -100.0,
+              4508550.0
+            ],
+            "bounds": [
+              243350.0,
+              4135550.0,
+              572550.0,
+              4508550.0
+            ]
+          },
+          "n_dots": 37645,
+          "checks": {
+            "single_band": true,
+            "dtype_float32": true,
+            "shape_matches_sample": true,
+            "crs_epsg_32611": true,
+            "transform_matches_sample": true,
+            "values_in_0_1_inside_footprint": true,
+            "no_nan_inside_footprint": true,
+            "no_positive_mass_outside_footprint": true,
+            "outside_is_nan": true,
+            "outside_is_zero": null,
+            "zero_mass_on_catalogue": true,
+            "n_dots_matches_support": true
+          }
+        },
+        "zeros": {
+          "path": "releases/h33-b2-prune-x3-pushout-20261023-ab917ea0-zeros.tif",
+          "sha256": "ab917ea041a2b7e875df22e1eb2f5b85b42ea09403152091c856d6d44478f6fa",
+          "bytes": 149080,
+          "form": "zeros",
+          "meta": {
+            "crs": "EPSG:32611",
+            "shape": [
+              3730,
+              3292
+            ],
+            "dtype": "float32",
+            "count": 1,
+            "nodata": null,
+            "transform": [
+              100.0,
+              0.0,
+              243350.0,
+              0.0,
+              -100.0,
+              4508550.0
+            ],
+            "bounds": [
+              243350.0,
+              4135550.0,
+              572550.0,
+              4508550.0
+            ]
+          },
+          "n_dots": 37645,
+          "checks": {
+            "single_band": true,
+            "dtype_float32": true,
+            "shape_matches_sample": true,
+            "crs_epsg_32611": true,
+            "transform_matches_sample": true,
+            "values_in_0_1_inside_footprint": true,
+            "no_nan_inside_footprint": true,
+            "no_positive_mass_outside_footprint": true,
+            "outside_is_nan": null,
+            "outside_is_zero": true,
+            "zero_mass_on_catalogue": true,
+            "n_dots_matches_support": true
+          }
+        }
+      },
+      "parent_diff": {
+        "n_parent": 37654,
+        "n_variant": 37645,
+        "removed": 2171,
+        "added": 2162,
+        "pct_of_parent_dots_changed": 11.50740957136028,
+        "removed_d_cat_min": 2.23606797749979,
+        "removed_d_cat_max": 3.0,
+        "added_d_cat_min": 3.1622776601683795,
+        "added_d_cat_max": 17.11724276862369,
+        "dots_within_3px_of_catalogue": 0,
+        "dots_within_1px_of_catalogue": 0,
+        "footprint_frac_pct": 0.7285133084064185,
+        "outside_footprint": 0
+      },
+      "proxy": {
+        "dti_proxy": 0.0,
+        "n_withheld_positives": 11321,
+        "tp_w": 0.0,
+        "fp_w": 37645.0,
+        "fn_w": 11321.0,
+        "ci95_block_drop": [
+          0.0,
+          0.0
+        ],
+        "blocks": 565
+      },
+      "refill": {
+        "requested": 2171,
+        "placed": 2162,
+        "unplaced": 9,
+        "mean_displacement_px": 3.2105135220633536,
+        "p50_displacement_px": 1.4142135623730951,
+        "max_displacement_px": 14.422205101855956,
+        "dots_needing_separation_relaxation": {
+          "2.828": 0,
+          "2.0": 0,
+          "1.5": 0,
+          "1.0": 0
+        },
+        "refill_rule": "radial push-out from the nearest catalogue pixel; first free cell at d_cat > 3 px, separator 2.828 px relaxed to 2.0 then 1.5 px",
+        "refill_pool_shortfall": {
+          "note": "re-adding the parent's next-ranked dots is NOT possible: only 474 of the 2,171 replacements fit the H19-5 ridge outside 3 px at the parent's own 2.828-px separation",
+          "measured_fit_at_parent_separation": 474,
+          "needed": 2171
+        }
+      },
+      "prediction": {
+        "point": 0.2778,
+        "interval": [
+          0.274,
+          0.283
+        ],
+        "kind": "MODEL",
+        "text": "~0.000 vs R0 (0.274-0.283): relocated ring dots should still be pure mass"
+      }
+    },
+    "prune-x2-readd": {
+      "value": "x2-readd",
+      "note": "re-admit the 2,545 dots at 1 < d_cat <= 2 px (control)",
+      "n_dots": 40199,
+      "files": {
+        "nan": "releases/h33-b2-prune-x2-readd-20261023-5b6ca72b.tif",
+        "zeros": "releases/h33-b2-prune-x2-readd-20261023-dfe20999-zeros.tif"
+      },
+      "receipts": {
+        "nan": {
+          "path": "releases/h33-b2-prune-x2-readd-20261023-5b6ca72b.tif",
+          "sha256": "5b6ca72b774c1b841e91cc33de3f668a8d02ae06336e7d04a262bdf67b873fa2",
+          "bytes": 199378,
+          "form": "nan",
+          "meta": {
+            "crs": "EPSG:32611",
+            "shape": [
+              3730,
+              3292
+            ],
+            "dtype": "float32",
+            "count": 1,
+            "nodata": NaN,
+            "transform": [
+              100.0,
+              0.0,
+              243350.0,
+              0.0,
+              -100.0,
+              4508550.0
+            ],
+            "bounds": [
+              243350.0,
+              4135550.0,
+              572550.0,
+              4508550.0
+            ]
+          },
+          "n_dots": 40199,
+          "checks": {
+            "single_band": true,
+            "dtype_float32": true,
+            "shape_matches_sample": true,
+            "crs_epsg_32611": true,
+            "transform_matches_sample": true,
+            "values_in_0_1_inside_footprint": true,
+            "no_nan_inside_footprint": true,
+            "no_positive_mass_outside_footprint": true,
+            "outside_is_nan": true,
+            "outside_is_zero": null,
+            "zero_mass_on_catalogue": true,
+            "n_dots_matches_support": true
+          }
+        },
+        "zeros": {
+          "path": "releases/h33-b2-prune-x2-readd-20261023-dfe20999-zeros.tif",
+          "sha256": "dfe20999bf549c138c856354584f0434426e69d569403d2fed6e691b7d4cdaca",
+          "bytes": 154720,
+          "form": "zeros",
+          "meta": {
+            "crs": "EPSG:32611",
+            "shape": [
+              3730,
+              3292
+            ],
+            "dtype": "float32",
+            "count": 1,
+            "nodata": null,
+            "transform": [
+              100.0,
+              0.0,
+              243350.0,
+              0.0,
+              -100.0,
+              4508550.0
+            ],
+            "bounds": [
+              243350.0,
+              4135550.0,
+              572550.0,
+              4508550.0
+            ]
+          },
+          "n_dots": 40199,
+          "checks": {
+            "single_band": true,
+            "dtype_float32": true,
+            "shape_matches_sample": true,
+            "crs_epsg_32611": true,
+            "transform_matches_sample": true,
+            "values_in_0_1_inside_footprint": true,
+            "no_nan_inside_footprint": true,
+            "no_positive_mass_outside_footprint": true,
+            "outside_is_nan": null,
+            "outside_is_zero": true,
+            "zero_mass_on_catalogue": true,
+            "n_dots_matches_support": true
+          }
+        }
+      },
+      "parent_diff": {
+        "n_parent": 37654,
+        "n_variant": 40199,
+        "removed": 0,
+        "added": 2545,
+        "pct_of_parent_dots_changed": 6.758910075954746,
+        "removed_d_cat_min": null,
+        "removed_d_cat_max": null,
+        "added_d_cat_min": 1.4142135623730951,
+        "added_d_cat_max": 2.0,
+        "dots_within_3px_of_catalogue": 4716,
+        "dots_within_1px_of_catalogue": 0,
+        "footprint_frac_pct": 0.7779388095266202,
+        "outside_footprint": 0
+      },
+      "proxy": {
+        "dti_proxy": 0.028218729152684287,
+        "n_withheld_positives": 11321,
+        "tp_w": 483.796063277192,
+        "fp_w": 39954.71480166925,
+        "fn_w": 10837.203936722808,
+        "ci95_block_drop": [
+          0.027810947933537514,
+          0.028287399656360703
+        ],
+        "blocks": 565
+      },
+      "refill": null,
+      "prediction": {
+        "point": 0.2708,
+        "interval": [
+          0.268,
+          0.273
+        ],
+        "kind": "MODEL",
+        "text": "-0.0070 (0.2778 -> 0.2708): reproduces the scored solo-d28 support"
+      }
+    }
+  },
+  "reports_only": {
+    "proxy_note": "The catalogue hide-and-recover PROXY is structurally biased against PRUNE: the withheld positives ARE catalogue pixels and a prune deletes precisely the dots nearest them. It is reported, never used to rank these variants.",
+    "leakage_canary": {
+      "feature": "5x5 H19-5 ridge thickness",
+      "auc_catalogue_vs_far_footprint": 0.6281952064851054,
+      "threshold": 0.9,
+      "pass_": true,
+      "n_pos": 60988,
+      "n_neg": 4722579
+    },
+    "sgmc_control": {
+      "status": "REPORT_ONLY",
+      "sgmc_pixels": 83593,
+      "sgmc_in_footprint": 83593,
+      "dots_on_or_within_1px_of_sgmc": 2475,
+      "pct_dots_within_1px_of_sgmc": 6.573006851861688,
+      "note": "SGMC is a different compilation and is NOT masked by the organiser; proximity here is a plausibility control, not a credit estimate."
+    }
+  },
+  "evidence_classes": {
+    "receipt": "none in this repo -- every score above is CLAIM (owner-reported) except the MODEL predictions, which are projections from the two measured rungs"
+  }
+}

@@ -29,6 +29,20 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements-lock.txt
 
 ---
 
+## CURRENT STATE — 2026-10-23 (PRUNE session `arena/fe618e6b-gemsdoe85`)
+
+| field | value |
+|---|---|
+| **Parent (incumbent)** | `R0 = h33-h33-2-b2` · sha256 `c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9` · 37,654 dots · **0.2778 `CLAIM`** |
+| **Best receipt in `ledger/`** | **none** — every score in this repo is owner-reported; the human must paste submission-page receipts |
+| **`TOP_PUBLIC`** | `____` (human fills from the leaderboard, with date). Repo docs quote `0.4413` as public #1 on 2026-10-23 — **unverified here** |
+| **Slots left this week** | `__ / 3` (human) |
+| **AXIS this session** | `PRUNE` (human-assigned): three variants built, `ledger/submissions.csv`, `SLOT_PLAN.md` |
+| **Next 3 slots** | 1 · `releases/h33-b2-prune-x3-nofill-20261023-89498c48-zeros.tif` (35,483 dots, `MODEL +0.0062 → 0.2840`) · 2 · `…-prune-x3-pushout-…-ab917ea0-zeros.tif` (37,645, `MODEL ≈0.2778`, bracket) · 3 · `…-prune-x2-readd-…-dfe20999-zeros.tif` (40,199, control, `MODEL 0.2708`) |
+| **Detail** | `SLOT_PLAN.md` · `docs/MECHANISM_CARDS.md` · `docs/SUBMIT.md` · `IRREGULARITIES.md` · `evidence/prune_variants.json` |
+
+---
+
 ## 📜 Preserved Verbatim Project Prompt (Full Project Reference)
 
 ```text
