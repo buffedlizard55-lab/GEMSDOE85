@@ -154,3 +154,26 @@ RELIEF cannot be built on this parent at its 2.8 px packing rung.
   release pairs across `PRUNE`, `PRUNE-rungs`, and `SNAP`.
 - Human retains `AXIS` assignment/confirmation, `TOP_PUBLIC` (with date), weekly/total slot count, score
   receipts, deadline/timezone confirmation, and all portal submissions. No forbidden hosts were contacted.
+
+---
+
+## 2026-10-23 — `arena/3dd0b94c-gemsdoe85` (`AXIS = RELIEF`)
+
+- AI restored and SHA-256-verified all 28 pinned manifest/lineage inputs (`23/23` `data_manifest.json`,
+  `2/2` `learning_manifest.json`, `3/3` R0 lineage rasters) in gitignored `data/`, and rebuilt parent
+  R0 (`37,654` dots) matching both `r0_nan` (`baeae321…`) and `r0_zeros` (`c55bafc4…`) pixel- and
+  byte-identically.
+- AI wrote `src/gems85/relief_lineage.py`, `scripts/gemsdoe85_relief_session.py`, and
+  `tests/test_relief_lineage.py`: equal-area Basin / Piedmont / Range-front terciles from
+  `0.70 · pct_rank(det_elev) + 0.30 · pct_rank(det_elev_slope)`, in-tercile `ctrl_collar3_0pct`
+  decomposition, three fixed-count (`37,654`), `2.8 px`-spaced, `d_cat > 3.0 px` `RELIEF` variants
+  (`reliefp2r10-…-669f0637`, `reliefbp2r15-…-21af1eee`, `reliefr2bp10-…-7a0329ee` + `-zeros` twins),
+  report-only `gems57-pooled-hide-v2` and `sgmc_minus_catalogue_3px` 95 % CIs, and 19-band leakage
+  canary (`AUC = 0.5693`, CLEAN).
+- AI wrote `docs/mechanism_cards_relief.md` (including the 12-run `SNAP` negative result), reconciled
+  `ledger/submissions.csv` (12 unioned rows across `PRUNE`, `SNAP`, `RELIEF`), `SLOT_PLAN.md`,
+  `docs/SUBMIT.md`, `README.md` (`CURRENT STATE` block only), and `IR-V2-20 … IR-V2-21`.
+- Human decides slot order (`prune3` → `reliefp2r10` → conditional Slot 3, vs pure-`PRUNE`), supplies
+  dated `TOP_PUBLIC` and remaining slot counts, uploads from their single registered account, records
+  live `receipt_score` + `date`, and reviews competition redistribution/AI-disclosure rules.
+

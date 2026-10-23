@@ -293,3 +293,32 @@ different SHA-256 digests (`24952cda…`, `56a67442…`, `ed507edc…`) from the
 `requirements-lock.txt` pins `rasterio==1.4.4` and added a GeoTIFF re-encoding SHA-256 assertion in
 `scripts/gemsdoe85_prune_session.py` and `tests/test_r0_lineage.py` so rebuilding and writing `L.r0`
 from scratch is verified against both `baeae321…` and `c55bafc4…`.
+
+## IR-V2-20 — `RELIEF` *is* buildable at the 2.8 px packing rung AND `d_cat > 3.0 px` via pinned sibling ancestors (`arena/3dd0b94c-gemsdoe85`)
+
+IR-V3-02 found only 85–794 free pixels on the single `H19-5` 1-px skeleton at `2.8 px` spacing and
+concluded `RELIEF` could not be built on R0 at fixed count. Restoring all 28 SHA-pinned manifest files
+reveals **6,519** unpacked `d_cat > 3.0 px` ridge pixels across the pinned sibling ancestor union
+(`H19-5 | H19-4 | H16-1` in `registry/data_manifest.json`), supplemented where needed by 1-px multi-band
+physical NMS crests (`tmi_hg`, `iso_grav_anom_slope`, `tc`, `det_elev_slope`). Meanwhile, `19GEMSDOE`'s
+continuous pre-skeleton surface (`oof_probs_h16_1.npz`, `oof_probs_h19_arms.npz`) is unpinned and thus
+excluded under Hard Constraint #2.
+
+To satisfy Hard Constraint #4 (`d_cat ≥ 3 px`) without confounding `RELIEF`, an unshipped in-tercile
+control (`ctrl_collar3_0pct`, `100 %` filled from pinned sibling ancestors) replaces R0's 2,171
+`d_cat ≤ 3 px` dots 1-for-1 inside each tercile (`sgmc_minus_catalogue_3px` `0.09539 -> 0.09883`,
+`+0.00344` PROXY). Holding count (`37,654`), `2.8 px` spacing, and `d_cat > 3.0 px` (`min = 3.162 px`)
+constant, `reliefp2r10` (`+10 %` Piedmont→Range) and `reliefbp2r15` (`+15 %` Basin+Pied→Range) reach
+`0.10388` and `0.10418` (`+0.0085` to `+0.0088` PROXY vs R0), while opposite-direction `reliefr2bp10`
+(`+10 %` Range→Basin+Pied) hedges the Quaternary `gems57-pooled-hide-v2` sign split (`0.09518` vs
+`0.09283`). **Decision:** pair `prune3` (Slot 1) with `reliefp2r10` (Slot 2) so `Slot 2 − Slot 1`
+measures pure live `RELIEF` above the `d_cat > 3 px` collar, and choose Slot 3 conditionally.
+
+## IR-V2-21 — Pre-existing Git-tracked competition rasters flagged again (`arena/3dd0b94c-gemsdoe85`)
+
+`git ls-files data/` confirms `data/labels.tif`, `data/existing_faults.tif`, and
+`data/sample_submission.tif` (plus `data/bridge/*`) remain tracked from pre-`.gitignore` history
+(`IR-V2-04`, `IR-V2-10`). **Decision:** add zero competition rasters in `arena/3dd0b94c-gemsdoe85`
+(only ~218–356 KB derived binary submissions in `releases/`) and flag the pre-existing tracked files for
+human review against DrivenData redistribution rules before any public release.
+

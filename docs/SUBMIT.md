@@ -1,7 +1,9 @@
-# SUBMIT — 2026-10-23 (supersedes every earlier SUBMIT note)
+# SUBMIT — 2026-10-23 (PRUNE, PRUNE-rungs, RELIEF & SNAP gated candidates; human submits)
 
-Slots 1–3 are the PRUNE ladder (session 3's choice). The SNAP contingency follows. Upload one file per
-slot, from the human's own registered account; nothing here logs in, scrapes or submits.
+Twelve gated candidates sit in `releases/`: six `PRUNE` rungs, three `RELIEF` tercile-exchange files
+(`SLOT_PLAN.md` pairs `prune3` in Slot 1 with `reliefp2r10` in Slot 2 and picks Slot 3 conditionally,
+or stays pure-`PRUNE` if the human prefers), and three `SNAP` position-bound contingencies. Upload one
+file per slot, from the human's own registered account; nothing here logs in, scrapes or submits.
 
 Upload **one file per slot** from your own registered account. Nothing in this repository logs in,
 scrapes or submits. All three files below are built from the SHA-256-verified parent R0
@@ -46,6 +48,46 @@ left, take them in the order below.
 A fourth built file, `releases/h33-2-b2-r2p25-20261023-3908de12.tif` (941 dots removed, min distance
 2.83 px, +0.003 MODEL), is the cheapest possible probe of the shadow. Spend a slot on it only if one is
 otherwise unused.
+
+## RELIEF variants — orthogonal relief-regime test (`SLOT_PLAN.md` Slot 2 & conditional Slot 3)
+
+Axis `RELIEF` keeps the parent's **exact dot count and mass** (`37,654` dots, each `1.0`), clears R0's
+2,171 `d_cat ≤ 3 px` flank dots (`min d_cat = 3.162 px > 3.0 px` on 100 % of emitted pixels), and
+exchanges 10–15 % of R0's dots across equal-area Basin (`T1`) / Piedmont (`T2`) / Range-front (`T3`)
+terciles (`0.70 · pct_rank(det_elev) + 0.30 · pct_rank(det_elev_slope)`) at `≥ 2.8 px` spacing. Built by
+`scripts/gemsdoe85_relief_session.py`; structural mechanism cards in `docs/mechanism_cards_relief.md`.
+
+### RELIEF-1 (`SLOT_PLAN.md` Slot 2 — Piedmont → Range-front +10 %)
+
+- **File:** `releases/h33-2-b2-reliefp2r10-20261023-669f0637.tif`
+  (fallback `-zeros` twin: `…-669f0637-zeros.tif`, sha256 `e730deb681a25ab19c67a9befaa2c47affd7ca6744a40e50142a332ba35ddbf9`)
+- **sha256:** `669f0637b8141e1cf37d89929bf22155771d2e48a7d32b046fb75a6dfae4d050` · 37,654 dots (`12.769 %` parent dots replaced)
+- **Name:** `h33-2-b2-reliefp2r10-20261023-669f0637`
+- **Note (114/140):** `R0 h33-2-b2; RELIEF piedmont->range +10% (3765 dots, d_cat>3px, n=37654 fixed); pred +0.008 (+0.001..+0.015) MODEL`
+- **Format receipt:** `evidence/session_relief_receipt.json → variants["h33-2-b2-reliefp2r10"]` —
+  EPSG:32611 · 3730×3292 · 1 band · float32 · transform `100,0,243350,0,-100,4508550` · `nodata=nan` ·
+  values ⊆ {0,1} inside footprint · 0 NaN/Inf inside · NaN outside · 0 catalogue mass ·
+  `min d_cat = 3.162 px > 3.0 px` · re-read from disk · **16/16 PASS** (zeros 17/17).
+
+### RELIEF-2 (`SLOT_PLAN.md` conditional Slot 3A if `Slot2 − Slot1 ≥ +0.01` — Basin+Piedmont → Range-front +15 %)
+
+- **File:** `releases/h33-2-b2-reliefbp2r15-20261023-21af1eee.tif`
+  (fallback `-zeros` twin: `…-21af1eee-zeros.tif`, sha256 `e61ad36064dd7e898ed99916444ce194e50c8ae8751ed80e21ea6872bee67be5`)
+- **sha256:** `21af1eee6b8ce7eb92f79f0be586b8a34e551d74a1901ad16deb496b26bdf3d0` · 37,654 dots (`17.092 %` parent dots replaced)
+- **Name:** `h33-2-b2-reliefbp2r15-20261023-21af1eee`
+- **Note (120/140):** `R0 h33-2-b2; RELIEF basin+piedmont->range +15% (5648 dots, d_cat>3px, n=37654 fixed); pred +0.006 (-0.002..+0.014) MODEL`
+- **Format receipt:** `evidence/session_relief_receipt.json → variants["h33-2-b2-reliefbp2r15"]` —
+  0 catalogue mass, `min d_cat = 3.162 px > 3.0 px`, re-read from disk, **16/16 PASS** (zeros 17/17).
+
+### RELIEF-3 (`SLOT_PLAN.md` conditional Slot 3B if `Slot2 − Slot1 ≤ −0.01` — Range-front → Basin+Piedmont +10 %)
+
+- **File:** `releases/h33-2-b2-reliefr2bp10-20261023-7a0329ee.tif`
+  (fallback `-zeros` twin: `…-7a0329ee-zeros.tif`, sha256 `108dde9c53f8c68850ea80d8ad71add672d41ef2fa8fbd27787ef47744e69c58`)
+- **sha256:** `7a0329ee1d53cf4738d114c0c7f1601e3828099d2bd15c0385fd1382675180c2` · 37,654 dots (`13.672 %` parent dots replaced)
+- **Name:** `h33-2-b2-reliefr2bp10-20261023-7a0329ee`
+- **Note (120/140):** `R0 h33-2-b2; RELIEF range->basin+piedmont +10% (3765 dots, d_cat>3px, n=37654 fixed); pred -0.002 (-0.010..+0.007) MODEL`
+- **Format receipt:** `evidence/session_relief_receipt.json → variants["h33-2-b2-reliefr2bp10"]` —
+  0 catalogue mass, `min d_cat = 3.162 px > 3.0 px`, re-read from disk, **16/16 PASS** (zeros 17/17).
 
 ## Contingency uploads — SNAP (only if a slot is free and the PRUNE ladder is closed)
 
@@ -131,6 +173,15 @@ sha256 not already in the ledger. The script is **byte-idempotent**: re-running 
   0.0942 / 0.0912 across the fractional rungs, and the vendor hide-and-recover proxy falls 0.004006 →
   0.000455 → 0 → 0. Both use catalogue pixels as truth while the live scorer **masks** them, so they
   are structurally biased against any shadow-direction edit (IR-V3-04) and are never gates.
+- **RELIEF (`arena/3dd0b94c-gemsdoe85`, `evidence/session_relief_receipt.json`):** SGMC off-catalogue
+  control (`sgmc_minus_catalogue_3px`, `n = 62,122` positives, 20 km block 95 % CI): R0 `0.09539`
+  `[0.08457, 0.10672]`, in-tercile collar control `ctrl_collar3_0pct` `0.09883` `[0.08830, 0.10959]`,
+  `reliefp2r10` **`0.10388`** `[0.09296, 0.11487]`, `reliefbp2r15` **`0.10418`** `[0.09339, 0.11595]`,
+  `reliefr2bp10` `0.09434` `[0.08458, 0.10454]`. Fold-proper whole-component hide-and-recover PROXY
+  (`gems57-pooled-hide-v2`, `n = 11,321` withheld positives): R0 rule `0.09609` `[0.08242, 0.10899]`,
+  `ctrl_collar3_0pct` `0.09638` `[0.08292, 0.11017]`, `reliefp2r10` `0.09283` `[0.07952, 0.10584]`,
+  `reliefbp2r15` `0.09295` `[0.07983, 0.10578]`, `reliefr2bp10` `0.09518` `[0.08203, 0.10820]`.
+  19-band leakage canary: max single-feature AUC **`0.5693`** (`geod_2ndinv`) < 0.90 (**CLEAN**).
 
 ## Gate summary for all files (re-check after download)
 
