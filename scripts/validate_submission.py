@@ -14,12 +14,22 @@ from gems57.grid import load_grid, SHA256_SAMPLE_SUBMISSION, SHA256_EXISTING_FAU
 from gems57.validate import validate
 
 
+def _reference_dir() -> Path:
+    """The pinned grid lives in data/bridge (gems57.grid.DATA_DIR); data/raw is the legacy
+    restore target. Resolve either, fail loudly if neither is present."""
+    for candidate in (ROOT / 'data/bridge', ROOT / 'data/raw'):
+        if (candidate / 'sample_submission.tif').is_file() and (candidate / 'existing_faults.tif').is_file():
+            return candidate
+    raise ValueError('no pinned reference grid found in data/bridge or data/raw')
+
+
 def check(path):
-    sample = ROOT / 'data/raw/sample_submission.tif'
-    cat = ROOT / 'data/raw/existing_faults.tif'
+    ref = _reference_dir()
+    sample = ref / 'sample_submission.tif'
+    cat = ref / 'existing_faults.tif'
     if sha256(sample) != SHA256_SAMPLE_SUBMISSION or sha256(cat) != SHA256_EXISTING_FAULTS:
         raise ValueError('Reference grid/catalogue integrity mismatch')
-    grid = load_grid(ROOT / 'data/raw')
+    grid = load_grid(ref)
     template = format_report(path, sample, footprint=grid.footprint)
     local = validate(path, grid.footprint)
     return dict(format_ok=bool(template['ok'] and local['all_checks_passed']), template=template,
