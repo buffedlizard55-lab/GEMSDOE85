@@ -1,23 +1,26 @@
 # GEMSDOE85 — H85-GAPVENT: 57-Channel 10 m 3DEP + Fluvial χ + Blind Geothermal Vent Kernel Regressor
 
 <!-- CURRENT STATE START -->
-## CURRENT STATE — v2 / 2026-10-23 / BLOCKED
+## CURRENT STATE — v2 / 2026-10-23 / BUILT (supersedes the BLOCKED v2 preflight)
 
-This block supersedes historical recommendations below for the current session. No site redesign or prior candidate promotion.
+This block supersedes historical recommendations below for the current session. No site redesign and no prior candidate is promoted. Session `arena/e081f5da-gemsdoe85` cleared the v2 rebuild blocker; the previous BLOCKED block is in git history (commit `a6004d6`).
 
 | Field | Current state |
 |---|---|
-| Parent | R0 `h33-h33-2-b2`; 37,654 unit dots; restored SHA-256 `c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9`; **not recipe-rebuilt** |
-| Best receipt | None in ledger; 0.2778 is **CLAIM**, not RECEIPT |
-| TOP_PUBLIC | Unknown; human must supply value and observation date |
+| Parent (R0) | `h33-h33-2-b2` (`e5eb6e7e`), 37,654 dots. **Now recipe-rebuilt and proven pixel-identical**: pinned H19-5 skeleton `ec1f9b56` (121,131 px) → deterministic 2.8 px Poisson packing → 44,090 (`e56ea318`) → `d_cat>1` → 40,199 (`8acb75e1`) → `d_cat>2` → 37,654 (`e5eb6e7e`). 7 SHA-256 pins verified; both R0 encodings match `c55bafc4…` / `baeae321…` |
+| Best receipt | None in the ledger; 0.2778 is **CLAIM**, not RECEIPT |
+| TOP_PUBLIC | Unknown; human must supply the value and the date observed |
 | Slots left | Unknown weekly / total; zero used by this session |
-| AXIS | Unassigned; no variants built |
-| Next 3 slots | Conditional MASS −10%, CONCENTRATION 10%, SNAP radius 2 px; proposals only, blocked on rebuild/history/assignment and exclusion clarification |
+| AXIS | **PRUNE** (rungs 3/4/5 of the catalogue-flank ladder). Human left AXIS unassigned; MASS was tested first and rejected on evidence (`IRREGULARITIES.md` IR-V2-08) |
+| Next 3 slots | 1) `releases/h33-2-b2-prune3-20261023-fb308615.tif` — 35,483 dots, −5.77 %, pred +0.007 MODEL · 2) `releases/h33-2-b2-prune4-20261023-2880b0e9.tif` — 33,829 dots, −10.16 %, pred +0.003 MODEL · 3) `releases/h33-2-b2-prune5-20261023-7ebfc408.tif` — 32,017 dots, −14.97 %, pred −0.003 MODEL (spend only if 1 and 2 both score ≥ 0.2778) |
+| Gates | All three: EPSG:32611, 3730×3292, 1 band, float32, values ⊆ {0,1}, zero mass on catalogue, min distance to catalogue 3.16 / 4.12 / 5.10 px, re-read from disk, NaN + zeros twins — ALL GATES PASS |
+| Build | `.venv/bin/python scripts/gemsdoe85_prune_session.py` · `.venv/bin/python -m pytest -q` |
+| Detail | [IRREGULARITIES.md](IRREGULARITIES.md) · [SLOT_PLAN.md](SLOT_PLAN.md) · [docs/SUBMIT.md](docs/SUBMIT.md) · [docs/mechanism_cards_prune.md](docs/mechanism_cards_prune.md) · [AI_USE.md](AI_USE.md) · `evidence/session_prune_receipt.json` |
 
-Input audit: 3/28 main-manifest entries verified, 25 missing; pinned R0 separately restored and verified. R0 includes 1,611 dots <3 px from the catalogue, requiring resolution before a non-PRUNE edit. The header-only ledger is incomplete, not evidence that no experiments exist. See [IRREGULARITIES.md](IRREGULARITIES.md), [SLOT_PLAN.md](SLOT_PLAN.md), [AI_USE.md](AI_USE.md) and [docs/SUBMIT.md](docs/SUBMIT.md). Deadline 2026-12-03 is provisional pending human confirmation. Never supply credentials; no login, scraping or submission automation is authorized.
+Deadline 2026-12-03 is provisional pending human confirmation (41 calendar days, not six full weeks). Never supply credentials; no login, scraping or submission automation is authorized. Report-only proxies in this session: catalogue hide-and-recover (degenerate here, reported as such), SGMC control with a calibrated proxy→live bias of +0.0083, leakage canary AUC 0.5687 CLEAN.
 <!-- CURRENT STATE END -->
 
-**DOE GEMS Prize · DrivenData competition #306 · current primary: session `arena/7ded4c0a-gemsdoe85` (2026-10-23 UTC)**
+**DOE GEMS Prize · DrivenData competition #306 · current primary: session `arena/e081f5da-gemsdoe85` (2026-10-23 UTC)**
 
 A self-driving, fully auditable pipeline that restores 28 SHA-256-pinned public datasets and 17 historical control rasters, pre-registers 5 ranked concealed-fault hypotheses, trains a 57-channel multi-physics continuous 300 m kernel-target regressor (`H85-GAPVENT`) with Positive-Unlabeled surveyed-corridor debiasing (`IR-85-023`), validates on a 4-fold spatially-blocked hide-and-recover holdout (`gems85-holdout-v1.0.0`, `60,988` withheld positives), verifies uniqueness against all 17 fleet registry rasters, validates the written GeoTIFF against 17 format checks + `vendor/gems57/gates.py` **with zero human intervention**, and publishes a GitHub Pages site (`docs/`) with one-click download at the very top.
 
