@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "irregularities": [
+    {
+      "id": "IR-85-01",
+      "severity": "high",
+      "status": "open",
+      "finding": "PARALLEL-RUN PROTOCOL S1 says 'Your lane is the single method paragraph below', but no method paragraph follows in the session prompt for GEMSDOE85 (the text goes directly to the site list).",
+      "action_taken": "Declared Lane H85 in README.md before seeing any results (fold-proper supervised detector + metric-exact emission; two label-free surfaces as the remaining experiments; dotted-ridge family used only as controls). Flagged here for human review; if a lane paragraph exists elsewhere it must be reconciled against Lane H85 before any submission slot is spent."
+    },
+    {
+      "id": "IR-85-02",
+      "severity": "medium",
+      "status": "open",
+      "finding": "This repository started empty (single initial commit, README only): the template's cached feature stack, evaluate_holdout.py and submission_writer.py referenced by protocol S2 did not exist here.",
+      "action_taken": "Reused the fleet template modules verbatim from GEMSDOE32 src/gems32 (metric, grid, features, emitter, emission) with provenance headers, and implemented the protocol's own holdout specification as src/gems85/evaluate_holdout.py (evaluator gems85-pooled-hide-v1) because the template's quadrant instrument (gems32.holdout) implements a different masking/calibration scheme than the protocol text specifies. No private fork of shared math: metric/emitter are byte-identical copies; the divergence is confined to the evaluator and is documented. Upstream fix, if the fleet wants one evaluator, belongs in the template repo."
+    },
+    {
+      "id": "IR-85-03",
+      "severity": "medium",
+      "status": "acknowledged",
+      "finding": "Competition data is login-walled at DrivenData (verified redirect to login in prior fleet sessions; egress here is github/pypi only). Rasters were restored from owner-supplied GitHub mirrors pinned by sha256 in registry/data_manifest.json.",
+      "action_taken": "Integrity is proven against the manifest hashes (23/23 verified on restore); provenance is NOT organizer-authenticated. Every derived claim is therefore labelled MEASURED-from-mirror, never OFFICIAL bytes."
+    },
+    {
+      "id": "IR-85-04",
+      "severity": "medium",
+      "status": "open",
+      "finding": "The brief reports leaderboard highs 0.3195 and later 0.4413, and assigns scores to named files (e.g. h33-h33-2-b2 = 0.2778), but no submission receipt or hash-to-score crosswalk is available in this sandbox (DrivenData leaderboard is dynamic and login-adjacent).",
+      "action_taken": "All such numbers are labelled ORGANIZER-CONFIRMED (copied from a submission-page receipt) exactly as the protocol requires, with this caveat recorded: they are brief-supplied receipts, not independently re-verified here. Local instruments never compare against them as if they were local measurements."
+    },
+    {
+      "id": "IR-85-05",
+      "severity": "low",
+      "status": "acknowledged",
+      "finding": "Brief text states both 0.3195 and 0.4413 as 'the highest score right now' in different paragraphs (stale snapshots of a moving leaderboard).",
+      "action_taken": "Recorded both with their context; the design target used throughout is beating 0.2778 (the highest score tied to an analysable artifact), with 0.4413 noted as an un-attributed leaderboard snapshot."
+    },
+    {
+      "id": "IR-85-06",
+      "severity": "low",
+      "status": "acknowledged",
+      "finding": "sample_submission.tif finite footprint is 5,167,373 px while the template grid.py records 5,165,852 px from the feature-band-1 footprint (3,061 feature-nodata cells sit inside the sample footprint).",
+      "action_taken": "Validator and writer use the SAMPLE footprint (the submission format's own grid) and the all-finite zeros encoding, so the discrepancy cannot leak a -3.4e38 sentinel or NaN into a submission. Inherited fleet note; flagged for template fix."
+    },
+    {
+      "id": "IR-85-07",
+      "severity": "high",
+      "status": "open",
+      "finding": "Uniqueness gate (protocol S1, strict reading): candidate dot overlap within 3px exceeds 70% against three registry rasters \u2014 13gems lattice-s5 null (0.9959; 206,895 dots on a ~5px lattice, so any candidate is ~100% within 3px by construction), gems10 ctx-ridge (0.8783; 174,232 positive px, continuous ridge), gems10 dotted-ridge (0.8206; 69,281 dots) and 8GEMSDOE Hedge-v2 (0.7077; 227,507 positive px). Against every operating-point-comparable dotted submission (37k-46k dots: d2.8 family, H32 family, h33-2-b2 winner) overlap is 0.397-0.497 and surface Spearman |rho| <= 0.224 everywhere.",
+      "action_taken": "Logged as duplicate-risk under the strict protocol reading; promotion stopped (verdict already negative on holdout). The comparable-budget reading passes, the any-raster reading fails; a human must decide which registry class the 70% rule governs before any future candidate from this surface is promoted. Numbers in evidence/uniqueness.json."
+    },
+    {
+      "id": "IR-85-08",
+      "severity": "high",
+      "status": "acknowledged",
+      "finding": "The 0.2778 winner raster (CTRL_h33) scores HOLDOUT-DTI 0.0046 on gems85-pooled-hide-v1 because it was constructed by pruning dots <=2px from the FULL catalogue \u2014 withheld segments are excluded by construction, so the instrument cannot credit it. It is invalid as a holdout promotion bar (same defect GEMSDOE71 recorded for static h33).",
+      "action_taken": "Promotion bar set to the best valid control, CTRL_d28 (HOLDOUT-DTI 0.102305). Both controls are reported with this caveat wherever they appear."
+    },
+    {
+      "id": "IR-85-09",
+      "severity": "medium",
+      "status": "acknowledged",
+      "finding": "E1's supervised field has canary AUC 0.673 and no single feature exceeds AUC 0.90 (max single channel curv_s2 0.600) \u2014 no leakage flag; but the detector is trained on the same catalogue the holdout withholds from, fold-properly, so holdout measures catalogue-transfer, not hidden-fault discovery (inherited IR-32-PROXY-01 limitation).",
+      "action_taken": "Stated on the site and in the run card; no live-score projection is made."
+    },
+    {
+      "id": "IR-85-006",
+      "severity": "high",
+      "status": "resolved",
+      "finding": "PR #6 (`src/gems85/geopb.py`) applied `abs()` across all geophysical steps, collapsed GeoDAWN K/Th/U into an unweighted average (`radio_step`) that leaked `-3.4e38`/invalid coverage steps along flight-block edges, and conflated odd rock-state steps (`rtp`, `iso_grav_anom`, `depth_to_base_surf`) with even fault-core impulses (`lappos`, `tc`, `U/Th` enrichment).",
+      "action_taken": "Implemented parity-resolved 16-strike operators in `src/gems85/prpc.py` with explicit strike locking between odd rock-state steps and even fault-core/scarp impulses, valid-masking GeoDAWN K/Th/U flight blocks, and testing exact parity invariants in `tests/test_prpc.py`."
+    },
+    {
+      "id": "IR-85-007",
+      "severity": "high",
+      "status": "resolved",
+      "finding": "External `lidar_scarp_features_u8.tif` covers 75.8% of the footprint (`band 12 = valid`) with sharp 0-steps along 1 m 3DEP tile boundaries, AND upstream `h33.py` mis-indexed bands `(1, 2, 5)` instead of verified `(1=ex_max, 2=ex_mean, 3=step_max, 6=downface_max, 7=upface_max, 9=relief, 10=coh100, 12=valid)`.",
+      "action_taken": "Bound verified band indices in `src/gems85/prpc.py`, regressed universal 100 m DEM breakline proxies onto interior 1 m LiDAR cells (`>400 m` inside `valid`), and applied a 400 m raised-cosine feather across tile seams (`tests/test_prpc.py::test_lidar_seam_feathering_suppresses_coverage_step`)."
+    },
+    {
+      "id": "IR-85-008",
+      "severity": "high",
+      "status": "resolved",
+      "finding": "Static `B=2` off-catalogue registry rasters (such as `h33-2-b2`, live `0.2778`) prune dots within `<=2 px` of the FULL public catalogue `cat`, which includes `fold.withheld \u2282 cat` on hide-and-recover holdouts, capping per-pixel kernel credit at `1 - sqrt(5)/3 = 0.2546` and inverting holdout vs live Spearman correlation (`-0.3407` across 17 live-scored rasters; `h33-2-b2` scores `0.0040` statically).",
+      "action_taken": "Documented the Static Off-Catalogue Holdout Censoring Theorem in `research/why_02778_and_fleet_review.md` and evaluated all active arms fold-properly (`vis = fold.visible` only during training, feature generation, and off-catalogue emission)."
+    },
+    {
+      "id": "IR-85-009",
+      "severity": "medium",
+      "status": "resolved",
+      "finding": "`scripts/run_supervised.py` in PR #6 sampled negatives strictly at `>10 px` (`>1,000 m`) from visible faults while deploying predictions at `>2 px` (`>200 m`), leaving the model blind to non-fault piedmont slopes in the critical `200-1,000 m` zone.",
+      "action_taken": "Sampled hard `300-1,000 m` piedmont/scarp negatives alongside `>1,000 m` basin/mesa negatives in `prpc.fit_predict_dual_expert`, raising 4-quadrant LOQO `HOLDOUT-DTI` on `gems57-pooled-hide-v2` from `0.05405` (`GEO-Pb`) to `0.14229` (`E3_PRPC_Dual_Submod`)."
+    },
+    {
+      "id": "IR-85-010",
+      "severity": "medium",
+      "status": "resolved",
+      "finding": "`gems85.holdout.make_folds` erases 100% of faults inside `20 km x 20 km` truth blocks while leaving `fold.visible` intact in the 75% zero-truth blocks (`fold.withheld == 0` identically), creating anti-oracle censorship against visible-network features on `gems85-holdout-v1.0.0` while `gems57-pooled-hide-v2` withholds 20% of whole components within quadrants.",
+      "action_taken": "Reported BOTH instruments transparently in `evidence/prpc_experiments.json` and `evidence/run_card.json`: `E3_PRPC_Dual_Submod` achieves `0.14229` (`CI95 [0.12541, 0.15815]`) on `gems57-pooled-hide-v2` while maintaining `0.06854` (tying `GEO-Pb` `0.06877`) on blind 20 km square-hole blocks."
+    },
+    {
+      "id": "IR-85-011",
+      "severity": "high",
+      "status": "resolved",
+      "finding": "2D-disk (`29 px`) greedy kernel convolution on continuous 2D probability ribbons clumps dots at `1.414 px` (`141 m`) median spacing and inflates `600 m` wide 2D slope/mesa blobs ~4x over `100 m` 1-pixel fault traces, while overly wide `sep_px=2.8` blocks `(+-2, +-1)` = `223.6 m` knight's-move steps along N26.6E Great Basin normal faults.",
+      "action_taken": "Implemented crest-sharpened knight's-move allocation (`min_sep_px=2.20`, nearest lattice step `sqrt(5) = 2.236 px = 223.6 m < 300 m`) in `prpc.submodular_emit_off_catalogue`, lifting `gems57` `E1` `0.04043 -> 0.05511`, `E2` `0.05765 -> 0.06412`, and `E3` `0.13440 -> 0.14229`."
+    },
+    {
+      "id": "IR-85-012",
+      "severity": "medium",
+      "status": "resolved",
+      "finding": "GitHub Actions CI on `main` (`run 39866841224`) failed because PR #1's `scripts/check_site.py` hardcoded `verdict == 'negative'` and zero `.tif`/`.zip` files under `docs/`, contradicting PRs #3, #4, and #6, and `tests/test_emission.py` failed in offline CI without `data/sample_submission.tif`.",
+      "action_taken": "Added hash-verified `registry/grid_masks.npz` offline CI fallback in `src/gems85/grid.py`, unified all run cards/manifests via `scripts/sync_prpc_manifests.py`, and upgraded `scripts/check_site.py` to enforce link/fragment integrity, evidence/registry byte-sync, GeoTIFF SHA-256 + 17/17 validator pass, uniqueness pass, and top-of-site status banner consistency."
+    }
+  ]
+}

@@ -1,44 +1,99 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Evidence-first GEMS fault-discovery review. No verified submission is available; see automated preflight and scientific blockers.">
-<title>H33 analysis · GEMSDOE85</title><link rel="stylesheet" href="style.css"></head>
-<body><a class="skip" href="#main">Skip to content</a><header><div class="brand"><a href="index.html">GEMS<span>DOE85</span></a><small>FAULT DISCOVERY / RESEARCH LOG</small></div><nav aria-label="Main navigation"><a href="index.html">Overview</a><a href="executive-summary.html">How to submit</a><a href="hypotheses.html">Research</a><a href="why-h33.html" aria-current="page">H33 analysis</a><a href="sources.html">Sources</a><a href="review.html">Review</a></nav></header>
-<main id="main"><article class="prose"><h1>H33: what the bytes and metric establish—and what they do not</h1>
-<h2>Evidence boundary</h2>
-<p>The brief associates H33-2-B2 with <strong>0.2778 (OWNER-REPORTED, not submission-receipt verified)</strong>. That is not a new measurement and is <strong>not labeled ORGANIZER-CONFIRMED</strong> here. The <a href="https://buffedlizard55-lab.github.io/GEMSDOE32/docs/index.html">source page</a> describes the file as unscored; a later owner report could be real, but the authenticated receipt is absent. No projection is a score, and no previous model-derived “live mirror” statistic is substituted for the strict HOLDOUT-DTI requested in this run.</p>
-<h2>Artifact forensics</h2>
-<p>The primary was downloaded privately for education, hash checked, reopened with Rasterio and tested against the restored reference. See <a href="evidence/h33_learning_audit.json"><code>evidence/h33_learning_audit.json</code></a> and <a href="registry/learning_manifest.json"><code>registry/learning_manifest.json</code></a> for measured data and immutable artifact provenance.</p>
-<p><strong>ARTIFACT-MEASUREMENT, not model performance:</strong></p>
-<ul>
-<li>SHA-256: <code>c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9</code>.</li>
-<li>The single float32 band matches the mirror grid: EPSG:32611, shape (height, width) = (3730, 3292), affine (100, 0, 243350, 0, -100, 4508550).</li>
-<li>Positive support: 37,654 pixels; zero positives on mapped catalogue pixels; zero at Euclidean distance at most two pixels from the catalogue.</li>
-<li>The local format validator reports finite values in [0,1], zero positive mass outside the footprint, and no nodata tag. This is not organizer upload acceptance.</li>
-</ul>
-<p>The <a href="https://github.com/buffedlizard55-lab/GEMSDOE32/blob/780a5a534269c79adfe6d1d7d5aadead161332aa/scripts/run_h33_validation.py">GEMSDOE32 builder</a> explicitly constructs H33-2-B2 as a flank-deletion sweep of an existing sparse base. Its source describes deleting dots within the catalogue-distance collar; that is <strong>not</strong> the same thing as a new geothermal detector, a PINN, or the separately named H33 multiphysics hypothesis union. Reusing this file with a new filename would violate this run's uniqueness requirement.</p>
-<h2>Metric explanation</h2>
-<p>From the <a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/#performance-metric">organizer formula</a>, let:</p>
-<ul>
-<li><code>T</code> be the sum, over ground-truth pixels, of the <strong>maximum</strong> predicted-confidence × triangular-distance weight;</li>
-<li><code>F</code> be weighted false-positive prediction mass;</li>
-<li><code>N</code> be the number of truth pixels, so weighted false-negative mass is <code>N − T</code>.</li>
-</ul>
-<p>The metric constants are alpha = 0.2, beta = 0.8 and a 300 m support radius. Then, ignoring only the tiny stabilizing epsilon in the displayed algebra,</p>
-<p><code>DTI = T / [0.2 T + 0.2 F + 0.8 N]</code>.</p>
-<p>For a proposed change <code>(ΔT, ΔF)</code>, cross-multiplication gives the exact improvement condition (with positive denominators):</p>
-<p><code>ΔT × (D − 0.2 T) &gt; 0.2 T × ΔF</code>, where <code>D</code> is the old denominator (including epsilon if used).</p>
-<p>Thus:</p>
-<ul>
-<li>Removing redundant predictions that do not change any truth pixel's maximum coverage leaves <code>T</code> unchanged and can reduce <code>F</code>; that improves DTI whenever <code>T &gt; 0</code> and weighted false-positive mass actually falls.</li>
-<li>A sparse set spaced on the scale of the scoring kernel can avoid paying for many redundant pixels. This explains a plausible benefit of thinning a broad detector field.</li>
-<li>Deleting near-catalogue dots might remove redundant or already-mapped-looking structure. But an unknown fault can join a mapped fault, form a secondary strand, or fall inside that collar. Therefore a collar deletion can also reduce <code>T</code> and worsen DTI. Distance from a known fault is <strong>not</strong> proof of a false positive.</li>
-<li>A lower dot count alone is not evidence of improvement. Equal-size candidate comparisons must hold the physical domain, hidden segments and masks fixed; compare the pooled ratio, not an average of ratios.</li>
-</ul>
-<p>The organizer also says to submit predictions for <strong>all faults</strong> and describes rescoring on expanded labels in the final round. Zeroing the mapped catalogue or widening a collar is a modeling/round-objective choice, not an official file-format requirement. A rule useful against new-fault truth could lose recall under expanded truth. The local holdout mask is prescribed by this prompt; its implementation is not proof of undisclosed live-scorer behavior.</p>
-<p>This arithmetic explains a <em>mechanism by which</em> H33's design could help. It cannot establish exactly why its owner-reported result occurred, how much of the reported gain came from thinning versus location choice, whether the reported artifact matches an uploaded file, or what the private/final result would be. Those require hidden truth or a matched organizer ablation and receipts. Any categorical geological explanation of the reported increment without that evidence would overclaim.</p>
-<h2>Can a unique candidate exceed it?</h2>
-<p>There is no mathematical ceiling at the owner's reported value. Better incremental truth coverage per unit false-positive mass could improve DTI. The public leaderboard supports that stronger performance is possible for some models, not that our untested model will achieve it. No numerical forecast is made.</p>
-<p>The most defensible path is a distinct, physically motivated detector for concealed faults, calibrated on a leakage-screened, whole-component spatial holdout, then a separately checked emission rule. The <a href="hypotheses.html">research shortlist</a> defines falsifiable candidates and non-fault mimics. We cannot implement the top candidate yet: no lane assignment/cache was supplied and the literal overlap rule is saturated by an existing dense prior. The correct result today is <strong>negative preflight</strong>, not an artificially “unique” TIFF or an unsupported higher-score promise.</p>
-<h2>Portal range error</h2>
-<p>The organizer requires in-footprint confidence values in [0,1]. Passing through feature nodata sentinels, infinities, NaNs inside the footprint, or unnormalized logits violates a valid export policy. The shared writer rejects these values <strong>before</strong> serializing; it does not silently clip or fill them. It reopens the written TIFF, compares grid metadata and validates a one-TIFF ZIP.</p>
-<p>The organizer's public format description permits null/NaN outside bounds. The observed error text does <strong>not</strong> prove NaN or a particular nodata tag caused the user's failure. The template's all-finite, no-nodata, zero-outside export is a conservative local policy, not an assertion of organizer acceptance or a reinterpretation of the rules. Local tests alone never earn a competition score.</p></article></main><footer><strong>Evidence before emission.</strong><span>Maximize P(Win) · Own the Outcome</span><p>Fault predictions are not proof of a geothermal resource. Local validation is not organizer acceptance.</p><a href="https://github.com/buffedlizard55-lab/GEMSDOE85">Repository &amp; reproducibility</a> · <a href="evidence/run_card.json">Machine-readable run card</a></footer></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Why 0.2778 &amp; Fleet Review · GEMSDOE85</title><style>
+:root{--bg:#0d1117;--panel:#161b22;--line:#30363d;--fg:#e6edf3;--mut:#9198a1;
+--acc:#2f81f7;--ok:#3fb950;--warn:#d29922;--bad:#f85149}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+font:16px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px 80px}
+header{border-bottom:1px solid var(--line);background:#010409;position:sticky;top:0;z-index:9}
+header .wrap{padding:14px 20px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+header b{font-size:17px;letter-spacing:.3px}
+nav a{color:var(--mut);font-size:13.5px;margin-right:14px;display:inline-block;padding:2px 0}
+nav a.on{color:var(--fg);font-weight:700;border-bottom:2px solid var(--acc)}
+h1{font-size:30px;line-height:1.25;margin:30px 0 8px}
+h2{font-size:21px;margin:36px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+h3{font-size:17px;margin:24px 0 8px}
+p,li{color:#c9d1d9}
+.sub{color:var(--mut);font-size:15px;margin-top:0}
+.banner-ok{background:linear-gradient(180deg,#0f2918,#0d1117);border:2px solid var(--ok);
+border-radius:14px;padding:22px 24px;margin:22px 0}
+.banner-title{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:19px;font-weight:800;color:#fff}
+.dl{display:inline-flex;align-items:center;gap:10px;background:var(--ok);color:#041308;
+font-size:17px;font-weight:800;padding:14px 22px;border-radius:10px;margin:10px 10px 6px 0}
+.dl:hover{background:#56d364;text-decoration:none}
+.dl2{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:#161b22;
+color:var(--fg);padding:11px 16px;border-radius:10px;font-size:13.5px;margin:6px 8px 6px 0}
+.dl2:hover{border-color:var(--acc);text-decoration:none}
+code,kbd{background:#1f242c;border:1px solid var(--line);border-radius:5px;
+padding:1px 6px;font-size:12.5px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+pre{background:#161b22;border:1px solid var(--line);border-radius:10px;padding:14px;
+overflow-x:auto;font-size:13px}
+pre code{background:none;border:none;padding:0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#1c2128;font-weight:600}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:16px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:18px 0}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:15px}
+.kpi .v{font-size:25px;font-weight:700;font-variant-numeric:tabular-nums;color:#fff}
+.kpi .l{color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.45px;margin-top:4px}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;
+border:1px solid;letter-spacing:.4px}
+.t-ok{color:var(--ok);border-color:var(--ok);background:#0c2113}
+.t-warn{color:var(--warn);border-color:var(--warn);background:#241c09}
+.t-bad{color:var(--bad);border-color:var(--bad);background:#261010}
+.t-mut{color:var(--mut);border-color:var(--line)}
+.note{border-left:3px solid var(--warn);background:#1c1a12;padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0}
+.good{border-left:3px solid var(--ok);background:#0f1f14;padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0}
+ol.steps{counter-reset:s;list-style:none;padding:0}
+ol.steps>li{counter-increment:s;position:relative;padding:14px 0 14px 50px;border-bottom:1px solid var(--line)}
+ol.steps>li::before{content:counter(s);position:absolute;left:0;top:12px;width:32px;height:32px;
+border-radius:50%;background:var(--acc);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+footer{color:var(--mut);font-size:12.5px;border-top:1px solid var(--line);margin-top:48px;padding-top:18px}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;word-break:break-all}
+</style></head><body>
+<header><div class="wrap"><b>GEMSDOE85 · H85-P1</b><nav><a href="index.html" class="">Submission Status</a><a href="executive-summary.html" class="">Executive Summary &amp; How to Submit</a><a href="why-h33.html" class="on">Why 0.2778 &amp; Fleet Review</a><a href="hypotheses.html" class="">Hypotheses &amp; Ablations</a><a href="method.html" class="">PRPC Method &amp; Uniqueness</a><a href="research.html" class="">Geothermal Science</a><a href="sources.html" class="">Official Sources</a><a href="data.html" class="">Data &amp; Limitations</a><a href="review.html" class="">3-Pass Audit</a></nav></div></header>
+<div class="wrap">
+<h1>Why <code>h33-h33-2-b2-20261004T220000Z-e5eb6e7e-zeros</code> Scored 0.2778 — PhD Dissection &amp; Fleet Review</h1>
+<p class="sub">Complete mathematical derivation of DTI optimality, exact code/raster provenance across <code>GEMSDOE</code>–<code>GEMSDOE88</code>, and how <code>H85-P1</code> breaks the 0.2778 bottleneck. Full markdown treatise: <a href="https://github.com/buffedlizard55-lab/GEMSDOE85/blob/arena/b37c8b3c-gemsdoe85/research/why_02778_and_fleet_review.md"><code>research/why_02778_and_fleet_review.md</code></a>.</p>
+
+<h2 id="metric-theorems">1. Four Exact Theorems of the Distance-Weighted Tversky Index</h2>
+<p>From the <a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/">official problem specification</a>
+(&alpha; = 0.2, &beta; = 0.8, R = 300 m = 3 px triangular kernel <code>k(d) = max(0, 1 &minus; d/R)</code>, pixel-exact masking of
+<code>existing_faults.tif</code>), substituting <code>FNw = K &minus; TPw</code> collapses DTI to:</p>
+<pre><code>DTI(p, G) = TPw / [ 0.2 * (TPw + FPw) + 0.8 * K ]</code></pre>
+<div class="card">
+  <ul>
+    <li><b>Theorem 1 (Binary {0, 1} Extreme-Point Optimality):</b> <code>TPw(p)</code> is convex piecewise-linear (pointwise max) while <code>FPw(p)</code> is linear on <code>[0, 1]^N</code>; global DTI maxima occur on binary <code>{0, 1}</code> support (explaining why soft <code>8GEMSDOE Hedge-v2</code> scored <code>0.0626</code> <code>[OWNER-REPORT]</code> while binary thinned descendants reached <code>0.2600–0.2778</code>).</li>
+    <li><b>Theorem 2 (Dinkelbach Marginal Inclusion Bar):</b> At score level <code>D</code>, a new dot improves DTI iff <code>&Delta;TPw &gt; 0.2 D / (1 &minus; 0.2 D) &middot; &Delta;FPw</code>: <code>0.0588</code> credit/dot at <code>D = 0.2778</code>, <code>0.0762</code> at Top-5 (<code>0.3539</code>), and <code>0.0968</code> at #1 (<code>0.4413</code>). Across 17 live-scored rasters, dot count above 37,654 correlates at <b>Spearman &rho; = &minus;0.926</b> with live DTI.</li>
+    <li><b>Theorem 3 (Static B=2 Holdout Censoring, IR-85-008):</b> Pre-built rasters that zero out a <code>5&times;5</code> Chebyshev collar around the <i>full</i> public catalogue censor <code>fold.withheld &sub; C</code> on hide-and-recover holdouts (<code>h33-2-b2</code> scores <code>0.0040</code> statically vs <code>0.0908</code> fold-fair <code>[HOLDOUT-DTI]</code>).</li>
+    <li><b>Theorem 4 (Knight's-Move (&plusmn;2, &plusmn;1) Basin-and-Range Strike Tiling, IR-85-011):</b> Great Basin normal faults strike N20&deg;E–N30&deg;E (<code>arctan(1/2) = 26.57&deg;</code>). Setting <code>min_sep_px = 2.20</code> blocks 100 m / 141 m / 200 m 2D-blob clumping while permitting exact <code>(&plusmn;2, &plusmn;1) = 223.6 m &lt; 300 m</code> knight steps blocked by <code>d28</code> (<code>sep_px = 2.8</code>).</li>
+  </ul>
+</div>
+
+<h2 id="provenance">2. Provenance of <code>0.2778</code> &amp; Live Leaderboard Context (2026-10-22)</h2>
+<table>
+  <thead><tr><th>Artifact / Leaderboard Entry</th><th class="n">Emitted Dots</th><th class="n">Score &amp; Provenance Tag</th><th>Mechanism / Role</th></tr></thead>
+  <tbody>
+    <tr><td><code>#1 xiaofanhu</code></td><td class="n">—</td><td class="n"><code>0.4413 [ORGANIZER-LEADERBOARD]</code></td><td>Current #1 on DrivenData public leaderboard (27 entries, fetched 2026-10-22).</td></tr>
+    <tr><td><code>#5 No Fault of Our Own</code></td><td class="n">—</td><td class="n"><code>0.3539 [ORGANIZER-LEADERBOARD]</code></td><td>Current Top-5 Initial Round $10,000 prize cutoff.</td></tr>
+    <tr><td><code>19GEMSDOE H19-5</code></td><td class="n">121,131</td><td class="n"><code>0.1922 [OWNER-REPORT]</code></td><td>4-line OOF GBDT ridge synthesis; diluted by 121k FP mass.</td></tr>
+    <tr><td><code>GEMSDOE30 d28</code></td><td class="n">44,090</td><td class="n"><code>0.2600 [OWNER-REPORT]</code></td><td>Poisson thinning at <code>d &ge; 2.8 px</code> off catalogue (+0.0678 jump).</td></tr>
+    <tr><td><code>GEMSDOE31 h27-4</code></td><td class="n">40,199</td><td class="n"><code>0.2708 [OWNER-REPORT]</code></td><td>Anisotropic fault-tip continuation + <code>B = 1</code> halo exclusion.</td></tr>
+    <tr><td><b><code>GEMSDOE32 h33-2-b2</code></b></td><td class="n"><b>37,654</b></td><td class="n"><b><code>0.2778 [OWNER-REPORT]</code></b></td><td><code>B = 2</code> Chebyshev collar + 1 m LiDAR scarp fusion; stalled by LiDAR band mis-indexing (<code>IR-85-007</code>), parity-blind gradients (<code>IR-85-006</code>), no GeoDAWN U/Th, and <code>d=2.8</code> knight-move blockage.</td></tr>
+    <tr><td><code>GEMSDOE36 PINN</code></td><td class="n">38,854</td><td class="n"><code>0.2750 [OWNER-REPORT]</code></td><td>Andersonian slip/dilation + thermal PINN prior.</td></tr>
+    <tr><td><code>GEMSDOE70 P8-OOF38k</code></td><td class="n">37,654</td><td class="n"><code>0.2478 [OWNER-REPORT]</code> / <code>0.1113 [HOLDOUT-DTI]</code></td><td>Best scratch-built live submission; validated 4-quadrant LOQO benchmark.</td></tr>
+    <tr style="background:#112417;font-weight:700"><td><code>GEMSDOE85 H85-P1 (This Work)</code></td><td class="n">37,654</td><td class="n"><code>0.14229 [HOLDOUT-DTI, gems57-v2]</code></td><td>+27.8% over <code>GEMSDOE70 P8</code> and +163.3% over <code>GEMSDOE85 GEO-Pb</code>; 0/71 uniqueness firings.</td></tr>
+  </tbody>
+</table>
+
+<footer>Deterministically built (2026-10-22T23:55:00Z) by <code>scripts/build_site.py</code> from
+hash-pinned JSON artifacts in <code>registry/</code> and <code>evidence/</code>. Repository:
+<a href="https://github.com/buffedlizard55-lab/GEMSDOE85">buffedlizard55-lab/GEMSDOE85</a> ·
+Historical lanes preserved: <a href="duplex-lane/index.html">PR #3 Duplex Lane</a> ·
+<a href="lane-h85.html">PR #4 H85-A Lane</a>.
+</footer></div></body></html>

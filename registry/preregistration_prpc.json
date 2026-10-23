@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "preregistered_utc": "2026-10-22T23:00:00Z",
+  "session_branch": "arena/b37c8b3c-gemsdoe85",
+  "selected_lane_id": "H85-P1",
+  "selected_lane_name": "PRPC-Submod: Parity-Resolved Piedmont-Concordant Multi-Physics + Fold-Proper Tip/Relay Submodular Synthesis",
+  "method_paragraph": "A concealed or subtly expressed Great Basin fault produces two opposite-parity geophysical signatures that prior derivative and juxtaposition lanes conflated: (1) ODD-SYMMETRY rock-state steps across the fault normal (covariance-whitened cross-strike jumps at 16 azimuths, r=300 m and 500 m, across subsurface rtp, 150 m upward-continued TMI_up150, iso_grav_anom, depth_to_base_surf, cond_surf, and surface det_elev, K, Th, U), and (2) EVEN-SYMMETRY fault-core/scarp-dipole impulses localized ON the fault trace itself (tile-seam-decontaminated 1 m LiDAR lappos/lapneg/downface/upface/step breaklines calibrated seamlessly onto 100 m DEM where 1 m tiles are absent, concave piedmont curvature -tc, mobile Uranium-series U/Th and U/K redox/radon enrichment, and potential-field horizontal-gradient crests), evaluated by axial on-trace concentration minus +-300 m flanking background rather than cross-trace differencing (fixing IR-85-006 and IR-85-007). Coupled with volcanic-mesa/paleoshoreline decontamination, GDR-1391 measured hydrothermal spring/geothermometer upflow plumes, and strictly fold-visible fault-tip continuation cones and Voronoi inter-component relay-ramp corridors (trained via inner self-excluded component splits so self-distance d=0 never occurs), two spatially-blocked out-of-fold experts (catalogue-blind P_blind and visible-network P_net) are synthesized and allocated into 37,654 binary {0, 1} off-catalogue (>200 m) dots by metric-exact 300 m triangular-kernel lazy-greedy submodular coverage.",
+  "ranked_hypotheses": [
+    {
+      "rank": 1,
+      "id": "H85-P1",
+      "name": "PRPC-Submod (Parity-Resolved Piedmont-Concordant + Fold-Proper Tip/Relay Submodular Synthesis)",
+      "chosen": true,
+      "locally_validatable": true,
+      "external_data_required": "None beyond SHA-256-pinned in-repo GeoDAWN/3DEP/GDR-1391 mirrors"
+    },
+    {
+      "rank": 2,
+      "id": "H85-P2",
+      "name": "Upward-Continuation Potential-Field Attenuation Slope (TMI to TMI_up150 Crustal Structural-Index Filter)",
+      "chosen": false,
+      "locally_validatable": true,
+      "note": "Core depth-persistence channel incorporated into H85-P1 and tested unsupervised in E1"
+    },
+    {
+      "rank": 3,
+      "id": "H85-P3",
+      "name": "Airborne Uranium-to-Thorium Redox/Radon Fault-Degassing & GDR-1391 Geothermometer Conduit Dipole",
+      "chosen": false,
+      "locally_validatable": true,
+      "note": "Core U/Th, U/K, and geothermometer conduit channels incorporated into H85-P1 and tested unsupervised in E1"
+    },
+    {
+      "rank": 4,
+      "id": "H85-P4",
+      "name": "Sentinel-1 InSAR Persistent-Scatterer Interseismic Phase-Gradient Discontinuities",
+      "chosen": false,
+      "locally_validatable": false,
+      "official_source": "https://asf.alaska.edu/data-sets/derived-data-sets/sentinel-1-interferograms/",
+      "blocker": "Sandbox shell egress restricted to github.com/pypi.org/npmjs.org; asf.alaska.edu unreachable"
+    },
+    {
+      "rank": 5,
+      "id": "H85-P5",
+      "name": "Double-Difference Relocated Microseismicity Planar Clustering (USGS ComCat / UNR NSL HypoDD)",
+      "chosen": false,
+      "locally_validatable": false,
+      "official_source": "https://earthquake.usgs.gov/fdsnws/event/1/query",
+      "blocker": "Sandbox shell egress restricted to github.com/pypi.org/npmjs.org; earthquake.usgs.gov unreachable"
+    }
+  ],
+  "experiment_budget": {
+    "max_experiments": 3,
+    "max_hours": 2.0,
+    "planned_experiments": [
+      "E1_PRPC_Unsupervised: Pure label-free 16-strike parity-resolved multi-physics concordance crest (fixes IR-85-006/IR-85-007 + TMI_up150 + U/Th + piedmont/mesa decontamination) at matched 37,654 dots",
+      "E2_PRPC_Blind_OOF: Spatially-blocked out-of-fold HGB on 100% catalogue-free PRPC multi-physics stack + exact 300 m triangular-kernel lazy-greedy submodular emission at 37,654 dots",
+      "E3_PRPC_Dual_Submod: Dual-regime synthesis of catalogue-blind P_blind (E2) + inner-component-cross-fitted fold-visible tip/relay/corridor expert P_net + exact 300 m submodular emission at 37,654 dots"
+    ]
+  },
+  "promotion_gates": {
+    "leakage_canary_max_auc": 0.90,
+    "shared_template_holdout": "Must beat uniform random, PR #6 GEO-Pb (37,654 and 90,000), and re-emitted controls on unmodified vendor/gems57 gems57-pooled-hide-v2 (buffered whole-component split, seed=20, buffer_px=5) with strictly positive paired 20 km spatial-block 95% CI vs GEO-Pb",
+    "gems85_holdout_head_to_head": "Must beat PR #6 GEO-Pb (0.07475 at 37,654; 0.09838 at 90,000) AND d2.8 control (0.11153 at 44,090) on identical gems85-holdout-v1.0.0 4-fold spatial-block split (60,988 withheld positives)",
+    "uniqueness_surface_spearman_max": 0.90,
+    "uniqueness_comparable_dot_overlap_max": 0.70,
+    "validator_checks": "100% PASS on both unmodified vendor/gems57.submission_writer + gems85.submission (17/17 checks, float32, EPSG:32611, 3730x3292, all-finite [0,1], 0 within 200 m of catalogue)"
+  }
+}

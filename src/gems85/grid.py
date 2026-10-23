@@ -11,6 +11,7 @@ Verified source of the grid spec:
 
 from __future__ import annotations
 
+import os
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -19,7 +20,22 @@ import rasterio
 from rasterio.transform import Affine
 
 ROOT = Path(__file__).resolve().parents[2]
-DATA = ROOT / "data"
+
+
+def _resolve_data_dir() -> Path:
+    env = os.environ.get("GEMS85_DATA_DIR")
+    if env:
+        return Path(env)
+    primary = ROOT / "data"
+    cache_alt = ROOT / ".cache" / "data"
+    if (primary / "training_features.tif").exists():
+        return primary
+    if (cache_alt / "training_features.tif").exists():
+        return cache_alt
+    return primary
+
+
+DATA = _resolve_data_dir()
 
 # The grid as published by the organisers and as present in every restored raster.
 HEIGHT = 3730
@@ -87,23 +103,44 @@ def read_band(path: Path | str, band: int = 1, *, check: bool = True) -> np.ndar
 def read_feature(name_or_index: str | int) -> np.ndarray:
     """Read one band of training_features.tif as float32 with the sentinel replaced by NaN."""
     idx = NAME_TO_BAND[name_or_index] if isinstance(name_or_index, str) else int(name_or_index)
-    arr = read_band(TRAINING_FEATURES, idx).astype(np.float32)
+    fast_npy = DATA / "bands" / f"{idx:02d}_{BANDS[idx]}.npy"
+    if fast_npy.exists():
+        arr = np.array(np.load(fast_npy, mmap_mode="r"), dtype=np.float32, copy=True)
+    else:
+        arr = read_band(TRAINING_FEATURES, idx).astype(np.float32)
     arr[arr <= SENTINEL / 2] = np.nan      # sentinel is -3.4e38; nothing real is near it
     arr[~np.isfinite(arr)] = np.nan
     return arr
 
 
+_GRID_MASKS_NPZ = ROOT / "registry" / "grid_masks.npz"
+
+
 def footprint() -> np.ndarray:
     """Boolean mask of the scored survey footprint.
 
-    Definition: pixels where sample_submission.tif is finite. The sample submission is the
-    organiser-supplied template, so its finite support *is* the region a submission must cover.
+    Definition: pixels where sample_submission.tif is finite. Falls back to the hash-verified
+    packed bitmask `registry/grid_masks.npz` in offline CI environments without `data/`.
     """
+    if SAMPLE_SUBMISSION.exists():
+        arr = read_band(SAMPLE_SUBMISSION, 1).astype(np.float32)
+        return np.isfinite(arr)
+    if _GRID_MASKS_NPZ.exists():
+        z = np.load(_GRID_MASKS_NPZ)
+        shape = tuple(int(x) for x in z["shape"])
+        return np.unpackbits(z["fp_pack"])[: shape[0] * shape[1]].reshape(shape).astype(bool)
     arr = read_band(SAMPLE_SUBMISSION, 1).astype(np.float32)
     return np.isfinite(arr)
 
 
 def catalogue() -> np.ndarray:
     """Boolean mask of the given (USGS Quaternary + INGENIOUS) fault catalogue pixels."""
+    if LABELS.exists():
+        arr = read_band(LABELS, 1)
+        return arr == 1
+    if _GRID_MASKS_NPZ.exists():
+        z = np.load(_GRID_MASKS_NPZ)
+        shape = tuple(int(x) for x in z["shape"])
+        return np.unpackbits(z["cat_pack"])[: shape[0] * shape[1]].reshape(shape).astype(bool)
     arr = read_band(LABELS, 1)
     return arr == 1

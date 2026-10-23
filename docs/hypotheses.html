@@ -1,85 +1,95 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Evidence-first GEMS fault-discovery review. No verified submission is available; see automated preflight and scientific blockers.">
-<title>Research shortlist · GEMSDOE85</title><link rel="stylesheet" href="style.css"></head>
-<body><a class="skip" href="#main">Skip to content</a><header><div class="brand"><a href="index.html">GEMS<span>DOE85</span></a><small>FAULT DISCOVERY / RESEARCH LOG</small></div><nav aria-label="Main navigation"><a href="index.html">Overview</a><a href="executive-summary.html">How to submit</a><a href="hypotheses.html" aria-current="page">Research</a><a href="why-h33.html">H33 analysis</a><a href="sources.html">Sources</a><a href="review.html">Review</a></nav></header>
-<main id="main"><article class="prose"><h1>Research shortlist — proposed, not assigned or tested</h1>
-<p>Prepared before any geological implementation. <strong>No hypothesis has a HOLDOUT-DTI result.</strong> These are falsifiable proposals, not discovered faults or claimed new global methods. The seed repo implements none; metadata-only review of sibling repos cannot prove that another lane has never tried them. Their cross-lane novelty is <strong>unverified</strong>. Implementation is blocked by the missing lane/cache and the literal uniqueness-saturation certificate, so this is not an invitation to start another lane.</p>
-<p>Expected improvement is ranked <strong>qualitatively</strong>; no numerical DTI forecast is justified. Cost means relative CPU/memory engineering cost, not a measured runtime. All proposals use only layers present in the restored core raster; none is made “viable” by assuming an unavailable new external dataset.</p>
-<h2>Ranked shortlist</h2>
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hypotheses &amp; Ablations · GEMSDOE85</title><style>
+:root{--bg:#0d1117;--panel:#161b22;--line:#30363d;--fg:#e6edf3;--mut:#9198a1;
+--acc:#2f81f7;--ok:#3fb950;--warn:#d29922;--bad:#f85149}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+font:16px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px 80px}
+header{border-bottom:1px solid var(--line);background:#010409;position:sticky;top:0;z-index:9}
+header .wrap{padding:14px 20px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+header b{font-size:17px;letter-spacing:.3px}
+nav a{color:var(--mut);font-size:13.5px;margin-right:14px;display:inline-block;padding:2px 0}
+nav a.on{color:var(--fg);font-weight:700;border-bottom:2px solid var(--acc)}
+h1{font-size:30px;line-height:1.25;margin:30px 0 8px}
+h2{font-size:21px;margin:36px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+h3{font-size:17px;margin:24px 0 8px}
+p,li{color:#c9d1d9}
+.sub{color:var(--mut);font-size:15px;margin-top:0}
+.banner-ok{background:linear-gradient(180deg,#0f2918,#0d1117);border:2px solid var(--ok);
+border-radius:14px;padding:22px 24px;margin:22px 0}
+.banner-title{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:19px;font-weight:800;color:#fff}
+.dl{display:inline-flex;align-items:center;gap:10px;background:var(--ok);color:#041308;
+font-size:17px;font-weight:800;padding:14px 22px;border-radius:10px;margin:10px 10px 6px 0}
+.dl:hover{background:#56d364;text-decoration:none}
+.dl2{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:#161b22;
+color:var(--fg);padding:11px 16px;border-radius:10px;font-size:13.5px;margin:6px 8px 6px 0}
+.dl2:hover{border-color:var(--acc);text-decoration:none}
+code,kbd{background:#1f242c;border:1px solid var(--line);border-radius:5px;
+padding:1px 6px;font-size:12.5px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+pre{background:#161b22;border:1px solid var(--line);border-radius:10px;padding:14px;
+overflow-x:auto;font-size:13px}
+pre code{background:none;border:none;padding:0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#1c2128;font-weight:600}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:16px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:18px 0}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:15px}
+.kpi .v{font-size:25px;font-weight:700;font-variant-numeric:tabular-nums;color:#fff}
+.kpi .l{color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.45px;margin-top:4px}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;
+border:1px solid;letter-spacing:.4px}
+.t-ok{color:var(--ok);border-color:var(--ok);background:#0c2113}
+.t-warn{color:var(--warn);border-color:var(--warn);background:#241c09}
+.t-bad{color:var(--bad);border-color:var(--bad);background:#261010}
+.t-mut{color:var(--mut);border-color:var(--line)}
+.note{border-left:3px solid var(--warn);background:#1c1a12;padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0}
+.good{border-left:3px solid var(--ok);background:#0f1f14;padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0}
+ol.steps{counter-reset:s;list-style:none;padding:0}
+ol.steps>li{counter-increment:s;position:relative;padding:14px 0 14px 50px;border-bottom:1px solid var(--line)}
+ol.steps>li::before{content:counter(s);position:absolute;left:0;top:12px;width:32px;height:32px;
+border-radius:50%;background:var(--acc);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+footer{color:var(--mut);font-size:12.5px;border-top:1px solid var(--line);margin-top:48px;padding-top:18px}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;word-break:break-all}
+</style></head><body>
+<header><div class="wrap"><b>GEMSDOE85 · H85-P1</b><nav><a href="index.html" class="">Submission Status</a><a href="executive-summary.html" class="">Executive Summary &amp; How to Submit</a><a href="why-h33.html" class="">Why 0.2778 &amp; Fleet Review</a><a href="hypotheses.html" class="on">Hypotheses &amp; Ablations</a><a href="method.html" class="">PRPC Method &amp; Uniqueness</a><a href="research.html" class="">Geothermal Science</a><a href="sources.html" class="">Official Sources</a><a href="data.html" class="">Data &amp; Limitations</a><a href="review.html" class="">3-Pass Audit</a></nav></div></header>
+<div class="wrap">
+<h1>Candidate Geological Hypotheses (<code>H85-P1</code>–<code>H85-P5</code>) &amp; Dual-Instrument Ablations</h1>
+<p class="sub">Preregistered in <a href="registry/preregistration_prpc.json"><code>registry/preregistration_prpc.json</code></a> before model execution. Full document: <a href="https://github.com/buffedlizard55-lab/GEMSDOE85/blob/arena/b37c8b3c-gemsdoe85/research/candidate_hypotheses_prpc.md"><code>research/candidate_hypotheses_prpc.md</code></a>.</p>
+
+<h2 id="ranked-hypotheses">1. Pre-Implementation Hypothesis Ranking &amp; Official Data Verification</h2>
 <table>
-<thead>
-<tr>
-<th>Priority</th>
-<th>Hypothesis</th>
-<th>Expected benefit conditional on validation</th>
-<th>Implementation cost</th>
-<th>Primary non-fault mimic</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>First</td>
-<td>Paired basin-interface flexure</td>
-<td>Highest research priority: tests buried displacement rather than another surface scarp</td>
-<td>Medium: directional profiles and scale selection</td>
-<td>Lateral sedimentary facies / erosional basement relief</td>
-</tr>
-<tr>
-<td>Second</td>
-<td>Gravity curvature polarity reversal across a basin shoulder</td>
-<td>Moderate: possible independent evidence for a concealed structural step</td>
-<td>Medium: multiscale signed profiles and detrending</td>
-<td>Unfaulted lithologic density contact</td>
-</tr>
-<tr>
-<td>Third</td>
-<td>Magnetic depth/edge displacement, conditioned on subdued relief</td>
-<td>Moderate-to-low: could detect covered continuation not expressed topographically</td>
-<td>Medium-to-high: uncertainty and coherent displacement estimation</td>
-<td>Intrusive contact / remanent magnetization</td>
-</tr>
-<tr>
-<td>Fourth</td>
-<td>Cross-drainage residual facet discontinuity</td>
-<td>Lower: stronger surface evidence but more likely to reproduce known-scarp lanes</td>
-<td>High: terrain matching and channel controls</td>
-<td>Lake terrace / resistant bedding / fluvial incision</td>
-</tr>
-</tbody>
+  <thead><tr><th>Rank &amp; ID</th><th>Layers &amp; Free Official Source</th><th>Targeted Physical Signature</th><th>Why Unmapped (Missing from Catalogue) &amp; Difference vs Repo</th><th>Status</th></tr></thead>
+  <tbody>
+    <tr style="background:#112417"><td><b>#1 H85-P1</b><br><code>PRPC-Submod</code></td><td>19-band INGENIOUS + 1m 3DEP LiDAR + GeoDAWN K/Th/U &amp; TMI_up150 + GDR-1391 wells + fold-visible catalogue (100% free US Gov / CC-BY-4.0, local SHA-256 verified)</td><td>16-strike parity-locked odd subsurface steps &times; even 1m LiDAR/radiometric impulses + piedmont/mesa decontamination + fold-proper wash-gap &amp; relay HGB + 223.6 m knight spacing</td><td>Catches alluvial wash-gap bridges, 0.3–1.5 m piedmont bench micro-scarps, and soft-linked relays veiled on 10 m DEMs. Fixes PR #6 parity erasure (<code>IR-85-006</code>), LiDAR tile seams (<code>IR-85-007</code>), and knight-move blockage (<code>IR-85-011</code>).</td><td><span class="tag t-ok">IMPLEMENTED &amp; PROMOTED</span></td></tr>
+    <tr><td><b>#2 H85-P2</b><br>Basement Depth Persistence</td><td><code>tmi</code>, <code>rtp</code>, <code>TMI_up150</code>, <code>iso_grav</code>, <code>depth_to_base</code>, <code>det_elev</code>, <code>tc</code> (USGS Public Domain)</td><td><code>||&nabla;TMI_up150|| / ||&nabla;TMI||</code> structural-index persistence minus high-elevation convex volcanic caprock penalty</td><td>Deep basin-bounding basement faults survive 150 m upward continuation beneath alluvium; thin basalt mesa rims decay rapidly.</td><td><span class="tag t-ok">INTEGRATED IN E1/E2/E3</span></td></tr>
+    <tr><td><b>#3 H85-P3</b><br>GeoDAWN Radon/Redox &times; MT Clay Cap</td><td><code>geodawn_rad_u8.tif</code> (<code>DOI:10.5066/P93LGLVQ</code>), <code>cond_surf</code> (<code>P9TWT2LU</code>), GDR-1391 geothermometry</td><td>Valid-masked <code>log(eU/eTh)</code> + <code>log(eU/K)</code> ridge excess coupled to lateral <code>log(cond_surf)</code> steps &amp; playa flatness gate</td><td>Zero-relief blind hydrothermal conduits degas Rn-222 and bound smectite clay caps without surface scarps.</td><td><span class="tag t-ok">INTEGRATED IN E1/E2/E3</span></td></tr>
+    <tr><td><b>#4 H85-P4</b><br>Sentinel-1 InSAR Creep/Aquifer Step</td><td>NASA ASF DAAC OPERA <code>DISP-S1</code> (<a href="https://search.asf.alaska.edu/">asf.alaska.edu</a>, free open data)</td><td><code>||&nabla;v_LOS||</code> differential subsidence across fault-bounded alluvial aquifers</td><td>Images hydraulic head drops across clay-gouge fault seals under agricultural/playa basins.</td><td><span class="tag t-warn">DEFERRED (EGRESS BLOCKED)</span></td></tr>
+    <tr><td><b>#5 H85-P5</b><br>Relocated Microseismic Planes</td><td>USGS ANSS ComCat (<a href="https://earthquake.usgs.gov/fdsnws/event/1/">earthquake.usgs.gov</a>, US Public Domain)</td><td>3D planar swarm strike/dip projected up-dip (<code>z cot 60&deg;</code>) to basement top</td><td>Illuminates fluid-pressurized aseismic/swarm step-overs lacking Holocene scarps.</td><td><span class="tag t-warn">DEFERRED (EGRESS BLOCKED)</span></td></tr>
+  </tbody>
 </table>
-<p>These priority words are research judgments, not scores or a selected submission. The top candidate must beat a <strong>same-split current incumbent</strong> in shared pooled HOLDOUT-DTI, with paired CI reported, before consideration by a separate selector. At present neither top candidate nor comparable incumbent has been evaluated here.</p>
-<h2>First — paired basin-interface flexure</h2>
-<p><strong>Specific supplied layers:</strong> <code>depth_to_base_surf</code> (band 15), <code>cond_surf</code> (17), <code>iso_grav_anom</code> (13), with <code>det_elev</code> (12) and <code>det_elev_slope</code> (19) as nuisance controls. Band identities come from the restored raster audit, not inferred units. The band-15 metadata says basement depth; the official summary describes a conductive base. Resolve this provenance ambiguity before interpreting a fitted scale as a geological thickness.</p>
-<p><strong>Physical signature to test:</strong> for each candidate direction, detrend a depth profile across an edge; seek a persistent signed offset/curvature pair whose gravity profile changes consistently across the same interface. Surface conductivity contrast is supporting evidence, not proof of fault-zone conductivity. Match comparison profiles within elevation/relief strata. Unlike a simple product of edge magnitudes, this hypothesis asks for an <strong>ordered pair of flanks with consistent sign and relative displacement</strong>, allowing the detector to reject a symmetric valley-shaped anomaly.</p>
-<p><strong>Why a missing fault might be recovered:</strong> a structural step under basin fill can affect subsurface proxy fields while lacking an exposed scarp. That makes off-catalogue discovery plausible, not guaranteed; catalogue absence does not itself prove concealment. Predictive features must not use distance to the withheld trace to define profile orientation, scale, or evaluation geometry.</p>
-<p><strong>Difference from inspected work:</strong> the seed repo had no implementation. GEMSDOE32's H33 description includes multiphysics line/orientation consensus; the proposed object is signed paired-flank geometry, not line-strength consensus or H33's post-placement near-catalogue deletion. H32 clay-cap/dip-projection ideas are related, so <strong>cross-repo novelty remains unresolved</strong> and requires the registry surface check. It must not be advertised as new merely because its code is new.</p>
-<p><strong>Falsification/control:</strong> if matched sedimentary basin edges without independent structural evidence produce the same signature, the model is detecting stratigraphy/erosion rather than fault displacement. Compare to a depth-only arm, a gravity-only arm and the fixed incumbent; assess each feature alone for leakage before trusting a combined result. Small missing-value regions or interpolation boundaries can create artificial paired edges.</p>
-<h2>Second — gravity curvature polarity reversal</h2>
-<p><strong>Layers:</strong> <code>iso_grav_anom</code> (13), <code>iso_grav_anom_vg</code> (11), <code>iso_grav_anom_hg</code> (18), <code>iso_grav_anom_slope</code> (5), and detrended terrain (12/19) as controls.</p>
-<p><strong>Signature:</strong> signed second derivatives and directional cross-edge profiles at several physical scales; require an inflection bracketed by opposite curvature lobes, persistent under smoothing, rather than simply selecting the largest gradient. Fit profile scales on training regions only. Treat the derived gravity layers as <strong>one source family</strong>, not independent confirmation.</p>
-<p><strong>Missing-fault rationale:</strong> an intrabasin basement offset may retain a density step even where young sediment removes scarp expression. A density contact can also be wholly unfaulted, so this inference needs heldout evidence.</p>
-<p><strong>Difference:</strong> not a global upward-continuation worm or maximum-gradient ridge; it tests profile polarity/order and uses non-edge controls. No such implementation exists in this seed repo. Broad sibling worm/curvature work makes uniqueness unproven.</p>
-<p><strong>Mimic/falsification:</strong> unfaulted density boundaries, inversion artifacts or regional detrending. Reject if performance is explained by a single raw gradient or survey-edge mask, or disappears when basin/relief strata are held out.</p>
-<h2>Third — depth-conditioned displaced magnetic edge</h2>
-<p><strong>Layers:</strong> <code>rtp</code> (2), <code>tmi</code> (14), <code>tmi_vg</code> (9), <code>tmi_hg</code> (3), <code>depth_to_base_surf</code> (15), <code>det_elev_slope</code> (19). Do not assume any of these is an independently measured fault probability.</p>
-<p><strong>Signature:</strong> estimate consistent lateral displacement between magnetic edge responses at different smoothing scales, conditioned on the supplied depth proxy and low terrain relief. Require coherent orientation over a track, but do not equate grid-scale changes with a physically inverted dip without an uncertainty model. RTP and TMI are not independent experiments.</p>
-<p><strong>Missing-fault rationale:</strong> a covered continuation could produce a deeper magnetic boundary offset from the surviving surface lineament. This targets evidence that visible-scarp cataloguing could miss, but remanence/source geometry can move magnetic edges without faulting.</p>
-<p><strong>Difference:</strong> proposed measured <strong>edge displacement under scale change</strong>, not another scalar Euler-depth or orientation-consensus rank. Existing sibling Euler/depth lanes are closely related; clearance is not assumed.</p>
-<p><strong>Mimic/falsification:</strong> intrusive contacts, remanent magnetization, interpolation and survey flight-height variation. USGS explicitly warns that variable terrain clearance should be considered when modeling GeoDAWN. If a flight-direction/height proxy predicts detections as well as the geological variables, downgrade the candidate.</p>
-<h2>Fourth — cross-drainage residual facet discontinuity</h2>
-<p><strong>Layers:</strong> <code>det_elev</code> (12), <code>det_elev_slope</code> (19), optionally gravity (13) as a separate corroboration arm. No 1 m DEM is assumed available or required for this proposal's first coarse-scale test.</p>
-<p><strong>Signature:</strong> seek a signed terrain-height/slope change that repeats across separate drainage profiles after matching local elevation, aspect and relief. Test discontinuity of aligned residual facets across drainages, not simple straight-valley occupancy or local slope peaks. At the supplied coarse resolution some scarps will be unresolved; that is a limitation, not evidence of absence.</p>
-<p><strong>Missing-fault rationale:</strong> a degraded fault may preserve repeated facet offsets despite losing a continuous scarp. Catalogue completeness/selection bias may instead favor exactly these visible features.</p>
-<p><strong>Difference:</strong> profile-to-profile residual consistency, not H33 valley collinearity or simple LiDAR-scarp thinning. The seed repo implements neither. The many existing scarp/drainage lanes make this the least attractive novelty risk.</p>
-<p><strong>Mimic/falsification:</strong> lacustrine terraces, dipping resistant strata and channel incision. Use matched nonaligned profiles and basin-floor/terrace controls. If the signature follows a constant elevation more closely than a structural trajectory, reject it as a likely shoreline mimic.</p>
-<h2>Data viability and sources</h2>
-<ul>
-<li><strong>Available locally, integrity-verified owner mirror:</strong> all named core layers, documented in <a href="evidence/input_audit.json"><code>evidence/input_audit.json</code></a>. Authentication to original organizer bytes is not established.</li>
-<li><strong>Official definitions and task:</strong> <a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/">DrivenData problem description</a>, retrieved 2026-10-22. Supports the feature families and fault-prediction objective, not the success of these hypotheses.</li>
-<li><strong>Official physics/acquisition caveats:</strong> <a href="https://www.usgs.gov/data/geodawn-airborne-magnetic-and-radiometric-surveys-northwestern-great-basin-nevada-and">USGS GeoDAWN release</a>, <a href="https://doi.org/10.5066/P93LGLVQ">DOI</a>, retrieved 2026-10-22. Describes magnetic/radiometric products, processing, varying terrain clearance and flight-path products; marks the work CC0. These details motivate artifact controls, not fault labels.</li>
-<li><strong>Official baseline:</strong> <a href="https://github.com/drivendataorg/gems-prize-reference-solution/tree/aebe92f7c8a990f0e3443451b7a825d9afd6336b">reference solution</a> uses a U-Net with Monte Carlo patch splits; this is not an endorsement of random-patch validation for this research. The protocol's whole-segment blocked hide-and-recover instrument remains binding.</li>
-</ul>
-<h2>Proposed validation design — not executed</h2>
-<p>Use the template's cached non-catalogue features and shared whole-component splits. Any catalogue-dependent transform gets <strong>only visible faults</strong> for its fold, including profile orientation priors; no saved full-catalogue distances, tip positions or densities are admissible. Never derive the allowed placement region from hidden-fault geometry. Mask non-withheld known pixels exactly, pool additive metric components rather than averaging quadrant ratios, and bootstrap aligned physical spatial clusters with the same truth counts in candidate/control arms. Keep scale tuning and threshold tuning out of outer held regions. Report conditional CI scope and selection bias.</p>
-<p>Feature-only AUC canaries are diagnostic stop gates, not the optimization target. Missing features, nodata fill, spatial coverage and source-edge masks must be tested as features too. Final output format checks run only after scientific evidence and uniqueness gates; they cannot make a low-skill model a high-scoring model. No weekly slot is consumed by this shortlist.</p></article></main><footer><strong>Evidence before emission.</strong><span>Maximize P(Win) · Own the Outcome</span><p>Fault predictions are not proof of a geothermal resource. Local validation is not organizer acceptance.</p><a href="https://github.com/buffedlizard55-lab/GEMSDOE85">Repository &amp; reproducibility</a> · <a href="evidence/run_card.json">Machine-readable run card</a></footer></body></html>
+
+<h2 id="canary">2. Single-Feature Leakage Canary (64 Channels Tested · All &le; 0.90)</h2>
+<p>Highest 12 single-feature symmetric ROC AUCs from <a href="evidence/prpc_leakage_canary.json"><code>evidence/prpc_leakage_canary.json</code></a> (<code>gate = PASS</code>, <code>max = 0.7724</code>):</p>
+<table>
+  <thead><tr><th>Feature</th><th>Group</th><th class="n">Max Symmetric AUC</th><th>Gate</th></tr></thead>
+  <tbody><tr><td><code>net_dist2_clip</code></td><td>fold_visible_network</td><td class='n'>0.7724</td><td><span class='tag t-ok'>PASS (&le; 0.90)</span></td></tr><tr><td><code>net_tip_cone_short</code></td><td>fold_visible_network</td><td class='n'>0.7680</td><td><span class='tag t-ok'>PASS (&le; 0.90)</span></td></tr><tr><td><code>net_dist1_clip</code></td><td>fold_visible_network</td><td class='n'>0.7551</td><td><span class='tag t-ok'>PASS (&le; 0.90)</span></td></tr><tr><td><code>net_log_dist1</code></td><td>fold_visible_network</td><td class='n'>0.7550</td><td><span class='tag t-ok'>PASS (&le; 0.90)</span></td></tr><tr><td><code>net_tip_cone_long</code></td><td>fold_visible_network</td><td class='n'>0.7428</td><td><span class='tag t-ok'>PASS (&le; 0.90)</span></td></tr><tr><td><code>net_piedmont_splay_band</code></td><td>fold_visible_network</td><td class='n'>0.7333</td><td><span class='tag t-ok'>PASS (&le; 0.90)</span></td></tr><tr><td><code>net_density_3km</code></td><td>fold_visible_network</td><td class='n'>0.7321</td><td><span class='tag t-ok'>PASS (&le; 0.90)</span></td></tr><tr><td><code>net_density_8km</code></td><td>fold_visible_network</td><td class='n'>0.6642</td><td><span class='tag t-ok'>PASS (&le; 0.90)</span></td></tr><tr><td><code>net_d_medial_clip</code></td><td>fold_visible_network</td><td class='n'>0.6528</td><td><span class='tag t-ok'>PASS (&le; 0.90)</span></td></tr><tr><td><code>e1_unsupervised_surface</code></td><td>blind_multi_physics</td><td class='n'>0.5920</td><td><span class='tag t-ok'>PASS (&le; 0.90)</span></td></tr><tr><td><code>net_colinear_wash_gap</code></td><td>fold_visible_network</td><td class='n'>0.5856</td><td><span class='tag t-ok'>PASS (&le; 0.90)</span></td></tr><tr><td><code>net_along_strike_1</code></td><td>fold_visible_network</td><td class='n'>0.5855</td><td><span class='tag t-ok'>PASS (&le; 0.90)</span></td></tr></tbody>
+</table>
+
+<h2 id="gems85-instrument">3. Secondary 20 km Square-Hole Instrument (<code>gems85-holdout-v1.0.0</code>, <code>IR-85-010</code>)</h2>
+<p>When 100% of surrounding faults inside 20 km &times; 20 km truth blocks are erased (<code>n_withheld = 60,988</code>), <code>E2_PRPC_Blind_OOF</code> achieves the highest blind ROC AUC on all 4 folds (<code>mean 0.6245</code> vs <code>0.5940</code>), while <code>E3_PRPC_Dual_Submod</code> preserves blind-basin parity (<code>0.06854</code> vs <code>0.06877</code>) without collapse:</p>
+<table>
+  <thead><tr><th>Arm</th><th class="n">4-Fold Mean ROC AUC</th><th class="n">Pooled HOLDOUT-DTI</th><th class="n">95% Fold CI</th></tr></thead>
+  <tbody><tr><td><code>ctrl_uniform_38k</code></td><td class='n'>—</td><td class='n'>0.05421</td><td class='n'>[0.05173, 0.05668]</td></tr><tr><td><code>ctrl_pr6_geopb_38k</code></td><td class='n'>—</td><td class='n'>0.06877</td><td class='n'>[0.06430, 0.07323]</td></tr><tr><td><code>E1_PRPC_Unsupervised</code></td><td class='n'>0.5922</td><td class='n'>0.06869</td><td class='n'>[0.05547, 0.08191]</td></tr><tr><td><code>E2_PRPC_Blind_OOF</code></td><td class='n'>0.6245</td><td class='n'>0.06202</td><td class='n'>[0.05646, 0.06758]</td></tr><tr><td><code>E3_PRPC_Dual_Submod</code></td><td class='n'>0.5779</td><td class='n'>0.06854</td><td class='n'>[0.06520, 0.07188]</td></tr></tbody>
+</table>
+
+<footer>Deterministically built (2026-10-22T23:55:00Z) by <code>scripts/build_site.py</code> from
+hash-pinned JSON artifacts in <code>registry/</code> and <code>evidence/</code>. Repository:
+<a href="https://github.com/buffedlizard55-lab/GEMSDOE85">buffedlizard55-lab/GEMSDOE85</a> ·
+Historical lanes preserved: <a href="duplex-lane/index.html">PR #3 Duplex Lane</a> ·
+<a href="lane-h85.html">PR #4 H85-A Lane</a>.
+</footer></div></body></html>

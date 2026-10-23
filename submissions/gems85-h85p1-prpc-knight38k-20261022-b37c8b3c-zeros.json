@@ -1,0 +1,146 @@
+{
+  "file": "gems85-h85p1-prpc-knight38k-20261022-b37c8b3c-zeros.tif",
+  "sha256": "53055d498c5daf2371962e35508bce049e4491e894f1491bad020f8789ecab53",
+  "bytes": 134927,
+  "submission_name": "gems85-h85p1-prpc-knight38k-20261022-b37c8b3c-zeros.tif",
+  "note": "H85-P1 PRPC: 16-strike odd/even multi-physics + seam-free 1m LiDAR + piedmont/TMI depth + relay OOF HGB + knight r>2.2 38k",
+  "note_chars": 122,
+  "validator": {
+    "file": "/home/user/GEMSDOE85/submissions/gems85-h85p1-prpc-knight38k-20261022-b37c8b3c-zeros.tif",
+    "bytes": 134927,
+    "sha256": "53055d498c5daf2371962e35508bce049e4491e894f1491bad020f8789ecab53",
+    "meta": {
+      "crs": "EPSG:32611",
+      "shape": [
+        3730,
+        3292
+      ],
+      "dtype": "float32",
+      "count": 1,
+      "nodata": null,
+      "transform": [
+        100.0,
+        0.0,
+        243350.0,
+        0.0,
+        -100.0,
+        4508550.0
+      ],
+      "profile_compress": "deflate"
+    },
+    "band_description": [
+      null
+    ],
+    "n_finite": 12279160,
+    "n_nan": 0,
+    "n_infinite": 0,
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.0030664964579045773,
+    "emitted_positive_pixels": 37654,
+    "checks": {
+      "single_band": true,
+      "dtype_float32": true,
+      "dimensions_3730x3292": true,
+      "crs_epsg_32611": true,
+      "transform_matches_sample_submission": true,
+      "no_nan_anywhere": true,
+      "no_inf_anywhere": true,
+      "no_sentinel_values": true,
+      "range_0_1_guaranteed": true,
+      "min_ge_0": true,
+      "max_le_1": true,
+      "in_footprint_all_finite": true,
+      "in_footprint_range_0_1": true,
+      "outside_footprint_zero": true,
+      "zero_dots_on_mapped_catalogue": true
+    },
+    "all_checks_passed": true,
+    "validation_class": "local format/range preflight; not organizer acceptance or uniqueness clearance",
+    "on_catalogue_positive_pixels": 0,
+    "in_footprint_positive_pixels": 37654,
+    "footprint_fraction": 0.007286874781441169
+  },
+  "template_report": {
+    "path": "/home/user/GEMSDOE85/submissions/gems85-h85p1-prpc-knight38k-20261022-b37c8b3c-zeros.tif",
+    "bytes": 134927,
+    "sha256": "53055d498c5daf2371962e35508bce049e4491e894f1491bad020f8789ecab53",
+    "bands": 1,
+    "dtype": "float32",
+    "crs": "EPSG:32611",
+    "width": 3292,
+    "height": 3730,
+    "bounds": [
+      243350.0,
+      4135550.0,
+      572550.0,
+      4508550.0
+    ],
+    "ref_bounds": [
+      243350.0,
+      4135550.0,
+      572550.0,
+      4508550.0
+    ],
+    "transform": [
+      100.0,
+      0.0,
+      243350.0,
+      0.0,
+      -100.0,
+      4508550.0
+    ],
+    "nodata": null,
+    "blocksize": [
+      256,
+      256
+    ],
+    "fixture_grid": false,
+    "has_validity_mask": false,
+    "nan_pixels": 0,
+    "infinity_pixels": 0,
+    "n_nan": 0,
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.0030664964579045773,
+    "n_nonzero": 37654,
+    "mass": 37654.0,
+    "mass_outside_footprint": 0,
+    "problems": [],
+    "ok": true,
+    "validation_class": "local on-disk template/range check; not organizer upload acceptance"
+  },
+  "zip_file": "gems85-h85p1-prpc-knight38k-20261022-b37c8b3c-zeros.zip",
+  "zip_sha256": "7647f4cd3f3a6f09ccbed388503e09acd6fa7c5ef1d174e5c7c69a6d8529f171",
+  "approved_for_weekly_slot": false,
+  "promoted": false,
+  "submission_slots_used": 0,
+  "status": "locally validated within separately recorded inventory scope; not organizer acceptance or slot approval",
+  "metadata": {
+    "lane_id": "H85-P1",
+    "geometry": {
+      "n_dots": 37654,
+      "dot_fraction_in_footprint": 0.007286874781441169,
+      "on_catalogue_pixels": 0,
+      "within_2px_euclidean_of_catalogue": 0,
+      "d_cat_min_px": 3.0,
+      "d_cat_q10_q25_q50_q75_q90_px": [
+        6.708203932499369,
+        7.810249675906654,
+        10.63014581273465,
+        16.15549442140351,
+        26.1725046566048
+      ],
+      "frac_2_to_12px": 0.5753970361714559,
+      "frac_12_to_35px": 0.36992085834174326,
+      "frac_gt_35px": 0.05468210548680087,
+      "nn_min_px": 2.23606797749979,
+      "nn_q10_q50_q90_px": [
+        2.23606797749979,
+        2.23606797749979,
+        3.1622776601683795
+      ],
+      "emit_rule": "crest_knight_nonredundant_300m_r220"
+    }
+  }
+}

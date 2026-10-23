@@ -1,0 +1,59 @@
+{
+  "built_utc": "2026-10-22T23:55:00Z",
+  "hypothesis_id": "H85-P1 (PRPC-Submod)",
+  "note": "H85-P1 PRPC: 16-strike odd/even multi-physics + seam-free 1m LiDAR + piedmont/TMI depth + relay OOF HGB + knight r>2.2 38k",
+  "note_chars": 122,
+  "primary": {
+    "filename": "gems85-h85p1-prpc-knight38k-20261022-b37c8b3c-zeros.tif",
+    "sha256": "53055d498c5daf2371962e35508bce049e4491e894f1491bad020f8789ecab53",
+    "bytes": 134927,
+    "checks": {
+      "file_exists": true,
+      "single_band": true,
+      "dtype_float32": true,
+      "shape_3730x3292": true,
+      "crs_epsg_32611": true,
+      "transform_matches_template": true,
+      "resolution_100m": true,
+      "no_nan_inside_footprint": true,
+      "no_inf_inside_footprint": true,
+      "values_in_0_1_inside_footprint": true,
+      "all_finite_whole_raster": true,
+      "values_in_0_1_whole_raster": true,
+      "outside_footprint_is_zero": true,
+      "no_nodata_tag": true,
+      "has_positive_predictions": true,
+      "no_prediction_outside_footprint": true,
+      "zero_mass_within_2px_of_catalogue": true
+    },
+    "stats": {
+      "emitting_pixels": 37654,
+      "prediction_mass": 37654.0,
+      "min_inside": 0.0,
+      "max_inside": 1.0,
+      "unique_values_inside": 2,
+      "footprint_pixels": 5167373,
+      "on_catalogue_pixels": 0,
+      "nodata_tag": null
+    }
+  },
+  "alternates": [
+    {
+      "role": "zipped primary (single-TIFF ZIP verified by vendor/gems57/submission_writer.py)",
+      "filename": "gems85-h85p1-prpc-knight38k-20261022-b37c8b3c-zeros.zip",
+      "sha256": "7647f4cd3f3a6f09ccbed388503e09acd6fa7c5ef1d174e5c7c69a6d8529f171",
+      "bytes": 98404
+    },
+    {
+      "role": "NaN-outside twin (matches sample_submission.tif NaN outside footprint)",
+      "filename": "gems85-h85p1-prpc-knight38k-20261022-b37c8b3c-nan.tif",
+      "sha256": "a5c214f0d9c387f80eb07793f9b665af12f6c36a6e423093575b95788d47c8ab",
+      "bytes": 323787
+    },
+    {
+      "role": "prior session PR #6 GEO-Pb 37,654-dot control (preserved for reproducibility)",
+      "filename": "gems85-geopb-crest-37654dots-sep4-20261022T222707Z-60029d07-zeros.tif",
+      "bytes": 301369
+    }
+  ]
+}

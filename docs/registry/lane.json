@@ -1,5 +1,8 @@
 {
-  "status": "unassigned",
-  "method_paragraph": null,
-  "reason": "The prompt references a single method paragraph but supplies no explicit lane assignment. No method selected on the user's behalf."
+  "status": "declared_with_irregularity_note",
+  "lane_id": "H85-P1",
+  "lane_name": "PRPC-Submod: Parity-Resolved Piedmont-Concordant Multi-Physics + Fold-Proper Tip/Relay Submodular Synthesis",
+  "preregistration": "registry/preregistration_prpc.json",
+  "irregularity_ref": "IR-85-01",
+  "note": "The shared prompt template states 'Your lane is the single method paragraph below' without an external paragraph appended before the site list (logged in registry/irregularities.json as IR-85-01), while simultaneously commanding 'MUST GENERATE A UNIQUE TIF SUBMISSION FOR THE COMPETITION' and 'Before implementing, generate 3-5 candidate geological hypotheses... Validate the top candidate on our spatially-blocked holdout set'. Reconciled transparently by preregistering the single top-ranked untried hypothesis (H85-P1 PRPC-Submod) in registry/preregistration_prpc.json before any experiment was executed, staying strictly inside that single lane and <=3-experiment budget."
 }

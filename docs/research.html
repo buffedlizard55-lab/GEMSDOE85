@@ -1,28 +1,80 @@
-<!doctype html>
-<html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Research — GEMSDOE85</title><style>body{font-family:system-ui,sans-serif;max-width:900px;margin:0 auto;padding:24px;line-height:1.5}a{color:#0b5fff}pre{background:#f8fafc;padding:12px;border-radius:8px;overflow:auto}</style></head>
-<body>
-<h1>Research &amp; Knowledge Base — GEMSDOE85</h1>
-<p><a href="index.html">← Back</a></p>
-<h2>Why we focused on transtensional pull-aparts (H85-1)</h2>
-<p>Great Basin geothermal systems are <b>not randomly distributed</b> along faults — they cluster at step-overs, relay ramps, and pull-apart basins where oblique extension creates dilational permeability (Faulds et al. 2010 <em>Geothermal favorability in the Great Basin</em>, NBMG Bulletin; Faulds &amp; Hinz 2015). The USGS Quaternary catalogue records the bounding fault trace, but the <b>basin interior has no scarp</b> — so it is systematically absent from the competition labels, yet precisely where a new fault would be verified by the expert panel (Final Prize Round). Geodetic strain (dilatation + shear) images this directly.</p>
-<p><b>Verified sources:</b></p>
-<ul>
-<li>Faulds, J.E. et al. — <a href="https://www.nbmg.unr.edu/">NBMG Great Basin transtension publications</a>.</li>
-<li>DOE GEMS Prize problem description explicitly lists dilatation rate, shear strain rate, second invariant as provided features — official but under-used (13/19 bands have zero derived channels in prior repo's feature stack).</li>
-<li>GeoDAWN isostatic gravity basement depth + conductivity image the subsurface contact that pull-aparts offset.</li>
-</ul>
-<h2>Geothermal vents knowledge (condensed from official verified sources)</h2>
-<p>Stored in <code>docs/research/geothermal-vents-knowledge.md</code> (see below). Key: hydrothermal outflow requires <b>permeability + heat + fluid</b>. Faults provide permeability via damage zones at tips/step-overs; heat from thinning crust/magma; fluid from meteoric recharge. Favorability = structure × heat flow × hydrology. This repo targets <b>structure</b> via strain &amp; gravity, not temperature (H33 thermal hypotheses already falsified as addition arms, 7-25× too expensive vs τ_live).</p>
-<pre>Official sources for geothermal-vents-knowledge.md:
-- USGS GeoDAWN (DOI 10.5066/P93LGLVQ)
-- GBCGE INGENIOUS (gbcge.org/current-projects/ingenious)
-- GDR 1391 Nevada geothermal data (DOI 10.15121/1881483)
-- USGS SGMC &amp; QFaults
-- DOE Geothermal Office (energy.gov/eere/geothermal)
-</pre>
-<p>See <a href="https://github.com/buffedlizard55-lab/GEMSDOE85/blob/main/docs/research/hypotheses.md">hypotheses-round1</a> for ranked 5-candidate table (same as README).</p>
-<h2>Score ceiling analysis (from GEMSDOE32 — reproduced)</h2>
-<p>At 0.4413 leaderboard top, mean credit per dot must be ~0.20 vs 0.126 at 0.2778 (+59%). No public compilation supplies that. So beating 0.2778 requires raising credit density, not mass. Our duplex does that by selecting transtensional + worm corridors where expert would add fault, rather than adding more uniformly.</p>
-</body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Geothermal Science · GEMSDOE85</title><style>
+:root{--bg:#0d1117;--panel:#161b22;--line:#30363d;--fg:#e6edf3;--mut:#9198a1;
+--acc:#2f81f7;--ok:#3fb950;--warn:#d29922;--bad:#f85149}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+font:16px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px 80px}
+header{border-bottom:1px solid var(--line);background:#010409;position:sticky;top:0;z-index:9}
+header .wrap{padding:14px 20px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+header b{font-size:17px;letter-spacing:.3px}
+nav a{color:var(--mut);font-size:13.5px;margin-right:14px;display:inline-block;padding:2px 0}
+nav a.on{color:var(--fg);font-weight:700;border-bottom:2px solid var(--acc)}
+h1{font-size:30px;line-height:1.25;margin:30px 0 8px}
+h2{font-size:21px;margin:36px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+h3{font-size:17px;margin:24px 0 8px}
+p,li{color:#c9d1d9}
+.sub{color:var(--mut);font-size:15px;margin-top:0}
+.banner-ok{background:linear-gradient(180deg,#0f2918,#0d1117);border:2px solid var(--ok);
+border-radius:14px;padding:22px 24px;margin:22px 0}
+.banner-title{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:19px;font-weight:800;color:#fff}
+.dl{display:inline-flex;align-items:center;gap:10px;background:var(--ok);color:#041308;
+font-size:17px;font-weight:800;padding:14px 22px;border-radius:10px;margin:10px 10px 6px 0}
+.dl:hover{background:#56d364;text-decoration:none}
+.dl2{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:#161b22;
+color:var(--fg);padding:11px 16px;border-radius:10px;font-size:13.5px;margin:6px 8px 6px 0}
+.dl2:hover{border-color:var(--acc);text-decoration:none}
+code,kbd{background:#1f242c;border:1px solid var(--line);border-radius:5px;
+padding:1px 6px;font-size:12.5px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+pre{background:#161b22;border:1px solid var(--line);border-radius:10px;padding:14px;
+overflow-x:auto;font-size:13px}
+pre code{background:none;border:none;padding:0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#1c2128;font-weight:600}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:16px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:18px 0}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:15px}
+.kpi .v{font-size:25px;font-weight:700;font-variant-numeric:tabular-nums;color:#fff}
+.kpi .l{color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.45px;margin-top:4px}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;
+border:1px solid;letter-spacing:.4px}
+.t-ok{color:var(--ok);border-color:var(--ok);background:#0c2113}
+.t-warn{color:var(--warn);border-color:var(--warn);background:#241c09}
+.t-bad{color:var(--bad);border-color:var(--bad);background:#261010}
+.t-mut{color:var(--mut);border-color:var(--line)}
+.note{border-left:3px solid var(--warn);background:#1c1a12;padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0}
+.good{border-left:3px solid var(--ok);background:#0f1f14;padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0}
+ol.steps{counter-reset:s;list-style:none;padding:0}
+ol.steps>li{counter-increment:s;position:relative;padding:14px 0 14px 50px;border-bottom:1px solid var(--line)}
+ol.steps>li::before{content:counter(s);position:absolute;left:0;top:12px;width:32px;height:32px;
+border-radius:50%;background:var(--acc);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+footer{color:var(--mut);font-size:12.5px;border-top:1px solid var(--line);margin-top:48px;padding-top:18px}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;word-break:break-all}
+</style></head><body>
+<header><div class="wrap"><b>GEMSDOE85 · H85-P1</b><nav><a href="index.html" class="">Submission Status</a><a href="executive-summary.html" class="">Executive Summary &amp; How to Submit</a><a href="why-h33.html" class="">Why 0.2778 &amp; Fleet Review</a><a href="hypotheses.html" class="">Hypotheses &amp; Ablations</a><a href="method.html" class="">PRPC Method &amp; Uniqueness</a><a href="research.html" class="on">Geothermal Science</a><a href="sources.html" class="">Official Sources</a><a href="data.html" class="">Data &amp; Limitations</a><a href="review.html" class="">3-Pass Audit</a></nav></div></header>
+<div class="wrap">
+<h1>Scientific Discovery of Concealed Geothermal Vents &amp; Blind Faults</h1>
+<p class="sub">Synthesized from official USGS, DOE GDR #1391 (INGENIOUS), and NLR primary sources. Complete markdown knowledge base: <a href="https://github.com/buffedlizard55-lab/GEMSDOE85/blob/arena/b37c8b3c-gemsdoe85/knowledge/geothermal-vent-discovery.md"><code>knowledge/geothermal-vent-discovery.md</code></a>.</p>
+
+<div class="card">
+  <h3>Why &gt;75% of Great Basin High-Temperature Geothermal Systems Are Concealed ("Blind")</h3>
+  <p>In the transtensional Walker Lane–Basin and Range province (&sigma;<sub>h,min</sub> &approx; N115&deg;E, driving N20&deg;E–N30&deg;E normal faults), mature planar range-front master scarps accumulate low-permeability clay gouge cores and are already digitized in <code>existing_faults.tif</code>. Active hydrothermal upflow concentrates instead in <b>structurally complex, rapidly aggrading accommodation zones</b> veiled by Quaternary alluvium and Pleistocene Lake Lahontan/Bonneville sediments:</p>
+  <ol>
+    <li><b>En-echelon fault step-overs &amp; breaching relay ramps (0.5–3.5 km spacing):</b> Sub-vertical tensile fracture networks transfer displacement between overlapping fault tips (e.g., Bradys, Desert Peak, Dixie Valley, McGinness Hills).</li>
+    <li><b>Mode-II/III horse-tail fault-tip damage cones (0.3–2.5 km ahead of mapped tips):</b> High crack-tip stress concentration fractures buried Tertiary volcanics and Paleozoic basement beneath piedmont aprons.</li>
+    <li><b>Outboard piedmont synthetic/antithetic bench faults:</b> Low-relief (0.3–1.5 m) scarps erased on 10 m DEMs by sheetwash or shoreline planation, yet resolved by seam-feathered <b>1 m 3DEP LiDAR</b> coupled to persistent <b>150 m upward-continued magnetic (`TMI_up150`)</b> and <b>isostatic gravity</b> basement steps.</li>
+    <li><b>Sibson fault-valve hydrothermal alteration &amp; Rn-222 / U-redox leakage:</b> Episodic seal breach channels reduced deep fluids that destroy titanomagnetite (`rtp` troughs), form conductive smectite clay caps (`cond_surf` lateral steps), and precipitate hexavalent-to-tetravalent uranium along gas-permeable fault traces (elevated <b>GeoDAWN <code>eU/eTh</code> and <code>eU/K</code></b> without immobile Thorium enrichment).</li>
+  </ol>
+</div>
+
+<footer>Deterministically built (2026-10-22T23:55:00Z) by <code>scripts/build_site.py</code> from
+hash-pinned JSON artifacts in <code>registry/</code> and <code>evidence/</code>. Repository:
+<a href="https://github.com/buffedlizard55-lab/GEMSDOE85">buffedlizard55-lab/GEMSDOE85</a> ·
+Historical lanes preserved: <a href="duplex-lane/index.html">PR #3 Duplex Lane</a> ·
+<a href="lane-h85.html">PR #4 H85-A Lane</a>.
+</footer></div></body></html>

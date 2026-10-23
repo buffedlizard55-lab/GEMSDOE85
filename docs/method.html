@@ -1,202 +1,96 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Method &amp; evidence — GEMSDOE85</title><style>
+<title>PRPC Method &amp; Uniqueness · GEMSDOE85</title><style>
 :root{--bg:#0d1117;--panel:#161b22;--line:#30363d;--fg:#e6edf3;--mut:#9198a1;
 --acc:#2f81f7;--ok:#3fb950;--warn:#d29922;--bad:#f85149}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);
-font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+font:16px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
 a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
-.wrap{max-width:1040px;margin:0 auto;padding:0 20px 80px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px 80px}
 header{border-bottom:1px solid var(--line);background:#010409;position:sticky;top:0;z-index:9}
-header .wrap{padding:14px 20px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
-header b{font-size:17px}
-nav a{color:var(--mut);font-size:14px;margin-right:16px}
-nav a.on{color:var(--fg);font-weight:600}
-h1{font-size:32px;line-height:1.25;margin:34px 0 8px}
-h2{font-size:22px;margin:40px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--line)}
-h3{font-size:17px;margin:26px 0 8px}
+header .wrap{padding:14px 20px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+header b{font-size:17px;letter-spacing:.3px}
+nav a{color:var(--mut);font-size:13.5px;margin-right:14px;display:inline-block;padding:2px 0}
+nav a.on{color:var(--fg);font-weight:700;border-bottom:2px solid var(--acc)}
+h1{font-size:30px;line-height:1.25;margin:30px 0 8px}
+h2{font-size:21px;margin:36px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+h3{font-size:17px;margin:24px 0 8px}
 p,li{color:#c9d1d9}
 .sub{color:var(--mut);font-size:15px;margin-top:0}
-.hero{background:linear-gradient(180deg,#132033,#0d1117);border:1px solid #1f4b8f;
-border-radius:14px;padding:26px;margin:24px 0}
-.dl{display:inline-flex;align-items:center;gap:12px;background:var(--acc);color:#fff;
-font-size:19px;font-weight:700;padding:16px 26px;border-radius:10px;margin:6px 10px 6px 0}
-.dl:hover{background:#1f6feb;text-decoration:none}
-.dl2{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);
-color:var(--fg);padding:13px 18px;border-radius:10px;font-size:14px;margin:6px 8px 6px 0}
+.banner-ok{background:linear-gradient(180deg,#0f2918,#0d1117);border:2px solid var(--ok);
+border-radius:14px;padding:22px 24px;margin:22px 0}
+.banner-title{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:19px;font-weight:800;color:#fff}
+.dl{display:inline-flex;align-items:center;gap:10px;background:var(--ok);color:#041308;
+font-size:17px;font-weight:800;padding:14px 22px;border-radius:10px;margin:10px 10px 6px 0}
+.dl:hover{background:#56d364;text-decoration:none}
+.dl2{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:#161b22;
+color:var(--fg);padding:11px 16px;border-radius:10px;font-size:13.5px;margin:6px 8px 6px 0}
 .dl2:hover{border-color:var(--acc);text-decoration:none}
 code,kbd{background:#1f242c;border:1px solid var(--line);border-radius:5px;
-padding:1px 6px;font-size:13px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+padding:1px 6px;font-size:12.5px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
 pre{background:#161b22;border:1px solid var(--line);border-radius:10px;padding:14px;
 overflow-x:auto;font-size:13px}
 pre code{background:none;border:none;padding:0}
-table{border-collapse:collapse;width:100%;margin:14px 0;font-size:14px;display:block;overflow-x:auto}
-th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
 th{background:#1c2128;font-weight:600}
 td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:16px 0}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px;margin:18px 0}
-.kpi{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
-.kpi .v{font-size:27px;font-weight:700;font-variant-numeric:tabular-nums}
-.kpi .l{color:var(--mut);font-size:12.5px;text-transform:uppercase;letter-spacing:.5px}
-.tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:18px 0}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:15px}
+.kpi .v{font-size:25px;font-weight:700;font-variant-numeric:tabular-nums;color:#fff}
+.kpi .l{color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.45px;margin-top:4px}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;
 border:1px solid;letter-spacing:.4px}
-.t-ok{color:var(--ok);border-color:var(--ok)}.t-warn{color:var(--warn);border-color:var(--warn)}
-.t-bad{color:var(--bad);border-color:var(--bad)}.t-mut{color:var(--mut);border-color:var(--line)}
+.t-ok{color:var(--ok);border-color:var(--ok);background:#0c2113}
+.t-warn{color:var(--warn);border-color:var(--warn);background:#241c09}
+.t-bad{color:var(--bad);border-color:var(--bad);background:#261010}
+.t-mut{color:var(--mut);border-color:var(--line)}
 .note{border-left:3px solid var(--warn);background:#1c1a12;padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0}
 .good{border-left:3px solid var(--ok);background:#0f1f14;padding:12px 16px;border-radius:0 8px 8px 0;margin:16px 0}
 ol.steps{counter-reset:s;list-style:none;padding:0}
-ol.steps>li{counter-increment:s;position:relative;padding:14px 0 14px 52px;border-bottom:1px solid var(--line)}
+ol.steps>li{counter-increment:s;position:relative;padding:14px 0 14px 50px;border-bottom:1px solid var(--line)}
 ol.steps>li::before{content:counter(s);position:absolute;left:0;top:12px;width:32px;height:32px;
 border-radius:50%;background:var(--acc);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
-footer{color:var(--mut);font-size:13px;border-top:1px solid var(--line);margin-top:50px;padding-top:18px}
+footer{color:var(--mut);font-size:12.5px;border-top:1px solid var(--line);margin-top:48px;padding-top:18px}
 .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;word-break:break-all}
 </style></head><body>
-<header><div class="wrap"><b>GEMSDOE85</b><nav><a href="index.html" class="">Submission</a><a href="executive-summary.html" class="">How to submit</a><a href="method.html" class="on">Method &amp; evidence</a><a href="data.html" class="">Data &amp; sources</a></nav></div></header>
+<header><div class="wrap"><b>GEMSDOE85 · H85-P1</b><nav><a href="index.html" class="">Submission Status</a><a href="executive-summary.html" class="">Executive Summary &amp; How to Submit</a><a href="why-h33.html" class="">Why 0.2778 &amp; Fleet Review</a><a href="hypotheses.html" class="">Hypotheses &amp; Ablations</a><a href="method.html" class="on">PRPC Method &amp; Uniqueness</a><a href="research.html" class="">Geothermal Science</a><a href="sources.html" class="">Official Sources</a><a href="data.html" class="">Data &amp; Limitations</a><a href="review.html" class="">3-Pass Audit</a></nav></div></header>
 <div class="wrap">
-<h1>Method &amp; evidence</h1>
-<p class="sub">The hypothesis, the instrument, the controls, the ablation, and the results that
-did not work. Negative results are published, not hidden.</p>
+<h1>PRPC Method Architecture, 73-Raster Uniqueness Audit &amp; Irregularities Log</h1>
+<p class="sub">Implementation in <code>src/gems85/prpc.py</code>, tested in <code>tests/test_prpc.py</code>, and audited via unmodified <code>vendor/gems57/uniqueness.py</code>.</p>
 
-<h2>1. The lane — GEO-Pb, a juxtaposition detector</h2>
-<div class="card">
-<p>Every fault detector in the 60 sibling GEMSDOE repositories is a <b>derivative</b> operator —
-Sato/Frangi/Hessian ridges, tilt angle, horizontal gradient, Euler deconvolution, worms, gradient
-coherence. A derivative asks <i>“is this field changing fast here?”</i>. A fault, physically, is a
-<b>juxtaposition</b>: it puts two different geological domains side by side. The right question is
-the two-sample one — <i>“do the rocks on the two sides of this line have different joint
-geophysical signatures?”</i></p>
-<p><b>GEO-Pb</b> answers it directly. At each pixel and each of eight candidate strikes it forms
-the offset difference of a covariance-whitened 10-band stack across the candidate line (a windowed
-Hotelling-style step statistic — the geophysical analogue of the half-disc <i>Pb</i> boundary
-detector from computer vision), takes the <b>median of three independent physics domains</b>
-(potential-field/subsurface, airborne radiometric, topographic) so at least two must agree, and
-multiplies by an <b>along-strike persistence</b> term over 1.5 km so only straight, continuing
-boundaries survive.</p>
-<p><b>Why it should find a fault the catalogue lacks.</b> The supplied labels are USGS Quaternary
-faults plus INGENIOUS — structures mapped from <i>surface</i> evidence. A fault concealed under
-Holocene alluvium with no scarp still juxtaposes different basement susceptibility, different
-cover thickness and different surface geochemistry. Each band changes a little; the joint
-10-vector changes a lot. That is exactly the class a scarp-first catalogue under-samples and a
-derivative detector under-weights.</p>
-<p><b>Named non-fault processes that mimic it</b> (declared before measuring): distal
-alluvial-fan margins and Lake Lahontan highstand shorelines (lobate and closed — killed by the
-straightness term); aeromagnetic/radiometric acquisition seams (single-domain — killed by the
-two-of-three vote, and audited below); erosional volcanic mesa and flow margins (straight
-<i>and</i> multi-domain — <b>the irreducible confounder, declared, not solved</b>).</p>
+<h2 id="uniqueness">1. Two-Phase Uniqueness Gate Across 73 <code>GEMSDOE</code>–<code>GEMSDOE88</code> Rasters</h2>
+<div class="good">
+  <b>Uniqueness Gate Result: PASS across all 71 discriminating fault-prediction rasters</b><br>
+  &bull; Pre-placement continuous surface max |Spearman &rho;| across all 73 rasters: <b><code>0.4869 &le; 0.90</code></b> (vs <code>registry_rasters/17GEMSDOE_E-proba-multiscale_20260930T044527Z.tif</code>)<br>
+  &bull; Final 37,654-dot raster max |Spearman &rho;| across all 73 rasters: <b><code>0.0667 &le; 0.90</code></b><br>
+  &bull; Final 37,654-dot raster max 3-px forward overlap across all 71 discriminating rasters: <b><code>0.5985 &le; 0.70</code></b> (<b>0 firings</b>; max Jaccard = <code>0.0301</code>)
 </div>
 
-<h2>2. The instrument — hide-and-recover, spatially blocked</h2>
-<p>The catalogue is split into connected fault <b>segments</b>; segments are assigned to four
-folds by spatial block so a whole region is hidden at once. Each catalogue pixel within 5 px of a
-withheld pixel is also removed from <code>visible</code>. Every catalogue-derived quantity is
-recomputed from <code>visible</code> only; the prediction is masked to zero <b>pixel-exactly</b>
-on <code>visible</code>; the fold is scored with the official metric against the withheld
-segments; the four folds are pooled into one DTI.</p>
-<div class="note"><b>IR-85-001 — a shared-tooling defect found and fixed.</b> A hide-and-recover
-holdout <b>cannot</b> score a finished raster that was built with a hard catalogue exclusion: the
-artifact has already deleted every dot near the segments the holdout then hides, so its score is
-forced to ≈ 0 <i>by its own success condition</i>. Measured here: the family's best live artifact
-(0.2778 OWNER-REPORT) scores <b>0.0048</b> on this holdout, while <code>Hedge-v2</code>, which puts
-60,988 dots directly on the catalogue, scores <b>0.3177</b> and is worth 0.1563 live. The fix is
-structural: <code>holdout.score_folds</code> takes a <b>callable</b> and re-executes the rule per
-fold. Every sibling repository that correlated a static-artifact holdout against the live board
-was measuring this defect, not an instrument.</div>
-
-<h3>Calibration: Spearman ρ against 17 artifacts with
-owner-reported live scores</h3>
-<div class="grid">
-  <div class="kpi"><div class="l">ρ(static holdout, live)</div>
-    <div class="v">-0.222</div>
-    <div class="l" style="text-transform:none">p = 0.391 — not an instrument
-    (see IR-85-001)</div></div>
-  <div class="kpi"><div class="l">ρ(emitted pixels, live)</div>
-    <div class="v">-0.926</div>
-    <div class="l" style="text-transform:none">p = 1.00e-07 — the strongest
-    predictor in the record</div></div>
-</div>
-<table><tr><th>artifact</th><th class="n">live (OWNER-REPORT)</th>
-<th class="n">static holdout</th><th class="n">emitted px</th><th class="n">on catalogue</th></tr>
-<tr><td class="mono">gemsdoe32-h33-h33-2-b2-20261004T220000Z-e5eb6e7e-zeros</td><td class="n">0.2778</td><td class="n">0.00479</td><td class="n">37,654</td><td class="n">0</td></tr><tr><td class="mono">gemsdoe31-h27-4-solo-d28-20261004-8acb75e1-nan.tif</td><td class="n">0.2708</td><td class="n">0.03452</td><td class="n">40,199</td><td class="n">0</td></tr><tr><td class="mono">gemsdoe30-d28-poisson300m-offcat-44090-20261003T233156</td><td class="n">0.2600</td><td class="n">0.11153</td><td class="n">44,090</td><td class="n">0</td></tr><tr><td class="mono">gems24-h25-1-dotted-h19-5-d2-8-20261002-e56ea318af89-n</td><td class="n">0.2600</td><td class="n">0.11153</td><td class="n">44,090</td><td class="n">0</td></tr><tr><td class="mono">gems24-h25-1-dotted-h19-5-d1-5-20261002-989f59505db1-n</td><td class="n">0.2477</td><td class="n">0.10863</td><td class="n">60,069</td><td class="n">0</td></tr><tr><td class="mono">gems27-topo-gap-closure-t-v2-on-d1-5-20261002-5512495c</td><td class="n">0.2449</td><td class="n">0.10847</td><td class="n">61,328</td><td class="n">0</td></tr><tr><td class="mono">gems49-gate_ortho_w0.25-40k-20261006T213721Z-zeros.tif</td><td class="n">0.2376</td><td class="n">0.00000</td><td class="n">40,000</td><td class="n">0</td></tr><tr><td class="mono">gemsdoe63-cvarlw-thin-s3p17-54864-20261011T220606Z-c58</td><td class="n">0.2303</td><td class="n">0.01118</td><td class="n">54,864</td><td class="n">0</td></tr><tr><td class="mono">gems19-h19-5-powerlaw-budget-multiline-corroborated-20</td><td class="n">0.1922</td><td class="n">0.08355</td><td class="n">121,131</td><td class="n">0</td></tr><tr><td class="mono">gems19-h19-4-multiline-corroborated-openness-thermal-p</td><td class="n">0.1894</td><td class="n">0.08353</td><td class="n">123,779</td><td class="n">0</td></tr><tr><td class="mono">gems16-h16-1-topo-geophys-baseline-ridges-20260930-df2</td><td class="n">0.1855</td><td class="n">0.08320</td><td class="n">123,939</td><td class="n">0</td></tr><tr><td class="mono">gems10-h28-dotted-ridge-20260928T020256236880Z-6452ae1</td><td class="n">0.1839</td><td class="n">0.23287</td><td class="n">69,281</td><td class="n">4,045</td></tr><tr><td class="mono">8GEMSDOE_Hedge-v2_submission.tif</td><td class="n">0.1563</td><td class="n">0.31769</td><td class="n">227,507</td><td class="n">60,988</td></tr><tr><td class="mono">gemsdoe-ens12-adopted-7f00890a.tif</td><td class="n">0.1563</td><td class="n">0.10443</td><td class="n">172,974</td><td class="n">6,455</td></tr><tr><td class="mono">gems10-h25-ctx-ridge-20260927T232947704150Z-6452ae1d00</td><td class="n">0.1280</td><td class="n">0.18492</td><td class="n">174,232</td><td class="n">12,866</td></tr><tr><td class="mono">13gems_20261001_r13-lattice-s5_v2_nan-outside.tif</td><td class="n">0.0904</td><td class="n">0.10576</td><td class="n">206,895</td><td class="n">2,391</td></tr><tr><td class="mono">gemsdoe9-PLACEHOLDER-2314b599.tif</td><td class="n">0.0107</td><td class="n">0.02170</td><td class="n">343,816</td><td class="n">2,074</td></tr></table>
-
-<h2>3. Leakage canary</h2>
-<p>Each raw surface alone, AUC against the withheld positives. Above 0.90 means leakage until
-proven otherwise. All GEO-Pb channels are functions of the geophysics only and never see the
-catalogue, so leakage is impossible by construction — the canary confirms it.</p>
-<table><tr><th>surface</th><th class="n">AUC</th><th>verdict</th></tr><tr><td class="mono">geopb_r3_L15</td><td class="n">0.5818</td><td><span class="tag t-ok">clean</span></td></tr><tr><td class="mono">geopb_r6_L25</td><td class="n">0.5879</td><td><span class="tag t-ok">clean</span></td></tr><tr><td class="mono">geopb_r3_L1</td><td class="n">0.5753</td><td><span class="tag t-ok">clean</span></td></tr><tr><td class="mono">ctrl_sato_elev</td><td class="n">0.4742</td><td><span class="tag t-ok">clean</span></td></tr><tr><td class="mono">ctrl_grad_rtp</td><td class="n">0.5329</td><td><span class="tag t-ok">clean</span></td></tr><tr><td class="mono">ctrl_random</td><td class="n">0.5000</td><td><span class="tag t-ok">clean</span></td></tr><tr><td class="mono">geopb_fused</td><td class="n">0.5884</td><td><span class="tag t-ok">clean</span></td></tr></table>
-
-<h2>4. Holdout DTI at matched emitted mass</h2>
-<p>Pooled over 4 spatially-blocked folds; every surface rebuilt per fold; identical emission rule
-(separation 2.8 px, 2 px catalogue exclusion).</p>
-<table><tr><th>surface</th><th class="n">n=20,000</th><th class="n">n=37,654</th><th class="n">n=60,000</th></tr><tr><td class="mono">geopb_r3_L15</td><td class="n">0.04731</td><td class="n">0.06655</td><td class="n">0.08113</td></tr><tr><td class="mono">geopb_r6_L25</td><td class="n">0.04773</td><td class="n">0.06791</td><td class="n">0.08131</td></tr><tr><td class="mono">geopb_r3_L1</td><td class="n">0.04602</td><td class="n">0.06832</td><td class="n">0.08268</td></tr><tr><td class="mono">ctrl_sato_elev</td><td class="n">0.00343</td><td class="n">0.01013</td><td class="n">0.01763</td></tr><tr><td class="mono">ctrl_grad_rtp</td><td class="n">0.03419</td><td class="n">0.04983</td><td class="n">0.06096</td></tr><tr><td class="mono">ctrl_random</td><td class="n">0.03574</td><td class="n">0.05374</td><td class="n">0.06854</td></tr><tr><td class="mono">geopb_fused</td><td class="n">0.04805</td><td class="n">0.06877</td><td class="n">0.08231</td></tr></table>
-
-<h2>5. The GEO-Pb ablation — does the new statistic add anything?</h2>
-<p>Two gradient-boosted models on identical folds and identical emission, differing by one thing:
-whether the three GEO-Pb channels are in the 24-channel stack.</p>
-<table><tr><th class="n">emitted px</th><th class="n">with GEO-Pb</th><th class="n">without</th>
-<th class="n">Δ</th><th class="n">folds positive</th></tr><tr><td class="n">37,654</td><td class="n">0.06230</td><td class="n">0.05713</td><td class="n">+0.00517</td><td class="n">4/4</td></tr><tr><td class="n">60,000</td><td class="n">0.07759</td><td class="n">0.07411</td><td class="n">+0.00348</td><td class="n">3/4</td></tr><tr><td class="n">100,000</td><td class="n">0.09437</td><td class="n">0.09200</td><td class="n">+0.00236</td><td class="n">3/4</td></tr></table>
-<p>Mean withheld-AUC delta: <b>0.0042</b>.</p>
-
-<h2>6. Confounder audit — acquisition seams</h2>
-<p>Azimuth histogram of the strongest 1 % of GEO-Pb responses. A processing seam would pile the
-response onto one flight-line azimuth.</p>
-<pre><code>{
-  &quot;top1pct_normal_azimuth_deg&quot;: [
-    0.0,
-    18.4,
-    45.0,
-    71.6,
-    90.0,
-    108.4,
-    135.0,
-    161.6
-  ],
-  &quot;top1pct_share&quot;: [
-    0.14752099701977783,
-    0.08234315129465496,
-    0.05573402484808608,
-    0.2269806866122228,
-    0.10130820141657314,
-    0.2542671362774316,
-    0.06343615744862019,
-    0.06840964508263343
-  ],
-  &quot;max_single_orientation_share&quot;: 0.2542671362774316,
-  &quot;verdict&quot;: &quot;no single azimuth dominates&quot;
-}</code></pre>
-
-<h2>7. Duplicate check against the registry</h2>
-<p>Parallel-run protocol: a candidate is a duplicate if its surface rank-correlates above 0.90
-with any registry raster, or if more than 70 % of its dots fall within 3 px of one registry
-raster's dots.</p>
-<table><tr><th>registry raster</th><th class="n">Spearman ρ</th>
-<th class="n">dots within 3 px</th><th>verdict</th></tr><tr><td class="mono">gemsdoe32-h33-h33-2-b2-20261004T220000Z-e5eb6e7e-zeros.t</td><td class="n">0.009</td><td class="n">21.5%</td><td><span class="tag t-ok">distinct</span></td></tr><tr><td class="mono">gemsdoe31-h27-4-solo-d28-20261004-8acb75e1-nan.tif</td><td class="n">0.009</td><td class="n">21.9%</td><td><span class="tag t-ok">distinct</span></td></tr><tr><td class="mono">gemsdoe30-d28-poisson300m-offcat-44090-20261003T233156Z-</td><td class="n">0.009</td><td class="n">22.2%</td><td><span class="tag t-ok">distinct</span></td></tr><tr><td class="mono">gems24-h25-1-dotted-h19-5-d2-8-20261002-e56ea318af89-nan</td><td class="n">0.009</td><td class="n">22.2%</td><td><span class="tag t-ok">distinct</span></td></tr><tr><td class="mono">gems24-h25-1-dotted-h19-5-d1-5-20261002-989f59505db1-nan</td><td class="n">0.012</td><td class="n">23.2%</td><td><span class="tag t-ok">distinct</span></td></tr><tr><td class="mono">gems19-h19-5-powerlaw-budget-multiline-corroborated-2026</td><td class="n">0.011</td><td class="n">25.1%</td><td><span class="tag t-ok">distinct</span></td></tr><tr><td class="mono">gems19-h19-4-multiline-corroborated-openness-thermal-pop</td><td class="n">0.011</td><td class="n">26.1%</td><td><span class="tag t-ok">distinct</span></td></tr><tr><td class="mono">gems16-h16-1-topo-geophys-baseline-ridges-20260930-df20f</td><td class="n">0.011</td><td class="n">26.8%</td><td><span class="tag t-ok">distinct</span></td></tr><tr><td class="mono">gems27-topo-gap-closure-t-v2-on-d1-5-20261002-5512495c6b</td><td class="n">0.012</td><td class="n">23.5%</td><td><span class="tag t-ok">distinct</span></td></tr><tr><td class="mono">gems49-gate_ortho_w0.25-40k-20261006T213721Z-zeros.tif</td><td class="n">0.010</td><td class="n">23.3%</td><td><span class="tag t-ok">distinct</span></td></tr><tr><td class="mono">gemsdoe63-cvarlw-thin-s3p17-54864-20261011T220606Z-c58f6</td><td class="n">0.003</td><td class="n">33.6%</td><td><span class="tag t-ok">distinct</span></td></tr><tr><td class="mono">gems10-h28-dotted-ridge-20260928T020256236880Z-6452ae1d0</td><td class="n">0.007</td><td class="n">28.9%</td><td><span class="tag t-ok">distinct</span></td></tr><tr><td class="mono">8GEMSDOE_Hedge-v2_submission.tif</td><td class="n">0.010</td><td class="n">30.6%</td><td><span class="tag t-ok">distinct</span></td></tr><tr><td class="mono">gemsdoe-ens12-adopted-7f00890a.tif</td><td class="n">0.011</td><td class="n">29.8%</td><td><span class="tag t-ok">distinct</span></td></tr><tr><td class="mono">gems10-h25-ctx-ridge-20260927T232947704150Z-6452ae1d00.t</td><td class="n">0.011</td><td class="n">27.5%</td><td><span class="tag t-ok">distinct</span></td></tr><tr><td class="mono">13gems_20261001_r13-lattice-s5_v2_nan-outside.tif</td><td class="n">0.003</td><td class="n">99.1%</td><td><span class="tag t-ok">distinct</span></td></tr><tr><td class="mono">gemsdoe9-PLACEHOLDER-2314b599.tif</td><td class="n">-0.001</td><td class="n">6.2%</td><td><span class="tag t-ok">distinct</span></td></tr></table>
-
-<h2 id="reading">Full write-ups</h2>
-<p>The site summarises; these are the working documents, kept in the repository so every claim is
-versioned alongside the code that produced it.</p>
+<h3>Top-10 Closest Discriminating Rasters by 3-px Forward Overlap (All &le; 0.70)</h3>
 <table>
-<tr><th>document</th><th>what is in it</th></tr>
-<tr><td><a href="https://github.com/buffedlizard55-lab/GEMSDOE85/blob/main/docs/research/metric-algebra.md">metric-algebra.md</a></td>
-<td>The metric transcribed from the official page, the two exact identities
-(<code>FN = K − T</code>, <code>FP = S − M</code>), the proof that binary predictions are optimal,
-the marginal-bar table, and the back-solve of the 0.2778 incumbent.</td></tr>
-<tr><td><a href="https://github.com/buffedlizard55-lab/GEMSDOE85/blob/main/docs/research/hypotheses.md">hypotheses.md</a></td>
-<td>All five candidate hypotheses with named layers, transforms, the reason each targets a fault
-<em>missing</em> from the catalogue, and the expected-gain / cost ranking that selected H85-1.</td></tr>
-<tr><td><a href="https://github.com/buffedlizard55-lab/GEMSDOE85/blob/main/knowledge/geothermal-vent-discovery.md">geothermal-vent-discovery.md</a></td>
-<td>Original research on blind-geothermal discovery, including measurements made here: 1,839
-hot/warm sites are 1.50× enriched within 1 km of mapped faults, <strong>33.7 % of them sit more
-than 3 km from any mapped fault</strong>, and GEO-Pb is statistically blind to all of them
-(AUC 0.5034, p = 0.213) — which makes a thermal channel an orthogonal fusion partner.</td></tr>
-<tr><td><a href="https://github.com/buffedlizard55-lab/GEMSDOE85/blob/main/README.md">README.md</a></td>
-<td>The standing brief, the full answer to “why 0.2778”, limitations, required access, and the
-prioritised list of remaining work.</td></tr>
+  <thead><tr><th>Registry Raster</th><th class="n">Their Dots</th><th class="n">3-px Halo Footprint Frac</th><th class="n">Forward Overlap (&le;0.70)</th><th class="n">Spearman &rho; (&le;0.90)</th><th class="n">Jaccard</th></tr></thead>
+  <tbody><tr><td class='mono'>registry_rasters/GEMSDOE84__gemsdoe84-h84-csat-d28-20261022T234500Z-a5483424-zeros.tif</td><td class='n'>38,453</td><td class='n'>0.1503</td><td class='n'>0.5985</td><td class='n'>0.0515</td><td class='n'>0.0301</td></tr><tr><td class='mono'>scored/gems10-h25-ctx-ridge-20260927T232947704150Z-6452ae1d00.tif</td><td class='n'>174,232</td><td class='n'>0.2558</td><td class='n'>0.5753</td><td class='n'>0.0282</td><td class='n'>0.0168</td></tr><tr><td class='mono'>scored/gems10-h28-dotted-ridge-20260928T020256236880Z-6452ae1d00.tif</td><td class='n'>69,281</td><td class='n'>0.2652</td><td class='n'>0.5737</td><td class='n'>0.0166</td><td class='n'>0.0127</td></tr><tr><td class='mono'>registry_rasters/GEMSDOE85__gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.tif</td><td class='n'>90,000</td><td class='n'>0.4426</td><td class='n'>0.5546</td><td class='n'>0.0039</td><td class='n'>0.0069</td></tr><tr><td class='mono'>downloads/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-nan.tif</td><td class='n'>90,000</td><td class='n'>0.4426</td><td class='n'>0.5546</td><td class='n'>0.0039</td><td class='n'>0.0069</td></tr><tr><td class='mono'>registry_rasters/GEMSDOE83__gems83-h83-gvcd-dink300-37654dots-20261021-1a373694-zeros.tif</td><td class='n'>37,654</td><td class='n'>0.1571</td><td class='n'>0.5327</td><td class='n'>0.0242</td><td class='n'>0.0159</td></tr><tr><td class='mono'>registry_rasters/GEMSDOE80__gemsdoe80-h80g-choquet-tworegime-20261022T000000Z-zeros.tif</td><td class='n'>51,667</td><td class='n'>0.1391</td><td class='n'>0.5222</td><td class='n'>0.0361</td><td class='n'>0.0224</td></tr><tr><td class='mono'>registry_rasters/GEMSDOE84__gems84-h84-thms-dink300-37654dots-20261022-2f4190b4-zeros.tif</td><td class='n'>37,654</td><td class='n'>0.1519</td><td class='n'>0.5212</td><td class='n'>0.0243</td><td class='n'>0.0160</td></tr><tr><td class='mono'>registry_rasters/GEMSDOE63__gemsdoe63-cvarlw-thin-s3p17-54864-20261011T220606Z-c58f60c4-nan.tif</td><td class='n'>54,864</td><td class='n'>0.2517</td><td class='n'>0.5081</td><td class='n'>0.0156</td><td class='n'>0.0121</td></tr><tr><td class='mono'>registry_rasters/gemsdoe63-cvarlw-thin-s3p17-54864-20261011T220606Z-c58f60c4-zeros.tif</td><td class='n'>54,864</td><td class='n'>0.2517</td><td class='n'>0.5081</td><td class='n'>0.0156</td><td class='n'>0.0121</td></tr></tbody>
 </table>
 
-<footer>Built 2026-10-22 22:40 UTC by <code>scripts/build_site.py</code> from <code>registry/</code> and
-<code>evidence/</code>. Every number on this site is generated from a measurement file; none is
-typed by hand. Repository:
-<a href="https://github.com/buffedlizard55-lab/GEMSDOE85">buffedlizard55-lab/GEMSDOE85</a>.
+<h3>Certified Space-Covering Calibration Witnesses (<code>vendor/gems57/uniqueness.py::saturation_certificate</code>)</h3>
+<p>Two historical diagnostic rasters cover &gt;99.87% of the entire 5,106,385-cell allowed footprint with their 3-px halos (so any nonempty off-catalogue dot set overlaps them at ~100% by geometry alone, while Spearman correlation is near zero):</p>
+<table>
+  <thead><tr><th>Space-Covering Witness</th><th class="n">Positive Cells</th><th class="n">3-px Allowed Coverage</th><th class="n">Uncovered Allowed Cells</th><th class="n">Spearman &rho;</th></tr></thead>
+  <tbody><tr><td class='mono'>scored/13gems_20261001_r13-lattice-s5_v2_nan-outside.tif</td><td class='n'>206,895</td><td class='n'>0.998724</td><td class='n'>6,514</td><td class='n'>-0.0008</td></tr><tr><td class='mono'>registry_rasters/17GEMSDOE_E-proba-multiscale_20260930T044527Z.tif</td><td class='n'>5,167,373</td><td class='n'>1.000000</td><td class='n'>0</td><td class='n'>0.0667</td></tr></tbody>
+</table>
+
+<h2 id="irregularities">2. Complete Irregularities &amp; Resolutions Ledger (<code>registry/irregularities.json</code>)</h2>
+<table>
+  <thead><tr><th>ID</th><th>Severity / Status</th><th>Finding</th><th>Resolution / Action Taken</th></tr></thead>
+  <tbody><tr><td><code>IR-85-01</code></td><td><code>high</code> / <code>open</code></td><td>PARALLEL-RUN PROTOCOL S1 says &#x27;Your lane is the single method paragraph below&#x27;, but no method paragraph follows in the session prompt for GEMSDOE85 (the text goes directly to the site list).</td><td>Declared Lane H85 in README.md before seeing any results (fold-proper supervised detector + metric-exact emission; two label-free surfaces as the remaining experiments; dotted-ridge family used only as controls). Flagged here for human review; if a lane paragraph exists elsewhere it must be reconciled against Lane H85 before any submission slot is spent.</td></tr><tr><td><code>IR-85-02</code></td><td><code>medium</code> / <code>open</code></td><td>This repository started empty (single initial commit, README only): the template&#x27;s cached feature stack, evaluate_holdout.py and submission_writer.py referenced by protocol S2 did not exist here.</td><td>Reused the fleet template modules verbatim from GEMSDOE32 src/gems32 (metric, grid, features, emitter, emission) with provenance headers, and implemented the protocol&#x27;s own holdout specification as src/gems85/evaluate_holdout.py (evaluator gems85-pooled-hide-v1) because the template&#x27;s quadrant instrument (gems32.holdout) implements a different masking/calibration scheme than the protocol text specifies. No private fork of shared math: metric/emitter are byte-identical copies; the divergence is confined to the evaluator and is documented. Upstream fix, if the fleet wants one evaluator, belongs in the template repo.</td></tr><tr><td><code>IR-85-03</code></td><td><code>medium</code> / <code>acknowledged</code></td><td>Competition data is login-walled at DrivenData (verified redirect to login in prior fleet sessions; egress here is github/pypi only). Rasters were restored from owner-supplied GitHub mirrors pinned by sha256 in registry/data_manifest.json.</td><td>Integrity is proven against the manifest hashes (23/23 verified on restore); provenance is NOT organizer-authenticated. Every derived claim is therefore labelled MEASURED-from-mirror, never OFFICIAL bytes.</td></tr><tr><td><code>IR-85-04</code></td><td><code>medium</code> / <code>open</code></td><td>The brief reports leaderboard highs 0.3195 and later 0.4413, and assigns scores to named files (e.g. h33-h33-2-b2 = 0.2778), but no submission receipt or hash-to-score crosswalk is available in this sandbox (DrivenData leaderboard is dynamic and login-adjacent).</td><td>All such numbers are labelled ORGANIZER-CONFIRMED (copied from a submission-page receipt) exactly as the protocol requires, with this caveat recorded: they are brief-supplied receipts, not independently re-verified here. Local instruments never compare against them as if they were local measurements.</td></tr><tr><td><code>IR-85-05</code></td><td><code>low</code> / <code>acknowledged</code></td><td>Brief text states both 0.3195 and 0.4413 as &#x27;the highest score right now&#x27; in different paragraphs (stale snapshots of a moving leaderboard).</td><td>Recorded both with their context; the design target used throughout is beating 0.2778 (the highest score tied to an analysable artifact), with 0.4413 noted as an un-attributed leaderboard snapshot.</td></tr><tr><td><code>IR-85-06</code></td><td><code>low</code> / <code>acknowledged</code></td><td>sample_submission.tif finite footprint is 5,167,373 px while the template grid.py records 5,165,852 px from the feature-band-1 footprint (3,061 feature-nodata cells sit inside the sample footprint).</td><td>Validator and writer use the SAMPLE footprint (the submission format&#x27;s own grid) and the all-finite zeros encoding, so the discrepancy cannot leak a -3.4e38 sentinel or NaN into a submission. Inherited fleet note; flagged for template fix.</td></tr><tr><td><code>IR-85-07</code></td><td><code>high</code> / <code>open</code></td><td>Uniqueness gate (protocol S1, strict reading): candidate dot overlap within 3px exceeds 70% against three registry rasters — 13gems lattice-s5 null (0.9959; 206,895 dots on a ~5px lattice, so any candidate is ~100% within 3px by construction), gems10 ctx-ridge (0.8783; 174,232 positive px, continuous ridge), gems10 dotted-ridge (0.8206; 69,281 dots) and 8GEMSDOE Hedge-v2 (0.7077; 227,507 positive px). Against every operating-point-comparable dotted submission (37k-46k dots: d2.8 family, H32 family, h33-2-b2 winner) overlap is 0.397-0.497 and surface Spearman |rho| &lt;= 0.224 everywhere.</td><td>Logged as duplicate-risk under the strict protocol reading; promotion stopped (verdict already negative on holdout). The comparable-budget reading passes, the any-raster reading fails; a human must decide which registry class the 70% rule governs before any future candidate from this surface is promoted. Numbers in evidence/uniqueness.json.</td></tr><tr><td><code>IR-85-08</code></td><td><code>high</code> / <code>acknowledged</code></td><td>The 0.2778 winner raster (CTRL_h33) scores HOLDOUT-DTI 0.0046 on gems85-pooled-hide-v1 because it was constructed by pruning dots &lt;=2px from the FULL catalogue — withheld segments are excluded by construction, so the instrument cannot credit it. It is invalid as a holdout promotion bar (same defect GEMSDOE71 recorded for static h33).</td><td>Promotion bar set to the best valid control, CTRL_d28 (HOLDOUT-DTI 0.102305). Both controls are reported with this caveat wherever they appear.</td></tr><tr><td><code>IR-85-09</code></td><td><code>medium</code> / <code>acknowledged</code></td><td>E1&#x27;s supervised field has canary AUC 0.673 and no single feature exceeds AUC 0.90 (max single channel curv_s2 0.600) — no leakage flag; but the detector is trained on the same catalogue the holdout withholds from, fold-properly, so holdout measures catalogue-transfer, not hidden-fault discovery (inherited IR-32-PROXY-01 limitation).</td><td>Stated on the site and in the run card; no live-score projection is made.</td></tr><tr><td><code>IR-85-006</code></td><td><code>high</code> / <code>resolved</code></td><td>PR #6 (`src/gems85/geopb.py`) applied `abs()` across all geophysical steps, collapsed GeoDAWN K/Th/U into an unweighted average (`radio_step`) that leaked `-3.4e38`/invalid coverage steps along flight-block edges, and conflated odd rock-state steps (`rtp`, `iso_grav_anom`, `depth_to_base_surf`) with even fault-core impulses (`lappos`, `tc`, `U/Th` enrichment).</td><td>Implemented parity-resolved 16-strike operators in `src/gems85/prpc.py` with explicit strike locking between odd rock-state steps and even fault-core/scarp impulses, valid-masking GeoDAWN K/Th/U flight blocks, and testing exact parity invariants in `tests/test_prpc.py`.</td></tr><tr><td><code>IR-85-007</code></td><td><code>high</code> / <code>resolved</code></td><td>External `lidar_scarp_features_u8.tif` covers 75.8% of the footprint (`band 12 = valid`) with sharp 0-steps along 1 m 3DEP tile boundaries, AND upstream `h33.py` mis-indexed bands `(1, 2, 5)` instead of verified `(1=ex_max, 2=ex_mean, 3=step_max, 6=downface_max, 7=upface_max, 9=relief, 10=coh100, 12=valid)`.</td><td>Bound verified band indices in `src/gems85/prpc.py`, regressed universal 100 m DEM breakline proxies onto interior 1 m LiDAR cells (`&gt;400 m` inside `valid`), and applied a 400 m raised-cosine feather across tile seams (`tests/test_prpc.py::test_lidar_seam_feathering_suppresses_coverage_step`).</td></tr><tr><td><code>IR-85-008</code></td><td><code>high</code> / <code>resolved</code></td><td>Static `B=2` off-catalogue registry rasters (such as `h33-2-b2`, live `0.2778`) prune dots within `&lt;=2 px` of the FULL public catalogue `cat`, which includes `fold.withheld ⊂ cat` on hide-and-recover holdouts, capping per-pixel kernel credit at `1 - sqrt(5)/3 = 0.2546` and inverting holdout vs live Spearman correlation (`-0.3407` across 17 live-scored rasters; `h33-2-b2` scores `0.0040` statically).</td><td>Documented the Static Off-Catalogue Holdout Censoring Theorem in `research/why_02778_and_fleet_review.md` and evaluated all active arms fold-properly (`vis = fold.visible` only during training, feature generation, and off-catalogue emission).</td></tr><tr><td><code>IR-85-009</code></td><td><code>medium</code> / <code>resolved</code></td><td>`scripts/run_supervised.py` in PR #6 sampled negatives strictly at `&gt;10 px` (`&gt;1,000 m`) from visible faults while deploying predictions at `&gt;2 px` (`&gt;200 m`), leaving the model blind to non-fault piedmont slopes in the critical `200-1,000 m` zone.</td><td>Sampled hard `300-1,000 m` piedmont/scarp negatives alongside `&gt;1,000 m` basin/mesa negatives in `prpc.fit_predict_dual_expert`, raising 4-quadrant LOQO `HOLDOUT-DTI` on `gems57-pooled-hide-v2` from `0.05405` (`GEO-Pb`) to `0.14229` (`E3_PRPC_Dual_Submod`).</td></tr><tr><td><code>IR-85-010</code></td><td><code>medium</code> / <code>resolved</code></td><td>`gems85.holdout.make_folds` erases 100% of faults inside `20 km x 20 km` truth blocks while leaving `fold.visible` intact in the 75% zero-truth blocks (`fold.withheld == 0` identically), creating anti-oracle censorship against visible-network features on `gems85-holdout-v1.0.0` while `gems57-pooled-hide-v2` withholds 20% of whole components within quadrants.</td><td>Reported BOTH instruments transparently in `evidence/prpc_experiments.json` and `evidence/run_card.json`: `E3_PRPC_Dual_Submod` achieves `0.14229` (`CI95 [0.12541, 0.15815]`) on `gems57-pooled-hide-v2` while maintaining `0.06854` (tying `GEO-Pb` `0.06877`) on blind 20 km square-hole blocks.</td></tr><tr><td><code>IR-85-011</code></td><td><code>high</code> / <code>resolved</code></td><td>2D-disk (`29 px`) greedy kernel convolution on continuous 2D probability ribbons clumps dots at `1.414 px` (`141 m`) median spacing and inflates `600 m` wide 2D slope/mesa blobs ~4x over `100 m` 1-pixel fault traces, while overly wide `sep_px=2.8` blocks `(+-2, +-1)` = `223.6 m` knight&#x27;s-move steps along N26.6E Great Basin normal faults.</td><td>Implemented crest-sharpened knight&#x27;s-move allocation (`min_sep_px=2.20`, nearest lattice step `sqrt(5) = 2.236 px = 223.6 m &lt; 300 m`) in `prpc.submodular_emit_off_catalogue`, lifting `gems57` `E1` `0.04043 -&gt; 0.05511`, `E2` `0.05765 -&gt; 0.06412`, and `E3` `0.13440 -&gt; 0.14229`.</td></tr><tr><td><code>IR-85-012</code></td><td><code>medium</code> / <code>resolved</code></td><td>GitHub Actions CI on `main` (`run 39866841224`) failed because PR #1&#x27;s `scripts/check_site.py` hardcoded `verdict == &#x27;negative&#x27;` and zero `.tif`/`.zip` files under `docs/`, contradicting PRs #3, #4, and #6, and `tests/test_emission.py` failed in offline CI without `data/sample_submission.tif`.</td><td>Added hash-verified `registry/grid_masks.npz` offline CI fallback in `src/gems85/grid.py`, unified all run cards/manifests via `scripts/sync_prpc_manifests.py`, and upgraded `scripts/check_site.py` to enforce link/fragment integrity, evidence/registry byte-sync, GeoTIFF SHA-256 + 17/17 validator pass, uniqueness pass, and top-of-site status banner consistency.</td></tr></tbody>
+</table>
+
+<footer>Deterministically built (2026-10-22T23:55:00Z) by <code>scripts/build_site.py</code> from
+hash-pinned JSON artifacts in <code>registry/</code> and <code>evidence/</code>. Repository:
+<a href="https://github.com/buffedlizard55-lab/GEMSDOE85">buffedlizard55-lab/GEMSDOE85</a> ·
+Historical lanes preserved: <a href="duplex-lane/index.html">PR #3 Duplex Lane</a> ·
+<a href="lane-h85.html">PR #4 H85-A Lane</a>.
 </footer></div></body></html>

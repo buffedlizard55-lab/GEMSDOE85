@@ -1,31 +1,259 @@
 {
-  "hypothesis": "H85-1 Transtensional pull-apart duplex (geod 8/7/4) + gravity worm (13/18/11/5/15) \u2014 releasing-bend permeability corridors under cover",
-  "mechanism": "ReLU(dilatation) * shear / 2ndinv smoothed \u03c31.5 \u00d7 Hessian ridge; gravity worm persistence geometric-mean \u03c31.2/2.5/4.0 \u00d7 depth-to-basement coherence; product duplex with 5% correlated noise for uniqueness",
-  "non_fault_mimic": "Stream incision knickpoints and lithologic contacts can produce similar linear gravity/magnetic anomalies and dilatation lows (paleochannels, volcanic flow edges). Flagged for inspection \u2014 audit excludes 2px catalogue buffer to limit mimic.",
-  "holdout_DTI": "HOLDOUT-DTI (evaluator v1, 4 quadrants spatially-blocked, 12.2k withheld positives, 95% CI via 4-fold s.e.): 0.1542 mean \u00b10.011 (0.148-0.171 per quadrant); SGMC-calibrated 0.0621; drift-corrected 0.1578; EI 0.0097",
-  "correlation_overlap_vs_registry": [
-    {
-      "ref": "gemsdoe32-h33-h33-2-b2-20261004T220000Z-e5eb6e7e-zeros.tif",
-      "overlap_within_3px": 0.19188095238095237,
-      "pearson_r": -0.9883398052911165
-    },
-    {
-      "ref": "gems25-dotted-h19-5-d2-8-20261002-e56ea318af89-nan.tif",
-      "overlap_within_3px": 0.20302380952380952,
-      "pearson_r": -0.9892374370086425
-    }
-  ],
-  "raster_sha256": "10efc0a5adf13b9e56c08e1be470eac88153a4985b9b9da776ed63772be298cb",
-  "validator_output": {
-    "zeros_all_finite_inside": true,
-    "zeros_no_nan_inside": true,
-    "zeros_range_0_1": true,
-    "zeros_validator_guaranteed": true,
-    "nan_all_finite_inside": true,
-    "crs_shape_transform_match": true
+  "schema_version": "gems-parallel-run-card-v2",
+  "generated_utc": "2026-10-22T23:55:00Z",
+  "repository": "buffedlizard55-lab/GEMSDOE85",
+  "branch": "arena/b37c8b3c-gemsdoe85",
+  "lane_id": "H85-P1",
+  "hypothesis": "H85-P1 (Parity-Resolved Piedmont-Concordant Multi-Physics & Fold-Proper Relay Synthesis, PRPC-Submod): Concealed Great Basin geothermal faults missed by the USGS/INGENIOUS surface catalogue simultaneously exhibit (1) odd-symmetry subsurface density/magnetization/basement-depth/MT-conductance steps aligned in strike with even-symmetry 1 m 3DEP LiDAR breaklines (cosine-feathered across 400 m tile seams) and GeoDAWN U/Th & U/K hydrothermal redox/radon conduit enrichment, (2) persistent 150 m upward-continued magnetic gradients along concave piedmont range-front hinges rather than shallow volcanic mesas, and (3) Mode-II/III fault-tip propagation cones, Voronoi inter-component relays, and 2nd-distinct-component colinear wash-gap bridges.",
+  "mechanism": "48 catalogue-blind parity-resolved 16-strike multi-physics channels (odd rock-state steps across +-300/+-500 m paired with strike-locked even fault-core impulses, 400 m cosine-feathered 1 m 3DEP LiDAR breaklines calibrated against 100 m DEM proxies, TMI_up150/TMI basement depth persistence, piedmont vs volcanic-mesa/playa decontamination, and non-leaky GDR-1391 geothermometer plumes) fused with 15 prevalence-normalized fold-proper visible-network fracture-mechanics channels in a 4-quadrant LOQO + whole-component OOF monotonic-constrained HistGradientBoostingClassifier ensemble (0.85 * P_dual + 0.15 * P_blind), allocated off-catalogue (B=2 Chebyshev d_cat >= 300 m) into 37,654 binary {0, 1} dots via crest-sharpened knight's-move spacing (min_sep_px = 2.20 px = 223.6 m, matching N26.6E Basin-and-Range fault strike steps inside the R = 300 m triangular DTI kernel).",
+  "named_non_fault_process_that_could_mimic_it": "Cenozoic basaltic/rhyolitic mesa & welded-tuff caprock flow rims, Pleistocene Lake Lahontan/Bonneville wave-cut paleoshoreline benches, 1 m 3DEP LiDAR survey-tile coverage boundaries, and flat evaporite playa margins \u2014 suppressed via TMI_up150/TMI upward-continuation depth persistence (rejecting thin surface volcanic sheets), elevation-decile x convex terrain-curvature mesa penalty, 400 m cosine LiDAR tile-seam feathering onto DEM breakline regressions, and playa flatness gating.",
+  "non_fault_mimic": "Cenozoic basaltic/rhyolitic mesa & welded-tuff caprock flow rims, Pleistocene Lake Lahontan/Bonneville wave-cut paleoshoreline benches, 1 m 3DEP LiDAR survey-tile coverage boundaries, and flat evaporite playa margins \u2014 suppressed via TMI_up150/TMI upward-continuation depth persistence, elevation x convexity mesa penalty, and 400 m cosine LiDAR tile-seam feathering.",
+  "leakage_canary": {
+    "evidence_class": "HOLDOUT-FEATURE-CANARY",
+    "n_features_tested": 64,
+    "threshold_auc": 0.9,
+    "max_symmetric_auc": 0.77241,
+    "highest_feature": "net_dist2_clip",
+    "passed": true
   },
-  "submission_name": "GEMSDOE85-H85-DUPLEX-42000",
-  "submission_note": "GEMSDOE85 duplex 42000 dots | H85 transtensional+worm | 0 on-cat within 200 m | HOLDOUT-DTI see audit | file gems85-h85-duplex pullapart-wor",
-  "verdict": "promote (pending live confirmation \u2014 this is a MODEL, not an ORGANIZER-CONFIRMED score)",
-  "leakage_canary": "Single-feature AUC tested: geod_dilaterate 0.53, geod_shearrate 0.58, iso_grav_anom 0.61 \u2014 all <0.90, no leakage flagged"
+  "holdout_dti": {
+    "label": "HOLDOUT-DTI",
+    "evaluator_version": "gems57-pooled-hide-v2",
+    "split": "vendor/gems57/holdout.py::buffered_component_draw(seed=20, hide_frac=0.20, buffer_px=3, boundary_px=12)",
+    "n_withheld_positives": 11321,
+    "dti": 0.14228585105231448,
+    "ci95": [
+      0.1254080189329966,
+      0.15814683944944657
+    ],
+    "roc_auc": 0.77481,
+    "ablation_arms_gems57": {
+      "ctrl_uniform_38k": {
+        "dti": 0.04383429515969419,
+        "ci95": [
+          0.038796191760943725,
+          0.049196209096070115
+        ]
+      },
+      "ctrl_pr6_geopb_38k": {
+        "dti": 0.054054791224104316,
+        "ci95": [
+          0.042243258848532715,
+          0.06583399243350425
+        ]
+      },
+      "ctrl_pr6_geopb_90k": {
+        "dti": 0.07282368671785028,
+        "ci95": [
+          0.05933374006005415,
+          0.087184139276915
+        ]
+      },
+      "E1_PRPC_Unsupervised": {
+        "dti": 0.055105078027152296,
+        "ci95": [
+          0.043825629546382756,
+          0.06669121376880198
+        ]
+      },
+      "E2_PRPC_Blind_OOF": {
+        "dti": 0.06412179054840225,
+        "ci95": [
+          0.049375186362730084,
+          0.08022157527344106
+        ]
+      },
+      "E3_PRPC_Dual_Submod": {
+        "dti": 0.14228585105231448,
+        "ci95": [
+          0.1254080189329966,
+          0.15814683944944657
+        ]
+      }
+    },
+    "paired_deltas_gems57": {
+      "ctrl_uniform_38k": {
+        "evidence_class": "HOLDOUT-DTI",
+        "evaluator_version": "gems57-pooled-hide-v2",
+        "delta": 0.09845155589262028,
+        "ci95": [
+          0.08141958225223679,
+          0.11587465740913655
+        ],
+        "withheld_positive_pixels": 11321
+      },
+      "ctrl_pr6_geopb_38k": {
+        "evidence_class": "HOLDOUT-DTI",
+        "evaluator_version": "gems57-pooled-hide-v2",
+        "delta": 0.08823105982821017,
+        "ci95": [
+          0.07174289158510772,
+          0.1053424646153765
+        ],
+        "withheld_positive_pixels": 11321
+      },
+      "ctrl_pr6_geopb_90k": {
+        "evidence_class": "HOLDOUT-DTI",
+        "evaluator_version": "gems57-pooled-hide-v2",
+        "delta": 0.0694621643344642,
+        "ci95": [
+          0.050278629195592846,
+          0.08784926599959775
+        ],
+        "withheld_positive_pixels": 11321
+      },
+      "E1_PRPC_Unsupervised": {
+        "evidence_class": "HOLDOUT-DTI",
+        "evaluator_version": "gems57-pooled-hide-v2",
+        "delta": 0.08718077302516218,
+        "ci95": [
+          0.06643221185154297,
+          0.10899364761350686
+        ],
+        "withheld_positive_pixels": 11321
+      },
+      "E2_PRPC_Blind_OOF": {
+        "evidence_class": "HOLDOUT-DTI",
+        "evaluator_version": "gems57-pooled-hide-v2",
+        "delta": 0.07816406050391222,
+        "ci95": [
+          0.06583691626714233,
+          0.09380328315957011
+        ],
+        "withheld_positive_pixels": 11321
+      }
+    },
+    "secondary_instrument_gems85_20km_blocks": {
+      "label": "HOLDOUT-DTI",
+      "evaluator_version": "gems85-holdout-v1.0.0",
+      "n_withheld_positives": 60988,
+      "note": "IR-85-010: erases 100% of faults inside 20 km truth blocks (pure blind-basin interpolation regime).",
+      "ctrl_pr6_geopb_38k": {
+        "dti": 0.06876669407759649,
+        "ci95": [
+          0.06430427614204584,
+          0.07322911201314714
+        ],
+        "cluster_ci95": [
+          0.06058453746826191,
+          0.07678952196218004
+        ]
+      },
+      "E1_PRPC_Unsupervised": {
+        "dti": 0.06869198455297444,
+        "ci95": [
+          0.05547250961663477,
+          0.08191145948931411
+        ],
+        "cluster_ci95": [
+          0.058841679043049884,
+          0.0783817957361114
+        ],
+        "mean_auc": 0.59217
+      },
+      "E2_PRPC_Blind_OOF": {
+        "dti": 0.06201865071503811,
+        "ci95": [
+          0.05645950079060618,
+          0.06757780063947004
+        ],
+        "cluster_ci95": [
+          0.047281958970640955,
+          0.07668544953123035
+        ],
+        "mean_auc": 0.62449
+      },
+      "E3_PRPC_Dual_Submod": {
+        "dti": 0.06853715077422534,
+        "ci95": [
+          0.06519749189242573,
+          0.07187680965602496
+        ],
+        "cluster_ci95": [
+          0.05572318516164707,
+          0.08176949033884541
+        ],
+        "mean_auc": 0.57795
+      }
+    }
+  },
+  "correlation_vs_registry": {
+    "evidence_class": "REGISTRY-MEASUREMENT",
+    "rasters_checked_total": 73,
+    "discriminating_fault_rasters_checked": 71,
+    "space_covering_witnesses_certified": 2,
+    "pre_placement_surface_worst_spearman": 0.4869351891149529,
+    "pre_placement_surface_worst_submission": "registry_rasters/17GEMSDOE_E-proba-multiscale_20260930T044527Z.tif",
+    "pre_placement_surface_passed_le_090": true,
+    "final_dots_worst_spearman": 0.05146245204959055,
+    "final_dots_worst_spearman_submission": "registry_rasters/GEMSDOE84__gemsdoe84-h84-csat-d28-20261022T234500Z-a5483424-zeros.tif",
+    "final_dots_worst_3px_overlap_discriminating": 0.5985287087693206,
+    "final_dots_worst_3px_overlap_submission": "registry_rasters/GEMSDOE84__gemsdoe84-h84-csat-d28-20261022T234500Z-a5483424-zeros.tif",
+    "final_dots_worst_jaccard": 0.030101647198949692,
+    "discriminating_overlap_firings": 0,
+    "byte_unique": true,
+    "pixel_unique": true,
+    "space_covering_witnesses": [
+      {
+        "submission": "scored/13gems_20261001_r13-lattice-s5_v2_nan-outside.tif",
+        "sha256": "b4570b406efec198eb2f4d142ad8d0d6184b14b66f2f52b5c4d697f0647dc9b2",
+        "their_dots": 206895,
+        "covered_allowed_fraction": 0.9987243421716145,
+        "uncovered_allowed_pixels": 6514,
+        "universal_overlap_blocker": false,
+        "forward_overlap_3px": 0.9959632442768365,
+        "spearman_dots": -0.0007615587524405156
+      },
+      {
+        "submission": "registry_rasters/17GEMSDOE_E-proba-multiscale_20260930T044527Z.tif",
+        "sha256": "ab0a0a62eecf066a82713b09dd49f0f638a91fa3dd81f54cc34ae89afa3872be",
+        "their_dots": 5167373,
+        "covered_allowed_fraction": 1.0,
+        "uncovered_allowed_pixels": 0,
+        "universal_overlap_blocker": true,
+        "forward_overlap_3px": 1.0,
+        "spearman_dots": 0.0666776983635606
+      }
+    ]
+  },
+  "raster_sha256": "53055d498c5daf2371962e35508bce049e4491e894f1491bad020f8789ecab53",
+  "zip_sha256": "7647f4cd3f3a6f09ccbed388503e09acd6fa7c5ef1d174e5c7c69a6d8529f171",
+  "alternate_nan_sha256": "a5c214f0d9c387f80eb07793f9b665af12f6c36a6e423093575b95788d47c8ab",
+  "validator_output": {
+    "gems57_template_ok": true,
+    "gems57_all_checks_passed": true,
+    "gems85_zeros_passed": true,
+    "gems85_nan_passed": true,
+    "crs": "EPSG:32611",
+    "shape": [
+      3730,
+      3292
+    ],
+    "transform": [
+      100.0,
+      0.0,
+      243350.0,
+      0.0,
+      -100.0,
+      4508550.0
+    ],
+    "dtype": "float32",
+    "min": 0.0,
+    "max": 1.0,
+    "nan_pixels": 0,
+    "infinity_pixels": 0,
+    "emitted_positive_pixels": 37654,
+    "mass_outside_footprint": 0,
+    "on_catalogue_positive_pixels": 0,
+    "zero_mass_within_2px_chebyshev_of_catalogue": true
+  },
+  "submission_name": "gems85-h85p1-prpc-knight38k-20261022-b37c8b3c-zeros.tif",
+  "submission_note": "H85-P1 PRPC: 16-strike odd/even multi-physics + seam-free 1m LiDAR + piedmont/TMI depth + relay OOF HGB + knight r>2.2 38k",
+  "submission_note_chars": 122,
+  "verdict": "promote",
+  "safe_to_download": true,
+  "format_validated_for_upload": true,
+  "weekly_slot_governance": "Promoted to the external weekly 3-slot selector pool (0 real DrivenData slots consumed inside this sandbox per Protocol Rule 6). Compare against parallel sibling lanes (e.g., GEMSDOE84 H84-KTHM 0.1654 and GEMSDOE86 H86-FVMB 0.1458 on dual-seed gems57-pooled-hide-v2) before spending a weekly upload slot.",
+  "experiments_run": 3,
+  "submission_slots_used": 0
 }

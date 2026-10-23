@@ -1,0 +1,318 @@
+{
+  "gate": "single_feature_holdout_auc_le_0.90",
+  "passed": true,
+  "max_symmetric_auc": 0.77241,
+  "highest_feature": "net_dist2_clip",
+  "n_blind_features_tested": 49,
+  "n_visible_network_features_tested": 15,
+  "blind_features": {
+    "prpc_nms_z": {
+      "auc_gems57": 0.51371,
+      "auc_gems85": 0.51607,
+      "max_symmetric_auc": 0.51607
+    },
+    "prpc_persisted_z": {
+      "auc_gems57": 0.57067,
+      "auc_gems85": 0.5736,
+      "max_symmetric_auc": 0.5736
+    },
+    "prpc_sub_odd_z": {
+      "auc_gems57": 0.53024,
+      "auc_gems85": 0.53432,
+      "max_symmetric_auc": 0.53432
+    },
+    "prpc_surf_odd_z": {
+      "auc_gems57": 0.4989,
+      "auc_gems85": 0.50001,
+      "max_symmetric_auc": 0.5011
+    },
+    "prpc_core_even_z": {
+      "auc_gems57": 0.57489,
+      "auc_gems85": 0.57363,
+      "max_symmetric_auc": 0.57489
+    },
+    "prpc_concord_z": {
+      "auc_gems57": 0.57331,
+      "auc_gems85": 0.5754,
+      "max_symmetric_auc": 0.5754
+    },
+    "prpc_anisotropy_z": {
+      "auc_gems57": 0.51661,
+      "auc_gems85": 0.50897,
+      "max_symmetric_auc": 0.51661
+    },
+    "ex_max_seamfree": {
+      "auc_gems57": 0.568,
+      "auc_gems85": 0.55779,
+      "max_symmetric_auc": 0.568
+    },
+    "lappos_max_seamfree": {
+      "auc_gems57": 0.57649,
+      "auc_gems85": 0.56708,
+      "max_symmetric_auc": 0.57649
+    },
+    "lapneg_max_seamfree": {
+      "auc_gems57": 0.57101,
+      "auc_gems85": 0.56191,
+      "max_symmetric_auc": 0.57101
+    },
+    "step_max_seamfree": {
+      "auc_gems57": 0.56838,
+      "auc_gems85": 0.55681,
+      "max_symmetric_auc": 0.56838
+    },
+    "downface_max_seamfree": {
+      "auc_gems57": 0.57813,
+      "auc_gems85": 0.56524,
+      "max_symmetric_auc": 0.57813
+    },
+    "cross_max_seamfree": {
+      "auc_gems57": 0.57759,
+      "auc_gems85": 0.56397,
+      "max_symmetric_auc": 0.57759
+    },
+    "coh100_seamfree": {
+      "auc_gems57": 0.4951,
+      "auc_gems85": 0.48945,
+      "max_symmetric_auc": 0.51055
+    },
+    "scarp_asymmetry_seamfree": {
+      "auc_gems57": 0.54753,
+      "auc_gems85": 0.54626,
+      "max_symmetric_auc": 0.54753
+    },
+    "scarp_dipole_seamfree": {
+      "auc_gems57": 0.57358,
+      "auc_gems85": 0.56388,
+      "max_symmetric_auc": 0.57358
+    },
+    "det_elev_z": {
+      "auc_gems57": 0.51144,
+      "auc_gems85": 0.48484,
+      "max_symmetric_auc": 0.51516
+    },
+    "elev_1km_z": {
+      "auc_gems57": 0.52214,
+      "auc_gems85": 0.4959,
+      "max_symmetric_auc": 0.52214
+    },
+    "elev_25km_z": {
+      "auc_gems57": 0.52862,
+      "auc_gems85": 0.50663,
+      "max_symmetric_auc": 0.52862
+    },
+    "slope_z": {
+      "auc_gems57": 0.56358,
+      "auc_gems85": 0.55726,
+      "max_symmetric_auc": 0.56358
+    },
+    "tc_z": {
+      "auc_gems57": 0.47073,
+      "auc_gems85": 0.44771,
+      "max_symmetric_auc": 0.55229
+    },
+    "neg_tc_z": {
+      "auc_gems57": 0.5,
+      "auc_gems85": 0.5,
+      "max_symmetric_auc": 0.5
+    },
+    "piedmont_hinge": {
+      "auc_gems57": 0.5,
+      "auc_gems85": 0.5,
+      "max_symmetric_auc": 0.5
+    },
+    "mesa_caprock_penalty": {
+      "auc_gems57": 0.48833,
+      "auc_gems85": 0.46842,
+      "max_symmetric_auc": 0.53158
+    },
+    "rtp_z": {
+      "auc_gems57": 0.51812,
+      "auc_gems85": 0.49736,
+      "max_symmetric_auc": 0.51812
+    },
+    "tmi_hg_z": {
+      "auc_gems57": 0.52867,
+      "auc_gems85": 0.52665,
+      "max_symmetric_auc": 0.52867
+    },
+    "tmi_vg_z": {
+      "auc_gems57": 0.48705,
+      "auc_gems85": 0.48642,
+      "max_symmetric_auc": 0.51358
+    },
+    "tmi_up150_z": {
+      "auc_gems57": 0.50902,
+      "auc_gems85": 0.48988,
+      "max_symmetric_auc": 0.51012
+    },
+    "grad_tmi_up150_z": {
+      "auc_gems57": 0.5287,
+      "auc_gems85": 0.52795,
+      "max_symmetric_auc": 0.5287
+    },
+    "mag_depth_persistence": {
+      "auc_gems57": 0.48388,
+      "auc_gems85": 0.47943,
+      "max_symmetric_auc": 0.52057
+    },
+    "iso_grav_z": {
+      "auc_gems57": 0.45939,
+      "auc_gems85": 0.4594,
+      "max_symmetric_auc": 0.54061
+    },
+    "iso_grav_hg_z": {
+      "auc_gems57": 0.49242,
+      "auc_gems85": 0.49918,
+      "max_symmetric_auc": 0.50758
+    },
+    "iso_grav_vg_z": {
+      "auc_gems57": 0.51473,
+      "auc_gems85": 0.5274,
+      "max_symmetric_auc": 0.5274
+    },
+    "iso_grav_slope_z": {
+      "auc_gems57": 0.52386,
+      "auc_gems85": 0.53364,
+      "max_symmetric_auc": 0.53364
+    },
+    "depth_base_z": {
+      "auc_gems57": 0.52458,
+      "auc_gems85": 0.51133,
+      "max_symmetric_auc": 0.52458
+    },
+    "cond_surf_z": {
+      "auc_gems57": 0.47803,
+      "auc_gems85": 0.48357,
+      "max_symmetric_auc": 0.52197
+    },
+    "rad_redox_conduit": {
+      "auc_gems57": 0.51032,
+      "auc_gems85": 0.5409,
+      "max_symmetric_auc": 0.5409
+    },
+    "UTh_z": {
+      "auc_gems57": 0.50922,
+      "auc_gems85": 0.54026,
+      "max_symmetric_auc": 0.54026
+    },
+    "ThK_z": {
+      "auc_gems57": 0.50337,
+      "auc_gems85": 0.48445,
+      "max_symmetric_auc": 0.51555
+    },
+    "geod_2ndinv_z": {
+      "auc_gems57": 0.56677,
+      "auc_gems85": 0.57009,
+      "max_symmetric_auc": 0.57009
+    },
+    "geod_shearrate_z": {
+      "auc_gems57": 0.5662,
+      "auc_gems85": 0.56922,
+      "max_symmetric_auc": 0.56922
+    },
+    "geod_dilaterate_z": {
+      "auc_gems57": 0.51659,
+      "auc_gems85": 0.52576,
+      "max_symmetric_auc": 0.52576
+    },
+    "ieq_z": {
+      "auc_gems57": 0.54249,
+      "auc_gems85": 0.5679,
+      "max_symmetric_auc": 0.5679
+    },
+    "deq_z": {
+      "auc_gems57": 0.53645,
+      "auc_gems85": 0.55021,
+      "max_symmetric_auc": 0.55021
+    },
+    "hydro_meas_1km": {
+      "auc_gems57": 0.49312,
+      "auc_gems85": 0.50803,
+      "max_symmetric_auc": 0.50803
+    },
+    "hydro_geotherm_2km": {
+      "auc_gems57": 0.48716,
+      "auc_gems85": 0.50432,
+      "max_symmetric_auc": 0.51284
+    },
+    "hydro_prox": {
+      "auc_gems57": 0.48171,
+      "auc_gems85": 0.49578,
+      "max_symmetric_auc": 0.51829
+    },
+    "volcanic_vent_2km": {
+      "auc_gems57": 0.49044,
+      "auc_gems85": 0.48864,
+      "max_symmetric_auc": 0.51136
+    },
+    "e1_unsupervised_surface": {
+      "auc_gems57": 0.56608,
+      "auc_gems85": 0.59204,
+      "max_symmetric_auc": 0.59204
+    }
+  },
+  "visible_network_features": {
+    "net_dist1_clip": {
+      "auc_gems57": 0.24493,
+      "max_symmetric_auc": 0.75507
+    },
+    "net_log_dist1": {
+      "auc_gems57": 0.24502,
+      "max_symmetric_auc": 0.75498
+    },
+    "net_along_strike_1": {
+      "auc_gems57": 0.58552,
+      "max_symmetric_auc": 0.58552
+    },
+    "net_prpc_strike_align_1": {
+      "auc_gems57": 0.52203,
+      "max_symmetric_auc": 0.52203
+    },
+    "net_d_medial_clip": {
+      "auc_gems57": 0.34718,
+      "max_symmetric_auc": 0.65282
+    },
+    "net_dist2_clip": {
+      "auc_gems57": 0.22759,
+      "max_symmetric_auc": 0.77241
+    },
+    "net_bridge_opposition": {
+      "auc_gems57": 0.57229,
+      "max_symmetric_auc": 0.57229
+    },
+    "net_strike_coherence_12": {
+      "auc_gems57": 0.50246,
+      "max_symmetric_auc": 0.50246
+    },
+    "net_colinear_wash_gap": {
+      "auc_gems57": 0.58558,
+      "max_symmetric_auc": 0.58558
+    },
+    "net_relay_stepover": {
+      "auc_gems57": 0.57967,
+      "max_symmetric_auc": 0.57967
+    },
+    "net_tip_cone_short": {
+      "auc_gems57": 0.76796,
+      "max_symmetric_auc": 0.76796
+    },
+    "net_tip_cone_long": {
+      "auc_gems57": 0.74284,
+      "max_symmetric_auc": 0.74284
+    },
+    "net_piedmont_splay_band": {
+      "auc_gems57": 0.73327,
+      "max_symmetric_auc": 0.73327
+    },
+    "net_density_3km": {
+      "auc_gems57": 0.73208,
+      "max_symmetric_auc": 0.73208
+    },
+    "net_density_8km": {
+      "auc_gems57": 0.6642,
+      "max_symmetric_auc": 0.6642
+    }
+  },
+  "runtime_s": 39.39
+}
