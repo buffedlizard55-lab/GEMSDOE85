@@ -1,0 +1,645 @@
+{
+  "schema_version": 2,
+  "generated_utc": "2026-10-23T15:46:29+00:00",
+  "git_sha": "f2d6e4e9bd481bd73a76bc2c21642f038984595d",
+  "python": "3.11.2",
+  "date_tag": "20261023",
+  "pins": {
+    "h19_5": {
+      "path": "data/scored/gems19-h19-5-powerlaw-budget-multiline-corroborated-20260930-e27054cf-nan.tif",
+      "sha256": "ec1f9b56b83ce33cad781ceb9f104b18fb4f2ff785263a4e89616af4aabdee8d",
+      "bytes": 1712322
+    },
+    "d28": {
+      "path": "data/scored/gems24-h25-1-dotted-h19-5-d2-8-20261002-e56ea318af89-nan.tif",
+      "sha256": "91eae1ca42ec845eaa8c2ba32da49806e24751743459b8a10017c479bbe639b8",
+      "bytes": 1603424
+    },
+    "solo_d28": {
+      "path": "data/registry_rasters/gemsdoe31-h27-4-solo-d28-20261004-8acb75e1-nan.tif",
+      "sha256": "07b6db440535404bb41ec8ddc797713e200d308e3da35937393efde5eb84bc40",
+      "bytes": 199214
+    },
+    "r0_zeros": {
+      "path": "data/registry_rasters/gemsdoe32-h33-h33-2-b2-20261004T220000Z-e5eb6e7e-zeros.tif",
+      "sha256": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
+      "bytes": 219065
+    },
+    "r0_nan": {
+      "path": "data/registry_rasters/gemsdoe32-h33-h33-2-b2-20261004T220000Z-e5eb6e7e-nan.tif",
+      "sha256": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
+      "bytes": 355443
+    },
+    "labels": {
+      "path": "data/labels.tif",
+      "sha256": "7ba308ccdc4418b31a178f4f1ef21aaa6e152e4028f2f6f64b01f7eb25ae4093",
+      "bytes": 425830
+    },
+    "sample_submission": {
+      "path": "data/sample_submission.tif",
+      "sha256": "2176d08e485aa2cd2860ce8df539db4faf4d76163b38a4dd8c30a40454d35cbc",
+      "bytes": 1599597
+    }
+  },
+  "external_pins": {
+    "ext_lidar_scarp_features_u8": {
+      "path": "data/external/lidar_scarp_features_u8.tif",
+      "sha256": "d580bb8bdcdb941e32fefb8b38044bc5bf04e199bf2e83498c3576e6fc465568",
+      "bytes": 36943606
+    },
+    "ext_geodawn_extensions_u8": {
+      "path": "data/external/geodawn_extensions_u8.tif",
+      "sha256": "a35a9c6d2a14786f4dab85481ee59769213072f5dab5b2535ea82ae4d9bb7d9b",
+      "bytes": 27132925
+    },
+    "ext_derived_sgmc_faults_100m_u8": {
+      "path": "data/external/derived_sgmc_faults_100m_u8.tif",
+      "sha256": "643cbe992ef4ba37588fb469163ed8291e3ceb23d6c1f78a3cfaa462430c2da0",
+      "bytes": 198602
+    },
+    "training_features": {
+      "path": "data/training_features.tif",
+      "sha256": "4371c82e3b8339b807bdffcf4ef59a225520fe2988d521be208ae33743123bc5",
+      "bytes": 418912844
+    }
+  },
+  "parent_rebuild": {
+    "counts": {
+      "skeleton": 121131,
+      "d28": 44090,
+      "solo": 40199,
+      "r0": 37654
+    },
+    "pixel_identical_to_pinned": true,
+    "r0_nan_sha256": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
+    "r0_zeros_sha256": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9"
+  },
+  "response_fields": {
+    "lidar": {
+      "field": "lidar_scarp",
+      "bands": [
+        "step_max",
+        "lapneg_max",
+        "downface_max"
+      ],
+      "coverage_fraction": 0.31716013147479144,
+      "per_band": {
+        "step_max": {
+          "mean_on_coverage": 69.57255554199219,
+          "p99_on_coverage": 183.0
+        },
+        "lapneg_max": {
+          "mean_on_coverage": 86.9587173461914,
+          "p99_on_coverage": 236.0
+        },
+        "downface_max": {
+          "mean_on_coverage": 55.15107727050781,
+          "p99_on_coverage": 163.0
+        }
+      },
+      "definition": "mean(step_max, lapneg_max, downface_max)/255 masked by band 'valid'",
+      "coverage_fraction_of_footprint": 0.7537
+    },
+    "tmi": {
+      "field": "tmi_edge",
+      "band": "TMI_up150",
+      "sigma_px": 1.5,
+      "p99": 20.99127197265625,
+      "coverage_fraction": 0.4205753488023611,
+      "definition": "|grad(gauss(TMI_up150, sigma=1.5 px))| / p99(in-footprint), nodata collar removed",
+      "coverage_fraction_of_footprint": 0.9994
+    },
+    "lidar_bands": [
+      "step_max",
+      "lapneg_max",
+      "downface_max"
+    ]
+  },
+  "variants": {
+    "snap-ridge-lidar2": {
+      "id": "snap-ridge-lidar2-20261023-6913d029",
+      "parent": "h33-h33-2-b2 (R0, GEMSDOE32 e5eb6e7e)",
+      "parent_nan_sha256": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
+      "parent_zeros_sha256": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
+      "axis": "SNAP",
+      "value": "on-ridge (dest subset of parent skeleton), cap 2 px, lidar scarp",
+      "field": "lidar_scarp",
+      "snap": {
+        "cap_px": 2.0,
+        "min_sep": 2.0,
+        "min_cat_dist": 3.0,
+        "confined": true,
+        "n_dots": 37654,
+        "n_moved": 8384,
+        "pct_moved": 22.266,
+        "n_with_candidate": 22573,
+        "pct_with_candidate": 59.948,
+        "n_blocked_by_separation": 3350,
+        "mean_displacement_moved_px": 1.209,
+        "mean_displacement_all_px": 0.2692,
+        "max_displacement_px": 2.0,
+        "mean_response_gain_moved": 0.152484,
+        "mean_response_parent": 0.290915,
+        "mean_response_final": 0.309929,
+        "n_dots_response_supported": 28762,
+        "support_coverage_parent": 0.63341,
+        "support_coverage_variant": 0.62456,
+        "support_coverage_delta_pct": -1.398,
+        "pair": {
+          "parent_dots": 37654,
+          "variant_dots": 37654,
+          "dots_removed": 8384,
+          "dots_added": 8384,
+          "unchanged": 29270,
+          "pct_changed": 44.532,
+          "jaccard": 0.6358,
+          "min_inter_dot_px": 2.0,
+          "mean_nn_px": 3.5692
+        }
+      },
+      "nan": {
+        "mode": "nan",
+        "filename": "snap-ridge-lidar2-20261023-6913d029.tif",
+        "bytes": 332766,
+        "sha256": "6913d029a6941e0519bedc08d9d839f75afd1fc508dd5406b357fdd8408c1230",
+        "sha8": "6913d029",
+        "crs": "EPSG:32611",
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "shape": [
+          3730,
+          3292
+        ],
+        "dtype": "float32",
+        "nodata": "nan",
+        "positive_pixels": 37654,
+        "emitted_mass": 37654.0,
+        "min": 0.0,
+        "max": 1.0,
+        "on_catalogue_px": 0,
+        "within_2px_catalogue_px": 0,
+        "within_3px_catalogue_px": 1839,
+        "min_distance_to_catalogue_px": 2.23606797749979,
+        "checks": {
+          "single_band": true,
+          "dtype_float32": true,
+          "shape_matches_sample": true,
+          "crs_matches_sample": true,
+          "transform_matches_sample": true,
+          "footprint_pixels_match_sample": true,
+          "no_nan_inside_footprint": true,
+          "no_inf_anywhere": true,
+          "values_in_0_1_inside_footprint": true,
+          "binary_values_only": true,
+          "zero_mass_on_catalogue": true,
+          "nodata_is_nan": true,
+          "outside_footprint_all_nan": true
+        },
+        "all_checks_passed": true
+      },
+      "zeros": {
+        "mode": "zeros",
+        "filename": "snap-ridge-lidar2-20261023-6913d029-zeros.tif",
+        "bytes": 206116,
+        "sha256": "4f569703c9b3ae3482d7278c6d84df770b4d465d1810591a9d258c6d02d84349",
+        "sha8": "4f569703",
+        "crs": "EPSG:32611",
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "shape": [
+          3730,
+          3292
+        ],
+        "dtype": "float32",
+        "nodata": null,
+        "positive_pixels": 37654,
+        "emitted_mass": 37654.0,
+        "min": 0.0,
+        "max": 1.0,
+        "on_catalogue_px": 0,
+        "within_2px_catalogue_px": 0,
+        "within_3px_catalogue_px": 1839,
+        "min_distance_to_catalogue_px": 2.23606797749979,
+        "checks": {
+          "single_band": true,
+          "dtype_float32": true,
+          "shape_matches_sample": true,
+          "crs_matches_sample": true,
+          "transform_matches_sample": true,
+          "footprint_pixels_match_sample": true,
+          "no_nan_inside_footprint": true,
+          "no_inf_anywhere": true,
+          "values_in_0_1_inside_footprint": true,
+          "binary_values_only": true,
+          "zero_mass_on_catalogue": true,
+          "nodata_is_none": true,
+          "all_finite_whole_grid": true,
+          "whole_grid_in_0_1": true
+        },
+        "all_checks_passed": true
+      },
+      "submission_note": "R0 h33-2-b2 SNAP: 22% dots slide <=2px along ridge to peak lidar-scarp response; count/mass fixed; pred +0.001 MODEL; UNSCORED",
+      "all_gates_passed": true
+    },
+    "snap-ridge-tmi2": {
+      "id": "snap-ridge-tmi2-20261023-de094d8e",
+      "parent": "h33-h33-2-b2 (R0, GEMSDOE32 e5eb6e7e)",
+      "parent_nan_sha256": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
+      "parent_zeros_sha256": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
+      "axis": "SNAP",
+      "value": "on-ridge (dest subset of parent skeleton), cap 2 px, TMI edge",
+      "field": "tmi_edge",
+      "snap": {
+        "cap_px": 2.0,
+        "min_sep": 2.0,
+        "min_cat_dist": 3.0,
+        "confined": true,
+        "n_dots": 37654,
+        "n_moved": 11412,
+        "pct_moved": 30.308,
+        "n_with_candidate": 31824,
+        "pct_with_candidate": 84.517,
+        "n_blocked_by_separation": 4533,
+        "mean_displacement_moved_px": 1.2452,
+        "mean_displacement_all_px": 0.3774,
+        "max_displacement_px": 2.0,
+        "mean_response_gain_moved": 0.069971,
+        "mean_response_parent": 0.190901,
+        "mean_response_final": 0.201837,
+        "n_dots_response_supported": 37296,
+        "support_coverage_parent": 0.63341,
+        "support_coverage_variant": 0.61891,
+        "support_coverage_delta_pct": -2.29,
+        "pair": {
+          "parent_dots": 37654,
+          "variant_dots": 37654,
+          "dots_removed": 11412,
+          "dots_added": 11412,
+          "unchanged": 26242,
+          "pct_changed": 60.615,
+          "jaccard": 0.5348,
+          "min_inter_dot_px": 2.0,
+          "mean_nn_px": 3.5078
+        }
+      },
+      "nan": {
+        "mode": "nan",
+        "filename": "snap-ridge-tmi2-20261023-de094d8e.tif",
+        "bytes": 332816,
+        "sha256": "de094d8e89834cfc571a9d409248a1aa0363e4d0cbd6ea470e44ed07bfedec43",
+        "sha8": "de094d8e",
+        "crs": "EPSG:32611",
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "shape": [
+          3730,
+          3292
+        ],
+        "dtype": "float32",
+        "nodata": "nan",
+        "positive_pixels": 37654,
+        "emitted_mass": 37654.0,
+        "min": 0.0,
+        "max": 1.0,
+        "on_catalogue_px": 0,
+        "within_2px_catalogue_px": 0,
+        "within_3px_catalogue_px": 1786,
+        "min_distance_to_catalogue_px": 2.23606797749979,
+        "checks": {
+          "single_band": true,
+          "dtype_float32": true,
+          "shape_matches_sample": true,
+          "crs_matches_sample": true,
+          "transform_matches_sample": true,
+          "footprint_pixels_match_sample": true,
+          "no_nan_inside_footprint": true,
+          "no_inf_anywhere": true,
+          "values_in_0_1_inside_footprint": true,
+          "binary_values_only": true,
+          "zero_mass_on_catalogue": true,
+          "nodata_is_nan": true,
+          "outside_footprint_all_nan": true
+        },
+        "all_checks_passed": true
+      },
+      "zeros": {
+        "mode": "zeros",
+        "filename": "snap-ridge-tmi2-20261023-de094d8e-zeros.tif",
+        "bytes": 206284,
+        "sha256": "6e58c265546a321fd6c9cc63210d202e7372170c56702a94a6dd2bbd91739346",
+        "sha8": "6e58c265",
+        "crs": "EPSG:32611",
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "shape": [
+          3730,
+          3292
+        ],
+        "dtype": "float32",
+        "nodata": null,
+        "positive_pixels": 37654,
+        "emitted_mass": 37654.0,
+        "min": 0.0,
+        "max": 1.0,
+        "on_catalogue_px": 0,
+        "within_2px_catalogue_px": 0,
+        "within_3px_catalogue_px": 1786,
+        "min_distance_to_catalogue_px": 2.23606797749979,
+        "checks": {
+          "single_band": true,
+          "dtype_float32": true,
+          "shape_matches_sample": true,
+          "crs_matches_sample": true,
+          "transform_matches_sample": true,
+          "footprint_pixels_match_sample": true,
+          "no_nan_inside_footprint": true,
+          "no_inf_anywhere": true,
+          "values_in_0_1_inside_footprint": true,
+          "binary_values_only": true,
+          "zero_mass_on_catalogue": true,
+          "nodata_is_none": true,
+          "all_finite_whole_grid": true,
+          "whole_grid_in_0_1": true
+        },
+        "all_checks_passed": true
+      },
+      "submission_note": "R0 h33-2-b2 SNAP: 30% dots slide <=2px along ridge to peak TMI-edge response; count/mass fixed; pred 0.000 MODEL; UNSCORED",
+      "all_gates_passed": true
+    },
+    "snap-free-lidar2": {
+      "id": "snap-free-lidar2-20261023-ac3fc128",
+      "parent": "h33-h33-2-b2 (R0, GEMSDOE32 e5eb6e7e)",
+      "parent_nan_sha256": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
+      "parent_zeros_sha256": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
+      "axis": "SNAP",
+      "value": "free window (brief-literal), cap 2 px, lidar scarp",
+      "field": "lidar_scarp",
+      "snap": {
+        "cap_px": 2.0,
+        "min_sep": 2.0,
+        "min_cat_dist": 3.0,
+        "confined": false,
+        "n_dots": 37654,
+        "n_moved": 21441,
+        "pct_moved": 56.942,
+        "n_with_candidate": 22573,
+        "pct_with_candidate": 59.948,
+        "n_blocked_by_separation": 4657,
+        "mean_displacement_moved_px": 1.4926,
+        "mean_displacement_all_px": 0.8499,
+        "max_displacement_px": 2.0,
+        "mean_response_gain_moved": 0.130695,
+        "mean_response_parent": 0.290915,
+        "mean_response_final": 0.361226,
+        "n_dots_response_supported": 28762,
+        "support_coverage_parent": 0.63341,
+        "support_coverage_variant": 0.51368,
+        "support_coverage_delta_pct": -18.903,
+        "pair": {
+          "parent_dots": 37654,
+          "variant_dots": 37654,
+          "dots_removed": 21441,
+          "dots_added": 21441,
+          "unchanged": 16213,
+          "pct_changed": 113.884,
+          "jaccard": 0.2744,
+          "min_inter_dot_px": 2.0,
+          "mean_nn_px": 3.6062
+        }
+      },
+      "nan": {
+        "mode": "nan",
+        "filename": "snap-free-lidar2-20261023-ac3fc128.tif",
+        "bytes": 332727,
+        "sha256": "ac3fc128de9f9c9e320b20b6be04ba2d81b62727d3875d08dd60e5974d020519",
+        "sha8": "ac3fc128",
+        "crs": "EPSG:32611",
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "shape": [
+          3730,
+          3292
+        ],
+        "dtype": "float32",
+        "nodata": "nan",
+        "positive_pixels": 37654,
+        "emitted_mass": 37654.0,
+        "min": 0.0,
+        "max": 1.0,
+        "on_catalogue_px": 0,
+        "within_2px_catalogue_px": 0,
+        "within_3px_catalogue_px": 1219,
+        "min_distance_to_catalogue_px": 2.23606797749979,
+        "checks": {
+          "single_band": true,
+          "dtype_float32": true,
+          "shape_matches_sample": true,
+          "crs_matches_sample": true,
+          "transform_matches_sample": true,
+          "footprint_pixels_match_sample": true,
+          "no_nan_inside_footprint": true,
+          "no_inf_anywhere": true,
+          "values_in_0_1_inside_footprint": true,
+          "binary_values_only": true,
+          "zero_mass_on_catalogue": true,
+          "nodata_is_nan": true,
+          "outside_footprint_all_nan": true
+        },
+        "all_checks_passed": true
+      },
+      "zeros": {
+        "mode": "zeros",
+        "filename": "snap-free-lidar2-20261023-ac3fc128-zeros.tif",
+        "bytes": 205964,
+        "sha256": "474124ddb17e20d7c2a6dc2dfffccbac64fce6ebb24cdeafecd8aaa659c1a30b",
+        "sha8": "474124dd",
+        "crs": "EPSG:32611",
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "shape": [
+          3730,
+          3292
+        ],
+        "dtype": "float32",
+        "nodata": null,
+        "positive_pixels": 37654,
+        "emitted_mass": 37654.0,
+        "min": 0.0,
+        "max": 1.0,
+        "on_catalogue_px": 0,
+        "within_2px_catalogue_px": 0,
+        "within_3px_catalogue_px": 1219,
+        "min_distance_to_catalogue_px": 2.23606797749979,
+        "checks": {
+          "single_band": true,
+          "dtype_float32": true,
+          "shape_matches_sample": true,
+          "crs_matches_sample": true,
+          "transform_matches_sample": true,
+          "footprint_pixels_match_sample": true,
+          "no_nan_inside_footprint": true,
+          "no_inf_anywhere": true,
+          "values_in_0_1_inside_footprint": true,
+          "binary_values_only": true,
+          "zero_mass_on_catalogue": true,
+          "nodata_is_none": true,
+          "all_finite_whole_grid": true,
+          "whole_grid_in_0_1": true
+        },
+        "all_checks_passed": true
+      },
+      "submission_note": "R0 h33-2-b2 SNAP control: 57% dots move <=2px to lidar-scarp peak anywhere in window; count fixed; pred -0.004 MODEL; UNSCORED",
+      "all_gates_passed": true
+    }
+  },
+  "sgmc_proxy": {
+    "R0_parent": {
+      "sgmc": 0.08938,
+      "sgmc_minus_catalogue_3px": 0.09539
+    },
+    "snap-ridge-lidar2": {
+      "sgmc": 0.0874,
+      "sgmc_minus_catalogue_3px": 0.09396
+    },
+    "snap-ridge-tmi2": {
+      "sgmc": 0.08638,
+      "sgmc_minus_catalogue_3px": 0.09338
+    },
+    "snap-free-lidar2": {
+      "sgmc": 0.08673,
+      "sgmc_minus_catalogue_3px": 0.09591
+    }
+  },
+  "catalogue_hide_and_recover_proxy": {
+    "R0_parent": {
+      "pooled": 0.00479,
+      "n_withheld_positives": 60988,
+      "per_fold": [
+        0.00504,
+        0.00484,
+        0.00431,
+        0.00493
+      ],
+      "ci95": [
+        0.00447,
+        0.00511
+      ]
+    },
+    "snap-ridge-lidar2": {
+      "pooled": 0.00781,
+      "n_withheld_positives": 60988,
+      "per_fold": [
+        0.00823,
+        0.00743,
+        0.00732,
+        0.00829
+      ],
+      "ci95": [
+        0.00731,
+        0.00831
+      ]
+    },
+    "snap-ridge-tmi2": {
+      "pooled": 0.0094,
+      "n_withheld_positives": 60988,
+      "per_fold": [
+        0.00903,
+        0.0095,
+        0.0093,
+        0.00981
+      ],
+      "ci95": [
+        0.00908,
+        0.00973
+      ]
+    },
+    "snap-free-lidar2": {
+      "pooled": 0.0135,
+      "n_withheld_positives": 60988,
+      "per_fold": [
+        0.01511,
+        0.01222,
+        0.01223,
+        0.01451
+      ],
+      "ci95": [
+        0.01202,
+        0.01498
+      ]
+    }
+  },
+  "canary": {
+    "n_positives": 60988,
+    "n_background": 200000,
+    "best_single_feature": "train:geod_2ndinv - Geodetic second invariant - measure of strain rate tensor magnitude",
+    "best_single_feature_auc": 0.5696,
+    "threshold": 0.9,
+    "verdict": "CLEAN",
+    "features_scored": {
+      "train:mag_anom - Magnetic anomaly - deviation from expected Earth's magnetic field": 0.509,
+      "train:rtp - Reduced to pole magnetic data - magnetic anomaly corrected for latitude effects": 0.503,
+      "train:tmi_hg - Total magnetic intensity horizontal gradient - rate of change in horizontal direction": 0.5264,
+      "train:geod_2ndinv - Geodetic second invariant - measure of strain rate tensor magnitude": 0.5696,
+      "train:iso_grav_anom_slope - Isostatic gravity anomaly slope - gradient of gravity after isostatic correction": 0.533,
+      "train:tc - Tilt angle or total curvature - magnetic field derivative for edge detection": 0.5527,
+      "train:geod_shearrate - Geodetic shear rate - rate of angular deformation from GPS/InSAR": 0.5684,
+      "train:geod_dilaterate - Geodetic dilatation rate - rate of volumetric strain (expansion/contraction)": 0.5251,
+      "train:tmi_vg - Total magnetic intensity vertical gradient - rate of change in vertical direction": 0.5139,
+      "train:deq_n100a15 - Distance to earthquake (n=100km radius, a=15\u00b0 azimuth parameters)": 0.5498,
+      "train:iso_grav_anom_vg - Isostatic gravity anomaly vertical gradient - vertical rate of change": 0.5265,
+      "train:det_elev - Detrended elevation - topography with regional trends removed": 0.5155,
+      "train:iso_grav_anom - Isostatic gravity anomaly - gravity after compensating for topographic mass": 0.5406,
+      "train:tmi - Total magnetic intensity - total strength of magnetic field": 0.5117,
+      "train:depth_to_base_surf - Depth to basement surface - thickness of sedimentary cover": 0.5109,
+      "train:ieq_n100a15 - Earthquake intensity or density (n=100km radius, a=15\u00b0 parameters)": 0.568,
+      "train:cond_surf - Conductivity surface - electrical conductivity of subsurface": 0.5179,
+      "train:iso_grav_anom_hg - Isostatic gravity anomaly horizontal gradient - horizontal rate of change": 0.5001,
+      "train:det_elev_slope - Detrended elevation slope - gradient of elevation after detrending": 0.5574,
+      "response:lidar_scarp": 0.5676,
+      "response:tmi_edge": 0.5244
+    },
+    "note": "Report only. A feature derived from the full catalogue would score ~1.0; 0.90 is the stop threshold."
+  },
+  "predictions": {
+    "snap-ridge-lidar2": "+0.001 (-0.006 to +0.008) MODEL",
+    "snap-ridge-tmi2": "0.000 (-0.008 to +0.008) MODEL",
+    "snap-free-lidar2": "-0.004 (-0.012 to +0.004) MODEL"
+  },
+  "note": "Proxies are local holdouts reported for context; they are not scores. No DrivenData access, no submission, no slot spent by this script."
+}

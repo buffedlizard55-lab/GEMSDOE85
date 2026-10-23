@@ -1,7 +1,9 @@
 # AI-use disclosure
 
-Two v2 sessions are recorded. The first (2026-10-22/23, `arena/cf29702c`) stopped BLOCKED; the
-second (2026-10-23, `arena/e081f5da`) cleared the rebuild blocker and built the PRUNE variants.
+Four v2 sessions plus a "session 3" are recorded. (1) 2026-10-22/23, `arena/cf29702c` — stopped BLOCKED. (2) 2026-10-23,
+`arena/e081f5da` — cleared the rebuild blocker and built the PRUNE variants. (3) 2026-10-23,
+`arena/30dcc7f0` — re-verification turn, no raster built. (4) 2026-10-23, `arena/a9cc6c47` — built the
+SNAP variants; its entry starts at "What the AI agent did (SNAP session)".
 
 ## 2026-10-23 — arena/cf29702c-gemsdoe85 (kept verbatim)
 - Human supplied the v2 brief, R0 identity, evidence policy, allowed axes, quota and no-submission constraints. Human did **not** assign AXIS, provide TOP_PUBLIC, receipts or remaining quota.
@@ -62,31 +64,94 @@ result, and the SGMC-proxy bias calibration (+0.0083) used to state the predicti
 
 ---
 
-# Generative-AI Disclosure — `arena/3dd0b94c-gemsdoe85`, 2026-10-23 (`AXIS = RELIEF`)
+## 2026-10-23 — session 3, branch `arena/cbdb023a-gemsdoe85`
 
-## AI wrote in this session
+### What the AI agent wrote / ran
 
-- `src/gems85/relief_lineage.py` — manifest/lineage SHA-256 verification (all 28 restored inputs),
-  byte-exact GeoTIFF regeneration check for parent `R0` (`baeae321…` NaN and `c55bafc4…` zeros),
-  equal-area Basin / Piedmont / Range-front terciles (`0.70 · pct_rank(det_elev) + 0.30 · pct_rank(det_elev_slope)`),
-  label-free physical+ancestor ridge prominence ranking, and deterministic 2.8 px-spaced fixed-count
-  (`37,654`) tercile exchange enforcing `d_cat > 3.0 px`.
-- `scripts/gemsdoe85_relief_session.py` — end-to-end build, disk re-read format/collar/dedupe validator,
-  report-only diagnostics (`gems57-pooled-hide-v2` 95 % CI on `n = 11,321` withheld positives,
-  `sgmc`/`sgmc_minus_catalogue_3px` 95 % CI, 19-band leakage canary), `evidence/session_relief_receipt.json`
-  (+ `docs/evidence/` mirror), and idempotent `ledger/submissions.csv` append for `reliefp2r10`
-  (`669f0637`), `reliefbp2r15` (`21af1eee`), and `reliefr2bp10` (`7a0329ee`).
-- `tests/test_relief_lineage.py` (and axis-filter update in `tests/test_r0_lineage.py`), plus
-  `docs/mechanism_cards_relief.md`, `SLOT_PLAN.md`, `docs/SUBMIT.md`, the `CURRENT STATE` block in
-  `README.md`, and `IR-V2-13 … IR-V2-15` in `IRREGULARITIES.md`.
+- Restored every pinned input and verified SHA-256 before use (`scripts/restore_data.py`), including a
+  one-line fix so manifest paths with subdirectories can be restored at all (IR-V3-01). Rebuilt R0 from
+  its pinned ancestors and asserted pixel identity (37,654 dots).
+- Ran the axis feasibility measurements — SNAP destination availability at four separation floors, the
+  SNAP probe (18,065 dots / 48 % moved at a 2.0 px floor, −1.2 % unique credit), and the 1-km block
+  prior / destination capacity (26 cells) — **before** choosing an axis (IR-V3-02).
+- Wrote `scripts/gemsdoe85_rung_session.py` (new), the three fractional PRUNE rungs, all gate checks,
+  `evidence/session_rung_receipt.json`, the ledger rows, `docs/mechanism_cards_rung.md`, `SLOT_PLAN.md`,
+  `docs/SUBMIT.md`, the README CURRENT STATE block and the IR-V3 items.
+- Wrote the mechanism cards and the predictions. No model was trained; no new geophysical hypothesis
+  was introduced; no dot was added anywhere.
+- Submitted nothing, scored nothing, contacted no leaderboard, read no credentials, contacted no
+  forbidden host, and did not access drivendata.org or dropbox.com.
 
-## Human decided / must supply
+### What the human decided / must decide
 
-- Supplied the v2 brief, constraints, parent choice (`R0 = h33-h33-2-b2`, `0.2778` CLAIM), and pinned
-  repository manifests (`registry/data_manifest.json`, `registry/learning_manifest.json`,
-  `registry/fleet_registry_manifest.json`).
-- Chooses which candidate files to upload from their single DrivenData account, verifies competition
-  data/AI-disclosure terms and final deadline in a human browser, supplies dated `TOP_PUBLIC` and
-  remaining rolling-week/total slot counts, and records live `receipt_score` + `date` in
-  `ledger/submissions.csv`.
+- **AXIS for this session was not supplied**; the AI asked and the question was skipped, so the AI chose
+  PRUNE from measurement (IR-V3-02). The human can overrule this before the next build.
+- Which three files go in which slots, the date-stamped `TOP_PUBLIC`, the remaining quota, and all
+  submission-page receipts (still absent; 0.2778 remains a CLAIM).
+- Whether the pinned competition rasters may stay in this repository at all (IR-V2-10, still open).
+
+### Provenance of the ideas
+
+The prune ladder, the 100–400 m USGS-vs-imagery offset argument and the live numbers 0.2600 / 0.2708 /
+0.2778 come from the owner's earlier sessions and the brief. This session's own contributions are the
+fractional-rung decomposition of the 2–3 px ring, and the measurement that SNAP, CONCENTRATION and
+RELIEF cannot be built on this parent at its 2.8 px packing rung.
+
+## Concurrent sessions merged to `main` during this PR (preserved verbatim)
+
+## 2026-10-23 — arena/30dcc7f0-gemsdoe85 (current verification turn)
+
+
+## What the AI agent did (SNAP session, branch `arena/a9cc6c47-gemsdoe85`, 2026-10-23)
+
+- Verified all 11 SHA-256 pins it used (7 parent-lineage pins plus the lidar scarp, GeoDAWN extension,
+  SGMC and 419 MB feature-stack manifests) and rebuilt R0 pixel-identically
+  (121,131 → 44,090 → 40,199 → 37,654 dots; parent files `baeae321…` / `c55bafc4…`).
+- Wrote `src/gems85/snap85.py` (the two response fields, the deterministic snap rule with its
+  catalogue/separation/footprint constraints, the label-free support-coverage diagnostic) and
+  `tests/test_snap85.py` (10 synthetic contract tests).
+- Wrote `scripts/gemsdoe85_snap_session.py`: pin verification, parent rebuild, three SNAP variants,
+  both GeoTIFF encodings, re-read validation against the brief's gates, per-fold catalogue proxy with
+  CI, SGMC control, leakage canary, receipt JSON, and idempotent ledger append.
+- Wrote `docs/mechanism_cards_snap.md` (hypothesis / mechanism / confounder / predicted sign /
+  falsifier per variant), rewrote `SLOT_PLAN.md`, added the SNAP contingency to `docs/SUBMIT.md`,
+  consolidated the README CURRENT STATE block, and added IR-V2-14 … IR-V2-17.
+- Chose the AXIS (SNAP) **after asking the human and receiving no answer** (the question was skipped);
+  the choice, its rejected alternatives and the re-scope condition are recorded in IR-V2-14. Chose the
+  three values (on-ridge lidar, on-ridge TMI, free-window lidar) to separate "which physics" from
+  "may a dot leave the mapped trace".
+- Fetched only GitHub-hosted, SHA-256-pinned files through the repository's own restore path. No
+  leaderboard, competition page, forum, Dropbox or credentials were accessed; nothing was submitted.
+
+### What remains the human's decision (SNAP session)
+
+- Whether SNAP was the intended axis at all (IR-V2-14); if not, these three files are simply unspent.
+- Whether to spend any slot on them — `SLOT_PLAN.md` ranks them **below** the PRUNE ladder because
+  their predicted effect is inside the ±0.01 no-evidence band (IR-V2-16).
+- `TOP_PUBLIC` with date, the rolling-week slot count, and a submission-page receipt for every score.
+
+---
+
+## What the AI agent did (RELIEF session, branch `arena/3dd0b94c-gemsdoe85`, 2026-10-23)
+
+- Restored and SHA-256-verified all 28 pinned manifest/lineage inputs (`23/23` `data_manifest.json`,
+  `2/2` `learning_manifest.json`, `3/3` R0 lineage rasters) in gitignored `data/`, and rebuilt parent
+  R0 (`37,654` dots) matching both `r0_nan` (`baeae321…`) and `r0_zeros` (`c55bafc4…`) pixel- and
+  byte-identically.
+- Wrote `src/gems85/relief_lineage.py`, `scripts/gemsdoe85_relief_session.py`, and
+  `tests/test_relief_lineage.py`: equal-area Basin / Piedmont / Range-front terciles from
+  `0.70 · pct_rank(det_elev) + 0.30 · pct_rank(det_elev_slope)`, in-tercile `ctrl_collar3_0pct`
+  decomposition, three fixed-count (`37,654`), `2.8 px`-spaced, `d_cat > 3.0 px` `RELIEF` variants
+  (`reliefp2r10-…-669f0637`, `reliefbp2r15-…-21af1eee`, `reliefr2bp10-…-7a0329ee` + `-zeros` twins),
+  report-only `gems57-pooled-hide-v2` and `sgmc_minus_catalogue_3px` 95 % CIs, and 19-band leakage
+  canary (`AUC = 0.5693`, CLEAN).
+- Wrote `docs/mechanism_cards_relief.md` (including the 12-run `SNAP` negative result), reconciled
+  `ledger/submissions.csv` (12 unioned rows across `PRUNE`, `SNAP`, `RELIEF`), `SLOT_PLAN.md`,
+  `docs/SUBMIT.md`, `README.md` (`CURRENT STATE` block only), and `IR-V2-19 … IR-V2-20`.
+
+### What remains the human's decision (RELIEF session)
+
+- Confirming the slot order (`prune3` → `reliefp2r10` → conditional Slot 3, vs pure-`PRUNE`), entering
+  dated `TOP_PUBLIC` and remaining slot counts, uploading from their single registered account,
+  recording live `receipt_score` + `date`, and reviewing competition redistribution/AI-disclosure rules.
 

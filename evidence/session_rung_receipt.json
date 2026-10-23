@@ -1,0 +1,537 @@
+{
+  "schema_version": 3,
+  "generated_utc": "2026-10-23T15:41:54+00:00",
+  "git_sha": "f2d6e4e9bd481bd73a76bc2c21642f038984595d",
+  "python": "3.11.2",
+  "date_tag": "20261023",
+  "parent": {
+    "slug": "h33-2-b2",
+    "claim_live_dti": 0.2778,
+    "evidence_label": "CLAIM (owner-reported; no receipt in this repository)",
+    "rebuild": {
+      "counts": {
+        "skeleton": 121131,
+        "d28": 44090,
+        "solo": 40199,
+        "r0": 37654
+      },
+      "pixel_identical_to_pinned": true,
+      "r0_nan_file": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
+      "r0_zeros_file": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9"
+    }
+  },
+  "pins": {
+    "h19_5": "ec1f9b56b83ce33cad781ceb9f104b18fb4f2ff785263a4e89616af4aabdee8d",
+    "d28": "91eae1ca42ec845eaa8c2ba32da49806e24751743459b8a10017c479bbe639b8",
+    "solo_d28": "07b6db440535404bb41ec8ddc797713e200d308e3da35937393efde5eb84bc40",
+    "r0_zeros": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
+    "r0_nan": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
+    "labels": "7ba308ccdc4418b31a178f4f1ef21aaa6e152e4028f2f6f64b01f7eb25ae4093",
+    "sample_submission": "2176d08e485aa2cd2860ce8df539db4faf4d76163b38a4dd8c30a40454d35cbc",
+    "training_features": "4371c82e3b8339b807bdffcf4ef59a225520fe2988d521be208ae33743123bc5",
+    "geodawn_rad_u8": "c22420f75999030d7cc65c9e31e50d232ea6158423bca051613a18a8b20ba682"
+  },
+  "rings_px": {
+    "2.2361": 941,
+    "2.8284": 670,
+    "3.0": 560,
+    "3.1623": 531,
+    "3.6056": 659,
+    "4.0": 464,
+    "4.1231": 407,
+    "4.2426": 256,
+    "4.4721": 360,
+    "5.0": 789,
+    "5.099": 207,
+    "5.3852": 286
+  },
+  "axis_feasibility": {
+    "packing_rung_px": 2.8,
+    "free_cells_anywhere_in_footprint": 4253657,
+    "free_cells_on_parent_skeleton": 794,
+    "snap_dots_with_a_free_destination_at_floor_2.8": 0,
+    "snap_dots_with_a_free_destination_at_floor_2.4": 0,
+    "snap_dots_with_a_free_destination_at_floor_2.2": 0,
+    "snap_dots_with_a_free_destination_at_floor_2.0": 37520,
+    "block_size_px": 10,
+    "block_size_km": 1.0,
+    "full_footprint_blocks": 50984,
+    "prior_p33_p67": [
+      -0.0145,
+      0.2917
+    ],
+    "destination_cells_in_top_prior_tercile_dcat_gt_3": 26,
+    "destination_cells_in_top_prior_tercile_dcat_gt_2": 205,
+    "verdict": "SNAP and CONCENTRATION are infeasible at the parent's packing rung: no dot has a free destination that preserves >=2.2 px spacing, and only a few dozen free skeleton cells exist in the top-prior tercile."
+  },
+  "snap_probe": {
+    "radius1_floor2": {
+      "radius_px": 1,
+      "separation_floor_px": 2.0,
+      "dots_moved": 0,
+      "pct_moved": 0.0,
+      "mean_displacement_px": 0.0,
+      "unique_credit_sum_vs_parent": 1.0,
+      "note": "report-only probe; no file written, no slot implied"
+    },
+    "radius2_floor2": {
+      "radius_px": 2,
+      "separation_floor_px": 2.0,
+      "dots_moved": 18065,
+      "pct_moved": 47.98,
+      "mean_displacement_px": 1.976,
+      "unique_credit_sum_vs_parent": 0.9878,
+      "note": "report-only probe; no file written, no slot implied"
+    }
+  },
+  "block_density_cv_parent": {
+    "blocks": 50984,
+    "mean_dots_per_km2": 0.725,
+    "cv": 1.874
+  },
+  "variants": {
+    "r2p25": {
+      "id": "h33-2-b2-r2p25-20261023-3908de12",
+      "parent": "h33-h33-2-b2 (R0, GEMSDOE32 e5eb6e7e)",
+      "parent_nan_sha256": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
+      "parent_zeros_sha256": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
+      "axis": "PRUNE",
+      "value": "d_cat<= 2.25px, no refill",
+      "note": "PRUNE fractional rung 2.25 px: drop the catalogue-flank ring(s) up to 2.25 px; no refill; count falls.",
+      "submission_note": "R0 h33-2-b2 PRUNE fractional rung 2.25px: drop sqrt5-ring dots 37654->36713 (2.50%), no refill; pred +0.003 MODEL; UNSCORED",
+      "stats": {
+        "parent_dots": 37654,
+        "variant_dots": 36713,
+        "dots_removed": 941,
+        "dots_added": 0,
+        "unchanged": 36713,
+        "pct_changed": 2.499,
+        "jaccard": 0.975
+      },
+      "block_density_cv": {
+        "blocks": 50984,
+        "mean_dots_per_km2": 0.707,
+        "cv": 1.898
+      },
+      "nan": {
+        "mode": "nan",
+        "filename": "h33-2-b2-r2p25-20261023-3908de12.tif",
+        "bytes": 351795,
+        "sha256": "3908de12b6131383b5cc5462bbc0b7969b48d605e4ec15eba4604f2678714a70",
+        "sha8": "3908de12",
+        "crs": "EPSG:32611",
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "shape": [
+          3730,
+          3292
+        ],
+        "dtype": "float32",
+        "nodata": "nan",
+        "positive_pixels": 36713,
+        "emitted_mass": 36713.0,
+        "min": 0.0,
+        "max": 1.0,
+        "on_catalogue_px": 0,
+        "within_3px_catalogue_px": 1230,
+        "within_declared_rung_px": 0,
+        "min_distance_to_catalogue_px": 2.8284271247461903,
+        "checks": {
+          "single_band": true,
+          "dtype_float32": true,
+          "shape_matches_sample": true,
+          "crs_matches_sample": true,
+          "transform_matches_sample": true,
+          "footprint_pixels_match_sample": true,
+          "no_nan_inside_footprint": true,
+          "no_inf_anywhere": true,
+          "values_in_0_1_inside_footprint": true,
+          "binary_values_only": true,
+          "zero_mass_on_catalogue": true,
+          "all_dots_beyond_declared_rung": true,
+          "nodata_is_nan": true,
+          "outside_footprint_all_nan": true
+        },
+        "all_checks_passed": true
+      },
+      "zeros": {
+        "mode": "zeros",
+        "filename": "h33-2-b2-r2p25-20261023-3908de12-zeros.tif",
+        "bytes": 215333,
+        "sha256": "82b3f1f4024ab09a5fbaf03da89e040c67acc869e6daee2c3663e6fc9b84eb6b",
+        "sha8": "82b3f1f4",
+        "crs": "EPSG:32611",
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "shape": [
+          3730,
+          3292
+        ],
+        "dtype": "float32",
+        "nodata": null,
+        "positive_pixels": 36713,
+        "emitted_mass": 36713.0,
+        "min": 0.0,
+        "max": 1.0,
+        "on_catalogue_px": 0,
+        "within_3px_catalogue_px": 1230,
+        "within_declared_rung_px": 0,
+        "min_distance_to_catalogue_px": 2.8284271247461903,
+        "checks": {
+          "single_band": true,
+          "dtype_float32": true,
+          "shape_matches_sample": true,
+          "crs_matches_sample": true,
+          "transform_matches_sample": true,
+          "footprint_pixels_match_sample": true,
+          "no_nan_inside_footprint": true,
+          "no_inf_anywhere": true,
+          "values_in_0_1_inside_footprint": true,
+          "binary_values_only": true,
+          "zero_mass_on_catalogue": true,
+          "all_dots_beyond_declared_rung": true,
+          "nodata_is_none": true,
+          "all_finite_whole_grid": true,
+          "whole_grid_in_0_1": true
+        },
+        "all_checks_passed": true
+      },
+      "all_gates_passed": true
+    },
+    "r2p85": {
+      "id": "h33-2-b2-r2p85-20261023-acce3907",
+      "parent": "h33-h33-2-b2 (R0, GEMSDOE32 e5eb6e7e)",
+      "parent_nan_sha256": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
+      "parent_zeros_sha256": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
+      "axis": "PRUNE",
+      "value": "d_cat<= 2.85px, no refill",
+      "note": "PRUNE fractional rung 2.85 px: drop the catalogue-flank ring(s) up to 2.85 px; no refill; count falls.",
+      "submission_note": "R0 h33-2-b2 PRUNE fractional rung 2.85px: drop sqrt5+2sqrt2 rings 37654->36043 (4.28%), no refill; pred +0.005 MODEL; UNSCORED",
+      "stats": {
+        "parent_dots": 37654,
+        "variant_dots": 36043,
+        "dots_removed": 1611,
+        "dots_added": 0,
+        "unchanged": 36043,
+        "pct_changed": 4.278,
+        "jaccard": 0.9572
+      },
+      "block_density_cv": {
+        "blocks": 50984,
+        "mean_dots_per_km2": 0.694,
+        "cv": 1.9184
+      },
+      "nan": {
+        "mode": "nan",
+        "filename": "h33-2-b2-r2p85-20261023-acce3907.tif",
+        "bytes": 349052,
+        "sha256": "acce390710c0d1fcf066947712c52cec45f8c0dcc2fb53bb1b254fbff959fcd7",
+        "sha8": "acce3907",
+        "crs": "EPSG:32611",
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "shape": [
+          3730,
+          3292
+        ],
+        "dtype": "float32",
+        "nodata": "nan",
+        "positive_pixels": 36043,
+        "emitted_mass": 36043.0,
+        "min": 0.0,
+        "max": 1.0,
+        "on_catalogue_px": 0,
+        "within_3px_catalogue_px": 560,
+        "within_declared_rung_px": 0,
+        "min_distance_to_catalogue_px": 3.0,
+        "checks": {
+          "single_band": true,
+          "dtype_float32": true,
+          "shape_matches_sample": true,
+          "crs_matches_sample": true,
+          "transform_matches_sample": true,
+          "footprint_pixels_match_sample": true,
+          "no_nan_inside_footprint": true,
+          "no_inf_anywhere": true,
+          "values_in_0_1_inside_footprint": true,
+          "binary_values_only": true,
+          "zero_mass_on_catalogue": true,
+          "all_dots_beyond_declared_rung": true,
+          "nodata_is_nan": true,
+          "outside_footprint_all_nan": true
+        },
+        "all_checks_passed": true
+      },
+      "zeros": {
+        "mode": "zeros",
+        "filename": "h33-2-b2-r2p85-20261023-acce3907-zeros.tif",
+        "bytes": 212595,
+        "sha256": "6ff3861845856a00af22c489472ae27d8a37366fbcf503bf5a0091c673b140fc",
+        "sha8": "6ff38618",
+        "crs": "EPSG:32611",
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "shape": [
+          3730,
+          3292
+        ],
+        "dtype": "float32",
+        "nodata": null,
+        "positive_pixels": 36043,
+        "emitted_mass": 36043.0,
+        "min": 0.0,
+        "max": 1.0,
+        "on_catalogue_px": 0,
+        "within_3px_catalogue_px": 560,
+        "within_declared_rung_px": 0,
+        "min_distance_to_catalogue_px": 3.0,
+        "checks": {
+          "single_band": true,
+          "dtype_float32": true,
+          "shape_matches_sample": true,
+          "crs_matches_sample": true,
+          "transform_matches_sample": true,
+          "footprint_pixels_match_sample": true,
+          "no_nan_inside_footprint": true,
+          "no_inf_anywhere": true,
+          "values_in_0_1_inside_footprint": true,
+          "binary_values_only": true,
+          "zero_mass_on_catalogue": true,
+          "all_dots_beyond_declared_rung": true,
+          "nodata_is_none": true,
+          "all_finite_whole_grid": true,
+          "whole_grid_in_0_1": true
+        },
+        "all_checks_passed": true
+      },
+      "all_gates_passed": true
+    },
+    "r3p61": {
+      "id": "h33-2-b2-r3p61-20261023-f94be3ad",
+      "parent": "h33-h33-2-b2 (R0, GEMSDOE32 e5eb6e7e)",
+      "parent_nan_sha256": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
+      "parent_zeros_sha256": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
+      "axis": "PRUNE",
+      "value": "d_cat<= 3.61px, no refill",
+      "note": "PRUNE fractional rung 3.61 px: drop the catalogue-flank ring(s) up to 3.61 px; no refill; count falls.",
+      "submission_note": "R0 h33-2-b2 PRUNE fractional rung 3.61px: drop rings <=3.61px 37654->34293 (8.93%), no refill; pred +0.005 MODEL; UNSCORED",
+      "stats": {
+        "parent_dots": 37654,
+        "variant_dots": 34293,
+        "dots_removed": 3361,
+        "dots_added": 0,
+        "unchanged": 34293,
+        "pct_changed": 8.926,
+        "jaccard": 0.9107
+      },
+      "block_density_cv": {
+        "blocks": 50984,
+        "mean_dots_per_km2": 0.661,
+        "cv": 1.976
+      },
+      "nan": {
+        "mode": "nan",
+        "filename": "h33-2-b2-r3p61-20261023-f94be3ad.tif",
+        "bytes": 342051,
+        "sha256": "f94be3ada76a4c5a5f1f1273e9514e8a2ee04d0e84eec0a506c5d8e0d0cece8a",
+        "sha8": "f94be3ad",
+        "crs": "EPSG:32611",
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "shape": [
+          3730,
+          3292
+        ],
+        "dtype": "float32",
+        "nodata": "nan",
+        "positive_pixels": 34293,
+        "emitted_mass": 34293.0,
+        "min": 0.0,
+        "max": 1.0,
+        "on_catalogue_px": 0,
+        "within_3px_catalogue_px": 0,
+        "within_declared_rung_px": 0,
+        "min_distance_to_catalogue_px": 4.0,
+        "checks": {
+          "single_band": true,
+          "dtype_float32": true,
+          "shape_matches_sample": true,
+          "crs_matches_sample": true,
+          "transform_matches_sample": true,
+          "footprint_pixels_match_sample": true,
+          "no_nan_inside_footprint": true,
+          "no_inf_anywhere": true,
+          "values_in_0_1_inside_footprint": true,
+          "binary_values_only": true,
+          "zero_mass_on_catalogue": true,
+          "all_dots_beyond_declared_rung": true,
+          "nodata_is_nan": true,
+          "outside_footprint_all_nan": true
+        },
+        "all_checks_passed": true
+      },
+      "zeros": {
+        "mode": "zeros",
+        "filename": "h33-2-b2-r3p61-20261023-f94be3ad-zeros.tif",
+        "bytes": 205596,
+        "sha256": "bca6c21f1784524d8d6f0493fb6673f9e9f9109df3d55897e5ac238a0c040109",
+        "sha8": "bca6c21f",
+        "crs": "EPSG:32611",
+        "transform": [
+          100.0,
+          0.0,
+          243350.0,
+          0.0,
+          -100.0,
+          4508550.0
+        ],
+        "shape": [
+          3730,
+          3292
+        ],
+        "dtype": "float32",
+        "nodata": null,
+        "positive_pixels": 34293,
+        "emitted_mass": 34293.0,
+        "min": 0.0,
+        "max": 1.0,
+        "on_catalogue_px": 0,
+        "within_3px_catalogue_px": 0,
+        "within_declared_rung_px": 0,
+        "min_distance_to_catalogue_px": 4.0,
+        "checks": {
+          "single_band": true,
+          "dtype_float32": true,
+          "shape_matches_sample": true,
+          "crs_matches_sample": true,
+          "transform_matches_sample": true,
+          "footprint_pixels_match_sample": true,
+          "no_nan_inside_footprint": true,
+          "no_inf_anywhere": true,
+          "values_in_0_1_inside_footprint": true,
+          "binary_values_only": true,
+          "zero_mass_on_catalogue": true,
+          "all_dots_beyond_declared_rung": true,
+          "nodata_is_none": true,
+          "all_finite_whole_grid": true,
+          "whole_grid_in_0_1": true
+        },
+        "all_checks_passed": true
+      },
+      "all_gates_passed": true
+    }
+  },
+  "proxies": {
+    "R0_parent": {
+      "sgmc": 0.08938,
+      "sgmc_minus_catalogue_3px": 0.09539,
+      "catalogue_hide_and_recover": 0.00671
+    },
+    "r2p25": {
+      "sgmc": 0.08385,
+      "sgmc_minus_catalogue_3px": 0.09494,
+      "catalogue_hide_and_recover": 0.00069
+    },
+    "r2p85": {
+      "sgmc": 0.07973,
+      "sgmc_minus_catalogue_3px": 0.09417,
+      "catalogue_hide_and_recover": 0.0
+    },
+    "r3p61": {
+      "sgmc": 0.07195,
+      "sgmc_minus_catalogue_3px": 0.09112,
+      "catalogue_hide_and_recover": 0.0
+    }
+  },
+  "canary": {
+    "n_positives": 60988,
+    "n_background": 200000,
+    "best_single_feature": "geod_2ndinv - Geodetic second invariant - measure of strain rate tensor magnitude",
+    "best_single_feature_auc": 0.5687,
+    "threshold": 0.9,
+    "verdict": "CLEAN"
+  },
+  "holdout_proxy": {
+    "R0_parent": {
+      "dti": 0.004006,
+      "ci95": [
+        0.003424,
+        0.00469
+      ],
+      "withheld_positive_pixels": 22663,
+      "evaluator": "gems57-pooled-hide-v2",
+      "seconds": 20.9,
+      "label": "PROXY (local hide-and-recover on the catalogue); not a score"
+    },
+    "r2p25": {
+      "dti": 0.000455,
+      "ci95": [
+        0.000373,
+        0.000544
+      ],
+      "withheld_positive_pixels": 22663,
+      "evaluator": "gems57-pooled-hide-v2",
+      "seconds": 21.4,
+      "label": "PROXY (local hide-and-recover on the catalogue); not a score"
+    },
+    "r2p85": {
+      "dti": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "withheld_positive_pixels": 22663,
+      "evaluator": "gems57-pooled-hide-v2",
+      "seconds": 22.6,
+      "label": "PROXY (local hide-and-recover on the catalogue); not a score"
+    },
+    "r3p61": {
+      "dti": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "withheld_positive_pixels": 22663,
+      "evaluator": "gems57-pooled-hide-v2",
+      "seconds": 21.5,
+      "label": "PROXY (local hide-and-recover on the catalogue); not a score"
+    }
+  },
+  "predictions": {
+    "r2p25": "+0.003 (-0.003 to +0.009) MODEL",
+    "r2p85": "+0.005 (-0.002 to +0.012) MODEL",
+    "r3p61": "+0.005 (-0.004 to +0.014) MODEL"
+  },
+  "proxy_caveat": "Both local proxies move the WRONG WAY for this axis and are therefore reported, not used: (a) dti(dots, catalogue) and (b) the vendor hide-and-recover holdout both use catalogue pixels as truth, while the live scorer MASKS catalogue pixels and scores only new faults, so any variant that moves away from the catalogue must lose on them. The axis is justified by the two live/CLAIM rung receipts in this lineage (+0.0108 for <=1 px, +0.0070 for <=2 px), which are direct evidence and outrank both proxies.",
+  "note": "All scores above are PROXY, CLAIM or MODEL. No DrivenData access, no submission, no slot spent by this script."
+}

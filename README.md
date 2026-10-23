@@ -1,27 +1,24 @@
 # GEMSDOE85 — Lane H85-HJCD: Hydrothermal-Juxtaposition & Fault-Valve Conduit Discovery
 
-<!-- CURRENT STATE START -->
-## CURRENT STATE (v2 — 2026-10-23, `arena/3dd0b94c-gemsdoe85`)
+<!-- CURRENT STATE — update this block only for session status. -->
+## CURRENT STATE (2026-10-23, after four build sessions: PRUNE, PRUNE-rungs, SNAP, RELIEF)
 
-The historical Lane H85-HJCD text below is kept untouched; **only this block governs current v2 builds and slot choices.**
+| field | value |
+|---|---|
+| **parent** | R0 = `h33-h33-2-b2` (`e5eb6e7e`), 37,654 unit-mass dots; rebuilt **pixel- and byte-identical** from the pinned chain (121,131 → 44,090 → 40,199 → 37,654; NaN `baeae321…` / zeros `c55bafc4…`) |
+| **best receipt** | **none in this repository.** 0.2778 is a **CLAIM** (owner-reported); every other number is MODEL or PROXY |
+| **TOP_PUBLIC** | **UNFILLED** — the human reads it off the leaderboard *with a date*; no other target number is valid |
+| **slots left this week** | **UNKNOWN** — the human reads it off the account page (3/week is a ceiling, not a target; +1 blind final submission) |
+| **next 3 slots** (`SLOT_PLAN.md`, `docs/SUBMIT.md`) | 1. `h33-2-b2-prune3-20261023-fb308615.tif` (`PRUNE` `2<d_cat≤3 px`, 35,483 dots, **+0.007 MODEL**) · 2. `h33-2-b2-reliefp2r10-20261023-669f0637.tif` (`RELIEF` Piedmont→Range `+10%`, `d_cat>3 px`, 37,654 fixed, **+0.008 MODEL**; or `h33-2-b2-r3p61-20261023-f94be3ad.tif` `+0.005 MODEL` if staying pure-PRUNE) · 3. **Conditional on Receipts 1 & 2:** `h33-2-b2-reliefbp2r15-…-21af1eee.tif` (`+0.006 MODEL`) if `Slot2−Slot1 ≥ +0.01`; `h33-2-b2-reliefr2bp10-…-7a0329ee.tif` (`−0.002 / +0.006 cond. MODEL`) if `Slot2−Slot1 ≤ −0.01`; or `h33-2-b2-r3p61-…-f94be3ad.tif` / `r2p85-…-acce3907.tif` (`+0.005 MODEL`) if relief is flat — fallback: `-zeros.tif` twin |
+| **reserve PRUNE & SNAP** | `PRUNE`: `prune4-…-2880b0e9` (+0.003), `prune5-…-7ebfc408` (−0.003), `r2p25-…-3908de12` (+0.003). `SNAP` (ranked below PRUNE + RELIEF; inside ±0.01 no-evidence band): `snap-free-lidar2-…-ac3fc128` (−0.004), `snap-ridge-lidar2-…-6913d029` (+0.001), `snap-ridge-tmi2-…-de094d8e` (0.000) |
+| **every prediction** | MODEL (`|Δ| < 0.01` live is no evidence). Hide-and-recover and SGMC are PROXY, never gates |
+| **human must supply** | AXIS/slot confirmation, dated `TOP_PUBLIC`, rolling-week/total slots remaining, score receipts for every upload, deadline/timezone confirmation, redistribution decision (IR-V2-10) |
 
-- **Parent:** `R0 = h33-h33-2-b2` (`GEMSDOE32` `e5eb6e7e`, `37,654` unit-mass dots; rebuilt pixel- and **byte-identically** from pinned `H19-5` `ec1f9b56…`: NaN `baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd`, zeros `c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9`).
-- **Best receipt:** **none in `ledger/submissions.csv`** — `0.2778` on `h33-h33-2-b2` is **CLAIM** (owner-reported, no receipt file). Human fills `receipt_score` and `date` after upload.
-- **`TOP_PUBLIC`:** **____** *(human fills from live leaderboard with observation date; no other target is valid).*
-- **Slots left:** **__ / 3** this rolling week · **__** total remaining to provisional `2026-12-03` deadline + **1** blind final submission *(human confirms from account page).*
-- **Next 3 slots (`SLOT_PLAN.md`, `docs/SUBMIT.md`, `docs/mechanism_cards_relief.md`):**
-  1. `releases/h33-2-b2-prune3-20261023-fb308615.tif` — `PRUNE` `2 < d_cat ≤ 3 px`, `35,483` dots (`5.77 %` changed); pred **+0.007 MODEL** (live `d_cat > 3 px` baseline).
-  2. `releases/h33-2-b2-reliefp2r10-20261023-669f0637.tif` — `RELIEF` Piedmont→Range `+10 %` (`3,765` dots, `d_cat > 3 px`, `37,654` fixed, `12.77 %` changed); pred **+0.008 MODEL**.
-  3. **Conditional on Receipts 1 & 2:** `releases/h33-2-b2-reliefbp2r15-20261023-21af1eee.tif` (`+15 %` Basin+Pied→Range, pred **+0.006 MODEL**) if `Slot2 − Slot1 ≥ +0.01`; `releases/h33-2-b2-reliefr2bp10-20261023-7a0329ee.tif` (`+10 %` Range→Basin+Pied, pred **−0.002 / +0.006 cond. MODEL**) if `Slot2 − Slot1 ≤ −0.01`; or `releases/h33-2-b2-prune4-20261023-2880b0e9.tif` (`PRUNE` `d_cat ≤ 4 px`, pred **+0.003 MODEL**) if relief is flat and `Slot1 − R0 ≥ +0.01`.
-<!-- CURRENT STATE END -->
+Upload file, hash and ≤140-character note per slot: `docs/SUBMIT.md`. Ladder, decision rules and the
+calendar: `SLOT_PLAN.md`. Science: `docs/mechanism_cards_prune.md`, `docs/mechanism_cards_rung.md`,
+`docs/mechanism_cards_snap.md`, `docs/mechanism_cards_relief.md`. Decision-changing irregularities:
+`IRREGULARITIES.md`.
 
-**DOE GEMS Prize Challenge · DrivenData Competition #306 · Verified End-to-End Research, Holdout Validation & Unique GeoTIFF Submission System**
-
-[![Automated Validation](https://img.shields.io/badge/Automated_Validation-32%2F32_PASS-brightgreen)](docs/index.html)
-[![Holdout DTI](https://img.shields.io/badge/HOLDOUT--DTI_(gems57--v2)-0.196461_(%2B107.6%25_vs_H33)-blue)](evidence/hjcd_experiments.json)
-[![Uniqueness Gate](https://img.shields.io/badge/Uniqueness_236_Rasters-PASS_(0.6402_%3C%3D_0.70)-success)](evidence/uniqueness_audit.json)
-
----
 
 ## Promoted Deliverable & One-Click Automated Validation Receipt
 
