@@ -8,7 +8,7 @@ A self-driving, fully auditable pipeline that restores 28 SHA-256-pinned public 
 |---|---|
 | **GitHub Pages Site** | `docs/index.html` + `docs/executive-summary.html` (root `index.html` auto-synced) |
 | **Primary Submission GeoTIFF** | `docs/downloads/gems85-gapvent57-37654dots-sep2.8-exc3-20261023T013000Z-566072f4-zeros.tif` (`271.0 KB`, zipped twin `186 KB`) |
-| **Primary SHA-256** | `9fcb1f21a63b3f70fd6c7620709da007a5f32d123ab56d725207f669beac6bb4` |
+| **Primary SHA-256** | `9fcb1f21a63b3f709faa81f7f56e4ea40cf958a6ad3ecd060f8ec0181a33e028` |
 | **Submission Note (`99 / 140` chars)** | `H85-GAPVENT 57ch 10m-3DEP+chi+vent+tilt k300, 37654 dots sep2.8 exc3, HOLDOUT-DTI 0.1423 (UNSCORED)` |
 | **Automated Validation Status** | **ALL 17 CHECKS PASS — OK TO DOWNLOAD AND SUBMIT** (`values in [0, 1]`, `0` NaN/Inf, `EPSG:32611`, `3730×3292`, `0` dots within `300 m` of catalogue, `vendor/gems57/gates.py` PASS) |
 | **`HOLDOUT-DTI` (`gems85-holdout-v1.0.0`)** | **`0.14232` @ `37,654` dots** (`95% CI [0.13858, 0.14607]`, folds `[0.1466, 0.1394, 0.1445, 0.1389]`, `60,988` withheld positives) — **`+76.1%` (`+0.06151`) over prior repo record `0.08082` (`S85-CTXFUS50`)** and **`+90.4%` (`+0.06757`) over `GEO-Pb` `0.07475`**, winning **4/4** folds (`0.14949` @ `60,000` dots) |
@@ -26,6 +26,121 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements-lock.txt
 .venv/bin/python scripts/build_site.py && .venv/bin/python scripts/check_site.py
 .venv/bin/python -m pytest -q
 ```
+
+---
+
+## 📜 Preserved Verbatim Project Prompt (Full Project Reference)
+
+```text
+I want to win this competition:
+https://www.drivendata.org/competitions/306/competition-doe-gems/leaderboard/
+
+Study carefully and thoroughly and understand:
+https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/
+https://www.drivendata.org/competitions/306/competition-doe-gems/rules/
+
+Review and analyze previous submissions and scores (Highest score achieved in the following submissions is 0.2778 out of maximum score 1. Current highest score in competition is 0.3195 out of maximum score 1):
+https://buffedlizard55-lab.github.io/GEMSDOE23/
+https://buffedlizard55-lab.github.io/GEMSDOE24/
+https://buffedlizard55-lab.github.io/GEMSDOE25/
+https://buffedlizard55-lab.github.io/GEMSDOE26/
+https://buffedlizard55-lab.github.io/GEMSDOE27/
+https://buffedlizard55-lab.github.io/GEMSDOE28/
+https://buffedlizard55-lab.github.io/GEMSDOE29/
+https://buffedlizard55-lab.github.io/GEMSDOE30/
+https://buffedlizard55-lab.github.io/GEMSDOE31/
+https://buffedlizard55-lab.github.io/GEMSDOE32/
+https://buffedlizard55-lab.github.io/GEMSDOE33/
+https://buffedlizard55-lab.github.io/GEMSDOE34/
+https://buffedlizard55-lab.github.io/GEMSDOE35/
+https://buffedlizard55-lab.github.io/GEMSDOE49/
+https://buffedlizard55-lab.github.io/GEMSDOE50/
+https://buffedlizard55-lab.github.io/GEMSDOE51/
+https://buffedlizard55-lab.github.io/GEMSDOE52/
+https://buffedlizard55-lab.github.io/GEMSDOE53/
+https://buffedlizard55-lab.github.io/GEMSDOE54/
+https://buffedlizard55-lab.github.io/GEMSDOE55/
+https://buffedlizard55-lab.github.io/GEMSDOE56/
+
+Study carefully and thoroughly and understand:
+https://buffedlizard55-lab.github.io/GEMSDOE57/
+https://buffedlizard55-lab.github.io/GEMSDOE58/
+https://buffedlizard55-lab.github.io/GEMSDOE59/
+https://buffedlizard55-lab.github.io/GEMSDOE60/
+https://buffedlizard55-lab.github.io/GEMSDOE61/
+https://buffedlizard55-lab.github.io/GEMSDOE62/
+https://buffedlizard55-lab.github.io/GEMSDOE63/
+https://buffedlizard55-lab.github.io/GEMSDOE64/
+https://buffedlizard55-lab.github.io/GEMSDOE65/
+https://buffedlizard55-lab.github.io/GEMSDOE66/
+https://buffedlizard55-lab.github.io/GEMSDOE67/
+https://buffedlizard55-lab.github.io/GEMSDOE68/
+https://buffedlizard55-lab.github.io/GEMSDOE69/
+https://buffedlizard55-lab.github.io/GEMSDOE70/
+https://buffedlizard55-lab.github.io/GEMSDOE71/
+https://buffedlizard55-lab.github.io/GEMSDOE72/
+https://buffedlizard55-lab.github.io/GEMSDOE73/
+https://buffedlizard55-lab.github.io/GEMSDOE74/
+https://buffedlizard55-lab.github.io/GEMSDOE75/
+https://buffedlizard55-lab.github.io/GEMSDOE76/
+https://buffedlizard55-lab.github.io/GEMSDOE77/
+https://buffedlizard55-lab.github.io/GEMSDOE78/
+https://buffedlizard55-lab.github.io/GEMSDOE79/
+https://buffedlizard55-lab.github.io/GEMSDOE80/
+https://buffedlizard55-lab.github.io/GEMSDOE81/
+https://buffedlizard55-lab.github.io/GEMSDOE82/
+https://buffedlizard55-lab.github.io/GEMSDOE83/
+https://buffedlizard55-lab.github.io/GEMSDOE84/
+
+Study and research more about the competition, including any domain knowledge in geology and geothermal energy.
+
+Study, analyze and explain why and how the highest score in the previous submissions is 0.2778 ("h33-h33-2-b2-20261004T220000Z-e5eb6e7e-zeros" in https://buffedlizard55-lab.github.io/GEMSDOE32/).
+
+Think, analyze and strategize on how to improve the score from 0.2778 and beat 0.3195 to win the competition. Before writing any code, generate 3 to 5 genuinely novel candidate geological/geothermal hypotheses that have not been tested in the previous GEMSDOE repos. Rank them by expected DTI improvement vs. implementation cost, and explicitly select the best ones to pursue for our maximum of 3 experiments. For each candidate hypothesis, specify:
+1. Which data layers (provided or external) it uses.
+2. What physical/geological signature or cross-layer mathematical relationship it captures.
+3. Why unmapped faults missed by USGS/INGENIOUS might exhibit this signature (e.g., blind faults under Quaternary alluvium, range-front step-overs, hydrothermally altered zones).
+4. How it fundamentally differs from the features and architectures in GEMSDOE23 through GEMSDOE84.
+
+Download and prepare competition data:
+- First check if `scripts/download_competition_data.sh` or `scripts/prepare_data.py` already exists in the repository; if not, check `GEMSDOE57` or create a clean, self-contained download and data-verification script from the official competition data sources.
+- Run the data download and preparation autonomously so all required rasters, fault catalogues, and masks are present in `data/` before running any leakage canaries or experiments.
+- Verify checksums, CRS alignment, pixel grids, and expected file sizes before proceeding.
+
+Must generate a genuinely unique .tif file for the competition. Never copy a previous submission as our submission.
+
+Automated validation without human intervention: Must be obvious whether the generated .tif file is OK to download and submit without human intervention. Add validation gates to ensure generated .tif file is high-scoring and does not generate errors upon submission (e.g. "Predicted values must be in range [0, 1]"). Add executive summary and conclusion to report whether generated .tif file is OK to download and submit without human intervention.
+
+Shared tools. Reuse `evaluate_holdout.py`, `submission_writer.py`, and the cached feature stack from the repo template (or `GEMSDOE57` if missing). Fix shared bugs upstream; never maintain a private unverified fork of the metric.
+
+Holdout discipline. Use the shared hide-and-recover split: whole fault segments withheld with a buffer around them, catalogue features derived from the visible faults only, visible faults masked pixel-exact, scored with pooled DTI (alpha=0.2, beta=0.8, 300 m triangular kernel). Report every score as `HOLDOUT-DTI` (with evaluator version, number of withheld positives, and 95% CI) or `ORGANIZER-CONFIRMED` (copied from the submission receipt). Never write a projection as a score; never label a holdout number "expected live".
+
+Leakage before signal. Before trusting any model score, run a single-feature canary on holdout for every feature. Treat `AUC > 0.90` on a single feature as leakage until proven otherwise.
+
+Uniqueness. Compare the final raster against every raster in the registry. If rank correlation exceeds 0.90 on the surface, or more than 70% of final dots fall within 3 px of a prior raster's dots, flag duplicate and stop.
+
+Budget. Run at most 3 experiments, and finish within two hours. Negative results are a valid deliverable; end with a complete run card either way.
+
+Required run card. Every session ends with one JSON card containing: hypothesis, mechanism, a named non-fault geological or anthropogenic process that could mimic it, holdout DTI + 95% CI, correlation/overlap against registry, raster `sha256`, validator output, submission name + note (<= 140 chars), and verdict (`promote` or `negative`).
+
+Website and report. Create a user-friendly, clean website for GitHub Pages (`docs/index.html`) that clearly explains the approach, domain research, hypotheses, validation gates, and experiment results. Provide a prominent download button for the generated `.tif` file, clear submission instructions (exact filename and note to copy-paste), and an obvious visual status indicator showing whether the file passed all automated gates and is ready to submit without human intervention.
+
+Always include prompt in README.md as project reference
+
+Let's work through this thoughtfully and thoroughly. Read and follow instructions carefully, line by line. Take your time to trace everything carefully from first principles. Keep going autonomously to complete all steps and make sure everything works completely without any issue. Be thorough. Verify everything rather than assuming. Never hallucinate, fabricate or make up anything. Cite sources, links, urls, numbers and data. Verify all links and urls to make sure they are valid and working. Take note of any irregularities, trace to root causes and fix or explain them. Do not make assumptions. Test, verify and validate everything thoroughly. Ensure high quality, completeness and accuracy. Make three passes: First pass: Implement. Second pass: Review, refine, improve and fix bugs/issues. Third pass: Verify completeness, accuracy and quality against all instructions. Create and merge pull request with clear next steps and documented limitations.
+```
+
+---
+
+## ✅ Machine-Verified Final JSON Run Card (`evidence/run_card.json`)
+
+```json
+{
+  "schema_version": "gems85-run-card-v1",
+  "project": "GEMSDOE85",
+  "branch": "arena/a7db677d-gemsdoe85",
+  "date_utc": "2026-10-22",
+  "lane_id": "H85-TVFV",
 
 ---
 
@@ -598,6 +713,7 @@ is reachable from this sandbox; none is required to publish the validated candid
 | `E2_submod300_g20_exc3` (submodular 300 m kernel allocator) | `0.11412` | `[0.10806, 0.12019]` | — | Sub-arm negative vs crest (`29-px` blob bias) |
 | `E3_orthofuse_sep28_exc2` (`0.65 GAPVENT + 0.20 CTXHGB + 0.15 GEO-Pb`) | `0.11503` | `[0.10859, 0.12147]` | `0.12781` | Sub-arm negative (PU-poisoned `CTXHGB` dilution) |
 | Prior record: `S85-CTXFUS50` (session `22847afd`) | `0.08082` | `[0.07569, 0.08595]` | `0.09561` | Superseded |
+| Parallel lane: `H85-TVFV` (`gems85-h85-tvfv-e85-3-20261022-zeros.tif`, `56,442` dots) | `0.10368` (`gems57-pooled-hide-v2`, `22,663` pos) | `[0.08799, 0.11999]` | — | Preserved alternate (`48.83%` 3-px overlap vs `H85-GAPVENT`, `ρ=0.0656`) |
 | Baseline: `H85-1 GEO-Pb crest` (`sep=4.0, exc=2`) | `0.07475` | `[0.06840, 0.08110]` | `0.08971` | Superseded |
 
 ### 9.4 Three Explicit Review Passes (`evidence/review_passes.json`)

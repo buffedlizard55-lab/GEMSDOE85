@@ -74,6 +74,16 @@
       "role": "Superseded H85-1 GEO-Pb crest (37,654 dots, HOLDOUT-DTI 0.07475)",
       "filename": "gems85-geopb-crest-37654dots-sep4-20261022T222707Z-60029d07-zeros.tif",
       "bytes": 301369
+    },
+    {
+      "role": "parallel-lane H85-TVFV (56,442 dots)",
+      "filename": "gems85-h85-tvfv-e85-3-20261022-zeros.tif",
+      "bytes": 178271,
+      "sha256": "0098a5c2d529c449ef58bc1b5280c232e3f8edeb5b22c7d80e9556298bd05354",
+      "stats": {
+        "emitting_pixels": 56442
+      },
+      "note": "Preserved parallel-lane H85-TVFV submission (48.83% 3-px overlap vs H85-GAPVENT, Spearman 0.0656)"
     }
   ]
 }

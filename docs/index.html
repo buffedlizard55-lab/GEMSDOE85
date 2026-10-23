@@ -66,7 +66,7 @@ code — zero human intervention.</p>
   font-weight:700;margin-bottom:10px">⬇ Primary Submission File — Ready to Upload (H85-GAPVENT (E2_poisson_sep28_exc3))</div>
   <a class="dl" href="downloads/gems85-gapvent57-37654dots-sep2.8-exc3-20261023T013000Z-566072f4-zeros.tif">⬇ Download the GeoTIFF
   (271 KB)</a>
-  <div style="margin-top:14px"><a class="dl2" href="downloads/gems85-gapvent57-37654dots-sep2.8-exc3-20261023T013000Z-566072f4-zeros.zip">⬇ zipped primary · 185 KB</a><a class="dl2" href="downloads/gems85-gapvent57-37654dots-sep2.8-exc3-20261023T013000Z-566072f4-nan.tif">⬇ NaN-outside twin (alternate format) · 314 KB</a><a class="dl2" href="downloads/gems85-gapvent57-60000dots-sep2.8-exc3-20261023T013000Z-0afe14c5-zeros.tif">⬇ alt-60k (60,000 dots, HOLDOUT-DTI 0.14949) · 315 KB</a><a class="dl2" href="downloads/gems85-orthofuse92-37654dots-sep2.8-exc3-20261023T013000Z-81d897df-zeros.tif">⬇ alt-orthofuse92 (37,654 dots, HOLDOUT-DTI 0.14177) · 271 KB</a><a class="dl2" href="downloads/gems85-s85-ctxfus50-37654dots-sep4-20261022T232600Z-4f38c2b3-zeros.tif">⬇ Superseded S85-CTXFUS50 primary (37,654 dots, HOLDOUT-DTI 0.08082) · 268 KB</a><a class="dl2" href="downloads/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.tif">⬇ Superseded H85-1 GEO-Pb crest (90,000 dots, HOLDOUT-DTI 0.09838) · 428 KB</a><a class="dl2" href="downloads/gems85-geopb-crest-37654dots-sep4-20261022T222707Z-60029d07-zeros.tif">⬇ Superseded H85-1 GEO-Pb crest (37,654 dots, HOLDOUT-DTI 0.07475) · 294 KB</a></div>
+  <div style="margin-top:14px"><a class="dl2" href="downloads/gems85-gapvent57-37654dots-sep2.8-exc3-20261023T013000Z-566072f4-zeros.zip">⬇ zipped primary · 185 KB</a><a class="dl2" href="downloads/gems85-gapvent57-37654dots-sep2.8-exc3-20261023T013000Z-566072f4-nan.tif">⬇ NaN-outside twin (alternate format) · 314 KB</a><a class="dl2" href="downloads/gems85-gapvent57-60000dots-sep2.8-exc3-20261023T013000Z-0afe14c5-zeros.tif">⬇ alt-60k (60,000 dots, HOLDOUT-DTI 0.14949) · 315 KB</a><a class="dl2" href="downloads/gems85-orthofuse92-37654dots-sep2.8-exc3-20261023T013000Z-81d897df-zeros.tif">⬇ alt-orthofuse92 (37,654 dots, HOLDOUT-DTI 0.14177) · 271 KB</a><a class="dl2" href="downloads/gems85-s85-ctxfus50-37654dots-sep4-20261022T232600Z-4f38c2b3-zeros.tif">⬇ Superseded S85-CTXFUS50 primary (37,654 dots, HOLDOUT-DTI 0.08082) · 268 KB</a><a class="dl2" href="downloads/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.tif">⬇ Superseded H85-1 GEO-Pb crest (90,000 dots, HOLDOUT-DTI 0.09838) · 428 KB</a><a class="dl2" href="downloads/gems85-geopb-crest-37654dots-sep4-20261022T222707Z-60029d07-zeros.tif">⬇ Superseded H85-1 GEO-Pb crest (37,654 dots, HOLDOUT-DTI 0.07475) · 294 KB</a><a class="dl2" href="downloads/gems85-h85-tvfv-e85-3-20261022-zeros.tif">⬇ parallel-lane H85-TVFV (56,442 dots) · 174 KB</a></div>
   <div style="margin-top:16px">
     <span class="tag t-ok">
     ALL 17 CHECKS PASS — OK TO DOWNLOAD AND SUBMIT</span>
@@ -208,7 +208,9 @@ for <code>h33-h33-2-b2</code>) are <b>OWNER-REPORT</b> or <b>PUBLIC-LEADERBOARD-
       &quot;comparable_max_dots&quot;: 65000
     },
     &quot;dense_prior_disclosure&quot;: &quot;IR-85-002 / IR-85-07 -- space-filling priors (e.g. 206,895-dot r13-lattice-s5 and 5.17M-px continuous rasters) cover 99-100% of the footprint within 3 px by construction. Both raw all-raster overlap and comparable-budget (&lt;=65k) raw overlap are reported.&quot;,
-    &quot;is_duplicate&quot;: false
+    &quot;is_duplicate&quot;: false,
+    &quot;overlap_vs_h85_tvfv_3px&quot;: 0.488341,
+    &quot;spearman_vs_h85_tvfv_surface&quot;: 0.0656
   },
   &quot;raster_sha256&quot;: &quot;9fcb1f21a63b3f709faa81f7f56e4ea40cf958a6ad3ecd060f8ec0181a33e028&quot;,
   &quot;validator_output&quot;: {
@@ -236,7 +238,8 @@ for <code>h33-h33-2-b2</code>) are <b>OWNER-REPORT</b> or <b>PUBLIC-LEADERBOARD-
     },
     &quot;no_nan_inside_footprint&quot;: true,
     &quot;values_in_0_1&quot;: true,
-    &quot;crs_shape_transform_match&quot;: true
+    &quot;crs_shape_transform_match&quot;: true,
+    &quot;safe_to_submit&quot;: true
   },
   &quot;submission_name&quot;: &quot;gems85-gapvent57-37654dots-sep2.8-exc3-20261023T013000Z-566072f4-zeros.tif&quot;,
   &quot;submission_note&quot;: &quot;H85-GAPVENT 57ch 10m-3DEP+chi+vent+tilt k300, 37654 dots sep2.8 exc3, HOLDOUT-DTI 0.1423 (UNSCORED)&quot;,
@@ -255,10 +258,7 @@ for <code>h33-h33-2-b2</code>) are <b>OWNER-REPORT</b> or <b>PUBLIC-LEADERBOARD-
     &quot;limit&quot;: 3,
     &quot;note&quot;: &quot;Strictly 3 pre-registered experiments executed: E1 H85-GAPVENT (+0.05217 @37,654), E2 H85-SUBMOD300 vs Poisson-disk + 3-px boundary exclusion (+0.06151 @37,654, WINNER), E3 H85-ORTHOFUSE cross-mechanism ensemble (+0.06095 @37,654).&quot;
   },
-  &quot;negative_experiments_this_session&quot;: [
-    {
-      &quot;id&quot;: &quot;E2-submod&quot;,
-      &quot;file&quot;: &quot;evidence/session_7ded4c0a_experiment</code></pre>
+  &quot;negativ</code></pre>
 
 <h2>Navigation &amp; historical lanes</h2>
 <p><a href="executive-summary.html">How to submit →</a> 5-step DrivenData upload walkthrough &amp; rules summary.<br>

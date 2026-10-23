@@ -1,5 +1,0 @@
-{
-  "status": "unassigned",
-  "method_paragraph": null,
-  "reason": "The prompt references a single method paragraph but supplies no explicit lane assignment. No method selected on the user's behalf."
-}

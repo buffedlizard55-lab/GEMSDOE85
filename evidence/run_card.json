@@ -55,7 +55,9 @@
       "comparable_max_dots": 65000
     },
     "dense_prior_disclosure": "IR-85-002 / IR-85-07 -- space-filling priors (e.g. 206,895-dot r13-lattice-s5 and 5.17M-px continuous rasters) cover 99-100% of the footprint within 3 px by construction. Both raw all-raster overlap and comparable-budget (<=65k) raw overlap are reported.",
-    "is_duplicate": false
+    "is_duplicate": false,
+    "overlap_vs_h85_tvfv_3px": 0.488341,
+    "spearman_vs_h85_tvfv_surface": 0.0656
   },
   "raster_sha256": "9fcb1f21a63b3f709faa81f7f56e4ea40cf958a6ad3ecd060f8ec0181a33e028",
   "validator_output": {
@@ -83,7 +85,8 @@
     },
     "no_nan_inside_footprint": true,
     "values_in_0_1": true,
-    "crs_shape_transform_match": true
+    "crs_shape_transform_match": true,
+    "safe_to_submit": true
   },
   "submission_name": "gems85-gapvent57-37654dots-sep2.8-exc3-20261023T013000Z-566072f4-zeros.tif",
   "submission_note": "H85-GAPVENT 57ch 10m-3DEP+chi+vent+tilt k300, 37654 dots sep2.8 exc3, HOLDOUT-DTI 0.1423 (UNSCORED)",

@@ -1,11 +1,11 @@
-name: Evidence and contract tests
+name: GEMSDOE85 Automated Validation, Site & Uniqueness Gates
 on:
   push:
   pull_request:
 permissions:
   contents: read
 jobs:
-  offline-contracts:
+  verify-gates:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -13,9 +13,8 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
-      - run: pip install -r requirements-lock.txt
-      - run: python -m pytest -q
+      - run: pip install -r requirements.txt
+      - run: python -m pytest -v
       - run: python scripts/build_site.py
       - run: python scripts/check_site.py
-      - name: Check generated site is reproducible
-        run: git diff --exit-code -- docs index.html
+      - run: git diff --exit-code -- docs index.html

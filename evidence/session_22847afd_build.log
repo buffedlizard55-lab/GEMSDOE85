@@ -1,6 +1,0 @@
-training full-catalogue HGB (30 ch) ...
-duplicate check: max|rho|=0.171 maxOverlap=99.0% maxLift=2.51 is_duplicate=False
-primary: 37654 dots -> gems85-s85-ctxfus50-37654dots-sep4-20261022T232600Z-4f38c2b3-zeros.tif  sha256=516730c0300e2bbd passed=True
-alt-60k: 60000 dots -> gems85-s85-ctxfus50-60000dots-sep2.8-20261022T232600Z-983db80a-zeros.tif  sha256=a6e229f8339e7fbf passed=True
-alt-28sep: 37654 dots -> gems85-s85-ctxfus50-37654dots-sep2.8-20261022T232600Z-cd1bee11-zeros.tif  sha256=724fe71743988bad passed=True
--> registry/submission_session.json

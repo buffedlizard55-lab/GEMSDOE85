@@ -218,6 +218,15 @@
       "positive_pixels": 42000,
       "spearman_surface": 0.015971831000059892,
       "dot_overlap_3px": 0.03752589366335582
+    },
+    {
+      "file": "gems85-h85-tvfv-e85-3-20261022-zeros.tif",
+      "their_dots": 56442,
+      "our_dots_within_3px": 0.488341,
+      "their_dots_within_3px_of_ours": 0.343007,
+      "spearman_rho_dots": 0.0153,
+      "spearman_rho_surface": 0.0656,
+      "is_comparable_budget_le_65k": true
     }
   ]
 }
