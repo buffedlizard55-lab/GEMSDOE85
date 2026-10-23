@@ -146,7 +146,8 @@ def test_shipped_releases_pass_their_own_gates_and_match_the_ledger():
     receipts = [ROOT / "evidence" / "session_prune_receipt.json",
                 ROOT / "evidence" / "session_rung_receipt.json",
                 ROOT / "evidence" / "session_snap_receipt.json",
-                ROOT / "evidence" / "session_relief_receipt.json"]
+                ROOT / "evidence" / "session_relief_receipt.json",
+                ROOT / "evidence" / "session_prune_refill_receipt.json"]
     if not ledger.is_file():
         pytest.skip("session outputs not built")
     rows = list(csv.DictReader(ledger.open()))

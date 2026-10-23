@@ -222,27 +222,29 @@ touched; it did **not** modify `vendor/gems57` (no private evaluator or writer f
   dated `TOP_PUBLIC` and remaining slot counts, uploads from their single registered account, records
   live `receipt_score` + `date`, and reviews competition redistribution/AI-disclosure rules.
 
+## 2026-10-23 — arena/85dc0b4a-gemsdoe85 (AXIS=PRUNE applied; union-merged with ladder/SNAP/RELIEF/CONCENTRATION sessions)
+- Human assigned AXIS=PRUNE in this session, stated 3 slots free this week and no prior R0-variant submission; a parallel session assigned CONCENTRATION — both recorded (IR-V2-29), ordering left to the human.
+- AI verified the R0 recipe content-exactly (byte-exact under the merged 1.4.4 lock), reproduced tracked `prune3`/`r2p85` byte-for-byte (deduped), built the novel count-held `prune3fill20` (`12a3b132…`) with upstream-schema receipt, seeded `ledger/lineage_claims.csv`, computed report-only proxies, and union-merged docs/ledger. No slot used; nothing submitted; no credentials or drivendata.org/dropbox access. AI wrote the `v2-prune` scripts/tests/evidence and the IR-V2-29/30 records.
+
 ---
 
 ## MASS session (2026-10-23, `arena/eb7e09d3`)
 
-**The agent chose the axis** — the human instructed that no axis prompt be raised this session. MASS
-was chosen because it was the only axis with no prior ledger row (PRUNE ×6, SNAP ×3,
-CONCENTRATION ×3, RELIEF ×3 already built by other sessions).
+**The agent chose the axis** — instructed not to prompt for one. MASS was the only axis with no
+prior ledger row (PRUNE, SNAP, CONCENTRATION and RELIEF were already built by other sessions).
 
-**AI wrote:** `src/gems85/mass.py` (structural ranking, three arm builders),
-`scripts/build_mass_variants.py`, `scripts/mass_holdout_proxy.py`, the MASS tests in
-`tests/test_lineage.py`, `evidence/mechanism_cards_mass.json`, the MASS blocks in `SLOT_PLAN.md`,
-`docs/SUBMIT.md`, `IRREGULARITIES.md` (IR-V2-08…11) and the CURRENT STATE rows.
+**AI wrote:** `src/gems85/mass.py`, `scripts/build_mass_variants.py`, `scripts/mass_holdout_proxy.py`,
+the MASS tests in `tests/test_lineage.py`, `evidence/mechanism_cards_mass.json`, the MASS block in
+`SLOT_PLAN.md` / `docs/SUBMIT.md`, IR-V2-08…11 and the CURRENT STATE row.
 
-**AI decided, and this is recorded rather than hidden:** to rebuild the parent's missing ranking
-structurally instead of using its literal (raster-order) one; to relax minimum separation to 2.2 px
-for the add arm because the field is saturated; and to enforce the ≥3 px rule on added mass only.
+**AI decided, recorded rather than hidden:** rebuild the parent's missing ranking structurally
+instead of using its literal raster-order one; relax minimum separation to 2.2 px for the add arm
+because the field is saturated; enforce the ≥3 px rule on added mass only.
 
-**AI did not:** submit, log in, scrape, fetch drivendata.org, touch dropbox.com, read credentials, or
-probe labels. Every arm is a mass edit of the incumbent's own dots; the only holdout is the published
-catalogue with whole components withheld and **every arm rebuilt fold-clean** (IR-V2-11).
+**AI did not:** submit, log in, scrape, fetch drivendata.org, contact dropbox.com, read credentials,
+or probe labels. Every arm is a mass edit of the incumbent's own dots; the only holdout is the
+published catalogue with whole components withheld and every arm rebuilt fold-clean (IR-V2-11).
 
-**Caught in the act, kept in the record:** the first proxy run produced +0.19-equivalent nonsense for
-the add arm because the shipped parents had been pruned against the hidden truth. It is documented as
-IR-V2-11 with the wrong numbers, so a later session can recognise the same artefact.
+**Kept in the record:** the first proxy run reported +0.19-equivalent nonsense for the add arm because
+the shipped parents had been pruned against the hidden truth. IR-V2-11 keeps those wrong numbers so a
+later session can recognise the artefact.
