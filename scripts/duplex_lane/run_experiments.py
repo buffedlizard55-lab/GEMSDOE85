@@ -212,4 +212,9 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from preflight import experiment_gate
+    blocked = experiment_gate(ROOT)
+    if blocked:
+        raise SystemExit(blocked)
+    raise SystemExit(main())

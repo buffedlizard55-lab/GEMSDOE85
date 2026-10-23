@@ -1,130 +1,179 @@
 #!/usr/bin/env python3
-"""Offline internal-link, evidence-integrity, and submission deliverable checks."""
+"""Offline checks for the fail-closed public status site.
+
+This release state has no approved candidate. The checker therefore rejects any
+GeoTIFF/ZIP published under docs/, any submission download link, stale positive
+banner, or machine record that claims a current file is safe to submit.
+"""
+from __future__ import annotations
+
 from html.parser import HTMLParser
 import json
 from pathlib import Path
+import re
 from urllib.parse import unquote, urlsplit
-import zipfile
-import numpy as np
-import rasterio
 
 ROOT = Path(__file__).resolve().parents[1]
+DIRECT_RASTER_URL = re.compile(r"""https?://[^\s"'<>]*\.(?:tif|tiff|zip)(?:[?#][^\s"'<>]*)?""", re.IGNORECASE)
 
 
 class Links(HTMLParser):
     def __init__(self):
         super().__init__()
-        self.links = []
-        self.ids = set()
+        self.links: list[str] = []
+        self.ids: set[str] = set()
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
-        if attrs.get('id'):
-            self.ids.add(attrs['id'])
-        for name in ['href', 'src']:
+        if attrs.get("id"):
+            self.ids.add(attrs["id"])
+        for name in ("href", "src"):
             if attrs.get(name):
                 self.links.append(attrs[name])
 
 
-def check(root=ROOT):
-    errors = []
-    files = [root / 'index.html', *sorted((root / 'docs').rglob('*.html'))]
-    for file in files:
+def _load(path: Path):
+    try:
+        return json.loads(path.read_text())
+    except (OSError, json.JSONDecodeError):
+        return None
+
+
+def check(root: Path = ROOT) -> list[str]:
+    root = Path(root)
+    errors: list[str] = []
+    docs = root / "docs"
+    html_files = [root / "index.html", *sorted(docs.rglob("*.html"))]
+
+    for file in html_files:
+        if not file.is_file():
+            errors.append(f"Missing site page: {file.relative_to(root)}")
+            continue
         parser = Links()
-        parser.feed(file.read_text())
+        try:
+            text = file.read_text(encoding="utf-8")
+            parser.feed(text)
+        except (OSError, UnicodeDecodeError) as exc:
+            errors.append(f"Cannot read HTML {file.relative_to(root)}: {exc}")
+            continue
+
+        lowered = text.lower()
+        for phrase in (
+            "all 17 checks pass — ok to download and submit",
+            "ready to submit",
+            "submit this",
+            "submission file — ready to upload",
+        ):
+            if phrase in lowered:
+                errors.append(f"{file.relative_to(root)}: contains stale positive release text: {phrase}")
+
         for url in parser.links:
             part = urlsplit(url)
+            suffix = Path(unquote(part.path)).suffix.lower()
+            if suffix in {".tif", ".tiff", ".zip"}:
+                errors.append(f"{file.relative_to(root)}: submission/archive download link is forbidden while blocked: {url}")
             if part.scheme or part.netloc:
                 continue
             dest = (file.parent / unquote(part.path)).resolve() if part.path else file
             if not dest.is_relative_to(root.resolve()):
-                errors.append(f'{file}: link escapes project: {url}')
+                errors.append(f"{file.relative_to(root)}: link escapes project: {url}")
             elif not dest.exists():
-                errors.append(f'{file}: broken link: {url}')
-            elif part.fragment and dest.suffix == '.html':
+                errors.append(f"{file.relative_to(root)}: broken link: {url}")
+            elif part.fragment and dest.suffix.lower() == ".html":
                 target = Links()
-                target.feed(dest.read_text())
+                try:
+                    target.feed(dest.read_text(encoding="utf-8"))
+                except (OSError, UnicodeDecodeError) as exc:
+                    errors.append(f"Cannot read fragment target {dest.relative_to(root)}: {exc}")
+                    continue
                 if unquote(part.fragment) not in target.ids:
-                    errors.append(f'{file}: missing fragment: {url}')
+                    errors.append(f"{file.relative_to(root)}: missing fragment: {url}")
 
-    # Evidence and registry consistency checks
-    for source in (root / 'docs/evidence').glob('*.json'):
-        original = root / 'evidence' / source.name
-        if original.exists() and source.read_bytes() != original.read_bytes():
-            errors.append(f'Stale/altered published evidence: {source}')
-    for source in (root / 'docs/registry').glob('*.json'):
-        original = root / 'registry' / source.name
-        if original.exists() and source.read_bytes() != original.read_bytes():
-            errors.append(f'Stale/altered published registry: {source}')
+    # No machine-readable or Markdown page may expose a direct prior-raster URL either.
+    for path in docs.rglob("*"):
+        if not path.is_file() or path.suffix.lower() not in {".html", ".json", ".md", ".txt"}:
+            continue
+        try:
+            text = path.read_text(encoding="utf-8")
+        except (OSError, UnicodeDecodeError) as exc:
+            errors.append(f"Cannot inspect public text file {path.relative_to(root)}: {exc}")
+            continue
+        for match in DIRECT_RASTER_URL.finditer(text):
+            errors.append(f"{path.relative_to(root)}: direct raster/archive URL is forbidden while blocked: {match.group(0)}")
 
-    # Validate submission metadata and files
-    sub_path = root / 'registry/submission.json'
-    if not sub_path.exists():
-        errors.append('Missing registry/submission.json')
-        return errors
-    sub = json.loads(sub_path.read_text())
-    pri = sub.get('primary', {})
-    fn = pri.get('filename')
-    if not fn:
-        errors.append('registry/submission.json missing primary filename')
-        return errors
-    tif_path = root / 'docs/downloads' / fn
-    if not tif_path.exists():
-        errors.append(f'Primary submission file missing from docs/downloads: {fn}')
-        return errors
+    # A blocked public Pages tree must not publish historic or test rasters as files.
+    for suffix in ("*.tif", "*.tiff", "*.zip"):
+        for path in docs.rglob(suffix):
+            errors.append(f"Blocked Pages tree contains a raster/archive file: {path.relative_to(root)}")
 
-    # Check zip twin
-    zip_fn = fn.replace('-zeros.tif', '-zeros.zip')
-    zip_path = root / 'docs/downloads' / zip_fn
-    if zip_path.exists():
-        with zipfile.ZipFile(zip_path, 'r') as zf:
-            names = zf.namelist()
-            if len(names) != 1 or names[0] != fn:
-                errors.append(f'Zip {zip_path} should contain exactly {fn}, found: {names}')
+    for relative in ("docs/index.html", "docs/executive-summary.html"):
+        path = root / relative
+        if path.is_file():
+            text = path.read_text(encoding="utf-8")
+            for required in ("DO NOT DOWNLOAD OR SUBMIT", "No new competition submission GeoTIFF"):
+                if required not in text:
+                    errors.append(f"{relative}: missing explicit blocked status: {required}")
 
-    # Re-verify the GeoTIFF on disk
-    try:
-        with rasterio.open(tif_path) as ds:
-            if ds.count != 1:
-                errors.append(f'{fn}: expected single band, got {ds.count}')
-            if ds.dtypes[0] != 'float32':
-                errors.append(f'{fn}: expected float32, got {ds.dtypes[0]}')
-            if (ds.height, ds.width) != (3730, 3292):
-                errors.append(f'{fn}: expected (3730, 3292), got {(ds.height, ds.width)}')
-            if ds.crs is None or ds.crs.to_epsg() != 32611:
-                errors.append(f'{fn}: expected EPSG:32611, got {ds.crs}')
-            if ds.nodata is not None:
-                errors.append(f'{fn}: expected no nodata tag, got {ds.nodata}')
-            arr = ds.read(1)
-            if not np.isfinite(arr).all():
-                errors.append(f'{fn}: expected all finite in zeros mode, found non-finite')
-            if arr.min() < 0.0 or arr.max() > 1.0:
-                errors.append(f'{fn}: values out of range [0, 1]: min={arr.min()}, max={arr.max()}')
-            if (arr > 0).sum() == 0:
-                errors.append(f'{fn}: expected positive predictions, found 0')
-    except Exception as exc:
-        errors.append(f'Failed to validate GeoTIFF {tif_path}: {exc}')
+    card = _load(root / "evidence/run_card.json")
+    if not card:
+        errors.append("Missing or invalid evidence/run_card.json")
+    else:
+        if card.get("verdict") != "negative":
+            errors.append("Current run card must have verdict=negative while no candidate is cleared")
+        if card.get("safe_to_download") is not False or card.get("safe_to_submit") is not False:
+            errors.append("Current run card must explicitly set safe_to_download=false and safe_to_submit=false")
+        if card.get("raster_sha256") is not None or card.get("submission_name") is not None:
+            errors.append("Blocked run card must not identify a current candidate raster/name")
+        if card.get("budget", {}).get("experiments_run") != 0:
+            errors.append("Current preflight must not claim an experiment was run")
+        if card.get("budget", {}).get("experiment_limit") != 3:
+            errors.append("Current preflight must preserve the three-experiment limit")
+        if card.get("budget", {}).get("hours_used") != 0 or card.get("budget", {}).get("hours_limit") != 2:
+            errors.append("Current preflight must preserve the two-hour stop rule with zero time used")
+        if card.get("budget", {}).get("submission_slots_used") != 0:
+            errors.append("Current preflight must not claim a competition slot was used")
+        if card.get("holdout_dti", {}).get("value") is not None or card.get("holdout_dti", {}).get("ci95") is not None:
+            errors.append("Current blocked run card must not publish a candidate HOLDOUT-DTI value or CI")
+        note = str(card.get("submission_note", ""))
+        if len(note) > 140:
+            errors.append(f"Blocked run-card note exceeds 140 characters: {len(note)}")
 
-    # Note validation (<= 140 chars)
-    note = sub.get('note', '')
-    if len(note) > 140:
-        errors.append(f'Submission note exceeds 140 characters: {len(note)}')
+    sub = _load(root / "registry/submission.json")
+    if not sub:
+        errors.append("Missing or invalid registry/submission.json")
+    else:
+        if sub.get("status") != "blocked" or sub.get("primary") is not None:
+            errors.append("registry/submission.json must be blocked with primary=null")
+        if sub.get("safe_to_download") is not False or sub.get("safe_to_submit") is not False:
+            errors.append("registry/submission.json must explicitly disallow download/submission")
 
-    # Check visible status on site
-    for name in ['index.html', 'executive-summary.html']:
-        page_text = (root / 'docs' / name).read_text()
-        if fn not in page_text:
-            errors.append(f'Missing primary download filename in docs/{name}')
-        if 'ALL 17 CHECKS PASS — OK TO DOWNLOAD AND SUBMIT' not in page_text:
-            errors.append(f'Missing OK TO DOWNLOAD AND SUBMIT banner in docs/{name}')
+    lane = _load(root / "registry/lane.json") or {}
+    if lane.get("status") != "unassigned":
+        errors.append("Expected lane status to remain unassigned; no lane was authorized in this session")
+    cache = _load(root / "registry/cache_manifest.json") or {}
+    if cache.get("status") != "unavailable" or cache.get("cache_files"):
+        errors.append("Expected transformed feature-cache manifest to remain unavailable/empty")
+    saturation = _load(root / "evidence/saturation_certificate.json") or {}
+    if saturation.get("universal_overlap_blocker") is not True:
+        errors.append("Binding literal saturation certificate is missing or no longer records its universal blocker")
+
+    for published, canonical in (
+        ("docs/evidence/run_card.json", "evidence/run_card.json"),
+        ("docs/registry/submission.json", "registry/submission.json"),
+        ("docs/registry/lane.json", "registry/lane.json"),
+        ("docs/registry/cache_manifest.json", "registry/cache_manifest.json"),
+    ):
+        pub, src = root / published, root / canonical
+        if not pub.is_file() or not src.is_file() or pub.read_bytes() != src.read_bytes():
+            errors.append(f"Published machine record is stale or missing: {published}")
 
     return errors
 
 
-if __name__ == '__main__':
-    errors = check()
-    for error in errors:
-        print(error)
-    if errors:
+if __name__ == "__main__":
+    failures = check(ROOT)
+    for failure in failures:
+        print(failure)
+    if failures:
         raise SystemExit(1)
-    print('Site OK: internal links, evidence integrity, primary GeoTIFF format PASS, and obvious submission download.')
+    print("Site safety checks PASS: blocked status is explicit; no raster/ZIP download or positive release claim is published.")

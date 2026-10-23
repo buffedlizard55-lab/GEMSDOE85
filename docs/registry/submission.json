@@ -1,0 +1,22 @@
+{
+  "schema_version": 2,
+  "status": "blocked",
+  "hypothesis_id": null,
+  "primary": null,
+  "alternates": [],
+  "note": "BLOCKED; no candidate generated. Do not submit historical rasters.",
+  "safe_to_download": false,
+  "safe_to_submit": false,
+  "experiments_run": 0,
+  "submission_slots_used": 0,
+  "blockers": [
+    "No explicit single-method paragraph is assigned; research proposals are not lane assignments.",
+    "Core inputs are unavailable or fail pinned size/hash checks: training_features.",
+    "The pinned transformed feature-stack cache is unavailable; raw competition rasters are not a substitute.",
+    "The binding literal registry-saturation certificate blocks every nonempty candidate in the allowed domain; the 70% overlap rule is not waived.",
+    "Pre-placement surface correlation and final-dot overlap were not run because no candidate was authorized or generated.",
+    "No comparable same-evaluator current-best holdout receipt is available for a paired promotion test.",
+    "Organizer submission receipts and account-specific weekly quota are unavailable; no submission slot is selected."
+  ],
+  "historical_artifacts": "submissions/quarantine/ (research only; not cleared for submission)"
+}

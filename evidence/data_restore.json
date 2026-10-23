@@ -1,33 +1,45 @@
 {
-  "provenance": "Owner mirrors; hash-pinned, not organizer-authenticated",
+  "evidence_class": "CURRENT-WORKSPACE-PRESENCE-CHECK",
+  "checked_date_utc": "2026-10-23",
+  "method": "Local inventory and SHA-256 comparison only; no restore/download script executed in this review.",
+  "provenance": "Manifest is based on owner-supplied GitHub mirrors; matching hashes do not authenticate bytes with the organizer.",
+  "transformed_feature_cache": "unavailable; registry/cache_manifest.json has no cache files; raw feature raster is not a substitute.",
   "files": [
     {
       "id": "training_features",
-      "path": "data/raw/training_features.tif",
-      "sha256": "4371c82e3b8339b807bdffcf4ef59a225520fe2988d521be208ae33743123bc5",
-      "bytes": 418912844,
-      "status": "restored"
+      "path": "data/training_features.tif",
+      "expected_bytes": 418912844,
+      "present": false,
+      "size_matches_manifest": false,
+      "sha256_matches_manifest": false,
+      "status": "not present in this checkout"
     },
     {
       "id": "labels",
-      "path": "data/raw/labels.tif",
-      "sha256": "7ba308ccdc4418b31a178f4f1ef21aaa6e152e4028f2f6f64b01f7eb25ae4093",
-      "bytes": 425830,
-      "status": "restored"
+      "path": "data/labels.tif",
+      "expected_bytes": 425830,
+      "present": true,
+      "size_matches_manifest": true,
+      "sha256_matches_manifest": true,
+      "status": "present and hash matches owner-mirror manifest"
     },
     {
       "id": "existing_faults",
-      "path": "data/raw/existing_faults.tif",
-      "sha256": "7ba308ccdc4418b31a178f4f1ef21aaa6e152e4028f2f6f64b01f7eb25ae4093",
-      "bytes": 425830,
-      "status": "restored"
+      "path": "data/existing_faults.tif",
+      "expected_bytes": 425830,
+      "present": true,
+      "size_matches_manifest": true,
+      "sha256_matches_manifest": true,
+      "status": "present and hash matches owner-mirror manifest"
     },
     {
       "id": "sample_submission",
-      "path": "data/raw/sample_submission.tif",
-      "sha256": "2176d08e485aa2cd2860ce8df539db4faf4d76163b38a4dd8c30a40454d35cbc",
-      "bytes": 1599597,
-      "status": "restored"
+      "path": "data/sample_submission.tif",
+      "expected_bytes": 1599597,
+      "present": true,
+      "size_matches_manifest": true,
+      "sha256_matches_manifest": true,
+      "status": "present and hash matches owner-mirror manifest"
     }
   ]
 }

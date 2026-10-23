@@ -1,3 +1,7 @@
+> **ARCHIVAL SNAPSHOT — NOT CURRENT RELEASE AUTHORITY.** Historical candidate, score, lane, test, and download assertions below are preserved for traceability only. They are superseded by the current root `README.md`, `research/review.md`, and `evidence/run_card.json`; no TIFF in these snapshots is cleared for download or submission.
+
+---
+
 # GEMSDOE85 — GEO-Pb: a juxtaposition detector for concealed faults
 
 **DOE GEMS Prize · DrivenData competition #306 · lane H85-1**

@@ -33,4 +33,10 @@ def main():
     best=max(out["grid"], key=lambda d:d["pooled_dti"])
     print("\nbest on holdout:", best["sep_px"], best["n_requested"], round(best["pooled_dti"],5))
     return 0
-if __name__=="__main__": raise SystemExit(main())
+if __name__ == "__main__":
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from preflight import experiment_gate
+    blocked = experiment_gate(ROOT)
+    if blocked:
+        raise SystemExit(blocked)
+    raise SystemExit(main())

@@ -92,8 +92,10 @@ def audit(root=ROOT):
 
 def main():
     card = audit()
-    (ROOT / 'evidence/run_card.json').write_text(json.dumps(card, indent=2, allow_nan=False) + '\n')
+    # This diagnostic may inspect historical quarantine bytes, but must never overwrite
+    # the canonical current run card or imply that a format check is release clearance.
     print(json.dumps(card, indent=2, allow_nan=False))
+    print('BLOCKED: diagnostic output only; canonical run card was not changed.')
     return 2  # A blocked release must never appear successful to automation.
 
 

@@ -1,0 +1,346 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-23",
+  "purpose": "Audit manifest for files removed from the public Pages downloads directory.",
+  "policy": "Quarantine preserves historical bytes; it does not make a file a current candidate or authorize competition submission.",
+  "source_directory": "docs/downloads/",
+  "quarantine_directory": "submissions/quarantine/",
+  "files": [
+    {
+      "former_public_path": "docs/downloads/gems85-geopb-crest-37654dots-sep4-20261022T222707Z-60029d07-nan.tif",
+      "bytes": 339110,
+      "sha256": "1a860abfb84ab6875fdc6e8f7c7a220f9329712490256467ed866b3f9f744783",
+      "quarantine_copy": "submissions/quarantine/gems85-geopb-crest-37654dots-sep4-20261022T222707Z-60029d07-nan.tif",
+      "action": "removed from Pages; identical bytes already preserved in quarantine",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-geopb-crest-37654dots-sep4-20261022T222707Z-60029d07-nan.tif.checks.json",
+      "bytes": 1004,
+      "sha256": "12d14a751eb5effd899cb50b0a51e40a65e6156f2c03ed8ec41f6a6fa85b1430",
+      "quarantine_copy": "submissions/quarantine/gems85-geopb-crest-37654dots-sep4-20261022T222707Z-60029d07-nan.tif.checks.json",
+      "action": "removed from Pages; identical bytes already preserved in quarantine",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-geopb-crest-37654dots-sep4-20261022T222707Z-60029d07-zeros.tif",
+      "bytes": 301369,
+      "sha256": "a211e7c6e2cdb6665537b19d4902824d12bd1951185f6c66c1df86a843a5281e",
+      "quarantine_copy": "submissions/quarantine/gems85-geopb-crest-37654dots-sep4-20261022T222707Z-60029d07-zeros.tif",
+      "action": "removed from Pages; identical bytes already preserved in quarantine",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-geopb-crest-37654dots-sep4-20261022T222707Z-60029d07-zeros.tif.checks.json",
+      "bytes": 1113,
+      "sha256": "ccd01b2984f1157ecfb9b664a1e248e65e06bce937c3eec6624b4a8892668661",
+      "quarantine_copy": "submissions/quarantine/gems85-geopb-crest-37654dots-sep4-20261022T222707Z-60029d07-zeros.tif.checks.json",
+      "action": "removed from Pages; identical bytes already preserved in quarantine",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-geopb-crest-37654dots-sep4-20261022T222707Z-60029d07-zeros.zip",
+      "bytes": 222525,
+      "sha256": "bca6bc9dc231e207f50b3e42b15ca31c6f916d4966e88af585a14ae83f69e77c",
+      "quarantine_copy": "submissions/quarantine/gems85-geopb-crest-37654dots-sep4-20261022T222707Z-60029d07-zeros.zip",
+      "action": "removed from Pages; identical bytes already preserved in quarantine",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-geopb-crest-60000dots-sep4-20261022T222707Z-cbb4e82c-nan.tif",
+      "bytes": 401298,
+      "sha256": "f971f8c58ceb82db97d61e71300bc4c31468f549925810a597c0809f02f435ca",
+      "quarantine_copy": "submissions/quarantine/gems85-geopb-crest-60000dots-sep4-20261022T222707Z-cbb4e82c-nan.tif",
+      "action": "removed from Pages; identical bytes already preserved in quarantine",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-geopb-crest-60000dots-sep4-20261022T222707Z-cbb4e82c-nan.tif.checks.json",
+      "bytes": 1004,
+      "sha256": "4ff12e0a94ee68a5e6e84d5493a23a9c83faabddb591e6ae570da3cbfa5bc884",
+      "quarantine_copy": "submissions/quarantine/gems85-geopb-crest-60000dots-sep4-20261022T222707Z-cbb4e82c-nan.tif.checks.json",
+      "action": "removed from Pages; identical bytes already preserved in quarantine",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-geopb-crest-60000dots-sep4-20261022T222707Z-cbb4e82c-zeros.tif",
+      "bytes": 363090,
+      "sha256": "2bdae85a89b2ce6f953fcbcda06a49c036776e0939a3bc1a62a0b1305d28aecc",
+      "quarantine_copy": "submissions/quarantine/gems85-geopb-crest-60000dots-sep4-20261022T222707Z-cbb4e82c-zeros.tif",
+      "action": "removed from Pages; identical bytes already preserved in quarantine",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-geopb-crest-60000dots-sep4-20261022T222707Z-cbb4e82c-zeros.tif.checks.json",
+      "bytes": 1113,
+      "sha256": "ec97370a161a68df4f7a13ae65557cea2c51c0d2fea4229e2757f7036253ca61",
+      "quarantine_copy": "submissions/quarantine/gems85-geopb-crest-60000dots-sep4-20261022T222707Z-cbb4e82c-zeros.tif.checks.json",
+      "action": "removed from Pages; identical bytes already preserved in quarantine",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-geopb-crest-60000dots-sep4-20261022T222707Z-cbb4e82c-zeros.zip",
+      "bytes": 291038,
+      "sha256": "19a6804a4d3b1c91087abcb4ecfad0894ed2ea16a9ad96826b21c4ff3b2a2385",
+      "quarantine_copy": "submissions/quarantine/gems85-geopb-crest-60000dots-sep4-20261022T222707Z-cbb4e82c-zeros.zip",
+      "action": "removed from Pages; identical bytes already preserved in quarantine",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-nan.tif",
+      "bytes": 476599,
+      "sha256": "085c45c57d6532c7fdd9a00715c0f4f03465f8e665aa0cc2de3f71e25a33818c",
+      "quarantine_copy": "submissions/quarantine/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-nan.tif",
+      "action": "removed from Pages; identical bytes already preserved in quarantine",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-nan.tif.checks.json",
+      "bytes": 1004,
+      "sha256": "85b7bb7fffd9255df863023be03d2510a62a31b9e054f1c669458184a129f7bc",
+      "quarantine_copy": "submissions/quarantine/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-nan.tif.checks.json",
+      "action": "removed from Pages; identical bytes already preserved in quarantine",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.tif",
+      "bytes": 438042,
+      "sha256": "ba33ea18936e6324037457e1ff5070d8e879b7b29a25b4ae2c0003bc509a567f",
+      "quarantine_copy": "submissions/quarantine/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.tif",
+      "action": "removed from Pages; identical bytes already preserved in quarantine",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.tif.checks.json",
+      "bytes": 1113,
+      "sha256": "803930bc236ab617362720bc796c815f1effa736d7c6a6c047c429b7fb2e92f5",
+      "quarantine_copy": "submissions/quarantine/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.tif.checks.json",
+      "action": "removed from Pages; identical bytes already preserved in quarantine",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.zip",
+      "bytes": 369014,
+      "sha256": "cc673f7acd055b77efd9a69833df784ff042fc9a1da7d2d2b6b8e71042e337b2",
+      "quarantine_copy": "submissions/quarantine/gems85-geopb-crest-90000dots-sep4-20261022T222707Z-a4e1f57c-zeros.zip",
+      "action": "removed from Pages; identical bytes already preserved in quarantine",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-h85-duplex-pullapart-worm-20261022T220544Z-2f8b57d9-audit.json",
+      "bytes": 4241,
+      "sha256": "6cfedaf8b512511cf9a32bfb58d7c5ad2f571624e1b781b39d6ca6f6bdede93b",
+      "quarantine_copy": "submissions/quarantine/gems85-h85-duplex-pullapart-worm-20261022T220544Z-2f8b57d9-audit.json",
+      "action": "removed from Pages; identical bytes already preserved in quarantine",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-h85-duplex-pullapart-worm-20261022T220544Z-2f8b57d9-nan.tif",
+      "bytes": 215503,
+      "sha256": "ce8fb8c0f0b2fad1513bff4e34fa15a3e4c7bb8d373efa8f3cff6ceebcb99040",
+      "quarantine_copy": "submissions/quarantine/gems85-h85-duplex-pullapart-worm-20261022T220544Z-2f8b57d9-nan.tif",
+      "action": "removed from Pages; identical bytes already preserved in quarantine",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-h85-duplex-pullapart-worm-20261022T220544Z-2f8b57d9-zeros.tif",
+      "bytes": 88372,
+      "sha256": "10efc0a5adf13b9e56c08e1be470eac88153a4985b9b9da776ed63772be298cb",
+      "quarantine_copy": "submissions/quarantine/gems85-h85-duplex-pullapart-worm-20261022T220544Z-2f8b57d9-zeros.tif",
+      "action": "removed from Pages; identical bytes already preserved in quarantine",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-h85-duplex-pullapart-worm-20261022T220544Z-2f8b57d9-zeros.zip",
+      "bytes": 36014,
+      "sha256": "57184eebe24f99c0e857e9e1b2b3f847671ce2e145313dca146597fa5d4d109b",
+      "quarantine_copy": "submissions/quarantine/gems85-h85-duplex-pullapart-worm-20261022T220544Z-2f8b57d9-zeros.zip",
+      "action": "removed from Pages; identical bytes already preserved in quarantine",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-h85-ti-pure-20261022T221047Z-f53a0c81-audit.json",
+      "bytes": 3790,
+      "sha256": "7384fdb59a284c8e1797279540175346e9d04cc1d680937f1e97adfab0ed14d1",
+      "quarantine_copy": "submissions/quarantine/gems85-h85-ti-pure-20261022T221047Z-f53a0c81-audit.json",
+      "action": "removed from Pages; identical bytes already preserved in quarantine",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-h85-ti-pure-20261022T221047Z-f53a0c81-nan.tif",
+      "bytes": 258932,
+      "sha256": "bf83e0a3b00592c1b355b9e54402a83d4f61af75da1c6223f5301f8b4fa22379",
+      "quarantine_copy": "submissions/quarantine/gems85-h85-ti-pure-20261022T221047Z-f53a0c81-nan.tif",
+      "action": "removed from Pages; identical bytes already preserved in quarantine",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-h85-ti-pure-20261022T221047Z-f53a0c81-zeros.tif",
+      "bytes": 129895,
+      "sha256": "e695ba4e00200837fce14dd08b60111c30d54f7b9bc91f9d372b383f2f665f0e",
+      "quarantine_copy": "submissions/quarantine/gems85-h85-ti-pure-20261022T221047Z-f53a0c81-zeros.tif",
+      "action": "removed from Pages; identical bytes already preserved in quarantine",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-h85-worm-pure-20261022T221114Z-e3091ec2-audit.json",
+      "bytes": 3810,
+      "sha256": "27e2c910ada6a68bd3a8b6bed99b212845f60a696dd36e239650a710a548b188",
+      "quarantine_copy": "submissions/quarantine/gems85-h85-worm-pure-20261022T221114Z-e3091ec2-audit.json",
+      "action": "removed from Pages; identical bytes already preserved in quarantine",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-h85-worm-pure-20261022T221114Z-e3091ec2-nan.tif",
+      "bytes": 305762,
+      "sha256": "b3d3f846de50c6fd2521757efe9362f25a03b61b3fd90fff6718f9e91479d37f",
+      "quarantine_copy": "submissions/quarantine/gems85-h85-worm-pure-20261022T221114Z-e3091ec2-nan.tif",
+      "action": "removed from Pages; identical bytes already preserved in quarantine",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-h85-worm-pure-20261022T221114Z-e3091ec2-zeros.tif",
+      "bytes": 175572,
+      "sha256": "5544436d93354b92a6e6c1a8222b3cda9a1c3624ce53009227cb66e252d005d2",
+      "quarantine_copy": "submissions/quarantine/gems85-h85-worm-pure-20261022T221114Z-e3091ec2-zeros.tif",
+      "action": "removed from Pages; identical bytes already preserved in quarantine",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-s85-ctxfus50-37654dots-sep2.8-20261022T232600Z-cd1bee11-nan.tif",
+      "bytes": 320608,
+      "sha256": "cb259abd71d8d6531a3999cbcb725835fdc96be420bc41262647b1c55b1468d3",
+      "quarantine_copy": "submissions/quarantine/public-downloads/gems85-s85-ctxfus50-37654dots-sep2.8-20261022T232600Z-cd1bee11-nan.tif",
+      "action": "moved into quarantine/public-downloads",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-s85-ctxfus50-37654dots-sep2.8-20261022T232600Z-cd1bee11-nan.tif.checks.json",
+      "bytes": 1007,
+      "sha256": "aa8010b04f0b93c57c0dbf68615cd236ed8601e77b47e4ea2cf13477ff6c3479",
+      "quarantine_copy": "submissions/quarantine/public-downloads/gems85-s85-ctxfus50-37654dots-sep2.8-20261022T232600Z-cd1bee11-nan.tif.checks.json",
+      "action": "moved into quarantine/public-downloads",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-s85-ctxfus50-37654dots-sep2.8-20261022T232600Z-cd1bee11-zeros.tif",
+      "bytes": 276806,
+      "sha256": "724fe71743988badd2ec52ba5d5e1f0c5def79df46f8a939ad76ad72cbfaade8",
+      "quarantine_copy": "submissions/quarantine/public-downloads/gems85-s85-ctxfus50-37654dots-sep2.8-20261022T232600Z-cd1bee11-zeros.tif",
+      "action": "moved into quarantine/public-downloads",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-s85-ctxfus50-37654dots-sep2.8-20261022T232600Z-cd1bee11-zeros.tif.checks.json",
+      "bytes": 1116,
+      "sha256": "86647fbbcacde9ab929d6d78a1d9cf836db6faf03918174c8928482713a89264",
+      "quarantine_copy": "submissions/quarantine/public-downloads/gems85-s85-ctxfus50-37654dots-sep2.8-20261022T232600Z-cd1bee11-zeros.tif.checks.json",
+      "action": "moved into quarantine/public-downloads",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-s85-ctxfus50-37654dots-sep2.8-20261022T232600Z-cd1bee11-zeros.zip",
+      "bytes": 187710,
+      "sha256": "06875ac679da6ae79ce77fcc899b4700c3869afff8038428b9ea835466f4604d",
+      "quarantine_copy": "submissions/quarantine/public-downloads/gems85-s85-ctxfus50-37654dots-sep2.8-20261022T232600Z-cd1bee11-zeros.zip",
+      "action": "moved into quarantine/public-downloads",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-s85-ctxfus50-37654dots-sep4-20261022T232600Z-4f38c2b3-nan.tif",
+      "bytes": 317790,
+      "sha256": "888faf69e9051b7d877b6a86c61dd2a23f3f9162aef50aa93a70d69314d1c368",
+      "quarantine_copy": "submissions/quarantine/public-downloads/gems85-s85-ctxfus50-37654dots-sep4-20261022T232600Z-4f38c2b3-nan.tif",
+      "action": "moved into quarantine/public-downloads",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-s85-ctxfus50-37654dots-sep4-20261022T232600Z-4f38c2b3-nan.tif.checks.json",
+      "bytes": 1005,
+      "sha256": "52099672f7f60f55ac84109962c8cb03de914e9293a22d712196945204c41050",
+      "quarantine_copy": "submissions/quarantine/public-downloads/gems85-s85-ctxfus50-37654dots-sep4-20261022T232600Z-4f38c2b3-nan.tif.checks.json",
+      "action": "moved into quarantine/public-downloads",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-s85-ctxfus50-37654dots-sep4-20261022T232600Z-4f38c2b3-zeros.tif",
+      "bytes": 274360,
+      "sha256": "516730c0300e2bbd49f490b3bcb1d45dc6d59e23ab74f45bb9daf8fa9a9b7e2b",
+      "quarantine_copy": "submissions/quarantine/public-downloads/gems85-s85-ctxfus50-37654dots-sep4-20261022T232600Z-4f38c2b3-zeros.tif",
+      "action": "moved into quarantine/public-downloads",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-s85-ctxfus50-37654dots-sep4-20261022T232600Z-4f38c2b3-zeros.tif.checks.json",
+      "bytes": 1114,
+      "sha256": "ab8481755d9d6417fcf2ea6d8c4fbd9c5955104b35447cd438b39411e2e51f50",
+      "quarantine_copy": "submissions/quarantine/public-downloads/gems85-s85-ctxfus50-37654dots-sep4-20261022T232600Z-4f38c2b3-zeros.tif.checks.json",
+      "action": "moved into quarantine/public-downloads",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-s85-ctxfus50-37654dots-sep4-20261022T232600Z-4f38c2b3-zeros.zip",
+      "bytes": 184756,
+      "sha256": "55b100192d138351ed6b0b875b96fcd4691220484e969833eb71d35609fe093b",
+      "quarantine_copy": "submissions/quarantine/public-downloads/gems85-s85-ctxfus50-37654dots-sep4-20261022T232600Z-4f38c2b3-zeros.zip",
+      "action": "moved into quarantine/public-downloads",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-s85-ctxfus50-60000dots-sep2.8-20261022T232600Z-983db80a-nan.tif",
+      "bytes": 368401,
+      "sha256": "47b42ce5eb7b1f72c1c4411267517f80c43e2436c9cfbf8d752613485fe401ad",
+      "quarantine_copy": "submissions/quarantine/public-downloads/gems85-s85-ctxfus50-60000dots-sep2.8-20261022T232600Z-983db80a-nan.tif",
+      "action": "moved into quarantine/public-downloads",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-s85-ctxfus50-60000dots-sep2.8-20261022T232600Z-983db80a-nan.tif.checks.json",
+      "bytes": 1007,
+      "sha256": "05f2232076aaafaf3a076e6f6285401afe2d4bcc4435f7dae11faf8e8497886e",
+      "quarantine_copy": "submissions/quarantine/public-downloads/gems85-s85-ctxfus50-60000dots-sep2.8-20261022T232600Z-983db80a-nan.tif.checks.json",
+      "action": "moved into quarantine/public-downloads",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-s85-ctxfus50-60000dots-sep2.8-20261022T232600Z-983db80a-zeros.tif",
+      "bytes": 323757,
+      "sha256": "a6e229f8339e7fbf0a16681868636562b386d1f4babc9721636d3685371a543f",
+      "quarantine_copy": "submissions/quarantine/public-downloads/gems85-s85-ctxfus50-60000dots-sep2.8-20261022T232600Z-983db80a-zeros.tif",
+      "action": "moved into quarantine/public-downloads",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-s85-ctxfus50-60000dots-sep2.8-20261022T232600Z-983db80a-zeros.tif.checks.json",
+      "bytes": 1116,
+      "sha256": "11ea9b4ffaead1ada0a3d974331b83fce30e18bd9d5762d96004191c4ec52a1c",
+      "quarantine_copy": "submissions/quarantine/public-downloads/gems85-s85-ctxfus50-60000dots-sep2.8-20261022T232600Z-983db80a-zeros.tif.checks.json",
+      "action": "moved into quarantine/public-downloads",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/gems85-s85-ctxfus50-60000dots-sep2.8-20261022T232600Z-983db80a-zeros.zip",
+      "bytes": 243069,
+      "sha256": "8ec0711030ebb29a0b84f45df1a7e5eee5042f7fe18605d7a6ddda3b8163d24a",
+      "quarantine_copy": "submissions/quarantine/public-downloads/gems85-s85-ctxfus50-60000dots-sep2.8-20261022T232600Z-983db80a-zeros.zip",
+      "action": "moved into quarantine/public-downloads",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/preview_ctxfus50_vs_h33_catalogue.png",
+      "bytes": 97030,
+      "sha256": "24a9c50dc6a40cc69932505ec874f4f7238453e238a34c93bdde2e7c30fd6c51",
+      "quarantine_copy": "submissions/quarantine/public-downloads/preview_ctxfus50_vs_h33_catalogue.png",
+      "action": "moved into quarantine/public-downloads",
+      "release_status": "historical; not cleared for download or submission"
+    },
+    {
+      "former_public_path": "docs/downloads/run_card.json",
+      "bytes": 8988,
+      "sha256": "4b7af26f117b4dc8111a3e7d50365dcd1ae745cfb6f9e4bc7aa16eaadd5d9f45",
+      "quarantine_copy": "submissions/quarantine/public-downloads/run_card.json",
+      "action": "moved into quarantine/public-downloads",
+      "release_status": "historical; not cleared for download or submission"
+    }
+  ]
+}

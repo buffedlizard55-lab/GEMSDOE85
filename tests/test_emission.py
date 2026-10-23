@@ -184,15 +184,17 @@ def test_published_note_is_within_140_chars():
                     reason="no run card yet")
 def test_run_card_has_every_required_protocol_field():
     card = json.loads((ROOT / "evidence" / "run_card.json").read_text())
+    for key in ("hypothesis", "mechanism", "named_non_fault_process_that_could_mimic_it",
+                "holdout_dti", "correlation_overlap_vs_registry", "raster_sha256",
+                "validator_output", "submission_name", "submission_note", "verdict"):
+        assert key in card, f"run card missing {key}"
+    assert card["holdout_dti"]["label"] == "HOLDOUT-DTI"
+    assert "evaluator_version" in card["holdout_dti"]
+    assert "ci95" in card["holdout_dti"] and "n_withheld_positives" in card["holdout_dti"]
+    assert len(card["submission_note"]) <= 140
     if card.get("experiment_status", "").startswith("NOT RUN"):
         assert card["verdict"] == "negative"
         assert card["raster_sha256"] is None
-        assert card["holdout"]["dti"] is None
+        assert card["holdout_dti"]["value"] is None
+        assert card["holdout_dti"]["ci95"] is None
         assert card["safe_to_submit"] is False
-        return
-    for key in ("hypothesis", "mechanism", "named_non_fault_process_that_could_mimic_it",
-                "holdout_dti", "correlation_vs_registry", "raster_sha256",
-                "validator_output", "submission_name", "submission_note", "verdict"):
-        assert key in card and card[key], f"run card missing {key}"
-    assert card["holdout_dti"]["label"] == "HOLDOUT-DTI"
-    assert "ci95" in card["holdout_dti"] and "n_withheld_positives" in card["holdout_dti"]

@@ -1,13 +1,11 @@
-# Geothermal vent & blind-system discovery in the Great Basin — reusable knowledge
+# Geothermal vent & blind-system discovery in the Great Basin — reusable research notes
 
-**Scope.** What is actually known about how hidden geothermal upflow is found in the Basin and
-Range, which of it is usable as a *fault-prediction* prior for DrivenData #306, and — the part
-that matters most — **measurements made in this repository rather than recited.**
+> **Historical evidence warning (2026-10-23):** This file includes prior-session measurements from owner-mirrored external data that are not present in the current checkout and have not been revalidated in this review. The current input inventory is [`../evidence/data_restore.json`](../evidence/data_restore.json). Do not use the old counts, AUCs, or access statements as current results, and do not infer that a fault prediction proves a geothermal resource.
+
+**Scope.** These are prior research notes about hidden geothermal upflow and possible fault-prediction priors for DrivenData #306. Their purpose is hypothesis generation, not a current candidate result or method-lane assignment.
 
 **Source discipline.** Every claim is tagged:
-`[MEASURED-HERE]` reproducible from this repo · `[PUBLISHED]` established literature/agency
-result, source linked, **not re-fetchable from this sandbox** (network allowlist — see README §5)
-· `[INFERENCE]` reasoning by the author of this file. Nothing here is organizer-authenticated.
+`[HISTORICAL-MEASURED]` a prior-session measurement recorded in this repository, not revalidated in the current checkout · `[PUBLISHED]` a linked literature/agency claim that has not been freshly fetched in this review · `[INFERENCE]` reasoning by the author of this file. Nothing here is organizer-authenticated.
 
 ---
 
@@ -37,7 +35,7 @@ the sibling repositories (live 0.2708 for `h27-4`; the H34 corridor variant scor
 holdout). `[INFERENCE]` The lesson is that the *idea* is right and already harvested; the
 remaining value is in the **thermal evidence that sits where no fault is mapped at all.**
 
-## 2. What the repository's own thermal data says `[MEASURED-HERE]`
+## 2. What a prior-session thermal data mirror recorded `[HISTORICAL-MEASURED]`
 
 Source: `data/external/gdr_wellspring_in_footprint.csv` — 27,092 rows / **12,570 unique sites**
 inside the survey footprint, derived from the DOE **Geothermal Data Repository** spring- and
@@ -115,7 +113,7 @@ scale at which the measured lift is 1.50×) and λ tuned on the holdout. This re
 crests toward thermal evidence without emitting a single pixel that GEO-Pb did not already
 propose — so it cannot increase uncredited mass, only redistribute the fixed budget. It is a pure
 **re-ranking under a mass constraint**, which is the only kind of change the marginal-bar algebra
-(`docs/research/metric-algebra.md` §4) says is free.
+(as described in prior-session metric-algebra notes archived outside the active Pages tree).
 
 **Status: specified, not implemented.** It did not fit in this session's budget. It is item 3 in
 the README's remaining-work list and is the highest-value cheap experiment left in this lane.
@@ -124,16 +122,18 @@ the README's remaining-work list and is the highest-value cheap experiment left 
 
 | source | link | state |
 |---|---|---|
-| DOE Geothermal Data Repository (host of the spring/well chemistry + INGENIOUS) | <https://gdr.openei.org/> | data present in-repo; site not fetchable from sandbox |
+| DOE Geothermal Data Repository (host of the spring/well chemistry + INGENIOUS) | <https://gdr.openei.org/> | historical source note; current data not present and page not freshly fetched |
 | INGENIOUS fault & favourability compilation | <https://gdr.openei.org/submissions/1391> | cited, unverified here |
-| USGS GeoDAWN airborne geophysics (mag + radiometric), Nevada | DOI <https://doi.org/10.5066/P93LGLVQ> | data present in-repo; DOI not fetchable from sandbox |
+| USGS GeoDAWN airborne geophysics (mag + radiometric), Nevada | DOI <https://doi.org/10.5066/P93LGLVQ> | historical source note; current data not present and DOI not freshly fetched |
 | USGS Quaternary Fault and Fold Database | <https://www.usgs.gov/programs/earthquake-hazards/faults> | cited, unverified here |
-| USGS State Geologic Map Compilation (SGMC) | <https://mrdata.usgs.gov/geology/state/> | derived raster present in-repo |
-| USGS 3DEP 1 m lidar | <https://www.usgs.gov/3d-elevation-program> | derived raster present in-repo |
+| USGS State Geologic Map Compilation (SGMC) | <https://mrdata.usgs.gov/geology/state/> | prior-session derivation; current data not present |
+| USGS 3DEP 1 m lidar | <https://www.usgs.gov/3d-elevation-program> | prior-session derivation; current data not present |
 | Copernicus Sentinel-1 (InSAR), free | <https://dataspace.copernicus.eu/> | **blocked by allowlist** |
 | USGS ANSS Comprehensive Catalog (seismicity), free | <https://earthquake.usgs.gov/earthquakes/search/> | **blocked by allowlist** |
 
-## 6. Reproducing §2
+## 6. Historical reproducibility sketch (not executable in the current checkout)
+
+The source CSVs, feature stack, and cache referenced below are absent from the current local inventory. This code block records a prior-session procedure; it was not run or revalidated in the 2026-10-23 review.
 
 ```python
 import sys; sys.path.insert(0, "src")

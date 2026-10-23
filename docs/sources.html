@@ -1,31 +1,35 @@
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Sources — GEMSDOE85</title>
-<style>body{font-family:system-ui,sans-serif;max-width:900px;margin:0 auto;padding:24px;line-height:1.5}a{color:#0b5fff}table{border-collapse:collapse;width:100%}th,td{border:1px solid #e5e7eb;padding:6px 8px;text-align:left}th{background:#f8fafc}</style>
-</head>
-<body>
-<h1>Sources — Verified Links for Manual Review</h1>
-<p><a href="index.html">← Back</a></p>
-<table>
-<tr><th>ID</th><th>Source</th><th>Verified</th></tr>
-<tr><td>competition</td><td><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/">DOE GEMS Prize — overview</a> (Total Prize Pool $300K, Initial $50K, Final $250K, structure diagram, rules link)</td><td>2026-10-22 via fetch</td></tr>
-<tr><td>p967</td><td><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/">Problem description — datasets, features, labels, performance metric (distance-weighted Tversky α0.2 β0.8 R300m triangular, worked example TP3.00 FP1.89 FN2.00→0.60), submission format</a></td><td>2026-10-22 via fetch — reproduced in metric.py</td></tr>
-<tr><td>p968</td><td><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/968/">About / additional resources</a></td><td>listed (not fetched)</td></tr>
-<tr><td>data page</td><td><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/data/">Data download page (login-walled, verified redirect)</a></td><td>verified login required — not accessed directly</td></tr>
-<tr><td>leaderboard</td><td><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/leaderboard/">Public leaderboard</a> — #1 0.4413 (verify live)</td><td>2026-10-22</td></tr>
-<tr><td>rules_pdf</td><td><a href="https://docs.nlr.gov/docs/fy26osti/96647.pdf">GEMS rules PDF NLR/TP-5700-96647</a> — 3 submissions/week, one file scored both rounds</td><td>mirrored sha256 50d854b1… in sibling repo data/feed.json</td></tr>
-<tr><td>reference_solution</td><td><a href="https://github.com/drivendataorg/gems-prize-reference-solution">Official U-Net reference solution (John Lipor, Portland State) — TverskyLoss 0.2,0.8</a></td><td>2026-10-22 cloned</td></tr>
-<tr><td>geodawn</td><td><a href="https://www.usgs.gov/data/geodawn-airborne-magnetic-and-radiometric-surveys-northwestern-great-basin-nevada-and">GeoDAWN airborne magnetic &amp; radiometric surveys, NW Great Basin (USGS)</a> — DOI 10.5066/P93LGLVQ, ScienceBase item 657e1d85d34e23d3533209f7</td><td>listed</td></tr>
-<tr><td>gbcge</td><td><a href="https://gbcge.org/current-projects/ingenious/">Great Basin Center for Geothermal Energy — INGENIOUS project</a></td><td>listed</td></tr>
-<tr><td>epsg32611</td><td><a href="https://epsg.io/32611">EPSG:32611 — UTM zone 11N, WGS 84</a> — 6°N-... Nevada is in 11N</td><td>verified</td></tr>
-<tr><td>tversky</td><td><a href="https://en.wikipedia.org/wiki/Tversky_index">Tversky index — Wikipedia</a></td><td>verified</td></tr>
-<tr><td>gdr1391</td><td><a href="https://gdr.openei.org/submissions/1391">GDR submission 1391 — Nevada geothermal data (wellspring, 2m probes, paleo features) — CC BY 4.0, DOI 10.15121/1881483</a></td><td>listed, CC BY 4.0, not downloaded for H85 lane (not needed)</td></tr>
-<tr><td>3dep</td><td>USGS 3DEP / The National Map elevation — 1m DEM links via <a href="https://www.dropbox.com/scl/fi/ig0mban712ns1atphgphe/Digital-elevation-model-links-JSON.pdf?rlkey=zm77f1vbtt2if8hlruymptnu3&st=srhhir10&dl=0">Digital-elevation-model-links-JSON.pdf</a> (Dropbox mirror) — mirrored in GEMSDOE data/dem_links.json sha256 8804dbff…</td><td>listed, PDF mirror sha pinned</td></tr>
-<tr><td>sibling_repos</td><td>88 GEMSDOE* sites listed in prompt — best GEMSDOE32 h33-h33-2-b2 0.2778 verified via <a href="https://buffedlizard55-lab.github.io/GEMSDOE32/docs/index.html">GEMSDOE32 docs</a> (c55bafc4…)</td><td>read 2026-10-22 via fetch (index.html chunks 0-1) and via codeload zip</td></tr>
-<tr><td>faulds</td><td>Faulds, J.E. et al. 2010, 2021 — Great Basin geothermal systems controlled by transtensional step-overs &amp; pull-aparts — <a href="https://www.nbmg.unr.edu/">NBMG</a> / <a href="https://www.energy.gov/eere/geothermal/">DOE Geothermal</a> publications — physical basis for H85-1</td><td>cited, see research.html</td></tr>
-</table>
-<p><small>Every row is link-clickable for manual verification. No hallucinations — work line-by-line from official sources.</small></p>
-</body>
-</html>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Evidence-first DOE GEMS fault-discovery research. No submission TIFF is currently cleared.">
+<title>Sources and evidence limits · GEMSDOE85</title><style>
+:root{--bg:#0b1220;--panel:#121d2e;--line:#304158;--fg:#eef4fa;--mut:#b3c2d1;--blue:#78b7ff;--red:#ff7777;--amber:#ffd479}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--blue)}a:hover{text-decoration:none}header{background:#070c14;border-bottom:1px solid var(--line);position:sticky;top:0}
+.wrap{max-width:1020px;margin:auto;padding:16px 22px}header .wrap{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+nav{display:flex;gap:16px;flex-wrap:wrap}nav a{color:var(--mut);text-decoration:none;font-size:.94rem}main{padding-bottom:56px}
+h1{font-size:clamp(2rem,5vw,3.1rem);line-height:1.15;margin:28px 0 8px}h2{margin:34px 0 10px;border-bottom:1px solid var(--line);padding-bottom:8px}h3{margin:20px 0 6px}
+p,li{color:#d5e0ea}.muted{color:var(--mut)}.hero{border:2px solid var(--red);background:#26161c;border-radius:16px;padding:24px;margin:22px 0}
+.status{font-size:1.25rem;font-weight:900;color:#ffd6d6;letter-spacing:.02em}.card{border:1px solid var(--line);background:var(--panel);border-radius:12px;padding:18px;margin:14px 0}
+.badge{display:inline-block;border:1px solid var(--red);color:#ffd6d6;padding:3px 10px;border-radius:99px;font-weight:800;font-size:.84rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.kpi{border:1px solid var(--line);border-radius:10px;padding:14px;background:#0e1827}.kpi b{font-size:1.05rem;display:block}.kpi small{color:var(--mut)}
+code,pre{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:#09111c;border:1px solid var(--line);border-radius:6px;padding:2px 6px;overflow-wrap:anywhere}pre{padding:14px;overflow:auto}
+table{border-collapse:collapse;width:100%;margin:16px 0;display:block;overflow-x:auto}th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:#19283a}
+.warn{border-left:4px solid var(--amber);padding:10px 14px;background:#211c12;border-radius:0 8px 8px 0}footer{border-top:1px solid var(--line);color:var(--mut);font-size:.9rem;padding:20px 0;margin-top:38px}
+</style></head><body>
+<header><div class="wrap"><strong>GEMSDOE85 · DOE GEMS fault research</strong><nav aria-label="Main navigation"><a href="index.html">Status</a><a href="executive-summary.html">How to submit</a><a href="hypotheses.html">Research hypotheses</a><a href="why-h33.html">H33 analysis</a><a href="data.html">Data &amp; sources</a><a href="review.html">Audit</a></nav></div></header>
+<main class="wrap">
+<h1>Official-source links and evidence limits</h1>
+<section class="hero"><div class="status">Links preserved; external pages not freshly fetched</div>
+<p>No external webpage was fetched during this review. The table is a set of official or owner-source links for manual verification, not a claim that each page is currently available or that a score or data receipt was verified.</p></section>
+<table><thead><tr><th>Source class</th><th>Link</th><th>Current access/evidence limit</th></tr></thead><tbody><tr><td>Official organizer</td><td><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/">https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/</a></td><td>Link retained; not fetched in this review.</td></tr><tr><td>Official rules</td><td><a href="https://docs.nlr.gov/docs/fy26osti/96647.pdf">https://docs.nlr.gov/docs/fy26osti/96647.pdf</a></td><td>Link retained; not fetched in this review. Verify current cap/terms before any slot.</td></tr><tr><td>Official organizer</td><td><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/data/">https://www.drivendata.org/competitions/306/competition-doe-gems/data/</a></td><td>Prior source register reports login redirect; no authenticated session here.</td></tr><tr><td>Official organizer</td><td><a href="https://www.drivendata.org/competitions/306/competition-doe-gems/submissions/">https://www.drivendata.org/competitions/306/competition-doe-gems/submissions/</a></td><td>No account-specific quota or submission receipt was accessed.</td></tr><tr><td>Official USGS data release</td><td><a href="https://www.usgs.gov/data/geodawn-airborne-magnetic-and-radiometric-surveys-northwestern-great-basin-nevada-and">https://www.usgs.gov/data/geodawn-airborne-magnetic-and-radiometric-surveys-northwestern-great-basin-nevada-and</a></td><td>Link retained; not fetched in this review.</td></tr><tr><td>Official dataset DOI</td><td><a href="https://doi.org/10.5066/P93LGLVQ">https://doi.org/10.5066/P93LGLVQ</a></td><td>Link retained; current availability/license not rechecked.</td></tr><tr><td>DOE Geothermal Data Repository</td><td><a href="https://gdr.openei.org/submissions/1391">https://gdr.openei.org/submissions/1391</a></td><td>Link retained; no new external dataset downloaded or required for the ranked initial tests.</td></tr><tr><td>Official challenge reference</td><td><a href="https://github.com/drivendataorg/gems-prize-reference-solution">https://github.com/drivendataorg/gems-prize-reference-solution</a></td><td>Link retained; no training or execution performed in this review.</td></tr><tr><td>Owner material; not an official score receipt</td><td><a href="https://buffedlizard55-lab.github.io/GEMSDOE32/docs/index.html">https://buffedlizard55-lab.github.io/GEMSDOE32/docs/index.html</a></td><td>Historical page says no organizer score existed for its artifacts; no authenticated receipt/hash crosswalk is present here.</td></tr></tbody></table>
+<h2>How to interpret the evidence</h2>
+<ul>
+<li>Owner-mirror SHA-256 matches establish consistency with the repository manifest, not organizer authentication.</li>
+<li>A public leaderboard snapshot is not an authenticated submission-page receipt for this team. The requested H33 value is OWNER-REPORTED / NOT RECEIPT-VERIFIED.</li>
+<li>Only a submission-page receipt can support an ORGANIZER-CONFIRMED score label under this project's rule.</li>
+<li>The public research site is blocked: it offers no current GeoTIFF and no historical TIFF/ZIP download.</li>
+</ul>
+<p>Machine records: <a href="registry/sources.json">prior source-retrieval notes</a> (historical, not refreshed), <a href="registry/data_manifest.json">owner-mirror manifest</a>, and <a href="evidence/run_card.json">current blocked run card</a>.</p>
+<footer>Evidence before emission · Maximize P(Win) · Own the Outcome<br>
+Fault prediction is not proof of geothermal heat, permeability, flow, or a productive resource. Local format checks are not organizer acceptance.</footer></main>
+</body></html>

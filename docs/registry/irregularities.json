@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "irregularities": [
+    {
+      "id": "IR-85-01",
+      "severity": "high",
+      "status": "open",
+      "finding": "PARALLEL-RUN PROTOCOL S1 says 'Your lane is the single method paragraph below', but no method paragraph follows in the session prompt for GEMSDOE85 (the text goes directly to the site list).",
+      "action_taken": "Corrected in the current review: no method paragraph is present in the prompt, registry/lane.json remains unassigned, and no lane was selected. The earlier README claim declaring Lane H85 is superseded and not authorization. No experiment or slot is permitted until an explicit assignment is recorded."
+    },
+    {
+      "id": "IR-85-02",
+      "severity": "medium",
+      "status": "open",
+      "finding": "This repository started empty (single initial commit, README only): the template's cached feature stack, evaluate_holdout.py and submission_writer.py referenced by protocol S2 did not exist here.",
+      "action_taken": "Reused the fleet template modules verbatim from GEMSDOE32 src/gems32 (metric, grid, features, emitter, emission) with provenance headers, and implemented the protocol's own holdout specification as src/gems85/evaluate_holdout.py (evaluator gems85-pooled-hide-v1) because the template's quadrant instrument (gems32.holdout) implements a different masking/calibration scheme than the protocol text specifies. No private fork of shared math: metric/emitter are byte-identical copies; the divergence is confined to the evaluator and is documented. Upstream fix, if the fleet wants one evaluator, belongs in the template repo."
+    },
+    {
+      "id": "IR-85-03",
+      "severity": "medium",
+      "status": "acknowledged",
+      "finding": "Competition data is login-walled at DrivenData (verified redirect to login in prior fleet sessions; egress here is github/pypi only). Rasters were restored from owner-supplied GitHub mirrors pinned by sha256 in registry/data_manifest.json.",
+      "action_taken": "Integrity is proven against the manifest hashes (23/23 verified on restore); provenance is NOT organizer-authenticated. Every derived claim is therefore labelled MEASURED-from-mirror, never OFFICIAL bytes."
+    },
+    {
+      "id": "IR-85-04",
+      "severity": "medium",
+      "status": "acknowledged",
+      "finding": "The brief reports leaderboard highs 0.3195 and later 0.4413, and assigns scores to named files (e.g. h33-h33-2-b2 = 0.2778), but no submission receipt or hash-to-score crosswalk is available in this sandbox (DrivenData leaderboard is dynamic and login-adjacent).",
+      "action_taken": "Corrected evidence label: the requested H33 value is OWNER-REPORTED / NOT RECEIPT-VERIFIED. A prior owner page says no organizer score existed for its artifacts; no authenticated submission-page receipt/hash crosswalk is available. No local or projection value is called ORGANIZER-CONFIRMED."
+    },
+    {
+      "id": "IR-85-05",
+      "severity": "low",
+      "status": "acknowledged",
+      "finding": "Brief text states both 0.3195 and 0.4413 as 'the highest score right now' in different paragraphs (stale snapshots of a moving leaderboard).",
+      "action_taken": "Recorded both with their context; the design target used throughout is beating 0.2778 (the highest score tied to an analysable artifact), with 0.4413 noted as an un-attributed leaderboard snapshot."
+    },
+    {
+      "id": "IR-85-06",
+      "severity": "low",
+      "status": "acknowledged",
+      "finding": "sample_submission.tif finite footprint is 5,167,373 px while the template grid.py records 5,165,852 px from the feature-band-1 footprint (3,061 feature-nodata cells sit inside the sample footprint).",
+      "action_taken": "Validator and writer use the SAMPLE footprint (the submission format's own grid) and the all-finite zeros encoding, so the discrepancy cannot leak a -3.4e38 sentinel or NaN into a submission. Inherited fleet note; flagged for template fix."
+    },
+    {
+      "id": "IR-85-07",
+      "severity": "high",
+      "status": "open",
+      "finding": "Uniqueness gate (protocol S1, strict reading): candidate dot overlap within 3px exceeds 70% against three registry rasters — 13gems lattice-s5 null (0.9959; 206,895 dots on a ~5px lattice, so any candidate is ~100% within 3px by construction), gems10 ctx-ridge (0.8783; 174,232 positive px, continuous ridge), gems10 dotted-ridge (0.8206; 69,281 dots) and 8GEMSDOE Hedge-v2 (0.7077; 227,507 positive px). Against every operating-point-comparable dotted submission (37k-46k dots: d2.8 family, H32 family, h33-2-b2 winner) overlap is 0.397-0.497 and surface Spearman |rho| <= 0.224 everywhere.",
+      "action_taken": "The literal 70% within-3-pixel comparison remains binding; no chance correction, dense-surface exemption, or alternate representation is used. The recorded saturation certificate says 5,106,385 allowed cells, zero uncovered, and universal_overlap_blocker=true. Its witness bytes are not present for local revalidation. Under AGENTS.md, no nonempty candidate can be cleared until the policy owner resolves this conflict; this does not waive the rule."
+    },
+    {
+      "id": "IR-85-08",
+      "severity": "high",
+      "status": "acknowledged",
+      "finding": "The 0.2778 winner raster (CTRL_h33) scores HOLDOUT-DTI 0.0046 on gems85-pooled-hide-v1 because it was constructed by pruning dots <=2px from the FULL catalogue — withheld segments are excluded by construction, so the instrument cannot credit it. It is invalid as a holdout promotion bar (same defect GEMSDOE71 recorded for static h33).",
+      "action_taken": "Promotion bar set to the best valid control, CTRL_d28 (HOLDOUT-DTI 0.102305). Both controls are reported with this caveat wherever they appear."
+    },
+    {
+      "id": "IR-85-09",
+      "severity": "medium",
+      "status": "acknowledged",
+      "finding": "E1's supervised field has canary AUC 0.673 and no single feature exceeds AUC 0.90 (max single channel curv_s2 0.600) — no leakage flag; but the detector is trained on the same catalogue the holdout withholds from, fold-properly, so holdout measures catalogue-transfer, not hidden-fault discovery (inherited IR-32-PROXY-01 limitation).",
+      "action_taken": "Stated on the site and in the run card; no live-score projection is made."
+    },
+    {
+      "id": "IR-85-006",
+      "severity": "high",
+      "status": "fixed-on-branch",
+      "finding": "Live Pages site serves repo root (source main:/, API update returned 403), whose index.html stated 'No verified submission TIFF is available' while docs/ published a 17/17-PASS validated TIF; also docs/downloads/run_card.json contained the duplex lane's card, not the primary GEO-Pb file's card.",
+      "action_taken": "The root index now redirects to the blocked status page. The current docs/index.html and executive-summary.html say DO NOT DOWNLOAD OR SUBMIT; no historical TIFF/ZIP is linked or left in the Pages tree. Prior PASS wording is superseded."
+    },
+    {
+      "id": "IR-85-10",
+      "severity": "high",
+      "status": "open",
+      "finding": "evidence/duplicate_check.json reports is_duplicate=false while its own thresholds are exceeded: raw dot_overlap_3px=0.9914>0.7 (13gems lattice) and max overlap_lift=1.519>1.5 (gems49). Chance-corrected exemption not authorised by AGENTS.md.",
+      "action_taken": "Session bf7be90f: site verdict downgraded to BLOCKED/negative; no slot recommendation. Fix duplicate checker logic upstream; do not re-promote on lift alone."
+    },
+    {
+      "id": "IR-85-11",
+      "severity": "high",
+      "status": "fixed-on-branch",
+      "finding": "Merged site/README claimed 'OK TO DOWNLOAD AND SUBMIT / promote-as-candidate' while registry/lane.json=unassigned and evidence/saturation_certificate.json (overlap 1.0, universal blocker) was binding per AGENTS.md 3,7.",
+      "action_taken": "Current site and README state BLOCKED; the no-candidate run card and registry are negative, safe_to_download=false, safe_to_submit=false, with no primary/name/hash. All public TIFF/ZIP links and binaries are being removed from docs/ while preserved/quarantined for audit. The literal saturation blocker remains binding."
+    },
+    {
+      "id": "IR-85-12",
+      "severity": "medium",
+      "status": "fixed-on-branch",
+      "finding": "The earlier checker required a blocked negative state and no Pages TIFF/ZIP files. That requirement is correct for the current lane-unassigned, cache-unavailable, saturation-blocked state; the prior merged GEO-Pb positive-download site was unsafe under AGENTS.md.",
+      "action_taken": "Rewrote scripts/check_site.py to fail closed for any TIFF/ZIP link or binary under docs/, any stale positive release banner, or any machine record that claims a current candidate is safe. Added regression tests for forbidden links and public files."
+    },
+    {
+      "id": "IR-85-014",
+      "severity": "high",
+      "status": "fixed-on-branch",
+      "finding": "Previous GEO-Pb primary (90,000 dots) was emitted at the catalogue-holdout-optimal budget. The holdout marginal bar at DTI~0.1 is ~0.02/dot while the live bar at 0.2778 is 0.0588/dot (docs/research/metric-algebra.md S4 of this repo explicitly warns a holdout-tuned budget does not transfer). The fleet live cascade peaks near 37,654 dots, so the 90k primary is very likely worse live than this repo's own 37,654-dot alternate of the same field.",
+      "action_taken": "Session arena/22847afd primary emitted at 37,654 dots; 90k file relabelled SUPERSEDED on the site; pre-registered gate required <=44,090 dots (research/session-22847afd-hypotheses.md)."
+    },
+    {
+      "id": "IR-85-015",
+      "severity": "medium",
+      "status": "acknowledged",
+      "finding": "RELAY network-completion channel (session E2) is a train/test reversal: built from the visible mask and smoothed along it, fold0 training mean 0.090 on positives vs 0.006 on withheld positives, canary AUC vs withheld 0.457. As a classifier channel it teaches 'near visible network', collapsing holdout DTI 0.0623->0.0402 relative to the previous 24ch arm at matched protocol; as a multiplicative gate (E1) 0.0371 vs crest 0.0695.",
+      "action_taken": "Removed from the shipped field (E2b/E3b loggeg bugfix ablation); RELAY published as a negative result on this instrument. Note the spatially-blocked holdout structurally penalises catalogue-proximal geometry, so this negative does not prove tip/relay geometry is live-worthless."
+    },
+    {
+      "id": "IR-85-017",
+      "severity": "low",
+      "status": "acknowledged",
+      "finding": "Raw 3px dot overlap of the session primary vs this repo's own superseded 90,000-dot GEO-Pb file is 0.79 (chance coverage 0.44, lift 1.81, exact pixel overlap 0.26). Vs every comparable-budget (<=60k) own-repo file overlap <=0.41; vs the 17-raster registry max comparable overlap 0.42 (h33 winner: 0.379, Spearman 0.065).",
+      "action_taken": "Retained as a historical comparison only. The prior candidate’s chance-corrected/comparable-budget findings do not clear the current literal all-registry 70% rule and do not create a current candidate. The binding saturation certificate and unassigned lane control the present decision."
+    },
+    {
+      "id": "IR-85-018",
+      "severity": "high",
+      "status": "fixed-on-branch",
+      "finding": "Historical candidate TIFF/ZIP files and prior check receipts were present under docs/downloads, and several site pages directly linked them as submission-ready despite the unassigned lane, unavailable transformed cache, and binding literal saturation blocker.",
+      "action_taken": "Removed direct TIFF/ZIP links from the generated status and legacy lane pages. Moved unique historical files and accompanying receipts into submissions/quarantine; byte-identical files already quarantined were removed from the Pages tree. Added a quarantine manifest with hashes and a checker that rejects any TIFF/ZIP under docs/."
+    },
+    {
+      "id": "IR-85-019",
+      "severity": "high",
+      "status": "fixed-on-branch",
+      "finding": "The published review and data-restore records claimed training_features.tif had been restored, but the current local inventory contains only labels.tif, existing_faults.tif, and sample_submission.tif; the transformed cache and saturation witness are absent.",
+      "action_taken": "Replaced current input status with a local presence/hash inventory; preserved prior raster measurements as explicitly historical evidence and added a current-status pointer. The current review and site state that the cache/raw feature raster are unavailable and no current experiment ran."
+    },
+    {
+      "id": "IR-85-020",
+      "severity": "high",
+      "status": "fixed-on-branch",
+      "finding": "scripts/build_submission_session.py and scripts/make_session_run_card.py remained stale writers: the former imported a removed duplicate_check symbol and both could publish a prior session as the current primary.",
+      "action_taken": "Retired both entrypoints as fail-closed wrappers around scripts/preflight.py. They write only the negative run card/blocked registry, emit no TIFF, choose no lane, run no experiment, and use no slot."
+    },
+    {
+      "id": "IR-85-021",
+      "severity": "high",
+      "status": "fixed-on-branch",
+      "finding": "The blocked Pages tree still contained direct raster/archive URLs embedded in machine-readable JSON, including the saturation certificate source and a public inventory copy, which were not covered by the original HTML-link checker.",
+      "action_taken": "Changed the saturation-source pointer to its repository directory, removed the public inventory copy from docs while retaining the canonical registry file, and expanded scripts/check_site.py to reject direct raster/archive URLs in public HTML, JSON, Markdown, and text. Added a regression test; the rebuilt Pages tree has no TIFF/ZIP files or matching direct URLs."
+    }
+  ]
+}

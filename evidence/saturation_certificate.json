@@ -10,6 +10,7 @@
   "overlap_limit": 0.7,
   "support_definition": "finite prediction > 0 (inherited literal support rule)",
   "implication": "Every nonempty candidate dot set in the allowed domain has forward overlap 1.0 with this prior; therefore it cannot pass the 0.70 gate.",
-  "source": "https://github.com/buffedlizard55-lab/17GEMSDOE/blob/6fc71d19d49dca4960d5434bd81b6dd06fcc030a/docs/downloads/17GEMSDOE_E-proba-multiscale_20260930T044527Z.tif",
-  "protocol_changed": false
+  "source": "https://github.com/buffedlizard55-lab/17GEMSDOE/tree/6fc71d19d49dca4960d5434bd81b6dd06fcc030a/docs/downloads",
+  "protocol_changed": false,
+  "source_note": "Repository directory pointer for the recorded witness; no direct raster download link is published on the project site."
 }

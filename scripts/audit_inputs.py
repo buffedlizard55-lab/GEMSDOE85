@@ -46,7 +46,7 @@ def main():
         certificate = saturation_certificate(witness, g.footprint, g.catalogue,
             expected_grid=(g.shape, g.crs, g.transform))
         certificate['witness_file'] = str(witness.relative_to(ROOT))
-        certificate['source'] = 'https://github.com/buffedlizard55-lab/17GEMSDOE/blob/6fc71d19d49dca4960d5434bd81b6dd06fcc030a/docs/downloads/17GEMSDOE_E-proba-multiscale_20260930T044527Z.tif'
+        certificate['source'] = 'https://github.com/buffedlizard55-lab/17GEMSDOE/tree/6fc71d19d49dca4960d5434bd81b6dd06fcc030a/docs/downloads'
         certificate['protocol_changed'] = False
         (ROOT / 'evidence/saturation_certificate.json').write_text(json.dumps(certificate, indent=2, allow_nan=False) + '\n')
     prior = ROOT / 'data/raw/learning/h33-b2.tif'

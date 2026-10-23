@@ -90,7 +90,7 @@
       "status": "primary download and methodology text read",
       "excerpt": "NO ORGANISER SCORE EXISTS for this or any artifact in this repository.",
       "supports": "Owner's claimed H33 genealogy, near-catalogue deletion and dot-placement description; primary file source. Artifact bytes were audited separately.",
-      "limits": "Historic statement conflicts with later owner-reported scores. Does not establish whether the file was later scored. A sibling's ORGANIZER-CONFIRMED label without a receipt is not imported."
+      "limits": "The page's statement that no organizer score existed is historical and does not establish whether a later upload was scored. No later authenticated submission receipt/hash crosswalk is present here; a sibling's ORGANIZER-CONFIRMED label without a receipt is not imported."
     }
   ]
 }

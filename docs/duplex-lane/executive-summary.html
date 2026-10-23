@@ -1,95 +1,28 @@
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Executive Summary — How to Submit to DOE GEMS Prize — GEMSDOE85</title>
-<link rel="stylesheet" href="../assets/site.css">
-<style>
-body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6;max-width:900px;margin:0 auto;padding:24px;color:#111}
-h1{font-size:1.6rem}
-h2{margin-top:2em;border-bottom:2px solid #e5e7eb;padding-bottom:0.3em}
-a{color:#0b5fff}
-.card{border:1px solid #e5e7eb;border-radius:12px;padding:16px;margin:16px 0;background:#fff}
-.download{font-size:1.1em;padding:12px 18px;background:#0b5fff;color:#fff;border-radius:8px;text-decoration:none;display:inline-block;margin:6px 6px 6px 0}
-code{background:#f1f5f9;padding:1px 4px;border-radius:4px}
-table{border-collapse:collapse;width:100%;font-size:0.9em}
-th,td{border:1px solid #e5e7eb;padding:6px 8px;text-align:left}
-th{background:#f8fafc}
-ol li{margin-bottom:0.6em}
-.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:0.85em;font-weight:600}
-.badge-ok{background:#dcfce7;color:#14532d;border:1px solid #86efac}
-</style>
-</head>
-<body>
-<h1>Executive Summary — Exactly How to Make a Submission into the DOE GEMS Prize</h1>
-<p><a href="index.html">← Back to GEMSDOE85 main</a> · <a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/">Official problem description</a> · <a href="https://docs.nlr.gov/docs/fy26osti/96647.pdf">Rules PDF</a></p>
-
-<div class="card" style="background:#f0fdf4;border-color:#86efac">
-<h2 style="margin-top:0;color:#14532d">Step 0: Download the verified file (no manual fixes needed)</h2>
-<p><span class="badge badge-ok">✓ VALIDATOR READY</span> <span class="badge badge-ok">✓ 12/12 CHECKS PASS</span></p>
-<a class="download" href="../downloads/gems85-h85-duplex-pullapart-worm-20261022T220544Z-2f8b57d9-zeros.tif" download>⬇ Download PRIMARY to submit — gems85-h85-duplex-pullapart-worm-20261022T220544Z-2f8b57d9-zeros.tif (88 KB)</a>
-<p><b>sha256:</b> <code>10efc0a5adf13b9e56c08e1be470eac88153a4985b9b9da776ed63772be298cb</code> · <b>42,000 dots</b> · <b>0 on-catalogue</b> · <a href="../downloads/gems85-h85-duplex-pullapart-worm-20261022T220544Z-2f8b57d9-audit.json">audit receipt</a></p>
-<p>If you need a <code>.zip</code> (portal accepts <code>.zip</code> with single GeoTIFF inside): zip the file yourself — <code>zip submission.zip gems85-h85-duplex-pullapart-worm-20261022T220544Z-2f8b57d9-zeros.tif</code> — or use the <code>-nan.tif</code> twin.</p>
-</div>
-
-<h2>The competition in one paragraph (official source p967)</h2>
-<p><strong>Task:</strong> Provide accurate information about presence of structures indicative of geothermal resources — namely geological faults — in the GeoDAWN region (NW Nevada, UTM 11N EPSG:32611, 100 m). Ground truth for currently known faults is public (USGS Quaternary fault database + INGENIOUS) but incomplete. Experts manually identified new faults not in USGS database; these comprise the private test set (initial prize round) and after expert review of all submissions the expanded label set (final prize round). Same submission scored twice: <em>initial $50K (5×$10K)</em> and <em>final $250K ($100K/$70K/$40K/$25K/$15K)</em>. See <a href="https://www.drivendata.org/competitions/306/competition-doe-gems/page/967/#competition-structure">competition structure</a> and <a href="https://docs.nlr.gov/docs/fy26osti/96647.pdf">rules PDF</a>.</p>
-
-<h2>Submission format (official requirements — p967)</h2>
-<table>
-<tr><th>Requirement</th><th>What this file does</th><th>Check</th></tr>
-<tr><td>Same CRS as training data: projected UTM 11N <a href="https://epsg.io/32611">EPSG:32611</a></td><td>EPSG:32611</td><td>✓</td></tr>
-<tr><td>Same resolution: 100 m</td><td>100 m (transform 100, -100)</td><td>✓</td></tr>
-<tr><td>Same bounds &amp; outside bounds null or nan</td><td>Bounds [243350, 4135500, 572550, 4508550], 3730×3292</td><td>✓</td></tr>
-<tr><td>Single layer, float32, values [0,1] = confidence/probability</td><td>single-band float32, min 0.0 max 1.0, 0 NaN inside footprint</td><td>✓</td></tr>
-</table>
-<p><b>Template to verify bounds:</b> use provided <code>sample_submission.tif</code> (sha256 <code>2176d08e485aa2cd2860ce8df539db4faf4d76163b38a4dd8c30a40454d35cbc</code>) — hash-pinned in <code>data/sample_submission.tif</code>.</p>
-
-<h2>Step-by-step: submit on DrivenData</h2>
-<ol>
-<li>Enroll: click <b>Compete!</b> on <a href="https://www.drivendata.org/competitions/306/competition-doe-gems/">competition homepage</a> (requires free DrivenData account).</li>
-<li>Go to <b>Submit</b> in sidebar → <b>Make new submission</b>.</li>
-<li>Under <b>File to submit</b>, click <b>Choose file</b> and select the downloaded <code>gems85-h85-duplex-pullapart-worm-20261022T220544Z-2f8b57d9-zeros.tif</code> (or a <code>.zip</code> containing it). Do <b>not</b> rename the inner GeoTIFF to a different CRS/shape.</li>
-<li>In <b>Note (optional)</b>, paste the unique name and audit trail:
-<div style="background:#f8fafc;border:1px solid #e5e7eb;padding:10px;border-radius:8px;margin:10px 0">
-<code> GEMSDOE85-H85-DUPLEX-42000 | duplex 42k H85+worm B=2 0 on-cat | HOLDOUT-DTI 0.1542±0.011 (HOLDOUT) | 10efc0a5 | UNSCORED </code><br>
-<small>Unique submission name field (if separate): <code>GEMSDOE85-H85-DUPLEX-42000</code></small>
-</div>
-This is ≤140 chars, helps you tell submissions apart, and records HOLDOUT vs ORGANIZER-CONFIRMED labeling per protocol.
-</li>
-<li>Click <b>Create</b>. DrivenData will validate range [0,1], CRS, shape, transform. This file passes all 12 checks — you will <b>not</b> see <code>"Predicted values must be in range [0, 1]"</code>. That error comes from sentinel <code>-3.4e38</code> or NaN outside footprint — fixed here by writing <code>0.0</code> outside footprint with no nodata tag.</li>
-<li>Result appears on private leaderboard (score = DTI vs hidden truth, α0.2 β0.8 R=300 m). Your best submission counts toward standing; you may submit up to <b>3 per week</b> — use them as an identification experiment (see below), not lottery tickets.</li>
-<li>Before deadline, select <b>one</b> submission to score across both rounds (initial + final after expert review). Same file scored twice.</li>
-</ol>
-
-<h2>Choosing which file — the three-slot identification experiment</h2>
-<p>Per rules, Weekly cap = 3 scored submissions. <b>Do not pick submissions: promotion to a real slot is a separate selector step within weekly cap.</b> This repo's 3 experiments:</p>
-<table>
-<tr><th>Slot</th><th>File</th><th>Dots</th><th>HOLDOUT-DTI</th><th>What it tests</th></tr>
-<tr><td>Slot 1 (recommend)</td><td><code>gems85-h85-duplex-pullapart-worm-20261022T220544Z-2f8b57d9-zeros.tif</code></td><td>42,000</td><td>0.1542±0.011</td><td>Duplex: pull-apart + worm (primary hypothesis)</td></tr>
-<tr><td>Controls (not scored as improvement)</td><td><code>gems85-h85-ti-pure-…-zeros.tif</code></td><td>38,000</td><td>0.142</td><td>TI only — tests if gravity worm adds value</td></tr>
-<tr><td>Controls</td><td><code>gems85-h85-worm-pure-…-zeros.tif</code></td><td>46,000</td><td>0.138</td><td>Worm only — tests if TI adds value</td></tr>
-</table>
-<p>All 3 are <code>[0,1]</code> legal, 0 on-catalogue. Submit all 3 in one week, record ORGANIZER-CONFIRMED scores, invert through official metric (<code>DTI = T/(0.2(T+S-M)+0.8K)</code>) to recover hidden <code>K</code> and budget, then choose one file for final scoring.</p>
-
-<h2>How we verified — line by line, no hallucinations</h2>
-<ul>
-<li>Metric formula, worked example, <code>DTI = T/(0.2(T+S-M)+0.8K)</code> verified via <code>src/gems85/metric.py</code> brute-force vs distance-transform (tests/verify_metric.py).</li>
-<li>Credit bar <code>k &gt; 0.2·DTI</code> per emitted pixel derived, verified by adding one dot at each kernel weight and checking DTI change.</li>
-<li>Every GeoTIFF re-read from disk, sha256 over bytes, 12 checks (single_band, dtype_float32, dimensions, CRS, all_finite_inside, zero_nan, zero_inf, zero_sentinel, range_0_1, outside_compliant, zero_on_catalogue, validator_range_guaranteed).</li>
-<li>Duplication check: surface-before-placement + final dots rank-correlation &lt;0.90 and &gt;70% dots within 3px — measured 19.2% overlap, field r 0.12 — not a duplicate.</li>
-<li>Leakage canary: each feature alone AUC 0.53-0.61 (&lt;0.90) — no leakage until proven otherwise.</li>
-<li>Sources table in <a href="../sources.html">sources.html</a> — every claim links to official verified source for manual review.</li>
-</ul>
-
-<h2>Need help? Limitations</h2>
-<ul>
-<li><b>No DrivenData auth → cannot auto-download training_features.tif, labels.tif, sample_submission.tif from data page (verified redirect to login).</b> This repo includes hash-pinned owner mirrors via <code>codeload.github.com/buffedlizard55-lab/GEMSDOE</code> (23/23 PASS via <code>scripts/fetch_mirrors.sh</code>), not organizer-authenticated.</li>
-<li>Holdout truth = visible catalogue → cannot reward genuinely new fault (documented as IR-32-PROXY-01). Live score may differ from HOLDOUT-DTI.</li>
-<li>If you hit browser download issues, use <code>curl -L -O https://buffedlizard55-lab.github.io/GEMSDOE85/docs/downloads/gems85-h85-duplex-pullapart-worm-20261022T220544Z-2f8b57d9-zeros.tif</code> (once Pages published) or clone repo.</li>
-</ul>
-
-<hr>
-<p><small>Generated 2026-10-22 on branch arena/29a39923-gemsdoe85. Every number labelled HOLDOUT-DTI or ORGANIZER-CONFIRMED; projection never written as score. Verify line-by-line via sources.</small></p>
-</body>
-</html>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Evidence-first DOE GEMS fault-discovery research. No submission TIFF is currently cleared.">
+<title>Historical duplex lane — submission instructions · GEMSDOE85</title><style>
+:root{--bg:#0b1220;--panel:#121d2e;--line:#304158;--fg:#eef4fa;--mut:#b3c2d1;--blue:#78b7ff;--red:#ff7777;--amber:#ffd479}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--blue)}a:hover{text-decoration:none}header{background:#070c14;border-bottom:1px solid var(--line);position:sticky;top:0}
+.wrap{max-width:1020px;margin:auto;padding:16px 22px}header .wrap{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+nav{display:flex;gap:16px;flex-wrap:wrap}nav a{color:var(--mut);text-decoration:none;font-size:.94rem}main{padding-bottom:56px}
+h1{font-size:clamp(2rem,5vw,3.1rem);line-height:1.15;margin:28px 0 8px}h2{margin:34px 0 10px;border-bottom:1px solid var(--line);padding-bottom:8px}h3{margin:20px 0 6px}
+p,li{color:#d5e0ea}.muted{color:var(--mut)}.hero{border:2px solid var(--red);background:#26161c;border-radius:16px;padding:24px;margin:22px 0}
+.status{font-size:1.25rem;font-weight:900;color:#ffd6d6;letter-spacing:.02em}.card{border:1px solid var(--line);background:var(--panel);border-radius:12px;padding:18px;margin:14px 0}
+.badge{display:inline-block;border:1px solid var(--red);color:#ffd6d6;padding:3px 10px;border-radius:99px;font-weight:800;font-size:.84rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.kpi{border:1px solid var(--line);border-radius:10px;padding:14px;background:#0e1827}.kpi b{font-size:1.05rem;display:block}.kpi small{color:var(--mut)}
+code,pre{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:#09111c;border:1px solid var(--line);border-radius:6px;padding:2px 6px;overflow-wrap:anywhere}pre{padding:14px;overflow:auto}
+table{border-collapse:collapse;width:100%;margin:16px 0;display:block;overflow-x:auto}th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:#19283a}
+.warn{border-left:4px solid var(--amber);padding:10px 14px;background:#211c12;border-radius:0 8px 8px 0}footer{border-top:1px solid var(--line);color:var(--mut);font-size:.9rem;padding:20px 0;margin-top:38px}
+</style></head><body>
+<header><div class="wrap"><strong>GEMSDOE85 · DOE GEMS fault research</strong><nav aria-label="Main navigation"><a href="../index.html">Status</a><a href="../executive-summary.html">How to submit</a><a href="../hypotheses.html">Research hypotheses</a><a href="../why-h33.html">H33 analysis</a><a href="../data.html">Data &amp; sources</a><a href="../review.html">Audit</a></nav></div></header>
+<main class="wrap">
+<h1>Historical duplex lane — submission instructions</h1>
+<section class="hero"><div class="status">⛔ HISTORICAL RESEARCH ONLY — DO NOT DOWNLOAD OR SUBMIT</div>
+<p>This legacy lane page has no current candidate and no submission file. Its prior artifacts are quarantined for audit/education, not cleared for a competition slot.</p>
+<p>Use the current <a href="../index.html">repository status</a>, <a href="../executive-summary.html">submission instructions</a>, and <a href="../review.html">audit record</a>.</p>
+</section>
+<footer>Evidence before emission · Maximize P(Win) · Own the Outcome<br>
+Fault prediction is not proof of geothermal heat, permeability, flow, or a productive resource. Local format checks are not organizer acceptance.</footer></main>
+</body></html>

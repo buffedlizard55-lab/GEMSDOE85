@@ -18,7 +18,7 @@ import rasterio
 ROOT = Path(__file__).resolve().parents[1]
 NEW = ROOT / "docs/downloads/gems85-s85-ctxfus50-37654dots-sep4-20261022T232600Z-4f38c2b3-zeros.tif"
 H33 = ROOT / "data/registry_rasters/gemsdoe32-h33-h33-2-b2-20261004T220000Z-e5eb6e7e-zeros.tif"
-OUT = ROOT / "docs/downloads/preview_ctxfus50_vs_h33_catalogue.png"
+OUT = ROOT / "submissions/quarantine/previews/preview_ctxfus50_vs_h33_catalogue.png"
 
 
 def write_png(path: Path, rgb: np.ndarray) -> None:
@@ -59,6 +59,7 @@ def main() -> int:
     img[pool(h33)] = (240, 170, 40)      # h33 amber
     img[pool(new)] = (60, 200, 255)      # candidate cyan
     img[pool(new) & pool(h33)] = (120, 255, 140)
+    OUT.parent.mkdir(parents=True, exist_ok=True)
     write_png(OUT, img)
     print(f"wrote {OUT.relative_to(ROOT)} {img.shape}")
     return 0

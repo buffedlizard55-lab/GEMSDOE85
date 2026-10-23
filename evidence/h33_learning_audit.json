@@ -54,5 +54,7 @@
     "problems": [],
     "ok": true,
     "validation_class": "local on-disk template/range check; not organizer upload acceptance"
-  }
+  },
+  "measurement_scope": "Historical artifact audit from a prior session; the audited raster bytes are not present in this checkout and were not re-read in the current preflight.",
+  "revalidated_in_current_checkout": false
 }
