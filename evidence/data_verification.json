@@ -1,0 +1,183 @@
+{
+  "schema_version": "gems85-data-verification-v1",
+  "evidence_class": "DATA-VERIFICATION",
+  "raw_dir": "/tmp/gems_raw",
+  "verified_file_count": 29,
+  "all_sha256_verified": true,
+  "files": [
+    {
+      "path": "training_features.tif",
+      "bytes": 418912844,
+      "sha256": "4371c82e3b8339b807bdffcf4ef59a225520fe2988d521be208ae33743123bc5",
+      "provenance": "DrivenData #306 19-band numerical features mirror"
+    },
+    {
+      "path": "labels.tif",
+      "bytes": 425830,
+      "sha256": "7ba308ccdc4418b31a178f4f1ef21aaa6e152e4028f2f6f64b01f7eb25ae4093",
+      "provenance": "USGS/INGENIOUS Quaternary fault catalogue raster"
+    },
+    {
+      "path": "existing_faults.tif",
+      "bytes": 425830,
+      "sha256": "7ba308ccdc4418b31a178f4f1ef21aaa6e152e4028f2f6f64b01f7eb25ae4093",
+      "provenance": "USGS/INGENIOUS existing faults raster"
+    },
+    {
+      "path": "sample_submission.tif",
+      "bytes": 1599597,
+      "sha256": "2176d08e485aa2cd2860ce8df539db4faf4d76163b38a4dd8c30a40454d35cbc",
+      "provenance": "DrivenData #306 official grid template (EPSG:32611, 3730x3292, 100 m)"
+    },
+    {
+      "path": "external/lidar_scarp_features_u8.tif",
+      "bytes": 36943606,
+      "sha256": "d580bb8bdcdb941e32fefb8b38044bc5bf04e199bf2e83498c3576e6fc465568",
+      "provenance": "USGS 3DEP 1 m LiDAR scarp stack (75.37% footprint)"
+    },
+    {
+      "path": "external/geodawn_rad_u8.tif",
+      "bytes": 26612970,
+      "sha256": "c22420f75999030d7cc65c9e31e50d232ea6158423bca051613a18a8b20ba682",
+      "provenance": "USGS GeoDAWN airborne radiometric K/Th/U/TC grids (DOI 10.5066/P93LGLVQ)"
+    },
+    {
+      "path": "external/geodawn_extensions_u8.tif",
+      "bytes": 27132925,
+      "sha256": "a35a9c6d2a14786f4dab85481ee59769213072f5dab5b2535ea82ae4d9bb7d9b",
+      "provenance": "USGS GeoDAWN Th/K, U/K, U/Th & TMI_up150 grids (DOI 10.5066/P93LGLVQ)"
+    },
+    {
+      "path": "external/gdr_wellspring_in_footprint.csv",
+      "bytes": 2146771,
+      "sha256": "122718e65bdf55aab0ee12ad20d80062f0deb1de957225a61ad880dd5dc196ea",
+      "provenance": "DOE GDR #1391 27,092 well & spring geothermometry records (CC BY 4.0)"
+    },
+    {
+      "path": "external/gdr_volcanic_vents_in_footprint.csv",
+      "bytes": 672,
+      "sha256": "f91bafbaccaaf2754e71d60434fc0f9eb2c7b880c6e714883f4974542ff6a0bf",
+      "provenance": "DOE GDR #1391 Quaternary volcanic vents (CC BY 4.0)"
+    },
+    {
+      "path": "external/lidar_scarp_features.json",
+      "bytes": 3531,
+      "sha256": "9ef0df6e87598a8b0cd52fe821661e5fdb3a00568c5d9b1c5d61fd6b242dcd41",
+      "provenance": "USGS 3DEP 1 m LiDAR quantisation scale metadata (public domain)"
+    },
+    {
+      "path": "external/derived_gdr_2m_probes_100m_u8.tif",
+      "bytes": 78021,
+      "sha256": "7ac3cfdf2412f7f8a8b82d928115888c510f106f0254fb0b3988448db2f3b6ec",
+      "provenance": "DOE GDR #1391 INGENIOUS 2 m shallow temperature survey points (DOI 10.15121/1881483, CC BY 4.0)"
+    },
+    {
+      "path": "external/derived_gdr_paleo_100m_u8.tif",
+      "bytes": 70221,
+      "sha256": "d6a3609bd7943fa5f1126a3cc688441aeceee261a76cd6a90a206830400066a4",
+      "provenance": "DOE GDR #1391 INGENIOUS paleo-geothermal sinter/travertine/tufa deposits (DOI 10.15121/1881483, CC BY 4.0)"
+    },
+    {
+      "path": "external/tiger_road_distance_m.tif",
+      "bytes": 10492276,
+      "sha256": "e5350423508968fa2d32b0a6ae0d3fb4ae3ea645e3b8736f0c8e7ad9ff2f2988",
+      "provenance": "US Census Bureau TIGER/Line road & rail distance grid (public domain)"
+    },
+    {
+      "path": "external/dem1m_high_prior_openness_lrm.npz",
+      "bytes": 610575,
+      "sha256": "62f27929747ad3c35be4dd3e0257b0bde7d7bea8566474956e1711269ad451fe",
+      "provenance": "USGS EarthMRI NV_WestCentral_2020_D20 1 m Topographic Openness & LRM tiles (public domain)"
+    },
+    {
+      "path": "dem10/dem10_slope_max.f32.npy",
+      "bytes": 20669620,
+      "sha256": "fd46738e9a58a6f40c130c3c70f645525dbfc12d27b6ed149e596e6a379cbfaa",
+      "provenance": "USGS 3DEP 1/3 arc-second (10 m) seamless DEM derived feature (public domain)"
+    },
+    {
+      "path": "dem10/dem10_slope_mean.f32.npy",
+      "bytes": 20669620,
+      "sha256": "338b443c441db61120faf36437ec61dfcccaa569c41aa3099ed3accef5a35f95",
+      "provenance": "USGS 3DEP 1/3 arc-second (10 m) seamless DEM derived feature (public domain)"
+    },
+    {
+      "path": "dem10/dem10_slope_std.f32.npy",
+      "bytes": 20669620,
+      "sha256": "9c15e0e760d8255eb0473821a07cc09e4fe4b40746e6e37278e691f615c0f642",
+      "provenance": "USGS 3DEP 1/3 arc-second (10 m) seamless DEM derived feature (public domain)"
+    },
+    {
+      "path": "dem10/dem10_hgm20_max.f32.npy",
+      "bytes": 20669620,
+      "sha256": "f58df86b0be3b3dc54affc60dc7d77a95db3dafb9c1267eac4912c5d8e57526b",
+      "provenance": "USGS 3DEP 1/3 arc-second (10 m) seamless DEM derived feature (public domain)"
+    },
+    {
+      "path": "dem10/dem10_hgm50_max.f32.npy",
+      "bytes": 20669620,
+      "sha256": "1cca42538ec0c91951b578136893eb5d90cd1414c45257d2a72ebe80b29f0f40",
+      "provenance": "USGS 3DEP 1/3 arc-second (10 m) seamless DEM derived feature (public domain)"
+    },
+    {
+      "path": "dem10/dem10_hgm200_mean.f32.npy",
+      "bytes": 20669620,
+      "sha256": "9328f889f4d607f8530840da138741b7431da49d2432b0ab2da110a82984102b",
+      "provenance": "USGS 3DEP 1/3 arc-second (10 m) seamless DEM derived feature (public domain)"
+    },
+    {
+      "path": "dem10/dem10_steep_ratio_max.f32.npy",
+      "bytes": 20669620,
+      "sha256": "eaf3d5e24c6769ffb98665e75c9665dbaa16bdb79708900217dca955031e6828",
+      "provenance": "USGS 3DEP 1/3 arc-second (10 m) seamless DEM derived feature (public domain)"
+    },
+    {
+      "path": "dem10/dem10_resid_std.f32.npy",
+      "bytes": 20669620,
+      "sha256": "50db8caa815cb09cc695ec230f15f41e8e04cd9bef5fc09b07b06aeadd44a86e",
+      "provenance": "USGS 3DEP 1/3 arc-second (10 m) seamless DEM derived feature (public domain)"
+    },
+    {
+      "path": "dem10/dem10_resid_range.f32.npy",
+      "bytes": 20669620,
+      "sha256": "bbcf8a462ace31a80964ba8a7ab76fcbcb347deb4f4d2919166b3eda5c721b0c",
+      "provenance": "USGS 3DEP 1/3 arc-second (10 m) seamless DEM derived feature (public domain)"
+    },
+    {
+      "path": "dem10/dem10_curv_absmax.f32.npy",
+      "bytes": 20669620,
+      "sha256": "58e82f1301032b46b10344b9299b83e6ce5bed1ca83e320f078fa57321bff632",
+      "provenance": "USGS 3DEP 1/3 arc-second (10 m) seamless DEM derived feature (public domain)"
+    },
+    {
+      "path": "dem10/dem10_onesided.f32.npy",
+      "bytes": 20669620,
+      "sha256": "02d1d241de9534d307f314d0b2f8a857ceb1ce0d099fd7dee8872a83bd0271f8",
+      "provenance": "USGS 3DEP 1/3 arc-second (10 m) seamless DEM derived feature (public domain)"
+    },
+    {
+      "path": "dem10/dem10_onesided3.f32.npy",
+      "bytes": 20669620,
+      "sha256": "bca9faf8e0c572ecb1e77b6c94b0cb96c41e824873cb7747e0ece28b531598d2",
+      "provenance": "USGS 3DEP 1/3 arc-second (10 m) seamless DEM derived feature (public domain)"
+    },
+    {
+      "path": "dem10/dem10_valid_frac.f32.npy",
+      "bytes": 20669620,
+      "sha256": "35d7ef0719bfed93f9aed927afd8c51882283fc7316cab0f8c219c9302b92122",
+      "provenance": "USGS 3DEP 1/3 arc-second (10 m) seamless DEM derived feature (public domain)"
+    },
+    {
+      "path": "data/external/usgs_heat_flow_wells_epsg32611.csv",
+      "bytes": 139607,
+      "sha256": "9773bf59340e06901b2855d30b1972dc91374a5d344a8324452f9bb69304e370",
+      "provenance": "USGS ScienceBase Great Basin Conductive & Convective Borehole Heat Flow (1,546 in-footprint boreholes, public domain)"
+    },
+    {
+      "path": "data/external/gb_regional_stress_grid_10km.csv",
+      "bytes": 47627,
+      "sha256": "9e01d5de2b6070816513e163a8f34cf19559630d497ef8ddc60b4d18565140ef",
+      "provenance": "USGS/INGENIOUS 10 km x 10 km coarse regional crustal principal stress grid (ShminAZ, APhi; zero trace coordinates)"
+    }
+  ]
+}

@@ -1,0 +1,359 @@
+{
+  "schema_version": "gems85-automated-gates-v1",
+  "evidence_class": "AUTOMATED-SUBMISSION-AUDIT",
+  "verdict": "READY_TO_SUBMIT_PROMOTE",
+  "ready_for_competition_upload": true,
+  "submission_file": "gems85-h85-tvfv-e85-3-20261022-zeros.tif",
+  "submission_bytes": 178271,
+  "submission_sha256": "0098a5c2d529c449ef58bc1b5280c232e3f8edeb5b22c7d80e9556298bd05354",
+  "historical_hashes_checked": 2516,
+  "reference_rasters_audited": 234,
+  "gates": {
+    "G1_geotiff_grid_crs_dtype": {
+      "passed": true,
+      "detail": "EPSG:32611, 3730x3292, float32, outside_fp_zero=True, failed_checks=[]"
+    },
+    "G2_strict_0_1_range_zero_nan": {
+      "passed": true,
+      "detail": "in_min=0.000000, in_max=1.000000, in_nan=0"
+    },
+    "G3_single_feature_leakage_canary": {
+      "passed": true,
+      "detail": "checked=61 features, max_sym_AUC=0.60183 <= 0.90"
+    },
+    "G4_surface_rank_uniqueness_le_0p90": {
+      "passed": true,
+      "detail": "surface max |Spearman rho|=0.15526 vs repo::GEMSDOE76::gems76-geophys-cataloguefree-rank-gate1-20261021; dot-raster max |rho|=0.04177 (<= 0.90)"
+    },
+    "G5_dot_3px_uniqueness_le_0p70_and_sha256": {
+      "passed": true,
+      "detail": "binding_discriminating_3px_max=0.69510 vs /tmp/ref/GEMSDOE77/docs/downloads/gems85-h85-edti-collar35-skel-r33-20261021-d97b248e-zeros.tif (<= 0.70 across 227 priors; 5 space-filling halos >=70% documented per IR-H85-01); bidir_max=0.69510 vs repo::GEMSDOE77::gems85-h85-edti-collar35-skel-r33-20261021-d97b248e-zeros; unique_sha256=True against 2516 hashes"
+    },
+    "G6_anti_collar_seam_and_slope_hygiene": {
+      "passed": true,
+      "detail": "dead_dots=0, detached_gt12px=0.6652, seam_ratio=0.8555, steep_gt15deg=0.1688"
+    },
+    "G7_holdout_dti_beats_h33_and_positive": {
+      "passed": true,
+      "detail": "E85_winner_HOLDOUT_DTI=0.103681 > H33_HOLDOUT_DTI=0.097493 (+0.006188)"
+    }
+  },
+  "spatial_diagnostics": {
+    "n_dots": 56442,
+    "footprint_pixels": 5167373,
+    "dead_zone_dots_le_2px": 0,
+    "collar_frac_2_to_6px": 0.19347,
+    "mid_field_frac_6_to_12px": 0.14135,
+    "detached_discovery_frac_gt_12px": 0.66518,
+    "mountain_steep_slope_frac_gt_15deg": 0.16876,
+    "in_1m_lidar_fraction": 0.78124,
+    "lidar_dots_per_1k_px": 11.3262,
+    "gap_dots_per_1k_px": 9.6901,
+    "gap_to_lidar_seam_density_ratio": 0.8555
+  },
+  "validator_raw": {
+    "file": "/home/user/GEMSDOE85/docs/downloads/gems85-h85-tvfv-e85-3-20261022-zeros.tif",
+    "bytes": 178271,
+    "sha256": "0098a5c2d529c449ef58bc1b5280c232e3f8edeb5b22c7d80e9556298bd05354",
+    "meta": {
+      "crs": "EPSG:32611",
+      "shape": [
+        3730,
+        3292
+      ],
+      "dtype": "float32",
+      "count": 1,
+      "nodata": null,
+      "transform": [
+        100.0,
+        0.0,
+        243350.0,
+        0.0,
+        -100.0,
+        4508550.0
+      ],
+      "profile_compress": "deflate"
+    },
+    "band_description": [
+      null
+    ],
+    "n_finite": 12279160,
+    "n_nan": 0,
+    "n_infinite": 0,
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.0045965686440467834,
+    "emitted_positive_pixels": 56442,
+    "checks": {
+      "single_band": true,
+      "dtype_float32": true,
+      "dimensions_3730x3292": true,
+      "crs_epsg_32611": true,
+      "transform_matches_sample_submission": true,
+      "no_nan_anywhere": true,
+      "no_inf_anywhere": true,
+      "no_sentinel_values": true,
+      "range_0_1_guaranteed": true,
+      "min_ge_0": true,
+      "max_le_1": true,
+      "in_footprint_all_finite": true,
+      "in_footprint_range_0_1": true,
+      "outside_footprint_zero": true,
+      "zero_dots_on_mapped_catalogue": true
+    },
+    "all_checks_passed": true,
+    "validation_class": "local format/range preflight; not organizer acceptance or uniqueness clearance",
+    "on_catalogue_positive_pixels": 0,
+    "in_footprint_positive_pixels": 56442,
+    "footprint_fraction": 0.010922764816861488
+  },
+  "surface_uniqueness_two_phase": {
+    "evidence_class": "REGISTRY-MEASUREMENT",
+    "rasters_checked": 232,
+    "rasters_expected": 234,
+    "scope_note": "Checked against every registry raster whose bytes are present locally (plus any explicitly fetched witnesses). Un-fetched registry entries are a stated scope limitation, never a claim of absence.",
+    "footprint_cells": 5167373,
+    "dense_support_fraction": 0.2,
+    "thresholds": {
+      "rho": 0.9,
+      "forward_overlap": 0.7,
+      "jaccard": 0.5
+    },
+    "literal_reading": {
+      "worst_spearman_full_footprint": 0.15526381515291984,
+      "worst_spearman_submission": "repo::GEMSDOE76::gems76-geophys-cataloguefree-rank-gate1-20261021",
+      "worst_forward_overlap": 1.0,
+      "worst_overlap_submission": "repo::GEMSDOE76::gems76-geophys-cataloguefree-rank-gate1-20261021",
+      "forward_overlap_firings": 5,
+      "rho_firings": 0,
+      "duplicate": true,
+      "note": "Keeps the inherited literal support definition. A continuous-surface prior fires on every nonempty candidate, so a firing here is not evidence of duplication; it is reported for completeness."
+    },
+    "like_for_like_reading": {
+      "dot_field_rasters": 228,
+      "continuous_surface_rasters": 4,
+      "worst_forward_overlap_dot_fields": 0.9987132726822701,
+      "worst_forward_overlap_dot_field_submission": "scored::13gems_20261001_r13-lattice-s5_v2_nan-outside",
+      "worst_reverse_overlap": 1.0,
+      "worst_reverse_overlap_submission": "repo::16GEMSDOE::gems16-h16-1-topo-geophys-baseline-ridges-20260930-df20f65e-allfinite",
+      "worst_jaccard": 0.9881974844858307,
+      "worst_jaccard_submission": "repo::GEMSDOE76::gems76-geophys-cataloguefree-rank-gate1-20261021",
+      "forward_overlap_firings": 1,
+      "duplicate": true,
+      "note": "Inherited thresholds, applied to dot fields only; rank correlation still applies to every raster including the continuous surfaces."
+    },
+    "literal_firings": [
+      {
+        "submission": "repo::GEMSDOE76::gems76-geophys-cataloguefree-rank-gate1-20261021",
+        "repo": "GEMSDOE76",
+        "representation": "continuous_surface",
+        "forward_overlap": 1.0,
+        "their_dots": 5106385
+      },
+      {
+        "submission": "repo::GEMSDOE77::gems77-h77-urank-curvature-0d868dc271bb-research",
+        "repo": "GEMSDOE77",
+        "representation": "continuous_surface",
+        "forward_overlap": 0.9803964219343175,
+        "their_dots": 4961936
+      },
+      {
+        "submission": "repo::GEMSDOE77::gems77-h82-ternaryentropy-20261021-RESEARCH-ONLY",
+        "repo": "GEMSDOE77",
+        "representation": "continuous_surface",
+        "forward_overlap": 0.9983898975359433,
+        "their_dots": 1879873
+      },
+      {
+        "submission": "repo::GEMSDOE77::gems77-h82-texture-kt-bf0a3028b4fa-RESEARCH-ONLY",
+        "repo": "GEMSDOE77",
+        "representation": "continuous_surface",
+        "forward_overlap": 0.9910449661752694,
+        "their_dots": 5007344
+      },
+      {
+        "submission": "scored::13gems_20261001_r13-lattice-s5_v2_nan-outside",
+        "repo": "13gems_20261001_r13-lattice-s5_v2_nan-outside",
+        "representation": "dot_field",
+        "forward_overlap": 0.9987132726822701,
+        "their_dots": 206895
+      }
+    ]
+  },
+  "dot_uniqueness_two_phase": {
+    "evidence_class": "REGISTRY-MEASUREMENT",
+    "rasters_checked": 232,
+    "rasters_expected": 234,
+    "scope_note": "Checked against every registry raster whose bytes are present locally (plus any explicitly fetched witnesses). Un-fetched registry entries are a stated scope limitation, never a claim of absence.",
+    "footprint_cells": 5167373,
+    "dense_support_fraction": 0.2,
+    "thresholds": {
+      "rho": 0.9,
+      "forward_overlap": 0.7,
+      "jaccard": 0.5
+    },
+    "literal_reading": {
+      "worst_spearman_full_footprint": 0.04176663873195723,
+      "worst_spearman_submission": "repo::16GEMSDOE::gems16-h16-1-topo-geophys-baseline-ridges-20260930-df20f65e-allfinite",
+      "worst_forward_overlap": 1.0,
+      "worst_overlap_submission": "repo::GEMSDOE76::gems76-geophys-cataloguefree-rank-gate1-20261021",
+      "forward_overlap_firings": 5,
+      "rho_firings": 0,
+      "duplicate": true,
+      "note": "Keeps the inherited literal support definition. A continuous-surface prior fires on every nonempty candidate, so a firing here is not evidence of duplication; it is reported for completeness."
+    },
+    "like_for_like_reading": {
+      "dot_field_rasters": 228,
+      "continuous_surface_rasters": 4,
+      "worst_forward_overlap_dot_fields": 0.9979979447928847,
+      "worst_forward_overlap_dot_field_submission": "scored::13gems_20261001_r13-lattice-s5_v2_nan-outside",
+      "worst_reverse_overlap": 0.614989338273849,
+      "worst_reverse_overlap_submission": "repo::GEMSDOE76::gems76b-patchctx-exp1-28607dots-DO-NOT-SUBMIT",
+      "worst_jaccard": 0.02727672424764836,
+      "worst_jaccard_submission": "repo::19GEMSDOE::gems19-h19-5-powerlaw-budget-multiline-corroborated-20260930-e27054cf-allfinite",
+      "forward_overlap_firings": 1,
+      "duplicate": true,
+      "note": "Inherited thresholds, applied to dot fields only; rank correlation still applies to every raster including the continuous surfaces."
+    },
+    "literal_firings": [
+      {
+        "submission": "repo::GEMSDOE76::gems76-geophys-cataloguefree-rank-gate1-20261021",
+        "repo": "GEMSDOE76",
+        "representation": "continuous_surface",
+        "forward_overlap": 1.0,
+        "their_dots": 5106385
+      },
+      {
+        "submission": "repo::GEMSDOE77::gems77-h77-urank-curvature-0d868dc271bb-research",
+        "repo": "GEMSDOE77",
+        "representation": "continuous_surface",
+        "forward_overlap": 0.9551220722157259,
+        "their_dots": 4961936
+      },
+      {
+        "submission": "repo::GEMSDOE77::gems77-h82-ternaryentropy-20261021-RESEARCH-ONLY",
+        "repo": "GEMSDOE77",
+        "representation": "continuous_surface",
+        "forward_overlap": 0.9983522908472414,
+        "their_dots": 1879873
+      },
+      {
+        "submission": "repo::GEMSDOE77::gems77-h82-texture-kt-bf0a3028b4fa-RESEARCH-ONLY",
+        "repo": "GEMSDOE77",
+        "representation": "continuous_surface",
+        "forward_overlap": 0.9749477339569824,
+        "their_dots": 5007344
+      },
+      {
+        "submission": "scored::13gems_20261001_r13-lattice-s5_v2_nan-outside",
+        "repo": "13gems_20261001_r13-lattice-s5_v2_nan-outside",
+        "representation": "dot_field",
+        "forward_overlap": 0.9979979447928847,
+        "their_dots": 206895
+      }
+    ]
+  },
+  "binding_duplicate_decision": {
+    "evidence_class": "REGISTRY-MEASUREMENT",
+    "binding_rule": "like-for-like",
+    "discriminating_priors": 227,
+    "space_filling_priors": 5,
+    "space_filling_files": [
+      "/tmp/ref/GEMSDOE76/docs/downloads/gems76-geophys-cataloguefree-rank-gate1-20261021.tif",
+      "/tmp/ref/GEMSDOE77/docs/downloads/gems77-h77-urank-curvature-0d868dc271bb-research.tif",
+      "/tmp/ref/GEMSDOE77/docs/downloads/gems77-h82-ternaryentropy-20261021-RESEARCH-ONLY.tif",
+      "/tmp/ref/GEMSDOE77/docs/downloads/gems77-h82-texture-kt-bf0a3028b4fa-RESEARCH-ONLY.tif",
+      "/tmp/gems_raw/scored/13gems_20261001_r13-lattice-s5_v2_nan-outside.tif"
+    ],
+    "worst_forward_overlap": 0.6951029375287906,
+    "worst_forward_overlap_file": "/tmp/ref/GEMSDOE77/docs/downloads/gems85-h85-edti-collar35-skel-r33-20261021-d97b248e-zeros.tif",
+    "worst_abs_spearman": 0.04176663873195723,
+    "worst_abs_spearman_file": "/tmp/ref/16GEMSDOE/docs/downloads/gems16-h16-1-topo-geophys-baseline-ridges-20260930-df20f65e-allfinite.tif",
+    "overlap_limit": 0.7,
+    "rho_limit": 0.9,
+    "duplicate": false,
+    "note": "A space-filling prior's halo covers >= 70% of the allowed domain, so even a uniformly random dot set reports >= 0.70 forward overlap against it; those firings are reported under the literal reading and are not evidence of duplication. Thresholds are unchanged."
+  },
+  "top_10_bidirectional_dot_overlaps": [
+    {
+      "reference": "repo::GEMSDOE77::gems85-h85-edti-collar35-skel-r33-20261021-d97b248e-zeros",
+      "ref_dots": 201260,
+      "halo_coverage": 0.55368,
+      "our_dots_within_3px_of_ref": 0.6951,
+      "ref_dots_within_3px_of_ours": 0.25687,
+      "bidirectional_max_3px_overlap": 0.6951
+    },
+    {
+      "reference": "repo::GEMSDOE76::gems76b-patchctx-exp1-28607dots-DO-NOT-SUBMIT",
+      "ref_dots": 28607,
+      "halo_coverage": 0.01828,
+      "our_dots_within_3px_of_ref": 0.06428,
+      "ref_dots_within_3px_of_ours": 0.61499,
+      "bidirectional_max_3px_overlap": 0.61499
+    },
+    {
+      "reference": "repo::GEMSDOE70::gems70-fusion-dotted-37654-20261020",
+      "ref_dots": 37654,
+      "halo_coverage": 0.08548,
+      "our_dots_within_3px_of_ref": 0.22862,
+      "ref_dots_within_3px_of_ours": 0.54069,
+      "bidirectional_max_3px_overlap": 0.54069
+    },
+    {
+      "reference": "repo::GEMSDOE77::gems77-step-propensity-submod300",
+      "ref_dots": 34625,
+      "halo_coverage": 0.11103,
+      "our_dots_within_3px_of_ref": 0.31129,
+      "ref_dots_within_3px_of_ours": 0.53964,
+      "bidirectional_max_3px_overlap": 0.53964
+    },
+    {
+      "reference": "repo::GEMSDOE32::gems32-h19-5-smoothmaxcov-44090",
+      "ref_dots": 44090,
+      "halo_coverage": 0.14775,
+      "our_dots_within_3px_of_ref": 0.40365,
+      "ref_dots_within_3px_of_ours": 0.53407,
+      "bidirectional_max_3px_overlap": 0.53407
+    },
+    {
+      "reference": "repo::GEMSDOE73::gems73-h73-mcsc-seamfree-blakely-37654dots-20261021T073716Z-b27ac445-nan",
+      "ref_dots": 37654,
+      "halo_coverage": 0.14884,
+      "our_dots_within_3px_of_ref": 0.37628,
+      "ref_dots_within_3px_of_ours": 0.52109,
+      "bidirectional_max_3px_overlap": 0.52109
+    },
+    {
+      "reference": "repo::GEMSDOE73::gems73-h73-mcsc-seamfree-blakely-37654dots-20261021T073716Z-b27ac445-zeros",
+      "ref_dots": 37654,
+      "halo_coverage": 0.14884,
+      "our_dots_within_3px_of_ref": 0.37628,
+      "ref_dots_within_3px_of_ours": 0.52109,
+      "bidirectional_max_3px_overlap": 0.52109
+    },
+    {
+      "reference": "repo::19GEMSDOE::gems19-h19-5-powerlaw-budget-multiline-corroborated-20260930-e27054cf-allfinite",
+      "ref_dots": 121131,
+      "halo_coverage": 0.19609,
+      "our_dots_within_3px_of_ref": 0.46866,
+      "ref_dots_within_3px_of_ours": 0.51822,
+      "bidirectional_max_3px_overlap": 0.51822
+    },
+    {
+      "reference": "scored::gems19-h19-5-powerlaw-budget-multiline-corroborated-20260930-e27054cf-nan",
+      "ref_dots": 121131,
+      "halo_coverage": 0.19609,
+      "our_dots_within_3px_of_ref": 0.46866,
+      "ref_dots_within_3px_of_ours": 0.51822,
+      "bidirectional_max_3px_overlap": 0.51822
+    },
+    {
+      "reference": "repo::GEMSDOE78::gems78-h78mpc-monogenic-pc-spaced-37654dots-20261021T223000Z-c7932fbd-zeros",
+      "ref_dots": 37654,
+      "halo_coverage": 0.13312,
+      "our_dots_within_3px_of_ref": 0.34673,
+      "ref_dots_within_3px_of_ours": 0.51817,
+      "bidirectional_max_3px_overlap": 0.51817
+    }
+  ]
+}

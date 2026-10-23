@@ -1,0 +1,24 @@
+# Python / build / virtualenv artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+dist/
+build/
+.cache/
+
+# Large restored raw rasters & intermediate memory-mapped caches
+# (restored deterministically via scripts/download_competition_data.sh or scripts/restore_data.py;
+#  compact SHA-256 receipts, manifests, bridge templates, and external CSVs ARE tracked)
+data/raw/
+data/dem10/
+data/cache/
+data/external/*.tif
+data/external/*.npz
+artifacts/*.mmap
+artifacts/*.npy
+artifacts/*.tif
