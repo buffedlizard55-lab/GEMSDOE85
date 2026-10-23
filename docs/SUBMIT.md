@@ -115,7 +115,7 @@ sha256 not already in the ledger. The script is **byte-idempotent**: re-running 
   this is the diagnostic the predicted signs come from. **Catalogue hide-and-recover PROXY** is
   reported but is structurally biased for these files (R0 0.00479 → 0.01350): every dot is free to
   move back toward *withheld* catalogue pixels, which the live scorer masks. It is therefore not used
-  as evidence for SNAP — see IR-V2-14.
+  as evidence for SNAP — see IR-V2-15.
 
 ## Do not
 

@@ -1,29 +1,24 @@
 # GEMSDOE85 — Lane H85-HJCD: Hydrothermal-Juxtaposition & Fault-Valve Conduit Discovery
 
-**DOE GEMS Prize Challenge · DrivenData Competition #306 · Verified End-to-End Research, Holdout Validation & Unique GeoTIFF Submission System**
+<!-- CURRENT STATE — update this block only for session status. -->
+## CURRENT STATE (2026-10-23, after the PRUNE and SNAP build sessions)
 
-[![Automated Validation](https://img.shields.io/badge/Automated_Validation-32%2F32_PASS-brightgreen)](docs/index.html)
-[![Holdout DTI](https://img.shields.io/badge/HOLDOUT--DTI_(gems57--v2)-0.196461_(%2B107.6%25_vs_H33)-blue)](evidence/hjcd_experiments.json)
-[![Uniqueness Gate](https://img.shields.io/badge/Uniqueness_236_Rasters-PASS_(0.6402_%3C%3D_0.70)-success)](evidence/uniqueness_audit.json)
+| item | value |
+|---|---|
+| **Parent** | R0 `h33-h33-2-b2` (GEMSDOE32 `e5eb6e7e`), 37,654 unit dots, none within 2 px of the catalogue. Pinned NaN raster SHA-256 `baeae3219bba…`; rebuilt **pixel-identical** this session from the pinned chain (121,131 → 44,090 → 40,199 → 37,654) |
+| **Incumbent score** | **0.2778 = CLAIM** (owner-reported; no submission-page receipt exists in this repository) |
+| **Best receipt** | **none** — the human must paste score + date into `ledger/submissions.csv` (`receipt_score`, `date`) |
+| **TOP_PUBLIC** | **unfilled** — human reads it off the leaderboard with a date; no other target number is valid |
+| **Slots left this rolling week** | **unknown** — human reads it from the account page (3/week is a ceiling, not a target) |
+| **AXIS status** | the brief leaves AXIS to the human and no answer was received (the human was asked; the question was skipped). PRUNE (3 rungs) and SNAP (3 variants) were therefore built on documented evidence and are **UNSCORED**; see IR-V2-08 and IR-V2-14 |
+| **Built and gated (PRUNE)** | `h33-2-b2-prune3-…-fb308615` (35,483 dots, −5.77 %), `prune4-…-2880b0e9` (33,829, −10.16 %), `prune5-…-7ebfc408` (32,017, −14.97 %) |
+| **Built and gated (SNAP)** | `snap-ridge-lidar2-…-6913d029` (22.3 % moved ≤2 px), `snap-ridge-tmi2-…-de094d8e` (30.3 %), `snap-free-lidar2-…-ac3fc128` (56.9 %); count and mass fixed at 37,654 |
+| **Next 3 slots** | 1. `prune3` · 2. `prune4` · 3. `prune5` (only if 1 and 2 both ≥ 0.2778) — all *if the human confirms the axis*. Contingency with a free slot: `snap-free-lidar2`, then `snap-ridge-lidar2`, then `snap-ridge-tmi2`. SNAP is ranked **below** PRUNE because its predicted effect is inside the ±0.01 no-evidence band |
+| **Every prediction** | MODEL. Hide-and-recover and SGMC results are PROXY, never gates (and the hide-and-recover PROXY is biased for catalogue-derived candidates — IR-V2-15) |
+| **Human must supply** | AXIS confirmation, dated TOP_PUBLIC, weekly slots remaining, score receipts, deadline/timezone confirmation, and a decision on redistribution terms (IR-V2-10) |
 
----
-
-## CURRENT STATE (v2 session 2026-10-23 — this block overrides the historical narrative below)
-
-| field | value | status |
-|---|---|---|
-| **Parent** | `h33-h33-2-b2` (R0, GEMSDOE32 `e5eb6e7e`), 37,654 dots, rebuild pixel-identical to the pinned rasters | verified this session |
-| **Best receipt** | none in this repository | — |
-| **Incumbent score** | 0.2778 | **CLAIM** (owner-reported, no submission-page receipt) |
-| **TOP_PUBLIC** | *unfilled — human must read it off the leaderboard with a date* | missing |
-| **Slots left this rolling week** | *unknown — human reads it from the account page (3/week is a ceiling)* | missing |
-| **Next 3 slots** | 1. `h33-2-b2-prune3-…-fb308615` · 2. `h33-2-b2-prune4-…-2880b0e9` · 3. `h33-2-b2-prune5-…-7ebfc408` (only if 1 and 2 both ≥ 0.2778) | built, unscored |
-| **Contingency (only if a slot is free)** | `snap-free-lidar2-…-ac3fc128`, then `snap-ridge-lidar2-…-6913d029`, then `snap-ridge-tmi2-…-de094d8e` | built, unscored |
-| **This session's axis** | SNAP — 3 variants, fixed count and mass, ≤ 2 px moves | see `docs/mechanism_cards_snap.md` |
-| **Evidence labels** | 0.2778 / 0.2600 / 0.2708 are CLAIMs; holdouts are PROXYs; predictions are MODELs | no score in this repo is a receipt |
-
-Upload instructions and format receipts: `docs/SUBMIT.md`. Slot logic and the decision tree:
-`SLOT_PLAN.md`. Decision-changing irregularities: `IRREGULARITIES.md`.
+Upload instructions and format receipts: `docs/SUBMIT.md`. Slot logic and decision tree: `SLOT_PLAN.md`.
+Decision-changing irregularities: `IRREGULARITIES.md`. SNAP science: `docs/mechanism_cards_snap.md`.
 
 ## Promoted Deliverable & One-Click Automated Validation Receipt
 
