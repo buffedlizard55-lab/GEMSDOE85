@@ -74,10 +74,27 @@ def audit(root=ROOT):
                         min_catalogue_distance_px=float(distance[dots].min()),
                         dots_distance_lt3=int((dots & (distance < 3)).sum()),
                         dots_distance_le3=int((dots & (distance <= 3)).sum()))
-    return dict(schema_version=1, purpose='Input inventory only; NOT rebuild or candidate approval',
+    parent_rebuilt = False
+    variants_built = 0
+    try:
+        import sys
+        if str(root / 'src') not in sys.path:
+            sys.path.insert(0, str(root / 'src'))
+        from gems85 import r0_lineage as RL
+        if all(p.is_file() for p in RL.PATHS.values()):
+            RL.verify_pins()
+            L = RL.rebuild(verify_against_pinned_files=True)
+            parent_rebuilt = (L.counts() == {'skeleton': 121131, 'd28': 44090, 'solo': 40199, 'r0': 37654})
+        ledger = root / 'ledger' / 'submissions.csv'
+        if ledger.is_file():
+            import csv
+            variants_built = sum(1 for r in csv.DictReader(ledger.open()) if r.get('status') == 'BUILT')
+    except Exception:
+        pass
+    return dict(schema_version=1, purpose='Input inventory and R0 lineage verification',
                 git_sha=subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=root, text=True).strip(),
                 manifests=manifests, restored_parent_geometry=geometry,
-                parent_rebuilt=False, variants_built=0)
+                parent_rebuilt=parent_rebuilt, variants_built=variants_built)
 
 
 if __name__ == '__main__':

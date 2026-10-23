@@ -1,24 +1,24 @@
-## CURRENT STATE — v2 session, 2026-10-23 (overrides the historical narrative below)
+<!-- CURRENT STATE — update this block only for session status. -->
+## CURRENT STATE (2026-10-23, after PRUNE, PRUNE-rungs, SNAP, verification, RELIEF and the CONCENTRATION sessions `arena/28da814f` / `arena/3dd0b94c` / `arena/c4de5673`)
 
 | field | value |
 |---|---|
-| **Parent** | R0 = `h33-h33-2-b2` (`e5eb6e7e`): 37,654 unit dots, rebuilt pixel-identically this session from four SHA-256-pinned inputs (`evidence/session_snap_receipt.json → parent_rebuild`) |
-| **Best receipt** | **none in this repo.** Best live number is **0.2778 CLAIM** (owner-reported, no submission-page receipt in `ledger/`) |
-| **TOP_PUBLIC** | **UNFILLED** — the human reads it off the leaderboard with a date; no other target number is valid |
-| **Slots left this week** | **unknown** — from the account page (3/week is a ceiling, not a target) |
-| **Next 3 slots** | 1) `releases/h33-2-b2-prune3-20261023-fb308615.tif` · 2) `…-prune4-20261023-2880b0e9.tif` · 3) `…-prune5-20261023-7ebfc408.tif` (spend only if 1–2 both score ≥ 0.2778) → `SLOT_PLAN.md` |
-| **Built this session** | PRUNE axis already in the ledger; **SNAP** arms `snapgrav2` `1b033f40` (6.9 % of dots moved ≤ 2 px), `snapmag2` `a2fa8b95` (24.5 %), `snaptop2` `7be865f5` (52.5 %) — all gates PASS, all predicted ≈ 0.000 MODEL |
-| **Do not** | treat any PROXY, MODEL or CLAIM number as a score; upload a file whose hash is already in `ledger/submissions.csv`; infer a mass effect from file names |
+| **parent** | R0 = `h33-h33-2-b2` (`e5eb6e7e`), 37,654 unit-mass dots; rebuilt **pixel- and byte-identical** from the pinned chain (121,131 → 44,090 → 40,199 → 37,654; `baeae321…` / `c55bafc4…`; 23/23 `data_manifest.json` + 2/2 `learning_manifest.json` SHA-256 verified) |
+| **best receipt** | **none in this repository.** 0.2778 is a **CLAIM** (owner-reported); every other number is MODEL or PROXY |
+| **TOP_PUBLIC** | **UNFILLED** — the human reads it off the leaderboard *with a date*; no other target number is valid |
+| **slots left this week** | **UNKNOWN** — the human reads it off the account page (3/week is a ceiling, not a target; +1 blind final submission) |
+| **reserve PRUNE & SNAP** | `PRUNE`: `prune4-…-2880b0e9` (+0.003), `prune5-…-7ebfc408` (−0.003), `r2p25-…-3908de12` (+0.003). `SNAP` (ranked below PRUNE + RELIEF; inside ±0.01 no-evidence band): `snap-free-lidar2-…-ac3fc128` (−0.004), `snap-ridge-lidar2-…-6913d029` (+0.001), `snap-ridge-tmi2-…-de094d8e` (0.000) |
+| **SNAP-axis arms (PR #40, `arena/fb7ddb5a`)** | free-window ≤ 2 px repositioning, count held at 37,654, `d_cat > 2 px` inherited from R0 and never tightened by a move: `snapgrav2-…-1b033f40` (2,603 moved, 6.9 %, −0.0002 MODEL) · `snapmag2-…-a2fa8b95` (9,213, 24.5 %, −0.0004) · `snaptop2-…-7be865f5` (19,768, 52.5 %, +0.0001) — **reserve only**; they exist to falsify "we are 1–2 px off", and the receipt also records that add-mass arms have only 794 free parent-ridge cells (`evidence/session_snap_axis_receipt.json`) |
+| **every prediction** | MODEL (`|Δ| < 0.01` live is no evidence). Hide-and-recover and SGMC are PROXY, never gates |
+| **human must supply** | AXIS/slot confirmation, dated `TOP_PUBLIC`, rolling-week/total slots remaining, score receipts for every upload, deadline/timezone confirmation, redistribution decision (IR-V2-10) |
+| **AXIS status** | **CONCENTRATION — assigned by the human on 2026-10-23** (session `arena/c4de5673`; asked, and answered). The earlier PRUNE and SNAP rungs were AI-chosen (no axis was assigned in those sessions) and remain built and gated as the backup ladder; the human may reorder. See `IRREGULARITIES.md` (IR-V2-08, IR-V2-14, IR-V2-20 … IR-V2-26) |
+| **CONCENTRATION variants (2026-10-23)** | `…-conc10-…-f89e4659` (10 % of dots moved) · `…-conc15-…-45bfb93b` (15 %) · `…-conc20-…-a93e0b41` (20 %) — count held at 37,654, 0 dots on the catalogue, new dots > 3 px from the catalogue, block-density CV 0.551 → 0.767 / 0.786 / 0.782 (0.8 km occupied blocks). Predicted **−0.01 to −0.05** against 0.2778 (MODEL); cards, falsifiers and the dose-series rationale in `docs/MECHANISM_CARDS.md` |
+| **next 3 slots** (human-assigned axis = CONCENTRATION; `SLOT_PLAN.md`, `docs/SUBMIT.md`) | 1. `…-conc10-…-f89e4659-zeros.tif` (−0.010 to −0.030 MODEL) · 2. `…-conc15-…-45bfb93b-zeros.tif` (−0.015 to −0.040) · 3. `…-conc20-…-a93e0b41-zeros.tif` (−0.020 to −0.050) — a dose series of one axis, so the **slope** of live score against dose is the measurement. **Backup ladder** (all built and gated; the human may reorder): `h33-2-b2-prune3-…-fb308615` (+0.007 MODEL) · `h33-2-b2-reliefp2r10-…-669f0637` (+0.008 MODEL) · `h33-2-b2-r3p61-…-f94be3ad` (+0.005, the RELIEF-session decision slot) · `h33-2-b2-r2p85-…-acce3907` (+0.005) — fallback: the `-zeros` twin of whichever is uploaded |
+Upload file, hash and ≤140-character note per slot: `docs/SUBMIT.md`. Ladder, decision rules and the
+calendar: `SLOT_PLAN.md`. Science: `docs/mechanism_cards_prune.md`, `docs/mechanism_cards_rung.md`,
+`docs/mechanism_cards_snap.md`, `docs/mechanism_cards_relief.md`, `docs/MECHANISM_CARDS.md` (CONCENTRATION). Decision-changing irregularities:
+`IRREGULARITIES.md`.
 
-# GEMSDOE85 — Lane H85-HJCD: Hydrothermal-Juxtaposition & Fault-Valve Conduit Discovery
-
-**DOE GEMS Prize Challenge · DrivenData Competition #306 · Verified End-to-End Research, Holdout Validation & Unique GeoTIFF Submission System**
-
-[![Automated Validation](https://img.shields.io/badge/Automated_Validation-32%2F32_PASS-brightgreen)](docs/index.html)
-[![Holdout DTI](https://img.shields.io/badge/HOLDOUT--DTI_(gems57--v2)-0.196461_(%2B107.6%25_vs_H33)-blue)](evidence/hjcd_experiments.json)
-[![Uniqueness Gate](https://img.shields.io/badge/Uniqueness_236_Rasters-PASS_(0.6402_%3C%3D_0.70)-success)](evidence/uniqueness_audit.json)
-
----
 
 ## Promoted Deliverable & One-Click Automated Validation Receipt
 

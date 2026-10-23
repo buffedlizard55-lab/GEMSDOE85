@@ -132,7 +132,18 @@ def main() -> int:
     args = ap.parse_args()
 
     manifest = json.loads(MANIFEST.read_text())
-    files = [{**f, "group": f.get("group", "core"), "_target": DATA / "raw"} for f in manifest["files"]]
+
+    def _needs_subdirs(entry: dict) -> bool:
+        """Manifest `dest` values such as ``scored/x.tif`` need the subdir allowance.
+
+        `restore()` still rejects absolute paths and any ``..`` component, so this only
+        relaxes the single-filename rule for manifest-authored relative paths (IR-V3-01).
+        """
+        dest = entry.get("local_path") or entry.get("dest") or ""
+        return len(Path(dest).parts) > 1
+
+    files = [{**f, "group": f.get("group", "core"), "_target": DATA,
+              "_subdirs": _needs_subdirs(f)} for f in manifest["files"]]
     if MANIFEST_GEO.is_file():
         files.extend(
             [{**f, "_target": DATA, "_subdirs": True} for f in json.loads(MANIFEST_GEO.read_text()).get("files", [])]

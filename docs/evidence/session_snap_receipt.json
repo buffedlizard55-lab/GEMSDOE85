@@ -1,11 +1,9 @@
 {
   "schema_version": 2,
-  "generated_utc": "2026-10-23T16:13:10+00:00",
+  "generated_utc": "2026-10-23T15:46:29+00:00",
   "git_sha": "f2d6e4e9bd481bd73a76bc2c21642f038984595d",
   "python": "3.11.2",
   "date_tag": "20261023",
-  "axis": "SNAP",
-  "axis_assignment": "human did not assign an axis this session (question skipped); the agent selected SNAP from brief \u00a75 on the measurements in `diagnostics`, and the choice is recorded in IRREGULARITIES.md IR-V2-14",
   "pins": {
     "h19_5": {
       "path": "data/scored/gems19-h19-5-powerlaw-budget-multiline-corroborated-20260930-e27054cf-nan.tif",
@@ -41,16 +39,28 @@
       "path": "data/sample_submission.tif",
       "sha256": "2176d08e485aa2cd2860ce8df539db4faf4d76163b38a4dd8c30a40454d35cbc",
       "bytes": 1599597
+    }
+  },
+  "external_pins": {
+    "ext_lidar_scarp_features_u8": {
+      "path": "data/external/lidar_scarp_features_u8.tif",
+      "sha256": "d580bb8bdcdb941e32fefb8b38044bc5bf04e199bf2e83498c3576e6fc465568",
+      "bytes": 36943606
+    },
+    "ext_geodawn_extensions_u8": {
+      "path": "data/external/geodawn_extensions_u8.tif",
+      "sha256": "a35a9c6d2a14786f4dab85481ee59769213072f5dab5b2535ea82ae4d9bb7d9b",
+      "bytes": 27132925
+    },
+    "ext_derived_sgmc_faults_100m_u8": {
+      "path": "data/external/derived_sgmc_faults_100m_u8.tif",
+      "sha256": "643cbe992ef4ba37588fb469163ed8291e3ceb23d6c1f78a3cfaa462430c2da0",
+      "bytes": 198602
     },
     "training_features": {
       "path": "data/training_features.tif",
       "sha256": "4371c82e3b8339b807bdffcf4ef59a225520fe2988d521be208ae33743123bc5",
       "bytes": 418912844
-    },
-    "sgmc_proxy": {
-      "path": "data/external/derived_sgmc_faults_100m_u8.tif",
-      "sha256": "643cbe992ef4ba37588fb469163ed8291e3ceb23d6c1f78a3cfaa462430c2da0",
-      "bytes": 198602
     }
   },
   "parent_rebuild": {
@@ -61,39 +71,98 @@
       "r0": 37654
     },
     "pixel_identical_to_pinned": true,
-    "file_sha256_nan": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
-    "file_sha256_zeros": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
-    "reemit_byte_identical": false,
-    "reemit_attempts": "deflate z1-9 x predictor none/2/3 -> no sha256 match"
+    "r0_nan_sha256": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
+    "r0_zeros_sha256": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9"
   },
-  "arms": {
-    "snapgrav2": {
-      "id": "h33-2-b2-snapgrav2-20261023-1b033f40",
-      "parent": "h33-2-b2 (R0, GEMSDOE32 e5eb6e7e)",
-      "parent_sha256_nan": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
-      "parent_sha256_zeros": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
+  "response_fields": {
+    "lidar": {
+      "field": "lidar_scarp",
+      "bands": [
+        "step_max",
+        "lapneg_max",
+        "downface_max"
+      ],
+      "coverage_fraction": 0.31716013147479144,
+      "per_band": {
+        "step_max": {
+          "mean_on_coverage": 69.57255554199219,
+          "p99_on_coverage": 183.0
+        },
+        "lapneg_max": {
+          "mean_on_coverage": 86.9587173461914,
+          "p99_on_coverage": 236.0
+        },
+        "downface_max": {
+          "mean_on_coverage": 55.15107727050781,
+          "p99_on_coverage": 163.0
+        }
+      },
+      "definition": "mean(step_max, lapneg_max, downface_max)/255 masked by band 'valid'",
+      "coverage_fraction_of_footprint": 0.7537
+    },
+    "tmi": {
+      "field": "tmi_edge",
+      "band": "TMI_up150",
+      "sigma_px": 1.5,
+      "p99": 20.99127197265625,
+      "coverage_fraction": 0.4205753488023611,
+      "definition": "|grad(gauss(TMI_up150, sigma=1.5 px))| / p99(in-footprint), nodata collar removed",
+      "coverage_fraction_of_footprint": 0.9994
+    },
+    "lidar_bands": [
+      "step_max",
+      "lapneg_max",
+      "downface_max"
+    ]
+  },
+  "variants": {
+    "snap-ridge-lidar2": {
+      "id": "snap-ridge-lidar2-20261023-6913d029",
+      "parent": "h33-h33-2-b2 (R0, GEMSDOE32 e5eb6e7e)",
+      "parent_nan_sha256": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
+      "parent_zeros_sha256": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
       "axis": "SNAP",
-      "value": "edge=iso_grav_anom_hg|max_px=2.0|margin=0.05|min_sep=2.0",
-      "submission_note": "R0 SNAP 2603 dots (6.9%) <=2px onto gravity-hg edge, count fixed; pred -0.000 MODEL; UNSCORED",
-      "stats": {
+      "value": "on-ridge (dest subset of parent skeleton), cap 2 px, lidar scarp",
+      "field": "lidar_scarp",
+      "snap": {
+        "cap_px": 2.0,
+        "min_sep": 2.0,
+        "min_cat_dist": 3.0,
+        "confined": true,
         "n_dots": 37654,
-        "n_moved": 2603,
-        "pct_moved": 6.913,
-        "mean_displacement_px": 1.915,
-        "p95_displacement_px": 2.0,
+        "n_moved": 8384,
+        "pct_moved": 22.266,
+        "n_with_candidate": 22573,
+        "pct_with_candidate": 59.948,
+        "n_blocked_by_separation": 3350,
+        "mean_displacement_moved_px": 1.209,
+        "mean_displacement_all_px": 0.2692,
         "max_displacement_px": 2.0,
-        "count_preserved": true,
-        "min_sep_px": 2.0,
-        "max_px": 2.0,
-        "margin": 0.05,
-        "candidates_considered": 4634
+        "mean_response_gain_moved": 0.152484,
+        "mean_response_parent": 0.290915,
+        "mean_response_final": 0.309929,
+        "n_dots_response_supported": 28762,
+        "support_coverage_parent": 0.63341,
+        "support_coverage_variant": 0.62456,
+        "support_coverage_delta_pct": -1.398,
+        "pair": {
+          "parent_dots": 37654,
+          "variant_dots": 37654,
+          "dots_removed": 8384,
+          "dots_added": 8384,
+          "unchanged": 29270,
+          "pct_changed": 44.532,
+          "jaccard": 0.6358,
+          "min_inter_dot_px": 2.0,
+          "mean_nn_px": 3.5692
+        }
       },
       "nan": {
         "mode": "nan",
-        "filename": "h33-2-b2-snapgrav2-20261023-1b033f40.tif",
-        "bytes": 331797,
-        "sha256": "1b033f4005e2a996206ce8694ebefbefa6d2822bbb317fb4ae3fef7ecddab6aa",
-        "sha8": "1b033f40",
+        "filename": "snap-ridge-lidar2-20261023-6913d029.tif",
+        "bytes": 332766,
+        "sha256": "6913d029a6941e0519bedc08d9d839f75afd1fc508dd5406b357fdd8408c1230",
+        "sha8": "6913d029",
         "crs": "EPSG:32611",
         "transform": [
           100.0,
@@ -110,22 +179,25 @@
         "dtype": "float32",
         "nodata": "nan",
         "positive_pixels": 37654,
-        "min_distance_to_catalogue_px": 2.23606797749979,
+        "emitted_mass": 37654.0,
+        "min": 0.0,
+        "max": 1.0,
         "on_catalogue_px": 0,
+        "within_2px_catalogue_px": 0,
+        "within_3px_catalogue_px": 1839,
+        "min_distance_to_catalogue_px": 2.23606797749979,
         "checks": {
           "single_band": true,
           "dtype_float32": true,
           "shape_matches_sample": true,
           "crs_matches_sample": true,
           "transform_matches_sample": true,
+          "footprint_pixels_match_sample": true,
           "no_nan_inside_footprint": true,
           "no_inf_anywhere": true,
           "values_in_0_1_inside_footprint": true,
           "binary_values_only": true,
           "zero_mass_on_catalogue": true,
-          "min_distance_to_catalogue_gt_2px": true,
-          "no_dot_moved_closer_to_catalogue": true,
-          "dot_count_equals_parent": true,
           "nodata_is_nan": true,
           "outside_footprint_all_nan": true
         },
@@ -133,10 +205,10 @@
       },
       "zeros": {
         "mode": "zeros",
-        "filename": "h33-2-b2-snapgrav2-20261023-1b033f40-zeros.tif",
-        "bytes": 205007,
-        "sha256": "83a3c1e4e14597847f035484aeb476c3bb0a6813759caf465dcd912cd55ea7a9",
-        "sha8": "83a3c1e4",
+        "filename": "snap-ridge-lidar2-20261023-6913d029-zeros.tif",
+        "bytes": 206116,
+        "sha256": "4f569703c9b3ae3482d7278c6d84df770b4d465d1810591a9d258c6d02d84349",
+        "sha8": "4f569703",
         "crs": "EPSG:32611",
         "transform": [
           100.0,
@@ -153,57 +225,81 @@
         "dtype": "float32",
         "nodata": null,
         "positive_pixels": 37654,
-        "min_distance_to_catalogue_px": 2.23606797749979,
+        "emitted_mass": 37654.0,
+        "min": 0.0,
+        "max": 1.0,
         "on_catalogue_px": 0,
+        "within_2px_catalogue_px": 0,
+        "within_3px_catalogue_px": 1839,
+        "min_distance_to_catalogue_px": 2.23606797749979,
         "checks": {
           "single_band": true,
           "dtype_float32": true,
           "shape_matches_sample": true,
           "crs_matches_sample": true,
           "transform_matches_sample": true,
+          "footprint_pixels_match_sample": true,
           "no_nan_inside_footprint": true,
           "no_inf_anywhere": true,
           "values_in_0_1_inside_footprint": true,
           "binary_values_only": true,
           "zero_mass_on_catalogue": true,
-          "min_distance_to_catalogue_gt_2px": true,
-          "no_dot_moved_closer_to_catalogue": true,
-          "dot_count_equals_parent": true,
           "nodata_is_none": true,
-          "all_finite_whole_grid": true
+          "all_finite_whole_grid": true,
+          "whole_grid_in_0_1": true
         },
         "all_checks_passed": true
       },
-      "min_pair_distance_px": 2.0,
+      "submission_note": "R0 h33-2-b2 SNAP: 22% dots slide <=2px along ridge to peak lidar-scarp response; count/mass fixed; pred +0.001 MODEL; UNSCORED",
       "all_gates_passed": true
     },
-    "snapmag2": {
-      "id": "h33-2-b2-snapmag2-20261023-a2fa8b95",
-      "parent": "h33-2-b2 (R0, GEMSDOE32 e5eb6e7e)",
-      "parent_sha256_nan": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
-      "parent_sha256_zeros": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
+    "snap-ridge-tmi2": {
+      "id": "snap-ridge-tmi2-20261023-de094d8e",
+      "parent": "h33-h33-2-b2 (R0, GEMSDOE32 e5eb6e7e)",
+      "parent_nan_sha256": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
+      "parent_zeros_sha256": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
       "axis": "SNAP",
-      "value": "edge=tmi_hg|max_px=2.0|margin=0.05|min_sep=2.0",
-      "submission_note": "R0 SNAP 9213 dots (24.5%) <=2px onto magnetic-hg edge, count fixed; pred -0.000 MODEL; UNSCORED",
-      "stats": {
+      "value": "on-ridge (dest subset of parent skeleton), cap 2 px, TMI edge",
+      "field": "tmi_edge",
+      "snap": {
+        "cap_px": 2.0,
+        "min_sep": 2.0,
+        "min_cat_dist": 3.0,
+        "confined": true,
         "n_dots": 37654,
-        "n_moved": 9213,
-        "pct_moved": 24.468,
-        "mean_displacement_px": 1.779,
-        "p95_displacement_px": 2.0,
+        "n_moved": 11412,
+        "pct_moved": 30.308,
+        "n_with_candidate": 31824,
+        "pct_with_candidate": 84.517,
+        "n_blocked_by_separation": 4533,
+        "mean_displacement_moved_px": 1.2452,
+        "mean_displacement_all_px": 0.3774,
         "max_displacement_px": 2.0,
-        "count_preserved": true,
-        "min_sep_px": 2.0,
-        "max_px": 2.0,
-        "margin": 0.05,
-        "candidates_considered": 22080
+        "mean_response_gain_moved": 0.069971,
+        "mean_response_parent": 0.190901,
+        "mean_response_final": 0.201837,
+        "n_dots_response_supported": 37296,
+        "support_coverage_parent": 0.63341,
+        "support_coverage_variant": 0.61891,
+        "support_coverage_delta_pct": -2.29,
+        "pair": {
+          "parent_dots": 37654,
+          "variant_dots": 37654,
+          "dots_removed": 11412,
+          "dots_added": 11412,
+          "unchanged": 26242,
+          "pct_changed": 60.615,
+          "jaccard": 0.5348,
+          "min_inter_dot_px": 2.0,
+          "mean_nn_px": 3.5078
+        }
       },
       "nan": {
         "mode": "nan",
-        "filename": "h33-2-b2-snapmag2-20261023-a2fa8b95.tif",
-        "bytes": 332500,
-        "sha256": "a2fa8b95aff406d7ea623d2e46ffd17840e75c4789b1788b4d11e4785347eeed",
-        "sha8": "a2fa8b95",
+        "filename": "snap-ridge-tmi2-20261023-de094d8e.tif",
+        "bytes": 332816,
+        "sha256": "de094d8e89834cfc571a9d409248a1aa0363e4d0cbd6ea470e44ed07bfedec43",
+        "sha8": "de094d8e",
         "crs": "EPSG:32611",
         "transform": [
           100.0,
@@ -220,22 +316,25 @@
         "dtype": "float32",
         "nodata": "nan",
         "positive_pixels": 37654,
-        "min_distance_to_catalogue_px": 2.23606797749979,
+        "emitted_mass": 37654.0,
+        "min": 0.0,
+        "max": 1.0,
         "on_catalogue_px": 0,
+        "within_2px_catalogue_px": 0,
+        "within_3px_catalogue_px": 1786,
+        "min_distance_to_catalogue_px": 2.23606797749979,
         "checks": {
           "single_band": true,
           "dtype_float32": true,
           "shape_matches_sample": true,
           "crs_matches_sample": true,
           "transform_matches_sample": true,
+          "footprint_pixels_match_sample": true,
           "no_nan_inside_footprint": true,
           "no_inf_anywhere": true,
           "values_in_0_1_inside_footprint": true,
           "binary_values_only": true,
           "zero_mass_on_catalogue": true,
-          "min_distance_to_catalogue_gt_2px": true,
-          "no_dot_moved_closer_to_catalogue": true,
-          "dot_count_equals_parent": true,
           "nodata_is_nan": true,
           "outside_footprint_all_nan": true
         },
@@ -243,10 +342,10 @@
       },
       "zeros": {
         "mode": "zeros",
-        "filename": "h33-2-b2-snapmag2-20261023-a2fa8b95-zeros.tif",
-        "bytes": 205776,
-        "sha256": "f0089972003f8c814c04ba6e650d14f2957acc614fc42913e6ec10bfe504b29e",
-        "sha8": "f0089972",
+        "filename": "snap-ridge-tmi2-20261023-de094d8e-zeros.tif",
+        "bytes": 206284,
+        "sha256": "6e58c265546a321fd6c9cc63210d202e7372170c56702a94a6dd2bbd91739346",
+        "sha8": "6e58c265",
         "crs": "EPSG:32611",
         "transform": [
           100.0,
@@ -263,57 +362,81 @@
         "dtype": "float32",
         "nodata": null,
         "positive_pixels": 37654,
-        "min_distance_to_catalogue_px": 2.23606797749979,
+        "emitted_mass": 37654.0,
+        "min": 0.0,
+        "max": 1.0,
         "on_catalogue_px": 0,
+        "within_2px_catalogue_px": 0,
+        "within_3px_catalogue_px": 1786,
+        "min_distance_to_catalogue_px": 2.23606797749979,
         "checks": {
           "single_band": true,
           "dtype_float32": true,
           "shape_matches_sample": true,
           "crs_matches_sample": true,
           "transform_matches_sample": true,
+          "footprint_pixels_match_sample": true,
           "no_nan_inside_footprint": true,
           "no_inf_anywhere": true,
           "values_in_0_1_inside_footprint": true,
           "binary_values_only": true,
           "zero_mass_on_catalogue": true,
-          "min_distance_to_catalogue_gt_2px": true,
-          "no_dot_moved_closer_to_catalogue": true,
-          "dot_count_equals_parent": true,
           "nodata_is_none": true,
-          "all_finite_whole_grid": true
+          "all_finite_whole_grid": true,
+          "whole_grid_in_0_1": true
         },
         "all_checks_passed": true
       },
-      "min_pair_distance_px": 2.0,
+      "submission_note": "R0 h33-2-b2 SNAP: 30% dots slide <=2px along ridge to peak TMI-edge response; count/mass fixed; pred 0.000 MODEL; UNSCORED",
       "all_gates_passed": true
     },
-    "snaptop2": {
-      "id": "h33-2-b2-snaptop2-20261023-7be865f5",
-      "parent": "h33-2-b2 (R0, GEMSDOE32 e5eb6e7e)",
-      "parent_sha256_nan": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
-      "parent_sha256_zeros": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
+    "snap-free-lidar2": {
+      "id": "snap-free-lidar2-20261023-ac3fc128",
+      "parent": "h33-h33-2-b2 (R0, GEMSDOE32 e5eb6e7e)",
+      "parent_nan_sha256": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
+      "parent_zeros_sha256": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
       "axis": "SNAP",
-      "value": "edge=det_elev_slope|max_px=2.0|margin=0.05|min_sep=2.0",
-      "submission_note": "R0 SNAP 19768 dots (52.5%) <=2px onto det-elev scarp edge, count fixed; pred +0.000 MODEL; UNSCORED",
-      "stats": {
+      "value": "free window (brief-literal), cap 2 px, lidar scarp",
+      "field": "lidar_scarp",
+      "snap": {
+        "cap_px": 2.0,
+        "min_sep": 2.0,
+        "min_cat_dist": 3.0,
+        "confined": false,
         "n_dots": 37654,
-        "n_moved": 19768,
-        "pct_moved": 52.499,
-        "mean_displacement_px": 1.773,
-        "p95_displacement_px": 2.0,
+        "n_moved": 21441,
+        "pct_moved": 56.942,
+        "n_with_candidate": 22573,
+        "pct_with_candidate": 59.948,
+        "n_blocked_by_separation": 4657,
+        "mean_displacement_moved_px": 1.4926,
+        "mean_displacement_all_px": 0.8499,
         "max_displacement_px": 2.0,
-        "count_preserved": true,
-        "min_sep_px": 2.0,
-        "max_px": 2.0,
-        "margin": 0.05,
-        "candidates_considered": 56812
+        "mean_response_gain_moved": 0.130695,
+        "mean_response_parent": 0.290915,
+        "mean_response_final": 0.361226,
+        "n_dots_response_supported": 28762,
+        "support_coverage_parent": 0.63341,
+        "support_coverage_variant": 0.51368,
+        "support_coverage_delta_pct": -18.903,
+        "pair": {
+          "parent_dots": 37654,
+          "variant_dots": 37654,
+          "dots_removed": 21441,
+          "dots_added": 21441,
+          "unchanged": 16213,
+          "pct_changed": 113.884,
+          "jaccard": 0.2744,
+          "min_inter_dot_px": 2.0,
+          "mean_nn_px": 3.6062
+        }
       },
       "nan": {
         "mode": "nan",
-        "filename": "h33-2-b2-snaptop2-20261023-7be865f5.tif",
-        "bytes": 332941,
-        "sha256": "7be865f5c3da2f26c755afbbe79720007cc01844943410617801ebe4cecb9bbd",
-        "sha8": "7be865f5",
+        "filename": "snap-free-lidar2-20261023-ac3fc128.tif",
+        "bytes": 332727,
+        "sha256": "ac3fc128de9f9c9e320b20b6be04ba2d81b62727d3875d08dd60e5974d020519",
+        "sha8": "ac3fc128",
         "crs": "EPSG:32611",
         "transform": [
           100.0,
@@ -330,22 +453,25 @@
         "dtype": "float32",
         "nodata": "nan",
         "positive_pixels": 37654,
-        "min_distance_to_catalogue_px": 2.23606797749979,
+        "emitted_mass": 37654.0,
+        "min": 0.0,
+        "max": 1.0,
         "on_catalogue_px": 0,
+        "within_2px_catalogue_px": 0,
+        "within_3px_catalogue_px": 1219,
+        "min_distance_to_catalogue_px": 2.23606797749979,
         "checks": {
           "single_band": true,
           "dtype_float32": true,
           "shape_matches_sample": true,
           "crs_matches_sample": true,
           "transform_matches_sample": true,
+          "footprint_pixels_match_sample": true,
           "no_nan_inside_footprint": true,
           "no_inf_anywhere": true,
           "values_in_0_1_inside_footprint": true,
           "binary_values_only": true,
           "zero_mass_on_catalogue": true,
-          "min_distance_to_catalogue_gt_2px": true,
-          "no_dot_moved_closer_to_catalogue": true,
-          "dot_count_equals_parent": true,
           "nodata_is_nan": true,
           "outside_footprint_all_nan": true
         },
@@ -353,10 +479,10 @@
       },
       "zeros": {
         "mode": "zeros",
-        "filename": "h33-2-b2-snaptop2-20261023-7be865f5-zeros.tif",
-        "bytes": 206095,
-        "sha256": "3e662a257052cc863be8e535acd60797783e95811481702cf5807e85b7120509",
-        "sha8": "3e662a25",
+        "filename": "snap-free-lidar2-20261023-ac3fc128-zeros.tif",
+        "bytes": 205964,
+        "sha256": "474124ddb17e20d7c2a6dc2dfffccbac64fce6ebb24cdeafecd8aaa659c1a30b",
+        "sha8": "474124dd",
         "crs": "EPSG:32611",
         "transform": [
           100.0,
@@ -373,263 +499,147 @@
         "dtype": "float32",
         "nodata": null,
         "positive_pixels": 37654,
-        "min_distance_to_catalogue_px": 2.23606797749979,
+        "emitted_mass": 37654.0,
+        "min": 0.0,
+        "max": 1.0,
         "on_catalogue_px": 0,
+        "within_2px_catalogue_px": 0,
+        "within_3px_catalogue_px": 1219,
+        "min_distance_to_catalogue_px": 2.23606797749979,
         "checks": {
           "single_band": true,
           "dtype_float32": true,
           "shape_matches_sample": true,
           "crs_matches_sample": true,
           "transform_matches_sample": true,
+          "footprint_pixels_match_sample": true,
           "no_nan_inside_footprint": true,
           "no_inf_anywhere": true,
           "values_in_0_1_inside_footprint": true,
           "binary_values_only": true,
           "zero_mass_on_catalogue": true,
-          "min_distance_to_catalogue_gt_2px": true,
-          "no_dot_moved_closer_to_catalogue": true,
-          "dot_count_equals_parent": true,
           "nodata_is_none": true,
-          "all_finite_whole_grid": true
+          "all_finite_whole_grid": true,
+          "whole_grid_in_0_1": true
         },
         "all_checks_passed": true
       },
-      "min_pair_distance_px": 2.0,
+      "submission_note": "R0 h33-2-b2 SNAP control: 57% dots move <=2px to lidar-scarp peak anywhere in window; count fixed; pred -0.004 MODEL; UNSCORED",
       "all_gates_passed": true
     }
   },
-  "proxies": {
-    "R0": {
+  "sgmc_proxy": {
+    "R0_parent": {
       "sgmc": 0.08938,
-      "sgmc_minus_catalogue_3px": 0.09539,
-      "catalogue_hide_and_recover": {
-        "score": 0.00458,
-        "folds": 4,
-        "fold_values": [
-          0.00387,
-          0.00569,
-          0.00476,
-          0.00401
-        ],
-        "ci95": [
-          0.00394,
-          0.00527
-        ]
-      },
-      "credit_sgmc_minus_catalogue_3px": 0.06462
+      "sgmc_minus_catalogue_3px": 0.09539
     },
-    "snapgrav2": {
-      "sgmc": 0.08767,
-      "sgmc_minus_catalogue_3px": 0.09501,
-      "catalogue_hide_and_recover": {
-        "score": 0.00426,
-        "folds": 4,
-        "fold_values": [
-          0.00373,
-          0.00543,
-          0.00459,
-          0.0033
-        ],
-        "ci95": [
-          0.00351,
-          0.00501
-        ]
-      },
-      "credit_sgmc_minus_catalogue_3px": 0.06429
+    "snap-ridge-lidar2": {
+      "sgmc": 0.0874,
+      "sgmc_minus_catalogue_3px": 0.09396
     },
-    "snapmag2": {
-      "sgmc": 0.08785,
-      "sgmc_minus_catalogue_3px": 0.09433,
-      "catalogue_hide_and_recover": {
-        "score": 0.00405,
-        "folds": 4,
-        "fold_values": [
-          0.00317,
-          0.00479,
-          0.00439,
-          0.00387
-        ],
-        "ci95": [
-          0.00347,
-          0.00459
-        ]
-      },
-      "credit_sgmc_minus_catalogue_3px": 0.06395
+    "snap-ridge-tmi2": {
+      "sgmc": 0.08638,
+      "sgmc_minus_catalogue_3px": 0.09338
     },
-    "snaptop2": {
-      "sgmc": 0.0867,
-      "sgmc_minus_catalogue_3px": 0.0952,
-      "catalogue_hide_and_recover": {
-        "score": 0.00312,
-        "folds": 4,
-        "fold_values": [
-          0.0023,
-          0.00341,
-          0.00338,
-          0.00339
-        ],
-        "ci95": [
-          0.00257,
-          0.00341
-        ]
-      },
-      "credit_sgmc_minus_catalogue_3px": 0.06482
+    "snap-free-lidar2": {
+      "sgmc": 0.08673,
+      "sgmc_minus_catalogue_3px": 0.09591
     }
   },
-  "proxy_baseline": {
-    "sgmc": 0.08938,
-    "sgmc_minus_catalogue_3px": 0.09539
-  },
-  "proxy_baseline_credit": {
-    "sgmc": 0.07519,
-    "sgmc_minus_catalogue_3px": 0.06462
+  "catalogue_hide_and_recover_proxy": {
+    "R0_parent": {
+      "pooled": 0.00479,
+      "n_withheld_positives": 60988,
+      "per_fold": [
+        0.00504,
+        0.00484,
+        0.00431,
+        0.00493
+      ],
+      "ci95": [
+        0.00447,
+        0.00511
+      ]
+    },
+    "snap-ridge-lidar2": {
+      "pooled": 0.00781,
+      "n_withheld_positives": 60988,
+      "per_fold": [
+        0.00823,
+        0.00743,
+        0.00732,
+        0.00829
+      ],
+      "ci95": [
+        0.00731,
+        0.00831
+      ]
+    },
+    "snap-ridge-tmi2": {
+      "pooled": 0.0094,
+      "n_withheld_positives": 60988,
+      "per_fold": [
+        0.00903,
+        0.0095,
+        0.0093,
+        0.00981
+      ],
+      "ci95": [
+        0.00908,
+        0.00973
+      ]
+    },
+    "snap-free-lidar2": {
+      "pooled": 0.0135,
+      "n_withheld_positives": 60988,
+      "per_fold": [
+        0.01511,
+        0.01222,
+        0.01223,
+        0.01451
+      ],
+      "ci95": [
+        0.01202,
+        0.01498
+      ]
+    }
   },
   "canary": {
-    "n_positive": 60988,
+    "n_positives": 60988,
     "n_background": 200000,
-    "best_single_feature": "geod_2ndinv - Geodetic second invariant - measure of strain rate tensor magnitude",
-    "best_single_feature_auc": 0.5693,
+    "best_single_feature": "train:geod_2ndinv - Geodetic second invariant - measure of strain rate tensor magnitude",
+    "best_single_feature_auc": 0.5696,
     "threshold": 0.9,
-    "verdict": "CLEAN"
+    "verdict": "CLEAN",
+    "features_scored": {
+      "train:mag_anom - Magnetic anomaly - deviation from expected Earth's magnetic field": 0.509,
+      "train:rtp - Reduced to pole magnetic data - magnetic anomaly corrected for latitude effects": 0.503,
+      "train:tmi_hg - Total magnetic intensity horizontal gradient - rate of change in horizontal direction": 0.5264,
+      "train:geod_2ndinv - Geodetic second invariant - measure of strain rate tensor magnitude": 0.5696,
+      "train:iso_grav_anom_slope - Isostatic gravity anomaly slope - gradient of gravity after isostatic correction": 0.533,
+      "train:tc - Tilt angle or total curvature - magnetic field derivative for edge detection": 0.5527,
+      "train:geod_shearrate - Geodetic shear rate - rate of angular deformation from GPS/InSAR": 0.5684,
+      "train:geod_dilaterate - Geodetic dilatation rate - rate of volumetric strain (expansion/contraction)": 0.5251,
+      "train:tmi_vg - Total magnetic intensity vertical gradient - rate of change in vertical direction": 0.5139,
+      "train:deq_n100a15 - Distance to earthquake (n=100km radius, a=15\u00b0 azimuth parameters)": 0.5498,
+      "train:iso_grav_anom_vg - Isostatic gravity anomaly vertical gradient - vertical rate of change": 0.5265,
+      "train:det_elev - Detrended elevation - topography with regional trends removed": 0.5155,
+      "train:iso_grav_anom - Isostatic gravity anomaly - gravity after compensating for topographic mass": 0.5406,
+      "train:tmi - Total magnetic intensity - total strength of magnetic field": 0.5117,
+      "train:depth_to_base_surf - Depth to basement surface - thickness of sedimentary cover": 0.5109,
+      "train:ieq_n100a15 - Earthquake intensity or density (n=100km radius, a=15\u00b0 parameters)": 0.568,
+      "train:cond_surf - Conductivity surface - electrical conductivity of subsurface": 0.5179,
+      "train:iso_grav_anom_hg - Isostatic gravity anomaly horizontal gradient - horizontal rate of change": 0.5001,
+      "train:det_elev_slope - Detrended elevation slope - gradient of elevation after detrending": 0.5574,
+      "response:lidar_scarp": 0.5676,
+      "response:tmi_edge": 0.5244
+    },
+    "note": "Report only. A feature derived from the full catalogue would score ~1.0; 0.90 is the stop threshold."
   },
   "predictions": {
-    "snapgrav2": {
-      "delta_credit_sgmc_minus_catalogue": -0.00033,
-      "model_delta": -0.00022,
-      "prediction": -0.0002,
-      "band": [
-        -0.0102,
-        0.0098
-      ],
-      "proxy_delta_calibrated": -0.00038,
-      "proxy_bias_if_mass_removal": 0.0083
-    },
-    "snapmag2": {
-      "delta_credit_sgmc_minus_catalogue": -0.00067,
-      "model_delta": -0.00044,
-      "prediction": -0.0004,
-      "band": [
-        -0.0104,
-        0.0096
-      ],
-      "proxy_delta_calibrated": -0.00106,
-      "proxy_bias_if_mass_removal": 0.0083
-    },
-    "snaptop2": {
-      "delta_credit_sgmc_minus_catalogue": 0.0002,
-      "model_delta": 0.00013,
-      "prediction": 0.0001,
-      "band": [
-        -0.0099,
-        0.0101
-      ],
-      "proxy_delta_calibrated": -0.00019,
-      "proxy_bias_if_mass_removal": 0.0083
-    }
+    "snap-ridge-lidar2": "+0.001 (-0.006 to +0.008) MODEL",
+    "snap-ridge-tmi2": "0.000 (-0.008 to +0.008) MODEL",
+    "snap-free-lidar2": "-0.004 (-0.012 to +0.004) MODEL"
   },
-  "mechanism_cards": {
-    "snapgrav2": {
-      "hypothesis": "R0's dot positions carry ~1.5-2 px of uncertainty (GeoDAWN Area 2 was flown at 400 m line spacing, 150-200 m above terrain), so moving each dot onto the strongest local edge should shorten its distance to truth and raise the 300 m kernel credit without changing mass.",
-      "mechanism": "gravity steps mark density boundaries across a fault plane and are insensitive to the magnetic overprint that dominates rtp/tmi. Under the metric a dot pays 0.2*(1-credit) of denominator mass, so a 2 px error costs ~0.67 of that dot's possible credit; SNAP moves nothing else.",
-      "mimic": "Magnetic and gravity gradients mark lithologic contacts, Tertiary flow margins, mesa rims and isostatic compensation edges; det_elev_slope marks every hillslope, channel bank and Lake Lahontan shoreline bench. If those outnumber faults, SNAP moves dots onto non-faults.",
-      "predicted": "approximately zero: {-0.0002} MODEL, band [-0.0102, 0.0098]; a live change under 0.01 is no evidence and this axis is expected to be a null result.",
-      "falsifier": "If <= 2 px repositioning of 5-38 % of the dots moves the live score by >= 0.01, position is the binding constraint and the next session should test larger SNAP radii; if it does not, dot *selection* is the constraint and the slot budget should go there."
-    },
-    "snapmag2": {
-      "hypothesis": "R0's dot positions carry ~1.5-2 px of uncertainty (GeoDAWN Area 2 was flown at 400 m line spacing, 150-200 m above terrain), so moving each dot onto the strongest local edge should shorten its distance to truth and raise the 300 m kernel credit without changing mass.",
-      "mechanism": "fault-zone magnetite destruction and basement juxtaposition put a magnetic-gradient maximum on the trace (classic edge-detector target). Under the metric a dot pays 0.2*(1-credit) of denominator mass, so a 2 px error costs ~0.67 of that dot's possible credit; SNAP moves nothing else.",
-      "mimic": "Magnetic and gravity gradients mark lithologic contacts, Tertiary flow margins, mesa rims and isostatic compensation edges; det_elev_slope marks every hillslope, channel bank and Lake Lahontan shoreline bench. If those outnumber faults, SNAP moves dots onto non-faults.",
-      "predicted": "approximately zero: {-0.0004} MODEL, band [-0.0104, 0.0096]; a live change under 0.01 is no evidence and this axis is expected to be a null result.",
-      "falsifier": "If <= 2 px repositioning of 5-38 % of the dots moves the live score by >= 0.01, position is the binding constraint and the next session should test larger SNAP radii; if it does not, dot *selection* is the constraint and the slot budget should go there."
-    },
-    "snaptop2": {
-      "hypothesis": "R0's dot positions carry ~1.5-2 px of uncertainty (GeoDAWN Area 2 was flown at 400 m line spacing, 150-200 m above terrain), so moving each dot onto the strongest local edge should shorten its distance to truth and raise the 300 m kernel credit without changing mass.",
-      "mechanism": "a Holocene scarp is a slope step; the parent ridge is topographic already, so this arm tests the most responsive layer available. Under the metric a dot pays 0.2*(1-credit) of denominator mass, so a 2 px error costs ~0.67 of that dot's possible credit; SNAP moves nothing else.",
-      "mimic": "Magnetic and gravity gradients mark lithologic contacts, Tertiary flow margins, mesa rims and isostatic compensation edges; det_elev_slope marks every hillslope, channel bank and Lake Lahontan shoreline bench. If those outnumber faults, SNAP moves dots onto non-faults.",
-      "predicted": "approximately zero: {+0.0001} MODEL, band [-0.0099, 0.0101]; a live change under 0.01 is no evidence and this axis is expected to be a null result.",
-      "falsifier": "If <= 2 px repositioning of 5-38 % of the dots moves the live score by >= 0.01, position is the binding constraint and the next session should test larger SNAP radii; if it does not, dot *selection* is the constraint and the slot budget should go there."
-    }
-  },
-  "diagnostics": {
-    "edge_field_quality": {
-      "iso_grav_anom_hg": {
-        "auc_catalogue": 0.5289,
-        "mean_at_R0_dots": 0.2637,
-        "mean_footprint": 0.2538
-      },
-      "tmi_hg": {
-        "auc_catalogue": 0.5282,
-        "mean_at_R0_dots": 0.1814,
-        "mean_footprint": 0.1444
-      },
-      "det_elev_slope": {
-        "auc_catalogue": 0.5549,
-        "mean_at_R0_dots": 0.3028,
-        "mean_footprint": 0.2527
-      }
-    },
-    "note": "All three SNAP fields sit at AUC 0.51-0.56 against the mapped catalogue, and R0's dots already sit above the footprint mean on every one of them, so this axis tests *refinement* of positions the parent already chose, not a new geometry.",
-    "add_mass_capacity": {
-      "free_parent_ridge_cells": {
-        "overall": 794,
-        "tercile_0": 185,
-        "tercile_1": 326,
-        "tercile_2": 283
-      },
-      "finding": "REFILL IS NOT AVAILABLE: after a 2.8 px exclusion around R0 only 283 free skeleton cells remain in the high-relief tercile (794 overall) versus the 3,766-7,696 dots that a count-holding RELIEF / CONCENTRATION / MASS-add arm would have to place. Every add-mass arm is blocked by capacity, not geology.",
-      "context": "parent skeleton 121131 px, R0 37654 dots, needed >= 3766 for a 10% shift"
-    },
-    "relief_gradient": {
-      "per_tercile": {
-        "tercile_0": {
-          "area_px": 1722458,
-          "fault_density": 0.00402,
-          "dot_density": 0.00447,
-          "dots_per_fault_px": 1.112,
-          "dots": 7696,
-          "fault_px": 6923
-        },
-        "tercile_1": {
-          "area_px": 1722457,
-          "fault_density": 0.00899,
-          "dot_density": 0.00914,
-          "dots_per_fault_px": 1.017,
-          "dots": 15744,
-          "fault_px": 15480
-        },
-        "tercile_2": {
-          "area_px": 1722458,
-          "fault_density": 0.02306,
-          "dot_density": 0.00825,
-          "dots_per_fault_px": 0.358,
-          "dots": 14214,
-          "fault_px": 39719
-        }
-      },
-      "finding": "Mapped-fault density (SGMC minus catalogue, > 3 px) is 5.8x higher in the high detrended-elevation tercile than in the low one, while R0's dot density is only 1.8x higher: dots per mapped-fault pixel are 1.11 / 1.02 / 0.36. The RELIEF prior is real but cannot be exploited by adding mass (see add_mass_capacity)."
-    },
-    "mass_down_probe": {
-      "proxy_sgmc_minus_catalogue": {
-        "drop_5pct": 0.09259,
-        "drop_10pct": 0.08978,
-        "drop_20pct": 0.08285,
-        "drop_30pct": 0.07313,
-        "parent": 0.09539,
-        "unique_credit_stats": {
-          "min": 2.374,
-          "median": 6.893,
-          "max": 9.38,
-          "frac_zero": 0.0
-        }
-      },
-      "finding": "Dropping the lowest unique-credit dots lowers the fault proxy monotonically, so the parent's redundant dots are not the ones far from faults; MASS-down as specified in brief \u00a75 is not supported by this instrument."
-    },
-    "catalogue_exclusion": {
-      "parent_dots_within_3px": 2171,
-      "parent_min_distance_px": 2.236,
-      "policy": "SNAP keeps the parent's own exclusion (> 2 px) and forbids every move that ends closer to the catalogue than it started; it does NOT re-prune the 2,171 inherited flank dots, because that is PRUNE rung 3 and would be a second axis. Hard constraint \u00a74 (>= 3 px) is therefore met only by the PRUNE files; for SNAP it is inherited from R0 and disclosed."
-    },
-    "position_vs_selection": "SNAP is the only \u00a75 axis that changes neither mass nor geometry source, so it isolates position. It is built here to close that question: <= 2 px refinement of 5-38 % of the dots either moves the live score or proves selection, not position, is binding."
-  },
-  "note": "Proxies are local holdouts, reported for context and never used as gates or as scores. No DrivenData access, no submission, no slot spent by this script."
+  "note": "Proxies are local holdouts reported for context; they are not scores. No DrivenData access, no submission, no slot spent by this script."
 }

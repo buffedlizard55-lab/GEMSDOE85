@@ -1,67 +1,200 @@
-# SLOT_PLAN — 3 scored submissions per rolling week, ONE entity, deadline 2026-12-03 (provisional)
+# SLOT_PLAN — 3 scored submissions per rolling week, ONE entity · deadline 2026-12-03 (provisional)
 
-Parent for every slot below: **R0 = `h33-h33-2-b2`** (`e5eb6e7e`; 37,654 dots; live **0.2778 CLAIM** —
-owner-reported, no receipt in `ledger/`). `TOP_PUBLIC` is **unfilled**: the human must read it off the
-leaderboard with a date; no other target number is valid. Slots left this rolling week: **unknown**
-(from the account page; 3/week is a ceiling, not a target).
+Parent for every built file: **R0 = `h33-h33-2-b2`** (`e5eb6e7e`, 37,654 dots, live **0.2778 CLAIM** —
+no receipt in `ledger/`). `TOP_PUBLIC`: **____** (human fills from leaderboard with date; no other
+target is valid). Slots left this rolling week / total: **__ / __** (human fills from account page).
+Twelve gated candidates sit in `releases/`: six `PRUNE` rungs (`fb308615`, `2880b0e9`, `7ebfc408`,
+`3908de12`, `acce3907`, `f94be3ad`), three `RELIEF` tercile-exchange files (`669f0637`, `21af1eee`,
+`7a0329ee`; `d_cat > 3 px`, 37,654 fixed), and three `SNAP` position-bound controls (`ac3fc128`,
+`6913d029`, `de094d8e`; inside ±0.01 band, ranked below `PRUNE` + `RELIEF`).
 
 ## Next 3 slots, in order
 
-| # | upload (fallback: the `-zeros` twin) | change vs R0 | what the result would change | prediction (MODEL) |
+| # | upload `releases/<id>.tif` (fallback: `-zeros.tif`) | change vs R0 | what the receipt changes | prediction (MODEL) |
 |---|---|---|---|---|
-| 1 | `releases/h33-2-b2-prune3-20261023-fb308615.tif` | drop 2,171 dots at 2 < d_cat ≤ 3 px → 35,483 (−5.77 %) | Δ ≥ +0.005 ⇒ the catalogue-shadow rung is alive; rungs 4/5 become the plan. Δ ≤ 0 ⇒ ladder exhausted at 2 px and the slot budget moves to the axes in §3 | **+0.007** (+0.001…+0.012) |
-| 2 | `releases/h33-2-b2-prune4-20261023-2880b0e9.tif` | drop 3,825 dots at 2 < d_cat ≤ 4 px → 33,829 (−10.16 %) | brackets the optimum: prune4 ≥ prune3 ⇒ push rung 5; prune4 < prune3 but > R0 ⇒ the optimum is bracketed and the final file is the better of the two | **+0.003** (−0.004…+0.010) |
-| 3 | `releases/h33-2-b2-prune5-20261023-7ebfc408.tif` | drop 5,637 dots at 2 < d_cat ≤ 5 px → 32,017 (−14.97 %) | spend only if 1 and 2 both scored ≥ 0.2778. A gain ⇒ the shadow exceeds the documented 100–400 m offset class; a loss ⇒ close the ladder | **−0.003** (−0.012…+0.006) |
+| 1 | `h33-2-b2-prune3-20261023-fb308615.tif` | `PRUNE`: drop 2,171 dots at `2 < d_cat ≤ 3 px` → 35,483 (5.77 %) | Establishes the live `d_cat > 3 px` baseline. `Δ ≥ +0.01` ⇒ shadow extends to 300 m; `Δ ≤ −0.01` ⇒ near-catalogue splays carry net truth | **+0.007** (+0.001…+0.012) |
+| 2 | `h33-2-b2-reliefp2r10-20261023-669f0637.tif` *(or `…-r3p61-…-f94be3ad.tif` if staying pure-PRUNE)* | `RELIEF`: shift +10 % (`3,765` dots) Piedmont `T2` → Range `T3`, `d_cat > 3 px`, n=37,654 fixed (12.77 %) | Compared to Slot 1, isolates range-front bedrock under-compilation vs concealed-basin regime (`+0.0085` on off-catalogue SGMC PROXY) | **+0.008** (+0.001…+0.015) |
+| 3 | **Conditional on Receipts 1 & 2** (all pre-built):<br>• `h33-2-b2-reliefbp2r15-20261023-21af1eee.tif` if `Slot2 − Slot1 ≥ +0.01`<br>• `h33-2-b2-reliefr2bp10-20261023-7a0329ee.tif` if `Slot2 − Slot1 ≤ −0.01`<br>• `h33-2-b2-r3p61-20261023-f94be3ad.tif` if `|Slot2 − Slot1| < 0.01` & `Slot1 − R0 ≥ +0.01` | `+15 %` Basin+Pied→Range (`21af1eee`), `+10 %` Range→Basin+Pied (`7a0329ee`), or `PRUNE` `d_cat ≤ 3.61 px` (`f94be3ad`); if neither 1 nor 2 moves ≥ 0.005, **hold Slot 3** | Pushes the winning direction immediately: tests the 15 % range-front knee, flips to concealed-basin magnetic/gravity ridges, or brackets the >300 m shadow (`r2p85` / `prune4` / `SNAP` stay in reserve) | **+0.006** / **−0.002** (+0.006 cond.) / **+0.005** |
 
-**SNAP (new this session) is a hedge, not a slot.** The three SNAP files are gated and sit in
-`releases/`, but this session's own measurements predict a null result for all three
-(−0.0004…+0.0001 MODEL): every edge field is a weak fault localiser (AUC 0.51–0.56 on the mapped
-catalogue) and R0's dots already sit above the footprint mean on all of them. Use
-`releases/h33-2-b2-snapgrav2-20261023-1b033f40.tif` (2,603 dots moved, 6.9 %) **only** in a week where
-a slot would otherwise expire unused, because a null SNAP receipt is what closes the position axis
-(§3.1). Do not upload `snaptop2` as a first SNAP test: it moves 52.5 % of the dots and confounds
-position with a near-redraw.
+Treat any live `|Δ| < 0.01` as **no evidence** (public chunks only; private chunks and Phase-2
+expert-expanded labels may differ). Never upload an encoding twin expecting a new score.
 
-Live changes under 0.01 are **no evidence** (public chunks only; the private chunks and the Phase-2
-expert-expanded labels may differ). Every live result needs a submission-page RECEIPT;
-`ledger/submissions.csv` stays `status=BUILT` until then. Never schedule an exact repeat for another
-score (the encoding twins scored identically).
+## Calendar to provisional deadline (41 days Oct 23 → Dec 3; human confirms URL & timezone)
 
-## Calendar (deadline provisional, human must confirm)
+- **wk 1–2 (Oct 23 – Nov 5):** Spend Slots 1–3 above (`PRUNE` + `RELIEF`), then test `CONCENTRATION`
+  (two-sided km-block reallocation per IR-V2-17) or bracket optimal `PRUNE` (`r3p61` / `r2p85` / `prune4`).
+  Spend at most one spare slot on `snap-free-lidar2` if needed as a position-sensitivity bound.
+- **wk 3–4 (Nov 6 – Nov 19):** Combine the two axes with positive live receipts (`Δ ≥ +0.01`), one
+  controlled step per slot from the highest-receipt parent; run one ablation check if budget allows.
+- **wk 5–6 (Nov 20 – Dec 3):** Confirm best candidate, lock ONE blind final submission plus one
+  `-zeros.tif` fallback, and re-run disk format/hash validators (`scripts/gemsdoe85_{prune,rung,snap,relief}_session.py`).
+  Confirm rules/deadline at https://www.drivendata.org/competitions/306/competition-doe-gems/ and
+  https://docs.nlr.gov/docs/fy26osti/96647.pdf (human browser only).
 
-- **wk 1 (Oct 23–29):** slots 1–3 above, rolling week permitting. Keep one slot in reserve.
-- **wk 2 (Oct 30–Nov 5):** combine the winning rung with the single best non-PRUNE axis, one change at
-  a time, only if the predicted Δ ≥ +0.005; otherwise do not spend a slot.
-- **wk 3 (Nov 6–12):** the spare encoding twin only if a slot expires unused (a fallback test, not an
-  experiment).
-- **wk 4–5 (Nov 13–26):** confirm the winner on fresh proxies, choose the final file plus one fallback,
-  re-validate both formats.
+## Better axes for later sessions — proposed, NOT built this session
+
+| order | file | change | what it buys |
+|---|---|---|---|
+| 1 | `releases/snap-free-lidar2-20261023-ac3fc128.tif` | 56.9 % moved, support coverage −18.9 % | largest effect: if position within ±200 m matters, it shows here. ≥ +0.01 ⇒ the ridge is misplaced vs the scarp; ≤ −0.01 ⇒ off-ridge is harmful, next take #2 |
+| 2 | `releases/snap-ridge-lidar2-20261023-6913d029.tif` | 22.3 % moved, coverage −1.4 % | along-trace refinement only; informative after #1 |
+| 3 | `releases/snap-ridge-tmi2-20261023-de094d8e.tif` | 30.3 % moved, coverage −2.3 % | the only test of the 400 m *aeromagnetic* positional story; a loss demotes magnetic-gradient axes |
+
+## Weeks to the deadline (41 calendar days from Oct 23 to Dec 3; default plan)
+
+- **Default plan (brief §7):** wk 1–2 `MASS`, `CONCENTRATION`, `SNAP`, `PRUNE`, `RELIEF`; wk 3–4 combine the two best axes; wk 5–6 confirm, choose the final file and a fallback, re-validate the format of both.
+- **wk 1 (Oct 23–29):** slots 1–3 above.
+- **wk 2 (Oct 30–Nov 5):** if the shadow extends past 3 px, sweep 4.5 / 5 / 6 px at fine spacing; if it
+  peaks at 3 px, freeze the optimum. A free slot may then go to `snap-free-lidar2` as the position
+  bound; otherwise keep it in reserve.
+- **wk 3 (Nov 6–12):** one confirmation of the best file through the other encoding only if a slot is
+  otherwise unused (a fallback test, not an experiment).
+- **wk 4–5 (Nov 13–26):** choose the final file and one fallback; re-validate both formats with
+  `scripts/gemsdoe85_rung_session.py`, `scripts/gemsdoe85_prune_session.py`,
+  `scripts/gemsdoe85_snap_session.py`.
 - **wk 6 (to Dec 3):** freeze. One blind final submission; no geometry changes after the last receipt.
-- **41 calendar days** from Oct 23 to Dec 3, not six full weeks; the deadline and timezone are not
-  independently confirmed — the human checks
-  https://www.drivendata.org/competitions/306/competition-doe-gems/ and the quota in
-  https://docs.nlr.gov/docs/fy26osti/96647.pdf (neither fetched this session).
+  41 calendar days from Oct 23 to Dec 3, not six full weeks. Quota per
+  https://docs.nlr.gov/docs/fy26osti/96647.pdf (not fetched this session).
 
-## What this session closed, and the axes it implies (proposed, NOT built)
+## Proposed better axes for later sessions (do NOT build this session)
 
-1. **Position (SNAP) — closed pending one receipt.** Six edge fields were measured before building
-   anything: mapped-fault AUC 0.51–0.56, and every arm's fault-credit delta is ≈ 0 or negative. The
-   three files exist to falsify the "we are 1–2 px off" hypothesis, not to win points.
-2. **Add-mass axes are capacity-blocked, not geology-blocked.** After the parent's 2.8 px packing rung,
-   only **283** free parent-ridge cells remain in the high-relief tercile and **794** overall, versus the
-   3,766+ dots a 10 % count-holding RELIEF / CONCENTRATION / MASS-add arm must place. Do not schedule
-   them without first relaxing the packing rung (which is a different axis and a known risk).
-3. **RELIEF prior is real but unexploitable by adding mass.** Mapped-fault density (SGMC minus
-   catalogue, > 3 px) is 5.8× higher in the high detrended-elevation tercile than in the low one, while
-   R0's dot density is only 1.8× higher — dots per mapped-fault pixel 1.11 / 1.02 / 0.36. The
-   *removal* version of this (drop the basin tercile) is the only untested mass edit with a live prior;
-   it is a PRUNE-family edit and should be pre-registered as such.
-4. **Cross-physics strike agreement** (earlier sessions' proposal) remains the best *selection* test:
-   matched count and ranking strata, magnetic vs gravity boundary alignment. Falsifier: ≥ 0.01 receipt
-   loss despite increased agreement.
+1. **SNAP-AFTER-REPACK.** Re-thin the parent's 121k-px skeleton at 2.8 px with the edge response as the
+   packing *priority* instead of raster order: same count ballpark, same exclusions, positions now
+   edge-aligned. Confounder: it re-seeds the packing, so a matched-count random-priority control must
+   lose by ≥ 0.01. Falsifier: no receipt gain despite a ≥3 % rise in mean edge response under the dots.
+   (The already-built SNAP files are the cheaper version of this idea and will report first.)
+2. **PRUNE-EXCHANGE.** Same count as R0, with the removed shadow mass moved along strike into
+   `d_cat > 5 px` segments. Measured capacity at the parent's rung is small (794 free skeleton cells in
+   the footprint), so this needs the repack of proposal 1 to be feasible.
+3. **Directional shadow.** Split the removed ring by side (east/west of the mapped trace). If the
+   USGS-vs-imagery offset is systematic rather than isotropic, one side should carry the whole gain.
+   Cheap: two more PRUNE files from the same parent, no new machinery. Falsifier: symmetric receipts
+   within ±0.003 of each other.
+4. **MASS-UP on scarp response, off-catalogue.** The lidar scarp field scores higher near mapped faults
+   than R0's own dots do (catalogue proxy 0.0048 → 0.0135 purely from dots moving toward them), i.e. it
+   is a fault-likelihood surface. Whether adding dots at its maxima where `d_cat > 5 px` pays back the
+   0.2 FP charge is untested. Confounder: additions failed live before (T-v2, −0.0028). Falsifier:
+   matched-count random additions must lose by ≥ 0.01.
+5. **RELIEF terciles** and **CONCENTRATION at 1 km blocks**: both need a direction decision first
+   (IR-V2-17: R0's block-density CV 0.619 is above the 0.51–0.59 band attributed to the best files,
+   which contradicts the brief's concentration direction).
+6. **Cross-physics strike agreement** and **persistence vs closed edges** (carried over, unchanged).
 
-## What this session did *not* do, on purpose
+## What these sessions did *not* do, on purpose
 
-No submission, no leaderboard or forum access, no credentials, no site redesign, no change to
-`vendor/gems57`, no MASS/CONCENTRATION/RELIEF build (blocked by §2), no TRACKB traces (Phase 2, expert
-time required).
+No CONCENTRATION or RELIEF file, no addition of any dot, no submission, no leaderboard access, no
+credentials, no site redesign. SNAP was built but is not scheduled; PRUNE rungs beyond slot 3 stay in
+reserve.
+
+---
+
+> **Update 2026-10-23, session `arena/c4de5673`:** the human has now assigned an
+> axis (CONCENTRATION), so the slot order below is superseded for this week by the
+> three CONCENTRATION rungs at the end of this file. The PRUNE / SNAP rungs above remain
+> **built, gated and available as the backup ladder** — the human may reorder them.
+
+## CONCENTRATION slots (session `arena/c4de5673`, 2026-10-23 — the axis the **human assigned**)
+
+| # | file to upload | what it tests | what the result changes |
+|---|---|---|---|
+| 1 | `releases/gems85-h33-h33-2-b2-conc10-20261023-f89e4659-zeros.tif` | 10 % of R0's dots moved from the lowest-prior 0.8 km blocks into the highest-prior ones (CV 0.551 → 0.767) | If live ≥ **0.2778 + 0.01**, the block prior is a *positive* predictor of hidden new-fault truth: promote `conc15`, build a 30 % arm, and make concentration the headline axis. If live is within ±0.01, the dose is too small to read and the axis is uninformative. If live ≤ **0.2778 − 0.02**, the "clustering costs score" reading is confirmed and the family stops paying slots for distribution edits. |
+| 2 | `releases/gems85-h33-h33-2-b2-conc15-20261023-45bfb93b-zeros.tif` | same axis, 15 % dose (CV → 0.786) | Together with slot 1 this gives the *slope* of live score against dose. A monotone decline confirms the dose–response reading; a rise at 15 % after a fall at 10 % says the effect is non-monotone and the 10 % arm was noise. |
+| 3 | `releases/gems85-h33-h33-2-b2-conc20-20261023-a93e0b41-zeros.tif` | same axis, 20 % dose (CV → 0.782) | Confirms or breaks the monotone reading at the brief's upper dose. This is also the archive-quality arm: it is the variant whose spatial signature most resembles the H19-5 field (CV 0.787, 0.1922 CLAIM), so a large loss here is the cleanest possible refutation of "concentrate the mass". |
+
+**Blind choice.** The three files are a dose series of one axis, deliberately: the slope is
+the measurement. If only one slot survives, submit **conc10** — it is the smallest
+departure from the incumbent, so the downside is bounded and the information per unit of
+risk is highest.
+
+**Not submitted, and why.** The three NaN-outside twins (`.tif` without `-zeros`) are the
+spec-literal encodings (published spec: null outside the footprint) but the repo's shared
+validator rejects NaN pixels and the *incumbent itself* is a zeros-outside file, so the
+zeros twins are the proven-submittable encoding. See `docs/SUBMIT.md`.
+
+## Weeks to the deadline (2026-12-03) — CONCENTRATION session's view
+
+* **wk 1 (this week) — submit the three CONCENTRATION arms** above, one per slot, and
+  paste the three receipts into `ledger/submissions.csv` (`receipt_score`, `receipt_date`).
+* **wk 2 — the pivot.** Whatever the slope says, wk 2 moves to the term that the metric
+  algebra says is worth ~+0.048 DTI per 1,000 units of truth credit `T`: **SNAP**
+  (move each dot ≤ 2 px onto the strongest TMI / gravity-gradient / scarp response in its
+  window, same count, same exclusions). The 57-channel stack and the shared edge channels
+  already exist in this repo (`src/gems85/features.py`: `tmi_edge`, `rtp_edge`, `grav_edge`,
+  `tophat2`, `ridge_s1..s3`); it needs the 419 MB competition feature stack restored
+  (`scripts/restore_data.py --groups core`, 5 pinned parts).
+* **wk 3 — PRUNE arms, if and only if SNAP is not yet read.** Exclusion radius 3 px
+  (the metric's own 300 m kernel radius) with the count held at 37,654; the family record
+  says the 2 px prune was worth +0.0070 live, and R0 still carries 2,171 dots in the
+  2–3 px flank annulus. The refill pool is thin (74 legal cells at ≥ 3 px), so a PRUNE=3
+  arm must refill from the 1–2 px shell and the arm is a *net* edit, not a pure delete.
+* **wk 4 — combine the two axes that actually moved the score**, re-validate both files'
+  format, and pick the final candidate plus a fallback.
+* **wk 5 — re-validate** the chosen file and the fallback from disk (format gate, zero
+  catalogue mass, sha256 not already in the ledger), write the final note, and stop.
+* **wk 6 (to 2026-12-03) — buffer** for the Phase 2 brief (rules require reproducible code,
+  one final file, and generative-AI disclosure) and for the `TRACKB` deliverable
+  (strike-consistent traces ≥ 1 km as GeoJSON + raster, one evidence paragraph per trace)
+  if the human opens it. TRACKB is *not* a weekly-slot candidate until the human says so.
+
+## Axes proposed for later sessions (not built this session)
+
+1. **SNAP** — hypothesis: the parent's dot positions inherit the ~300 m positional
+   uncertainty of 400 m-spaced GeoDAWN lineaments, so a ≤ 2 px nudge to the strongest
+   local edge/scarp response raises per-dot truth credit. Confounder: the strongest edge
+   may be a lithologic contact or a dike, not a fault. Falsifier: live change within
+   ±0.01 at matched count ⇒ the parent's positions were already at the local optimum.
+2. **PRUNE=3** — hypothesis: the 300 m kernel radius means dots at 2–3 px from a mapped
+   fault pay the full α=0.2 false-positive tax while capturing no new-fault credit.
+   Confounder: new-fault truth *can* lie within 300 m of known traces (organiser forum
+   11536), so the annulus is not provably empty. Falsifier: live score rises after
+   pruning ⇒ the annulus carries real credit and the 2 px prune was over-fitted.
+3. **T-RETRACE** (new, proposed here) — hypothesis: R0's 37,654 dots are a maximal 300 m
+   cover of a 121,131-cell field, so the field's *unreached* cells are the cheapest
+   unexplored truth; emit the ~74 legal ≥ 3 px cells as a small add-on and see whether
+   marginal credit beats the 0.059 bar. Confounder: only 74 cells exist, so the arm has
+   almost no statistical power; its value is as a bound on the "coverage is exhausted"
+   claim. Falsifier: live change within ±0.01 ⇒ coverage is saturated and any future gain
+   must come from a *better detector*, not from a different thinning of this field.
+
+### Also proposed by the parallel RELIEF session (`arena/3dd0b94c`, 2026-10-23) — not built
+
+1. **TWO-SIDED CONCENTRATION on 10-px / 10-km blocks.** Concentrating vs de-concentrating 10–15 % of
+   dots by geodetic shear (`geod_shearrate`) + basement step (`iso_grav_anom_slope`) at fixed count
+   settles the CV direction ambiguity (IR-V2-17). *Confounder:* block density co-varies with relief.
+   *Falsifier:* block-shuffled control at matched CV scores within 0.01 of the prior-ranked move.
+2. **DIP-CORRECTED UPDIP OFFSET (replaces naive potential-field `SNAP`).** Shift potential-field ridges
+   100–300 m updip toward the footwall zero-crossing rather than hanging-wall gradient peaks.
+   *Confounder:* unknown dip polarity in symmetric grabens. *Falsifier:* fails to beat parent by ≥ 0.01.
+3. **DIRECTIONAL SHADOW PRUNE.** Prune east- vs west-flank `2–4 px` rings separately to test systematic
+   datum/projection shift vs symmetric uncertainty. *Confounder:* range-front dip asymmetry. *Falsifier:*
+   east and west receipts within ±0.003 of each other.
+4. **CROSS-PHYSICS STRIKE AGREEMENT & PERSISTENCE.** Retain basin/piedmont ridges only where `tmi_hg`
+   and `iso_grav_anom_hg` strikes agree within 20° over ≥ 1.5 km open traces (vs closed playa/caldera
+   rims). *Confounder:* linear basalt dikes and pluvial shorelines. *Falsifier:* live Δ ≤ 0 vs parent.
+
+---
+
+## Addendum (PR #40, session `arena/fb7ddb5a`) — SNAP reserve arms and one measurement to keep on file
+
+The human-assigned axis for this week is **CONCENTRATION** (session `arena/c4de5673`), and the three
+CONCENTRATION arms stay the recommended slots. This session asked for an axis, got no answer, and built
+three **SNAP** arms in reserve. They are distinct `(AXIS, value)` pairs from the SNAP arms already on main
+(gravity / magnetic / detrended-elevation target fields instead of LiDAR scarp / TMI, plus a 2.0 px
+anti-pile-up floor and a "never move closer to the catalogue" rule):
+
+| arm | file | dots moved | prediction (MODEL) | use |
+|---|---|---|---|---|
+| `snapgrav2` | `releases/h33-2-b2-snapgrav2-20261023-1b033f40.tif` | 2,603 (6.9 %) | −0.0002 (−0.010…+0.010) | cheapest position-sensitivity probe |
+| `snapmag2` | `releases/h33-2-b2-snapmag2-20261023-a2fa8b95.tif` | 9,213 (24.5 %) | −0.0004 (−0.010…+0.010) | layer contrast at mid dose |
+| `snaptop2` | `releases/h33-2-b2-snaptop2-20261023-7be865f5.tif` | 19,768 (52.5 %) | +0.0001 (−0.010…+0.010) | largest dose; **do not** spend a first SNAP slot here |
+
+Spend one only if a rolling-week slot would otherwise expire unused. A null receipt is the point: it
+closes "we are 1–2 px off" and frees every later slot for selection.
+
+**Keep on file (does not change the slot order).** Two measurements in
+`evidence/session_snap_axis_receipt.json → diagnostics` that any future add-mass proposal must answer:
+(1) after the parent's 2.8 px packing rung only **794** free parent-ridge cells remain, so add-mass *from
+the parent's own ridge* is impossible at a 10 % dose (this does **not** bound off-skeleton relocation —
+see IR-V2-33); (2) the RELIEF prior is real (mapped-fault density 5.8× higher in the high
+detrended-elevation tercile; dots per mapped-fault pixel 1.11 / 1.02 / 0.36) and MASS-down lowers the
+fault proxy monotonically at 5/10/20/30 % — so removals chosen by relief deserve a slot before removals
+chosen by unique credit.

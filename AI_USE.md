@@ -1,7 +1,9 @@
 # AI-use disclosure
 
-Two v2 sessions are recorded. The first (2026-10-22/23, `arena/cf29702c`) stopped BLOCKED; the
-second (2026-10-23, `arena/e081f5da`) cleared the rebuild blocker and built the PRUNE variants.
+Four v2 sessions plus a "session 3" are recorded. (1) 2026-10-22/23, `arena/cf29702c` — stopped BLOCKED. (2) 2026-10-23,
+`arena/e081f5da` — cleared the rebuild blocker and built the PRUNE variants. (3) 2026-10-23,
+`arena/30dcc7f0` — re-verification turn, no raster built. (4) 2026-10-23, `arena/a9cc6c47` — built the
+SNAP variants; its entry starts at "What the AI agent did (SNAP session)".
 
 ## 2026-10-23 — arena/cf29702c-gemsdoe85 (kept verbatim)
 - Human supplied the v2 brief, R0 identity, evidence policy, allowed axes, quota and no-submission constraints. Human did **not** assign AXIS, provide TOP_PUBLIC, receipts or remaining quota.
@@ -62,22 +64,181 @@ result, and the SGMC-proxy bias calibration (+0.0083) used to state the predicti
 
 ---
 
-## Session 2026-10-23 (branch `arena/fb7ddb5a-gemsdoe85`) — SNAP axis
+## 2026-10-23 — session 3, branch `arena/cbdb023a-gemsdoe85`
 
-**What the AI wrote (and the human should review):** `src/gems85/snap_axis.py` (offset set, nodata-aware
-edge field, kernel-credit accounting, the constrained snapping loop), `scripts/gemsdoe85_snap_session.py`
-(pins → rebuild → three arms → gates → proxies → ledger → receipt), `scripts/restore_axis_inputs.py`
-(the six pinned inputs this session reads), `tests/test_snap_axis.py` (9 contract tests), the three SNAP
-rows in `ledger/submissions.csv`, the CURRENT STATE block in `README.md`, the SNAP section of
-`docs/SUBMIT.md`, the rewritten `SLOT_PLAN.md`, and IR-V2-13…16. The mechanism cards, the choice of
-SNAP, the three edge fields and the predictions are AI-authored models, not measurements of the live
-metric.
+### What the AI agent wrote / ran
 
-**What the AI decided without the human:** the axis (the human skipped the question; IR-V2-14), the
-`min_sep = 2.0 px` packing floor, `margin = 0.05`, the "never move closer to the catalogue" rule, and
-the reading that the SGMC-minus-catalogue proxy is the least mass-confounded local instrument.
+- Restored every pinned input and verified SHA-256 before use (`scripts/restore_data.py`), including a
+  one-line fix so manifest paths with subdirectories can be restored at all (IR-V3-01). Rebuilt R0 from
+  its pinned ancestors and asserted pixel identity (37,654 dots).
+- Ran the axis feasibility measurements — SNAP destination availability at four separation floors, the
+  SNAP probe (18,065 dots / 48 % moved at a 2.0 px floor, −1.2 % unique credit), and the 1-km block
+  prior / destination capacity (26 cells) — **before** choosing an axis (IR-V3-02).
+- Wrote `scripts/gemsdoe85_rung_session.py` (new), the three fractional PRUNE rungs, all gate checks,
+  `evidence/session_rung_receipt.json`, the ledger rows, `docs/mechanism_cards_rung.md`, `SLOT_PLAN.md`,
+  `docs/SUBMIT.md`, the README CURRENT STATE block and the IR-V3 items.
+- Wrote the mechanism cards and the predictions. No model was trained; no new geophysical hypothesis
+  was introduced; no dot was added anywhere.
+- Submitted nothing, scored nothing, contacted no leaderboard, read no credentials, contacted no
+  forbidden host, and did not access drivendata.org or dropbox.com.
 
-**What only the human can do:** read `TOP_PUBLIC` and the remaining slots off the account page; decide
-whether a spare slot is worth spending on a predicted-null SNAP receipt; upload, and paste the
-submission-page receipts back into `ledger/submissions.csv`. No file here is endorsed for upload by the
-AI, and none was submitted.
+### What the human decided / must decide
+
+- **AXIS for this session was not supplied**; the AI asked and the question was skipped, so the AI chose
+  PRUNE from measurement (IR-V3-02). The human can overrule this before the next build.
+- Which three files go in which slots, the date-stamped `TOP_PUBLIC`, the remaining quota, and all
+  submission-page receipts (still absent; 0.2778 remains a CLAIM).
+- Whether the pinned competition rasters may stay in this repository at all (IR-V2-10, still open).
+
+### Provenance of the ideas
+
+The prune ladder, the 100–400 m USGS-vs-imagery offset argument and the live numbers 0.2600 / 0.2708 /
+0.2778 come from the owner's earlier sessions and the brief. This session's own contributions are the
+fractional-rung decomposition of the 2–3 px ring, and the measurement that SNAP, CONCENTRATION and
+RELIEF cannot be built on this parent at its 2.8 px packing rung.
+
+## Concurrent sessions merged to `main` during this PR (preserved verbatim)
+
+## 2026-10-23 — arena/30dcc7f0-gemsdoe85 (verification turn)
+
+- AI read the local manifest, ledger, slot plan, and existing R0 recipe; restored only the hash-pinned
+  H19-5, d2.8/solo, R0, labels, and sample-template inputs from their GitHub mirrors into ignored
+  `data/` storage. No competition-site or leaderboard page was accessed.
+- AI installed the locked Python dependencies, verified the relevant manifest and lineage hashes,
+  rebuilt R0 (37,654 dots) and matched both pinned R0 SHA-256 values exactly, re-read/validated all
+  three existing PRUNE release pairs, and ran the targeted metric/lineage tests (31 passed).
+- AI did not build another raster: the PRUNE axis was selected by the earlier AI session, not assigned
+  by the human in this brief, and all three corresponding axis/value experiments already exist in the
+  ledger. AI added the README CURRENT STATE block and recorded this decision in IRREGULARITIES.md.
+- Human has not supplied an AXIS, dated TOP_PUBLIC, slot availability, or receipt in this turn. No
+  competition submission was made; no slot use is claimed.
+
+## What the AI agent did (SNAP session, branch `arena/a9cc6c47-gemsdoe85`, 2026-10-23)
+
+- Verified all 11 SHA-256 pins it used (7 parent-lineage pins plus the lidar scarp, GeoDAWN extension,
+  SGMC and 419 MB feature-stack manifests) and rebuilt R0 pixel-identically
+  (121,131 → 44,090 → 40,199 → 37,654 dots; parent files `baeae321…` / `c55bafc4…`).
+- Wrote `src/gems85/snap85.py` (the two response fields, the deterministic snap rule with its
+  catalogue/separation/footprint constraints, the label-free support-coverage diagnostic) and
+  `tests/test_snap85.py` (10 synthetic contract tests).
+- Wrote `scripts/gemsdoe85_snap_session.py`: pin verification, parent rebuild, three SNAP variants,
+  both GeoTIFF encodings, re-read validation against the brief's gates, per-fold catalogue proxy with
+  CI, SGMC control, leakage canary, receipt JSON, and idempotent ledger append.
+- Wrote `docs/mechanism_cards_snap.md` (hypothesis / mechanism / confounder / predicted sign /
+  falsifier per variant), rewrote `SLOT_PLAN.md`, added the SNAP contingency to `docs/SUBMIT.md`,
+  consolidated the README CURRENT STATE block, and added IR-V2-14 … IR-V2-17.
+- Chose the AXIS (SNAP) **after asking the human and receiving no answer** (the question was skipped);
+  the choice, its rejected alternatives and the re-scope condition are recorded in IR-V2-14. Chose the
+  three values (on-ridge lidar, on-ridge TMI, free-window lidar) to separate "which physics" from
+  "may a dot leave the mapped trace".
+- Fetched only GitHub-hosted, SHA-256-pinned files through the repository's own restore path. No
+  leaderboard, competition page, forum, Dropbox or credentials were accessed; nothing was submitted.
+
+### What remains the human's decision (SNAP session)
+
+- Whether SNAP was the intended axis at all (IR-V2-14); if not, these three files are simply unspent.
+- Whether to spend any slot on them — `SLOT_PLAN.md` ranks them **below** the PRUNE ladder because
+  their predicted effect is inside the ±0.01 no-evidence band (IR-V2-16).
+- `TOP_PUBLIC` with date, the rolling-week slot count, and a submission-page receipt for every score.
+
+## 2026-10-23 — arena/28da814f-gemsdoe85 (this session)
+
+- AI restored all 23 `registry/data_manifest.json` + 2 `registry/learning_manifest.json` + 7 R0 lineage
+  inputs from commit-pinned GitHub mirrors into gitignored storage and verified all SHA-256 digests
+  (`evidence/v2-input-audit.json`: 23/23 and 2/2 VERIFIED).
+- AI verified `IR-V2-19` (`requirements-lock.txt` `rasterio==1.4.4` deflate stream parity) and added a
+  GeoTIFF re-encoding SHA-256 check to `scripts/gemsdoe85_prune_session.py` and `tests/test_r0_lineage.py`
+  proving that rebuilding and writing `L.r0` from scratch reproduces both pinned R0 digests
+  (`baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd` and
+  `c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9`) and re-validated all 9 shipped
+  release pairs across `PRUNE`, `PRUNE-rungs`, and `SNAP`.
+- Human retains `AXIS` assignment/confirmation, `TOP_PUBLIC` (with date), weekly/total slot count, score
+  receipts, deadline/timezone confirmation, and all portal submissions. No forbidden hosts were contacted.
+
+---
+
+Disclosed for the competition's generative-AI disclosure requirement
+(rules: <https://docs.nlr.gov/docs/fy26osti/96647.pdf>).
+
+## 2026-10-23 — arena/c4de5673-gemsdoe85 (this session)
+
+Everything in this session was written by the AI agent (Arena.ai Agent Mode) under the
+operator's brief:
+
+* `scripts/session_setup.sh` — venv + pinned-restore bootstrap.
+* `scripts/inspect_r0_lineage.py`, `scripts/probe_d15_d28_solo_rules.py` — read-only
+  lineage forensics (how `d1.5`, `d2.8`, `h27-4-solo-d28` and `h33-2-b2` relate).
+* `scripts/axis_concentration_stats.py` — calibration of the block-density CV statistic
+  against the family's own scored files.
+* `scripts/build_concentration_variants.py` — builds the three CONCENTRATION variants,
+  rebuilds and verifies the parent, runs the format gates, writes
+  `evidence/axis_concentration_build.json`.
+* `scripts/build_ledger.py` — writes `ledger/submissions.csv` and `ledger/history.csv`.
+* `evidence/holdout_proxy/*.json` — report-only holdout-proxy receipts produced by the
+  shared evaluator (`vendor/gems57/evaluate_holdout.py`).
+* `releases/*` — the six raster files (3 variants × NaN-outside and zeros-outside).
+* `docs/MECHANISM_CARDS.md`, `SLOT_PLAN.md`, `IRREGULARITIES.md`, `docs/SUBMIT.md`,
+  `AI_USE.md`, and the CURRENT STATE block in `README.md`.
+
+The AI also wrote the code and prose in the repository's existing modules that this session
+touched; it did **not** modify `vendor/gems57` (no private evaluator or writer fork).
+
+## What the human decided (and the AI did not)
+
+* **The AXIS for this session: CONCENTRATION.** The brief assigns the axis to the human;
+  the AI asked and did not choose. (The AI did rank the axes by predicted effect before
+  asking, as input to the decision — SNAP, CONCENTRATION, PRUNE, MASS, RELIEF, SPACING.)
+* **`TOP_PUBLIC` and "slots left this week": left UNKNOWN** at the human's explicit
+  instruction. The AI did not read the DrivenData leaderboard (the terms ban automated
+  access) and did not guess.
+* **The upload encoding: zeros-outside twin.** The human is the one who submits; the AI
+  wrote both encodings and documented which one the shared validator accepts and which
+  encoding the incumbent uses. The human may override.
+* **Nothing was submitted.** The AI never contacted `dropbox.com`, never fetched a
+  `drivendata.org` page, never read, requested, stored or printed credentials, and never
+  wrote code that logs in, scrapes a leaderboard or submits.
+* **The interpretation of constraint 4** (≥ 3 px from the catalogue) for non-PRUNE axes is
+  documented in `IRREGULARITIES.md` (IR-85-A4) and is offered for the human's confirmation.
+* **The final selection** of which file to submit, and of the final Phase 2 file, is the
+  human's; the AI proposes the order in `SLOT_PLAN.md`.
+
+## 2026-10-23 — `arena/3dd0b94c-gemsdoe85` (`AXIS = RELIEF`)
+
+- AI restored and SHA-256-verified all 28 pinned manifest/lineage inputs (`23/23` `data_manifest.json`,
+  `2/2` `learning_manifest.json`, `3/3` R0 lineage rasters) in gitignored `data/`, and rebuilt parent
+  R0 (`37,654` dots) matching both `r0_nan` (`baeae321…`) and `r0_zeros` (`c55bafc4…`) pixel- and
+  byte-identically.
+- AI wrote `src/gems85/relief_lineage.py`, `scripts/gemsdoe85_relief_session.py`, and
+  `tests/test_relief_lineage.py`: equal-area Basin / Piedmont / Range-front terciles from
+  `0.70 · pct_rank(det_elev) + 0.30 · pct_rank(det_elev_slope)`, in-tercile `ctrl_collar3_0pct`
+  decomposition, three fixed-count (`37,654`), `2.8 px`-spaced, `d_cat > 3.0 px` `RELIEF` variants
+  (`reliefp2r10-…-669f0637`, `reliefbp2r15-…-21af1eee`, `reliefr2bp10-…-7a0329ee` + `-zeros` twins),
+  report-only `gems57-pooled-hide-v2` and `sgmc_minus_catalogue_3px` 95 % CIs, and 19-band leakage
+  canary (`AUC = 0.5693`, CLEAN).
+- AI wrote `docs/mechanism_cards_relief.md` (including the 12-run `SNAP` negative result), reconciled
+  `ledger/submissions.csv` (12 unioned rows across `PRUNE`, `SNAP`, `RELIEF`), `SLOT_PLAN.md`,
+  `docs/SUBMIT.md`, `README.md` (`CURRENT STATE` block only), and `IR-V2-20 … IR-V2-21`.
+- Human decides slot order (`prune3` → `reliefp2r10` → conditional Slot 3, vs pure-`PRUNE`), supplies
+  dated `TOP_PUBLIC` and remaining slot counts, uploads from their single registered account, records
+  live `receipt_score` + `date`, and reviews competition redistribution/AI-disclosure rules.
+
+---
+
+## Session 2026-10-23 (PR #40, branch `arena/fb7ddb5a`) — SNAP reserve axis
+
+**AI wrote:** `src/gems85/snap_axis.py` (offset set, nodata-aware edge field, kernel-credit accounting,
+constrained snapping loop), `scripts/gemsdoe85_snap_axis_session.py`, `scripts/restore_axis_inputs.py`
+(six pinned inputs, 9/9 hash-verified), `tests/test_snap_axis.py` (9 contract tests), the three SNAP rows
+in `ledger/submissions.csv`, the SNAP reserve row in the README CURRENT STATE block, the addendum in
+`SLOT_PLAN.md`, the reserve section of `docs/SUBMIT.md`, and IR-V2-29…33. The mechanism cards, the choice
+of SNAP (the human did not answer the axis question) and the predictions are AI-authored models, not
+measurements of the live metric.
+
+**AI decided without the human:** the axis (IR-V2-30), the 2.0 px anti-pile-up floor, `margin = 0.05`,
+the "never move closer to the catalogue" rule, and the reading that the SGMC-minus-catalogue proxy is the
+least mass-confounded local instrument.
+
+**Only the human can:** read `TOP_PUBLIC` and the remaining slots from the account page; decide whether a
+spare slot is worth spending on a predicted-null SNAP receipt; upload and paste the submission-page
+receipts back into `ledger/submissions.csv`. No file here is endorsed for upload by the AI, and none was
+submitted.
