@@ -106,3 +106,66 @@ incumbent are absent from the brief and the repository (`registry/scored_artifac
 scores OWNER-REPORT). **Decision:** 0.2778 stays a CLAIM, `TOP_PUBLIC` stays unfilled, and every
 prediction here is labelled MODEL. The human must fill all three before slot 2 is spent, because the
 third slot is conditional on the first two receipts.
+
+---
+
+# Session 3 — AXIS = PRUNE at fractional rungs (2026-10-23)
+
+## IR-V3-01 — `scripts/restore_data.py` could not restore ANY pinned non-core input (fixed)
+
+`main()` loaded every manifest entry with a single-filename rule and never passed `allow_subdirs` for
+entries whose `dest` is `scored/...`. Result: `--groups scored` returned **0/12 verified** with
+`dest must be a single local filename`, so the whole session start gate (rebuild R0 from its pinned
+ancestors) was unreachable. **Decision:** one-line fix — a manifest `dest` with more than one path
+component sets the subdir allowance; `restore()` still rejects absolute paths and any `..` component,
+so containment is unchanged. After the fix: **12/12 scored + 4/4 core + 13/14 external** restored and
+SHA-256 verified. Reproduce: `.venv/bin/python scripts/restore_data.py --groups scored core external`.
+
+## IR-V3-02 — AXIS was again unassigned; PRUNE was chosen from a measurement, not a preference
+
+The brief leaves AXIS to the human. I asked and the question was skipped, so I measured the
+alternatives against R0's own geometry before spending the build budget (numbers in
+`evidence/session_rung_receipt.json → axis_feasibility`):
+
+* **SNAP** — 0 of 37,654 dots have a free destination within 2 px at a separation floor of 2.8, 2.4 or
+  2.2 px; at 2.0 px, radius-2 snapping moves 48 % of dots but destroys 1.2 % of the parent's unique
+  kernel credit and lowers the SGMC proxy 0.0954 → 0.0926. The brief's SNAP is *impossible* on this
+  parent at fixed packing.
+* **CONCENTRATION / RELIEF** — 26 free skeleton cells at `d_cat > 3 px` in the top-prior 1-km tercile
+  (205 at `d_cat > 2 px`); a relocation with no destination is an off-ridge *addition*, which this
+  lineage has already falsified live.
+* **PRUNE** is the only axis with both destination freedom (pure removal) and a two-point live/CLAIM
+  dose–response (+0.0108 at `≤1 px`, +0.0070 at `≤2 px`).
+
+**Decision:** three new PRUNE *values* (2.25 / 2.85 / 3.61 px) that decompose the already-built 2–3 px
+rung into its distance rings. Each (AXIS, value) pair is built once; these three values are new. **If
+the human intended a different axis, re-scope before the next build** — the infeasibility numbers
+above say SNAP and CONCENTRATION cannot be built as written on this parent.
+
+## IR-V3-03 — The brief's `≥3 px` exclusion and its SNAP clause are mutually exclusive
+
+Hard constraint 4 says "keep ≥3 px from the catalogue unless AXIS=PRUNE", while SNAP is defined as
+"same count, same exclusions". R0 itself carries 2,171 dots at 2 < d_cat ≤ 3 px, so a same-exclusion
+SNAP cannot satisfy the 3 px rule. **Decision:** every *new* position must satisfy `d_cat > 3 px`
+(enforced in the SNAP probe and in any future snap file); inherited positions are reported, not
+silently pruned. The gate this session therefore checks is `zero mass on the catalogue` plus
+`all dots beyond the declared rung`, and the 3 px distance is reported, not gated — which is exactly
+what the PRUNE exemption allows.
+
+## IR-V3-04 — Both local proxies point the WRONG way for this axis, and that is now explained
+
+Against a catalogue-derived truth, every prune rung loses: SGMC-minus-catalogue 0.0954 → 0.0949 /
+0.0942 / 0.0912, and the vendor hide-and-recover proxy 0.004006 → 0.000455 → 0 → 0 as the rung
+widens. This is structural, not evidence: both proxies use catalogue pixels as truth, while the live
+scorer **masks** catalogue pixels and scores only new faults, so a variant that deliberately moves off
+the catalogue must lose on both. **Decision:** the proxies stay REPORT-ONLY and are printed with this
+caveat in the receipt; the axis is justified by direct live/CLAIM rung receipts, which outrank them.
+Consequence for future sessions: do not use either proxy to rank shadow-direction hypotheses.
+
+## IR-V3-05 — one pinned manifest hash does not match its mirror (non-blocking)
+
+`registry/data_manifest.json → usgs_3dep10m_topo_manifest` fails with equal byte counts and a
+one-nibble SHA-256 difference (`…e3998a2d…` pinned vs `…e3998b2d…` fetched), i.e. a pin typo or an
+upstream rewrite, not a transport error. The underlying data file (`usgs_3dep10m_topo_u8`) verifies
+and was not used this session. **Decision:** do not use that sidecar; flag it for the next session
+rather than editing a pin that belongs to a shared manifest.

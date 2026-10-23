@@ -1,5 +1,20 @@
 # GEMSDOE85 — Lane H85-HJCD: Hydrothermal-Juxtaposition & Fault-Valve Conduit Discovery
 
+<!-- CURRENT STATE — edit only this block and only these fields -->
+## CURRENT STATE (2026-10-23, session 3)
+
+| field | value |
+|---|---|
+| **parent** | R0 = `h33-h33-2-b2` (`e5eb6e7e`), 37,654 unit-mass dots, rebuilt pixel-identical every session |
+| **best receipt** | **none in this repository.** 0.2778 is a **CLAIM** (owner-reported); every other number below is MODEL or PROXY |
+| **TOP_PUBLIC** | **UNFILLED** — human must read it off the leaderboard *with a date*; no other target number is valid |
+| **slots left this week** | **UNKNOWN** — human must read it off the account page (3/week is a ceiling, not a target) |
+| **next 3 slots** | 1. `releases/h33-2-b2-prune3-20261023-fb308615.tif` (+0.007 MODEL) · 2. `releases/h33-2-b2-r3p61-20261023-f94be3ad.tif` (+0.005, the decision slot) · 3. `releases/h33-2-b2-r2p85-20261023-acce3907.tif` (+0.005) — upload the `-zeros` twin instead if the portal rejects NaN outside |
+| **this session** | AXIS = PRUNE at fractional cup-distance rungs; SNAP / CONCENTRATION / RELIEF measured **infeasible** at R0's saturated 2.8 px packing (`docs/mechanism_cards_rung.md`) |
+
+<!-- end CURRENT STATE → the rest of this README is the previous session's narrative, preserved -->
+
+
 **DOE GEMS Prize Challenge · DrivenData Competition #306 · Verified End-to-End Research, Holdout Validation & Unique GeoTIFF Submission System**
 
 [![Automated Validation](https://img.shields.io/badge/Automated_Validation-32%2F32_PASS-brightgreen)](docs/index.html)
