@@ -1,3 +1,36 @@
+# Current release status — 2026-10-23
+
+**BLOCKED — DO NOT SUBMIT. No new unique TIFF was generated this session.**
+The older submission-ready claims below are retained as historical session records, **not current authorization**.
+The literal registry overlap gate is saturated: the verified witness covers every allowed pixel.
+Format PASS alone does not clear uniqueness, scientific promotion, eligibility or a weekly slot.
+No chance-corrected exemption is authorized by the standing prompt. No method lane or pinned transformed cache is assigned/available.
+
+- **Current executive summary:** [submission status](docs/index.html) · [how to submit](docs/executive-summary.html).
+- **Authoritative current card:** [evidence/run_card.json](evidence/run_card.json) (negative preflight; no current HOLDOUT-DTI).
+- **Research and three-pass review:** [2026-10-23 review](research/session-20261023-review.md).
+- Historical TIFFs remain solely for reproducibility; they are not unique-cleared submission deliverables.
+- H33's reported result has no authenticated receipt here; a higher score is not established.
+- The standing brief and full quoted prompt remain below; read them at every session start.
+
+```bash
+python -m venv .venv
+.venv/bin/pip install -r requirements-lock.txt
+.venv/bin/python scripts/restore_learning.py  # educational priors only; SHA-256 checked
+.venv/bin/python scripts/release_audit.py     # expected exit 2: blocked; needs reference data
+.venv/bin/python scripts/build_site.py
+.venv/bin/python scripts/check_site.py
+.venv/bin/python -m pytest -q
+```
+
+A green CI verifies contracts and honest blocked presentation; **it does not authorize a submission**.
+Official non-GitHub sources cannot be re-fetched under this environment's outbound allowlist.
+Mirrored data hashes establish consistency, not organizer authentication. No weekly slot used.
+
+---
+
+## Historical README (superseded release claims; standing prompt preserved)
+
 # GEMSDOE85 — S85-CTXFUS: contextual supervised + GEO-Pb crest fusion for concealed faults
 
 **DOE GEMS Prize · DrivenData competition #306 · safety review state: BLOCKED**

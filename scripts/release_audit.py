@@ -70,14 +70,15 @@ def audit(root=ROOT):
         # Historical bytes cannot be promoted by passing a format check.
         row['safe_to_submit'] = False
         rows.append(row)
-    return dict(schema_version=1, hypothesis=None, mechanism=None, non_fault_mimic=None,
+    return dict(schema_version=1, review_date='2026-10-23', hypothesis=None, mechanism=None, non_fault_mimic=None,
         experiment_status='NOT RUN — duplicate-stop preflight; no lane assigned',
         holdout=dict(label='HOLDOUT-DTI', evaluator_version=None, dti=None, ci95=None,
                      withheld_positive_pixels=None, status='not run this session'),
         registry=dict(uniqueness_cleared=False, correlation=None, overlap=None,
                       saturation_certificate=saturation, phase_surface='stopped before placement',
                       phase_final_dots='no new dots'),
-        raster_sha256=None, validator=dict(status='no new raster; historical format diagnostics only'),
+        raster_sha256=None, validator=dict(status='no new raster; historical format diagnostics only',
+            no_nan_inside_footprint=None, values_in_0_1=None, crs_match=None, shape_match=None, transform_match=None),
         historical_artifacts=rows, template_unmodified=intact, lane=lane,
         blockers=[('Literal any-raster overlap gate: saturated prior blocks every nonempty allowed candidate.'
                    if saturation and saturation['universal_overlap_blocker'] else 'Saturation witness unavailable or unverified; uniqueness remains blocked.'),
