@@ -107,11 +107,15 @@ def test_pins_verify():
 
 
 @pytest.mark.skipif(not HAVE_DATA, reason="pinned rasters not restored")
-def test_r0_rebuild_is_pixel_identical_to_pinned_parent():
+def test_r0_rebuild_is_pixel_identical_to_pinned_parent(tmp_path):
+    from gemsdoe85_prune_session import write_pair
     L = RL.rebuild(verify_against_pinned_files=True)
     assert L.counts() == {"skeleton": 121131, "d28": 44090, "solo": 40199, "r0": 37654}
     assert RL.sha256_file(RL.PATHS["r0_zeros"]) == RL.PINS["r0_zeros"]
     assert RL.sha256_file(RL.PATHS["r0_nan"]) == RL.PINS["r0_nan"]
+    reb_nan, reb_zeros = write_pair(L.r0, tmp_path, "rebuilt_r0")
+    assert RL.sha256_file(reb_nan) == RL.PINS["r0_nan"]
+    assert RL.sha256_file(reb_zeros) == RL.PINS["r0_zeros"]
     # R0 carries no mass on the catalogue and stays outside 2 px of it
     assert int((L.r0 & (L.dist_cat <= 2.0)).sum()) == 0
 

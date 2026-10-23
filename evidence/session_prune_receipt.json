@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated_utc": "2026-10-23T03:48:37+00:00",
-  "git_sha": "793cf6064daa430c27c5cea02ccaac4f65fcd14b",
+  "generated_utc": "2026-10-23T15:50:36+00:00",
+  "git_sha": "0104c3e0adec8ad0543e23afe66d56df58b46fd4",
   "python": "3.11.2",
   "date_tag": "20261023",
   "pins": {
@@ -50,7 +50,9 @@
     },
     "pixel_identical_to_pinned": true,
     "r0_nan_file": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
-    "r0_zeros_file": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9"
+    "r0_zeros_file": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9",
+    "r0_nan_rebuilt": "baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd",
+    "r0_zeros_rebuilt": "c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9"
   },
   "variants": {
     "h33-2-b2-prune3": {

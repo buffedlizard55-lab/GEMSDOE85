@@ -1,9 +1,9 @@
 # Decision-changing irregularities — v2, 2026-10-23
 
 Session map for the item numbers below: `IR-V2-*` = the v2 brief sessions (`cf29702c`, `e081f5da`,
-`30dcc7f0`, `a9cc6c47`, `3dd0b94c`); `IR-V3-*` = the session that called itself "session 3" (`cbdb023a`) and used its
+`30dcc7f0`, `a9cc6c47`); `IR-V3-*` = the session that called itself "session 3" (`cbdb023a`) and used its
 own namespace to avoid collisions. Items are appended chronologically within each namespace, so
-IR-V2-18 … IR-V2-20 sit after IR-V3-01…05 in the file.
+IR-V2-18 sits after IR-V3-01…05 in the file.
 
 Four v2 sessions on this branch history: `arena/cf29702c` (2026-10-22/23) stopped BLOCKED;
 `arena/e081f5da` (2026-10-23) cleared the rebuild blocker and built the PRUNE variants;
@@ -283,7 +283,18 @@ worth a slot while the PRUNE ladder is open**; the files are a contingency, not 
 `SLOT_PLAN.md`). The word "impossible" in IR-V3-02 should be read as "impossible at fixed packing", and
 the feasibility table in `docs/mechanism_cards_rung.md` should be read with that qualifier.
 
-## IR-V2-19 — `RELIEF` *is* buildable at the 2.8 px packing rung AND `d_cat > 3.0 px` via pinned sibling ancestors (`arena/3dd0b94c-gemsdoe85`)
+## IR-V2-19 — Lockfile `rasterio==1.4.3` vs `1.4.4` deflate stream check (`arena/28da814f`)
+
+Running `scripts/gemsdoe85_prune_session.py` under `rasterio==1.4.3` produced pixel-identical rasters
+whose compressed GeoTIFF tile streams differed (`1,082` B vs `1,178` B on empty NaN tiles), yielding
+different SHA-256 digests (`24952cda…`, `56a67442…`, `ed507edc…`) from the shipped `releases/` files
+(`fb308615…`, `2880b0e9…`, `7ebfc408…`) and failing to match the pinned R0 GeoTIFF hashes
+(`baeae321…`, `c55bafc4…`) when `L.r0` was written from scratch. **Decision:** ensured
+`requirements-lock.txt` pins `rasterio==1.4.4` and added a GeoTIFF re-encoding SHA-256 assertion in
+`scripts/gemsdoe85_prune_session.py` and `tests/test_r0_lineage.py` so rebuilding and writing `L.r0`
+from scratch is verified against both `baeae321…` and `c55bafc4…`.
+
+## IR-V2-20 — `RELIEF` *is* buildable at the 2.8 px packing rung AND `d_cat > 3.0 px` via pinned sibling ancestors (`arena/3dd0b94c-gemsdoe85`)
 
 IR-V3-02 found only 85–794 free pixels on the single `H19-5` 1-px skeleton at `2.8 px` spacing and
 concluded `RELIEF` could not be built on R0 at fixed count. Restoring all 28 SHA-pinned manifest files
@@ -303,7 +314,7 @@ constant, `reliefp2r10` (`+10 %` Piedmont→Range) and `reliefbp2r15` (`+15 %` B
 `0.09283`). **Decision:** pair `prune3` (Slot 1) with `reliefp2r10` (Slot 2) so `Slot 2 − Slot 1`
 measures pure live `RELIEF` above the `d_cat > 3 px` collar, and choose Slot 3 conditionally.
 
-## IR-V2-20 — Pre-existing Git-tracked competition rasters flagged again (`arena/3dd0b94c-gemsdoe85`)
+## IR-V2-21 — Pre-existing Git-tracked competition rasters flagged again (`arena/3dd0b94c-gemsdoe85`)
 
 `git ls-files data/` confirms `data/labels.tif`, `data/existing_faults.tif`, and
 `data/sample_submission.tif` (plus `data/bridge/*`) remain tracked from pre-`.gitignore` history

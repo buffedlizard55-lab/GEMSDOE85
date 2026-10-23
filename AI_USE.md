@@ -99,8 +99,19 @@ RELIEF cannot be built on this parent at its 2.8 px packing rung.
 
 ## Concurrent sessions merged to `main` during this PR (preserved verbatim)
 
-## 2026-10-23 — arena/30dcc7f0-gemsdoe85 (current verification turn)
+## 2026-10-23 — arena/30dcc7f0-gemsdoe85 (verification turn)
 
+- AI read the local manifest, ledger, slot plan, and existing R0 recipe; restored only the hash-pinned
+  H19-5, d2.8/solo, R0, labels, and sample-template inputs from their GitHub mirrors into ignored
+  `data/` storage. No competition-site or leaderboard page was accessed.
+- AI installed the locked Python dependencies, verified the relevant manifest and lineage hashes,
+  rebuilt R0 (37,654 dots) and matched both pinned R0 SHA-256 values exactly, re-read/validated all
+  three existing PRUNE release pairs, and ran the targeted metric/lineage tests (31 passed).
+- AI did not build another raster: the PRUNE axis was selected by the earlier AI session, not assigned
+  by the human in this brief, and all three corresponding axis/value experiments already exist in the
+  ledger. AI added the README CURRENT STATE block and recorded this decision in IRREGULARITIES.md.
+- Human has not supplied an AXIS, dated TOP_PUBLIC, slot availability, or receipt in this turn. No
+  competition submission was made; no slot use is claimed.
 
 ## What the AI agent did (SNAP session, branch `arena/a9cc6c47-gemsdoe85`, 2026-10-23)
 
@@ -130,28 +141,39 @@ RELIEF cannot be built on this parent at its 2.8 px packing rung.
   their predicted effect is inside the ±0.01 no-evidence band (IR-V2-16).
 - `TOP_PUBLIC` with date, the rolling-week slot count, and a submission-page receipt for every score.
 
+## 2026-10-23 — arena/28da814f-gemsdoe85 (this session)
+
+- AI restored all 23 `registry/data_manifest.json` + 2 `registry/learning_manifest.json` + 7 R0 lineage
+  inputs from commit-pinned GitHub mirrors into gitignored storage and verified all SHA-256 digests
+  (`evidence/v2-input-audit.json`: 23/23 and 2/2 VERIFIED).
+- AI verified `IR-V2-19` (`requirements-lock.txt` `rasterio==1.4.4` deflate stream parity) and added a
+  GeoTIFF re-encoding SHA-256 check to `scripts/gemsdoe85_prune_session.py` and `tests/test_r0_lineage.py`
+  proving that rebuilding and writing `L.r0` from scratch reproduces both pinned R0 digests
+  (`baeae3219bba6a19bc8cfe79224e28555c50184b7c1ca65c2a822f54807c77dd` and
+  `c55bafc470054e8271dcb89347a17e07fefe50de6af6e6ba6c4b169ef7ab6fa9`) and re-validated all 9 shipped
+  release pairs across `PRUNE`, `PRUNE-rungs`, and `SNAP`.
+- Human retains `AXIS` assignment/confirmation, `TOP_PUBLIC` (with date), weekly/total slot count, score
+  receipts, deadline/timezone confirmation, and all portal submissions. No forbidden hosts were contacted.
+
 ---
 
-## What the AI agent did (RELIEF session, branch `arena/3dd0b94c-gemsdoe85`, 2026-10-23)
+## 2026-10-23 — `arena/3dd0b94c-gemsdoe85` (`AXIS = RELIEF`)
 
-- Restored and SHA-256-verified all 28 pinned manifest/lineage inputs (`23/23` `data_manifest.json`,
+- AI restored and SHA-256-verified all 28 pinned manifest/lineage inputs (`23/23` `data_manifest.json`,
   `2/2` `learning_manifest.json`, `3/3` R0 lineage rasters) in gitignored `data/`, and rebuilt parent
   R0 (`37,654` dots) matching both `r0_nan` (`baeae321…`) and `r0_zeros` (`c55bafc4…`) pixel- and
   byte-identically.
-- Wrote `src/gems85/relief_lineage.py`, `scripts/gemsdoe85_relief_session.py`, and
+- AI wrote `src/gems85/relief_lineage.py`, `scripts/gemsdoe85_relief_session.py`, and
   `tests/test_relief_lineage.py`: equal-area Basin / Piedmont / Range-front terciles from
   `0.70 · pct_rank(det_elev) + 0.30 · pct_rank(det_elev_slope)`, in-tercile `ctrl_collar3_0pct`
   decomposition, three fixed-count (`37,654`), `2.8 px`-spaced, `d_cat > 3.0 px` `RELIEF` variants
   (`reliefp2r10-…-669f0637`, `reliefbp2r15-…-21af1eee`, `reliefr2bp10-…-7a0329ee` + `-zeros` twins),
   report-only `gems57-pooled-hide-v2` and `sgmc_minus_catalogue_3px` 95 % CIs, and 19-band leakage
   canary (`AUC = 0.5693`, CLEAN).
-- Wrote `docs/mechanism_cards_relief.md` (including the 12-run `SNAP` negative result), reconciled
+- AI wrote `docs/mechanism_cards_relief.md` (including the 12-run `SNAP` negative result), reconciled
   `ledger/submissions.csv` (12 unioned rows across `PRUNE`, `SNAP`, `RELIEF`), `SLOT_PLAN.md`,
-  `docs/SUBMIT.md`, `README.md` (`CURRENT STATE` block only), and `IR-V2-19 … IR-V2-20`.
-
-### What remains the human's decision (RELIEF session)
-
-- Confirming the slot order (`prune3` → `reliefp2r10` → conditional Slot 3, vs pure-`PRUNE`), entering
-  dated `TOP_PUBLIC` and remaining slot counts, uploading from their single registered account,
-  recording live `receipt_score` + `date`, and reviewing competition redistribution/AI-disclosure rules.
+  `docs/SUBMIT.md`, `README.md` (`CURRENT STATE` block only), and `IR-V2-20 … IR-V2-21`.
+- Human decides slot order (`prune3` → `reliefp2r10` → conditional Slot 3, vs pure-`PRUNE`), supplies
+  dated `TOP_PUBLIC` and remaining slot counts, uploads from their single registered account, records
+  live `receipt_score` + `date`, and reviews competition redistribution/AI-disclosure rules.
 

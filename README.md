@@ -1,11 +1,11 @@
 # GEMSDOE85 — Lane H85-HJCD: Hydrothermal-Juxtaposition & Fault-Valve Conduit Discovery
 
 <!-- CURRENT STATE — update this block only for session status. -->
-## CURRENT STATE (2026-10-23, after four build sessions: PRUNE, PRUNE-rungs, SNAP, RELIEF)
+## CURRENT STATE (2026-10-23, after PRUNE, PRUNE-rungs, SNAP, verification & RELIEF `arena/3dd0b94c-gemsdoe85`)
 
 | field | value |
 |---|---|
-| **parent** | R0 = `h33-h33-2-b2` (`e5eb6e7e`), 37,654 unit-mass dots; rebuilt **pixel- and byte-identical** from the pinned chain (121,131 → 44,090 → 40,199 → 37,654; NaN `baeae321…` / zeros `c55bafc4…`) |
+| **parent** | R0 = `h33-h33-2-b2` (`e5eb6e7e`), 37,654 unit-mass dots; rebuilt **pixel- and byte-identical** from the pinned chain (121,131 → 44,090 → 40,199 → 37,654; `baeae321…` / `c55bafc4…`; 23/23 `data_manifest.json` + 2/2 `learning_manifest.json` SHA-256 verified) |
 | **best receipt** | **none in this repository.** 0.2778 is a **CLAIM** (owner-reported); every other number is MODEL or PROXY |
 | **TOP_PUBLIC** | **UNFILLED** — the human reads it off the leaderboard *with a date*; no other target number is valid |
 | **slots left this week** | **UNKNOWN** — the human reads it off the account page (3/week is a ceiling, not a target; +1 blind final submission) |
